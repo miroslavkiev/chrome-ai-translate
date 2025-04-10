@@ -175,25 +175,17 @@ function showPopupWithTranslation(originalText, translatedText) {
   content.style.whiteSpace = "pre-wrap";
   popup.appendChild(content);
 
+  // Remove the Close button and replace it with an X button in the top-right corner
   const closeButton = document.createElement("button");
-  closeButton.textContent = "Close";
-  closeButton.style.marginTop = "10px";
-  closeButton.style.padding = "8px 12px";
-  closeButton.style.backgroundColor = "#007bff";
-  closeButton.style.color = "#fff";
+  closeButton.textContent = "✕";
+  closeButton.style.position = "absolute";
+  closeButton.style.top = "5px";
+  closeButton.style.right = "5px";
+  closeButton.style.background = "transparent";
   closeButton.style.border = "none";
-  closeButton.style.borderRadius = "4px";
   closeButton.style.cursor = "pointer";
-  closeButton.style.fontSize = "14px";
-  closeButton.style.transition = "background-color 0.3s ease";
-
-  closeButton.addEventListener("mouseover", () => {
-    closeButton.style.backgroundColor = "#0056b3";
-  });
-
-  closeButton.addEventListener("mouseout", () => {
-    closeButton.style.backgroundColor = "#007bff";
-  });
+  closeButton.style.fontSize = "16px";
+  closeButton.style.color = "#333";
 
   closeButton.addEventListener("click", () => {
     console.log("Popup close button clicked.");
