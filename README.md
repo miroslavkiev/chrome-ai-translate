@@ -70,7 +70,7 @@ The extension will now be added to Chrome.
 
 To use this extension, you need a Gemini API Key. Follow these steps to obtain one:
 
-1. Visit the [Google Gemini AI website](https://gemini.google.com/).
+1. Visit the [Google AI Studio API Key page](https://aistudio.google.com/app/apikey).
 2. Sign in with your Google account or create a new account if you don't have one.
 3. Navigate to the **API Keys** section in your account dashboard.
 4. Click **Generate New Key** and follow the prompts.
