@@ -33,6 +33,21 @@ This Chrome extension allows you to translate selected text into a target langua
 
 7. The extension will now be added to Chrome.
 
+## Pre-Packaged Extension
+
+For users who prefer not to deal with Git, Webpack, or building the project manually, a pre-packaged version of the extension is available as a zip file. You can download it from the `dist` folder:
+
+[Download Chrome AI Translate Extension](dist/chrome-ai-translate.zip)
+
+To use the pre-packaged extension:
+1. Download the zip file.
+2. Extract its contents to a folder on your computer.
+3. Open Chrome and navigate to `chrome://extensions/`.
+4. Enable **Developer mode** in the top-right corner.
+5. Click **Load unpacked** and select the extracted folder.
+
+The extension will now be added to Chrome.
+
 ## Usage
 
 ### Adding the Gemini API Key

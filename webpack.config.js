@@ -2,6 +2,24 @@ import path from 'path';
 import pathBrowserify from 'path-browserify';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import TerserPlugin from "terser-webpack-plugin";
+import { exec } from "child_process";
+import { promisify } from "util";
+
+const execAsync = promisify(exec);
+
+class ZipAfterBuildPlugin {
+  apply(compiler) {
+    compiler.hooks.done.tapPromise("ZipAfterBuildPlugin", async () => {
+      try {
+        console.log("Creating zip archive of dist folder...");
+        await execAsync("zip -r dist/chrome-ai-translate.zip dist/*");
+        console.log("Zip archive created successfully.");
+      } catch (error) {
+        console.error("Error creating zip archive:", error);
+      }
+    });
+  }
+}
 
 export default {
   mode: 'production',
@@ -50,5 +68,6 @@ export default {
         { from: 'settings.js', to: '' },
       ],
     }),
+    new ZipAfterBuildPlugin(),
   ],
 };
