@@ -157,9 +157,9 @@ function showPopupWithTranslation(originalText, translatedText) {
   popup.style.color = "#333";
   popup.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
   popup.style.transition = "opacity 0.3s ease";
+  popup.style.zIndex = "2147483647"; // Set a very high z-index to ensure the popup is on top of all other elements
 
   const title = document.createElement("h3");
-  title.textContent = "Translation";
   title.style.margin = "0 0 10px 0";
   title.style.fontSize = "16px";
   title.style.color = "#007bff";
@@ -168,7 +168,7 @@ function showPopupWithTranslation(originalText, translatedText) {
   // Replace asterisks with bullet points for better formatting
   const formattedText = translatedText.replace(/\*/g, "•");
   const content = document.createElement("p");
-  content.textContent = `Translated: ${formattedText}`;
+  content.textContent = `${formattedText}`;
   content.style.margin = "0";
   content.style.lineHeight = "1.5";
   content.style.whiteSpace = "pre-wrap";
