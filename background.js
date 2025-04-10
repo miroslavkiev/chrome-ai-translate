@@ -7,7 +7,6 @@ async function initializeGoogleGenAI() {
     console.error("API Key is missing. Please set it in the extension settings.");
     return null;
   }
-  console.log("Initializing GoogleGenAI with API Key:", apiKey);
   return new GoogleGenAI({ apiKey });
 }
 
