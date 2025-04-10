@@ -51,6 +51,18 @@ This Chrome extension allows you to translate selected text into a target langua
    - Press the **Control** key to trigger the translation directly.
 3. A popup will appear with the translated text.
 
+## Obtaining a Gemini API Key
+
+To use this extension, you need a Gemini API Key. Follow these steps to obtain one:
+
+1. Visit the [Google Gemini AI website](https://gemini.google.com/).
+2. Sign in with your Google account or create a new account if you don't have one.
+3. Navigate to the **API Keys** section in your account dashboard.
+4. Click **Generate New Key** and follow the prompts.
+5. Copy the generated API Key and save it securely.
+
+Once you have the API Key, add it to the extension settings as described in the [Adding the Gemini API Key](#adding-the-gemini-api-key) section.
+
 ## Supported Languages
 - Ukrainian (Default)
 - English

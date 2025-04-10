@@ -1,6 +1,7 @@
 import path from 'path';
 import pathBrowserify from 'path-browserify';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import TerserPlugin from "terser-webpack-plugin";
 
 export default {
   mode: 'production',
@@ -35,7 +36,8 @@ export default {
     }
   },
   optimization: {
-    minimize: false,
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   watch: true,
   plugins: [
