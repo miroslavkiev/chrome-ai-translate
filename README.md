@@ -11,7 +11,7 @@ This Chrome extension allows you to translate selected text into a target langua
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/chrome-ai-translate.git
+   git clone https://github.com/miroslavkiev/chrome-ai-translate.git
    ```
 
 2. Navigate to the project directory:
