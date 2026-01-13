@@ -117,8 +117,9 @@ async function requestTranslation(text) {
     }
 
     const targetLanguage = await getTargetLanguage();
+    const aiModel = await getAIModel();
     const response = await aiInstance.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: aiModel,
       contents: `Translate the following text to ${targetLanguage} and respond with translation only, you may keep formatting like bullets or numbered list, no original text is needed or supplementary commentary: ${text}`
     });
 
@@ -224,6 +225,15 @@ async function getTargetLanguage() {
   return new Promise((resolve) => {
     chrome.storage.sync.get("targetLanguage", (data) => {
       resolve(data.targetLanguage || "uk"); // Default to Ukrainian
+    });
+  });
+}
+
+// Retrieve the AI model from storage
+async function getAIModel() {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get("aiModel", (data) => {
+      resolve(data.aiModel || "gemma-3-27b-it"); // Default to gemma-3-27b-it
     });
   });
 }

@@ -16,12 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Save the API key and target language
+  // Load the existing AI model
+  chrome.storage.sync.get("aiModel", (data) => {
+    if (data.aiModel) {
+      document.getElementById("aiModel").value = data.aiModel;
+    } else {
+      document.getElementById("aiModel").value = "gemma-3-27b-it";
+    }
+  });
+
+  // Save the API key, target language, and AI model
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const apiKey = document.getElementById("apiKey").value;
     const targetLanguage = document.getElementById("targetLanguage").value;
-    chrome.storage.sync.set({ geminiApiKey: apiKey, targetLanguage: targetLanguage }, () => {
+    const aiModel = document.getElementById("aiModel").value;
+    chrome.storage.sync.set({ geminiApiKey: apiKey, targetLanguage: targetLanguage, aiModel: aiModel }, () => {
       status.textContent = "Settings saved successfully!";
       setTimeout(() => (status.textContent = ""), 3000);
     });
