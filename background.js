@@ -7,7 +7,6 @@ import {
   isValidModelId,
   publicError,
   stableTextHash,
-  supportsContextMenuLocation,
 } from "./shared.js";
 import {
   checkRequestGate,
@@ -103,15 +102,8 @@ chrome.runtime.onInstalled.addListener(() => {
       id: CONTEXT_MENU_ID,
       title: "Translate Selected Text",
       contexts: ["selection"],
+      documentUrlPatterns: ["http://*/*", "https://*/*", "file://*/*"],
     }, () => void chrome.runtime.lastError);
-  });
-});
-
-chrome.contextMenus.onShown.addListener((info, tab) => {
-  const visible = supportsContextMenuLocation(info.frameUrl, info.pageUrl, tab?.url);
-  chrome.contextMenus.update(CONTEXT_MENU_ID, { visible }, () => {
-    void chrome.runtime.lastError;
-    chrome.contextMenus.refresh();
   });
 });
 
@@ -362,10 +354,7 @@ async function requestTranslation(apiKey, request, signal) {
         }],
       },
       contents: [{ role: "user", parts: [{ text: request.text }] }],
-      generationConfig: {
-        maxOutputTokens: request.maxOutputTokens,
-        temperature: 0,
-      },
+      generationConfig: request.generationConfig,
     }),
   }, requestSignal), signal);
   const translation = extractTranslation(payload);

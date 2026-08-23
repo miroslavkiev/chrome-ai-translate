@@ -297,22 +297,21 @@
         <div class="row">
           <div class="row-copy">
             <label for="apiKey">API key</label>
-            <p id="apiKeyHelp" class="help">Stored only on this device in extension storage.</p>
+            <p id="apiKeyHelp" class="help">Paste a key to save it automatically and load models.</p>
           </div>
           <div class="control-stack">
-            <input id="apiKey" name="apiKey" type="password" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp">
+            <input id="apiKey" name="apiKey" type="password" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp apiKeyStatus">
             <div class="button-row">
               <button id="revealKey" class="button" type="button" aria-pressed="false">Show</button>
-              <button id="replaceKey" class="button" type="button">Replace</button>
-              <button id="clearKey" class="button danger" type="button">Clear</button>
             </div>
+            <p id="apiKeyStatus" class="model-status" role="status" aria-live="polite"></p>
           </div>
         </div>
 
         <div class="row">
           <div class="row-copy">
             <label for="aiModel">Model</label>
-            <p class="help">Only models that support text generation are listed.</p>
+            <p class="help">Known media-only and special-purpose models are hidden.</p>
           </div>
           <div class="control-stack">
             <select id="aiModel" name="aiModel" aria-describedby="modelStatus" required></select>
@@ -369,7 +368,7 @@
         </div>
         <div class="row">
           <div class="row-copy"><span class="label">Page access</span></div>
-          <p class="value-copy">Active on HTTP and HTTPS pages and frames</p>
+          <p class="value-copy">For local files, enable Allow access to file URLs in Manage Extension</p>
         </div>
       </section>
 
@@ -379,8 +378,8 @@
       </section>
 
       <div class="save-bar">
-        <p id="saveStatus" class="save-status" role="status" aria-live="polite">Changes are saved only when you choose Save Settings.</p>
-        <button id="saveButton" class="button primary" type="submit">Save Settings</button>
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite">Language, model, and trigger changes are saved here.</p>
+        <button id="saveButton" class="button primary" type="submit">Save Preferences</button>
       </div>
     </form>
   </main>

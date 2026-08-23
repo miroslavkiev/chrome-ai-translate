@@ -10,6 +10,7 @@ import {
   checkRequestGate,
   classifyProviderError,
   extractTranslation,
+  getTranslationGenerationConfig,
   normalizeApiKey,
   normalizeModels,
   pruneRateStarts,
@@ -31,6 +32,7 @@ const sender = {
 test("content senders and translation requests are validated at the trust boundary", () => {
   assert.equal(validateContentSender(sender, "extension-id").ok, true);
   assert.equal(validateContentSender({ ...sender, url: "about:blank", origin: "https://example.com" }, "extension-id").ok, true);
+  assert.equal(validateContentSender({ ...sender, url: "file:///tmp/example.html", origin: "null" }, "extension-id").ok, true);
   assert.equal(validateContentSender({ ...sender, url: "chrome://settings" }, "extension-id").ok, false);
   assert.equal(validateContentSender({ ...sender, id: "other" }, "extension-id").ok, false);
 
@@ -45,11 +47,11 @@ test("content senders and translation requests are validated at the trust bounda
     extensionId: "extension-id",
     defaultLanguage: "uk",
     selectedModel: "gemma-4-26b-a4b-it",
-    models: [{ id: "gemma-4-26b-a4b-it", outputTokenLimit: 4_096 }],
+    models: [{ id: "gemma-4-26b-a4b-it", outputTokenLimit: 4_096, thinking: true }],
   });
   assert.equal(valid.ok, true);
   assert.equal(valid.targetLanguageName, "Ukrainian");
-  assert.equal(valid.maxOutputTokens, 4_096);
+  assert.deepEqual(valid.generationConfig, { maxOutputTokens: 4_096, temperature: 0 });
   assert.equal(validateTranslateRequest({
     message,
     sender,
@@ -78,9 +80,10 @@ test("request gate enforces duplicate, concurrency, and rolling rate limits", ()
 
 test("model catalog and provider responses are normalized without raw errors", () => {
   const models = normalizeModels({ models: [
-    { name: "models/gemma-4-26b-a4b-it", displayName: "Gemma", outputTokenLimit: 8_192, supportedGenerationMethods: ["generateContent"] },
+    { name: "models/gemma-4-26b-a4b-it", displayName: "Gemma", outputTokenLimit: 8_192, supportedGenerationMethods: ["generateContent"], thinking: true },
     { name: "models/gemma-3-27b-it", outputTokenLimit: 8_192, supportedGenerationMethods: ["generateContent"] },
     { name: "models/gemini-2.5-flash-image", outputTokenLimit: 8_192, supportedGenerationMethods: ["generateContent"] },
+    { name: "models/gemini-2.5-computer-use-preview", outputTokenLimit: 8_192, supportedGenerationMethods: ["generateContent"] },
     { name: "models/embed", displayName: "Embed", supportedGenerationMethods: ["embedContent"] },
     { name: "bad/model", supportedGenerationMethods: ["generateContent"] },
   ] });
@@ -98,6 +101,44 @@ test("model catalog and provider responses are normalized without raw errors", (
   assert.equal(classifyProviderError(500, { error: { message: "secret" } }, undefined).message.includes("secret"), false);
   assert.equal(normalizeApiKey("  valid-key-value  "), "valid-key-value");
   assert.equal(normalizeApiKey("short"), null);
+});
+
+test("translation generation uses the lowest safe thinking mode for each model family", () => {
+  assert.deepEqual(getTranslationGenerationConfig({
+    id: "gemini-3.7-flash",
+    outputTokenLimit: 65_536,
+    thinking: true,
+  }), {
+    maxOutputTokens: LIMITS.maxOutputTokens,
+    thinkingConfig: { thinkingLevel: "LOW" },
+  });
+  assert.deepEqual(getTranslationGenerationConfig({
+    id: "gemini-3.6-flash",
+    outputTokenLimit: 65_536,
+    thinking: true,
+  }).thinkingConfig, { thinkingLevel: "MINIMAL" });
+  assert.deepEqual(getTranslationGenerationConfig({
+    id: "gemini-2.5-flash",
+    outputTokenLimit: 65_536,
+    thinking: true,
+  }), {
+    maxOutputTokens: LIMITS.maxOutputTokens,
+    temperature: 0,
+    thinkingConfig: { thinkingBudget: 0 },
+  });
+  assert.deepEqual(getTranslationGenerationConfig({
+    id: "gemini-pro-latest",
+    outputTokenLimit: 65_536,
+    thinking: true,
+  }).thinkingConfig, { thinkingBudget: 128 });
+  assert.deepEqual(getTranslationGenerationConfig({
+    id: "gemma-4-26b-a4b-it",
+    outputTokenLimit: 32_768,
+    thinking: true,
+  }), {
+    maxOutputTokens: LIMITS.maxOutputTokens,
+    temperature: 0,
+  });
 });
 
 test("stored trigger distinguishes Off from a missing preference", () => {

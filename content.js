@@ -89,10 +89,6 @@ const CARD_CSS = `
     font-size: 20px;
     font-weight: 400;
   }
-  .apply-language {
-    min-width: auto;
-    padding: 0 9px;
-  }
   .body {
     min-height: 0;
     overflow: auto;
@@ -343,6 +339,11 @@ function isOverlayEvent(event) {
   return [...cards].some((card) => path.includes(card.host));
 }
 
+function closeCardsOutside(event) {
+  if (isOverlayEvent(event)) return;
+  for (const card of [...cards]) closeCard(card, { restoreFocus: false });
+}
+
 function viewportMargin() {
   return Math.min(CARD_MARGIN, Math.max(2, Math.floor(Math.min(window.innerWidth, window.innerHeight) / 20)));
 }
@@ -412,7 +413,7 @@ function removeCompleted(card) {
   if (index !== -1) completedCards.splice(index, 1);
 }
 
-function closeCard(card) {
+function closeCard(card, { restoreFocus = true } = {}) {
   if (card.closed) return;
   card.closed = true;
   removeCompleted(card);
@@ -421,12 +422,12 @@ function closeCard(card) {
     card.port.disconnect();
     card.port = null;
   }
-  const restoreFocus = card.shadow.activeElement !== null;
+  const shouldRestoreFocus = restoreFocus && card.shadow.activeElement !== null;
   card.host.remove();
   requestAnimationFrame(() => {
     for (const openCard of cards) positionCard(openCard);
   });
-  if (restoreFocus && card.returnFocus?.isConnected) {
+  if (shouldRestoreFocus && card.returnFocus?.isConnected) {
     card.returnFocus.focus?.({ preventScroll: true });
   }
 }
@@ -462,8 +463,6 @@ function renderLoading(card) {
   removeCompleted(card);
   card.state = "loading";
   card.languageSelect.disabled = true;
-  card.applyLanguageButton.disabled = true;
-  card.applyLanguageButton.hidden = true;
   card.retryButton.hidden = true;
   card.output.hidden = true;
   card.output.textContent = "";
@@ -478,8 +477,6 @@ function renderSuccess(card, translatedText, targetLanguage) {
   if (isSupportedLanguage(targetLanguage)) card.language = targetLanguage;
   card.languageSelect.value = card.language;
   card.languageSelect.disabled = false;
-  card.applyLanguageButton.disabled = false;
-  card.applyLanguageButton.hidden = true;
   card.retryButton.hidden = false;
   card.output.hidden = false;
   card.output.textContent = translatedText;
@@ -494,8 +491,6 @@ function renderError(card, error) {
   const failure = errorMessage(error);
   card.state = "error";
   card.languageSelect.disabled = false;
-  card.applyLanguageButton.disabled = false;
-  card.applyLanguageButton.hidden = true;
   card.retryButton.hidden = false;
   card.output.hidden = true;
   card.output.textContent = "";
@@ -539,7 +534,7 @@ function startCardRequest(card, targetLanguage) {
   card.language = languageOverride ?? defaultTargetLanguage;
   card.languageSelect.value = card.language;
   card.requestId = crypto.randomUUID();
-  if ([card.retryButton, card.applyLanguageButton].includes(card.shadow.activeElement)) {
+  if ([card.retryButton, card.languageSelect].includes(card.shadow.activeElement)) {
     card.closeButton.focus({ preventScroll: true });
   }
   renderLoading(card);
@@ -603,12 +598,8 @@ function createCard(snapshot) {
   const closeButton = makeElement("button", "close", "×");
   closeButton.type = "button";
   closeButton.setAttribute("aria-label", "Close translation card");
-  const applyLanguageButton = makeElement("button", "apply-language", "Translate");
-  applyLanguageButton.type = "button";
-  applyLanguageButton.hidden = true;
-  applyLanguageButton.setAttribute("aria-label", "Translate this result to the selected language");
   languageLabel.append(languageSelect);
-  header.append(title, languageLabel, applyLanguageButton, closeButton);
+  header.append(title, languageLabel, closeButton);
 
   const body = makeElement("div", "body");
   const visualStatus = makeElement("p", "state");
@@ -638,7 +629,6 @@ function createCard(snapshot) {
     text: snapshot.ok ? snapshot.text : "",
     language: defaultTargetLanguage,
     languageSelect,
-    applyLanguageButton,
     closeButton,
     visualStatus,
     liveStatus,
@@ -654,10 +644,9 @@ function createCard(snapshot) {
   closeButton.addEventListener("click", () => closeCard(card));
   retryButton.addEventListener("click", () => startCardRequest(card, card.language));
   languageSelect.addEventListener("change", () => {
-    applyLanguageButton.hidden = languageSelect.value === card.language;
-  });
-  applyLanguageButton.addEventListener("click", () => {
-    if (isSupportedLanguage(languageSelect.value)) startCardRequest(card, languageSelect.value);
+    if (languageSelect.value !== card.language && isSupportedLanguage(languageSelect.value)) {
+      startCardRequest(card, languageSelect.value);
+    }
   });
   shadow.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") return;
@@ -713,6 +702,7 @@ document.addEventListener("keyup", (event) => {
   if (isOverlayEvent(event)) cancelTrigger();
   else keyTrigger?.keyup(event);
 }, true);
+document.addEventListener("pointerdown", closeCardsOutside, true);
 
 for (const eventName of [
   "pointerdown",

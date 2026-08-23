@@ -8,7 +8,7 @@ The application was reviewed and rebuilt as Chrome extension version 1.1.0. The 
 
 The implementation keeps the approved product behavior:
 
-- A translation starts from the configured global key, the context menu, Retry, or the explicit Translate button in a result card.
+- A translation starts from the configured global key, the context menu, Retry, or choosing another language in a result card.
 - The default global key is Control. The user can choose another supported single key or Off.
 - Several translations can run on the same page. Limits apply only to concurrent and rapid requests.
 - A result card can translate the same source text to another language without changing the saved default.
@@ -17,6 +17,8 @@ The implementation keeps the approved product behavior:
 - The model selector uses the live Gemini Models API and keeps a validated cache for temporary service failures.
 
 No known P0 or P1 finding remains after the review cycles. All confirmed P2 and P3 findings were fixed except the documented small-frame display limit described under Residual limits.
+
+Post-release testing found one additional P1 startup failure in Chrome. The service worker referenced a context-menu event that Chrome does not provide. Execution stopped before the model-list message handler was registered, so settings could not load models even with a valid key. The implementation now uses Chrome's native document URL filter and has a startup regression test for this exact condition.
 
 ## Baseline and scope
 
@@ -49,7 +51,7 @@ The trigger cancels on repeat, composition, AltGraph, another key, pointer input
 The background validates:
 
 - Extension sender identity.
-- Tab, frame, and HTTP or HTTPS origin.
+- Tab, frame, and HTTP, HTTPS, or local-file origin.
 - Random UUID request identity.
 - Non-empty source text.
 - A 10,000 Unicode code-point input limit.
@@ -63,13 +65,13 @@ Source text, credentials, translations, and provider bodies are not logged. Prov
 
 The Gemini API key moved from synced storage to trusted local extension storage. An upgrade migration copies and verifies an old synced key before it removes the synced copy. Replacing or clearing the key aborts active model discovery and invalidates the key-bound catalog.
 
-The settings page uses the same API-key validator as the runtime. A structurally valid but rejected key does not make the popup report the extension as ready.
+The settings page uses the same API-key validator as the runtime. A structurally valid but rejected key does not make the popup report the extension as ready. Pasting a valid key now saves it immediately and starts model discovery. A manually typed key saves when the user leaves the field. Deleting the value and leaving the field removes it. The former Replace and Clear controls were removed.
 
 ### Page and frame routing
 
 The extension no longer uses dynamic code injection. Result cards are created by the content script with a closed shadow root, static CSS, and `textContent`.
 
-Context-menu delivery targets the selected frame. The receiving document must still have matching selected text. Dynamic menu visibility hides the action on unsupported browser pages and keeps it available for supported HTTP or HTTPS parent pages with related fallback frames.
+Context-menu delivery targets the selected frame. The receiving document must still have matching selected text. Chrome's native `documentUrlPatterns` limits the action to HTTP, HTTPS, and approved local-file documents without relying on unsupported runtime events.
 
 ### Prompt and response handling
 
@@ -116,7 +118,18 @@ The settings page calls the official [Gemini Models API](https://ai.google.dev/a
 - A positive reported output-token limit.
 - A model family that supports the system-instruction request contract.
 
-Gemini text models are accepted while embedding, image, TTS, live, audio, and robotics variants are excluded. Gemma models earlier than Gemma 4 are excluded because they do not meet this request contract. The default is `gemma-4-26b-a4b-it`.
+Gemini text models are accepted while known embedding, image, TTS, speech, live, audio, robotics, and computer-use variants are excluded. Gemma models earlier than Gemma 4 are excluded because they do not meet this request contract. The Models API does not expose an output-modality field, so unknown future Gemini text identifiers remain visible instead of being rejected by guesswork. The default is `gemma-4-26b-a4b-it`.
+
+The catalog stores the API's `thinking` capability flag. Request configuration then uses the lowest control that is safe for the known model family:
+
+- Gemini 3.7 Flash uses `LOW` because `MINIMAL` is rejected.
+- Known Gemini 3 Flash and Flash-Lite models that support `MINIMAL` use it.
+- Other Gemini 3 and later text models use `LOW` as the compatible low-cost setting.
+- Gemini 2.5 Flash and Flash-Lite use a thinking budget of 0.
+- Gemini 2.5 Pro uses its minimum budget because thinking cannot be disabled.
+- Gemma receives no thinking control because the live API rejects that parameter even when model metadata reports thinking support.
+
+Gemini 3 requests omit the temperature parameter and keep Google's optimized default. Older Gemini and Gemma requests keep temperature 0. No request sends both thinking-level and thinking-budget syntax.
 
 A successful catalog is cached for 24 hours and bound to the current API key. A transient refresh failure can use the last validated list. Invalid, removed, or changed keys do not use stale key data. The extension never silently switches the saved model.
 
@@ -126,7 +139,8 @@ A successful catalog is cached for 24 hours and bound to the current API key. A 
 
 - Responsive grouped cards and restrained Apple-style visual treatment.
 - Native input, select, and button controls.
-- Masked API-key Show, Replace, and Clear actions.
+- Masked API-key field with Show and Hide.
+- Paste-to-save, save-on-blur for manual entry, and delete-to-remove behavior.
 - Live compatible-model list with manual Refresh models.
 - Default target language.
 - Single-key recording and Off.
@@ -140,7 +154,8 @@ A successful catalog is cached for 24 hours and bound to the current API key. A 
 
 - Loading, success, and error states.
 - Normal-weight system font for translated text.
-- Temporary target-language selector followed by an explicit Translate button.
+- Temporary target-language selector that starts a new request immediately.
+- Click outside, Escape, and Close dismissal.
 - Manual Retry with clear paid-request behavior.
 - Safe focus movement to Close when an activated action is hidden during loading.
 - No focus theft when a new card appears.
@@ -177,12 +192,12 @@ Browser snapshot tests gave the settings page and popup 100 accessibility and 10
 
 ## Validation evidence
 
-- Static repository checks: passed for 25 source and documentation files.
-- Native Node tests: 11 passed, 0 failed.
+- Static repository checks: passed for 26 source and documentation files.
+- Native Node tests: 13 passed, 0 failed.
 - JavaScript syntax checks: passed.
 - Production webpack build: passed.
 - Package layout and CRC verification: passed.
-- Final ZIP SHA-256: `07727cf6dea7a5df45062bf37aa13c7e5eb73c4586071d45b923e9d9bcdcc899`.
+- Final ZIP SHA-256: `eb8dc8dee9e78a8d861592a478cdbf936a288a3187e331ffdabc668888e34080`.
 - ZIP entries matched current `dist` bytes: passed.
 - Standalone stale-source rejection: confirmed before the final rebuild.
 - Deterministic package regeneration: passed.
@@ -190,20 +205,28 @@ Browser snapshot tests gave the settings page and popup 100 accessibility and 10
 - Git whitespace validation: passed.
 - Browser rendering: desktop and mobile settings passed visual inspection.
 - Browser rendering: popup passed visual inspection.
+- Isolated Chrome startup: enabled with no manifest or runtime errors.
+- Isolated Chrome API-key flow: paste saved, delete removed, and second paste restored the key.
+- Live model discovery: 18 compatible models loaded, including Gemini 3.7 Flash, with no known media or computer-use variants.
+- Live default-model request: HTTP 200 with a `STOP` finish reason at a practical output limit.
+- Exact supplied local-file page: content script, trusted key trigger, and first translation passed.
+- Result-card language change: started a second request for French without a Translate button.
+- Result-card outside click: card closed and its page element was removed.
 - Lighthouse snapshots: accessibility 100 and best practices 100 for settings and popup.
 - Mocked in-page result flow: success, temporary language, focus, error, Retry, and multiple-card placement passed.
 
 ## Residual limits and validation boundaries
 
-- The global key requires persistent content-script access to HTTP and HTTPS pages and frames.
+- The global key requires persistent content-script access to HTTP, HTTPS, and approved local-file pages and frames.
+- Chrome requires the user to enable Allow access to file URLs for local-file pages.
 - Every single-key choice can conflict with a website, browser, operating system, or accessibility tool. Off and the context menu remain available.
 - A hostile page can remove or hide an overlay. The service worker still validates every request.
 - Local extension storage is not encrypted against compromise of the local Chrome profile.
 - Chrome pages, browser settings, the built-in PDF viewer, and other restricted pages are unsupported.
 - A result card inside a very small frame is constrained by that frame viewport. The toolbar popup keeps the latest session result as a fallback.
-- No real API key was read or stored during QA.
-- No live paid Gemini request was made during QA.
-- The unpacked extension was not installed into the user's normal Chrome profile during automated QA.
+- The user-authorized key already stored in Chrome was used for Models API and minimal generation checks. It was not printed, copied into the repository, or written outside Chrome's local extension storage and an isolated temporary browser profile.
+- Live generation checks covered current Gemini 3, compatibility aliases, retired Gemini 2.5 identifiers, and Gemma's rejected thinking-control case. These checks used short prompts and small output limits.
+- The unpacked extension was tested in an isolated Chrome for Testing profile. The user's normal Chrome profile was inspected only to obtain the authorized stored key and current extension metadata.
 - A real screen reader and other live assistive technologies were not used. Browser accessibility trees and Lighthouse were used instead.
 
 ## Main implementation files

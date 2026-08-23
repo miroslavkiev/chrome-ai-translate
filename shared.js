@@ -97,18 +97,14 @@ export function getStoredTriggerKey(record) {
     : DEFAULTS.triggerKey;
 }
 
-export function isHttpUrl(value) {
+export function isSupportedPageUrl(value) {
   if (typeof value !== "string") return false;
   try {
     const protocol = new URL(value).protocol;
-    return protocol === "http:" || protocol === "https:";
+    return protocol === "http:" || protocol === "https:" || protocol === "file:";
   } catch {
     return false;
   }
-}
-
-export function supportsContextMenuLocation(...urls) {
-  return urls.some(isHttpUrl);
 }
 
 export function isValidRequestId(value) {

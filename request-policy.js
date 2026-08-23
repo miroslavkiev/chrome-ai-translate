@@ -2,7 +2,7 @@ import {
   LIMITS,
   codePointLength,
   getLanguage,
-  isHttpUrl,
+  isSupportedPageUrl,
   isSupportedLanguage,
   isValidModelId,
   isValidRequestId,
@@ -16,7 +16,7 @@ export function validateContentSender(sender, extensionId) {
   if (!sender || sender.id !== extensionId || !sender.tab
       || !Number.isInteger(sender.tab.id) || sender.tab.id < 0
       || !Number.isInteger(sender.frameId) || sender.frameId < 0
-      || (!isHttpUrl(sender.url) && !isHttpUrl(sender.origin))) {
+      || (!isSupportedPageUrl(sender.url) && !isSupportedPageUrl(sender.origin))) {
     return { ok: false, error: publicError("unsupported_page") };
   }
   return {
@@ -83,7 +83,7 @@ export function validateTranslateRequest({
     targetLanguage,
     targetLanguageName: getLanguage(targetLanguage).name,
     model: selectedModel,
-    maxOutputTokens: Math.min(LIMITS.maxOutputTokens, model.outputTokenLimit),
+    generationConfig: getTranslationGenerationConfig(model),
     tabId: envelope.tabId,
     frameId: envelope.frameId,
     documentId: envelope.documentId,
@@ -143,6 +143,7 @@ export function normalizeModels(payload) {
     models.set(id, {
       id,
       outputTokenLimit,
+      thinking: model.thinking === true,
       displayName: typeof model.displayName === "string" && model.displayName.trim()
         ? model.displayName.trim().slice(0, 200)
         : id,
@@ -160,6 +161,7 @@ export function validateModelCache(value, apiKeyHash) {
   const models = value.models.filter((model) => model && isValidModelId(model.id)
     && supportsTranslationContract(model.id)
     && typeof model.displayName === "string"
+    && typeof model.thinking === "boolean"
     && Number.isSafeInteger(model.outputTokenLimit) && model.outputTokenLimit > 0);
   if (!models.length || models.length !== value.models.length) return null;
   return { models, fetchedAt: value.fetchedAt };
@@ -205,5 +207,30 @@ export function supportsTranslationContract(id) {
   const gemmaVersion = /^gemma-(\d+)(?:-|$)/i.exec(id)?.[1];
   if (gemmaVersion) return Number(gemmaVersion) >= 4;
   if (!id.startsWith("gemini-")) return false;
-  return !/(?:embedding|image|tts|live|audio|robotics)/i.test(id);
+  return !/(?:embedding|image|tts|speech|live|audio|robotics|computer-use)/i.test(id);
+}
+
+export function getTranslationGenerationConfig(model) {
+  const id = model?.id;
+  const config = {
+    maxOutputTokens: Math.min(LIMITS.maxOutputTokens, model?.outputTokenLimit),
+  };
+  const version = /^gemini-(\d+)(?:\.(\d+))?(?:-|$)/i.exec(id ?? "");
+  const major = version ? Number(version[1]) : null;
+  if (!id?.startsWith("gemini-") || (major !== null && major < 3)) {
+    config.temperature = 0;
+  }
+  if (model?.thinking !== true) return config;
+
+  if (/^gemini-(?:flash|flash-lite)-latest$/i.test(id)
+      || /^gemini-2\.5-flash(?:-lite)?(?:-|$)/i.test(id)) {
+    config.thinkingConfig = { thinkingBudget: 0 };
+  } else if (/^gemini-pro-latest$/i.test(id)
+      || /^gemini-2\.5-pro(?:-|$)/i.test(id)) {
+    config.thinkingConfig = { thinkingBudget: 128 };
+  } else if (major !== null && major >= 3) {
+    const supportsMinimal = /^gemini-(?:3-flash|3\.1-flash-lite|3\.5-flash|3\.5-flash-lite|3\.6-flash)(?:-|$)/i.test(id);
+    config.thinkingConfig = { thinkingLevel: supportsMinimal ? "MINIMAL" : "LOW" };
+  }
+  return config;
 }

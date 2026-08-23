@@ -3,7 +3,6 @@ import test from "node:test";
 import {
   DEFAULTS,
   codePointLength,
-  isHttpUrl,
   isSupportedLanguage,
   isSupportedTriggerKey,
   isValidModelId,
@@ -11,7 +10,6 @@ import {
   normalizeTriggerKey,
   publicError,
   stableTextHash,
-  supportsContextMenuLocation,
   validateSourceText,
 } from "../shared.js";
 
@@ -22,10 +20,6 @@ test("shared validation accepts only supported settings and request values", () 
   assert.equal(isSupportedTriggerKey("a"), false);
   assert.equal(normalizeTriggerKey("Off"), null);
   assert.equal(normalizeTriggerKey("a"), DEFAULTS.triggerKey);
-  assert.equal(isHttpUrl("https://example.com/page"), true);
-  assert.equal(isHttpUrl("chrome://settings"), false);
-  assert.equal(supportsContextMenuLocation("https://example.com", "about:blank"), true);
-  assert.equal(supportsContextMenuLocation("chrome://settings", undefined), false);
   assert.equal(isValidModelId("gemma-3-27b-it"), true);
   assert.equal(isValidModelId("models/gemma-3-27b-it"), false);
   assert.equal(isValidRequestId("123e4567-e89b-42d3-a456-426614174000"), true);

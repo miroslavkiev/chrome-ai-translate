@@ -47,29 +47,34 @@ Load the generated `dist` folder from `chrome://extensions`.
 ## Set up the extension
 
 1. Open the extension toolbar popup and choose Settings.
-2. Enter your Gemini API key.
-3. Choose a default target language and global key, then choose Save Settings.
-4. Wait for the compatible model list to load automatically.
-5. If the saved model is unavailable, choose a compatible model and save again.
-6. Use Refresh models later when you want a new list from Gemini.
+2. Paste your Gemini API key. The key saves and the model list loads automatically.
+3. A manually typed key saves when you leave the field. Delete the field contents to remove it.
+4. Choose a model, default target language, and global key, then choose Save Preferences.
+5. Use Refresh models later when you want a new list from Gemini.
 
-The model list comes from Gemini `models.list`. It includes text models that report support for `generateContent`, provide an output limit, and support this extension's system-instruction contract. The last successful list remains available after a transient refresh failure. An invalid or changed API key is never hidden by the cache.
+The model list comes from Gemini `models.list`. It includes text models that report support for `generateContent`, provide an output limit, and support this extension's system-instruction contract. Embedding, image, TTS, speech, live, audio, robotics, and computer-use variants are excluded by their model identifiers. The Models API does not report output modality, so an unknown future variant remains visible instead of being guessed incompatible. The last successful list remains available after a transient refresh failure. An invalid or changed API key is never hidden by the cache.
+
+The Models API thinking flag is stored with each model. Translation uses no thinking where the API supports it, `MINIMAL` for compatible Gemini 3 Flash variants, and `LOW` for other Gemini 3 models. Gemini 3 requests keep Google's default temperature. Older Gemini models use the backward-compatible thinking budget control. Models such as Gemma 4 that report thinking but reject thinking controls receive no unsupported parameter.
 
 ## Translate text
 
-1. Select text on an HTTP or HTTPS page.
+1. Select text on an HTTP, HTTPS, or enabled local-file page.
 2. Release the configured key after a clean key press, or choose Translate Selected Text from the context menu.
 3. Wait for the result card near the selection.
 
 The default key is Control. The key trigger cancels if another input, selection change, page change, or long hold occurs. It does not block the page's normal keyboard behavior. Every single-key choice can conflict with a website, browser, operating system, or accessibility tool. Set the key to Off if you prefer to use only the context menu.
 
-Inside a result card, choose another language, then choose Translate. This translates the same selection for that card only and can be repeated. Translate and Retry each start a new API request.
+Inside a result card, choosing another language starts a new translation immediately. This changes only that card and does not change the saved default language. Retry also starts a new API request. Click outside a card or press Escape to close it.
+
+### Local files
+
+The extension can translate pages opened from `file://` URLs. After installing or updating it, open the extension details in `chrome://extensions` and enable Allow access to file URLs. Chrome controls this permission, so the extension cannot enable it for you.
 
 ## Privacy and permissions
 
 The extension sends selected text directly to Google only after a translation action. It has no analytics, advertising, remote backend, or translation history. The Gemini API key is stored in local extension storage and is not synced. The most recent result is kept only for the current browser session.
 
-The global key requires the extension content script to be present on HTTP and HTTPS pages and frames. Chrome therefore reports that the extension can read and change data on those sites. Chrome pages, the built-in PDF viewer, and other restricted pages are unsupported.
+The global key requires the extension content script to be present on HTTP, HTTPS, and approved local-file pages and frames. Chrome therefore reports that the extension can read and change data on those pages. Chrome pages, the built-in PDF viewer, and other restricted pages are unsupported.
 
 See [PRIVACY.md](PRIVACY.md) for the complete data and permission explanation.
 
