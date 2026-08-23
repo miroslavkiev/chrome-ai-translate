@@ -3,62 +3,387 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings</title>
+  <meta name="color-scheme" content="light dark">
+  <title>AI Translator Settings</title>
   <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --page: #f5f5f7;
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-solid: #fff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(60, 60, 67, 0.18);
+      --control: rgba(118, 118, 128, 0.12);
+      --control-border: #7c7c80;
+      --accent: #0068c9;
+      --accent-hover: #005db5;
+      --danger: #b42318;
+      --success: #176b2c;
+      --focus: #005eb8;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background: var(--page);
+      -webkit-font-smoothing: antialiased;
     }
-    label {
+
+    button, input, select { font: inherit; }
+    button, select { cursor: pointer; }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .shell {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 4px 30px;
+    }
+
+    .app-icon {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: #fff;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #45a5ff, #0067d6);
+      box-shadow: 0 9px 24px rgba(0, 113, 227, 0.26);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 4px;
+      font-size: clamp(28px, 6vw, 36px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle, .help, .model-status, .privacy-copy {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .subtitle { margin-bottom: 0; }
+    .stack { display: grid; gap: 18px; }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px) saturate(140%);
+    }
+
+    .card-header { padding: 22px 22px 13px; }
+
+    .card-header h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+      letter-spacing: -0.012em;
+    }
+
+    .card-header p { margin-bottom: 0; font-size: 14px; }
+
+    .row {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.8fr) minmax(220px, 1.2fr);
+      gap: 22px;
+      align-items: center;
+      padding: 17px 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .row-copy label, .row-copy .label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 3px;
+      font-weight: 600;
     }
-    input[type="text"] {
+
+    .help { margin: 0; font-size: 13px; }
+    .control-stack { display: grid; gap: 10px; min-width: 0; }
+
+    input, select {
       width: 100%;
-      padding: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      min-height: 40px;
+      padding: 8px 11px;
+      color: var(--text);
+      border: 1px solid var(--control-border);
+      border-radius: 10px;
+      background: var(--control);
     }
-    select {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+
+    input:hover, select:hover { border-color: var(--focus); }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
+
+    .button {
+      min-height: 36px;
+      padding: 7px 13px;
+      color: var(--text);
+      border: 1px solid var(--control-border);
+      border-radius: 10px;
+      background: var(--surface-solid);
+      font-weight: 600;
+    }
+
+    .button:hover { background: var(--control); }
+
+    .button:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+
+    .button.primary {
+      color: #fff;
+      border-color: transparent;
+      background: var(--accent);
+    }
+
+    .button.primary:hover { background: var(--accent-hover); }
+    .button.danger { color: var(--danger); }
+
+    .button.recording {
+      color: #fff;
+      border-color: transparent;
+      background: var(--accent);
+    }
+
+    .shortcut-value {
+      display: inline-flex;
+      min-width: 78px;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 11px;
+      border: 1px solid var(--control-border);
+      border-radius: 9px;
+      background: var(--control);
+      font-family: inherit;
+      font-weight: 650;
+    }
+
+    .model-status {
+      min-height: 20px;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    .model-status[data-kind="error"] { color: var(--danger); }
+    .model-status[data-kind="success"] { color: var(--success); }
+    .privacy { padding: 18px 22px; }
+
+    summary {
       cursor: pointer;
+      font-weight: 600;
     }
-    button:hover {
-      background-color: #0056b3;
+
+    .privacy-copy {
+      margin: 12px 0 0;
+      font-size: 14px;
+    }
+
+    .value-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: end;
+    }
+
+    .save-bar {
+      display: flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 8px 4px 0;
+    }
+
+    .save-status {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .save-status[data-kind="error"] { color: var(--danger); }
+    .save-status[data-kind="success"] { color: var(--success); }
+
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 22px, 760px); padding-top: 28px; }
+      .page-header { margin-inline: 6px; }
+      .row { grid-template-columns: 1fr; gap: 11px; }
+      .save-bar { align-items: stretch; flex-direction: column; }
+      .save-bar .primary { width: 100%; min-height: 44px; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #111113;
+        --surface: rgba(40, 40, 43, 0.88);
+        --surface-solid: #323235;
+        --text: #f5f5f7;
+        --muted: #aeaeb2;
+        --line: rgba(235, 235, 245, 0.16);
+        --control: rgba(118, 118, 128, 0.24);
+        --control-border: #8e8e93;
+        --accent: #0068c9;
+        --accent-hover: #0b73d1;
+        --danger: #ff453a;
+        --success: #66d983;
+        --focus: #72b7ff;
+        --shadow: 0 14px 42px rgba(0, 0, 0, 0.26);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+
+    @media (forced-colors: active) {
+      .card, input, select, .button, .shortcut-value { border: 1px solid ButtonText; }
+      .button.primary, .button.recording { color: HighlightText; background: Highlight; }
+      .app-icon { border: 1px solid ButtonText; background: CanvasText; }
     }
   </style>
 </head>
 <body>
-  <h1>Settings</h1>
-  <form id="apiKeyForm">
-    <label for="apiKey">Gemini API Key:</label>
-    <input type="text" id="apiKey" placeholder="Enter your Gemini API Key" required />
-    <label for="aiModel">AI Model:</label>
-    <input type="text" id="aiModel" placeholder="Enter AI Model (e.g., gemma-3-27b)" required />
-    <label for="targetLanguage">Target Language:</label>
-    <select id="targetLanguage">
-      <option value="uk">Ukrainian (Default)</option>
-      <option value="en">English</option>
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
-      <option value="de">German</option>
-      <option value="ru">Russian</option>
-    </select>
-    <button type="submit">Save</button>
-  </form>
-  <p id="status" style="color: green;"></p>
-  <script src="settings.js"></script>
+  <main class="shell">
+    <header class="page-header">
+      <div class="app-icon" aria-hidden="true">A</div>
+      <div>
+        <h1>AI Translator</h1>
+        <p class="subtitle">Private settings for quick, focused translation.</p>
+      </div>
+    </header>
+
+    <form id="settingsForm" class="stack" novalidate>
+      <section class="card" aria-labelledby="api-heading">
+        <div class="card-header">
+          <h2 id="api-heading">Gemini</h2>
+          <p class="help">Connect your own Gemini API key and choose a compatible model.</p>
+        </div>
+
+        <div class="row">
+          <div class="row-copy">
+            <label for="apiKey">API key</label>
+            <p id="apiKeyHelp" class="help">Stored only on this device in extension storage.</p>
+          </div>
+          <div class="control-stack">
+            <input id="apiKey" name="apiKey" type="password" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp">
+            <div class="button-row">
+              <button id="revealKey" class="button" type="button" aria-pressed="false">Show</button>
+              <button id="replaceKey" class="button" type="button">Replace</button>
+              <button id="clearKey" class="button danger" type="button">Clear</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-copy">
+            <label for="aiModel">Model</label>
+            <p class="help">Only models that support text generation are listed.</p>
+          </div>
+          <div class="control-stack">
+            <select id="aiModel" name="aiModel" aria-describedby="modelStatus" required></select>
+            <div class="button-row">
+              <button id="refreshModels" class="button" type="button" disabled>Refresh models</button>
+            </div>
+            <p id="modelStatus" class="model-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="translation-heading">
+        <div class="card-header">
+          <h2 id="translation-heading">Translation</h2>
+          <p class="help">Set the language and optional keyboard trigger.</p>
+        </div>
+
+        <div class="row">
+          <div class="row-copy">
+            <label for="targetLanguage">Default language</label>
+            <p class="help">A result card can use another language without changing this default.</p>
+          </div>
+          <select id="targetLanguage" name="targetLanguage" required></select>
+        </div>
+
+        <div class="row">
+          <div class="row-copy">
+            <span class="label" id="shortcutLabel">Keyboard trigger</span>
+            <p id="shortcutHelp" class="help">Single keys can conflict with websites or accessibility tools. Choose Off to use only the context menu.</p>
+          </div>
+          <div class="control-stack" aria-labelledby="shortcutLabel" aria-describedby="shortcutHelp keyStatus">
+            <div class="button-row">
+              <kbd id="shortcutValue" class="shortcut-value">Control</kbd>
+              <button id="recordKey" class="button" type="button" aria-pressed="false">Record key</button>
+              <button id="disableKey" class="button" type="button" aria-pressed="false">Off</button>
+            </div>
+            <p id="keyStatus" class="model-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="behavior-heading">
+        <div class="card-header">
+          <h2 id="behavior-heading">Behavior</h2>
+          <p class="help">Fixed safeguards keep translations responsive and protect API quota.</p>
+        </div>
+        <div class="row">
+          <div class="row-copy"><span class="label">Parallel requests</span></div>
+          <p class="value-copy">Up to 3 per tab and 6 in total</p>
+        </div>
+        <div class="row">
+          <div class="row-copy"><span class="label">Request timeout</span></div>
+          <p class="value-copy">25 seconds</p>
+        </div>
+        <div class="row">
+          <div class="row-copy"><span class="label">Page access</span></div>
+          <p class="value-copy">Active on HTTP and HTTPS pages and frames</p>
+        </div>
+      </section>
+
+      <section class="card privacy" aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading">Privacy</h2>
+        <p class="privacy-copy">Your API key stays in local extension storage. Your language, model, and trigger preference can sync through Chrome. Selected text is sent to Gemini only when you request a translation. The extension keeps only the latest result for this browser session and does not keep translation history.</p>
+      </section>
+
+      <div class="save-bar">
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite">Changes are saved only when you choose Save Settings.</p>
+        <button id="saveButton" class="button primary" type="submit">Save Settings</button>
+      </div>
+    </form>
+  </main>
+  <script type="module" src="settings.js"></script>
 </body>
 </html>

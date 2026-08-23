@@ -1,14 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>AI Translator</title>
-  <script src="popup.js" defer></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --page: #f5f5f7;
+      --surface: #fff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(60, 60, 67, 0.18);
+      --control: rgba(118, 118, 128, 0.12);
+      --accent: #0068c9;
+      --focus: #005eb8;
+      --ready: #176b2c;
+      --working: #005eb8;
+      --error: #b42318;
+      --setup: #765300;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      width: 360px;
+      min-width: 300px;
+      margin: 0;
+      color: var(--text);
+      background: var(--page);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button { font: inherit; }
+
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .shell { padding: 18px; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .app-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      place-items: center;
+      color: #fff;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #45a5ff, #0067d6);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .title-wrap { min-width: 0; flex: 1; }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 2px;
+      font-size: 17px;
+      letter-spacing: -0.015em;
+    }
+
+    .subtitle {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 122px;
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: var(--control);
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status::before {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .status[data-state="ready"] { color: var(--ready); }
+    .status[data-state="translating"] { color: var(--working); }
+    .status[data-state="error"] { color: var(--error); }
+    .status[data-state="setup"] { color: var(--setup); }
+
+    .card {
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .metric {
+      display: flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 13px;
+    }
+
+    .metric + .metric { border-top: 1px solid var(--line); }
+
+    .metric-label { color: var(--muted); font-size: 13px; }
+
+    .metric-value {
+      overflow: hidden;
+      font-size: 13px;
+      font-weight: 650;
+      text-align: right;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .result { padding: 14px; }
+
+    .result h2 {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .result-text {
+      max-height: 190px;
+      margin-bottom: 0;
+      overflow: auto;
+      font-size: 14px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+    }
+
+    .result-text[data-kind="empty"] { color: var(--muted); }
+    .result-text[data-kind="error"] { color: var(--error); }
+
+    .settings-button {
+      width: 100%;
+      min-height: 42px;
+      color: #fff;
+      border: 0;
+      border-radius: 11px;
+      background: var(--accent);
+      cursor: pointer;
+      font-weight: 650;
+    }
+
+    .settings-button:hover { filter: brightness(1.06); }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page: #1c1c1e;
+        --surface: #2c2c2e;
+        --text: #f5f5f7;
+        --muted: #aeaeb2;
+        --line: rgba(235, 235, 245, 0.16);
+        --control: rgba(118, 118, 128, 0.24);
+        --accent: #0068c9;
+        --focus: #72b7ff;
+        --ready: #66d983;
+        --working: #72b7ff;
+        --error: #ff8a80;
+        --setup: #ffdb66;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+
+    @media (forced-colors: active) {
+      .card, .settings-button, .app-icon { border: 1px solid ButtonText; }
+      .settings-button { color: HighlightText; background: Highlight; }
+      .app-icon { background: CanvasText; }
+      .status::before { forced-color-adjust: none; }
+    }
+  </style>
 </head>
 <body>
-  <div id="popup-container">
-    <button id="close-button">X</button>
-    <h1>Translation</h1>
-    <div id="translation">Select text and translate it!</div>
-  </div>
+  <main class="shell">
+    <header class="header">
+      <div class="app-icon" aria-hidden="true">A</div>
+      <div class="title-wrap">
+        <h1>AI Translator</h1>
+        <p class="subtitle">Gemini translation</p>
+      </div>
+      <span id="status" class="status" data-state="setup" role="status" aria-live="polite">Setup required</span>
+    </header>
+
+    <section class="card" aria-label="Extension status">
+      <div class="metric">
+        <span class="metric-label">Keyboard trigger</span>
+        <span id="shortcut" class="metric-value">Control</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Active translations</span>
+        <span id="activeCount" class="metric-value">0</span>
+      </div>
+    </section>
+
+    <section class="card result" aria-labelledby="latest-heading">
+      <h2 id="latest-heading">Latest this session</h2>
+      <p id="latestResult" class="result-text" data-kind="empty" aria-live="polite">No translation yet.</p>
+    </section>
+
+    <button id="openSettings" class="settings-button" type="button">Settings</button>
+  </main>
+  <script type="module" src="popup.js"></script>
 </body>
 </html>

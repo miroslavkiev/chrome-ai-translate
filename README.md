@@ -1,106 +1,108 @@
-# Chrome AI Translate Extension
+# AI Translator for Chrome
 
-This Chrome extension allows you to translate selected text into a target language using the Gemini AI API. The default target language is Ukrainian, but you can customize it through the extension's settings.
+AI Translator translates selected text with the Google Gemini API. It uses your own API key and shows each result beside the selected text.
 
 ## Features
-- Translate selected text into a target language.
-- Choose the target language from a list of supported languages.
-- Add and manage your Gemini API Key securely through the extension's settings.
 
-## Installation
+- Translate through a configurable single key or the context menu.
+- Translate several selections on the same page.
+- Change the target language for one result without changing the saved default.
+- Choose from the compatible models returned by the Gemini Models API.
+- See loading, success, timeout, quota, network, and other failure states.
+- Retry failed translations manually. The extension does not retry paid requests automatically.
+- Review the latest result and current activity in the toolbar popup.
+- Use light, dark, high-contrast, reduced-motion, and keyboard-accessible interfaces.
 
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/miroslavkiev/chrome-ai-translate.git
-   ```
+## Requirements
 
-2. Navigate to the project directory:
-   ```bash
-   cd chrome-ai-translate
-   ```
+- Google Chrome 120 or later.
+- A Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- Node.js 20.19 or later only when building from source.
 
-3. Install dependencies and build the project:
-   ```bash
-   npm install
-   npm run build
-   ```
+## Install a packaged build
 
-4. Open Chrome and navigate to `chrome://extensions/`.
+1. Download `chrome-ai-translate.zip` and its `.sha256` file from a release.
+2. Verify the checksum if your operating system supports it.
+3. Extract the ZIP.
+4. Open `chrome://extensions` in Chrome.
+5. Enable Developer mode.
+6. Choose Load unpacked and select the extracted folder. The selected folder must contain `manifest.json` at its root.
 
-5. Enable **Developer mode** in the top-right corner.
+## Build from source
 
-6. Click **Load unpacked** and select the `dist` folder inside the project directory.
-
-7. The extension will now be added to Chrome.
-
-## Pre-Packaged Extension
-
-For users who prefer not to deal with Git, Webpack, or building the project manually, a pre-packaged version of the extension is available as a zip file. You can download it from the `dist` folder:
-
-[Download Chrome AI Translate Extension](dist/chrome-ai-translate.zip)
-
-To use the pre-packaged extension:
-1. Download the zip file.
-2. Extract its contents to a folder on your computer.
-3. Open Chrome and navigate to `chrome://extensions/`.
-4. Enable **Developer mode** in the top-right corner.
-5. Click **Load unpacked** and select the extracted folder.
-
-The extension will now be added to Chrome.
-
-## Usage
-
-### Adding the Gemini API Key
-1. Right-click the extension icon in the Chrome toolbar and select **Options**.
-2. Enter your Gemini API Key in the provided field.
-3. Click **Save**. A confirmation message will appear.
-
-### Selecting the Target Language
-1. In the same **Options** page, select your desired target language from the dropdown menu.
-2. Click **Save** to apply the changes.
-
-### Translating Text
-1. Select any text on a webpage.
-2. Either:
-   - Right-click and choose **Translate Selected Text** from the context menu.
-   - Press the **Control** key to trigger the translation directly.
-3. A popup will appear with the translated text.
-
-## Obtaining a Gemini API Key
-
-To use this extension, you need a Gemini API Key. Follow these steps to obtain one:
-
-1. Visit the [Google AI Studio API Key page](https://aistudio.google.com/app/apikey).
-2. Sign in with your Google account or create a new account if you don't have one.
-3. Navigate to the **API Keys** section in your account dashboard.
-4. Click **Generate New Key** and follow the prompts.
-5. Copy the generated API Key and save it securely.
-
-Once you have the API Key, add it to the extension settings as described in the [Adding the Gemini API Key](#adding-the-gemini-api-key) section.
-
-## Supported Languages
-- Ukrainian (Default)
-- English
-- Spanish
-- French
-- German
-- Russian
-
-## Development
-
-### Running in Watch Mode
-To automatically rebuild the project when files are changed, run:
 ```bash
-npm run watch
+git clone https://github.com/miroslavkiev/chrome-ai-translate.git
+cd chrome-ai-translate
+npm ci
+npm run ci
 ```
 
-### File Structure
-- `background.js`: Handles background tasks and API calls.
-- `content.js`: Manages interactions with the webpage.
-- `settings.html` and `settings.js`: Provide the UI and logic for managing the API Key and target language.
-- `popup.html` and `popup.js`: Define the popup interface.
-- `manifest.json`: Chrome extension configuration.
-- `webpack.config.js`: Webpack configuration for building the project.
+Load the generated `dist` folder from `chrome://extensions`.
+
+`npm run package` creates and verifies:
+
+- `dist/chrome-ai-translate.zip`
+- `dist/chrome-ai-translate.zip.sha256`
+
+## Set up the extension
+
+1. Open the extension toolbar popup and choose Settings.
+2. Enter your Gemini API key.
+3. Choose a default target language and global key, then choose Save Settings.
+4. Wait for the compatible model list to load automatically.
+5. If the saved model is unavailable, choose a compatible model and save again.
+6. Use Refresh models later when you want a new list from Gemini.
+
+The model list comes from Gemini `models.list`. It includes text models that report support for `generateContent`, provide an output limit, and support this extension's system-instruction contract. The last successful list remains available after a transient refresh failure. An invalid or changed API key is never hidden by the cache.
+
+## Translate text
+
+1. Select text on an HTTP or HTTPS page.
+2. Release the configured key after a clean key press, or choose Translate Selected Text from the context menu.
+3. Wait for the result card near the selection.
+
+The default key is Control. The key trigger cancels if another input, selection change, page change, or long hold occurs. It does not block the page's normal keyboard behavior. Every single-key choice can conflict with a website, browser, operating system, or accessibility tool. Set the key to Off if you prefer to use only the context menu.
+
+Inside a result card, choose another language, then choose Translate. This translates the same selection for that card only and can be repeated. Translate and Retry each start a new API request.
+
+## Privacy and permissions
+
+The extension sends selected text directly to Google only after a translation action. It has no analytics, advertising, remote backend, or translation history. The Gemini API key is stored in local extension storage and is not synced. The most recent result is kept only for the current browser session.
+
+The global key requires the extension content script to be present on HTTP and HTTPS pages and frames. Chrome therefore reports that the extension can read and change data on those sites. Chrome pages, the built-in PDF viewer, and other restricted pages are unsupported.
+
+See [PRIVACY.md](PRIVACY.md) for the complete data and permission explanation.
+
+## Request limits
+
+- Maximum input: 10,000 Unicode characters.
+- Maximum active requests: 3 per tab and 6 in total.
+- Maximum starts: 30 in a rolling 60-second window.
+- Request timeout: 25 seconds.
+- Automatic retries: none.
+
+These limits protect quota without preventing sequential translations on the same page.
+
+On very small embedded frames, the inline card can be constrained by the frame viewport. The toolbar popup keeps the latest result available for the browser session.
+
+## Development commands
+
+```bash
+npm run check
+npm test
+npm run build
+npm run watch
+npm run package
+```
+
+- `check` validates JavaScript, JSON, and repository text rules.
+- `test` runs the native Node test suite.
+- `build` performs one clean production build and exits.
+- `watch` rebuilds while source files change.
+- `package` builds, creates the root-layout ZIP, writes its checksum, and verifies both.
+
+GitHub Actions runs the full flow on Linux, macOS, and Windows. A release should use the matching manifest and package version, a Git tag, the verified ZIP, and its checksum.
 
 ## License
-This project is licensed under the MIT License.
+
+[MIT](LICENSE)
