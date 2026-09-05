@@ -34,6 +34,9 @@ assert.deepEqual(names, [
   "content.js",
   "guide.css",
   "help.html",
+  "icon-16.png",
+  "icon-32.png",
+  "icon-48.png",
   "icon.png",
   "manifest.json",
   "popup.html",
@@ -50,6 +53,20 @@ const sourceManifest = JSON.parse(await readFile(path.join(root, "manifest.json"
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
 assert.equal(manifest.version, packageJson.version, "manifest and package versions must match");
 assert.equal(sourceManifest.version, packageJson.version, "source and package versions must match");
+assert(manifest.description.length <= 132, "Chrome descriptions must fit within 132 characters");
+
+// Keep both extension-list and toolbar icons present at their declared pixel sizes.
+assert.deepEqual(Object.keys(manifest.icons), ["16", "32", "48", "128"]);
+assert.deepEqual(manifest.action.default_icon, manifest.icons);
+assert.deepEqual(sourceManifest.icons, manifest.icons);
+assert.deepEqual(sourceManifest.action.default_icon, manifest.icons);
+for (const [size, file] of Object.entries(manifest.icons)) {
+  assert(names.includes(file), `Packaged icon ${file} is missing`);
+  const png = await zip.file(file).async("nodebuffer");
+  assert.equal(png.subarray(0, 8).toString("hex"), "89504e470d0a1a0a", `${file} must be a PNG`);
+  assert.equal(png.readUInt32BE(16), Number(size), `${file} width must match the manifest`);
+  assert.equal(png.readUInt32BE(20), Number(size), `${file} height must match the manifest`);
+}
 
 // Chrome content scripts must parse as classic scripts in either install folder.
 for (const file of manifest.content_scripts.flatMap((script) => script.js)) {
@@ -76,7 +93,7 @@ await Promise.all([
   assertFresh("manifest.json", ["manifest.json", ...buildInputs]),
   assertFresh("popup.html", ["popup.html", ...buildInputs]),
   assertFresh("settings.html", ["settings.html", ...buildInputs]),
-  assertFresh("icon.png", ["icon.png", ...buildInputs]),
+  ...Object.values(manifest.icons).map((name) => assertFresh(name, [name, ...buildInputs])),
   ...["ui.css", "guide.css", "help.html", "about.html", "setup-key.png", "setup-language.png", "INSTALL.md", "PRIVACY.md", "LICENSE"].map((name) => assertFresh(name, [name, ...buildInputs])),
   assertFresh(archiveName, ["scripts/package.mjs", "package.json", "package-lock.json"]),
 ]);

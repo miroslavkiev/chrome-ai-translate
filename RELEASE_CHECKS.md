@@ -1,5 +1,13 @@
 # Release checks and translation sample
 
+## Version 1.3.1 icon and description
+
+The approved purple option 5 is exported as 16, 32, 48, and 128 pixel PNGs. Both the extension-list and toolbar manifest entries use these icons. The short description explains selecting text and pressing Control. About, README, and the packaged install guide state that manual testing covered Mac only; automated checks on other platforms do not change that claim.
+
+All 54 Node tests, source checks, production build, and the exact 20-file package checks passed locally on macOS. Package verification also checks the icon maps, PNG signatures, and declared pixel sizes. Built-folder and source-root browser checks passed on Chrome 151.0.7922.34, using temporary profiles and fake provider replies. Dependency audit found zero vulnerabilities. Independent code and UX reviews found no material issues. No real API request was made.
+
+The installed extension still needs the user's Reload action at chrome://extensions after active translations finish. Browser security policy prevents automated access to those controls. Refresh web pages after reloading. Store submission is still pending.
+
 ## Version 1.3.0 setup and language choices
 
 Approved option C adds a checklist to existing Settings, a no-key welcome, a local key guide and About page. The product includes no demo key. The shared catalog now offers 110 documented Gemini language choices. New users choose a language and start with a dated Gemini 3.5 Flash-Lite recommendation. Other listed models remain selectable. Missing models require an explicit replacement; no automatic fallback was added. Existing profiles keep their choices and earlier defaults.

@@ -1,6 +1,8 @@
 # Install or update AI Translator
 
-AI Translator translates selected text with your own Google Gemini API key. It runs as a local Chrome extension and sends selected text directly to Google after your action. It is not an offline translator. See PRIVACY.md for data handling and LICENSE for reuse terms.
+Super easy translation: select text and press Control. AI Translator uses your own Google Gemini API key. It runs as a local Chrome extension and sends selected text directly to Google after your action. It is not an offline translator. See PRIVACY.md for data handling and LICENSE for reuse terms.
+
+Manually tested on Mac only. Windows and Linux have not been manually tested.
 
 ## Install
 
@@ -34,7 +36,7 @@ Version 1.2.1 fixes the source-root error "Cannot use import statement outside a
 
 ## Use and recovery
 
-Select text, then release the configured key or choose Translate Selected Text from the context menu. Control is the initial key. Use Off in Settings for context-menu-only translation. After starting a card, press Tab to reach it or Escape to close it.
+Select text, then tap and release Control or choose Translate Selected Text from the context menu. Control is the default key; you can choose another key or Off in Settings. After starting a card, press Tab to reach it or Escape to close it.
 
 Clicking outside closes cards and cancels unfinished requests. Retry and a language change clear the old output and start a new request. They do not keep a prior result. Copy is available on successful results where Chrome allows clipboard access; if it is blocked, select and copy the text normally.
 

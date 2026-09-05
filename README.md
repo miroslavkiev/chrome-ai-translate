@@ -1,6 +1,8 @@
 # AI Translator for Chrome
 
-AI Translator translates selected text with the Google Gemini API. It uses your own API key and shows each result beside the selected text.
+Super easy translation: select text and press Control. AI Translator translates into your chosen language with the Google Gemini API and shows each result beside the selected text. It uses your own API key.
+
+Manually tested on Mac only. Windows and Linux have not been manually tested.
 
 ## Features
 
@@ -53,7 +55,7 @@ For a new install, load the generated `dist` folder from `chrome://extensions`. 
 2. Follow the API key guide to open Google AI Studio, sign in, and create or choose your own key. The guide opens in a separate tab and contains links to Google's current instructions.
 3. Paste your key into Settings. The key saves and the model list loads automatically. A manually typed key saves when you leave the field. Delete the field contents to remove it.
 4. Choose a model, target language, and optional keyboard trigger. Choose Finish setup to save these choices and complete the checklist.
-5. Open a normal web page, select text, and choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
+5. Open a normal web page, select text, then tap and release Control. You can also choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
 
 After setup, the popup returns to the standard view. A saved key with unfinished setup keeps a Finish setup action so you can return to the checklist. Removing the key brings back the welcome guide. Existing users keep their saved language and model. Later changes use Save Preferences in Settings.
 
