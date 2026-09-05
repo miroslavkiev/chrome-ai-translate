@@ -19,7 +19,7 @@ The repository is already public: [source and project guide](https://github.com/
 
 ## What prevents submission
 
-1. Resolve Google's professional/business, adult, region and paid-service rules for the intended audience. The publisher described this as a free personal hobby project; this does not override Google's terms.
+1. Show Google's use conditions before the first API request and in the listing, without a separate eligibility checkbox as requested. The draft description is ready. Choose supported Store distribution countries and ensure the actual offering matches the provider's audience rules. This does not call for collecting identity documents or proving each user's occupation or billing.
 2. Choose and implement the reviewed API-key storage and consent flow. Current local key storage is not encrypted. Model loading must also wait for the required disclosure and consent.
 3. Supply approved publisher name, suitable postal address, public email and the applicable privacy information. Do not infer those details from Git records.
 4. Resolve the third-party data-use conditions, then add an accurate Limited Use statement and complete Chrome's privacy certifications.

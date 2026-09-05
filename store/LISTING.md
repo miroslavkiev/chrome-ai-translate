@@ -1,6 +1,6 @@
 # Store listing draft
 
-Do not submit yet. See [the open release items](README.md). The description below assumes that Google's adult professional-use and billing conditions can be met. Recheck it after the publisher chooses the audience and key-storage flow.
+Do not submit yet. See [the open release items](README.md). The description below states Google's use conditions without a separate eligibility checkbox, as requested by the publisher. This notice does not verify users or replace the separate data-disclosure and consent requirements. Recheck the final setup and key-storage flow before submission.
 
 ## Dashboard fields
 
@@ -39,7 +39,21 @@ YOUR GEMINI KEY AND MODEL
 
 You need your own Google Gemini API key. The first-use guide explains how to get a key, choose a target language and select a model. We recommend the Flash-Lite family. At this release in September 2026, our choice is Gemini 3.5 Flash-Lite when it is available to your key. You may choose another listed model. Some models may not work; if one fails, choose an alternative or the recommended model.
 
-Google's current API terms require adult professional or business use in supported regions. Apps offered in the European Economic Area, UK or Switzerland must use an API project with active billing. The extension is free, but Google API charges and limits can apply. It is not an offline translator and is not designed for children.
+The extension is free, but Google API charges and limits can apply. It is not an offline translator.
+
+CONDITIONS OF USE
+
+This extension is for people aged 18 or older, for work or business use, in Google's supported countries and regions. It is not designed for children.
+
+If you use it in the European Economic Area, UK or Switzerland, your API key must belong to a Google Cloud project with active billing.
+
+By using this extension, you agree to follow these conditions, the Google API Terms and the Gemini API Additional Terms. Do not use it if you cannot meet these conditions.
+
+Supported countries and regions: https://ai.google.dev/gemini-api/docs/available-regions
+
+Google API Terms: https://developers.google.com/terms
+
+Gemini API Additional Terms: https://ai.google.dev/gemini-api/terms
 
 YOUR TEXT AND PRIVACY
 

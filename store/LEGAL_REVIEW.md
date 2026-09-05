@@ -2,14 +2,14 @@
 
 Checked: September 5, 2026. This is a publication checklist, not a legal opinion or a statement of compliance. It does not authorise a Store submission or disclosure of personal details.
 
-The publisher has confirmed that this is a free personal hobby project. That fact must remain separate from whether users translate text for work. The intended audience and Google service eligibility are still unresolved.
+The publisher has confirmed that this is a free personal hobby project. That fact must remain separate from whether users translate text for work. The publisher requests a visible notice of Google's use conditions, with acceptance through use rather than an eligibility checkbox or identity checks. The draft listing now contains that notice. This records the requested approach, not a finding that every publication duty is met.
 
 ## Open publication items
 
 | Item | What must be resolved |
 | --- | --- |
 | Publisher details | Resolve the notice duty for this public hobby offering. If it applies, confirm the full public name and a suitable public service address, plus a public contact email. A home address is not requested and must not be added to the repository. No identity or address may be inferred from Git or account records. |
-| Google eligibility | Decide the intended audience and countries. Resolve the professional/business-use, adult-use and paid-service requirements below. |
+| Google eligibility | Show the use conditions before first API use and in the listing. Choose supported distribution countries. Check that the actual offering matches Google's audience and availability rules; no individual identity or billing verification system is proposed. |
 | Privacy roles | Record who is responsible for each processing activity, including support and any public website. Finish the applicable privacy information. |
 | Disclosure and consent | Decide what users must see and agree to before their first Google request. Keep legal consent and Store policy requirements separate. |
 | Key storage | Choose and test the key-handling design. Current local extension storage is not encrypted against access to the Chrome profile. Review this against the [Store's storage-encryption requirement](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) before submission. |
@@ -22,6 +22,8 @@ The publisher has confirmed that this is a free personal hobby project. That fac
 For the planned individual publisher, prepare the full name and postal address. A public contact email also provides a useful support/privacy route. Email is not an extra requirement stated in MStV section 18(1) itself. [DDG section 5](https://www.gesetze-im-internet.de/ddg/__5.html) separately requires email and suitable direct contact for the business-like digital services within its scope. Do not assume that DDG section 5 applies solely because the author writes software or users use it at work.
 
 The home address does not have to be the chosen public address. The Lower Saxony media regulator's guidance for MStV section 18 expressly allows an agency, office service, lawyer or family member's address where legal documents can validly be served. This requires a real authorisation to receive legal service, with the rights and duties agreed. A lawyer is one option, not an automatic requirement. A borrowed address, ordinary mailbox or post-office box alone is insufficient. [NLM guide, section 2.3.2](https://www.nlm.de/fileadmin/dateien/pdf/leitfaden_impressumspflicht_2024.pdf).
+
+A standard DHL Packstation address plus a Postnummer is not a suitable substitute for this required service address. DHL describes the Postnummer as a personal customer number used to route eligible deliveries. Current Packstation rules allow some letters and registered mail, but this delivery service does not establish the authorised recipient arrangement required by the regulator. Receiving ordinary mail or identifying the account holder does not by itself make legal service at that address valid. This conclusion applies the NLM's service-address test to the standard DHL service, rather than claiming that all letters are excluded from Packstations. [DHL Packstation receiving rules](https://www.dhl.de/de/privatkunden/hilfe-kundenservice/packstation/empfangen.html), [NLM guide, section 2.3.2](https://www.nlm.de/fileadmin/dateien/pdf/leitfaden_impressumspflicht_2024.pdf).
 
 A reviewed c/o arrangement can show the publisher's name and the authorised recipient's address instead of the home address. The c/o label alone does not create the authorisation. A complete notice can live on a separate public page linked from the product, so there is no need to commit the home address to this repository. [Media regulator guidance](https://www.medienanstalt-nrw.de/aufsicht/transparenz-im-internet.html).
 
@@ -42,6 +44,12 @@ The [Gemini terms](https://ai.google.dev/gemini-api/terms), effective March 23, 
 Gemini API access is a Paid Service only through a project with active billing. Separately, users in those regions receive paid data-use treatment even on unpaid quota. That privacy rule does not remove the paid-service requirement for clients.
 
 The current bring-your-own-key design does not itself settle eligibility. Resolve the audience and Google's application of these terms before a consumer launch. Do not claim that a checkbox, free price, or user-owned key guarantees permission.
+
+The reviewed Google clauses do not expressly require a separate checkbox, identity documents, or an independent check of each user's occupation or billing. [Google API Terms section 2(a)](https://developers.google.com/terms#section_2_using_our_apis) requires developers to require end-user compliance and not knowingly enable violations, without prescribing a particular acceptance control. The chosen approach is a visible use notice, also included in [the draft Store description](LISTING.md), without a separate eligibility checkbox. Do not label users as verified or claim the notice removes duties that apply to the app itself.
+
+A sentence saying that use means acceptance is not a guarantee that terms are legally binding. Where [BGB section 305(2)](https://www.gesetze-im-internet.de/bgb/__305.html) applies, users need clear notice, a reasonable opportunity to read the terms, and agreement. Its application depends on the parties and circumstances. Show the conditions before use rather than relying only on a legal-notice page that users may not see.
+
+This use notice is separate from permission to handle data. [Chrome's disclosure FAQ, question 10](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) requires a prominent in-product disclosure and a specific action clearly agreeing before data is handled. A description or legal notice alone does not meet that requirement. A clearly labelled setup button can provide that action; a checkbox is not the only possible control. The current automatic key-save and model-loading flow still needs that separate change.
 
 ## GDPR roles and information
 
@@ -77,4 +85,4 @@ The July amendment was verified in the official publication: [Regulation (EU) 20
 
 ## Release decision
 
-Artwork, narrower permissions, working links and accurate technical privacy text can be prepared now. Review the three key-handling options before changing that user flow. Keep publication pending until the audience/service restriction, key protection, disclosure/consent and publisher-information items above are resolved. Recheck these sources at submission time.
+Artwork, narrower permissions, working links and accurate technical privacy text are prepared. The requested use notice is in the draft listing; its final setup placement remains to be completed. Review the four key-handling options before changing that user flow. Keep publication pending until the audience/service restriction, key protection, disclosure/consent and publisher-information items above are resolved. Recheck these sources at submission time.
