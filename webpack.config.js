@@ -25,7 +25,7 @@ export default {
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: ["manifest.json", "popup.html", "settings.html", "icon.png"],
+      patterns: ["manifest.json", "popup.html", "settings.html", "ui.css", "icon.png", "INSTALL.md", "PRIVACY.md", "LICENSE"],
     }),
   ],
 };

@@ -50,7 +50,7 @@ export function createCleanKeyReleaseTrigger({
     }
 
     const snapshot = capture();
-    if (!snapshot?.ok) {
+    if (!snapshot?.ok && snapshot?.code !== "selection_too_large") {
       cancel();
       return;
     }

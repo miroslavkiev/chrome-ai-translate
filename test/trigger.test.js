@@ -104,3 +104,17 @@ test("the hold timer cancels a pending trigger", () => {
   state.trigger.keyup(keyboardEvent());
   assert.equal(state.triggered.length, 0);
 });
+
+test("a clean release reports an unchanged overlong selection without accepting other failures", () => {
+  const overlong = harness({ ok: false, code: "selection_too_large" });
+  overlong.trigger.keydown(keyboardEvent());
+  overlong.trigger.keyup(keyboardEvent());
+  assert.equal(overlong.triggered.length, 1);
+  assert.equal(overlong.triggered[0].code, "selection_too_large");
+  for (const code of ["no_selection", "unsupported_selection"]) {
+    const blocked = harness({ ok: false, code });
+    blocked.trigger.keydown(keyboardEvent());
+    blocked.trigger.keyup(keyboardEvent());
+    assert.equal(blocked.triggered.length, 0);
+  }
+});

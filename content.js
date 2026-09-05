@@ -2,8 +2,10 @@ import {
   DEFAULTS,
   LANGUAGES,
   LIMITS,
-  PUBLIC_ERROR_MESSAGES,
   STORAGE_KEYS,
+  copyText,
+  createRequestId,
+  getErrorPresentation,
   getStoredTriggerKey,
   isSupportedLanguage,
   normalizeTriggerKey,
@@ -185,6 +187,7 @@ const cards = new Set();
 const completedCards = [];
 let defaultTargetLanguage = DEFAULTS.targetLanguage;
 let keyTrigger = null;
+let keyboardEntryCard = null;
 
 function makeElement(tagName, className, text) {
   const node = document.createElement(tagName);
@@ -266,8 +269,27 @@ function captureControlSelection(element) {
   });
 }
 
+function deepActiveElement() {
+  let element = document.activeElement;
+  while (element?.shadowRoot?.activeElement) element = element.shadowRoot.activeElement;
+  return element;
+}
+
+function cardContainer(snapshot) {
+  let fullscreen = document.fullscreenElement;
+  while (fullscreen?.shadowRoot?.fullscreenElement) fullscreen = fullscreen.shadowRoot.fullscreenElement;
+  for (const origin of [snapshot.identity?.element ?? snapshot.identity?.anchorNode, deepActiveElement()]) {
+    let element = origin?.nodeType === Node.ELEMENT_NODE ? origin : origin?.parentElement;
+    while (element) {
+      if (element === fullscreen || element.matches("dialog:modal")) return element;
+      element = element.parentElement ?? element.getRootNode()?.host;
+    }
+  }
+  return fullscreen ?? document.documentElement ?? document.body;
+}
+
 function captureSelection() {
-  const activeElement = document.activeElement;
+  const activeElement = deepActiveElement();
   if (activeElement instanceof HTMLTextAreaElement
       || (activeElement instanceof HTMLInputElement
         && TEXT_INPUT_TYPES.has(activeElement.type))) {
@@ -418,6 +440,8 @@ function closeCard(card, { restoreFocus = true } = {}) {
   card.closed = true;
   removeCompleted(card);
   cards.delete(card);
+  if (keyboardEntryCard === card) keyboardEntryCard = null;
+  clearTimeout(card.retryTimer);
   if (card.port) {
     card.port.disconnect();
     card.port = null;
@@ -438,32 +462,24 @@ function markCompleted(card) {
   while (completedCards.length > LIMITS.maxCompletedOverlays) closeCard(completedCards[0]);
 }
 
-function errorMessage(error) {
-  const code = typeof error?.code === "string" ? error.code : "service_error";
-  let message = Object.hasOwn(PUBLIC_ERROR_MESSAGES, code)
-    ? PUBLIC_ERROR_MESSAGES[code]
-    : PUBLIC_ERROR_MESSAGES.service_error;
-  if (code === "rate_limited" && Number.isFinite(error?.retryAfterMs)) {
-    const seconds = Math.max(1, Math.ceil(error.retryAfterMs / 1000));
-    message += ` Try again in ${seconds} seconds.`;
-  }
-  return { code, message };
-}
-
 function announce(card, message, error = false) {
   for (const other of cards) {
     if (other !== card) other.liveStatus.setAttribute("aria-live", "off");
   }
   card.liveStatus.setAttribute("role", error ? "alert" : "status");
   card.liveStatus.setAttribute("aria-live", error ? "assertive" : "polite");
-  card.liveStatus.textContent = message;
+  card.liveStatus.textContent = message + (keyboardEntryCard === card
+    ? " Press Tab to use this card or Escape to close it." : "");
 }
 
 function renderLoading(card) {
   removeCompleted(card);
   card.state = "loading";
+  clearTimeout(card.retryTimer);
   card.languageSelect.disabled = true;
   card.retryButton.hidden = true;
+  card.settingsButton.hidden = true;
+  card.copyButton.hidden = true;
   card.output.hidden = true;
   card.output.textContent = "";
   card.visualStatus.className = "state loading";
@@ -478,7 +494,12 @@ function renderSuccess(card, translatedText, targetLanguage) {
   card.languageSelect.value = card.language;
   card.languageSelect.disabled = false;
   card.retryButton.hidden = false;
+  card.retryButton.disabled = false;
+  card.settingsButton.hidden = true;
+  card.copyButton.hidden = false;
+  card.copyButton.disabled = false;
   card.output.hidden = false;
+  card.output.lang = card.language;
   card.output.textContent = translatedText;
   card.visualStatus.className = "state";
   card.visualStatus.textContent = "Translation complete.";
@@ -488,10 +509,23 @@ function renderSuccess(card, translatedText, targetLanguage) {
 }
 
 function renderError(card, error) {
-  const failure = errorMessage(error);
+  const failure = getErrorPresentation(error);
+  clearTimeout(card.retryTimer);
   card.state = "error";
-  card.languageSelect.disabled = false;
-  card.retryButton.hidden = false;
+  card.languageSelect.disabled = !card.text || failure.action !== "retry";
+  card.retryButton.hidden = failure.action !== "retry" || !card.text;
+  card.retryButton.disabled = false;
+  card.settingsButton.hidden = failure.action !== "settings";
+  card.copyButton.hidden = true;
+  if (failure.action === "retry" && failure.retryAfterMs > 0) {
+    card.retryButton.disabled = true;
+    card.languageSelect.disabled = true;
+    card.retryTimer = setTimeout(() => {
+      if (card.closed) return;
+      card.retryButton.disabled = false;
+      card.languageSelect.disabled = !card.text;
+    }, failure.retryAfterMs);
+  }
   card.output.hidden = true;
   card.output.textContent = "";
   card.visualStatus.className = "state error";
@@ -533,8 +567,8 @@ function startCardRequest(card, targetLanguage) {
   const languageOverride = isSupportedLanguage(targetLanguage) ? targetLanguage : undefined;
   card.language = languageOverride ?? defaultTargetLanguage;
   card.languageSelect.value = card.language;
-  card.requestId = crypto.randomUUID();
-  if ([card.retryButton, card.languageSelect].includes(card.shadow.activeElement)) {
+  card.requestId = createRequestId();
+  if ([card.retryButton, card.languageSelect, card.copyButton, card.settingsButton].includes(card.shadow.activeElement)) {
     card.closeButton.focus({ preventScroll: true });
   }
   renderLoading(card);
@@ -574,11 +608,13 @@ function startCardRequest(card, targetLanguage) {
 function createCard(snapshot) {
   const host = document.createElement("ai-translator-card");
   setHostStyles(host);
+  host.lang = "en";
+  host.setAttribute("popover", "manual");
   const shadow = host.attachShadow({ mode: "closed" });
   const style = document.createElement("style");
   style.textContent = CARD_CSS;
 
-  const titleId = `ai-translator-${crypto.randomUUID()}`;
+  const titleId = `ai-translator-${createRequestId()}`;
   const section = makeElement("section", "card");
   section.setAttribute("role", "region");
   section.setAttribute("aria-labelledby", titleId);
@@ -612,7 +648,13 @@ function createCard(snapshot) {
   const retryButton = makeElement("button", "retry", "Retry");
   retryButton.type = "button";
   retryButton.hidden = true;
-  actions.append(retryButton);
+  const settingsButton = makeElement("button", "retry", "Settings");
+  settingsButton.type = "button";
+  settingsButton.hidden = true;
+  const copyButton = makeElement("button", "retry", "Copy");
+  copyButton.type = "button";
+  copyButton.hidden = true;
+  actions.append(settingsButton, copyButton, retryButton);
   body.append(visualStatus, output, actions);
 
   const liveStatus = makeElement("div", "sr-only");
@@ -634,29 +676,52 @@ function createCard(snapshot) {
     liveStatus,
     output,
     retryButton,
+    settingsButton,
+    copyButton,
+    retryTimer: null,
     port: null,
     requestId: null,
     state: "new",
     closed: false,
-    returnFocus: document.activeElement,
+    returnFocus: deepActiveElement(),
   };
 
   closeButton.addEventListener("click", () => closeCard(card));
   retryButton.addEventListener("click", () => startCardRequest(card, card.language));
+  settingsButton.addEventListener("click", async () => {
+    settingsButton.disabled = true;
+    try {
+      const result = await chrome.runtime.sendMessage({ action: "openSettings" });
+      if (!result?.ok) throw new Error("Settings unavailable");
+    } catch {
+      if (!card.closed) {
+        card.visualStatus.textContent = "Settings could not be opened. Use the extension toolbar.";
+        announce(card, card.visualStatus.textContent, true);
+      }
+    } finally {
+      settingsButton.disabled = false;
+    }
+  });
+  copyButton.addEventListener("click", async () => {
+    const requestId = card.requestId;
+    copyButton.disabled = true;
+    const copied = await copyText(card.output.textContent);
+    if (card.closed || card.state !== "success" || card.requestId !== requestId) return;
+    copyButton.disabled = false;
+    card.visualStatus.textContent = copied ? "Copied." : "Copy failed. Select the result text and copy it.";
+    announce(card, card.visualStatus.textContent, !copied);
+    if (!copied) card.output.focus({ preventScroll: true });
+  });
   languageSelect.addEventListener("change", () => {
     if (languageSelect.value !== card.language && isSupportedLanguage(languageSelect.value)) {
       startCardRequest(card, languageSelect.value);
     }
   });
-  shadow.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    event.preventDefault();
-    event.stopPropagation();
-    closeCard(card);
-  });
 
   cards.add(card);
-  (document.documentElement ?? document.body).append(host);
+  cardContainer(snapshot).append(host);
+  host.showPopover();
+  keyboardEntryCard = card;
   requestAnimationFrame(() => positionCard(card));
   return card;
 }
@@ -680,6 +745,7 @@ function configureTrigger(key) {
 }
 
 function cancelTrigger() {
+  keyboardEntryCard = null;
   keyTrigger?.cancel();
 }
 
@@ -695,6 +761,26 @@ function disconnectDocumentRequests() {
 }
 
 document.addEventListener("keydown", (event) => {
+  if (cards.size && event.key === "Escape" && event.isTrusted && !event.isComposing
+      && !event.ctrlKey && !event.altKey && !event.metaKey && !event.shiftKey) {
+    const card = [...cards].find((item) => event.composedPath().includes(item.host)) ?? [...cards].at(-1);
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    closeCard(card);
+    cancelTrigger();
+    return;
+  }
+  if (keyboardEntryCard && !isOverlayEvent(event)) {
+    const card = keyboardEntryCard;
+    keyboardEntryCard = null;
+    if (event.key === "Tab" && !event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey && event.isTrusted) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      (card.state === "success" ? card.output : card.closeButton).focus({ preventScroll: true });
+      cancelTrigger();
+      return;
+    }
+  }
   if (isOverlayEvent(event)) cancelTrigger();
   else keyTrigger?.keydown(event);
 }, true);
@@ -727,8 +813,9 @@ window.addEventListener("resize", () => {
 chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message?.action !== CONTEXT_MENU_ACTION) return undefined;
   const snapshot = contextMenuSnapshot(message.selectionText);
-  if (snapshot.ok) startTranslation(snapshot);
-  sendResponse({ accepted: snapshot.ok });
+  const accepted = snapshot.ok || snapshot.code === "selection_too_large";
+  if (accepted) startTranslation(snapshot);
+  sendResponse({ accepted });
   return false;
 });
 

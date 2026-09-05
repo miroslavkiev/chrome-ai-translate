@@ -20,6 +20,7 @@ export const LIMITS = Object.freeze({
 
 export const STORAGE_KEYS = Object.freeze({
   apiKey: "geminiApiKey",
+  apiKeyStatus: "apiKeyStatus",
   modelCatalog: "modelCatalog",
   targetLanguage: "targetLanguage",
   aiModel: "aiModel",
@@ -53,7 +54,7 @@ export const SUPPORTED_TRIGGER_KEYS = Object.freeze([
 export const PUBLIC_ERROR_MESSAGES = Object.freeze({
   no_selection: "Select some text and try again.",
   unsupported_selection: "This text selection is not supported.",
-  selection_too_large: "The selection is longer than 10,000 characters.",
+  selection_too_large: "The selection is longer than 10,000 characters. Select less text and try again.",
   missing_api_key: "Add your Gemini API key in Settings.",
   invalid_api_key: "Gemini rejected the API key. Check it in Settings.",
   invalid_model: "This model is no longer available. Choose another model in Settings.",
@@ -66,6 +67,8 @@ export const PUBLIC_ERROR_MESSAGES = Object.freeze({
   quota_exceeded: "Gemini quota was reached. Check your account and retry later.",
   service_error: "Gemini could not complete the translation. Try again later.",
   invalid_response: "Gemini returned an unreadable response. You can retry it.",
+  output_too_large: "The translation exceeded the output limit. Select less text and try again.",
+  content_blocked: "Gemini blocked this text. Try a different selection.",
   unsupported_page: "Translation is not available on this page.",
   frame_unavailable: "The selected frame is no longer available.",
   cancelled: "Translation was cancelled.",
@@ -95,6 +98,35 @@ export function getStoredTriggerKey(record) {
   return Object.hasOwn(record, STORAGE_KEYS.triggerKey)
     ? normalizeTriggerKey(record[STORAGE_KEYS.triggerKey])
     : DEFAULTS.triggerKey;
+}
+
+export function formatTriggerKey(key, platform = globalThis.navigator?.userAgentData?.platform
+  || globalThis.navigator?.platform || "") {
+  if (key === null) return "Off";
+  if (/mac/i.test(platform)) {
+    if (key === "Meta") return "Command";
+    if (key === "Alt") return "Option";
+  }
+  return key;
+}
+
+export function createRequestId(cryptoSource = globalThis.crypto) {
+  if (typeof cryptoSource.randomUUID === "function") return cryptoSource.randomUUID();
+  const bytes = cryptoSource.getRandomValues(new Uint8Array(16));
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
+export async function copyText(text, clipboard = globalThis.navigator?.clipboard) {
+  if (typeof text !== "string" || !text.trim() || !clipboard?.writeText) return false;
+  try {
+    await clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function isSupportedPageUrl(value) {
@@ -145,6 +177,19 @@ export function publicError(code, details = {}) {
     code: safeCode,
     message: PUBLIC_ERROR_MESSAGES[safeCode],
   };
+}
+
+export function getErrorPresentation(error) {
+  const { code, message } = publicError(error?.code);
+  const retryAfterMs = Number.isFinite(error?.retryAfterMs) && error.retryAfterMs > 0
+    ? Math.min(error.retryAfterMs, 3_600_000)
+    : 0;
+  const delay = retryAfterMs ? ` Try again in ${Math.ceil(retryAfterMs / 1_000)} seconds.` : "";
+  const action = ["missing_api_key", "invalid_api_key", "invalid_model"].includes(code)
+    ? "settings"
+    : ["busy", "rate_limited", "timeout", "offline", "network_error", "quota_exceeded",
+      "service_error", "invalid_response", "cancelled"].includes(code) ? "retry" : null;
+  return { code, message: message + delay, action, retryAfterMs };
 }
 
 export function stableTextHash(value) {

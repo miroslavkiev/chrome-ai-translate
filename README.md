@@ -11,6 +11,7 @@ AI Translator translates selected text with the Google Gemini API. It uses your 
 - See loading, success, timeout, quota, network, and other failure states.
 - Retry failed translations manually. The extension does not retry paid requests automatically.
 - Review the latest result and current activity in the toolbar popup.
+- Copy a result, with a clear fallback when the browser blocks clipboard access.
 - Use light, dark, high-contrast, reduced-motion, and keyboard-accessible interfaces.
 
 ## Requirements
@@ -52,9 +53,9 @@ Load the generated `dist` folder from `chrome://extensions`.
 4. Choose a model, default target language, and global key, then choose Save Preferences.
 5. Use Refresh models later when you want a new list from Gemini.
 
-The model list comes from Gemini `models.list`. It includes text models that report support for `generateContent`, provide an output limit, and support this extension's system-instruction contract. Embedding, image, TTS, speech, live, audio, robotics, and computer-use variants are excluded by their model identifiers. The Models API does not report output modality, so an unknown future variant remains visible instead of being guessed incompatible. The last successful list remains available after a transient refresh failure. An invalid or changed API key is never hidden by the cache.
+Settings shows whether the key is saved, checked, or rejected. A checked key means a previous provider request worked, not that future quota or availability is guaranteed. If loading saved settings fails, saving stays disabled. Open Settings again after the problem clears. If another Settings tab changes the same field you are editing, your edit stays visible; Reload saved settings discards it and loads the saved choice. Changes to other fields are kept automatically.
 
-The Models API thinking flag is stored with each model. Translation uses no thinking where the API supports it, `MINIMAL` for compatible Gemini 3 Flash variants, and `LOW` for other Gemini 3 models. Gemini 3 requests keep Google's default temperature. Older Gemini models use the backward-compatible thinking budget control. Models such as Gemma 4 that report thinking but reject thinking controls receive no unsupported parameter.
+The model list comes from Gemini `models.list`. It filters known non-text variants, but the API does not report output modality, so an unknown future variant can still appear. Settings reuses a list less than 24 hours old and tries to refresh an older one. Translation can use an older list to avoid blocking on discovery. A temporary refresh failure can use the last successful list with a cached-data notice in Settings. A known rejected key or model stays unavailable until a successful check or replacement. Use Refresh models to check again. The default model and prompt are unchanged in this release. [DESIGN.md](DESIGN.md) records the provider rules and their limits.
 
 ## Translate text
 
@@ -64,11 +65,21 @@ The Models API thinking flag is stored with each model. Translation uses no thin
 
 The default key is Control. The key trigger cancels if another input, selection change, page change, or long hold occurs. It does not block the page's normal keyboard behavior. Every single-key choice can conflict with a website, browser, operating system, or accessibility tool. Set the key to Off if you prefer to use only the context menu.
 
-Inside a result card, choosing another language starts a new translation immediately. This changes only that card and does not change the saved default language. Retry also starts a new API request. Click outside a card or press Escape to close it.
+Inside a result card, choosing another language starts a new translation immediately. This changes only that card and does not change the saved default language. Retry also starts a new API request. Both actions clear the old output, including when the new request fails.
+
+Cards do not take focus when they appear. Press Tab next to enter the new card, or Escape to close the focused or newest card. Clicking outside all cards closes every card and cancels unfinished work. Each frame keeps at most five completed cards. Cancellation can replace the popup's latest result with a cancellation message. These result-lifetime rules are unchanged.
+
+Choose Copy on a successful card or in the popup. If copying is blocked, select the result text and copy it yourself. The popup shows the language and completion time of the latest result. It is a session preview, not a history.
 
 ### Local files
 
 The extension can translate pages opened from `file://` URLs. After installing or updating it, open the extension details in `chrome://extensions` and enable Allow access to file URLs. Chrome controls this permission, so the extension cannot enable it for you.
+
+### Update and recover
+
+Keep the installed folder at the same path. Finish active translations, replace the build, then choose Reload on the extension at `chrome://extensions`. Refresh the web pages where you want to use it. Do not uninstall to update: uninstalling removes saved settings. Open cards and active requests do not survive page refresh or extension reload. A completed popup result can remain after a page refresh, for the current browser session.
+
+Key or model errors offer Settings. Oversized or blocked text asks for a different selection. Temporary failures offer manual Retry; a known retry delay disables request actions until it expires. Chrome pages, the PDF viewer, inaccessible closed-shadow editors, and very small embedded frames have limits. See [INSTALL.md](INSTALL.md) for a short setup and recovery guide included in every ZIP.
 
 ## Privacy and permissions
 
@@ -98,6 +109,8 @@ npm test
 npm run build
 npm run watch
 npm run package
+npx playwright install chromium
+npm run test:browser
 ```
 
 - `check` validates JavaScript, JSON, and repository text rules.
@@ -105,8 +118,9 @@ npm run package
 - `build` performs one clean production build and exits.
 - `watch` rebuilds while source files change.
 - `package` builds, creates the root-layout ZIP, writes its checksum, and verifies both.
+- `test:browser` checks the built extension in a temporary Chromium profile, using fake credentials and provider replies. Run `build` first. It makes no paid translation calls. Optional `CHROME_PATH` selects a Chrome for Testing executable.
 
-GitHub Actions runs the full flow on Linux, macOS, and Windows. A release should use the matching manifest and package version, a Git tag, the verified ZIP, and its checksum.
+GitHub Actions runs the full flow on Linux, macOS, and Windows, including the minimum Node version on Linux and Chromium checks on Node 22. A release should use the matching manifest and package version, a Git tag, the verified ZIP, and its checksum. [RELEASE_CHECKS.md](RELEASE_CHECKS.md) defines browser, update, and translation-quality checks and records this release's evidence.
 
 ## License
 

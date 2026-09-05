@@ -8,6 +8,7 @@ import {
   isValidRequestId,
   normalizeApiKey,
   publicError,
+  validateSourceText,
 } from "./shared.js";
 
 export { normalizeApiKey };
@@ -35,13 +36,8 @@ export function validateTranslationEnvelope({ message, sender, extensionId }) {
   if (!message || message.action !== "translate" || !isValidRequestId(message.requestId)) {
     return { ok: false, error: publicError("service_error") };
   }
-  if (typeof message.text !== "string" || !message.text.trim()) {
-    return { ok: false, error: publicError("no_selection") };
-  }
-  if (message.text.length > LIMITS.maxInputCodePoints * 2
-      || codePointLength(message.text) > LIMITS.maxInputCodePoints) {
-    return { ok: false, error: publicError("selection_too_large") };
-  }
+  const sourceText = validateSourceText(message.text);
+  if (!sourceText.ok) return { ok: false, error: publicError(sourceText.code) };
   if (message.targetLanguage !== undefined && !isSupportedLanguage(message.targetLanguage)) {
     return { ok: false, error: publicError("service_error") };
   }
@@ -164,22 +160,43 @@ export function validateModelCache(value, apiKeyHash) {
     && typeof model.thinking === "boolean"
     && Number.isSafeInteger(model.outputTokenLimit) && model.outputTokenLimit > 0);
   if (!models.length || models.length !== value.models.length) return null;
-  return { models, fetchedAt: value.fetchedAt };
+  const unavailableModels = value.unavailableModels ?? [];
+  const modelIds = new Set(models.map((model) => model.id));
+  if (!Array.isArray(unavailableModels) || unavailableModels.length > models.length
+      || unavailableModels.some((id) => !modelIds.has(id))) return null;
+  const unavailable = new Set(unavailableModels);
+  return {
+    models: models.filter((model) => !unavailable.has(model.id)),
+    fetchedAt: value.fetchedAt,
+    ...(unavailableModels.length ? { unavailableModels } : {}),
+  };
 }
 
 export function extractTranslation(payload) {
   const candidate = payload?.candidates?.[0];
+  const blockReason = payload?.promptFeedback?.blockReason;
+  if ((typeof blockReason === "string" && blockReason && blockReason !== "BLOCK_REASON_UNSPECIFIED")
+      || ["SAFETY", "RECITATION", "LANGUAGE", "BLOCKLIST", "PROHIBITED_CONTENT", "SPII",
+        "IMAGE_SAFETY", "IMAGE_PROHIBITED_CONTENT", "IMAGE_RECITATION", "ESCALATION"].includes(candidate?.finishReason)) {
+    return { ok: false, error: publicError("content_blocked") };
+  }
+  if (candidate?.finishReason === "MAX_TOKENS") {
+    return { ok: false, error: publicError("output_too_large") };
+  }
   if (candidate?.finishReason !== "STOP") {
     return { ok: false, error: publicError("invalid_response") };
   }
   const parts = candidate.content?.parts;
   if (!Array.isArray(parts)) return { ok: false, error: publicError("invalid_response") };
   const text = parts
-    .map((part) => typeof part?.text === "string" ? part.text : "")
+    .map((part) => part?.thought !== true && typeof part?.text === "string" ? part.text : "")
     .join("");
-  if (!text.trim() || text.length > LIMITS.maxOutputCodePoints * 2
-      || codePointLength(text) > LIMITS.maxOutputCodePoints) {
+  if (!text.trim()) {
     return { ok: false, error: publicError("invalid_response") };
+  }
+  if (text.length > LIMITS.maxOutputCodePoints * 2
+      || codePointLength(text) > LIMITS.maxOutputCodePoints) {
+    return { ok: false, error: publicError("output_too_large") };
   }
   return { ok: true, text };
 }

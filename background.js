@@ -2,8 +2,8 @@ import {
   DEFAULTS,
   LIMITS,
   STORAGE_KEYS,
+  getStoredTriggerKey,
   isSupportedLanguage,
-  isSupportedTriggerKey,
   isValidModelId,
   publicError,
   stableTextHash,
@@ -16,6 +16,7 @@ import {
   normalizeApiKey,
   normalizeModels,
   validateModelCache,
+  validateContentSender,
   validateTranslateRequest,
   validateTranslationEnvelope,
 } from "./request-policy.js";
@@ -27,8 +28,14 @@ const TRANSLATION_PORT = "translation";
 const activeByTab = new Map();
 const activeDuplicates = new Set();
 let activeGlobal = 0;
-let gateLock = Promise.resolve();
+const locks = { requests: Promise.resolve(), credentials: Promise.resolve() };
 let modelRefresh = null;
+let credentialRevision = 0;
+let credentialCheckId = 0;
+let appliedCredentialCheckId = 0;
+let knownApiKeyStatus = null;
+let catalogRevision = 0;
+const modelCheckIds = new Map();
 
 function runtimeFailure(error) {
   const failure = new Error(error.code);
@@ -40,9 +47,9 @@ function toPublicError(error) {
   return error?.publicError ?? publicError("service_error");
 }
 
-function withGateLock(task) {
-  const result = gateLock.then(task, task);
-  gateLock = result.then(() => undefined, () => undefined);
+function withLock(name, task) {
+  const result = locks[name].then(task, task);
+  locks[name] = result.then(() => undefined, () => undefined);
   return result;
 }
 
@@ -90,9 +97,15 @@ async function requireRuntime() {
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
   if (areaName !== "local" || !changes[STORAGE_KEYS.apiKey]) return;
+  credentialRevision += 1;
+  knownApiKeyStatus = null;
+  modelCheckIds.clear();
   modelRefresh?.controller?.abort("cancelled");
   modelRefresh = null;
-  void chrome.storage.local.remove(STORAGE_KEYS.modelCatalog).catch(() => undefined);
+  void withLock("credentials", () => chrome.storage.local.remove([
+    STORAGE_KEYS.modelCatalog,
+    STORAGE_KEYS.apiKeyStatus,
+  ])).catch(() => undefined);
 });
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -150,6 +163,13 @@ chrome.runtime.onConnect.addListener((port) => {
 });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message?.action === "openSettings" && validateContentSender(sender, chrome.runtime.id).ok) {
+    void chrome.runtime.openOptionsPage().then(
+      () => sendResponse({ ok: true }),
+      () => sendResponse({ ok: false, error: publicError("service_error") }),
+    );
+    return true;
+  }
   if (!isTrustedExtensionPage(sender)) return false;
   if (message?.action === "listModels") {
     void listModelsForUi(message.forceRefresh === true).then(sendResponse);
@@ -293,14 +313,12 @@ async function getPreferences() {
     aiModel: isValidModelId(stored[STORAGE_KEYS.aiModel])
       ? stored[STORAGE_KEYS.aiModel]
       : DEFAULTS.aiModel,
-    triggerKey: isSupportedTriggerKey(stored[STORAGE_KEYS.triggerKey])
-      ? stored[STORAGE_KEYS.triggerKey]
-      : DEFAULTS.triggerKey,
+    triggerKey: getStoredTriggerKey(stored),
   };
 }
 
 async function reserveRequest(request) {
-  return withGateLock(async () => {
+  return withLock("requests", async () => {
     const duplicateKey = makeDuplicateKey(request);
     const stored = await chrome.storage.session.get(STORAGE_KEYS.rateStarts);
     const gate = checkRequestGate({
@@ -323,7 +341,7 @@ async function reserveRequest(request) {
 }
 
 async function releaseRequest(reservation) {
-  await withGateLock(async () => {
+  await withLock("requests", async () => {
     activeGlobal = Math.max(0, activeGlobal - 1);
     const tabActive = Math.max(0, (activeByTab.get(reservation.tabId) ?? 1) - 1);
     if (tabActive) activeByTab.set(reservation.tabId, tabActive);
@@ -331,7 +349,7 @@ async function releaseRequest(reservation) {
     activeDuplicates.delete(reservation.duplicateKey);
     await chrome.storage.session.set({ [STORAGE_KEYS.activeRequestCount]: activeGlobal }).catch(() => {
       setTimeout(() => {
-        void withGateLock(() => chrome.storage.session.set({
+        void withLock("requests", () => chrome.storage.session.set({
           [STORAGE_KEYS.activeRequestCount]: activeGlobal,
         })).catch(() => undefined);
       }, 250);
@@ -368,6 +386,9 @@ async function listModelsForUi(forceRefresh) {
     const apiKey = await getApiKey();
     if (!apiKey) throw runtimeFailure(publicError("missing_api_key"));
     const catalog = await getModelCatalog(apiKey, forceRefresh);
+    if (!catalog.models.length && catalog.unavailableModels?.length) {
+      throw runtimeFailure(publicError("invalid_model"));
+    }
     return { ok: true, ...catalog };
   } catch (error) {
     return { ok: false, error: toPublicError(error) };
@@ -376,7 +397,12 @@ async function listModelsForUi(forceRefresh) {
 
 async function getModelCatalog(apiKey, forceRefresh = false, options = {}) {
   const { signal, allowStale = false } = options;
-  const stored = await chrome.storage.local.get(STORAGE_KEYS.modelCatalog);
+  await locks.credentials;
+  const stored = await chrome.storage.local.get([STORAGE_KEYS.modelCatalog, STORAGE_KEYS.apiKeyStatus]);
+  await requireCurrentApiKey(apiKey);
+  if (!forceRefresh && isRejectedApiKey(apiKey, stored)) {
+    throw runtimeFailure(publicError("invalid_api_key"));
+  }
   const cached = validateModelCache(
     stored[STORAGE_KEYS.modelCatalog],
     stableTextHash(apiKey),
@@ -396,8 +422,21 @@ async function getModelCatalog(apiKey, forceRefresh = false, options = {}) {
     if (["cancelled", "invalid_api_key", "missing_api_key"].includes(error?.publicError?.code)) {
       throw error;
     }
-    if (cached) return { ...cached, source: "cache", stale: true };
-    throw error;
+    return withLock("credentials", async () => {
+      const current = await chrome.storage.local.get([
+        STORAGE_KEYS.apiKey,
+        STORAGE_KEYS.apiKeyStatus,
+        STORAGE_KEYS.modelCatalog,
+      ]);
+      const currentKey = normalizeApiKey(current[STORAGE_KEYS.apiKey]);
+      if (currentKey !== apiKey) {
+        throw runtimeFailure(publicError(currentKey ? "cancelled" : "missing_api_key"));
+      }
+      if (isRejectedApiKey(apiKey, current)) throw runtimeFailure(publicError("invalid_api_key"));
+      const fallback = validateModelCache(current[STORAGE_KEYS.modelCatalog], stableTextHash(apiKey));
+      if (fallback) return { ...fallback, source: "cache", stale: true };
+      throw error;
+    });
   }
 }
 
@@ -477,15 +516,81 @@ async function fetchModelCatalog(apiKey, parentSignal) {
 
   const compatible = normalizeModels({ models });
   if (!compatible.length) throw runtimeFailure(publicError("invalid_response"));
-  if (await getApiKey() !== apiKey) throw runtimeFailure(publicError("invalid_api_key"));
   const catalog = { models: compatible, fetchedAt: Date.now() };
-  await chrome.storage.local.set({
-    [STORAGE_KEYS.modelCatalog]: { ...catalog, apiKeyHash: stableTextHash(apiKey) },
+  await withLock("credentials", async () => {
+    await requireCurrentApiKey(apiKey);
+    const status = await chrome.storage.local.get(STORAGE_KEYS.apiKeyStatus);
+    if (isRejectedApiKey(apiKey, status)) throw runtimeFailure(publicError("invalid_api_key"));
+    await chrome.storage.local.set({
+      [STORAGE_KEYS.modelCatalog]: { ...catalog, apiKeyHash: stableTextHash(apiKey) },
+    });
+    catalogRevision += 1;
   });
   return catalog;
 }
 
+function isRejectedApiKey(apiKey, stored) {
+  const apiKeyHash = stableTextHash(apiKey);
+  const status = knownApiKeyStatus?.apiKeyHash === apiKeyHash
+    ? knownApiKeyStatus : stored[STORAGE_KEYS.apiKeyStatus];
+  return status?.apiKeyHash === apiKeyHash && status.status === "rejected";
+}
+
+async function recordApiKeyStatus(apiKey, status, revision, checkId) {
+  await withLock("credentials", async () => {
+    if (revision !== credentialRevision || checkId < appliedCredentialCheckId) return;
+    let currentKey;
+    try {
+      currentKey = await getApiKey();
+    } catch {
+      if (status === "rejected" && revision === credentialRevision) {
+        appliedCredentialCheckId = checkId;
+        knownApiKeyStatus = { apiKeyHash: stableTextHash(apiKey), status };
+      }
+      return;
+    }
+    if (currentKey !== apiKey || revision !== credentialRevision) return;
+    appliedCredentialCheckId = checkId;
+    knownApiKeyStatus = { apiKeyHash: stableTextHash(apiKey), status };
+    await chrome.storage.local.set({
+      [STORAGE_KEYS.apiKeyStatus]: knownApiKeyStatus,
+      ...(status === "rejected" ? { [STORAGE_KEYS.modelCatalog]: null } : {}),
+    }).catch(async () => {
+      if (status === "rejected") {
+        await chrome.storage.local.remove(STORAGE_KEYS.modelCatalog).catch(() => undefined);
+      }
+    });
+  });
+}
+
+async function recordModelStatus(apiKey, model, available, revision, catalogVersion, checkId) {
+  if (!model) return;
+  await withLock("credentials", async () => {
+    if (revision !== credentialRevision || catalogVersion !== catalogRevision
+        || checkId < (modelCheckIds.get(model) ?? 0) || await getApiKey() !== apiKey) return;
+    modelCheckIds.set(model, checkId);
+    const stored = await chrome.storage.local.get(STORAGE_KEYS.modelCatalog);
+    const catalog = stored[STORAGE_KEYS.modelCatalog];
+    if (revision !== credentialRevision || catalog?.apiKeyHash !== stableTextHash(apiKey)
+        || !validateModelCache(catalog, stableTextHash(apiKey))
+        || !catalog.models.some(({ id }) => id === model)) return;
+    const unavailableModels = new Set(catalog.unavailableModels ?? []);
+    if (available ? !unavailableModels.delete(model) : unavailableModels.has(model)) return;
+    if (!available) unavailableModels.add(model);
+    await chrome.storage.local.set({
+      [STORAGE_KEYS.modelCatalog]: { ...catalog, unavailableModels: [...unavailableModels] },
+    }).catch(async () => {
+      if (!available) await chrome.storage.local.remove(STORAGE_KEYS.modelCatalog).catch(() => undefined);
+    });
+  }).catch(() => undefined);
+}
+
 async function fetchJson(url, init, signal) {
+  const apiKey = normalizeApiKey(init.headers["x-goog-api-key"]);
+  const revision = credentialRevision;
+  const checkId = ++credentialCheckId;
+  const catalogVersion = catalogRevision;
+  const model = /\/models\/([a-zA-Z0-9._-]+):generateContent$/.exec(url)?.[1];
   const response = await fetch(url, { ...init, signal });
   let payload = null;
   try {
@@ -494,15 +599,23 @@ async function fetchJson(url, init, signal) {
     if (response.ok) throw runtimeFailure(publicError("invalid_response"));
   }
   if (!response.ok) {
-    throw runtimeFailure(classifyProviderError(
+    const error = classifyProviderError(
       response.status,
       payload,
       parseRetryAfter(response.headers.get("Retry-After")),
-    ));
+    );
+    if (error.code === "invalid_api_key") {
+      await recordApiKeyStatus(apiKey, "rejected", revision, checkId);
+    } else if (error.code === "invalid_model") {
+      await recordModelStatus(apiKey, model, false, revision, catalogVersion, checkId);
+    }
+    throw runtimeFailure(error);
   }
   if (!payload || typeof payload !== "object") {
     throw runtimeFailure(publicError("invalid_response"));
   }
+  await recordApiKeyStatus(apiKey, "checked", revision, checkId);
+  await recordModelStatus(apiKey, model, true, revision, catalogVersion, checkId);
   return payload;
 }
 
@@ -572,10 +685,12 @@ async function setLatestFailure(requestId, error) {
 async function getRuntimeState() {
   try {
     await requireRuntime();
+    await locks.credentials;
     const [local, preferences, session] = await Promise.all([
       chrome.storage.local.get([
         STORAGE_KEYS.apiKey,
         STORAGE_KEYS.modelCatalog,
+        STORAGE_KEYS.apiKeyStatus,
       ]),
       getPreferences(),
       chrome.storage.session.get(STORAGE_KEYS.latestResult),
@@ -584,10 +699,16 @@ async function getRuntimeState() {
     const catalog = apiKey
       ? validateModelCache(local[STORAGE_KEYS.modelCatalog], stableTextHash(apiKey))
       : null;
+    const rejected = apiKey && isRejectedApiKey(apiKey, local);
+    const configurationError = rejected ? publicError("invalid_api_key")
+      : catalog && !catalog.models.some(({ id }) => id === preferences.aiModel)
+        ? publicError("invalid_model") : null;
     return {
       ok: true,
       hasApiKey: Boolean(apiKey),
-      configured: Boolean(apiKey && catalog?.models.some(({ id }) => id === preferences.aiModel)),
+      apiKeyStatus: !apiKey ? "missing" : rejected ? "rejected" : catalog ? "checked" : "saved",
+      configurationError,
+      configured: Boolean(apiKey && catalog && !configurationError),
       ...preferences,
       activeRequestCount: activeGlobal,
       latestResult: session[STORAGE_KEYS.latestResult] ?? null,

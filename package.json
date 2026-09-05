@@ -1,6 +1,6 @@
 {
   "name": "chrome-ai-translate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Translate selected text with the Gemini API.",
   "license": "MIT",
@@ -15,11 +15,13 @@
     "watch": "webpack --watch",
     "package": "npm run build && node scripts/package.mjs && npm run verify:package",
     "verify:package": "node scripts/verify-package.mjs",
-    "ci": "npm run check && npm test && npm run package"
+    "ci": "npm run check && npm test && npm run package",
+    "test:browser": "node scripts/content-browser-check.mjs && node scripts/extension-browser-check.mjs"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^14.0.0",
     "jszip": "^3.10.1",
+    "playwright": "1.62.1",
     "webpack": "^5.109.2",
     "webpack-cli": "^7.2.2"
   }

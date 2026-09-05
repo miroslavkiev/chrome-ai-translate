@@ -90,9 +90,19 @@ test("model catalog and provider responses are normalized without raw errors", (
   assert.deepEqual(models.map(({ id }) => id), ["gemma-4-26b-a4b-it"]);
   assert.equal(validateModelCache({ models, fetchedAt: 1, apiKeyHash: "hash" }, "hash").models.length, 1);
   assert.equal(validateModelCache({ models, fetchedAt: 1, apiKeyHash: "other" }, "hash"), null);
+  assert.deepEqual(validateModelCache({ models, fetchedAt: 1, apiKeyHash: "hash", unavailableModels: [models[0].id] }, "hash").models, []);
+  assert.equal(validateModelCache({ models, fetchedAt: 1, unavailableModels: ["unknown-model"] }), null);
 
   assert.deepEqual(extractTranslation({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "Hello" }, { text: "!" }] } }] }), { ok: true, text: "Hello!" });
-  assert.equal(extractTranslation({ candidates: [{ finishReason: "MAX_TOKENS", content: { parts: [{ text: "Partial" }] } }] }).error.code, "invalid_response");
+  assert.equal(extractTranslation({ candidates: [{ finishReason: "MAX_TOKENS", content: { parts: [{ text: "Partial" }] } }] }).error.code, "output_too_large");
+  for (const reason of ["SAFETY", "RECITATION", "LANGUAGE", "BLOCKLIST", "PROHIBITED_CONTENT", "SPII", "ESCALATION"]) {
+    assert.equal(extractTranslation({ candidates: [{ finishReason: reason }] }).error.code, "content_blocked");
+  }
+  assert.equal(extractTranslation({ promptFeedback: { blockReason: "SAFETY" } }).error.code, "content_blocked");
+  assert.equal(extractTranslation({ promptFeedback: { blockReason: "BLOCK_REASON_UNSPECIFIED" } }).error.code, "invalid_response");
+  assert.deepEqual(extractTranslation({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "private reasoning", thought: true }, { text: "Final" }] } }] }), { ok: true, text: "Final" });
+  assert.equal(extractTranslation({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "reasoning only", thought: true }] } }] }).error.code, "invalid_response");
+  assert.equal(extractTranslation({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "a".repeat(LIMITS.maxOutputCodePoints + 1) }] } }] }).error.code, "output_too_large");
   assert.equal(extractTranslation({ candidates: [] }).error.code, "invalid_response");
   assert.equal(classifyProviderError(403, {}, undefined).code, "service_error");
   assert.equal(classifyProviderError(403, { error: { details: [{ reason: "API_KEY_INVALID" }] } }, undefined).code, "invalid_api_key");
@@ -143,6 +153,7 @@ test("translation generation uses the lowest safe thinking mode for each model f
 
 test("stored trigger distinguishes Off from a missing preference", () => {
   assert.equal(getStoredTriggerKey({ [STORAGE_KEYS.triggerKey]: null }), null);
+  assert.equal(getStoredTriggerKey({ [STORAGE_KEYS.triggerKey]: "Off" }), null);
   assert.equal(getStoredTriggerKey({}), DEFAULTS.triggerKey);
   assert.equal(getStoredTriggerKey({ [STORAGE_KEYS.triggerKey]: "F8" }), "F8");
 });

@@ -25,6 +25,9 @@ async function assertFresh(output, inputs) {
 assert(names.includes("manifest.json"), "manifest.json must be at the archive root");
 assert(!names.some((name) => name.startsWith("dist/")), "archive entries must not use a dist prefix");
 assert.deepEqual(names, [
+  "INSTALL.md",
+  "LICENSE",
+  "PRIVACY.md",
   "background.js",
   "content.js",
   "icon.png",
@@ -33,7 +36,12 @@ assert.deepEqual(names, [
   "popup.js",
   "settings.html",
   "settings.js",
+  "ui.css",
 ]);
+
+const manifest = JSON.parse(await zip.file("manifest.json").async("string"));
+const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
+assert.equal(manifest.version, packageJson.version, "manifest and package versions must match");
 
 for (const name of names) {
   const [archived, built] = await Promise.all([
@@ -52,6 +60,7 @@ await Promise.all([
   assertFresh("popup.html", ["popup.html", ...buildInputs]),
   assertFresh("settings.html", ["settings.html", ...buildInputs]),
   assertFresh("icon.png", ["icon.png", ...buildInputs]),
+  ...["ui.css", "INSTALL.md", "PRIVACY.md", "LICENSE"].map((name) => assertFresh(name, [name, ...buildInputs])),
   assertFresh(archiveName, ["scripts/package.mjs", "package.json", "package-lock.json"]),
 ]);
 

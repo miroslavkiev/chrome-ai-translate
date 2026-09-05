@@ -3,6 +3,10 @@ import test from "node:test";
 import {
   DEFAULTS,
   codePointLength,
+  copyText,
+  createRequestId,
+  formatTriggerKey,
+  getErrorPresentation,
   isSupportedLanguage,
   isSupportedTriggerKey,
   isValidModelId,
@@ -43,4 +47,27 @@ test("public errors do not expose unknown internal failures", () => {
   assert.equal(publicError("timeout", { code: "raw", message: "raw" }).code, "timeout");
   assert.equal(stableTextHash("same"), stableTextHash("same"));
   assert.notEqual(stableTextHash("same"), stableTextHash("different"));
+});
+
+test("HTTP UUID fallback, common key labels, error actions, and clipboard failure are safe", async () => {
+  let filled = false;
+  const id = createRequestId({ getRandomValues(bytes) { filled = true; return bytes.fill(255); } });
+  assert(filled);
+  assert(isValidRequestId(id));
+  assert.equal(id, "ffffffff-ffff-4fff-bfff-ffffffffffff");
+  assert(isValidRequestId(createRequestId()));
+  assert.equal(formatTriggerKey(null, "MacIntel"), "Off");
+  assert.equal(formatTriggerKey("Meta", "MacIntel"), "Command");
+  assert.equal(formatTriggerKey("Alt", "MacIntel"), "Option");
+  assert.equal(formatTriggerKey("Alt", "Windows"), "Alt");
+  assert.equal(getErrorPresentation({ code: "invalid_api_key" }).action, "settings");
+  assert.equal(getErrorPresentation({ code: "output_too_large" }).action, null);
+  assert.equal(getErrorPresentation({ code: "content_blocked" }).action, null);
+  assert.match(getErrorPresentation({ code: "quota_exceeded", retryAfterMs: 1_100 }).message, /2 seconds/);
+  assert.equal(getErrorPresentation({ code: "raw", message: "secret" }).message.includes("secret"), false);
+  let copied;
+  assert.equal(await copyText("hello", { writeText: async (text) => { copied = text; } }), true);
+  assert.equal(copied, "hello");
+  assert.equal(await copyText("hello", { writeText: async () => { throw new Error("denied"); } }), false);
+  assert.equal(await copyText("hello", null), false);
 });

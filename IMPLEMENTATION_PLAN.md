@@ -1,5 +1,7 @@
 # Implementation plan
 
+The original 1.1.0 implementation below is complete. The 1.2.0 audit follow-up fixes B01-B11 and implements U03-U05, shared helper/style cleanup, lifecycle checks, packaging, and recovery guidance. U01 and U02 are excluded by user choice. Result dismissal and output clearing remain unchanged. Validation and residual limits are recorded in [RELEASE_CHECKS.md](RELEASE_CHECKS.md).
+
 ## Shared contract
 
 1. Add one shared module for settings defaults, languages, supported trigger keys, message errors, Unicode limits, and validation.

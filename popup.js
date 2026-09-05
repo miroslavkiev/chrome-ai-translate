@@ -1,61 +1,38 @@
 import {
   DEFAULTS,
-  PUBLIC_ERROR_MESSAGES,
+  copyText,
+  formatTriggerKey,
+  getErrorPresentation,
+  getLanguage,
   isSupportedLanguage,
   isValidModelId,
   normalizeTriggerKey,
 } from "./shared.js";
 
-const elements = {
-  status: document.getElementById("status"),
-  shortcut: document.getElementById("shortcut"),
-  activeCount: document.getElementById("activeCount"),
-  latestResult: document.getElementById("latestResult"),
-  openSettings: document.getElementById("openSettings"),
-};
+const elements = Object.fromEntries([
+  "status", "shortcut", "activeCount", "latestResult", "latestMeta", "copyResult", "copyStatus", "openSettings",
+].map((id) => [id, document.getElementById(id)]));
 
 let loadSequence = 0;
-
-function formatTriggerKey(key) {
-  if (key === null) return "Off";
-  const platform = navigator.userAgentData?.platform || navigator.platform || "";
-  if (/mac/i.test(platform)) {
-    if (key === "Meta") return "Command";
-    if (key === "Alt") return "Option";
-  }
-  return key;
-}
-
-function normalizeActiveCount(value) {
-  return Number.isSafeInteger(value) && value > 0 ? value : 0;
-}
+let copyValue = "";
 
 function readLatestResult(value) {
-  if (!value || typeof value !== "object") return { kind: "empty", text: "No translation yet." };
-
-  const status = typeof value.status === "string" ? value.status : "";
-  const translatedText = [value.text, value.translation, value.translatedText]
-    .find((item) => typeof item === "string" && item.trim());
-  if ((status === "success" || value.ok === true) && translatedText) {
-    return { kind: "success", text: translatedText };
-  }
-
-  const code = value.error?.code || value.code;
-  const knownMessage = typeof code === "string" && Object.hasOwn(PUBLIC_ERROR_MESSAGES, code)
-    ? PUBLIC_ERROR_MESSAGES[code]
-    : "";
-  const safeMessage = value.error?.message || knownMessage;
-  if (status === "error" || status === "failure" || value.ok === false || safeMessage) {
+  if (value?.status === "success" && typeof value.translatedText === "string"
+      && value.translatedText.trim() && isSupportedLanguage(value.targetLanguage)) {
+    const completedAt = Number.isFinite(value.completedAt) && value.completedAt > 0
+      ? new Date(value.completedAt) : null;
+    const when = completedAt && !Number.isNaN(completedAt.getTime())
+      ? new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeStyle: "short" }).format(completedAt)
+      : "";
     return {
-      kind: "error",
-      text: typeof safeMessage === "string" && safeMessage.trim()
-        ? safeMessage
-        : "The latest translation failed.",
+      kind: "success",
+      text: value.translatedText,
+      language: value.targetLanguage,
+      meta: [getLanguage(value.targetLanguage).name, when].filter(Boolean).join(" · "),
     };
   }
-
-  if (status === "loading" || status === "translating") {
-    return { kind: "empty", text: "Translation in progress..." };
+  if (value?.status === "error") {
+    return { kind: "error", text: getErrorPresentation(value.error).message };
   }
   return { kind: "empty", text: "No translation yet." };
 }
@@ -65,26 +42,41 @@ function setStatus(state, label) {
   elements.status.textContent = label;
 }
 
-function render({ hasApiKey, configured, triggerKey, activeCount, latestResult }) {
-  elements.shortcut.textContent = formatTriggerKey(triggerKey);
+function showResult(result) {
+  elements.latestResult.dataset.kind = result.kind;
+  elements.latestResult.textContent = result.text;
+  elements.latestResult.lang = result.language ?? "en";
+  elements.latestMeta.textContent = result.meta ?? "";
+  elements.latestMeta.hidden = !result.meta;
+  copyValue = result.kind === "success" ? result.text : "";
+  elements.copyResult.hidden = !copyValue;
+  elements.copyStatus.textContent = "";
+}
+
+function render(response) {
+  const configured = response.configured === true
+    && isSupportedLanguage(response.targetLanguage ?? DEFAULTS.targetLanguage)
+    && isValidModelId(response.aiModel ?? DEFAULTS.aiModel);
+  const activeCount = Number.isSafeInteger(response.activeRequestCount) && response.activeRequestCount > 0
+    ? response.activeRequestCount : 0;
+  elements.shortcut.textContent = formatTriggerKey(normalizeTriggerKey(
+    Object.hasOwn(response, "triggerKey") ? response.triggerKey : DEFAULTS.triggerKey,
+  ));
   elements.activeCount.textContent = String(activeCount);
-
-  const latest = readLatestResult(latestResult);
-  elements.latestResult.dataset.kind = latest.kind;
-  elements.latestResult.textContent = !hasApiKey
-    ? "Add an API key in Settings to start translating."
-    : !configured
-      ? "Open Settings to validate the API key and model."
-      : latest.text;
-
-  if (!configured) {
-    setStatus("setup", "Setup required");
-  } else if (activeCount > 0) {
-    setStatus("translating", "Translating");
-  } else if (latest.kind === "error") {
-    setStatus("error", "Error");
+  const latest = readLatestResult(response.latestResult);
+  if (response.configurationError) {
+    showResult({ kind: "error", text: getErrorPresentation(response.configurationError).message });
+    setStatus("setup", response.apiKeyStatus === "rejected" ? "Key rejected" : "Setup required");
+  } else if (!response.hasApiKey) {
+    showResult({ kind: "empty", text: "Add an API key in Settings to start translating." });
+    setStatus("setup", "Add API key");
+  } else if (!configured) {
+    showResult({ kind: "empty", text: "The key is saved. Open Settings to check the key and choose a compatible model." });
+    setStatus("setup", "Check setup");
   } else {
-    setStatus("ready", "Ready");
+    showResult(latest);
+    setStatus(activeCount > 0 ? "translating" : latest.kind === "error" ? "error" : "ready",
+      activeCount > 0 ? "Translating" : latest.kind === "error" ? "Error" : "Ready");
   }
 }
 
@@ -94,41 +86,34 @@ async function loadState() {
     const response = await chrome.runtime.sendMessage({ action: "getRuntimeState" });
     if (sequence !== loadSequence) return;
     if (!response?.ok) throw new Error("Runtime state is unavailable.");
-    const targetLanguage = response.targetLanguage ?? DEFAULTS.targetLanguage;
-    const aiModel = response.aiModel ?? DEFAULTS.aiModel;
-
-    render({
-      hasApiKey: response.hasApiKey === true,
-      configured: response.configured === true
-        && isSupportedLanguage(targetLanguage)
-        && isValidModelId(aiModel),
-      triggerKey: normalizeTriggerKey(Object.hasOwn(response, "triggerKey")
-        ? response.triggerKey
-        : DEFAULTS.triggerKey),
-      activeCount: normalizeActiveCount(response.activeRequestCount),
-      latestResult: response.latestResult,
-    });
+    render(response);
   } catch {
     if (sequence !== loadSequence) return;
-    elements.latestResult.dataset.kind = "error";
-    elements.latestResult.textContent = "Extension status could not be loaded.";
+    showResult({ kind: "error", text: "Extension status could not be loaded. Reload the extension, then refresh the page." });
     setStatus("error", "Error");
   }
 }
+
+elements.copyResult.addEventListener("click", async () => {
+  const text = copyValue;
+  if (!text) return;
+  const copied = await copyText(text);
+  if (text !== copyValue) return;
+  elements.copyStatus.textContent = copied ? "Copied." : "Copy was blocked. Select the result text and copy it.";
+});
 
 elements.openSettings.addEventListener("click", async () => {
   try {
     await chrome.runtime.openOptionsPage();
     window.close();
   } catch {
-    elements.latestResult.dataset.kind = "error";
-    elements.latestResult.textContent = "Settings could not be opened.";
+    elements.copyStatus.textContent = "Settings could not be opened. Try again.";
     setStatus("error", "Error");
   }
 });
 
 chrome.storage.onChanged.addListener((_changes, areaName) => {
-  if (areaName === "local" || areaName === "sync" || areaName === "session") loadState();
+  if (["local", "sync", "session"].includes(areaName)) void loadState();
 });
 
-loadState();
+void loadState();

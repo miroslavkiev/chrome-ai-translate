@@ -11,6 +11,7 @@ Model-list refreshes send only your API authentication and a request for availab
 ## Data stored by Chrome
 
 - Your Gemini API key is stored in local extension storage. It is not synced to other browsers. Chrome extension storage is not encrypted against access to your local browser profile.
+- The last model list and known key/model check state are also stored locally. They contain provider model metadata and a key fingerprint, not source text or translation history. Key replacement or removal invalidates the old catalog.
 - Your default language, selected model, and trigger key are stored in Chrome sync storage.
 - The latest translation or failure, active request count, and recent request timestamps are stored in session storage. They are cleared when the browser session ends.
 - Source text is not kept in translation history or persistent storage.
@@ -26,3 +27,7 @@ Chrome pages, browser settings, the built-in PDF viewer, and other restricted pa
 ## Controls and limits
 
 You can disable the global key and keep the context menu. You can replace the API key by pasting another key or remove it by emptying the field. The extension limits input size, active requests, rapid requests, response size, and request duration. Failed requests are not retried automatically.
+
+Copy runs only when you choose it and writes only the displayed result to the clipboard. If the browser blocks copying, the result remains selectable. No new clipboard permission is requested.
+
+Cancelling a request stops local waiting and attempts to abort the network request. Removing a key prevents future requests after the current-key check. Neither action guarantees that already dispatched provider work stops or becomes free. No translation data is sent to any service other than the configured Gemini API endpoint.

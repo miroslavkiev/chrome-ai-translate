@@ -1,0 +1,236 @@
+import assert from "node:assert/strict";
+import { mkdtemp, rm } from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { DEFAULTS, stableTextHash } from "../shared.js";
+
+// Use only a temporary profile, fixture pages, fake credentials, and fake provider replies.
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
+const extension = process.env.EXTENSION_PATH
+  || fileURLToPath(new URL("../dist", import.meta.url));
+const temporary = await mkdtemp(path.join(os.tmpdir(), "ai-translator-browser-"));
+let context;
+try {
+  context = await chromium.launchPersistentContext(path.join(temporary, "profile"), {
+    // Keep extension APIs available in the browser's modern headless mode.
+    headless: false,
+    ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : { channel: "chromium" }),
+    ignoreDefaultArgs: ["--disable-extensions"],
+    args: ["--headless=new", `--disable-extensions-except=${extension}`, `--load-extension=${extension}`, "--disable-background-networking"],
+    viewport: { width: 1100, height: 800 },
+  });
+  const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
+  const extensionId = new URL(worker.url()).host;
+  await worker.evaluate(async ({ model, hash }) => {
+    globalThis.probe = { starts: 0, delay: 0, failure: null, status: 503 };
+    globalThis.fetch = async (url, options = {}) => {
+      if (!String(url).includes(":generateContent")) {
+        return new Response(JSON.stringify({ models: [{ name: `models/${model}`, outputTokenLimit: 8192,
+          supportedGenerationMethods: ["generateContent"] }] }));
+      }
+      probe.starts += 1;
+      if (probe.delay) await new Promise((resolve, reject) => {
+        const timer = setTimeout(resolve, probe.delay);
+        options.signal.addEventListener("abort", () => {
+          clearTimeout(timer);
+          reject(new DOMException("Aborted", "AbortError"));
+        }, { once: true });
+      });
+      if (probe.failure) return new Response(JSON.stringify({ error: { status: probe.failure } }), { status: probe.status, headers: probe.status === 429 ? { "Retry-After": "1" } : {} });
+      return new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "Переклад" }] } }] }));
+    };
+    await chrome.storage.local.set({ geminiApiKey: "browser-check-fake-key" });
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    await chrome.storage.local.set({ modelCatalog: { apiKeyHash: hash, fetchedAt: Date.now(),
+      models: [{ id: model, displayName: "Test model", outputTokenLimit: 8192, thinking: false }] } });
+    await chrome.storage.sync.set({ triggerKey: "Control", targetLanguage: "uk", aiModel: model });
+  }, { model: DEFAULTS.aiModel, hash: stableTextHash("browser-check-fake-key") });
+
+  const html = `<!doctype html><html lang="de"><body>
+    <p id="one">First sample paragraph.</p><p id="two">Second sample paragraph.</p>
+    <a id="link" href="#one">Page link</a><textarea id="plain">Native textarea</textarea><div id="shadow"></div>
+    <dialog id="dialog"><p id="modaltext">Modal sample text.</p><button id="dialog-button">Page dialog action</button></dialog>
+    <div id="full"><p id="fulltext">Fullscreen text.</p><button id="fullscreen">Fullscreen</button></div>
+    <script>document.querySelector('#fullscreen').onclick=()=>document.querySelector('#full').requestFullscreen();</script>
+    </body></html>`;
+  await context.route("**/*", (route) => /^https?:/.test(route.request().url())
+    ? route.fulfill({ status: 200, contentType: "text/html", body: html }) : route.continue());
+  const page = await context.newPage();
+  const cdp = await context.newCDPSession(page);
+  let contentContext;
+  const exceptions = [];
+  cdp.on("Runtime.executionContextCreated", ({ context: current }) => {
+    if (current.name === "AI Translator") contentContext = current.id;
+  });
+  cdp.on("Runtime.exceptionThrown", ({ exceptionDetails }) => exceptions.push(exceptionDetails.text));
+  await cdp.send("Runtime.enable");
+  const pause = () => page.waitForTimeout(100);
+  async function load(suffix = "plain", scheme = "https") {
+    contentContext = null;
+    await page.goto(`${scheme}://browser-check.test/${suffix}`);
+    await pause();
+  }
+  async function select(selector) {
+    await page.evaluate((selector) => {
+      const range = document.createRange();
+      range.selectNodeContents(document.querySelector(selector));
+      const selection = getSelection();
+      selection.removeAllRanges(); selection.addRange(range);
+    }, selector);
+    await pause();
+  }
+  async function trigger() { await page.keyboard.press("Control"); await pause(); }
+  async function roots() {
+    const { root } = await cdp.send("DOM.getDocument", { depth: -1, pierce: true });
+    const found = [];
+    function visit(node) {
+      if (node.nodeName === "AI-TRANSLATOR-CARD") found.push(node.shadowRoots[0]);
+      for (const child of [...(node.children || []), ...(node.shadowRoots || [])]) visit(child);
+    }
+    visit(root);
+    return found;
+  }
+  async function inCard(fn, argument) {
+    const shadow = (await roots()).at(-1);
+    assert.ok(shadow, "Expected an open card");
+    const { object } = await cdp.send("DOM.resolveNode", { backendNodeId: shadow.backendNodeId });
+    const response = await cdp.send("Runtime.callFunctionOn", { objectId: object.objectId,
+      functionDeclaration: fn.toString(), arguments: [{ value: argument }], returnByValue: true });
+    if (response.exceptionDetails) throw new Error(response.exceptionDetails.text);
+    return response.result.value;
+  }
+  async function state() {
+    return inCard(function () {
+      const output = this.querySelector(".output");
+      return { text: output.textContent, hidden: output.hidden, lang: output.lang, shellLang: this.host.lang,
+        status: this.querySelector(".state").textContent, active: this.activeElement?.className,
+        languageDisabled: this.querySelector("select").disabled,
+        retryDisabled: [...this.querySelectorAll("button")].find((button) => button.textContent === "Retry").disabled,
+        buttons: [...this.querySelectorAll("button")].filter((button) => !button.hidden).map((button) => button.textContent) };
+    });
+  }
+  async function click(text) {
+    const rect = await inCard(function (text) {
+      const button = [...this.querySelectorAll("button")].find((item) => item.textContent === text && !item.hidden);
+      const rect = button.getBoundingClientRect();
+      return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
+    }, text);
+    await page.mouse.click(rect.x, rect.y); await pause();
+  }
+  async function stubClipboard(success) {
+    await cdp.send("Runtime.evaluate", { contextId: contentContext, expression:
+      `Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: async (text) => {
+        if (!${success}) throw new Error('Clipboard denied'); globalThis.copiedProbeText = text;
+      } } });` });
+  }
+
+  await load("http", "http"); await select("#one"); await trigger();
+  assert.equal((await state()).text, "Переклад");
+  await click("Copy"); assert.match((await state()).status, /Copy failed/);
+  await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0);
+
+  await load(); await select("#one"); await trigger();
+  await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0);
+  await select("#one"); await trigger();
+  assert.equal((await state()).lang, "uk"); assert.equal((await state()).shellLang, "en");
+  await page.keyboard.press("Tab"); assert.equal((await state()).active, "output");
+  await page.keyboard.press("Tab"); assert.notEqual((await state()).active, "output");
+  await stubClipboard(true); await click("Copy"); assert.equal((await state()).status, "Copied.");
+  await stubClipboard(false); await click("Copy"); assert.match((await state()).status, /Copy failed/);
+
+  await worker.evaluate(() => { probe.delay = 300; });
+  const beforeLanguage = await worker.evaluate(() => probe.starts);
+  await inCard(function () { const select = this.querySelector("select"); select.value = "fr"; select.dispatchEvent(new Event("change")); });
+  assert.equal((await state()).text, ""); assert.equal((await state()).hidden, true);
+  await page.waitForTimeout(400); assert.equal(await worker.evaluate(() => probe.starts), beforeLanguage + 1);
+  await worker.evaluate(() => { probe.delay = 0; });
+  assert.equal((await state()).lang, "fr");
+  assert.equal(await worker.evaluate(async () => (await chrome.storage.sync.get("targetLanguage")).targetLanguage), "uk");
+
+  await worker.evaluate(() => { probe.delay = 600; probe.failure = "UNAVAILABLE"; });
+  await click("Retry"); assert.equal((await state()).text, ""); assert.equal((await state()).hidden, true);
+  await page.waitForTimeout(700); assert.equal((await state()).text, ""); assert.match((await state()).status, /could not|reached/);
+  await worker.evaluate(() => { probe.failure = null; });
+  await click("Retry"); await page.click("#two"); await pause();
+  assert.equal((await roots()).length, 0);
+  const cancelled = await worker.evaluate(() => chrome.storage.session.get(["latestResult", "activeRequestCount"]));
+  assert.equal(cancelled.activeRequestCount, 0); assert.equal(cancelled.latestResult.error.code, "cancelled");
+  await worker.evaluate(() => { probe.delay = 0; });
+
+  await load("completed-cap"); await select("#one");
+  for (let index = 0; index < 6; index += 1) await trigger();
+  assert.equal((await roots()).length, 5);
+  await page.mouse.click(1095, 795); assert.equal((await roots()).length, 0);
+
+  await load("native-textarea");
+  await page.locator("#plain").focus(); await page.locator("#plain").evaluate((input) => input.select());
+  await pause(); await trigger(); assert.equal((await state()).text, "Переклад");
+
+  await load("shadow");
+  await page.evaluate(() => {
+    const outer = document.querySelector("#shadow").attachShadow({ mode: "open" });
+    const host = document.createElement("div"); outer.append(host);
+    const root = host.attachShadow({ mode: "open" }); const input = document.createElement("textarea");
+    input.value = "Nested selection"; root.append(input); input.focus(); input.select();
+  });
+  await pause(); await trigger(); assert.equal((await state()).text, "Переклад");
+  await page.keyboard.press("Escape");
+  const starts = await worker.evaluate(() => probe.starts);
+  await page.evaluate(() => {
+    const root = document.querySelector("#shadow").shadowRoot.firstChild.shadowRoot;
+    const password = document.createElement("input"); password.type = "password"; password.value = "fake-secret";
+    root.replaceChildren(password); password.focus(); password.select();
+  });
+  await pause(); await trigger(); assert.equal((await roots()).length, 0); assert.equal(await worker.evaluate(() => probe.starts), starts);
+
+  await load("oversize"); await page.evaluate(() => { document.querySelector("#one").textContent = "x".repeat(10001); });
+  await select("#one"); await trigger(); assert.match((await state()).status, /10,000/); assert.ok(!(await state()).buttons.includes("Retry"));
+  await page.keyboard.press("Escape");
+  await worker.evaluate(async () => {
+    const tabs = await chrome.tabs.query({});
+    const tab = tabs.find((item) => item.url?.includes("/oversize"));
+    const result = await chrome.tabs.sendMessage(tab.id, { action: "contextMenuTranslate", selectionText: "x".repeat(10001) }, { frameId: 0 });
+    if (!result.accepted) throw new Error("Oversize error was not displayed");
+  });
+  assert.match((await state()).status, /10,000/); assert.equal(await worker.evaluate(() => probe.starts), starts);
+
+  await load("modal"); await page.evaluate(() => document.querySelector("#dialog").showModal());
+  await select("#modaltext"); await trigger();
+  assert.equal(await page.evaluate(() => document.querySelector("ai-translator-card").parentElement.id), "dialog");
+  assert.equal(await page.evaluate(() => { const host = document.querySelector("ai-translator-card"); const rect = host.getBoundingClientRect();
+    return document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2)?.tagName; }), "AI-TRANSLATOR-CARD");
+  await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0); assert.equal(await page.locator("#dialog").evaluate((dialog) => dialog.open), true);
+  await select("#modaltext"); await trigger();
+  await page.keyboard.press("Tab"); assert.equal((await state()).active, "output");
+  await inCard(function () { this.querySelector("select").focus(); });
+  const beforeModalLanguage = await worker.evaluate(() => probe.starts);
+  await page.keyboard.press("e"); await pause();
+  assert.equal(await worker.evaluate(() => probe.starts), beforeModalLanguage + 1);
+  assert.equal((await state()).lang, "en");
+  await click("Retry"); assert.equal((await state()).text, "Переклад");
+  await click("×"); assert.equal((await roots()).length, 0); assert.equal(await page.locator("#dialog").evaluate((dialog) => dialog.open), true);
+
+  await load("fullscreen"); await page.click("#fullscreen"); await page.waitForFunction(() => document.fullscreenElement);
+  await select("#fulltext"); await trigger();
+  assert.equal(await page.evaluate(() => document.querySelector("ai-translator-card").parentElement.id), "full");
+  await click("×"); assert.equal((await roots()).length, 0); await page.evaluate(() => document.exitFullscreen());
+
+  await load("rate-delay");
+  await worker.evaluate(() => { probe.failure = "RESOURCE_EXHAUSTED"; probe.status = 429; });
+  await select("#one"); await trigger();
+  assert.match((await state()).status, /Try again in 1 seconds/);
+  assert.equal((await state()).retryDisabled, true); assert.equal((await state()).languageDisabled, true);
+  await page.waitForTimeout(1100); assert.equal((await state()).retryDisabled, false);
+  await worker.evaluate(() => { probe.failure = null; probe.status = 503; });
+
+  await load("settings-action"); await worker.evaluate(() => chrome.storage.local.remove("geminiApiKey"));
+  await select("#one"); await trigger(); assert.ok((await state()).buttons.includes("Settings")); assert.ok(!(await state()).buttons.includes("Retry"));
+  const settingsPage = context.waitForEvent("page"); await click("Settings"); const opened = await settingsPage;
+  await opened.waitForURL(`chrome-extension://${extensionId}/settings.html`);
+  assert.equal(exceptions.length, 0, exceptions.join("\n"));
+  console.log("Content browser checks passed: HTTP, shadow/password, size errors, modal/fullscreen, keyboard, Copy/Settings, and unchanged cancellation/result clearing.");
+} finally {
+  await context?.close();
+  await rm(temporary, { recursive: true, force: true });
+}

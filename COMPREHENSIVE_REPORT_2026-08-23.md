@@ -2,6 +2,8 @@
 
 Date: 2026-08-23
 
+Historical report for version 1.1.0. Its completion claims describe that review only. Later findings and version 1.2.0 checks are recorded in [RELEASE_CHECKS.md](RELEASE_CHECKS.md); use README.md and DESIGN.md for current behavior.
+
 ## Executive result
 
 The application was reviewed and rebuilt as Chrome extension version 1.1.0. The work covered security, privacy, paid-request control, runtime correctness, edge cases, performance, accessibility, user experience, dependency health, build behavior, packaging, and documentation.

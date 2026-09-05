@@ -5,40 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <title>AI Translator</title>
+  <link rel="stylesheet" href="ui.css">
   <style>
     :root {
-      color-scheme: light dark;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      --page: #f5f5f7;
+
       --surface: #fff;
-      --text: #1d1d1f;
-      --muted: #6e6e73;
-      --line: rgba(60, 60, 67, 0.18);
-      --control: rgba(118, 118, 128, 0.12);
-      --accent: #0068c9;
-      --focus: #005eb8;
+
       --ready: #176b2c;
       --working: #005eb8;
       --error: #b42318;
       --setup: #765300;
     }
 
-    * { box-sizing: border-box; }
-
     body {
       width: 360px;
       min-width: 300px;
-      margin: 0;
-      color: var(--text);
-      background: var(--page);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    button { font: inherit; }
-
-    button:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 2px;
     }
 
     .shell { padding: 18px; }
@@ -65,8 +46,6 @@
     }
 
     .title-wrap { min-width: 0; flex: 1; }
-
-    h1, h2, p { margin-top: 0; }
 
     h1 {
       margin-bottom: 2px;
@@ -108,11 +87,8 @@
     .status[data-state="setup"] { color: var(--setup); }
 
     .card {
-      overflow: hidden;
       margin-bottom: 12px;
-      border: 1px solid var(--line);
       border-radius: 14px;
-      background: var(--surface);
     }
 
     .metric {
@@ -159,6 +135,11 @@
 
     .result-text[data-kind="empty"] { color: var(--muted); }
     .result-text[data-kind="error"] { color: var(--error); }
+    .result-text:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+    .result-meta, .copy-status { margin: 8px 0; color: var(--muted); font-size: 12px; }
+    .result-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .copy-status { margin: 0; }
 
     .settings-button {
       width: 100%;
@@ -177,21 +158,12 @@
       :root {
         --page: #1c1c1e;
         --surface: #2c2c2e;
-        --text: #f5f5f7;
-        --muted: #aeaeb2;
-        --line: rgba(235, 235, 245, 0.16);
-        --control: rgba(118, 118, 128, 0.24);
-        --accent: #0068c9;
-        --focus: #72b7ff;
+
         --ready: #66d983;
         --working: #72b7ff;
         --error: #ff8a80;
         --setup: #ffdb66;
       }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition: none !important; }
     }
 
     @media (forced-colors: active) {
@@ -226,7 +198,12 @@
 
     <section class="card result" aria-labelledby="latest-heading">
       <h2 id="latest-heading">Latest this session</h2>
-      <p id="latestResult" class="result-text" data-kind="empty" aria-live="polite">No translation yet.</p>
+      <p id="latestResult" class="result-text" data-kind="empty" tabindex="0" aria-live="polite" aria-labelledby="latest-heading">No translation yet.</p>
+      <p id="latestMeta" class="result-meta" hidden></p>
+      <div class="result-actions">
+        <button id="copyResult" class="button" type="button" hidden>Copy</button>
+        <p id="copyStatus" class="copy-status" role="status"></p>
+      </div>
     </section>
 
     <button id="openSettings" class="settings-button" type="button">Settings</button>
