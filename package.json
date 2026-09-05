@@ -1,9 +1,12 @@
 {
   "name": "chrome-ai-translate",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "private": true,
   "description": "Super easy translation: select text and press Control. Translate into your chosen language with Gemini.",
   "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/miroslavkiev/chrome-ai-translate.git" },
+  "homepage": "https://github.com/miroslavkiev/chrome-ai-translate",
+  "bugs": { "url": "https://github.com/miroslavkiev/chrome-ai-translate/issues" },
   "type": "module",
   "engines": {
     "node": ">=20.19.0"
@@ -16,7 +19,8 @@
     "package": "npm run build && node scripts/package.mjs && npm run verify:package",
     "verify:package": "node scripts/verify-package.mjs",
     "ci": "npm run check && npm test && npm run package",
-    "test:browser": "node scripts/content-browser-check.mjs && node scripts/content-browser-check.mjs --source && node scripts/extension-browser-check.mjs"
+    "test:browser": "node scripts/content-browser-check.mjs && node scripts/content-browser-check.mjs --source && node scripts/extension-browser-check.mjs",
+    "store:assets": "node scripts/store-assets.mjs"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^14.0.0",

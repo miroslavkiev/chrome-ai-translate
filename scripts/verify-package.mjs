@@ -54,6 +54,9 @@ const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "
 assert.equal(manifest.version, packageJson.version, "manifest and package versions must match");
 assert.equal(sourceManifest.version, packageJson.version, "source and package versions must match");
 assert(manifest.description.length <= 132, "Chrome descriptions must fit within 132 characters");
+assert.deepEqual(manifest.host_permissions, ["https://generativelanguage.googleapis.com/*"], "Background network access must stay limited to Gemini");
+assert.deepEqual(sourceManifest.host_permissions, manifest.host_permissions);
+assert.equal(manifest.homepage_url, "https://github.com/miroslavkiev/chrome-ai-translate");
 
 // Keep both extension-list and toolbar icons present at their declared pixel sizes.
 assert.deepEqual(Object.keys(manifest.icons), ["16", "32", "48", "128"]);

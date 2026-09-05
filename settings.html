@@ -37,18 +37,11 @@
     }
 
     .app-icon {
-      display: grid;
+      display: block;
       width: 56px;
       height: 56px;
       flex: 0 0 auto;
-      place-items: center;
-      color: #fff;
-      border-radius: 15px;
-      background: linear-gradient(145deg, #45a5ff, #0067d6);
-      box-shadow: 0 9px 24px rgba(0, 113, 227, 0.26);
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      object-fit: contain;
     }
 
     h1 {
@@ -223,13 +216,14 @@
 <body>
   <main class="shell">
     <header class="page-header">
-      <div class="app-icon" aria-hidden="true">A</div>
+      <img class="app-icon" src="icon.png" alt="" width="56" height="56">
       <div>
         <h1>AI Translator</h1>
         <p class="subtitle">Private settings for quick, focused translation.</p>
         <nav class="page-links" aria-label="Help and information">
           <a href="help.html" target="_blank" rel="noopener noreferrer">API key guide</a>
           <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
+          <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a>
         </nav>
       </div>
     </header>
@@ -261,6 +255,8 @@
         <div class="card-header">
           <h2 id="api-heading">Gemini</h2>
           <p class="help">Connect your own Gemini API key and choose a compatible model.</p>
+          <p class="help">Selected text and your target language go directly to Google when you ask for a translation. Your key is sent to Google to load models and translate. It is currently saved without encryption in this browser profile. Read the <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">privacy details</a> before adding a key.</p>
+          <p class="help">Google's current API terms require adult professional or business use. Apps offered in the European Economic Area, UK, or Switzerland must use a project with active billing. <a href="help.html" target="_blank" rel="noopener noreferrer">Read the requirements and key guide</a>.</p>
           <p id="setupStatus" class="model-status" role="status" aria-live="polite">Loading setup state...</p>
         </div>
 

@@ -1,5 +1,15 @@
 # Release checks and translation sample
 
+## Version 1.3.3 Store preparation
+
+This is a preparation build, not a Store-approved release. It adds the public repository as the extension homepage, links to support/privacy, uses the approved purple icon in Settings and the popup, and moves the key/data notice above the key field. Google eligibility and AI accuracy limits are stated in Help and the project guides. The explicit background network permission is limited to the Gemini endpoint; declarative web and local-file content access remains.
+
+The Store folder contains draft listing text, six correctly sized PNG assets, permission/privacy notes, a Germany/EU review, and an unfilled legal-notice template. Screenshots use the actual UI with safe example content in a temporary browser. The template and all Store artwork/scripts stay outside the 20-file extension package. No personal address or real key was added. Chrome does not support manifest SVG icons, so the PNG toolbar artwork remains.
+
+The 54 Node tests, source checks, build, package checks and all three browser checks passed on Chrome 151. The context-menu test now selects its own active temporary tab because narrowed permissions no longer expose arbitrary tab URLs. It still checks successful and oversized context-menu delivery. Independent code and visual reviews found no material issue in these changes. The setup screenshot was adjusted by normal page scrolling to keep the full header and API-key row visible.
+
+Submission remains blocked on the provider audience/service terms, final key-storage and consent flow, accurate Limited Use certification and approved publisher/legal-contact details. Automatic encrypted storage without an unlock password has a separate successful fake-data restart proof; it is only a proposed option, not implemented in this build. Browser-version-update persistence was not tested. Reload of the user's installed extension remains manual because browser security blocks those controls.
+
 ## Version 1.3.2 larger icon
 
 The approved option 5 artwork uses the full icon area in both directions, as requested. The outer margin was removed before exporting the existing 16, 32, 48, and 128 pixel PNGs. The purple colors, white symbols, and rounded-corner style remain. In every size, visible artwork reaches all four canvas edges, with transparent or partly transparent pixels at the rounded corners. All four exports were checked at their declared size and in light/dark previews.

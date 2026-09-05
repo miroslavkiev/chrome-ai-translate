@@ -222,6 +222,16 @@ try {
       } } });` });
   }
 
+  async function sendContextMenu(text) {
+    // The extension no longer has permission to read arbitrary tab URLs.
+    await page.bringToFront();
+    return worker.evaluate(async (text) => {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (!Number.isInteger(tab?.id)) throw new Error("The test page is not the active tab");
+      return chrome.tabs.sendMessage(tab.id, { action: "contextMenuTranslate", selectionText: text }, { frameId: 0 });
+    }, text);
+  }
+
   await load("http", "http"); await select("#one"); await trigger();
   assert.equal((await state()).text, "Переклад");
   await click("Copy"); assert.match((await state()).status, /Copy failed/);
@@ -230,10 +240,7 @@ try {
   await load("context-menu"); await select("#one");
   const beforeMenu = await worker.evaluate(async () => ({ starts: probe.starts,
     requestId: (await chrome.storage.session.get("latestResult")).latestResult?.requestId }));
-  const delivered = await worker.evaluate(async ({ url, text }) => {
-    const tab = (await chrome.tabs.query({})).find((item) => item.url === url);
-    return chrome.tabs.sendMessage(tab.id, { action: "contextMenuTranslate", selectionText: text }, { frameId: 0 });
-  }, { url: page.url(), text: await page.evaluate(() => getSelection().toString()) });
+  const delivered = await sendContextMenu(await page.evaluate(() => getSelection().toString()));
   assert.equal(delivered.accepted, true);
   await waitForCard("success");
   assert.equal((await state()).text, "Переклад");
@@ -305,12 +312,7 @@ try {
   await load("oversize"); await page.evaluate(() => { document.querySelector("#one").textContent = "x".repeat(10001); });
   await select("#one"); await trigger("error"); assert.match((await state()).status, /10,000/); assert.ok(!(await state()).buttons.includes("Retry"));
   await page.keyboard.press("Escape");
-  await worker.evaluate(async () => {
-    const tabs = await chrome.tabs.query({});
-    const tab = tabs.find((item) => item.url?.includes("/oversize"));
-    const result = await chrome.tabs.sendMessage(tab.id, { action: "contextMenuTranslate", selectionText: "x".repeat(10001) }, { frameId: 0 });
-    if (!result.accepted) throw new Error("Oversize error was not displayed");
-  });
+  assert.equal((await sendContextMenu("x".repeat(10001))).accepted, true, "Oversize error was not displayed");
   assert.match((await state()).status, /10,000/); assert.equal(await worker.evaluate(() => probe.starts), starts);
 
   await load("modal"); await page.evaluate(() => document.querySelector("#dialog").showModal());

@@ -4,6 +4,12 @@ Super easy translation: select text and press Control. AI Translator translates 
 
 Manually tested on Mac only. Windows and Linux have not been manually tested.
 
+The [source repository](https://github.com/miroslavkiev/chrome-ai-translate) is public under the MIT license. For help, use [public issues](https://github.com/miroslavkiev/chrome-ai-translate/issues) without sharing keys or private text. Read the [privacy details](PRIVACY.md).
+
+## Chrome Web Store preparation
+
+The [Store release pack](store/README.md) contains listing text, screenshots, promotional images, reviewer notes and a Germany/EU legal review. It is a draft, not a published Store listing. Key-storage protection, disclosure/consent, Google's audience/service conditions and approved publisher details remain open. No personal address is inferred or published.
+
 ## Features
 
 - Translate through a configurable single key or the context menu.
@@ -22,6 +28,7 @@ Manually tested on Mac only. Windows and Linux have not been manually tested.
 
 - Google Chrome 140 or later. Earlier versions cannot apply the local-storage access protection used for API keys.
 - Your own Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
+- Eligible adult professional or business use under the [Gemini API terms](https://ai.google.dev/gemini-api/terms). API clients offered in the European Economic Area, UK or Switzerland require a project with active billing. A working API key does not verify every term or billing condition.
 - Node.js 20.19 or later only when building from source.
 
 ## Install a packaged build

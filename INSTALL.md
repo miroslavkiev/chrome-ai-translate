@@ -4,6 +4,8 @@ Super easy translation: select text and press Control. AI Translator uses your o
 
 Manually tested on Mac only. Windows and Linux have not been manually tested.
 
+This is a local build, not a Store-approved release. Google's current API terms require adult professional or business use in supported regions. API clients offered in the European Economic Area, UK or Switzerland require a project with active billing. Read https://ai.google.dev/gemini-api/terms before adding a key. Public-release checks remain open in the source repository's store folder.
+
 ## Install
 
 1. Verify the ZIP against its SHA-256 file if available, then extract it.

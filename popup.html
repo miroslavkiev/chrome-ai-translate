@@ -33,17 +33,11 @@
     }
 
     .app-icon {
-      display: grid;
+      display: block;
       width: 42px;
       height: 42px;
       flex: 0 0 auto;
-      place-items: center;
-      color: #fff;
-      border-radius: 12px;
-      background: linear-gradient(145deg, #45a5ff, #0067d6);
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      object-fit: contain;
     }
 
     .title-wrap { min-width: 0; flex: 1; }
@@ -184,7 +178,7 @@
 <body>
   <main class="shell">
     <header class="header">
-      <div class="app-icon" aria-hidden="true">A</div>
+      <img class="app-icon" src="icon.png" alt="" width="42" height="42">
       <div class="title-wrap">
         <h1>AI Translator</h1>
         <p class="subtitle">Gemini translation</p>
@@ -227,6 +221,7 @@
     <nav class="page-links" aria-label="Help and information">
       <a href="help.html" target="_blank" rel="noopener noreferrer">Key guide</a>
       <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
+      <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a>
     </nav>
   </main>
   <script type="module" src="popup.js"></script>
