@@ -4,6 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DEFAULTS, stableTextHash } from "../shared.js";
+import { waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 // Use only a temporary profile, fixture pages, fake credentials, and fake provider replies.
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -23,6 +24,15 @@ try {
   });
   const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
   const extensionId = new URL(worker.url()).host;
+  const startupPage = await context.newPage();
+  try {
+    // Older Chrome exposes the worker before its module imports and bindings finish.
+    const deadline = Date.now() + 10_000;
+    await startupPage.goto(`chrome-extension://${extensionId}/popup.html`, { timeout: 10_000 });
+    await waitForRuntimeState(startupPage, undefined, { allowStartup: true, timeout: Math.max(1, deadline - Date.now()) });
+  } finally {
+    await startupPage.close();
+  }
   await worker.evaluate(async ({ model, hash }) => {
     globalThis.probe = { starts: 0, delay: 0, failure: null, status: 503 };
     globalThis.fetch = async (url, options = {}) => {

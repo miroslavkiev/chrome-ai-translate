@@ -4,6 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { DEFAULTS, LANGUAGES } from "../shared.js";
+import { waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const extension = process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist", import.meta.url));
@@ -130,11 +131,8 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
     });
     await page.waitForTimeout(100); await page.keyboard.press("Control");
     await frame.locator("ai-translator-card").waitFor();
-    await popup.waitForFunction(async (before) => {
-      const state = await chrome.runtime.sendMessage({ action: "getRuntimeState" });
-      return state.latestResult?.status === "success" && state.latestResult.requestId
-        && state.latestResult.requestId !== before && state.activeRequestCount === 0;
-    }, before);
+    await waitForRuntimeState(popup, (state) => state.latestResult?.status === "success" && state.latestResult.requestId
+      && state.latestResult.requestId !== before && state.activeRequestCount === 0);
     await popup.waitForFunction(() => document.querySelector("#latestResult").textContent === "Sample translation");
   }
   await page.goto("https://browser-check.test/frames");

@@ -6,6 +6,8 @@ The user confirmed Chrome loaded the repository root and reported "Cannot use im
 
 The source manifest now loads dist/content.js. Webpack adjusts the packaged manifest to content.js. The existing install folder, extension identity, and saved settings can stay in place. Package verification checks both content entries parse as classic scripts and the packaged entry exists in the ZIP. Browser checks now include source-root loading and context-menu delivery. U01/U02 behavior, provider settings, and permissions stay unchanged.
 
+The new source-root check exposed a test startup race on Chrome 140: Playwright exposes the worker before its module imports and Chrome bindings finish. The test now requires a successful getRuntimeState reply from a trusted popup before writing fake setup data. The wait is bounded and runtime errors still fail the check.
+
 ## Version 1.2.0 scope
 
 The 2026-09-05 audit follow-up fixes B01-B11 and implements U03-U05. U01 and U02 were excluded by user choice. Outside clicks still close all cards, cancellation can replace the latest session result, and Retry or a language change still clears previous output. No redesign, history, extra provider, or default-model change is included.
