@@ -6,12 +6,12 @@ AI Translator translates selected text with your own Google Gemini API key. It r
 
 1. Verify the ZIP against its SHA-256 file if available, then extract it.
 2. Open chrome://extensions in Chrome 140 or later and enable Developer mode. Older versions cannot apply this extension's API-key storage protection.
-3. Choose Load unpacked and select this folder. It must contain manifest.json.
+3. Choose Load unpacked and select the extracted ZIP folder. It must contain manifest.json. When building from source, run npm ci and npm run ci first, then load the generated dist folder.
 4. Open the extension's Settings, paste your key, wait for the model list, and choose a compatible model.
 5. Choose your default language and key, then save preferences.
 6. For local files, enable Allow access to file URLs in the extension's details.
 
-## Update
+## Update a ZIP install
 
 1. Let active translations finish. Keep the existing unpacked folder path to keep the extension identity and settings.
 2. Replace its contents with the new extracted files.
@@ -19,6 +19,14 @@ AI Translator translates selected text with your own Google Gemini API key. It r
 4. Refresh existing web pages so they use the new content script.
 
 Reloading interrupts active requests. Do not uninstall the extension as an update step because that can remove its stored settings.
+
+## Update a source install
+
+1. Keep the existing loaded folder path, including when Chrome loads the repository root.
+2. Update the source, then run npm ci and npm run ci in the repository root.
+3. Let active translations finish, reload AI Translator at chrome://extensions, and refresh web pages.
+
+Version 1.2.1 fixes the source-root error "Cannot use import statement outside a module" by loading the built content script. Do not replace source files with ZIP files or change the loaded folder to repair this error.
 
 ## Use and recovery
 

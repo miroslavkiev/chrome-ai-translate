@@ -102,6 +102,8 @@ Build, watch, and package are separate commands. Build cleans the output, compil
 
 The manifest declares only HTTP, HTTPS, and local-file persistent access, all-frame behavior, required permissions, the minimum Chrome version, and the new release version. README, privacy notes, and license match the shipped behavior.
 
+The source-root manifest points its classic content script at dist/content.js. Background, Settings, and popup source entries already use modules. Webpack removes the dist/ prefix from content-script paths in the packaged manifest, where the bundle is at the archive root. Both install layouts use the same content bundle. Package verification parses both entries as classic scripts, and browser checks exercise both install folders. Existing source-root installs keep their path and saved settings; rebuilding is required after source changes.
+
 ## Accepted residual limits
 
 - The global key requires persistent content-script access to HTTP, HTTPS, and approved local-file pages.

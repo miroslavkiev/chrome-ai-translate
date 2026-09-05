@@ -25,7 +25,19 @@ export default {
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: ["manifest.json", "popup.html", "settings.html", "ui.css", "icon.png", "INSTALL.md", "PRIVACY.md", "LICENSE"],
+      patterns: [
+        {
+          from: "manifest.json",
+          transform(content) {
+            const manifest = JSON.parse(content.toString());
+            for (const script of manifest.content_scripts) {
+              script.js = script.js.map((file) => file.replace(/^dist\//, ""));
+            }
+            return `${JSON.stringify(manifest, null, 2)}\n`;
+          },
+        },
+        "popup.html", "settings.html", "ui.css", "icon.png", "INSTALL.md", "PRIVACY.md", "LICENSE",
+      ],
     }),
   ],
 };

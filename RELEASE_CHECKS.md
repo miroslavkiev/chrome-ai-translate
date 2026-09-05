@@ -1,5 +1,11 @@
 # Release checks and translation sample
 
+## Version 1.2.1 source-folder fix
+
+The user confirmed Chrome loaded the repository root and reported "Cannot use import statement outside a module" at content.js:1. That source file uses imports, but Chrome loads content scripts as classic scripts. Settings could still work because its script uses modules. The same failure was reproduced in a temporary profile; dist and the extracted ZIP worked.
+
+The source manifest now loads dist/content.js. Webpack adjusts the packaged manifest to content.js. The existing install folder, extension identity, and saved settings can stay in place. Package verification checks both content entries parse as classic scripts and the packaged entry exists in the ZIP. Browser checks now include source-root loading and context-menu delivery. U01/U02 behavior, provider settings, and permissions stay unchanged.
+
 ## Version 1.2.0 scope
 
 The 2026-09-05 audit follow-up fixes B01-B11 and implements U03-U05. U01 and U02 were excluded by user choice. Outside clicks still close all cards, cancellation can replace the latest session result, and Retry or a language change still clears previous output. No redesign, history, extra provider, or default-model change is included.
@@ -23,7 +29,7 @@ Independent review found and fixed additional races: startup changes lost betwee
 
 1. Install from the lockfile with `npm ci`.
 2. Run `npm run ci`. This checks repository text and syntax, runs Node tests, builds, packages, and verifies exact archive contents, source freshness, CRC, checksum, and matching versions.
-3. Install the test browser with `npx playwright install chromium`, then run `npm run test:browser`. Use `CHROME_PATH` to repeat with a specific Chrome for Testing executable. Both scripts use new temporary profiles and fake provider replies. They must never use a personal API key.
+3. Install the test browser with `npx playwright install chromium`, then run `npm run test:browser`. This tests the built folder and source-root content script. Use `CHROME_PATH` to repeat with a specific Chrome for Testing executable. Both scripts use new temporary profiles and fake provider replies. They must never use a personal API key.
 4. Run `npm audit --audit-level=high`. Review any advisory against its actual runtime/build use.
 5. Check light/dark layouts, keyboard focus, long text, Copy failure, and recovery text. Optional `BROWSER_EVIDENCE_DIR` saves popup/settings screenshots in an existing directory.
 6. Finish active translations before reloading the installed extension. Keep the unpacked folder path, reload through Chrome, and refresh a test page. Verify version, saved settings, model/setup state, and active count. Do not uninstall or restart the whole browser to update.
@@ -33,9 +39,11 @@ CI runs the build/test/package flow on Linux, macOS, and Windows with Node 22 an
 
 ## Local evidence and limits
 
+For version 1.2.1, all 48 Node tests and package checks passed on macOS. Chrome for Testing 152.0.7977.82 passed the built-folder and source-root content checks, including Ctrl and context-menu delivery, plus the extension-page checks. These used temporary profiles and fake provider replies. The installed Chrome app is 152.0.7977.77; its live extension still needs the user's Reload action.
+
 On 2026-09-05, the Node tests and build/package checks passed on Node 25.2.1 and minimum Node 20.19.0 on macOS. Browser checks passed on Chrome for Testing 151.0.7922.34 with fake replies, including file access on/off and an actual service-worker stop/start. No real translation, billing, revoked-key, or quota call was made. Re-run the final release gate after any source change.
 
-The installed unpacked extension points at this repository's dist folder. Automated access to its popup was blocked by the browser tool's URL policy. The installed extension was not reloaded through another route, and its active count and loaded version were not verified. After translations finish, the user must choose Reload for AI Translator at chrome://extensions and refresh the pages where it is needed.
+The user confirmed the failing installed extension loads this repository's root, correcting an earlier assumption that it loaded dist. The previous browser checks covered dist and missed this source-root failure. Automated access to the installed popup was blocked by the browser tool's URL policy. The installed extension was not reloaded through another route, and its active count and loaded version were not verified. After translations finish, the user must choose Reload for AI Translator at chrome://extensions and refresh the pages where it is needed.
 
 Chrome 120.0.6099.109 crashed before opening a page on this Mac, including a plain launch without the extension. Its separate Linux CI run started and proved a real startup failure: Chrome 120 cannot restrict local extension storage. The required local.setAccessLevel support arrived in [Chrome 140](https://chromium.googlesource.com/chromium/src.git/+/a8f1f337c692360aaec9470a0a91f965011d37a3%5E%21/). The manifest and install guide now require Chrome 140; the privacy guard stays intact. This is a corrected support claim, not a relaxed security check.
 

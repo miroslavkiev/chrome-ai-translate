@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { Script } from "node:vm";
 import JSZip from "jszip";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -40,8 +41,19 @@ assert.deepEqual(names, [
 ]);
 
 const manifest = JSON.parse(await zip.file("manifest.json").async("string"));
+const sourceManifest = JSON.parse(await readFile(path.join(root, "manifest.json"), "utf8"));
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
 assert.equal(manifest.version, packageJson.version, "manifest and package versions must match");
+assert.equal(sourceManifest.version, packageJson.version, "source and package versions must match");
+
+// Chrome content scripts must parse as classic scripts in either install folder.
+for (const file of manifest.content_scripts.flatMap((script) => script.js)) {
+  assert(names.includes(file), `Packaged content script ${file} is missing`);
+  new Script(await zip.file(file).async("string"), { filename: file });
+}
+for (const file of sourceManifest.content_scripts.flatMap((script) => script.js)) {
+  new Script(await readFile(path.join(root, file), "utf8"), { filename: file });
+}
 
 for (const name of names) {
   const [archived, built] = await Promise.all([

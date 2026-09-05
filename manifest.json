@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AI Translator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Translate selected text into your chosen language with Gemini.",
   "minimum_chrome_version": "140",
   "permissions": ["contextMenus", "storage"],
@@ -21,7 +21,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "file://*/*"],
-      "js": ["content.js"],
+      "js": ["dist/content.js"],
       "all_frames": true,
       "match_about_blank": true,
       "match_origin_as_fallback": true,

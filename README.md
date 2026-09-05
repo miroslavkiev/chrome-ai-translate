@@ -38,7 +38,7 @@ npm ci
 npm run ci
 ```
 
-Load the generated `dist` folder from `chrome://extensions`.
+For a new install, load the generated `dist` folder from `chrome://extensions`. An existing install may keep the repository root as its loaded folder. Its manifest now uses the built `dist/content.js`, so build again after source changes, reload the extension, and refresh web pages. Keep the same loaded folder to preserve the extension identity and saved settings.
 
 `npm run package` creates and verifies:
 

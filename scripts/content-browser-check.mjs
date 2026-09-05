@@ -7,8 +7,9 @@ import { DEFAULTS, stableTextHash } from "../shared.js";
 
 // Use only a temporary profile, fixture pages, fake credentials, and fake provider replies.
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
-const extension = process.env.EXTENSION_PATH
-  || fileURLToPath(new URL("../dist", import.meta.url));
+const sourceRoot = process.argv.includes("--source");
+const extension = sourceRoot ? fileURLToPath(new URL("..", import.meta.url))
+  : process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist", import.meta.url));
 const temporary = await mkdtemp(path.join(os.tmpdir(), "ai-translator-browser-"));
 let context;
 try {
@@ -216,6 +217,23 @@ try {
   await click("Copy"); assert.match((await state()).status, /Copy failed/);
   await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0);
 
+  await load("context-menu"); await select("#one");
+  const beforeMenu = await worker.evaluate(async () => ({ starts: probe.starts,
+    requestId: (await chrome.storage.session.get("latestResult")).latestResult?.requestId }));
+  const delivered = await worker.evaluate(async ({ url, text }) => {
+    const tab = (await chrome.tabs.query({})).find((item) => item.url === url);
+    return chrome.tabs.sendMessage(tab.id, { action: "contextMenuTranslate", selectionText: text }, { frameId: 0 });
+  }, { url: page.url(), text: await page.evaluate(() => getSelection().toString()) });
+  assert.equal(delivered.accepted, true);
+  await waitForCard("success");
+  assert.equal((await state()).text, "Переклад");
+  const afterMenu = await worker.evaluate(async () => ({ starts: probe.starts,
+    latest: (await chrome.storage.session.get("latestResult")).latestResult }));
+  assert.equal(afterMenu.starts, beforeMenu.starts + 1);
+  assert.equal(afterMenu.latest.status, "success");
+  assert.notEqual(afterMenu.latest.requestId, beforeMenu.requestId);
+  await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0);
+
   await load(); await select("#one"); await trigger();
   await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0);
   await select("#one"); await trigger();
@@ -322,7 +340,7 @@ try {
   const settingsPage = context.waitForEvent("page"); await click("Settings"); const opened = await settingsPage;
   await opened.waitForURL(`chrome-extension://${extensionId}/settings.html`);
   assert.equal(exceptions.length, 0, exceptions.join("\n"));
-  console.log("Content browser checks passed: HTTP, shadow/password, size errors, modal/fullscreen, keyboard, Copy/Settings, and unchanged cancellation/result clearing.");
+  console.log(`Content browser checks passed (${sourceRoot ? "source root" : "built extension"}): HTTP, context-menu delivery, shadow/password, size errors, modal/fullscreen, keyboard, Copy/Settings, and unchanged cancellation/result clearing.`);
 } finally {
   await context?.close();
   await rm(temporary, { recursive: true, force: true });
