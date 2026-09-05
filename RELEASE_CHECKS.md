@@ -1,5 +1,11 @@
 # Release checks and translation sample
 
+## Version 1.3.2 larger icon
+
+The approved option 5 artwork uses the full icon area in both directions, as requested. The outer margin was removed before exporting the existing 16, 32, 48, and 128 pixel PNGs. The purple colors, white symbols, and rounded-corner style remain. In every size, visible artwork reaches all four canvas edges, with transparent or partly transparent pixels at the rounded corners. All four exports were checked at their declared size and in light/dark previews.
+
+All 54 Node tests, source checks, production build, and the exact 20-file package checks passed. No translation behavior, settings, permissions, or other runtime code changed. Reloading the installed extension still needs the user action described below because browser security policy blocks automated access to those controls.
+
 ## Version 1.3.1 icon and description
 
 The approved purple option 5 is exported as 16, 32, 48, and 128 pixel PNGs. Both the extension-list and toolbar manifest entries use these icons. The short description explains selecting text and pressing Control. About, README, and the packaged install guide state that manual testing covered Mac only; automated checks on other platforms do not change that claim.

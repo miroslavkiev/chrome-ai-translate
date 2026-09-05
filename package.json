@@ -1,6 +1,6 @@
 {
   "name": "chrome-ai-translate",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "private": true,
   "description": "Super easy translation: select text and press Control. Translate into your chosen language with Gemini.",
   "license": "MIT",
