@@ -36,7 +36,7 @@ export default {
             return `${JSON.stringify(manifest, null, 2)}\n`;
           },
         },
-        "popup.html", "settings.html", "ui.css", "icon.png", "INSTALL.md", "PRIVACY.md", "LICENSE",
+        "popup.html", "settings.html", "help.html", "about.html", "guide.css", "ui.css", "icon.png", "setup-key.png", "setup-language.png", "INSTALL.md", "PRIVACY.md", "LICENSE",
       ],
     }),
   ],

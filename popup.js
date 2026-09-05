@@ -11,6 +11,7 @@ import {
 
 const elements = Object.fromEntries([
   "status", "shortcut", "activeCount", "latestResult", "latestMeta", "copyResult", "copyStatus", "openSettings",
+  "welcome", "statusCard", "latestCard",
 ].map((id) => [id, document.getElementById(id)]));
 
 let loadSequence = 0;
@@ -54,8 +55,14 @@ function showResult(result) {
 }
 
 function render(response) {
+  const needsKey = response.hasApiKey === false;
+  elements.welcome.hidden = !needsKey;
+  elements.statusCard.hidden = needsKey;
+  elements.latestCard.hidden = needsKey;
+  elements.openSettings.textContent = needsKey ? "Start setup"
+    : response.configurationError?.code === "missing_target_language" ? "Finish setup" : "Settings";
   const configured = response.configured === true
-    && isSupportedLanguage(response.targetLanguage ?? DEFAULTS.targetLanguage)
+    && isSupportedLanguage(response.targetLanguage)
     && isValidModelId(response.aiModel ?? DEFAULTS.aiModel);
   const activeCount = Number.isSafeInteger(response.activeRequestCount) && response.activeRequestCount > 0
     ? response.activeRequestCount : 0;
@@ -71,7 +78,7 @@ function render(response) {
     showResult({ kind: "empty", text: "Add an API key in Settings to start translating." });
     setStatus("setup", "Add API key");
   } else if (!configured) {
-    showResult({ kind: "empty", text: "The key is saved. Open Settings to check the key and choose a compatible model." });
+    showResult({ kind: "empty", text: "The key is saved. Open Settings to check the model and finish your language choice." });
     setStatus("setup", "Check setup");
   } else {
     showResult(latest);
@@ -89,6 +96,9 @@ async function loadState() {
     render(response);
   } catch {
     if (sequence !== loadSequence) return;
+    elements.welcome.hidden = true;
+    elements.statusCard.hidden = false;
+    elements.latestCard.hidden = false;
     showResult({ kind: "error", text: "Extension status could not be loaded. Reload the extension, then refresh the page." });
     setStatus("error", "Error");
   }
@@ -107,7 +117,8 @@ elements.openSettings.addEventListener("click", async () => {
     await chrome.runtime.openOptionsPage();
     window.close();
   } catch {
-    elements.copyStatus.textContent = "Settings could not be opened. Try again.";
+    elements.latestCard.hidden = false;
+    showResult({ kind: "error", text: "Settings could not be opened. Try again." });
     setStatus("error", "Error");
   }
 });

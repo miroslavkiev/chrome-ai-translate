@@ -3,7 +3,7 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { DEFAULTS, LANGUAGES } from "../shared.js";
+import { DEFAULTS, LANGUAGES, RECOMMENDED_MODEL } from "../shared.js";
 import { waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -20,17 +20,17 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
 });
   const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
   const extensionId = new URL(worker.url()).host;
-  await worker.evaluate((model) => {
+  await worker.evaluate(({ model, recommended }) => {
     globalThis.probe = { calls: 0, reject: false };
     globalThis.fetch = async (url) => {
       probe.calls += 1;
       if (probe.reject) return new Response(JSON.stringify({ error: { status: "UNAUTHENTICATED" } }), { status: 401 });
       return new Response(JSON.stringify(String(url).includes(":generateContent")
         ? { candidates: [{ finishReason: "STOP", content: { parts: [{ text: "Sample translation" }] } }] }
-        : { models: [model, "gemini-test-model"].map((id) => ({ name: `models/${id}`, displayName: id,
+        : { models: [model, recommended, "gemini-test-model"].map((id) => ({ name: `models/${id}`, displayName: id,
           outputTokenLimit: 8192, supportedGenerationMethods: ["generateContent"] })) }));
     };
-  }, DEFAULTS.aiModel);
+  }, { model: DEFAULTS.aiModel, recommended: RECOMMENDED_MODEL });
   const exceptions = [];
   context.on("page", (page) => page.on("pageerror", (error) => exceptions.push(error.message)));
   async function open(name) {
@@ -41,11 +41,47 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   async function textIs(page, id, text) {
     await page.waitForFunction(({ id, text }) => document.getElementById(id).textContent.includes(text), { id, text });
   }
+  const popup = await open("popup");
+  await textIs(popup, "openSettings", "Start setup");
+  assert.equal(await popup.locator("#welcome").isVisible(), true);
+  await popup.evaluate(() => {
+    globalThis.originalOpenOptions = chrome.runtime.openOptionsPage;
+    chrome.runtime.openOptionsPage = async () => { throw new Error("Test options failure"); };
+  });
+  await popup.locator("#openSettings").click();
+  await textIs(popup, "latestResult", "Settings could not be opened");
+  assert.equal(await popup.locator("#latestResult").isVisible(), true);
+  await popup.reload();
+  await textIs(popup, "openSettings", "Start setup");
   const first = await open("settings");
   await textIs(first, "setupStatus", "Add an API key");
+  assert.equal(await first.locator("#setupGuide").isVisible(), true);
+  assert.equal(await first.locator("#targetLanguage").inputValue(), "");
+  assert.equal(await first.locator("#targetLanguage option").count(), LANGUAGES.length + 1);
+  assert.equal(await first.locator("#aiModel").inputValue(), RECOMMENDED_MODEL);
+  assert.equal(await first.getByText(/demo key/i).count(), 0);
+  if (process.env.BROWSER_EVIDENCE_DIR) {
+    await first.screenshot({ path: path.join(process.env.BROWSER_EVIDENCE_DIR, "setup-no-key.png"), fullPage: true });
+    for (const [heading, file] of [["api-heading", "setup-key.png"], ["translation-heading", "setup-language.png"]]) {
+      await first.locator(`section[aria-labelledby='${heading}']`).screenshot({ path: path.join(process.env.BROWSER_EVIDENCE_DIR, file) });
+    }
+  }
   await first.locator("#apiKey").fill("browser-ui-fake-key");
   await first.locator("#apiKey").blur();
+  await textIs(first, "setupStatus", "Choose a target language");
+  await textIs(popup, "openSettings", "Finish setup");
+  assert.equal(await popup.locator("#welcome").isVisible(), false);
+  await first.reload();
+  await textIs(first, "setupStatus", "Choose a target language");
+  assert.equal(await first.locator("#targetLanguage").inputValue(), "");
+  await first.locator("#targetLanguage").selectOption("en");
+  await first.locator("#saveButton").click();
   await textIs(first, "setupStatus", "Ready");
+  await textIs(popup, "status", "Ready");
+  assert.equal(await first.locator("#setupGuide").isVisible(), false);
+  await first.locator("#aiModel").selectOption("gemini-test-model");
+  await first.locator("#recommendedModel").click();
+  assert.equal(await first.locator("#aiModel").inputValue(), RECOMMENDED_MODEL);
   const second = await open("settings");
   await textIs(second, "setupStatus", "Ready");
   await first.locator("#targetLanguage").selectOption("de");
@@ -67,7 +103,6 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   await first.locator("#reloadSettings").click();
   await first.waitForFunction(() => document.querySelector("#targetLanguage").value === "es");
 
-  const popup = await open("popup");
   await textIs(popup, "status", "Ready");
   for (const language of LANGUAGES) {
     await worker.evaluate(async (language) => chrome.storage.session.set({ latestResult: {
@@ -76,12 +111,13 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
     } }), language);
     await textIs(popup, "latestResult", `Sample ${language.code}`);
     assert.equal(await popup.locator("#latestResult").getAttribute("lang"), language.code);
-    assert.match(await popup.locator("#latestMeta").textContent(), new RegExp(`${language.name}.*2026`));
+    const metadata = await popup.locator("#latestMeta").textContent();
+    assert(metadata.startsWith(language.name) && metadata.includes("2026"));
   }
   await popup.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true,
     value: { writeText: async (text) => { globalThis.copiedText = text; } } }));
   await popup.locator("#copyResult").click(); await textIs(popup, "copyStatus", "Copied.");
-  assert.equal(await popup.evaluate(() => copiedText), "Sample ru");
+  assert.equal(await popup.evaluate(() => copiedText), `Sample ${LANGUAGES.at(-1).code}`);
   await popup.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true,
     value: { writeText: async () => { throw new Error("Denied"); } } }));
   await popup.locator("#copyResult").click(); await textIs(popup, "copyStatus", "Copy was blocked");
@@ -106,8 +142,31 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   await textIs(second, "setupStatus", "Ready"); await textIs(first, "setupStatus", "Ready");
   await textIs(popup, "status", "Ready");
 
+  // An unavailable model remains selected until the user chooses its replacement.
+  await worker.evaluate(() => chrome.storage.sync.set({ aiModel: "gemini-unavailable-model" }));
+  await first.reload();
+  await textIs(first, "setupStatus", "Choose an available model");
+  assert.equal(await first.locator("#aiModel").inputValue(), "gemini-unavailable-model");
+  await first.locator("#recommendedModel").click();
+  await first.locator("#saveButton").click();
+  await textIs(popup, "status", "Ready");
+
+  const help = await open("help");
+  const about = await open("about");
+  assert.equal(await help.locator("a[href='https://aistudio.google.com/apikey']").count(), 1);
+  assert.equal(await about.locator("a[href='https://www.sternenkofund.org/en/donate']").count(), 1);
+  assert.equal(await first.locator("a[href='https://www.sternenkofund.org/en/donate']").count(), 0);
+  for (const page of [help, about]) {
+    for (const colorScheme of ["light", "dark"]) {
+      await page.emulateMedia({ colorScheme });
+      await page.setViewportSize({ width: 320, height: 760 });
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    }
+    await page.close();
+  }
+
   for (const page of [first, popup]) {
-    await page.setViewportSize({ width: 375, height: 760 });
+    await page.setViewportSize({ width: 320, height: 760 });
     for (const colorScheme of ["light", "dark"]) {
       await page.emulateMedia({ colorScheme, reducedMotion: "reduce" });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);

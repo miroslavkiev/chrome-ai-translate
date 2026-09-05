@@ -7,6 +7,8 @@ AI Translator translates selected text with the Google Gemini API. It uses your 
 - Translate through a configurable single key or the context menu.
 - Translate several selections on the same page.
 - Change the target language for one result without changing the saved default.
+- Choose from Google's documented Gemini languages, including separate Simplified and Traditional Chinese choices.
+- Follow a first-use checklist and an API key guide inside the extension.
 - Choose from the compatible models returned by the Gemini Models API.
 - See loading, success, timeout, quota, network, and other failure states.
 - Retry failed translations manually. The extension does not retry paid requests automatically.
@@ -17,7 +19,7 @@ AI Translator translates selected text with the Google Gemini API. It uses your 
 ## Requirements
 
 - Google Chrome 140 or later. Earlier versions cannot apply the local-storage access protection used for API keys.
-- A Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+- Your own Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
 - Node.js 20.19 or later only when building from source.
 
 ## Install a packaged build
@@ -47,15 +49,23 @@ For a new install, load the generated `dist` folder from `chrome://extensions`. 
 
 ## Set up the extension
 
-1. Open the extension toolbar popup and choose Settings.
-2. Paste your Gemini API key. The key saves and the model list loads automatically.
-3. A manually typed key saves when you leave the field. Delete the field contents to remove it.
-4. Choose a model, default target language, and global key, then choose Save Preferences.
-5. Use Refresh models later when you want a new list from Gemini.
+1. Open the extension toolbar popup. Without a saved API key, it shows a welcome guide. Choose Start setup to open the checklist in Settings.
+2. Follow the API key guide to open Google AI Studio, sign in, and create or choose your own key. The guide opens in a separate tab and contains links to Google's current instructions.
+3. Paste your key into Settings. The key saves and the model list loads automatically. A manually typed key saves when you leave the field. Delete the field contents to remove it.
+4. Choose a model, target language, and optional keyboard trigger. Choose Finish setup to save these choices and complete the checklist.
+5. Open a normal web page, select text, and choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
+
+After setup, the popup returns to the standard view. A saved key with unfinished setup keeps a Finish setup action so you can return to the checklist. Removing the key brings back the welcome guide. Existing users keep their saved language and model. Later changes use Save Preferences in Settings.
+
+We recommend the Gemini Flash-Lite family. For this release in September 2026, the recommended model is `gemini-3.5-flash-lite`, when it is available to your key. You can choose another listed model. Some models may not work with this extension; if one fails, choose another or use the recommended model. Use Refresh models to request an updated list.
+
+The language list follows [Google's documented Gemini languages](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/google-models#language_support), checked on September 5, 2026. Google lists 109 language entries, with both Chinese scripts in one entry. The extension offers 110 choices by separating Simplified and Traditional Chinese. This is Google's shared Gemini list, not a promise of equal translation quality in every language. The Models API does not return a language list.
 
 Settings shows whether the key is saved, checked, or rejected. A checked key means a previous provider request worked, not that future quota or availability is guaranteed. If loading saved settings fails, saving stays disabled. Open Settings again after the problem clears. If another Settings tab changes the same field you are editing, your edit stays visible; Reload saved settings discards it and loads the saved choice. Changes to other fields are kept automatically.
 
-The model list comes from Gemini `models.list`. It filters known non-text variants, but the API does not report output modality, so an unknown future variant can still appear. Settings reuses a list less than 24 hours old and tries to refresh an older one. Translation can use an older list to avoid blocking on discovery. A temporary refresh failure can use the last successful list with a cached-data notice in Settings. A known rejected key or model stays unavailable until a successful check or replacement. Use Refresh models to check again. The default model and prompt are unchanged in this release. [DESIGN.md](DESIGN.md) records the provider rules and their limits.
+The model list comes from Gemini `models.list`. It filters known non-text variants, but the API does not report output modality, so an unknown future variant can still appear. Settings reuses a list less than 24 hours old and tries to refresh an older one. Translation can use an older list to avoid blocking on discovery. A temporary refresh failure can use the last successful list with a cached-data notice in Settings. A known rejected key or model stays unavailable until a successful check or replacement. Use Refresh models to check again. [DESIGN.md](DESIGN.md) records the provider rules and their limits.
+
+Open API key guide or About from the popup or Settings at any time. About explains the purpose of the project and includes an optional link to support Ukraine through the developer's trusted foundation. Donations are not required to use the extension.
 
 ## Translate text
 
@@ -84,6 +94,8 @@ Key or model errors offer Settings. Oversized or blocked text asks for a differe
 ## Privacy and permissions
 
 The extension sends selected text directly to Google only after a translation action. It has no analytics, advertising, remote backend, or translation history. The Gemini API key is stored in local extension storage and is not synced. The most recent result is kept only for the current browser session.
+
+Google API costs, limits, and use of submitted data depend on your plan and Google's terms. Read [Google's pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing) and the [Gemini API terms](https://ai.google.dev/gemini-api/terms). For account access issues, check [Google's region and age requirements](https://ai.google.dev/gemini-api/docs/available-regions).
 
 The global key requires the extension content script to be present on HTTP, HTTPS, and approved local-file pages and frames. Chrome therefore reports that the extension can read and change data on those pages. Chrome pages, the built-in PDF viewer, and other restricted pages are unsupported.
 

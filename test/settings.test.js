@@ -114,6 +114,17 @@ test("Settings never writes after either initial read fails", async () => {
   }
 });
 
+test("An invalid saved language requires a real choice instead of a silent default", async () => {
+  const page = setup({ local: { geminiApiKey: "saved-fake-key" }, sync: { targetLanguage: "unknown-language" } });
+  await page.ready;
+  assert.equal(page.element("targetLanguage").value, "");
+  assert.equal(page.element("setupGuide").hidden, false);
+  change(page, "targetLanguage", "uk");
+  await submit(page);
+  assert.equal(page.data.sync.targetLanguage, "uk");
+  assert.equal(page.element("setupGuide").hidden, true);
+});
+
 test("Settings waits for runtime migration before storage reads", async () => {
   let release;
   const runtimeReady = new Promise((resolve) => { release = resolve; });
@@ -323,4 +334,83 @@ test("A quick rejection status keeps Refresh usable when an older model request 
   assert.match(page.element("setupStatus").textContent, /Ready to try/);
   assert.equal(calls, 3);
   assert.deepEqual(page.writes, []);
+});
+
+test("New setup keeps a language placeholder and stays open after key autosave until preferences are saved", async () => {
+  const page = setup({
+    sync: { targetLanguage: null, aiModel: shared.RECOMMENDED_MODEL },
+    models: () => ({ ok: true, source: "live", models: [{ id: shared.RECOMMENDED_MODEL }] }),
+  });
+  await page.ready;
+  assert.equal(page.element("setupGuide").hidden, false);
+  assert.equal(page.element("targetLanguage").value, "");
+  assert.equal(page.element("targetLanguage").options.length, shared.LANGUAGES.length + 1);
+  await submit(page);
+  assert.deepEqual(page.writes, []);
+  assert.match(page.element("saveStatus").textContent, /Choose a valid language/);
+
+  page.element("apiKey").value = "own-fake-key";
+  page.element("apiKey").dispatch("input", { inputType: "insertFromPaste" });
+  await flush();
+  assert.equal(page.data.local.geminiApiKey, "own-fake-key");
+  assert.equal(page.element("setupGuide").hidden, false);
+  assert.equal(page.element("saveButton").disabled, true);
+  assert.match(page.element("setupStatus").textContent, /Choose a target language/);
+  const reopened = setup({ local: page.data.local, sync: page.data.sync });
+  await reopened.ready;
+  assert.equal(reopened.element("setupGuide").hidden, false);
+  assert.equal(reopened.element("targetLanguage").value, "");
+
+  change(page, "targetLanguage", "de");
+  assert.equal(page.element("saveButton").textContent, "Finish setup");
+  assert.equal(page.element("saveButton").disabled, false);
+  await submit(page);
+  assert.equal(page.data.sync.targetLanguage, "de");
+  assert.equal(page.element("setupGuide").hidden, true);
+  assert.equal(page.element("saveButton").textContent, "Save Preferences");
+  assert.match(page.element("setupStatus").textContent, /Ready to try/);
+  assert.deepEqual(page.writes, [["local", { geminiApiKey: "own-fake-key" }], ["sync", { targetLanguage: "de" }]]);
+});
+
+test("Setup permits preference changes without a key and can finish later without rewriting preferences", async () => {
+  const page = setup({ sync: { targetLanguage: null } });
+  await page.ready;
+  change(page, "targetLanguage", "fr");
+  await submit(page);
+  assert.equal(page.data.sync.targetLanguage, "fr");
+  assert.equal(page.element("setupGuide").hidden, false);
+  assert.match(page.element("saveStatus").textContent, /Add your API key/);
+  page.element("apiKey").value = "own-fake-key";
+  page.element("apiKey").dispatch("input", { inputType: "insertFromPaste" });
+  await flush();
+  assert.equal(page.element("saveButton").disabled, false);
+  assert.equal(page.element("setupGuide").hidden, false);
+  await submit(page);
+  assert.equal(page.element("setupGuide").hidden, true);
+  assert.deepEqual(page.writes, [["sync", { targetLanguage: "fr" }], ["local", { geminiApiKey: "own-fake-key" }]]);
+});
+
+test("Recommended model is an explicit choice, available only when returned in the checked list", async () => {
+  let models = [{ id: shared.DEFAULTS.aiModel }, { id: shared.RECOMMENDED_MODEL }];
+  const page = setup({
+    local: { geminiApiKey: "saved-fake-key" },
+    sync: { targetLanguage: "de", aiModel: shared.DEFAULTS.aiModel },
+    models: () => ({ ok: true, source: "live", models }),
+  });
+  await page.ready;
+  assert.equal(page.element("setupGuide").hidden, true);
+  assert.equal(page.element("aiModel").value, shared.DEFAULTS.aiModel);
+  assert.equal(page.element("recommendedModel").disabled, false);
+  page.element("recommendedModel").dispatch("click");
+  assert.equal(page.element("aiModel").value, shared.RECOMMENDED_MODEL);
+  assert.deepEqual(page.writes, []);
+  await submit(page);
+  assert.deepEqual(page.writes, [["sync", { aiModel: shared.RECOMMENDED_MODEL }]]);
+  models = [{ id: shared.DEFAULTS.aiModel }];
+  await page.element("refreshModels").dispatch("click");
+  assert.equal(page.element("recommendedModel").disabled, true);
+  change(page, "aiModel", shared.DEFAULTS.aiModel);
+  page.element("recommendedModel").dispatch("click");
+  assert.equal(page.element("aiModel").value, shared.DEFAULTS.aiModel);
+  assert.equal(page.data.sync.aiModel, shared.RECOMMENDED_MODEL);
 });

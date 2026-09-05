@@ -16,10 +16,12 @@
 body { margin: 0; color: var(--text); background: var(--page); -webkit-font-smoothing: antialiased; }
 button, input, select { font: inherit; }
 button, select { cursor: pointer; }
-button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+a { color: var(--accent); text-underline-offset: 3px; }
+button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
+[hidden] { display: none !important; }
 h1, h2, p { margin-top: 0; }
 .card { overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
 .button {
@@ -45,6 +47,7 @@ h1, h2, p { margin-top: 0; }
     --accent-hover: #0b73d1;
     --focus: #72b7ff;
   }
+  a { color: var(--focus); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }

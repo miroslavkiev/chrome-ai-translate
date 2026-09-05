@@ -46,6 +46,10 @@ Rolling timestamps are stored in trusted extension-only session storage so servi
 
 ## Gemini integration
 
+For new setup in version 1.3.0, the suggested model is Gemini 3.5 Flash-Lite. Settings recommends the Flash-Lite family and dates this specific recommendation to September 2026. Users can choose another compatible model. Use recommended model selects it only when the checked list includes it, and the user still saves the choice. Translation does not change models automatically. The existing generation parameters and prompt are unchanged.
+
+shared.js contains Google's documented general Gemini language list, reviewed on 2026-09-05: 110 choices including separate Simplified and Traditional Chinese. Settings, result cards and request validation reuse this single list. The Models API has no language field. Language support is not a translation-quality guarantee or a claim about every non-Gemini model.
+
 The service worker is the only backend; there is no server. It uses native fetch for the Gemini REST API. It sends the API key in the x-goog-api-key header and never logs credentials, source text, translations, or provider response bodies.
 
 Model discovery uses models.list. It follows pagination and keeps text models that support generateContent, report an output limit, and support the system-instruction request contract. Known embedding, image, TTS, speech, live, audio, robotics, and computer-use identifiers are excluded. Unknown future identifiers remain visible because the Models API does not report output modality. The cached model record includes Google's thinking capability flag. It stores the last successful catalog locally and exposes a manual Refresh action. A transient failed refresh keeps the last successful list and shows that it is cached. An invalid or changed API key does not use stale cached data. Translation never switches to another model without the user's choice.
@@ -61,6 +65,8 @@ Provider compatibility note, 2026-09-05: the default model, prompt, alias handli
 - chrome.storage.session: rolling rate timestamps, active count, and the latest result or failure.
 
 Local and session storage use TRUSTED_CONTEXTS. On upgrade, an old synced API key is copied to local storage, verified, and removed from sync storage. Clearing or replacing the key invalidates the cached model catalog.
+
+After key migration, startup fills only missing language/model preferences. A profile with an existing key or preferences keeps the old effective defaults (Ukrainian and Gemma). A profile with neither starts with targetLanguage:null and the recommended model. Startup rechecks missing fields before writing. Explicit null marks an unfinished language choice even after a key is saved or the worker restarts. No separate first-run flag is used. Invalid or unselected saved languages block translation before model discovery or provider access and offer Settings.
 
 Chrome 140 is the minimum version. Earlier Chrome versions expose storage.session.setAccessLevel but cannot restrict the local area used for API keys. Chrome 120's real CI run failed during this startup guard, before any provider request. The [Chrome 140 implementation change](https://chromium.googlesource.com/chromium/src.git/+/a8f1f337c692360aaec9470a0a91f965011d37a3%5E%21/) added local/sync support. Raising the declared minimum keeps the protection intact and avoids claiming unsupported browsers work.
 
@@ -79,6 +85,8 @@ U01 and U02 were excluded from this release. Outside clicks still close all card
 A frame keeps at most five completed cards. It removes the oldest completed card first. Loading cards are not evicted. Long and right-to-left text remain readable. Status updates are accessible, and reduced motion, dark mode, and high contrast are supported.
 
 ## Settings and popup
+
+Version 1.3.0 uses a checklist above the existing Settings form. It appears when the key is missing or the language is unselected, remains visible through key autosave, and closes after Finish setup saves the choices. A fresh language select has a placeholder. Preferences remain editable without a key. The no-key popup explains the steps and offers Start setup; a saved key with no chosen language uses the normal popup with Finish setup. Rejected existing keys use normal repair guidance. Local Help and About pages reuse ui.css and guide.css. About alone has the optional external Ukraine support link; donation is never required.
 
 The settings page uses native HTML, CSS, and JavaScript with system fonts, grouped cards, restrained color, responsive layout, keyboard support, visible focus, dark mode, high contrast, and reduced motion. ui.css shares the popup/settings colors and controls; the injected card keeps its isolated stylesheet. shared.js owns language, key labels, source validation, error guidance, UUID generation, and Copy behavior. No UI framework or production dependency is needed.
 

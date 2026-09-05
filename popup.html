@@ -19,6 +19,7 @@
 
     body {
       width: 360px;
+      max-width: 100vw;
       min-width: 300px;
     }
 
@@ -153,6 +154,12 @@
     }
 
     .settings-button:hover { filter: brightness(1.06); }
+    .welcome { padding: 16px; font-size: 13px; line-height: 1.5; }
+    .welcome h2 { font-size: 16px; margin-bottom: 8px; }
+    .welcome ol { padding-left: 20px; }
+    .welcome li + li { margin-top: 9px; }
+    .page-links { display: flex; justify-content: center; gap: 16px; margin-top: 15px; font-size: 12px; }
+    .page-links a { padding: 5px 0; }
 
     @media (prefers-color-scheme: dark) {
       :root {
@@ -185,7 +192,17 @@
       <span id="status" class="status" data-state="setup" role="status" aria-live="polite">Setup required</span>
     </header>
 
-    <section class="card" aria-label="Extension status">
+    <section id="welcome" class="card welcome" aria-labelledby="welcome-heading" hidden>
+      <h2 id="welcome-heading">Welcome to AI Translator</h2>
+      <p>Translate selected text into a language you know. Set up these two things to start:</p>
+      <ol>
+        <li><strong>Your Gemini API key.</strong> Get your own key from Google AI Studio. Our guide shows you how.</li>
+        <li><strong>Your target language.</strong> Choose the language you want to read.</li>
+      </ol>
+      <a href="help.html" target="_blank" rel="noopener noreferrer">How to get an API key</a>
+    </section>
+
+    <section id="statusCard" class="card" aria-label="Extension status">
       <div class="metric">
         <span class="metric-label">Keyboard trigger</span>
         <span id="shortcut" class="metric-value">Control</span>
@@ -196,7 +213,7 @@
       </div>
     </section>
 
-    <section class="card result" aria-labelledby="latest-heading">
+    <section id="latestCard" class="card result" aria-labelledby="latest-heading">
       <h2 id="latest-heading">Latest this session</h2>
       <p id="latestResult" class="result-text" data-kind="empty" tabindex="0" aria-live="polite" aria-labelledby="latest-heading">No translation yet.</p>
       <p id="latestMeta" class="result-meta" hidden></p>
@@ -207,6 +224,10 @@
     </section>
 
     <button id="openSettings" class="settings-button" type="button">Settings</button>
+    <nav class="page-links" aria-label="Help and information">
+      <a href="help.html" target="_blank" rel="noopener noreferrer">Key guide</a>
+      <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
+    </nav>
   </main>
   <script type="module" src="popup.js"></script>
 </body>

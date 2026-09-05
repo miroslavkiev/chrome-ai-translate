@@ -29,14 +29,19 @@ assert.deepEqual(names, [
   "INSTALL.md",
   "LICENSE",
   "PRIVACY.md",
+  "about.html",
   "background.js",
   "content.js",
+  "guide.css",
+  "help.html",
   "icon.png",
   "manifest.json",
   "popup.html",
   "popup.js",
   "settings.html",
   "settings.js",
+  "setup-key.png",
+  "setup-language.png",
   "ui.css",
 ]);
 
@@ -72,7 +77,7 @@ await Promise.all([
   assertFresh("popup.html", ["popup.html", ...buildInputs]),
   assertFresh("settings.html", ["settings.html", ...buildInputs]),
   assertFresh("icon.png", ["icon.png", ...buildInputs]),
-  ...["ui.css", "INSTALL.md", "PRIVACY.md", "LICENSE"].map((name) => assertFresh(name, [name, ...buildInputs])),
+  ...["ui.css", "guide.css", "help.html", "about.html", "setup-key.png", "setup-language.png", "INSTALL.md", "PRIVACY.md", "LICENSE"].map((name) => assertFresh(name, [name, ...buildInputs])),
   assertFresh(archiveName, ["scripts/package.mjs", "package.json", "package-lock.json"]),
 ]);
 

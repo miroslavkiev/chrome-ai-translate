@@ -2,6 +2,7 @@ import {
   DEFAULTS,
   LANGUAGES,
   LIMITS,
+  RECOMMENDED_MODEL,
   STORAGE_KEYS,
   SUPPORTED_TRIGGER_KEYS,
   getStoredTriggerKey,
@@ -19,6 +20,7 @@ const elements = {
   apiKeyStatus: document.getElementById("apiKeyStatus"),
   aiModel: document.getElementById("aiModel"),
   refreshModels: document.getElementById("refreshModels"),
+  recommendedModel: document.getElementById("recommendedModel"),
   modelStatus: document.getElementById("modelStatus"),
   targetLanguage: document.getElementById("targetLanguage"),
   shortcutValue: document.getElementById("shortcutValue"),
@@ -29,6 +31,9 @@ const elements = {
   saveButton: document.getElementById("saveButton"),
   reloadSettings: document.getElementById("reloadSettings"),
   setupStatus: document.getElementById("setupStatus"),
+  setupGuide: document.getElementById("setupGuide"),
+  setupKeyStep: document.getElementById("setupKeyStep"),
+  setupLanguageStep: document.getElementById("setupLanguageStep"),
   parallelLimits: document.getElementById("parallelLimits"),
   timeoutLimit: document.getElementById("timeoutLimit"),
 };
@@ -45,6 +50,7 @@ let catalogLoaded = false;
 let dirty = false;
 let saving = false;
 let savingKey = false;
+let setupGuideVisible = false;
 let modelLoadSequence = 0;
 let savedPreferences = {
   targetLanguage: DEFAULTS.targetLanguage,
@@ -57,6 +63,7 @@ const mutableControls = [
   elements.revealKey,
   elements.aiModel,
   elements.refreshModels,
+  elements.recommendedModel,
   elements.targetLanguage,
   elements.recordKey,
   elements.disableKey,
@@ -83,12 +90,17 @@ function hasConflicts() {
   return keyConflict || preferenceConflicts.size > 0;
 }
 
+function updateSaveButton() {
+  const canFinish = setupGuideVisible && storedApiKey && isSupportedLanguage(elements.targetLanguage.value);
+  elements.saveButton.disabled = !initialized || saving || savingKey || (!dirty && !canFinish) || hasConflicts();
+}
+
 function markDirty(message = "Unsaved changes.") {
   dirty = elements.targetLanguage.value !== savedPreferences.targetLanguage
     || elements.aiModel.value !== savedPreferences.aiModel
     || triggerKey !== savedPreferences.triggerKey
     || elements.apiKey.value.trim() !== storedApiKey;
-  elements.saveButton.disabled = !initialized || saving || savingKey || !dirty || hasConflicts();
+  updateSaveButton();
   if (hasConflicts()) {
     setSaveStatus("Settings changed in another page. Your edits are kept here. Reload saved settings to discard your edits and use the saved values.", "error");
   } else {
@@ -112,18 +124,31 @@ function renderApiKeyStatus() {
 }
 
 function renderSetupStatus() {
+  if (initialized && (!storedApiKey || !savedPreferences.targetLanguage)) setupGuideVisible = true;
+  elements.setupGuide.hidden = !setupGuideVisible;
+  elements.setupKeyStep.textContent = apiKeyStatus === "rejected"
+    ? "Gemini rejected the saved key. Replace it below."
+    : storedApiKey ? "Your key is saved on this device." : "Create your own key in Google AI Studio.";
+  elements.setupLanguageStep.textContent = isSupportedLanguage(elements.targetLanguage.value)
+    ? "Language selected. Finish setup to save your choices."
+    : "Choose a target language below.";
+  if (!saving) elements.saveButton.textContent = setupGuideVisible ? "Finish setup" : "Save Preferences";
   let message = "Add an API key, check the model list, and save your model choice.";
   if (hasConflicts()) message = "Resolve the settings conflict before translating.";
   else if (elements.apiKey.value.trim() !== storedApiKey) message = "Finish saving the API key before checking setup.";
   else if (apiKeyStatus === "rejected") message = "Setup needs attention: Gemini rejected the saved API key.";
+  else if (storedApiKey && !isSupportedLanguage(elements.targetLanguage.value)) message = "Key saved. Choose a target language, then finish setup.";
   else if (storedApiKey && catalogLoaded) {
     message = elements.aiModel.selectedOptions[0]?.dataset.unavailable
       ? "Choose an available model and save preferences."
       : elements.aiModel.value !== savedPreferences.aiModel
         ? "Model selected. Save preferences to use it."
-        : "Ready to try a translation. The saved model is in the checked model list; request access and quota can still change.";
+        : setupGuideVisible
+          ? "Key and language are ready. Finish setup to save your choices, then try a translation. Model access and quota can still change."
+          : "Ready to try a translation. The saved model is in the checked model list; request access and quota can still change.";
   } else if (storedApiKey) message = "Key saved. Refresh models to check the key and selected model.";
   elements.setupStatus.textContent = message;
+  updateSaveButton();
 }
 
 function renderTriggerKey() {
@@ -148,6 +173,8 @@ function updateKeyControls() {
     || !storedApiKey
     || elements.apiKey.value.trim() !== storedApiKey
     || keyConflict;
+  elements.recommendedModel.disabled = elements.refreshModels.disabled || !catalogLoaded
+    || !Array.from(elements.aiModel.options).some((option) => option.value === RECOMMENDED_MODEL && !option.dataset.unavailable);
 }
 
 function setSaving(value) {
@@ -165,7 +192,7 @@ function setKeySaving(value) {
   savingKey = value;
   elements.apiKey.setAttribute("aria-busy", String(value));
   updateKeyControls();
-  elements.saveButton.disabled = !initialized || saving || savingKey || !dirty || hasConflicts();
+  updateSaveButton();
 }
 
 function maskApiKey() {
@@ -176,18 +203,23 @@ function maskApiKey() {
 
 function populateLanguages(selectedCode) {
   const fragment = document.createDocumentFragment();
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Choose a target language";
+  placeholder.disabled = true;
+  fragment.append(placeholder);
   for (const language of LANGUAGES) {
     const option = document.createElement("option");
     option.value = language.code;
-    option.textContent = language.code === DEFAULTS.targetLanguage
-      ? `${language.name} (Default)`
-      : language.name;
+    option.textContent = language.name;
     fragment.append(option);
   }
   elements.targetLanguage.replaceChildren(fragment);
-  elements.targetLanguage.value = isSupportedLanguage(selectedCode)
-    ? selectedCode
-    : DEFAULTS.targetLanguage;
+  elements.targetLanguage.value = languageSelection(selectedCode);
+}
+
+function languageSelection(value) {
+  return isSupportedLanguage(value) ? value : "";
 }
 
 function normalizeModelOptions(models) {
@@ -212,7 +244,7 @@ function renderModels(models, selectedModel) {
   if (isValidModelId(selectedModel) && !modelIds.has(selectedModel)) {
     const unavailable = document.createElement("option");
     unavailable.value = selectedModel;
-    unavailable.textContent = `${selectedModel} (Not in current list)`;
+    unavailable.textContent = `${selectedModel} (${models.length ? "Not in current list" : "Not checked yet"})`;
     unavailable.dataset.unavailable = "true";
     fragment.append(unavailable);
   }
@@ -277,6 +309,7 @@ async function loadModels(forceRefresh) {
   }
 
   elements.refreshModels.disabled = true;
+  elements.recommendedModel.disabled = true;
   elements.refreshModels.textContent = forceRefresh ? "Refreshing..." : "Loading...";
   const sequence = ++modelLoadSequence;
   setTextStatus(elements.modelStatus, forceRefresh
@@ -373,7 +406,7 @@ function mergePreferences(values) {
   for (const name of Object.keys(savedPreferences)) {
     if (!Object.hasOwn(values, name)) continue;
     const value = name === "triggerKey" ? getStoredTriggerKey(values)
-      : name === "targetLanguage" ? (isSupportedLanguage(values[name]) ? values[name] : DEFAULTS[name])
+      : name === "targetLanguage" ? languageSelection(values[name])
         : (isValidModelId(values[name]) ? values[name] : DEFAULTS[name]);
     const current = currentPreferences()[name];
     if (current === savedPreferences[name] || current === value) {
@@ -482,14 +515,15 @@ async function saveSettings(event) {
       await chrome.storage.sync.set(changes);
       mergePreferences(changes);
     }
-    setSaveStatus("Preferences saved.", "success");
+    if (storedApiKey) setupGuideVisible = false;
+    setSaveStatus(storedApiKey ? "Preferences saved." : "Preferences saved. Add your API key to finish setup.", "success");
     if (keyResult.changed && storedApiKey) await loadModels(true);
   } catch {
     setSaveStatus("Preferences could not be read or saved. Your edits are kept. Try again.", "error");
   } finally {
     elements.saveButton.textContent = "Save Preferences";
     setSaving(false);
-    elements.saveButton.disabled = !dirty || hasConflicts();
+    updateSaveButton();
     renderSetupStatus();
   }
 }
@@ -525,6 +559,11 @@ function bindEvents() {
     elements.revealKey.setAttribute("aria-pressed", String(revealing));
   });
   elements.refreshModels.addEventListener("click", () => loadModels(true));
+  elements.recommendedModel.addEventListener("click", () => {
+    if (elements.recommendedModel.disabled) return;
+    elements.aiModel.value = RECOMMENDED_MODEL;
+    markDirty("Recommended model selected. Save your choice to use it.");
+  });
   elements.targetLanguage.addEventListener("change", () => markDirty());
   elements.aiModel.addEventListener("change", () => markDirty());
   elements.recordKey.addEventListener("click", () => recordingKey ? stopKeyRecording("Recording cancelled.") : startKeyRecording());
@@ -607,14 +646,16 @@ async function initialize() {
     apiKeyStatus = runtimeState.apiKeyStatus || (storedApiKey ? "saved" : "missing");
     renderApiKeyStatus();
 
-    const targetLanguage = syncData[STORAGE_KEYS.targetLanguage] ?? DEFAULTS.targetLanguage;
+    const targetLanguage = Object.hasOwn(syncData, STORAGE_KEYS.targetLanguage)
+      ? syncData[STORAGE_KEYS.targetLanguage] : DEFAULTS.targetLanguage;
     const aiModel = syncData[STORAGE_KEYS.aiModel] ?? DEFAULTS.aiModel;
     triggerKey = getStoredTriggerKey(syncData);
     savedPreferences = {
-      targetLanguage: isSupportedLanguage(targetLanguage) ? targetLanguage : DEFAULTS.targetLanguage,
+      targetLanguage: languageSelection(targetLanguage),
       aiModel: isValidModelId(aiModel) ? aiModel : DEFAULTS.aiModel,
       triggerKey,
     };
+    setupGuideVisible = !storedApiKey || !savedPreferences.targetLanguage;
 
     populateLanguages(targetLanguage);
     renderModels([], isValidModelId(aiModel) ? aiModel : DEFAULTS.aiModel);

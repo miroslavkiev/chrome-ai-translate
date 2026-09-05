@@ -1,5 +1,15 @@
 # Release checks and translation sample
 
+## Version 1.3.0 setup and language choices
+
+Approved option C adds a checklist to existing Settings, a no-key welcome, a local key guide and About page. The product includes no demo key. The shared catalog now offers 110 documented Gemini language choices. New users choose a language and start with a dated Gemini 3.5 Flash-Lite recommendation. Other listed models remain selectable. Missing models require an explicit replacement; no automatic fallback was added. Existing profiles keep their choices and earlier defaults.
+
+All 54 Node tests passed on Node 25.2.1. The production build and exact package checks passed. npm audit reported zero vulnerabilities. Temporary Chrome 151.0.7922.34 passed built-folder and source-root content checks, plus the extension-page checks. New checks cover no-key welcome, visible Settings-opening failure, interrupted setup after key save, 110 language choices, explicit model replacement, guide/About links, and 320px light/dark layouts. Independent code and UX reviews found no remaining material issues after correction.
+
+The guide's two screenshots come from the real built Settings page before any test key was entered. They show empty fields and contain no account, project or key details; PNG text and EXIF metadata are absent. To refresh them, set BROWSER_EVIDENCE_DIR when running the extension-page check and review setup-key.png and setup-language.png before copying them into the package. They are extension screenshots, not recreations of Google AI Studio.
+
+No real Google translation or paid API request was made. Model recommendation is based on current official documentation, not a new translation-quality benchmark. Chrome's browser security policy blocked access to the installed extension manager; the user must finish active translations, reload AI Translator at chrome://extensions, and refresh their web pages. Store submission has not been made. Provider audience/service-tier terms, Store privacy requirements and reviewer access still need to be settled before publication.
+
 ## Version 1.2.1 source-folder fix
 
 The user confirmed Chrome loaded the repository root and reported "Cannot use import statement outside a module" at content.js:1. That source file uses imports, but Chrome loads content scripts as classic scripts. Settings could still work because its script uses modules. The same failure was reproduced in a temporary profile; dist and the extracted ZIP worked.

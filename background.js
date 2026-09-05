@@ -1,5 +1,6 @@
 import {
   DEFAULTS,
+  RECOMMENDED_MODEL,
   LIMITS,
   STORAGE_KEYS,
   getStoredTriggerKey,
@@ -59,7 +60,27 @@ async function initializeRuntime() {
     chrome.storage.session.setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" }),
   ]);
   await migrateSyncedApiKey();
+  await initializePreferences();
   await chrome.storage.session.set({ [STORAGE_KEYS.activeRequestCount]: 0 });
+}
+
+async function initializePreferences() {
+  const keys = [STORAGE_KEYS.targetLanguage, STORAGE_KEYS.aiModel, STORAGE_KEYS.triggerKey];
+  const local = await chrome.storage.local.get(STORAGE_KEYS.apiKey);
+  const initial = await chrome.storage.sync.get(keys);
+  if (Object.hasOwn(initial, STORAGE_KEYS.targetLanguage) && Object.hasOwn(initial, STORAGE_KEYS.aiModel)) return;
+  // Re-read before filling missing fields so an arriving sync value is preserved.
+  const stored = await chrome.storage.sync.get(keys);
+  const existing = stored[STORAGE_KEYS.targetLanguage] !== null
+    && (Boolean(normalizeApiKey(local[STORAGE_KEYS.apiKey])) || Object.keys(stored).length > 0);
+  const values = {};
+  if (!Object.hasOwn(stored, STORAGE_KEYS.targetLanguage)) {
+    values[STORAGE_KEYS.targetLanguage] = existing ? DEFAULTS.targetLanguage : null;
+  }
+  if (!Object.hasOwn(stored, STORAGE_KEYS.aiModel)) {
+    values[STORAGE_KEYS.aiModel] = existing ? DEFAULTS.aiModel : RECOMMENDED_MODEL;
+  }
+  if (Object.keys(values).length) await chrome.storage.sync.set(values);
 }
 
 async function migrateSyncedApiKey() {
@@ -209,6 +230,9 @@ async function handleTranslation(port, connection, message) {
     if (!apiKey) throw runtimeFailure(publicError("missing_api_key"));
     const preferences = await getPreferences();
     throwIfAborted(connection.controller.signal);
+    if (!isSupportedLanguage(preferences.targetLanguage)) {
+      throw runtimeFailure(publicError("missing_target_language"));
+    }
     const catalog = await getModelCatalog(apiKey, false, {
       signal: connection.controller.signal,
       allowStale: true,
@@ -309,7 +333,7 @@ async function getPreferences() {
   return {
     targetLanguage: isSupportedLanguage(stored[STORAGE_KEYS.targetLanguage])
       ? stored[STORAGE_KEYS.targetLanguage]
-      : DEFAULTS.targetLanguage,
+      : null,
     aiModel: isValidModelId(stored[STORAGE_KEYS.aiModel])
       ? stored[STORAGE_KEYS.aiModel]
       : DEFAULTS.aiModel,
@@ -701,7 +725,8 @@ async function getRuntimeState() {
       : null;
     const rejected = apiKey && isRejectedApiKey(apiKey, local);
     const configurationError = rejected ? publicError("invalid_api_key")
-      : catalog && !catalog.models.some(({ id }) => id === preferences.aiModel)
+      : apiKey && !isSupportedLanguage(preferences.targetLanguage) ? publicError("missing_target_language")
+        : catalog && !catalog.models.some(({ id }) => id === preferences.aiModel)
         ? publicError("invalid_model") : null;
     return {
       ok: true,

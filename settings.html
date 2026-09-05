@@ -65,6 +65,12 @@
 
     .subtitle { margin-bottom: 0; }
     .stack { display: grid; gap: 18px; }
+    .page-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 14px 0 0; }
+    a { color: var(--focus); }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .setup-list { margin: 16px 0 0; padding-left: 24px; line-height: 1.5; }
+    .setup-list li + li { margin-top: 14px; }
+    .setup-step { display: block; color: var(--muted); font-size: 13px; }
 
     .card {
       border-radius: 18px;
@@ -221,10 +227,36 @@
       <div>
         <h1>AI Translator</h1>
         <p class="subtitle">Private settings for quick, focused translation.</p>
+        <nav class="page-links" aria-label="Help and information">
+          <a href="help.html" target="_blank" rel="noopener noreferrer">API key guide</a>
+          <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
+        </nav>
       </div>
     </header>
 
     <form id="settingsForm" class="stack" novalidate>
+      <section id="setupGuide" class="card privacy" aria-labelledby="setup-heading" hidden>
+        <h2 id="setup-heading">Set up AI Translator</h2>
+        <p class="help">Follow these steps here in Settings. You need your own Google API key to translate.</p>
+        <ol class="setup-list">
+          <li>
+            <strong>Get your own API key.</strong>
+            Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>, sign in, and create a key. Paste it in the API key field below.
+            <a href="help.html" target="_blank" rel="noopener noreferrer">Read the step-by-step guide</a> for help.
+            <span id="setupKeyStep" class="setup-step"></span>
+          </li>
+          <li>
+            <strong>Choose your target language and model.</strong>
+            Pick the language you want translations in. We recommend Gemini Flash-Lite when it is available in your model list.
+            <span id="setupLanguageStep" class="setup-step"></span>
+          </li>
+          <li>
+            <strong>Save and start translating.</strong>
+            Use Finish setup at the bottom of this page. Then select text on a web page and choose Translate Selected Text from the right-click menu.
+          </li>
+        </ol>
+      </section>
+
       <section class="card" aria-labelledby="api-heading">
         <div class="card-header">
           <h2 id="api-heading">Gemini</h2>
@@ -252,9 +284,11 @@
             <p class="help">Known media-only and special-purpose models are hidden.</p>
           </div>
           <div class="control-stack">
-            <select id="aiModel" name="aiModel" aria-describedby="modelStatus" required></select>
+            <select id="aiModel" name="aiModel" aria-describedby="modelRecommendation modelStatus" required></select>
+            <p id="modelRecommendation" class="help">We recommend the Gemini Flash-Lite family. At this release (September 2026), our choice is Gemini 3.5 Flash-Lite. You are free to choose another listed model. Some models may not work with this extension. If one fails, choose another model or the recommended one.</p>
             <div class="button-row">
               <button id="refreshModels" class="button" type="button" disabled>Refresh models</button>
+              <button id="recommendedModel" class="button" type="button" disabled>Use recommended model</button>
             </div>
             <p id="modelStatus" class="model-status" role="status" aria-live="polite"></p>
           </div>

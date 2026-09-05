@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Get started with AI Translator</title>
+  <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="guide.css">
+</head>
+<body>
+  <main class="shell">
+    <nav class="page-links" aria-label="Extension pages">
+      <a href="settings.html">Settings</a>
+      <a href="about.html">About</a>
+    </nav>
+    <header class="page-header">
+      <h1>Get started with AI Translator</h1>
+      <p class="subtitle">Get your own Google API key, choose a language, and translate your first selection.</p>
+    </header>
+
+    <section class="card" aria-labelledby="key-heading">
+      <h2 id="key-heading">1. Get your API key</h2>
+      <p>An API key lets this extension use Gemini through your Google account. Keep it private, like a password.</p>
+      <ol class="steps">
+        <li>
+          <h3>Open Google AI Studio</h3>
+          <p>Sign in to your Google account. Accept Google's terms if asked.</p>
+          <a class="button primary" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Open Google AI Studio</a>
+        </li>
+        <li>
+          <h3>Create or choose a key</h3>
+          <p>On the API Keys page, choose <strong>Create API key</strong> and follow Google's steps to choose or create a project. A project groups your API use and any billing. If you are new to AI Studio, Google may have already created a default project and key.</p>
+          <p>If your existing project is missing, open <strong>Dashboard &gt; Projects &gt; Import projects</strong>. Import your project, then return to API Keys.</p>
+        </li>
+        <li>
+          <h3>Copy your key</h3>
+          <p>Copy the key from AI Studio. Return to this extension's Settings and paste it into the <strong>API key</strong> field. Pasting saves it automatically and loads your model list. Wait for the result before continuing.</p>
+          <figure>
+            <img src="setup-key.png" width="760" height="510" alt="AI Translator Settings with an empty API key field, a model selector, and the dated Flash-Lite recommendation." loading="lazy">
+            <figcaption class="note">In AI Translator: paste your own key into the empty field. The model list is checked after the key is saved.</figcaption>
+          </figure>
+        </li>
+      </ol>
+      <p class="note">Google can change these screens. For current steps or key errors, read <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener noreferrer">Google's API key guide</a>. Use a new key from AI Studio if an older key no longer works.</p>
+    </section>
+
+    <section class="card" aria-labelledby="preferences-heading">
+      <h2 id="preferences-heading">2. Choose your translation settings</h2>
+      <ol class="steps">
+        <li>
+          <h3>Choose a model</h3>
+          <p>We recommend the Gemini Flash-Lite family. For this release in September 2026, our choice is <strong>Gemini 3.5 Flash-Lite</strong>. Use it when it is available in your model list.</p>
+          <p>You can choose another listed model. Some models may not work with this extension. If a model fails, choose another one or use the recommended model.</p>
+        </li>
+        <li>
+          <h3>Choose your target language</h3>
+          <p>Choose the language you want to read from <strong>Default language</strong>. The choices follow <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/google-models#language_support" target="_blank" rel="noopener noreferrer">Google's documented Gemini languages</a>. Translation quality can vary by language and text.</p>
+          <figure>
+            <img src="setup-language.png" width="760" height="317" alt="AI Translator Translation settings with Choose a target language and the keyboard trigger controls." loading="lazy">
+            <figcaption class="note">Choose the language for your translations, then finish setup.</figcaption>
+          </figure>
+        </li>
+        <li>
+          <h3>Finish setup</h3>
+          <p>Keep the Control key trigger, record another key, or choose <strong>Off</strong> to use only the right-click menu. Choose <strong>Finish setup</strong> at the bottom of Settings. You can change these choices later with <strong>Save Preferences</strong>.</p>
+        </li>
+      </ol>
+      <div class="actions"><a class="button primary" href="settings.html">Open Settings</a></div>
+    </section>
+
+    <section class="card" aria-labelledby="translate-heading">
+      <h2 id="translate-heading">3. Translate your first selection</h2>
+      <p>Open a normal web page and select a short piece of text. Right-click and choose <strong>Translate Selected Text</strong>, or press and release your chosen key. The result appears beside the selection.</p>
+      <p>If the extension was just installed or reloaded, refresh the web page first. Chrome settings pages, the Chrome Web Store, and the built-in PDF viewer do not allow translation.</p>
+      <p>The toolbar popup shows the latest result. Once setup is complete, it opens the standard view. If you remove your API key, the welcome guide appears again.</p>
+    </section>
+
+    <section class="card" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">Your key, data, and Google costs</h2>
+      <p>Your key is stored in local extension storage and is not synced. Chrome does not encrypt this storage against access to your local browser profile. Never share your key in screenshots or public messages.</p>
+      <p>Selected text goes directly to Google only when you ask for a translation. Loading the model list uses your key but sends no selected text. The extension has no analytics or translation history. Your language, model, and trigger choices can sync through Chrome.</p>
+      <p>Google offers free and paid API use with limits. Charges and Google's use of your data depend on your plan and terms. Read <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google's pricing and data-use notes</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API terms</a> before sending private text.</p>
+      <p class="note">Cannot open AI Studio? Check Google's <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">region and account requirements</a>. A Google account must meet the service's age requirements.</p>
+    </section>
+  </main>
+</body>
+</html>

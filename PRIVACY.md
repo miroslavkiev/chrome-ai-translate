@@ -8,6 +8,8 @@ When you start a translation, the selected text, target language, and translatio
 
 Model-list refreshes send only your API authentication and a request for available model metadata.
 
+Google's handling of text depends on the service tier and region. Its unpaid-service terms can allow product improvement and human review. Paid-service terms exclude product improvement but retain limited safety and legal logging. Read the [Gemini API terms](https://ai.google.dev/gemini-api/terms) and [pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing) before translating private text.
+
 ## Data stored by Chrome
 
 - Your Gemini API key is stored in local extension storage. It is not synced to other browsers. Chrome extension storage is not encrypted against access to your local browser profile.
@@ -17,6 +19,8 @@ Model-list refreshes send only your API authentication and a request for availab
 - Source text is not kept in translation history or persistent storage.
 
 An upgrade migrates any API key saved by version 1.0 from sync storage to local storage and removes the synced copy after verification.
+
+New setup records an unselected language until you make a choice. An upgrade preserves existing saved choices and earlier defaults. Setup adds no tracking or separate first-run history.
 
 ## Page access
 
@@ -29,5 +33,7 @@ Chrome pages, browser settings, the built-in PDF viewer, and other restricted pa
 You can disable the global key and keep the context menu. You can replace the API key by pasting another key or remove it by emptying the field. The extension limits input size, active requests, rapid requests, response size, and request duration. Failed requests are not retried automatically.
 
 Copy runs only when you choose it and writes only the displayed result to the clipboard. If the browser blocks copying, the result remains selectable. No new clipboard permission is requested.
+
+Help and About contain links to Google, the project, and an optional donation website. These open only when you click them. The extension does not process donations or send your API key or translation text with these links.
 
 Cancelling a request stops local waiting and attempts to abort the network request. Removing a key prevents future requests after the current-key check. Neither action guarantees that already dispatched provider work stops or becomes free. No translation data is sent to any service other than the configured Gemini API endpoint.

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { DEFAULTS, LIMITS, STORAGE_KEYS, stableTextHash } from "../shared.js";
+import { DEFAULTS, RECOMMENDED_MODEL, LIMITS, STORAGE_KEYS, stableTextHash } from "../shared.js";
 
 const extensionId = "runtime-test-extension";
 const apiKey = "test-api-key-value";
@@ -58,7 +58,7 @@ async function runtime(t, seed = {}) {
       [STORAGE_KEYS.modelCatalog]: { models, fetchedAt: Date.now(), apiKeyHash: stableTextHash(apiKey) },
       ...seed.local,
     },
-    sync: { [STORAGE_KEYS.triggerKey]: "Off", ...seed.sync },
+    sync: { ...(seed.fresh ? {} : { [STORAGE_KEYS.triggerKey]: "Off" }), ...seed.sync },
     session: { ...seed.session },
   };
   const env = { state, calls: [], writes: [], beforeGet: seed.beforeGet, beforeSet: seed.beforeSet, openedSettings: 0 };
@@ -495,4 +495,39 @@ test("one cancelled catalog waiter does not cancel another active translation", 
   assert.equal(env.calls.length, 2);
   assert.equal(first.posts.length, 0);
   assert.equal((await env.status()).activeRequestCount, 0);
+});
+
+test("new setup requires a saved language even after key save and worker restart", async (t) => {
+  const env = await runtime(t, { fresh: true, local: { geminiApiKey: null, modelCatalog: null } });
+  assert.equal(env.ready.hasApiKey, false);
+  assert.equal(env.state.sync.targetLanguage, null);
+  assert.equal(env.state.sync.aiModel, RECOMMENDED_MODEL);
+  await env.chrome.storage.local.set({ geminiApiKey: apiKey });
+  const reopened = await env.reload();
+  assert.equal(reopened.hasApiKey, true);
+  assert.equal(reopened.configured, false);
+  assert.equal(reopened.configurationError.code, "missing_target_language");
+  assert.equal((await env.translate({ targetLanguage: "fr" }).done).error.code, "missing_target_language");
+  assert.equal(env.calls.length, 0);
+  await env.chrome.storage.sync.set({ targetLanguage: "he", aiModel: DEFAULTS.aiModel });
+  assert.equal((await env.translate().done).ok, true);
+  assert.equal(env.state.sync.targetLanguage, "he");
+});
+
+test("existing profiles keep legacy defaults and incoming synced preferences", async (t) => {
+  const env = await runtime(t, { local: { geminiApiKey: null }, sync: { targetLanguage: "fr" } });
+  assert.equal(env.state.sync.targetLanguage, "fr");
+  assert.equal(env.state.sync.aiModel, DEFAULTS.aiModel);
+  assert.equal(env.state.sync.triggerKey, "Off");
+  await env.chrome.storage.sync.remove(["aiModel", "targetLanguage"]);
+  let preferenceReads = 0;
+  env.beforeGet = async (area, keys) => {
+    if (area === "sync" && Array.isArray(keys) && keys.includes("targetLanguage") && ++preferenceReads === 2) {
+      env.state.sync.targetLanguage = "es";
+      env.state.sync.aiModel = "gemini-chosen-model";
+    }
+  };
+  await env.reload();
+  assert.equal(env.state.sync.targetLanguage, "es");
+  assert.equal(env.state.sync.aiModel, "gemini-chosen-model");
 });
