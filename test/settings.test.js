@@ -5,7 +5,7 @@ import vm from "node:vm";
 import * as shared from "../shared.js";
 
 const source = (await readFile(new URL("../settings.js", import.meta.url), "utf8"))
-  .replace(/^import \{[\s\S]*?\} from "\.\/shared.js";\n/, "")
+  .replace(/^import \{[\s\S]*?\} from "\.\/shared.js";\r?\n/, "")
   .replace(/initialize\(\);\s*$/, "globalThis.initialization = initialize();");
 
 class Element {

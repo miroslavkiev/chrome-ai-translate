@@ -63,7 +63,9 @@ try {
   cdp.on("Runtime.executionContextCreated", ({ context: current }) => {
     if (current.name === "AI Translator") contentContext = current.id;
   });
-  cdp.on("Runtime.exceptionThrown", ({ exceptionDetails }) => exceptions.push(exceptionDetails.text));
+  cdp.on("Runtime.exceptionThrown", ({ exceptionDetails }) => exceptions.push(
+    exceptionDetails.exception?.description || exceptionDetails.text,
+  ));
   await cdp.send("Runtime.enable");
   const pause = () => page.waitForTimeout(100);
   async function load(suffix = "plain", scheme = "https") {
@@ -80,7 +82,13 @@ try {
     }, selector);
     await pause();
   }
-  async function trigger() { await page.keyboard.press("Control"); await pause(); }
+  async function trigger(expected = "success") {
+    const previousId = (await roots()).length ? (await state()).id : null;
+    await page.keyboard.press("Control");
+    // Negative checks allow pending key events to settle without inventing a result.
+    if (expected === "none") return pause();
+    return waitForCard(expected, { previousId });
+  }
   async function roots() {
     const { root } = await cdp.send("DOM.getDocument", { depth: -1, pierce: true });
     const found = [];
@@ -103,20 +111,66 @@ try {
   async function state() {
     return inCard(function () {
       const output = this.querySelector(".output");
-      return { text: output.textContent, hidden: output.hidden, lang: output.lang, shellLang: this.host.lang,
+      const visualStatus = this.querySelector(".state");
+      return { id: this.querySelector(".title").id,
+        phase: visualStatus.classList.contains("loading") ? "loading"
+          : visualStatus.classList.contains("error") ? "error" : output.hidden ? "new" : "success",
+        text: output.textContent, hidden: output.hidden, lang: output.lang, shellLang: this.host.lang,
         status: this.querySelector(".state").textContent, active: this.activeElement?.className,
         languageDisabled: this.querySelector("select").disabled,
         retryDisabled: [...this.querySelectorAll("button")].find((button) => button.textContent === "Retry").disabled,
         buttons: [...this.querySelectorAll("button")].filter((button) => !button.hidden).map((button) => button.textContent) };
     });
   }
-  async function click(text) {
+  async function diagnostics() {
+    const details = { url: page.url(), browser: context.browser()?.version(), exceptions };
+    for (const [name, read] of Object.entries({
+      card: async () => (await roots()).length ? state() : null,
+      runtime: () => worker.evaluate(async () => {
+        const session = await chrome.storage.session.get(["latestResult", "activeRequestCount"]);
+        const latest = session.latestResult;
+        return { fakeProvider: globalThis.probe, activeRequestCount: session.activeRequestCount,
+          latest: latest && { status: latest.status, requestId: latest.requestId, error: latest.error } };
+      }),
+      contentApis: () => cdp.send("Runtime.evaluate", { contextId: contentContext, returnByValue: true,
+        expression: "({ secure: isSecureContext, randomUUID: typeof crypto.randomUUID, getRandomValues: typeof crypto.getRandomValues, showPopover: typeof HTMLElement.prototype.showPopover, runtimeConnect: typeof chrome.runtime.connect })" }),
+    })) {
+      try { details[name] = await read(); }
+      catch (error) { details[name] = { unavailable: error.message }; }
+    }
+    return JSON.stringify(details, null, 2);
+  }
+  async function waitUntil(description, read, matches, { reject } = {}) {
+    const deadline = Date.now() + 10_000;
+    let current;
+    while (Date.now() < deadline) {
+      current = await read();
+      if (matches(current)) return current;
+      if (reject?.(current)) break;
+      await page.waitForTimeout(50);
+    }
+    throw new Error(`Expected ${description}. Last value: ${JSON.stringify(current)}\n${await diagnostics()}`);
+  }
+  async function waitForCard(expected, { previousId } = {}) {
+    return waitUntil(`a ${expected} card`, async () => (await roots()).length ? state() : null,
+      (card) => card && card.id !== previousId && card.phase === expected,
+      { reject: (card) => card && card.id !== previousId && expected === "success" && card.phase === "error" });
+  }
+  async function click(text, expected = text === "Retry" ? "success" : null) {
+    const previousStarts = text === "Retry" && expected === "success"
+      ? await worker.evaluate(() => probe.starts) : null;
     const rect = await inCard(function (text) {
       const button = [...this.querySelectorAll("button")].find((item) => item.textContent === text && !item.hidden);
       const rect = button.getBoundingClientRect();
       return { x: rect.x + rect.width / 2, y: rect.y + rect.height / 2 };
     }, text);
-    await page.mouse.click(rect.x, rect.y); await pause();
+    await page.mouse.click(rect.x, rect.y);
+    if (previousStarts !== null) {
+      await waitUntil("Retry to start exactly one new request", () => worker.evaluate(() => probe.starts),
+        (starts) => starts === previousStarts + 1);
+    }
+    if (expected) await waitForCard(expected);
+    else await pause();
   }
   async function stubClipboard(success) {
     await cdp.send("Runtime.evaluate", { contextId: contentContext, expression:
@@ -143,18 +197,22 @@ try {
   const beforeLanguage = await worker.evaluate(() => probe.starts);
   await inCard(function () { const select = this.querySelector("select"); select.value = "fr"; select.dispatchEvent(new Event("change")); });
   assert.equal((await state()).text, ""); assert.equal((await state()).hidden, true);
-  await page.waitForTimeout(400); assert.equal(await worker.evaluate(() => probe.starts), beforeLanguage + 1);
+  await waitForCard("success"); assert.equal(await worker.evaluate(() => probe.starts), beforeLanguage + 1);
   await worker.evaluate(() => { probe.delay = 0; });
   assert.equal((await state()).lang, "fr");
   assert.equal(await worker.evaluate(async () => (await chrome.storage.sync.get("targetLanguage")).targetLanguage), "uk");
 
   await worker.evaluate(() => { probe.delay = 600; probe.failure = "UNAVAILABLE"; });
-  await click("Retry"); assert.equal((await state()).text, ""); assert.equal((await state()).hidden, true);
-  await page.waitForTimeout(700); assert.equal((await state()).text, ""); assert.match((await state()).status, /could not|reached/);
+  await click("Retry", "loading"); assert.equal((await state()).text, ""); assert.equal((await state()).hidden, true);
+  await waitForCard("error"); assert.equal((await state()).text, ""); assert.match((await state()).status, /could not|reached/);
   await worker.evaluate(() => { probe.failure = null; });
-  await click("Retry"); await page.click("#two"); await pause();
+  await click("Retry", "loading");
+  await waitUntil("an active fake provider request", () => worker.evaluate(() => chrome.storage.session.get("activeRequestCount")),
+    (session) => session.activeRequestCount === 1);
+  await page.click("#two");
   assert.equal((await roots()).length, 0);
-  const cancelled = await worker.evaluate(() => chrome.storage.session.get(["latestResult", "activeRequestCount"]));
+  const cancelled = await waitUntil("the cancelled request to finish", () => worker.evaluate(() => chrome.storage.session.get(["latestResult", "activeRequestCount"])),
+    (session) => session.activeRequestCount === 0 && session.latestResult?.error?.code === "cancelled");
   assert.equal(cancelled.activeRequestCount, 0); assert.equal(cancelled.latestResult.error.code, "cancelled");
   await worker.evaluate(() => { probe.delay = 0; });
 
@@ -182,10 +240,10 @@ try {
     const password = document.createElement("input"); password.type = "password"; password.value = "fake-secret";
     root.replaceChildren(password); password.focus(); password.select();
   });
-  await pause(); await trigger(); assert.equal((await roots()).length, 0); assert.equal(await worker.evaluate(() => probe.starts), starts);
+  await pause(); await trigger("none"); assert.equal((await roots()).length, 0); assert.equal(await worker.evaluate(() => probe.starts), starts);
 
   await load("oversize"); await page.evaluate(() => { document.querySelector("#one").textContent = "x".repeat(10001); });
-  await select("#one"); await trigger(); assert.match((await state()).status, /10,000/); assert.ok(!(await state()).buttons.includes("Retry"));
+  await select("#one"); await trigger("error"); assert.match((await state()).status, /10,000/); assert.ok(!(await state()).buttons.includes("Retry"));
   await page.keyboard.press("Escape");
   await worker.evaluate(async () => {
     const tabs = await chrome.tabs.query({});
@@ -205,7 +263,10 @@ try {
   await page.keyboard.press("Tab"); assert.equal((await state()).active, "output");
   await inCard(function () { this.querySelector("select").focus(); });
   const beforeModalLanguage = await worker.evaluate(() => probe.starts);
-  await page.keyboard.press("e"); await pause();
+  await page.keyboard.press("e");
+  await waitUntil("the modal language change to start exactly one new request", () => worker.evaluate(() => probe.starts),
+    (starts) => starts === beforeModalLanguage + 1);
+  await waitForCard("success");
   assert.equal(await worker.evaluate(() => probe.starts), beforeModalLanguage + 1);
   assert.equal((await state()).lang, "en");
   await click("Retry"); assert.equal((await state()).text, "Переклад");
@@ -218,14 +279,14 @@ try {
 
   await load("rate-delay");
   await worker.evaluate(() => { probe.failure = "RESOURCE_EXHAUSTED"; probe.status = 429; });
-  await select("#one"); await trigger();
+  await select("#one"); await trigger("error");
   assert.match((await state()).status, /Try again in 1 seconds/);
   assert.equal((await state()).retryDisabled, true); assert.equal((await state()).languageDisabled, true);
-  await page.waitForTimeout(1100); assert.equal((await state()).retryDisabled, false);
+  await waitUntil("Retry to become available after the rate delay", state, (card) => !card.retryDisabled);
   await worker.evaluate(() => { probe.failure = null; probe.status = 503; });
 
   await load("settings-action"); await worker.evaluate(() => chrome.storage.local.remove("geminiApiKey"));
-  await select("#one"); await trigger(); assert.ok((await state()).buttons.includes("Settings")); assert.ok(!(await state()).buttons.includes("Retry"));
+  await select("#one"); await trigger("error"); assert.ok((await state()).buttons.includes("Settings")); assert.ok(!(await state()).buttons.includes("Retry"));
   const settingsPage = context.waitForEvent("page"); await click("Settings"); const opened = await settingsPage;
   await opened.waitForURL(`chrome-extension://${extensionId}/settings.html`);
   assert.equal(exceptions.length, 0, exceptions.join("\n"));
