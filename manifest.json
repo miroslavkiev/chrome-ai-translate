@@ -3,7 +3,7 @@
   "name": "AI Translator",
   "version": "1.2.0",
   "description": "Translate selected text into your chosen language with Gemini.",
-  "minimum_chrome_version": "120",
+  "minimum_chrome_version": "140",
   "permissions": ["contextMenus", "storage"],
   "host_permissions": ["http://*/*", "https://*/*", "file://*/*"],
   "background": {

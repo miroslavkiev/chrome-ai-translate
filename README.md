@@ -16,7 +16,7 @@ AI Translator translates selected text with the Google Gemini API. It uses your 
 
 ## Requirements
 
-- Google Chrome 120 or later.
+- Google Chrome 140 or later. Earlier versions cannot apply the local-storage access protection used for API keys.
 - A Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 - Node.js 20.19 or later only when building from source.
 

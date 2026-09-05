@@ -132,6 +132,38 @@ try {
         return { fakeProvider: globalThis.probe, activeRequestCount: session.activeRequestCount,
           latest: latest && { status: latest.status, requestId: latest.requestId, error: latest.error } };
       }),
+      storageApis: () => worker.evaluate(async () => {
+        const checks = {};
+        // Repeat only the access restrictions and reads, in this disposable profile.
+        // Record no storage values, credentials, or source text.
+        for (const [areaName, method, argument] of [
+          ["local", "setAccessLevel", { accessLevel: "TRUSTED_CONTEXTS" }],
+          ["session", "setAccessLevel", { accessLevel: "TRUSTED_CONTEXTS" }],
+          ["local", "get", "geminiApiKey"],
+          ["sync", "get", "geminiApiKey"],
+        ]) {
+          const area = chrome.storage[areaName];
+          const check = { type: typeof area?.[method], error: null };
+          try { await area[method](argument); }
+          catch (error) { check.error = error.message; }
+          checks[`${areaName}.${method}`] = check;
+        }
+        return checks;
+      }),
+      trustedRuntimeState: async () => {
+        const diagnosticPage = await context.newPage();
+        try {
+          await diagnosticPage.goto(`chrome-extension://${extensionId}/popup.html`);
+          return await diagnosticPage.evaluate(async () => {
+            const result = await chrome.runtime.sendMessage({ action: "getRuntimeState" });
+            return { ok: result?.ok, error: result?.error && {
+              code: result.error.code, message: result.error.message,
+            } };
+          });
+        } finally {
+          await diagnosticPage.close();
+        }
+      },
       contentApis: () => cdp.send("Runtime.evaluate", { contextId: contentContext, returnByValue: true,
         expression: "({ secure: isSecureContext, randomUUID: typeof crypto.randomUUID, getRandomValues: typeof crypto.getRandomValues, showPopover: typeof HTMLElement.prototype.showPopover, runtimeConnect: typeof chrome.runtime.connect })" }),
     })) {

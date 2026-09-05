@@ -31,11 +31,11 @@ jobs:
       - if: matrix.os == 'ubuntu-latest' && matrix.node == '22'
         run: npm run test:browser
       - if: matrix.os == 'ubuntu-latest' && matrix.node == '22'
-        name: Minimum Chrome 120 smoke
+        name: Minimum Chrome 140 smoke
         run: |
-          curl --fail --location --silent --show-error -o "$RUNNER_TEMP/chrome120.zip" https://storage.googleapis.com/chrome-for-testing-public/120.0.6099.109/linux64/chrome-linux64.zip
-          unzip -q "$RUNNER_TEMP/chrome120.zip" -d "$RUNNER_TEMP/chrome120"
-          CHROME_PATH="$RUNNER_TEMP/chrome120/chrome-linux64/chrome" npm run test:browser
+          curl --fail --location --silent --show-error -o "$RUNNER_TEMP/chrome140.zip" https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.80/linux64/chrome-linux64.zip
+          unzip -q "$RUNNER_TEMP/chrome140.zip" -d "$RUNNER_TEMP/chrome140"
+          CHROME_PATH="$RUNNER_TEMP/chrome140/chrome-linux64/chrome" npm run test:browser
       - if: matrix.os == 'ubuntu-latest' && matrix.node == '22'
         run: npm audit --audit-level=high
       - if: matrix.os == 'ubuntu-latest' && matrix.node == '22'

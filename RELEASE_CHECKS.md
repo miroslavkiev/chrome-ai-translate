@@ -29,7 +29,7 @@ Independent review found and fixed additional races: startup changes lost betwee
 6. Finish active translations before reloading the installed extension. Keep the unpacked folder path, reload through Chrome, and refresh a test page. Verify version, saved settings, model/setup state, and active count. Do not uninstall or restart the whole browser to update.
 7. Commit and verify remote main matches the reviewed commit. Check CI on that commit before calling the release fully validated.
 
-CI runs the build/test/package flow on Linux, macOS, and Windows with Node 22 and on Linux with minimum Node 20.19.0. Linux also runs current Chromium and pinned Chrome 120.0.6099.109 browser checks. Keep the pinned minimum until the declared support floor changes deliberately.
+CI runs the build/test/package flow on Linux, macOS, and Windows with Node 22 and on Linux with minimum Node 20.19.0. Linux also runs current Chromium and pinned Chrome 140.0.7339.80 browser checks. Keep the pinned minimum until the declared support floor changes deliberately.
 
 ## Local evidence and limits
 
@@ -37,7 +37,9 @@ On 2026-09-05, the Node tests and build/package checks passed on Node 25.2.1 and
 
 The installed unpacked extension points at this repository's dist folder. Automated access to its popup was blocked by the browser tool's URL policy. The installed extension was not reloaded through another route, and its active count and loaded version were not verified. After translations finish, the user must choose Reload for AI Translator at chrome://extensions and refresh the pages where it is needed.
 
-Chrome 120.0.6099.109 was downloaded from Google's Chrome for Testing archive, but it crashed before opening a page on this Mac, including a plain launch without the extension. That local attempt proves no application behavior. The Linux CI smoke is the separate minimum-browser check.
+Chrome 120.0.6099.109 crashed before opening a page on this Mac, including a plain launch without the extension. Its separate Linux CI run started and proved a real startup failure: Chrome 120 cannot restrict local extension storage. The required local.setAccessLevel support arrived in [Chrome 140](https://chromium.googlesource.com/chromium/src.git/+/a8f1f337c692360aaec9470a0a91f965011d37a3%5E%21/). The manifest and install guide now require Chrome 140; the privacy guard stays intact. This is a corrected support claim, not a relaxed security check.
+
+CI also exposed a Windows line-ending assumption in the Settings test loader and a fixed 100 ms wait in the browser test. The loader now accepts CRLF. Browser tests wait for a fresh request and a terminal card state, and failure diagnostics show safe runtime/API status without keys or selected text. A 400 ms fake-response probe passed locally. Windows, macOS, Linux minimum Node, and current Chromium passed after the test fixes.
 
 These checks do not prove real provider compatibility or translation quality, screen-reader pronunciation, large real-site memory use, or every browser/OS keyboard conflict. A page can remove the injected UI. Closed-shadow editors and browser-restricted pages remain unsupported; small frames constrain cards. Direct Chrome storage has a small last-writer-wins window for simultaneous writes to the same field between a final read and write. Known conflicts and unrelated changes are protected without adding a separate state service.
 

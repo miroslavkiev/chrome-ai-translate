@@ -5,7 +5,7 @@ AI Translator translates selected text with your own Google Gemini API key. It r
 ## Install
 
 1. Verify the ZIP against its SHA-256 file if available, then extract it.
-2. Open chrome://extensions in Chrome 120 or later and enable Developer mode.
+2. Open chrome://extensions in Chrome 140 or later and enable Developer mode. Older versions cannot apply this extension's API-key storage protection.
 3. Choose Load unpacked and select this folder. It must contain manifest.json.
 4. Open the extension's Settings, paste your key, wait for the model list, and choose a compatible model.
 5. Choose your default language and key, then save preferences.
