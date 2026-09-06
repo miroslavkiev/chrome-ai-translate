@@ -3,7 +3,7 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { DEFAULTS, LANGUAGES, RECOMMENDED_MODEL } from "../shared.js";
+import { DEFAULTS, DATA_SHARING_VERSION, LANGUAGES, RECOMMENDED_MODEL } from "../shared.js";
 import { waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -180,7 +180,15 @@ try {
   await first.locator("#saveButton").click();
   await textIs(popup, "status", "Ready");
 
-  const help = await open("help");
+  const [help] = await Promise.all([
+    context.waitForEvent("page"),
+    first.locator("a[href='help.html#faq']").click(),
+  ]);
+  await help.waitForURL(`chrome-extension://${extensionId}/help.html#faq`);
+  await help.locator("#faq").waitFor({ state: "visible" });
+  if (process.env.BROWSER_EVIDENCE_DIR) await help.screenshot({
+    path: path.join(process.env.BROWSER_EVIDENCE_DIR, "faq.png"),
+  });
   const about = await open("about");
   assert.equal(await help.locator("a[href='https://aistudio.google.com/apikey']").count(), 1);
   assert.equal(await about.locator("a[href='https://www.sternenkofund.org/en/donate']").count(), 1);
@@ -301,6 +309,32 @@ try {
   assert.equal(await reopenedSettings.locator("#agreeDataSharing").isVisible(), false);
   assert.equal(await reopenedSettings.locator("#apiKey").inputValue(), "browser-restart-fake-key");
   assert.equal(await reopenedWorker.evaluate(async () => Object.hasOwn(await chrome.storage.local.get(null), "geminiApiKey")), false);
+
+  // A changed notice blocks the saved setup until the user agrees again.
+  const beforeNoticeChange = await reopenedWorker.evaluate(() => probe.calls);
+  await reopenedWorker.evaluate((version) => chrome.storage.local.set({
+    dataSharingAgreement: { version: version - 1, acceptedAt: Date.now() },
+  }), DATA_SHARING_VERSION);
+  await reopenedSettings.reload();
+  await reopenedSettings.locator("#agreeDataSharing").waitFor({ state: "visible" });
+  const blocked = await reopenedSettings.evaluate(() => chrome.runtime.sendMessage({ action: "getSettingsState" }));
+  assert.equal(blocked.configurationError.code, "agreement_required");
+  assert.equal(blocked.apiKey, afterClose.apiKey);
+  assert.equal(blocked.credentialRevision, afterClose.credentialRevision);
+  assert.equal(await reopenedWorker.evaluate(() => probe.calls), beforeNoticeChange);
+  await reopenedSettings.locator("#agreeDataSharing").click();
+  await textIs(reopenedSettings, "setupStatus", "Ready");
+  const renewed = await reopenedSettings.evaluate(() => chrome.runtime.sendMessage({ action: "getSettingsState" }));
+  assert.equal(renewed.apiKey, afterClose.apiKey);
+  assert.equal(renewed.credentialRevision, afterClose.credentialRevision);
+  assert.equal(renewed.targetLanguage, afterClose.targetLanguage);
+  assert.equal(renewed.aiModel, afterClose.aiModel);
+  const renewedAgreement = await reopenedWorker.evaluate(() => chrome.storage.local.get("dataSharingAgreement"));
+  assert.equal(renewedAgreement.dataSharingAgreement.version, DATA_SHARING_VERSION);
+  await reopenedSettings.reload();
+  await textIs(reopenedSettings, "setupStatus", "Ready");
+  assert.equal(await reopenedSettings.locator("#agreeDataSharing").isVisible(), false);
+  assert.deepEqual(await reopenedWorker.evaluate(() => chrome.storage.local.get("dataSharingAgreement")), renewedAgreement);
 
   // Changing file access reloads the temporary extension, so do this last.
   const reopenedManagement = await context.newPage(); await reopenedManagement.goto("chrome://extensions");

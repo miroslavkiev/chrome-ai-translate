@@ -4,14 +4,14 @@ Super easy translation: select text and press Control. AI Translator uses your o
 
 Manually tested on Mac only. Windows and Linux have not been manually tested.
 
-This is a local build, not a Store-approved release. Google's current API terms require adult professional or business use in supported regions. API clients offered in the European Economic Area, UK or Switzerland require a project with active billing. Read https://ai.google.dev/gemini-api/terms before adding a key. Public-release checks remain open in the source repository's store folder.
+This is a local build, not a Store-approved release. Google's current API terms require adult professional or business use in supported regions. This extension requires a Gemini project with active billing in every country. Keep optional sharing of this extension's request logs and datasets with Google off. The extension is free, but Google API charges may apply. Read https://ai.google.dev/gemini-api/terms before adding a key. Public-release checks remain open in the source repository's store folder.
 
 ## Install
 
 1. Verify the ZIP against its SHA-256 file if available, then extract it.
 2. Open chrome://extensions in Chrome 140 or later and enable Developer mode. Older versions cannot apply this extension's API-key storage protection.
 3. Choose Load unpacked and select the extracted ZIP folder. It must contain manifest.json. When building from source, run npm ci and npm run ci first, then load the generated dist folder.
-4. Click the extension icon. Without an API key, it shows a welcome guide. Open the setup checklist in Settings and follow API key guide to get your own key from https://aistudio.google.com/apikey.
+4. Click the extension icon. Without an API key, it shows a welcome guide. Open the setup checklist in Settings and follow API key guide to get your own key from https://aistudio.google.com/apikey. Check its project has active billing: https://ai.google.dev/gemini-api/docs/billing#verify-billing-status. A paid Gemini app subscription is not a substitute for API project billing. Keep optional sharing of this extension's request logs and datasets with Google off: https://ai.google.dev/gemini-api/docs/logs-policy.
 5. Read the use conditions and data-sharing details in Settings, then choose Agree and connect to Google. No Google API request is made before this agreement. There is no separate eligibility checkbox or identity check.
 6. Paste your key into Settings and wait for the model list. The key is encrypted and saved automatically after agreement. Choose your target language, model, and optional keyboard trigger, then choose Finish setup. A saved key with unfinished setup keeps a Finish setup action in the popup. Once finished, the popup shows the standard view.
 7. For local files, enable Allow access to file URLs in the extension's details.
@@ -29,7 +29,7 @@ The API key guide opens in a separate tab. It explains how to create or choose a
 
 Reloading interrupts active requests. Do not uninstall the extension as an update step because that can remove its stored settings.
 
-The encrypted key and data agreement remain available across normal restarts and updates in the same browser profile. No unlock password is needed. An upgrade encrypts an older saved key and checks that it can be read before removing the old plain text copies. If this fails, the extension keeps the old key, blocks requests and reports the problem. It does not silently erase or replace it. Even a migrated key needs your data agreement before its first Google request in the new flow.
+The encrypted key and data agreement remain available across normal restarts and updates in the same browser profile. If the notice changes, requests wait until you review it and agree again. No unlock password is needed. An upgrade encrypts an older saved key and checks that it can be read before removing the old plain text copies. If this fails, the extension keeps the old key, blocks requests and reports the problem. It does not silently erase or replace it. Even a migrated key needs your data agreement before its first Google request in the new flow.
 
 ## Update a source install
 
@@ -53,4 +53,4 @@ Your key is encrypted in the extension's local database and is not synced. It op
 
 The data-sharing details remain visible in Settings. Choose Withdraw data agreement to block new Google requests and cancel active ones locally. The encrypted key and preferences stay saved for later use if you agree again. Choose Remove saved key to delete the saved key, its encryption key and model cache. Data already sent cannot be recalled. Revoke the API key in Google AI Studio if you want to disable it at Google too.
 
-Google API use can have costs and limits. Read Google's pricing and data-use notes at https://ai.google.dev/gemini-api/docs/pricing and the Gemini API terms at https://ai.google.dev/gemini-api/terms. For AI Studio access issues, see https://ai.google.dev/gemini-api/docs/available-regions.
+Active project billing is required in every country, with optional sharing of this extension's request logs and datasets with Google off. Private project logging is separate from sharing. With these settings, Google's paid terms exclude product improvement use of prompts and responses; safety and legal processing still applies. The extension does not verify your billing or sharing settings. Read Google's pricing and data-use notes at https://ai.google.dev/gemini-api/docs/pricing and the Gemini API terms at https://ai.google.dev/gemini-api/terms. For AI Studio access issues, see https://ai.google.dev/gemini-api/docs/available-regions.

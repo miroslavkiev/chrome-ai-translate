@@ -14,11 +14,11 @@ User-facing wording: **Remember my key on this device.** The key is encrypted an
 
 ## Data agreement and controls
 
-The data-sharing details remain visible in Settings. **Agree and connect to Google** records the agreement version and date for this browser profile. It enables new key entry or model loading for a safely migrated key. All Google API requests wait for that agreement, including refreshes and requests with an existing model cache. Normal restarts and updates keep the agreement.
+The data-sharing details remain visible in Settings. **Agree and connect to Google** records the agreement version and date for this browser profile. It enables new key entry or model loading for a safely migrated key. All Google API requests wait for that agreement, including refreshes and requests with an existing model cache. Normal restarts and updates keep the agreement unless the notice changes. A changed notice requires a fresh agreement before any Google request.
 
 **Withdraw data agreement** blocks new requests and aborts active ones locally. It keeps the encrypted key and preferences so the user can agree again later. **Remove saved key** deletes the ciphertext, encryption key and model cache. A non-secret revision marker remains to protect against stale Settings tabs. Neither action recalls data already sent to Google.
 
-Google's use conditions are visible before use and apply through use, without an eligibility checkbox or identity checks. That notice and the data-agreement button serve different purposes.
+Google's use conditions are visible before use and apply through use, without an eligibility checkbox or identity checks. The extension requires a project with active billing in every country. Optional contribution of its request logs or datasets to Google for product improvement or training must stay disabled, including feedback that shares that data. Private project logging is separate. Billing and sharing settings are not automatically verified. That notice and the data-agreement button serve different purposes. See the [Gemini terms](https://ai.google.dev/gemini-api/terms) and [logging and sharing policy](https://ai.google.dev/gemini-api/docs/logs-policy).
 
 ## Offline proof and its scope
 

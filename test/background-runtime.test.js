@@ -580,6 +580,23 @@ for (const [label, agreement] of [
     assert.equal(env.calls.length, 0);
     assert.equal(env.vault.apiKey, apiKey);
     assert.equal(env.state.session[STORAGE_KEYS.rateStarts], undefined);
+    if (label === "outdated") {
+      const credential = { ...env.vault };
+      const preferences = { ...env.state.sync };
+      assert.equal((await env.reload()).configurationError.code, "agreement_required");
+      assert.equal(env.calls.length, 0);
+      const before = Date.now();
+      assert.equal((await env.message({ action: "setDataSharing", accepted: true })).configured, true);
+      const accepted = { ...env.state.local[STORAGE_KEYS.dataSharingAgreement] };
+      assert.equal(accepted.version, DATA_SHARING_VERSION);
+      assert.ok(accepted.acceptedAt >= before && accepted.acceptedAt <= Date.now());
+      assert.deepEqual(env.vault, credential);
+      assert.deepEqual(env.state.sync, preferences);
+      assert.equal((await env.reload()).configured, true);
+      assert.deepEqual(env.state.local[STORAGE_KEYS.dataSharingAgreement], accepted);
+      assert.equal((await env.message({ action: "listModels" })).ok, true);
+      assert.equal((await env.translate().done).ok, true);
+    }
   });
 }
 

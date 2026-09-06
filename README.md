@@ -30,7 +30,8 @@ The [Store release pack](store/README.md) contains listing text, screenshots, pr
 
 - Google Chrome 140 or later. Earlier versions cannot apply the local-storage access protection used for API keys.
 - Your own Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
-- Eligible adult professional or business use under the [Gemini API terms](https://ai.google.dev/gemini-api/terms). API clients offered in the European Economic Area, UK or Switzerland require a project with active billing. A working API key does not verify every term or billing condition.
+- A Gemini project with [active billing](https://ai.google.dev/gemini-api/docs/billing#verify-billing-status) in every country. Keep optional [sharing of this extension's request logs and datasets with Google](https://ai.google.dev/gemini-api/docs/logs-policy) off. A paid Gemini app subscription is not a substitute for API project billing.
+- Eligible adult professional or business use under the [Gemini API terms](https://ai.google.dev/gemini-api/terms). The extension does not verify your billing, sharing settings or other service conditions.
 - Node.js 20.19 or later only when building from source.
 
 ## Install a packaged build
@@ -60,8 +61,10 @@ For a new install, load the generated `dist` folder from `chrome://extensions`. 
 
 ## Set up the extension
 
+The in-app guide includes an FAQ explaining API keys, paid project billing, privacy and the agreement button, with links to the rules behind them. Open it from Settings or About.
+
 1. Open the extension toolbar popup. Without a saved API key, it shows a welcome guide. Choose Start setup to open the checklist in Settings.
-2. Follow the API key guide to open Google AI Studio, sign in, and create or choose your own key. The guide opens in a separate tab and contains links to Google's current instructions.
+2. Follow the API key guide to open Google AI Studio, sign in, and create or choose your own key. Check that its project has active billing and optional sharing of this extension's request logs and datasets with Google is off. The guide opens in a separate tab and contains links to Google's current instructions.
 3. Read the use conditions and data-sharing details in Settings. Choose **Agree and connect to Google** to allow model checks and the translations you request. Until you agree, the extension makes no Google API request.
 4. Paste your key into Settings. After agreement, the key is encrypted and saved, and the model list loads automatically. A manually typed key saves when you leave the field. On an upgrade, a saved key can be migrated safely without entering it again; model loading still waits for your agreement.
 5. Choose a model, target language, and optional keyboard trigger. Choose Finish setup to save these choices and complete the checklist.
@@ -69,7 +72,7 @@ For a new install, load the generated `dist` folder from `chrome://extensions`. 
 
 After setup, the popup returns to the standard view. A saved key with unfinished setup keeps a Finish setup action so you can return to the checklist. Removing the key brings back the welcome guide. Existing users keep their saved language and model. Later changes use Save Preferences in Settings.
 
-The data agreement is saved for this browser profile and stays in place across normal restarts and updates. It is separate from Google's use conditions, which apply through use of the extension without an eligibility checkbox. The extension does not verify your age, work, location or billing.
+The data agreement is saved for this browser profile and stays in place across normal restarts and updates unless the notice changes. If it changes, requests wait until you review it and agree again. Google's use conditions apply through use of the extension without a separate eligibility checkbox. The extension does not verify your age, work, location, billing or sharing settings.
 
 The key opens automatically for use after a restart. It is encrypted with AES-256-GCM in the extension's local database and is not synced. This protects the saved value, but it is not an OS keychain or password-protected vault: someone with access to the Chrome profile may still recover it.
 
@@ -113,7 +116,7 @@ Key or model errors offer Settings. Oversized or blocked text asks for a differe
 
 The extension sends selected text directly to Google only after your data agreement and a translation action. Model checks also require that agreement and use your key without selected text. It has no analytics, advertising, remote backend, or translation history. The Gemini API key is encrypted in the extension's local database and is not synced. Its encryption key is kept in the same browser profile so the extension can use it automatically. The most recent result is kept only for the current browser session.
 
-Google API costs, limits, and use of submitted data depend on your plan and Google's terms. Read [Google's pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing) and the [Gemini API terms](https://ai.google.dev/gemini-api/terms). For account access issues, check [Google's region and age requirements](https://ai.google.dev/gemini-api/docs/available-regions).
+The extension is free, but Google API charges may apply. Active project billing is required in every country, with optional sharing of this extension's request logs and datasets with Google off. Private project logging is separate from sharing. With these settings, Google's paid terms exclude product improvement use of prompts and responses; safety and legal processing still applies. Read [Google's pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing) and the [Gemini API terms](https://ai.google.dev/gemini-api/terms). For account access issues, check [Google's region and age requirements](https://ai.google.dev/gemini-api/docs/available-regions).
 
 The global key requires the extension content script to be present on HTTP, HTTPS, and approved local-file pages and frames. Chrome therefore reports that the extension can read and change data on those pages. Chrome pages, the built-in PDF viewer, and other restricted pages are unsupported.
 

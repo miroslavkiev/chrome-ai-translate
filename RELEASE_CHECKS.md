@@ -1,12 +1,28 @@
 # Release checks and translation sample
 
+## Version 1.4.2 paid-service notice and FAQ
+
+The publisher approved active API project billing in every country and disabled optional contribution of extension request logs or datasets to Google as required supported use. This replaces the earlier unpaid-project decision. Settings, Help, About, privacy and Store documents now agree on these requirements, possible Google charges, private logging versus sharing, and the lack of automatic billing or sharing checks. The public privacy page includes an affirmative Chrome Limited Use commitment for this setup. Store approval, applicable publisher information and submission declarations remain separate matters.
+
+Help now includes ten plain-language FAQ answers with links to the relevant Chrome and Google rules. Settings and About link directly to the FAQ. Agreement version 2 pauses Google requests for older agreements until the user reviews the new notice and agrees again. The existing encrypted key, revision and preferences are preserved. No new checkbox, billing checker, permission, dependency or translation behavior was added.
+
+On September 6, 2026, all 88 Node test entries, source checks, build and exact 20-file package checks passed. Chrome 151.0.7922.34 passed the extension-page flow with fake data in a disposable profile: FAQ navigation, 320px light/dark layouts, saved-key and agreement survival after closing Chrome, and renewal of an old agreement with zero provider calls before agreement. The runtime regression also checks an old agreement across worker restart, then successful model and translation requests after renewal. Independent code, policy, content and visual reviews found no material issue.
+
+The guide and Store setup screenshots show the real empty-key UI with the complete new notice and FAQ link. PNG checks found only image chunks, with no text or EXIF metadata. Source/archive and Git-history scans found no real credentials. One scan match was verified to be exactly the published 1.4.1 ZIP checksum, a false positive. The previous stored-object/archive corpus also had no findings; external copies remain outside this evidence.
+
+ZIP SHA-256: `a96187d1d7258d65e5417c878b56c23b089e5c3c96f7775dcd9aa728f4716ca8`.
+
+The user's reported real translation tests remain accepted. No real Google request or paid API call was made in these checks. No public postal address was added and no address service was purchased. Store dashboard fields remain scheduled for submission; nothing was submitted. The local FAQ and asset previews are refreshed. Reloading the user's installed extension remains a manual action because browser security blocks those controls.
+
 ## Version 1.4.1 privacy clarification
 
 This documentation update adds a factual statement about the developer's use of data and explains that optional Google log/dataset sharing can apply unpaid data-use terms even to billing-enabled projects. The publisher chose to keep unpaid projects supported, so the unresolved provider-side Limited Use question remains open. No unconditional Store certification, new eligibility check, agreement reset or translation change is included.
 
 The user reported successful real translation tests on September 6, 2026. That report is accepted as user evidence without inventing a model, platform or test matrix. Developer account and item-dashboard fields are scheduled for the submission stage. Address-service pricing research is recorded in the legal review; no service was ordered and no address was added.
 
-The source checks, Node suite, build and exact 20-file package verification passed. Comparing the ZIP with 1.4.0 confirms that only PRIVACY.md and the manifest version changed; runtime files are byte-identical, so no extra manual translation test was requested. Redacted source/archive scanning found no credentials. ZIP SHA-256: `1136a67af932fa636b2ffaeeae93e0d46e266a13d833c373115069738d785c8e`.
+The source checks, Node suite, build and exact 20-file package verification passed. Comparing the ZIP with 1.4.0 confirms that only PRIVACY.md and the manifest version changed; runtime files are byte-identical, so no extra manual translation test was requested. Redacted source/archive scanning found no credentials.
+
+ZIP SHA-256: `1136a67af932fa636b2ffaeeae93e0d46e266a13d833c373115069738d785c8e`.
 
 ## Version 1.4.0 encrypted key and data agreement
 

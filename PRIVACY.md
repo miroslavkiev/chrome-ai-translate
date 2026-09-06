@@ -6,13 +6,15 @@ AI Translator has no analytics, advertising, remote backend, or translation hist
 
 ## Our data-use commitment
 
-The extension uses selected text only to provide translations. Requests go directly to Google; the extension does not send your API key or translation text to the developer. The developer does not sell that data, use it for advertising, or use it to train models. Google's separate processing is described below. This commitment describes the extension and developer's practices; it does not certify that every supported Google service arrangement meets Chrome's Limited Use requirements.
+AI Translator's use and transfer of user data complies with the [Chrome Web Store User Data Policy, including its Limited Use requirements](https://developer.chrome.com/docs/webstore/program-policies/limited-use).
+
+The extension uses selected text only to provide translations and the related operations described here. Requests go directly to Google; the extension does not send your API key or translation text to the developer. The developer does not sell that data, use it for advertising, or use it to train models. Google processing follows the required paid-service setup below, including its limited security and legal handling.
 
 ## Your data agreement
 
 Settings explains which data goes to Google, how your API key is saved and the limits of that protection. Choose **Agree and connect to Google** before entering a new key or using a migrated key. Until that agreement is saved, the extension makes no Google API requests, including model checks and translations. Having a cached model list does not bypass this step.
 
-The agreement version and date are stored locally for this browser profile. They are not sent to the developer or synced to other browsers. The agreement remains in place across normal restarts and updates; withdrawal or clearing its storage requires you to agree again. The data-sharing details remain visible in Settings for review.
+The agreement version and date are stored locally for this browser profile. They are not sent to the developer or synced to other browsers. The agreement remains in place across normal restarts and updates unless the notice changes. A changed notice, withdrawal or clearing its storage requires you to review the details and agree again before any Google request. The data-sharing details remain visible in Settings for review.
 
 Google's age, work/business, region and billing conditions are shown separately and apply through use of the extension. There is no eligibility checkbox, identity check or independent verification of these facts. Your data agreement does not prove eligibility and does not provide permission on behalf of other people whose information may appear in selected text.
 
@@ -22,9 +24,11 @@ After you agree to data sharing, starting a translation sends the selected text,
 
 Model-list refreshes send only your API authentication and a request for available model metadata.
 
-Google's handling of text depends on the service tier and region. Some unpaid-service terms allow product improvement and human review. Paid-service terms exclude product improvement but retain limited safety and legal logging. Users in the EEA, UK, and Switzerland receive the paid data-use treatment even for unpaid quota. Separately, Google's terms require Paid Services for API clients offered in those regions, which means a project with active billing. They also limit the API to adult professional or business use in supported regions. A successful model check cannot verify all these conditions. Read the [Gemini API terms](https://ai.google.dev/gemini-api/terms) and [pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing).
+**Required in every country:** use a Gemini API key from a Google Cloud project with active billing. Unpaid projects are outside this extension's supported use. Keep optional sharing of the extension's request logs and datasets with Google for product improvement or model training disabled. Do not contribute this data through feedback or dataset sharing. Google API charges can apply.
 
-Optional Google project settings can change this handling. If you choose to share request logs or datasets with Google, the shared data can fall under unpaid-service terms, including model training and human review, even when billing is active. The extension does not enable those options. Read [Google's logging and sharing policy](https://ai.google.dev/gemini-api/docs/logs-policy).
+Under Google's paid-service terms, prompts and responses are not used to improve Google's products. Limited safety and legal logging still applies. Google also requires adult professional or business use in supported regions. Read the [Gemini API terms](https://ai.google.dev/gemini-api/terms) and [pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing).
+
+Optional private logging within your own Google Cloud project is separate from contributing data to Google. If you enable it, requests and responses can remain in your project under its logging and dataset settings. Sharing them with Google can permit training and human review even when billing is active, so that sharing is not permitted for this extension's data. The extension does not change or verify these settings. A working key or successful model check does not verify billing or sharing status. Read [Google's logging and sharing policy](https://ai.google.dev/gemini-api/docs/logs-policy).
 
 Requests use HTTPS and authenticate with a request header. The extension does not add the page URL, page title, complete page, browsing history, or your Google account name to translation requests. Google receives network details such as your IP address as part of the connection. Text you select can itself include personal or sensitive information. Only send content that you are allowed to share.
 
@@ -72,4 +76,4 @@ The [source repository](https://github.com/miroslavkiev/chrome-ai-translate) and
 
 ## Store review status
 
-No Limited Use compliance certification is made for this build. Encrypted local key storage and the data-agreement step do not establish Store approval. Some unpaid provider data use can conflict with the Store's single-purpose restrictions, and applicable publisher/privacy information remains unresolved. Review these points before completing the Store's privacy certifications. See the [Chrome user-data requirements](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) and [Limited Use policy](https://developer.chrome.com/docs/webstore/program-policies/policies).
+The Limited Use commitment above applies to the extension's required paid-service setup, with optional contribution of request data to Google disabled. It is a commitment about data use, not a claim of Store approval or automatic checks of your Google settings. Applicable publisher/privacy information and submission declarations remain open. See the [Chrome user-data requirements](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) and [release checklist](https://github.com/miroslavkiev/chrome-ai-translate/blob/main/store/REVIEW_CHECKLIST.md).

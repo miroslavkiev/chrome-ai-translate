@@ -14,7 +14,7 @@ Do not submit yet. See [the open release items and recorded risks](README.md). T
 | Support URL | https://github.com/miroslavkiev/chrome-ai-translate/issues |
 | Privacy policy URL | https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md |
 | Official verified URL | Leave empty unless the publisher owns and has verified an eligible website. A public GitHub repository does not prove ownership of github.com. |
-| Pricing | Extension is free. Users provide their own eligible Gemini API access; Google charges can apply. |
+| Pricing | Extension is free. Users need a Gemini project with active billing; Google charges can apply. |
 | Distribution | Choose only regions supported by the provider after resolving eligibility. Do not automatically select worldwide. |
 | Publisher status | Confirmed personal hobby purpose supports a non-trader assessment. The publisher must make the accurate account declaration. |
 
@@ -37,7 +37,7 @@ WHAT YOU CAN DO
 
 YOUR GEMINI KEY AND MODEL
 
-You need your own Google Gemini API key. The first-use guide explains how to get a key, choose a target language and select a model. We recommend the Flash-Lite family. At this release in September 2026, our choice is Gemini 3.5 Flash-Lite when it is available to your key. You may choose another listed model. Some models may not work; if one fails, choose an alternative or the recommended model.
+You need your own Google Gemini API key from a project with active billing. The first-use guide explains how to get a key, choose a target language and select a model. We recommend the Flash-Lite family. At this release in September 2026, our choice is Gemini 3.5 Flash-Lite when it is available to your key. You may choose another listed model. Some models may not work; if one fails, choose an alternative or the recommended model.
 
 Read the data-sharing details in Settings and choose Agree and connect to Google before adding your key. No Google API request is made before this agreement. The key is encrypted on this device and stays available across normal Chrome restarts without an unlock password. Someone with access to this browser profile may still recover it.
 
@@ -47,7 +47,7 @@ CONDITIONS OF USE
 
 This extension is for people aged 18 or older, for work or business use, in Google's supported countries and regions. It is not designed for children.
 
-If you use it in the European Economic Area, UK or Switzerland, your API key must belong to a Google Cloud project with active billing.
+In every country, your API key must belong to a Google Cloud project with active billing. Unpaid projects are not supported. Keep optional sharing of this extension's request logs and datasets with Google for product improvement or model training disabled. Do not contribute this data through feedback or dataset sharing. The extension does not verify these settings.
 
 By using this extension, you agree to follow these conditions, the Google API Terms and the Gemini API Additional Terms. Do not use it if you cannot meet these conditions.
 
@@ -61,9 +61,9 @@ YOUR TEXT AND PRIVACY
 
 When you request a translation, the selected text, target language and translation instruction go directly to Google with your API authentication. Loading the model list also contacts Google. The developer has no translation server, analytics or advertising. The extension has no translation history; the popup keeps only the latest result for the browser session. Language, model and trigger preferences can sync through Chrome.
 
-The data-sharing details stay visible in Settings. Your agreement is saved for this browser profile. Choose Withdraw data agreement to stop new Google requests and cancel active ones locally, while keeping the encrypted key and preferences. Choose Remove saved key to delete the saved key and model cache. Neither action recalls data already sent to Google.
+The data-sharing details stay visible in Settings. Your agreement is saved for this browser profile. If the notice changes, review it and agree again before connecting. Choose Withdraw data agreement to stop new Google requests and cancel active ones locally, while keeping the encrypted key and preferences. Choose Remove saved key to delete the saved key and model cache. Neither action recalls data already sent to Google.
 
-Google's terms govern provider processing and retention. Do not send text that you are not allowed to share. Read the privacy page and Google's terms before adding a key. AI translations can be wrong; check important wording before relying on it.
+AI Translator follows Chrome's Limited Use requirements for its required paid-service setup. Google's paid-service terms exclude using prompts and responses for product improvement, while allowing limited security and legal handling. Private project logging is separate from sharing data with Google. Do not send text that you are not allowed to share. Read the privacy page and Google's terms before adding a key. AI translations can be wrong; check important wording before relying on it.
 
 COMPATIBILITY
 
@@ -83,7 +83,7 @@ Support is optional and never unlocks features. Donations are handled by the fou
 
 ## Reviewer instructions
 
-Use a reviewer-owned eligible Gemini key and a project that meets Google's terms. No shared demo credential is provided. Never paste a real key into public issues or listing text.
+Use a reviewer-owned Gemini key from a project with active billing and optional sharing of this extension's request data with Google disabled. The project must meet Google's terms. No shared demo credential is provided. Never paste a real key into public issues or listing text.
 
 1. Install the final ZIP and open AI Translator from the toolbar.
 2. Follow the welcome guide. Read the use conditions and data-sharing details. Choose Agree and connect to Google, add the eligible key, choose a listed text model and a target language, then finish setup.

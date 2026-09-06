@@ -1,5 +1,5 @@
 export const RECOMMENDED_MODEL = "gemini-3.5-flash-lite";
-export const DATA_SHARING_VERSION = 1;
+export const DATA_SHARING_VERSION = 2;
 
 // Legacy defaults remain for existing profiles. New setup requires a language choice.
 export const DEFAULTS = Object.freeze({

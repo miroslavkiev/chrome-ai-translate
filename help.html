@@ -13,6 +13,7 @@
     <nav class="page-links" aria-label="Extension pages">
       <a href="settings.html">Settings</a>
       <a href="about.html">About</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <header class="page-header">
       <h1>Get started with AI Translator</h1>
@@ -22,7 +23,7 @@
     <section class="card" aria-labelledby="key-heading">
       <h2 id="key-heading">1. Get your API key</h2>
       <p>An API key lets this extension use Gemini through your Google account. Keep it private, like a password.</p>
-      <p>This extension is for people aged 18 or older, for work or business use, in <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">Google's supported countries and regions</a>. If you use it in the European Economic Area, UK or Switzerland, your API key must belong to a Google Cloud project with active billing.</p>
+      <p>This extension is for people aged 18 or older, for work or business use, in <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">Google's supported countries and regions</a>. In every country, your API key must belong to a Gemini project with active billing. Keep optional sharing of this extension's request logs and datasets with Google off.</p>
       <p>By using this extension, you agree to follow these conditions, the <a href="https://developers.google.com/terms" target="_blank" rel="noopener noreferrer">Google API Terms</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API Additional Terms</a>. Do not use it if you cannot meet these conditions. The extension does not verify these facts or ask for identity documents.</p>
       <ol class="steps">
         <li>
@@ -34,12 +35,13 @@
           <h3>Create or choose a key</h3>
           <p>On the API Keys page, choose <strong>Create API key</strong> and follow Google's steps to choose or create a project. A project groups your API use and any billing. If you are new to AI Studio, Google may have already created a default project and key.</p>
           <p>If your existing project is missing, open <strong>Dashboard &gt; Projects &gt; Import projects</strong>. Import your project, then return to API Keys.</p>
+          <p>Before using the key, follow <a href="https://ai.google.dev/gemini-api/docs/billing#verify-billing-status" target="_blank" rel="noopener noreferrer">Google's billing guide</a> to check that its project has active billing. A paid Gemini app subscription is not a substitute for API project billing. Keep optional sharing of this extension's request logs and datasets with Google off; read <a href="https://ai.google.dev/gemini-api/docs/logs-policy" target="_blank" rel="noopener noreferrer">Google's log-sharing policy</a>. Private project logging is separate from sharing.</p>
         </li>
         <li>
           <h3>Copy your key</h3>
           <p>Copy the key from AI Studio. Return to this extension's Settings and read the data-sharing details. Choose <strong>Agree and connect to Google</strong>, then paste your key into the <strong>API key</strong> field. It is encrypted and saved automatically, and your model list loads. Wait for the result before continuing.</p>
           <figure>
-            <img src="setup-key.png" width="760" height="876" alt="AI Translator Settings showing the data-sharing notice and Agree button above an empty API key field and the Flash-Lite model recommendation." loading="lazy">
+            <img src="setup-key.png" width="760" height="937" alt="AI Translator Settings showing the data-sharing notice and Agree button above an empty API key field and the Flash-Lite model recommendation." loading="lazy">
             <figcaption class="note">In AI Translator: agree to data sharing first, then paste your own key. The model list is checked after the encrypted key is saved.</figcaption>
           </figure>
         </li>
@@ -78,15 +80,43 @@
       <p>The toolbar popup shows the latest result. Once setup is complete, it opens the standard view. If you remove your API key, the welcome guide appears again.</p>
     </section>
 
-    <section class="card" aria-labelledby="privacy-heading">
-      <h2 id="privacy-heading">Your key, data, and Google costs</h2>
-      <p>Your key is encrypted on this device and is not synced. It stays available across normal Chrome restarts without an unlock password. Someone with access to this browser profile may still recover it. This is not an OS keychain or password-protected vault. Never share your key in screenshots or public messages.</p>
-      <p>No Google API request is made before you choose <strong>Agree and connect to Google</strong> in Settings. After that, selected text goes directly to Google only when you ask for a translation. Loading the model list uses your key but sends no selected text. The extension has no analytics or translation history. Your language, model, and trigger choices can sync through Chrome.</p>
-      <p>Your data agreement is saved for this browser profile and survives normal restarts and updates. The details stay visible in <a href="settings.html">Settings</a>. Choose <strong>Withdraw data agreement</strong> there to stop new requests and cancel active ones locally. Your encrypted key and preferences stay saved, so you can agree again later. Choose <strong>Remove saved key</strong> to delete the saved key and its model cache. Neither action recalls data already sent to Google.</p>
-      <p>On an upgrade, an older key is encrypted and checked before its plain text copies are removed. If that fails, the old copy stays saved, requests remain blocked and Settings explains the problem. A migrated key still needs your data agreement before its first Google request.</p>
-      <p>Google API use can have costs. A billing-enabled project gets Google's paid data-use terms: prompts and responses are not used for product improvement, but limited safety and legal logging remains. Some unpaid use outside the European Economic Area, UK, and Switzerland permits product improvement and human review. Do not send private or personal text under unpaid terms that permit this use. Read <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google's pricing and data-use notes</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API terms</a> before sending private text.</p>
-      <p>AI translations can be wrong. Check important wording. <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Read the full privacy details</a>.</p>
-      <p class="note">Cannot open AI Studio? Check Google's <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">region and account requirements</a>. A Google account must meet the service's age requirements.</p>
+    <section id="faq" class="card" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">FAQ: keys, costs and privacy</h2>
+
+      <h3>Why do I need my own API key?</h3>
+      <p>This extension is designed to send requests straight to your Google project using your own key. This is a design choice, not a Chrome rule. Your key allows requests and links them to your usage and billing. Never share it in screenshots or public messages. See <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener noreferrer">Google's API key guide</a>.</p>
+
+      <h3>Why is active billing required, instead of just recommended?</h3>
+      <p>Chrome's <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use" target="_blank" rel="noopener noreferrer">Limited Use rules, points 3 and 5</a>, limit data use to the extension's purpose and related operations. Some unpaid Gemini use allows wider training and human review. Paid terms exclude product improvement use, but allow limited safety and legal retention and processing outside the EU.</p>
+      <p>To address this conflict, the developer requires active project billing worldwide. A recommendation would still allow unpaid use. Google's own regional rule requires Paid Services for apps offered in the European Economic Area, UK and Switzerland. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini terms: Use Restrictions, Unpaid Services and Paid Services</a>.</p>
+
+      <h3>Why must optional sharing with Google stay off?</h3>
+      <p>Sharing logs or datasets can allow training and human review even with active billing. Do not contribute this extension's data through dataset sharing or feedback. Private logging for your own project is allowed under this rule. See <a href="https://ai.google.dev/gemini-api/docs/logs-policy" target="_blank" rel="noopener noreferrer">Google's logging policy: Data that can be shared and How we use your data</a>.</p>
+
+      <h3>Is the extension free if I need paid API access?</h3>
+      <p>Yes. The extension is free, but Google API charges may apply. A paid Gemini app subscription does not replace API project billing. See <a href="https://ai.google.dev/gemini-api/docs/billing#verify-billing-status" target="_blank" rel="noopener noreferrer">how to check billing</a> and <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google's API prices</a>. The extension does not verify billing or sharing settings.</p>
+
+      <h3>Why do I need to choose Agree and connect to Google?</h3>
+      <p>Chrome's <a href="https://developer.chrome.com/docs/webstore/program-policies/disclosure-requirements" target="_blank" rel="noopener noreferrer">Disclosure Requirements, points 1 and 2</a>, call for clear data-use details and informed consent. Our button lets you make that choice before any Google API request. It does not check your identity or billing, or give permission to share other people's private information.</p>
+
+      <h3>What exactly goes to Google?</h3>
+      <p>Model checks send your key and ask for available models. Translation sends the selected text, target language, model and translation instructions. This includes selected local-file text. The extension does not add the full page, page address or browsing history. Google also receives connection details such as your IP address. The developer receives none of these requests. Only send text you may share.</p>
+
+      <h3>How is my key saved and opened automatically?</h3>
+      <p>Your API key is saved encrypted. It and its encryption key stay in this Chrome profile for automatic use after restarts. They are not synced. Someone with access to the profile may still recover the API key. This is not an OS keychain or password-protected vault. Language, model and trigger choices can sync. Only the latest result stays for the browser session; there is no analytics or translation history.</p>
+      <p>An upgrade encrypts and checks an older saved key before deleting its plain text copies. If this fails, the old copy stays saved and requests remain blocked. Settings explains the error. Moving an old key does not bypass agreement.</p>
+
+      <h3>Can I withdraw my agreement or remove my key?</h3>
+      <p>In <a href="settings.html">Settings</a>, <strong>Withdraw data agreement</strong> blocks new requests and cancels active ones locally, keeping your key and preferences. <strong>Remove saved key</strong> deletes the saved key, its encryption key and model cache. Neither recalls data already sent or guarantees that a sent request becomes free. Revoke the key in AI Studio to disable it at Google too.</p>
+      <p>Your agreement stays saved across normal restarts and updates. If the notice changes, requests wait until you review it and agree again.</p>
+
+      <h3>Why is this for adults and work or business use?</h3>
+      <p>Google requires users to be at least 18, with professional or business use in supported regions. See <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini terms: Age Requirements and Use Restrictions</a> and <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">available regions</a>. This extension has no separate eligibility checkbox or identity check.</p>
+
+      <h3>Why have a privacy policy as well as this notice?</h3>
+      <p>The notice explains the choice before you connect. The policy gives full data, storage and removal details. Chrome's <a href="https://developer.chrome.com/docs/webstore/program-policies/policies#privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy rules</a> require this for extensions handling user data. Read <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">our privacy policy</a>. These notices do not mean Google has approved the extension.</p>
+
+      <p class="note">AI translations can be wrong. Check important wording before relying on it.</p>
     </section>
   </main>
 </body>
