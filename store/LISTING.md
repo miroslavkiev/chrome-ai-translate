@@ -24,7 +24,7 @@ The revised summary is below Chrome's 132-character limit. Chrome takes this fie
 
 Read across languages without the copy-paste loop. Select a word, sentence or paragraph, tap and release Control, and see a Gemini translation beside the original. AI Translator is a free, open-source Chrome extension that keeps you on the page.
 
-Translate your way
+🌍 Translate your way
 
 • Choose from 110 translation language and script options. The interface supports 55 language and regional options.
 • Change the language for one result without changing your default.
@@ -32,13 +32,13 @@ Translate your way
 • Choose another trigger key, turn it off, or use the right-click menu.
 • Translate selected text in local HTML files when Chrome's file access is enabled.
 
-Quick setup
+⚡ Quick setup
 
 1. Get your own Gemini API key from Google AI Studio: https://aistudio.google.com/apikey
 2. Open Settings, read the data-sharing notice, and choose Agree and connect to Google.
 3. Paste your key, choose your language and model, finish setup, and refresh open pages.
 
-What you need
+🔑 What you need
 
 An internet connection and a Gemini project with active billing are required in every country. The extension is free; Google API charges and limits may apply. A paid Gemini app subscription does not replace API project billing.
 
@@ -49,13 +49,13 @@ https://developers.google.com/terms
 https://ai.google.dev/gemini-api/terms
 Supported regions: https://ai.google.dev/gemini-api/docs/available-regions
 
-Privacy and control
+🔒 Privacy and control
 
 No Google API request starts before your data agreement. Requested translations send your selected text, target language and instructions directly to Google using your key. Model checks also contact Google.
 
 No ads, analytics or translation history; only the latest result stays for the browser session. Your saved key is encrypted on this device, but someone with access to your Chrome profile may still recover it. You can withdraw agreement or remove the key in Settings. Only share text you may send to Google, and check important translations.
 
-Compatibility and help
+💻 Compatibility and help
 
 Chrome 140 or later. Manually tested on Mac only. Chrome settings pages, the Chrome Web Store, the built-in PDF viewer and other protected pages do not allow translation.
 
