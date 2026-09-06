@@ -123,8 +123,8 @@ No reviewer reports an unresolved material engineering finding. This is a tested
 
 ## Final local verification
 
-- All 144 Node tests passed on Node 25.2.1 and minimum Node 20.19.0.
-- Source checks passed for 113 files, including syntax, JSON and forbidden-character checks. Whitespace checks passed.
+- All 143 Node tests passed on Node 25.2.1 and minimum Node 20.19.0.
+- Source checks passed for 112 files, including syntax, JSON and forbidden-character checks. Whitespace checks passed.
 - The final source and built extension passed the complete browser suite on macOS with Chrome 151.0.7922.34 and Chrome 140.0.7339.80. This includes Settings/consent, conflicting tabs, narrow layouts, frames, file access on/off, worker restart, full browser restart and native encrypted storage.
 - The 55-value native locale sweep passed on Chrome 151. On macOS, Australian English resolves to the British catalog and generic English to US English; Norwegian uses `nb`. The final build also passed nine locale/fallback cases on both browser versions. Later fixes changed state handling, not catalog text or locale selection.
 - Package verification passed for the exact 76-file archive: 55 catalogs with 326 messages each, matched version 1.5.1, fresh source, CRC and deterministic checksum.
@@ -142,6 +142,8 @@ GitHub CI was deliberately not run during the correction loops. It runs only aft
 
 The first final CI run, [34037478698](https://github.com/miroslavkiev/chrome-ai-translate/actions/runs/34037478698), passed all Node/build checks and the Linux content, extension-page and encrypted-storage flows. Its locale check found that Linux selects `en_AU`, while the macOS test expected `en_GB`. The test had applied the macOS alias to every platform. That expectation is now limited to macOS; the extension catalogs and release ZIP are unchanged. The corrected test passed source/package checks and the Australian English flow on macOS Chrome 140 and 151. The independent Astra code reviewer approved it before the next final CI attempt.
 
-The branch also contains the handed-off locale worker-discovery commit `ae9a939`. Its behavior was reviewed and its timeout/cleanup handling was corrected as part of this audit. No unrelated work is included.
+The second final CI run, [34037973387](https://github.com/miroslavkiev/chrome-ai-translate/actions/runs/34037973387), passed the full current-Chrome suite and the Chrome 140 content, extension-page and encrypted-storage flows. The Chrome 140 locale driver then missed an already-running worker after attaching over CDP. A custom stop/start recovery was rejected during local review and was not committed. The locale driver now uses the existing [Playwright persistent-context launcher](https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context) from startup, retaining the exact native language flags and bounded waits. This removes the custom discovery helper and its dedicated unit test; all 143 remaining Node tests pass on both supported Node checks. All nine native locale/fallback flows passed on local Chrome 140 and 151 with this launcher. Extension code and ZIP bytes remain unchanged. The independent Astra reviewer verified both native logs, reviewed the launcher and documentation, and approved the final CI attempt with no material findings.
+
+The branch includes the handed-off locale worker-discovery commit `ae9a939`. Its intended coverage is preserved by the real browser checks, while the custom discovery implementation was replaced by Playwright's existing launcher. No unrelated work is included.
 
 The installed extension was not reloaded. Browser security policy blocks automated access to extension controls, and no alternate route was used. Finish active translations, choose Reload for AI Translator at chrome://extensions, and refresh open web pages. Keep the same installation folder and saved profile.

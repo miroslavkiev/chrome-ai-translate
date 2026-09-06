@@ -1,12 +1,11 @@
 import assert from "node:assert/strict";
-import { spawn } from "node:child_process";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as delay } from "node:timers/promises";
 import { RECOMMENDED_MODEL } from "../shared.js";
-import { findExtensionWorker, waitForRuntimeState } from "./browser-runtime-state.mjs";
+import { waitForRuntimeState } from "./browser-runtime-state.mjs";
 import { SUPPORTED_LOCALES } from "./locales.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -21,31 +20,24 @@ for (const locale of locales) {
   const catalogLocale = locale === "en" ? "en_US" : locale === "en_AU" && process.platform === "darwin" ? "en_GB"
     : SUPPORTED_LOCALES.includes(locale) ? locale : "en";
   const catalog = JSON.parse(await readFile(path.join(extension, "_locales", catalogLocale, "messages.json"), "utf8"));
-  // macOS needs a process-only Apple language override for real Chrome message selection.
-  // Playwright's locale option changes web APIs but does not select extension catalogs.
-  const child = spawn(process.env.CHROME_PATH || chromium.executablePath(), [
-    "--headless=new", "--no-sandbox", `--user-data-dir=${profile}`, "--remote-debugging-port=0",
-    "--no-first-run", "--no-default-browser-check", "--disable-background-networking",
-    "--disable-component-extensions-with-background-pages", "--use-mock-keychain",
-    `--disable-extensions-except=${extension}`, `--load-extension=${extension}`, `--lang=${language}`,
-    ...(process.platform === "darwin" ? ["-AppleLanguages", `(${language})`] : []),
-  ], { env: { ...process.env, LANGUAGE: language }, stdio: "ignore" });
-  let browser;
-  let launchError;
-  child.on("error", (error) => { launchError = error; });
+  let context;
   try {
-    let port;
-    const deadline = Date.now() + 15_000;
-    while (!port && Date.now() < deadline) {
-      if (launchError) throw launchError;
-      if (child.exitCode !== null) throw new Error(`Chrome exited: ${child.exitCode}`);
-      try { port = (await readFile(path.join(profile, "DevToolsActivePort"), "utf8")).split("\n")[0]; }
-      catch { await delay(50); }
-    }
-    assert.ok(port, "Chrome must open a debugging port");
-    browser = await chromium.connectOverCDP(`http://127.0.0.1:${port}`);
-    const context = browser.contexts()[0];
-    const worker = await findExtensionWorker(context, locale);
+    // Native extension catalogs need process language flags. Supplying the full
+    // argument list also permits macOS's separate AppleLanguages value.
+    context = await chromium.launchPersistentContext(profile, {
+      executablePath: process.env.CHROME_PATH || chromium.executablePath(),
+      ignoreDefaultArgs: true,
+      timeout: 15_000,
+      env: { ...process.env, LANGUAGE: language },
+      args: [
+        "--headless=new", "--no-sandbox", `--user-data-dir=${profile}`, "--remote-debugging-pipe",
+        "--no-first-run", "--no-default-browser-check", "--disable-background-networking",
+        "--disable-component-extensions-with-background-pages", "--use-mock-keychain",
+        `--disable-extensions-except=${extension}`, `--load-extension=${extension}`, `--lang=${language}`,
+        ...(process.platform === "darwin" ? ["-AppleLanguages", `(${language})`] : []),
+      ],
+    });
+    const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker", { timeout: 10_000 });
     const base = `chrome-extension://${new URL(worker.url()).host}`;
     const errors = [];
     context.on("page", (page) => page.on("pageerror", (error) => errors.push(error.message)));
@@ -155,13 +147,9 @@ for (const locale of locales) {
     assert.equal(result.value.close, catalog.runtime_close_card.message);
     await cdp.detach();
     assert.deepEqual(errors, []);
-    console.log(`Native locale ${locale}, displayed catalog ${catalogLocale}: four pages, setup, refresh dialog, narrow layout, saved target and translation card passed (${browser.version()}).`);
+    console.log(`Native locale ${locale}, displayed catalog ${catalogLocale}: four pages, setup, refresh dialog, narrow layout, saved target and translation card passed (${context.browser().version()}).`);
   } finally {
-    await browser?.close();
-    if (child.exitCode === null) child.kill("SIGTERM");
-    const deadline = Date.now() + 5_000;
-    while (child.exitCode === null && child.signalCode === null && Date.now() < deadline) await delay(50);
-    if (child.exitCode === null && child.signalCode === null) child.kill("SIGKILL");
+    await context?.close();
     await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
   }
 }
