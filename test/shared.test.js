@@ -70,6 +70,14 @@ test("HTTP UUID fallback, common key labels, error actions, and clipboard failur
   assert.equal(formatTriggerKey("Alt", "Windows"), "Alt");
   assert.equal(getErrorPresentation({ code: "invalid_api_key" }).action, "settings");
   assert.equal(getErrorPresentation({ code: "missing_target_language" }).action, "settings");
+  assert.deepEqual(getErrorPresentation({ code: "service_error", retryable: false }), {
+    code: "service_error",
+    message: "Check setup",
+    action: "settings",
+    retryAfterMs: 0,
+  });
+  assert.equal(getErrorPresentation({ code: "service_error", action: "settings" }).action, "retry");
+  assert.equal(getErrorPresentation({ code: "raw", retryable: false }).action, "retry");
   assert.equal(getErrorPresentation({ code: "output_too_large" }).action, null);
   assert.equal(getErrorPresentation({ code: "content_blocked" }).action, null);
   assert.match(getErrorPresentation({ code: "quota_exceeded", retryAfterMs: 1_100 }).message, /2 seconds/);

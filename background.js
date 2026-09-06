@@ -18,6 +18,7 @@ import {
   makeDuplicateKey,
   normalizeApiKey,
   normalizeModels,
+  readResponseJson,
   validateModelCache,
   validateContentSender,
   validateTranslateRequest,
@@ -39,7 +40,10 @@ let runtimeError = null;
 const activeByTab = new Map();
 const activeDuplicates = new Set();
 let activeGlobal = 0;
-const locks = { requests: Promise.resolve(), credentials: Promise.resolve() };
+const locks = {
+  requests: Promise.resolve(), credentials: Promise.resolve(),
+  agreement: Promise.resolve(), agreementLocal: Promise.resolve(), activeCount: Promise.resolve(),
+};
 let modelRefresh = null;
 let credentialRevision = 0;
 let credentialCheckId = 0;
@@ -67,8 +71,14 @@ function withLock(name, task) {
 async function initializeRuntime() {
   await Promise.all([
     chrome.storage.local.setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" }),
+    chrome.storage.sync.setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" }),
     chrome.storage.session.setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" }),
   ]);
+  const denial = await chrome.storage.session.get(STORAGE_KEYS.dataSharingDenied);
+  if (denial[STORAGE_KEYS.dataSharingDenied] === true) {
+    dataSharingDenied = true;
+    dataSharingAccepted = false;
+  }
   await migrateApiKey();
   const agreement = await chrome.storage.local.get(STORAGE_KEYS.dataSharingAgreement);
   dataSharingAccepted = !dataSharingDenied && validAgreement(agreement[STORAGE_KEYS.dataSharingAgreement]);
@@ -134,6 +144,10 @@ async function requireRuntime() {
 }
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName === "sync" && [STORAGE_KEYS.targetLanguage, STORAGE_KEYS.triggerKey]
+    .some((key) => Object.hasOwn(changes, key))) {
+    void broadcastContentPreferencesChanged();
+  }
   if (["local", "sync"].includes(areaName) && normalizeApiKey(changes[STORAGE_KEYS.apiKey]?.newValue)) {
     // An older installation can sync a legacy key after this worker has started.
     void runtimeReady.then(() => withLock("credentials", async () => {
@@ -143,9 +157,22 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
     })).catch((error) => { runtimeError = toPublicError(error); });
   }
   if (areaName !== "local" || !changes[STORAGE_KEYS.dataSharingAgreement]) return;
-  dataSharingAccepted = !dataSharingDenied && validAgreement(changes[STORAGE_KEYS.dataSharingAgreement].newValue);
-  if (!dataSharingAccepted) cancelGoogleRequests();
+  if (!validAgreement(changes[STORAGE_KEYS.dataSharingAgreement].newValue)) {
+    dataSharingAccepted = false;
+    cancelGoogleRequests();
+  }
 });
+
+async function broadcastContentPreferencesChanged() {
+  try {
+    const tabs = await chrome.tabs.query({});
+    await Promise.allSettled(tabs
+      .filter(({ id }) => Number.isInteger(id) && id >= 0)
+      .map(({ id }) => chrome.tabs.sendMessage(id, { action: "contentPreferencesChanged" })));
+  } catch {
+    // Tabs can close or lack the content script while preferences are changing.
+  }
+}
 
 function validAgreement(value) {
   return value?.version === DATA_SHARING_VERSION
@@ -213,25 +240,57 @@ async function changeDataSharing(accepted) {
       dataSharingDenied = true;
       dataSharingAccepted = false;
       cancelGoogleRequests();
-    }
-    await requireRuntime();
-    await withLock("credentials", async () => {
-      if (intent !== dataSharingIntent) return;
-      if (accepted) {
-        await chrome.storage.local.set({
-          [STORAGE_KEYS.dataSharingAgreement]: { version: DATA_SHARING_VERSION, acceptedAt: Date.now() },
-        });
-        if (intent === dataSharingIntent) {
-          dataSharingDenied = false;
-          dataSharingAccepted = true;
+      void tryWriteDataSharingDenial().then((saved) => {
+        if (!saved && intent === dataSharingIntent) return tryWriteDataSharingDenial();
+      });
+      // Local revocation must still run if the marker or a key operation stalls.
+      await withLock("agreementLocal", async () => {
+        if (intent !== dataSharingIntent) return;
+        try {
+          await chrome.storage.local.remove(STORAGE_KEYS.dataSharingAgreement);
+        } catch (removalError) {
+          try {
+            await chrome.storage.local.set({
+              [STORAGE_KEYS.dataSharingAgreement]: {
+                version: DATA_SHARING_VERSION,
+                revokedAt: Date.now(),
+              },
+            });
+          } catch {
+            throw removalError;
+          }
         }
-      } else {
-        await chrome.storage.local.remove(STORAGE_KEYS.dataSharingAgreement);
-      }
-    });
+      });
+      return { ok: true, withdrawn: intent === dataSharingIntent };
+    } else {
+      await requireRuntime();
+      await withLock("credentials", async () => {
+        if (intent !== dataSharingIntent) return;
+        await withLock("agreementLocal", async () => {
+          if (intent !== dataSharingIntent) return;
+          await chrome.storage.local.set({
+            [STORAGE_KEYS.dataSharingAgreement]: { version: DATA_SHARING_VERSION, acceptedAt: Date.now() },
+          });
+        });
+        if (intent !== dataSharingIntent) return;
+        await withLock("agreement", () => chrome.storage.session.remove(STORAGE_KEYS.dataSharingDenied));
+        if (intent !== dataSharingIntent) return;
+        dataSharingDenied = false;
+        dataSharingAccepted = true;
+      });
+    }
     return getRuntimeState(true);
   } catch (error) {
     return { ok: false, error: toPublicError(error) };
+  }
+}
+
+async function tryWriteDataSharingDenial() {
+  try {
+    await withLock("agreement", () => chrome.storage.session.set({ [STORAGE_KEYS.dataSharingDenied]: true }));
+    return true;
+  } catch {
+    return false;
   }
 }
 
@@ -279,7 +338,10 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     tab.id,
     { action: "contextMenuTranslate", selectionText: info.selectionText },
     { frameId },
-  ).catch(() => setLatestFailure(null, publicError("frame_unavailable")));
+  ).then((response) => response?.accepted === false
+    ? setLatestFailure(null, publicError("no_selection"))
+    : undefined)
+    .catch(() => setLatestFailure(null, publicError("frame_unavailable")));
 });
 
 chrome.runtime.onConnect.addListener((port) => {
@@ -320,6 +382,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     );
     return true;
   }
+  if (message?.action === "getContentPreferences"
+      && validateContentSender(sender, chrome.runtime.id).ok) {
+    void getContentPreferences().then(sendResponse);
+    return true;
+  }
   if (!isTrustedExtensionPage(sender)) return false;
   const settingsActions = {
     getSettingsState: () => getRuntimeState(true),
@@ -358,36 +425,51 @@ function isSettingsPage(sender) {
 }
 
 async function handleTranslation(port, connection, message) {
-  activeConnections.add(connection);
   let reservation = null;
+  let reservationTask = null;
+  let reservationReleased = false;
   let request = null;
   let requestId = null;
-  const deadline = setTimeout(() => connection.controller.abort("timeout"), LIMITS.requestTimeoutMs);
+  const deadline = setTimeout(() => {
+    connection.controller.abort("timeout");
+    postTerminal(port, connection, requestId, false, publicError("timeout"));
+  }, LIMITS.requestTimeoutMs);
+  const envelope = validateTranslationEnvelope({
+    message,
+    sender: port.sender,
+    extensionId: chrome.runtime.id,
+  });
+  if (!envelope.ok) {
+    clearTimeout(deadline);
+    postTerminal(port, connection, null, false, envelope.error);
+    return;
+  }
+  requestId = envelope.requestId;
+  activeConnections.add(connection);
+  const releaseReservation = (candidate) => {
+    if (!candidate?.ok || reservationReleased) return;
+    reservationReleased = true;
+    if (reservation === candidate) reservation = null;
+    void releaseRequest(candidate);
+  };
   try {
-    await requireRuntime();
-    throwIfAborted(connection.controller.signal);
-    const envelope = validateTranslationEnvelope({
-      message,
-      sender: port.sender,
-      extensionId: chrome.runtime.id,
-    });
-    if (!envelope.ok) throw runtimeFailure(envelope.error);
-    requestId = envelope.requestId;
-    await requireDataSharing();
+    const signal = connection.controller.signal;
+    await waitForAbortable(requireRuntime, signal);
+    await waitForAbortable(requireDataSharing, signal);
 
-    const apiKey = await getApiKey();
-    throwIfAborted(connection.controller.signal);
+    const apiKey = await waitForAbortable(getApiKey, signal);
     if (!apiKey) throw runtimeFailure(publicError("missing_api_key"));
-    const preferences = await getPreferences();
-    throwIfAborted(connection.controller.signal);
+    const preferences = await waitForAbortable(getPreferences, signal);
     if (!isSupportedLanguage(preferences.targetLanguage)) {
       throw runtimeFailure(publicError("missing_target_language"));
     }
-    const catalog = await getModelCatalog(apiKey, false, {
-      signal: connection.controller.signal,
+    if (!isValidModelId(preferences.aiModel)) {
+      throw runtimeFailure(publicError("invalid_model"));
+    }
+    const catalog = await waitForAbortable(() => getModelCatalog(apiKey, false, {
+      signal,
       allowStale: true,
-    });
-    throwIfAborted(connection.controller.signal);
+    }), signal);
     request = validateTranslateRequest({
       message,
       sender: port.sender,
@@ -397,39 +479,41 @@ async function handleTranslation(port, connection, message) {
       models: catalog.models,
     });
     if (!request.ok) throw runtimeFailure(request.error);
-    const gate = await reserveRequest(request);
+    throwIfAborted(signal);
+    reservationTask = reserveRequest(request);
+    const gate = await waitForAbortable(() => reservationTask, signal);
     if (!gate.ok) throw runtimeFailure(gate.error);
     reservation = gate;
-    throwIfAborted(connection.controller.signal);
-    await requireCurrentApiKey(apiKey);
-    throwIfAborted(connection.controller.signal);
-    const translatedText = await requestTranslation(apiKey, request, connection.controller.signal);
-    await requireDataSharing();
-    throwIfAborted(connection.controller.signal);
+    await waitForAbortable(() => requireCurrentApiKey(apiKey), signal);
+    const translation = await waitForAbortable(
+      () => requestTranslation(apiKey, request, signal), signal,
+    );
+    await waitForAbortable(requireDataSharing, signal);
+    await waitForAbortable(() => requireCurrentApiKey(apiKey), signal);
+    throwIfAborted(signal);
     const result = {
       action: "result",
       requestId: request.requestId,
       ok: true,
-      translatedText,
+      translatedText: translation.text,
       targetLanguage: request.targetLanguage,
     };
-    await setLatestSuccess(result).catch(() => undefined);
-    throwIfAborted(connection.controller.signal);
-    const completedReservation = reservation;
-    reservation = null;
-    await releaseRequest(completedReservation);
-    throwIfAborted(connection.controller.signal);
     postTerminal(port, connection, result);
+    recordProviderSuccess(translation.providerCheck);
+    void setLatestSuccess(result).catch(() => undefined);
   } catch (error) {
-    if (reservation) await releaseRequest(reservation);
     const failure = connection.controller.signal.aborted
       ? signalFailure(connection.controller.signal).publicError
       : toPublicError(error);
-    if (requestId) await setLatestFailure(requestId, failure);
     postTerminal(port, connection, requestId, false, failure);
+    if (requestId) void setLatestFailure(requestId, failure);
   } finally {
     activeConnections.delete(connection);
     clearTimeout(deadline);
+    if (reservation) releaseReservation(reservation);
+    else if (reservationTask) {
+      void reservationTask.then(releaseReservation).catch(() => undefined);
+    }
   }
 }
 
@@ -462,7 +546,40 @@ function signalFailure(signal) {
 }
 
 function throwIfAborted(signal) {
-  if (signal.aborted) throw signalFailure(signal);
+  if (signal?.aborted) throw signalFailure(signal);
+}
+
+function waitForAbortable(task, signal) {
+  if (!signal) {
+    try {
+      return Promise.resolve(task());
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  }
+  if (signal.aborted) return Promise.reject(signalFailure(signal));
+  return new Promise((resolve, reject) => {
+    let settled = false;
+    const finish = (callback, value) => {
+      if (settled) return;
+      settled = true;
+      signal.removeEventListener("abort", onAbort);
+      callback(value);
+    };
+    const onAbort = () => finish(reject, signalFailure(signal));
+    signal.addEventListener("abort", onAbort, { once: true });
+    let operation;
+    try {
+      operation = task();
+    } catch (error) {
+      finish(reject, error);
+      return;
+    }
+    Promise.resolve(operation).then(
+      (value) => finish(resolve, value),
+      (error) => finish(reject, error),
+    );
+  });
 }
 
 async function getApiKey() {
@@ -487,9 +604,27 @@ async function getPreferences() {
       : null,
     aiModel: isValidModelId(stored[STORAGE_KEYS.aiModel])
       ? stored[STORAGE_KEYS.aiModel]
-      : DEFAULTS.aiModel,
+      : null,
     triggerKey: getStoredTriggerKey(stored),
   };
+}
+
+async function getContentPreferences() {
+  try {
+    const stored = await chrome.storage.sync.get([
+      STORAGE_KEYS.targetLanguage,
+      STORAGE_KEYS.triggerKey,
+    ]);
+    return {
+      ok: true,
+      targetLanguage: isSupportedLanguage(stored[STORAGE_KEYS.targetLanguage])
+        ? stored[STORAGE_KEYS.targetLanguage]
+        : DEFAULTS.targetLanguage,
+      triggerKey: getStoredTriggerKey(stored),
+    };
+  } catch {
+    return { ok: false, error: publicError("service_error") };
+  }
 }
 
 async function reserveRequest(request) {
@@ -506,11 +641,11 @@ async function reserveRequest(request) {
 
     await chrome.storage.session.set({
       [STORAGE_KEYS.rateStarts]: gate.starts,
-      [STORAGE_KEYS.activeRequestCount]: activeGlobal + 1,
     });
     activeGlobal += 1;
     activeByTab.set(request.tabId, (activeByTab.get(request.tabId) ?? 0) + 1);
     activeDuplicates.add(duplicateKey);
+    void persistActiveCount();
     return { ok: true, tabId: request.tabId, duplicateKey };
   });
 }
@@ -522,19 +657,23 @@ async function releaseRequest(reservation) {
     if (tabActive) activeByTab.set(reservation.tabId, tabActive);
     else activeByTab.delete(reservation.tabId);
     activeDuplicates.delete(reservation.duplicateKey);
-    await chrome.storage.session.set({ [STORAGE_KEYS.activeRequestCount]: activeGlobal }).catch(() => {
-      setTimeout(() => {
-        void withLock("requests", () => chrome.storage.session.set({
-          [STORAGE_KEYS.activeRequestCount]: activeGlobal,
-        })).catch(() => undefined);
-      }, 250);
-    });
+    void persistActiveCount();
   }).catch(() => undefined);
+}
+
+async function persistActiveCount(retry = true) {
+  try {
+    await withLock("activeCount", () => chrome.storage.session.set({
+      [STORAGE_KEYS.activeRequestCount]: activeGlobal,
+    }));
+  } catch {
+    if (retry) setTimeout(() => { void persistActiveCount(false); }, 250);
+  }
 }
 
 async function requestTranslation(apiKey, request, signal) {
   const url = `${API_BASE}/models/${encodeURIComponent(request.model)}:generateContent`;
-  const payload = await runWithTimeout(async (requestSignal) => fetchJson(url, {
+  const response = await runWithTimeout(async (requestSignal) => fetchJson(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -549,10 +688,13 @@ async function requestTranslation(apiKey, request, signal) {
       contents: [{ role: "user", parts: [{ text: request.text }] }],
       generationConfig: request.generationConfig,
     }),
-  }, requestSignal), signal);
-  const translation = extractTranslation(payload);
-  if (!translation.ok) throw runtimeFailure(translation.error);
-  return translation.text;
+  }, requestSignal, { deferSuccessStatus: true }), signal);
+  const translation = extractTranslation(response.payload);
+  if (!translation.ok) {
+    recordProviderSuccess(response.providerCheck, signal);
+    throw runtimeFailure(translation.error);
+  }
+  return { text: translation.text, providerCheck: response.providerCheck };
 }
 
 async function listModelsForUi(forceRefresh) {
@@ -573,10 +715,13 @@ async function listModelsForUi(forceRefresh) {
 
 async function getModelCatalog(apiKey, forceRefresh = false, options = {}) {
   const { signal, allowStale = false } = options;
-  await locks.credentials;
-  await requireDataSharing();
-  const stored = await chrome.storage.local.get([STORAGE_KEYS.modelCatalog, STORAGE_KEYS.apiKeyStatus]);
-  await requireCurrentApiKey(apiKey);
+  await waitForAbortable(() => locks.credentials, signal);
+  await waitForAbortable(requireDataSharing, signal);
+  const stored = await waitForAbortable(() => chrome.storage.local.get([
+    STORAGE_KEYS.modelCatalog,
+    STORAGE_KEYS.apiKeyStatus,
+  ]), signal);
+  await waitForAbortable(() => requireCurrentApiKey(apiKey), signal);
   if (!forceRefresh && isRejectedApiKey(apiKey, stored)) {
     throw runtimeFailure(publicError("invalid_api_key"));
   }
@@ -588,11 +733,13 @@ async function getModelCatalog(apiKey, forceRefresh = false, options = {}) {
   if (!forceRefresh && cached && (!stale || allowStale)) {
     return { ...cached, source: "cache", stale };
   }
+  throwIfAborted(signal);
   try {
     const live = await refreshModelCatalog(apiKey, signal);
     return { ...live, source: "live", stale: false };
   } catch (error) {
-    const currentKey = await getApiKey();
+    throwIfAborted(signal);
+    const currentKey = await waitForAbortable(getApiKey, signal);
     if (currentKey !== apiKey) {
       throw runtimeFailure(publicError(currentKey ? "cancelled" : "missing_api_key"));
     }
@@ -663,7 +810,8 @@ async function waitForModelRefresh(refresh, signal) {
 }
 
 async function fetchModelCatalog(apiKey, parentSignal) {
-  const models = [];
+  const models = new Map();
+  let rawModelCount = 0;
   const seenTokens = new Set();
   let pageToken = "";
   await runWithTimeout(async (signal) => {
@@ -675,10 +823,9 @@ async function fetchModelCatalog(apiKey, parentSignal) {
         headers: { "x-goog-api-key": apiKey },
       }, signal);
       if (Array.isArray(payload.models)) {
-        for (const model of payload.models) {
-          if (models.length >= 5_000) throw runtimeFailure(publicError("invalid_response"));
-          models.push(model);
-        }
+        rawModelCount += payload.models.length;
+        if (rawModelCount > 5_000) throw runtimeFailure(publicError("invalid_response"));
+        for (const model of normalizeModels(payload)) models.set(model.id, model);
       }
       const next = typeof payload.nextPageToken === "string" ? payload.nextPageToken : "";
       if (!next) return;
@@ -691,13 +838,17 @@ async function fetchModelCatalog(apiKey, parentSignal) {
     throw runtimeFailure(publicError("invalid_response"));
   }, parentSignal);
 
-  const compatible = normalizeModels({ models });
+  const compatible = [...models.values()].sort((left, right) => left.id.localeCompare(right.id));
   if (!compatible.length) throw runtimeFailure(publicError("invalid_response"));
   const catalog = { models: compatible, fetchedAt: Date.now() };
   await withLock("credentials", async () => {
+    throwIfAborted(parentSignal);
     await requireDataSharing();
+    throwIfAborted(parentSignal);
     await requireCurrentApiKey(apiKey);
+    throwIfAborted(parentSignal);
     const status = await chrome.storage.local.get(STORAGE_KEYS.apiKeyStatus);
+    throwIfAborted(parentSignal);
     if (isRejectedApiKey(apiKey, status)) throw runtimeFailure(publicError("invalid_api_key"));
     await chrome.storage.local.set({
       [STORAGE_KEYS.modelCatalog]: { ...catalog, apiKeyHash: stableTextHash(apiKey) },
@@ -714,59 +865,72 @@ function isRejectedApiKey(apiKey, stored) {
   return status?.apiKeyHash === apiKeyHash && status.status === "rejected";
 }
 
-async function recordApiKeyStatus(apiKey, status, revision, checkId) {
+async function recordApiKeyStatus(apiKey, status, revision, checkId, signal) {
   await withLock("credentials", async () => {
-    if (revision !== credentialRevision || checkId < appliedCredentialCheckId) return;
+    if (signal?.aborted || revision !== credentialRevision || checkId < appliedCredentialCheckId) return;
     let currentKey;
     try {
       currentKey = await getApiKey();
     } catch {
-      if (status === "rejected" && revision === credentialRevision) {
+      if (!signal?.aborted && status === "rejected" && revision === credentialRevision) {
         appliedCredentialCheckId = checkId;
         knownApiKeyStatus = { apiKeyHash: stableTextHash(apiKey), status };
       }
       return;
     }
-    if (currentKey !== apiKey || revision !== credentialRevision) return;
+    if (signal?.aborted || currentKey !== apiKey || revision !== credentialRevision) return;
     appliedCredentialCheckId = checkId;
     knownApiKeyStatus = { apiKeyHash: stableTextHash(apiKey), status };
+    if (signal?.aborted) return;
     await chrome.storage.local.set({
       [STORAGE_KEYS.apiKeyStatus]: knownApiKeyStatus,
       ...(status === "rejected" ? { [STORAGE_KEYS.modelCatalog]: null } : {}),
     }).catch(async () => {
-      if (status === "rejected") {
+      if (!signal?.aborted && status === "rejected") {
         await chrome.storage.local.remove(STORAGE_KEYS.modelCatalog).catch(() => undefined);
       }
     });
   });
 }
 
-async function recordModelStatus(apiKey, model, available, revision, catalogVersion, checkId) {
+async function recordModelStatus(apiKey, model, available, revision, catalogVersion, checkId, signal) {
   if (!model) return;
   await withLock("credentials", async () => {
-    if (revision !== credentialRevision || catalogVersion !== catalogRevision
+    if (signal?.aborted || revision !== credentialRevision || catalogVersion !== catalogRevision
         || checkId < (modelCheckIds.get(model) ?? 0) || await getApiKey() !== apiKey) return;
+    if (signal?.aborted) return;
     modelCheckIds.set(model, checkId);
     const stored = await chrome.storage.local.get(STORAGE_KEYS.modelCatalog);
     const catalog = stored[STORAGE_KEYS.modelCatalog];
-    if (revision !== credentialRevision || catalog?.apiKeyHash !== stableTextHash(apiKey)
+    if (signal?.aborted || revision !== credentialRevision
+        || catalog?.apiKeyHash !== stableTextHash(apiKey)
         || !validateModelCache(catalog, stableTextHash(apiKey))
         || !catalog.models.some(({ id }) => id === model)) return;
     const unavailableModels = new Set(catalog.unavailableModels ?? []);
     if (available ? !unavailableModels.delete(model) : unavailableModels.has(model)) return;
     if (!available) unavailableModels.add(model);
+    if (signal?.aborted) return;
     await chrome.storage.local.set({
       [STORAGE_KEYS.modelCatalog]: { ...catalog, unavailableModels: [...unavailableModels] },
     }).catch(async () => {
-      if (!available) await chrome.storage.local.remove(STORAGE_KEYS.modelCatalog).catch(() => undefined);
+      if (!signal?.aborted && !available) {
+        await chrome.storage.local.remove(STORAGE_KEYS.modelCatalog).catch(() => undefined);
+      }
     });
   }).catch(() => undefined);
 }
 
-async function fetchJson(url, init, signal) {
+function recordProviderSuccess(providerCheck, signal) {
+  if (!providerCheck || signal?.aborted) return;
+  const { apiKey, revision, checkId, catalogVersion, model } = providerCheck;
+  void recordApiKeyStatus(apiKey, "checked", revision, checkId, signal).catch(() => undefined);
+  void recordModelStatus(apiKey, model, true, revision, catalogVersion, checkId, signal);
+}
+
+async function fetchJson(url, init, signal, options = {}) {
   const apiKey = normalizeApiKey(init.headers["x-goog-api-key"]);
-  await requireCurrentApiKey(apiKey);
-  await requireDataSharing();
+  await waitForAbortable(() => requireCurrentApiKey(apiKey), signal);
+  await waitForAbortable(requireDataSharing, signal);
   throwIfAborted(signal);
   const revision = credentialRevision;
   const checkId = ++credentialCheckId;
@@ -775,11 +939,12 @@ async function fetchJson(url, init, signal) {
   const response = await fetch(url, { ...init, signal });
   let payload = null;
   try {
-    payload = await response.json();
+    payload = await readResponseJson(response, signal);
   } catch {
+    throwIfAborted(signal);
     if (response.ok) throw runtimeFailure(publicError("invalid_response"));
   }
-  await requireDataSharing();
+  await waitForAbortable(requireDataSharing, signal);
   throwIfAborted(signal);
   if (revision !== credentialRevision) throw runtimeFailure(publicError("cancelled"));
   if (!response.ok) {
@@ -789,18 +954,24 @@ async function fetchJson(url, init, signal) {
       parseRetryAfter(response.headers.get("Retry-After")),
     );
     if (error.code === "invalid_api_key") {
-      await recordApiKeyStatus(apiKey, "rejected", revision, checkId);
+      await waitForAbortable(
+        () => recordApiKeyStatus(apiKey, "rejected", revision, checkId, signal), signal,
+      );
     } else if (error.code === "invalid_model") {
-      await recordModelStatus(apiKey, model, false, revision, catalogVersion, checkId);
+      await waitForAbortable(
+        () => recordModelStatus(apiKey, model, false, revision, catalogVersion, checkId, signal), signal,
+      );
     }
     throw runtimeFailure(error);
   }
-  await requireCurrentApiKey(apiKey);
+  await waitForAbortable(() => requireCurrentApiKey(apiKey), signal);
+  throwIfAborted(signal);
   if (!payload || typeof payload !== "object") {
     throw runtimeFailure(publicError("invalid_response"));
   }
-  await recordApiKeyStatus(apiKey, "checked", revision, checkId);
-  await recordModelStatus(apiKey, model, true, revision, catalogVersion, checkId);
+  const providerCheck = { apiKey, revision, checkId, catalogVersion, model };
+  if (options.deferSuccessStatus === true) return { payload, providerCheck };
+  recordProviderSuccess(providerCheck, signal);
   return payload;
 }
 
@@ -813,7 +984,7 @@ async function runWithTimeout(task, parentSignal) {
   else parentSignal?.addEventListener("abort", abortFromParent, { once: true });
   const timer = setTimeout(() => {
     timedOut = true;
-    controller.abort();
+    controller.abort("timeout");
   }, LIMITS.requestTimeoutMs);
   try {
     return await task(controller.signal);
@@ -901,6 +1072,7 @@ async function getRuntimeState(includeCredential = false) {
     const configurationError = !dataSharingAccepted ? publicError("agreement_required")
       : rejected ? publicError("invalid_api_key")
       : apiKey && !isSupportedLanguage(preferences.targetLanguage) ? publicError("missing_target_language")
+        : apiKey && !isValidModelId(preferences.aiModel) ? publicError("invalid_model")
         : catalog && !catalog.models.some(({ id }) => id === preferences.aiModel)
         ? publicError("invalid_model") : null;
     return {

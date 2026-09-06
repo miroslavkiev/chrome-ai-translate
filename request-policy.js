@@ -13,6 +13,72 @@ import {
 
 export { normalizeApiKey };
 
+export const MAX_RESPONSE_BYTES = 2 * 1024 * 1024;
+
+function responseTooLargeError() {
+  return new RangeError(`Response body exceeds ${MAX_RESPONSE_BYTES} bytes.`);
+}
+
+function throwIfAborted(signal) {
+  if (!signal?.aborted) return;
+  throw signal.reason;
+}
+
+function getAdvertisedResponseBytes(response) {
+  const value = response?.headers?.get?.("content-length");
+  if (typeof value !== "string" || !/^\d+$/.test(value.trim())) return null;
+  const bytes = Number(value.trim());
+  return Number.isSafeInteger(bytes) ? bytes : Infinity;
+}
+
+export async function readResponseJson(response, signal) {
+  throwIfAborted(signal);
+  const advertisedBytes = getAdvertisedResponseBytes(response);
+  const body = response?.body;
+  if (!body) {
+    if (advertisedBytes > MAX_RESPONSE_BYTES) throw responseTooLargeError();
+    return JSON.parse("");
+  }
+
+  const reader = body.getReader();
+  const cancelReader = (reason) => {
+    // Native cancellation settles reads without waiting for source cleanup.
+    void reader.cancel(reason).catch(() => {});
+  };
+  const abortHandler = () => cancelReader(signal.reason);
+  signal?.addEventListener("abort", abortHandler, { once: true });
+
+  try {
+    if (advertisedBytes > MAX_RESPONSE_BYTES) throw responseTooLargeError();
+
+    const decoder = new TextDecoder();
+    let bytesRead = 0;
+    let text = "";
+    while (true) {
+      throwIfAborted(signal);
+      const chunk = await reader.read();
+      throwIfAborted(signal);
+      if (chunk.done) break;
+      if (!(chunk.value instanceof Uint8Array)) {
+        throw new TypeError("Response body stream returned a non-byte chunk.");
+      }
+      bytesRead += chunk.value.byteLength;
+      if (bytesRead > MAX_RESPONSE_BYTES) throw responseTooLargeError();
+      text += decoder.decode(chunk.value, { stream: true });
+    }
+    text += decoder.decode();
+    throwIfAborted(signal);
+    return JSON.parse(text);
+  } catch (error) {
+    cancelReader(error);
+    throwIfAborted(signal);
+    throw error;
+  } finally {
+    signal?.removeEventListener("abort", abortHandler);
+    reader.releaseLock();
+  }
+}
+
 export function validateContentSender(sender, extensionId) {
   if (!sender || sender.id !== extensionId || !sender.tab
       || !Number.isInteger(sender.tab.id) || sender.tab.id < 0
@@ -216,6 +282,7 @@ export function classifyProviderError(status, payload, retryAfterMs) {
   if (status === 429 || providerStatus === "RESOURCE_EXHAUSTED") {
     return publicError("quota_exceeded", details);
   }
+  if (status === 403) return publicError("service_error", { retryable: false });
   return publicError("service_error", status >= 500 ? details : {});
 }
 

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { randomUUID } from "node:crypto";
 import { DEFAULTS, DATA_SHARING_VERSION, RECOMMENDED_MODEL, LIMITS, STORAGE_KEYS, normalizeApiKey, stableTextHash } from "../shared.js";
+import { MAX_RESPONSE_BYTES } from "../request-policy.js";
 import { loadBackground } from "./helpers/background-module.js";
 
 const extensionId = "runtime-test-extension";
@@ -65,8 +66,10 @@ async function runtime(t, seed = {}) {
   };
   const env = {
     state, calls: [], writes: [], beforeGet: seed.beforeGet, beforeSet: seed.beforeSet,
-    beforeRemove: seed.beforeRemove, beforeVaultRead: seed.beforeVaultRead, beforeVaultWrite: seed.beforeVaultWrite,
-    beforeVaultVerify: seed.beforeVaultVerify, openedSettings: 0,
+    beforeRemove: seed.beforeRemove, beforeSetAccessLevel: seed.beforeSetAccessLevel,
+    beforeVaultRead: seed.beforeVaultRead, beforeVaultWrite: seed.beforeVaultWrite,
+    beforeVaultVerify: seed.beforeVaultVerify, openedSettings: 0, migrations: 0,
+    tabMessages: [], tabQueries: [], tabs: seed.tabs ?? [{ id: 7 }, { id: 8 }],
     vault: { apiKey: null, revision: null, ...seed.vault }, corruptVault: seed.corruptVault === true,
   };
   const fakeStore = {
@@ -84,6 +87,7 @@ async function runtime(t, seed = {}) {
     },
     async remove() { return fakeStore.write(null); },
     async migrate({ localKey, syncKey }) {
+      env.migrations += 1;
       const current = await fakeStore.readState();
       if (current.revision !== null) return current;
       const value = normalizeApiKey(localKey) || normalizeApiKey(syncKey);
@@ -91,7 +95,9 @@ async function runtime(t, seed = {}) {
     },
   };
   const area = (name) => ({
-    setAccessLevel: async () => undefined,
+    setAccessLevel: async (options) => {
+      if (env.beforeSetAccessLevel) await env.beforeSetAccessLevel(name, options);
+    },
     get: async (keys) => {
       if (env.beforeGet) await env.beforeGet(name, keys);
       return Object.fromEntries((Array.isArray(keys) ? keys : [keys])
@@ -131,7 +137,16 @@ async function runtime(t, seed = {}) {
       openOptionsPage: async () => { env.openedSettings += 1; },
     },
     contextMenus: { onClicked: event() },
-    tabs: { sendMessage: async () => undefined },
+    tabs: {
+      query: async (query) => {
+        env.tabQueries.push(structuredClone(query));
+        return env.tabs;
+      },
+      sendMessage: async (...args) => {
+        env.tabMessages.push(structuredClone(args));
+        return env.sendTabMessage ? env.sendTabMessage(...args) : undefined;
+      },
+    },
   };
   env.chrome = globalThis.chrome;
   env.provider = async (url) => json(url.includes(":generateContent") ? translationPayload : modelPayload);
@@ -146,6 +161,11 @@ async function runtime(t, seed = {}) {
   env.status = () => env.message({ action: "getRuntimeState" });
   env.settings = () => env.message({ action: "getSettingsState" });
   env.setKey = (value, revision = env.vault.revision) => env.message({ action: "setApiKey", apiKey: value, expectedRevision: revision });
+  env.contextClick = (overrides = {}, tab = { id: 7 }) => env.chrome.contextMenus.onClicked.emit({
+    menuItemId: "translateText",
+    selectionText: "Selected text",
+    ...overrides,
+  }, tab);
   env.translate = (overrides = {}, sender = contentSender) => {
     let complete;
     const port = {
@@ -163,19 +183,19 @@ async function runtime(t, seed = {}) {
     port.onMessage.emit({ action: "translate", requestId: `123e4567-e89b-42d3-a456-${String(++requestId).padStart(12, "0")}`, text: "Hello", ...overrides });
     return port;
   };
-  env.reload = async () => {
+  env.reload = async (waitForReady = true) => {
     changed.clear();
     env.chrome.runtime.onMessage = event();
     env.chrome.runtime.onConnect = event();
     await loadBackground(() => fakeStore);
-    return env.status();
+    return waitForReady ? env.status() : null;
   };
   t.after(() => {
     globalThis.chrome = original.chrome;
     globalThis.fetch = original.fetch;
     globalThis.setTimeout = original.setTimeout;
   });
-  env.ready = await env.reload();
+  env.ready = await env.reload(seed.waitForReady !== false);
   return env;
 }
 
@@ -194,6 +214,51 @@ test("runtime readiness waits for migration, keeps Off, and limits Settings acce
   assert.equal(env.openedSettings, 1);
 });
 
+test("content preferences stay narrow and available when credential migration fails", async (t) => {
+  const env = await runtime(t, {
+    local: { [STORAGE_KEYS.apiKey]: null },
+    sync: {
+      [STORAGE_KEYS.apiKey]: apiKey,
+      [STORAGE_KEYS.targetLanguage]: "fr",
+      [STORAGE_KEYS.triggerKey]: "Alt",
+      [STORAGE_KEYS.aiModel]: "private-model-value",
+    },
+    beforeVaultWrite: async () => { throw new Error("Cannot save key"); },
+  });
+  assert.equal(env.ready.error.code, "credential_storage_error");
+  const preferences = await env.message({
+    action: "getContentPreferences",
+    keys: [STORAGE_KEYS.apiKey, STORAGE_KEYS.aiModel, STORAGE_KEYS.dataSharingAgreement],
+  }, contentSender);
+  assert.deepEqual(preferences, { ok: true, targetLanguage: "fr", triggerKey: "Alt" });
+  assert.deepEqual(Object.keys(preferences), ["ok", "targetLanguage", "triggerKey"]);
+  assert.equal(await env.message({ action: "getContentPreferences" }, uiSender), undefined);
+  assert.equal(env.calls.length, 0);
+});
+
+test("sync preference changes broadcast one narrow refresh message to every tab", async (t) => {
+  const env = await runtime(t, { tabs: [{ id: 7 }, { id: 8 }, {}, { id: -1 }] });
+  env.tabMessages.length = 0;
+  env.tabQueries.length = 0;
+  env.sendTabMessage = async (tabId) => {
+    if (tabId === 8) throw new Error("No content script");
+  };
+  await env.chrome.storage.sync.set({
+    [STORAGE_KEYS.targetLanguage]: "fr",
+    [STORAGE_KEYS.triggerKey]: "Control",
+  });
+  await until(() => env.tabMessages.length === 2);
+  assert.deepEqual(env.tabQueries, [{}]);
+  assert.deepEqual(env.tabMessages, [
+    [7, { action: "contentPreferencesChanged" }],
+    [8, { action: "contentPreferencesChanged" }],
+  ]);
+  await env.chrome.storage.sync.set({ [STORAGE_KEYS.aiModel]: "another-model" });
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(env.tabQueries.length, 1);
+  assert.equal(env.tabMessages.length, 2);
+});
+
 test("migration storage failure reports startup failure and preserves the old key", async (t) => {
   const env = await runtime(t, {
     local: { [STORAGE_KEYS.apiKey]: null },
@@ -206,6 +271,22 @@ test("migration storage failure reports startup failure and preserves the old ke
   assert.equal(env.state.local[STORAGE_KEYS.apiKey], null);
   assert.equal((await env.translate().done).error.code, "credential_storage_error");
   assert.equal(env.calls.length, 0);
+});
+
+test("invalid persisted model blocks configuration and translation before catalog access", async (t) => {
+  const env = await runtime(t, {
+    local: { [STORAGE_KEYS.modelCatalog]: undefined },
+    sync: {
+      [STORAGE_KEYS.targetLanguage]: "fr",
+      [STORAGE_KEYS.aiModel]: "models/not-allowed",
+    },
+  });
+  assert.equal(env.ready.aiModel, null);
+  assert.equal(env.ready.configured, false);
+  assert.equal(env.ready.configurationError.code, "invalid_model");
+  assert.equal((await env.translate().done).error.code, "invalid_model");
+  assert.equal(env.calls.length, 0);
+  assert.equal(env.state.session[STORAGE_KEYS.rateStarts], undefined);
 });
 
 test("rejected model refresh stays rejected across cache reads and worker restart until live recovery", async (t) => {
@@ -432,6 +513,121 @@ test("temporary catalog failures retain valid cache and provider delays remain s
   assert.equal(env.calls.length, 2);
 });
 
+for (const [status, code] of [[200, "invalid_response"], [401, "invalid_api_key"],
+  [403, "service_error"], [429, "quota_exceeded"]]) {
+  test(`oversized provider body keeps safe HTTP ${status} handling`, async (t) => {
+    const env = await runtime(t);
+    env.provider = async () => new Response("untrusted body", {
+      status, headers: { "Content-Length": String(MAX_RESPONSE_BYTES + 1), "Retry-After": "2" },
+    });
+    const result = await env.translate().done;
+    assert.equal(result.error.code, code);
+    if (status === 403) assert.equal(result.error.retryable, false);
+    if (status === 429) assert.equal(result.error.retryAfterMs, 2000);
+    assert.equal(JSON.stringify(result).includes("untrusted body"), false);
+    assert.equal(env.calls.length, 1);
+  });
+}
+
+for (const action of ["translate", "listModels", "withdraw"]) {
+  test(`a stalled provider body has correct ${action} cancellation`, { timeout: 2_000 }, async (t) => {
+    const env = await runtime(t, { local: action === "listModels" ? { [STORAGE_KEYS.modelCatalog]: undefined } : {} });
+    let reading = false, cancelled = false;
+    env.provider = async () => new Response(new ReadableStream({
+      pull() { reading = true; return new Promise(() => {}); },
+      cancel() { cancelled = true; return new Promise(() => {}); },
+    }));
+    const nativeTimeout = globalThis.setTimeout;
+    if (action !== "withdraw") globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+      callback, delay === LIMITS.requestTimeoutMs ? 20 : delay, ...args,
+    );
+    const port = action === "listModels" ? null : env.translate();
+    const pending = port?.done || env.message({ action: "listModels", forceRefresh: true });
+    await until(() => reading);
+    if (action === "withdraw") assert.equal((await env.message({ action: "setDataSharing", accepted: false })).ok, true);
+    const result = await pending;
+    assert.equal(result.error.code, action === "withdraw" ? "cancelled" : "timeout");
+    await until(() => cancelled);
+    if (port) assert.equal(port.posts.length, 1);
+    assert.equal(env.calls.length, 1);
+    assert.notEqual(env.state.session[STORAGE_KEYS.latestResult]?.status, "success");
+  });
+}
+
+test("model pages retain only bounded normalized fields with the last duplicate winning", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.modelCatalog]: undefined } });
+  env.provider = async (url) => {
+    const second = new URL(url).searchParams.get("pageToken") === "next";
+    const raw = { ...modelPayload.models[0], displayName: (second ? "b" : "a").repeat(300),
+      description: "d".repeat(2000), unusedProviderField: "private unused metadata" };
+    return json({ models: second ? [raw, { ...raw, name: "models/gemini-2.5-flash" }] : [raw],
+      ...(second ? {} : { nextPageToken: "next" }) });
+  };
+  const result = await env.message({ action: "listModels", forceRefresh: true });
+  assert.equal(result.ok, true);
+  assert.equal(result.models.length, 2);
+  assert.equal(env.calls.length, 2);
+  for (const model of result.models) {
+    assert.equal(model.displayName, "b".repeat(200));
+    assert.equal(model.description.length, 1000);
+    assert.equal(Object.hasOwn(model, "unusedProviderField"), false);
+    assert.equal(Object.hasOwn(model, "supportedGenerationMethods"), false);
+  }
+  assert.equal(JSON.stringify(env.state.local[STORAGE_KEYS.modelCatalog]).includes("private unused metadata"), false);
+});
+
+test("model pagination counts rejected entries toward its total limit", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.modelCatalog]: undefined } });
+  let page = 0;
+  env.provider = async () => json({
+    models: [modelPayload.models[0], ...Array.from({ length: 1000 }, () => ({ name: "unsupported" }))],
+    nextPageToken: String(++page),
+  });
+  assert.equal((await env.message({ action: "listModels", forceRefresh: true })).error.code, "invalid_response");
+  assert.equal(env.calls.length, 5);
+  assert.equal(env.state.local[STORAGE_KEYS.modelCatalog], undefined);
+});
+
+test("translation validates its envelope and captures its ID before stalled startup", async (t) => {
+  let releaseStartup;
+  let startupBlocked = false;
+  const env = await runtime(t, {
+    waitForReady: false,
+    beforeVaultRead: async () => {
+      if (startupBlocked) return;
+      startupBlocked = true;
+      await new Promise((resolve) => { releaseStartup = resolve; });
+    },
+  });
+  await until(() => startupBlocked);
+  const nativeTimeout = globalThis.setTimeout;
+  const invalid = env.translate({ requestId: "bad-id" });
+  const invalidResult = await Promise.race([
+    invalid.done,
+    new Promise((resolve) => nativeTimeout(() => resolve(null), 100)),
+  ]);
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 10 : delay, ...args,
+  );
+  const validId = "123e4567-e89b-42d3-a456-426614174999";
+  const valid = env.translate({ requestId: validId });
+  const timeout = await Promise.race([
+    valid.done,
+    new Promise((resolve) => nativeTimeout(() => resolve(null), 100)),
+  ]);
+  env.beforeVaultRead = null;
+  releaseStartup();
+  assert.equal(invalidResult?.error.code, "service_error");
+  assert.equal(timeout.requestId, validId);
+  assert.equal(timeout.error.code, "timeout");
+  assert.equal(valid.posts.length, 1);
+  assert.equal(env.calls.length, 0);
+  await until(async () => (await env.status()).ok === true);
+  await until(() => env.state.session[STORAGE_KEYS.latestResult]?.error?.code === "timeout");
+  assert.equal(valid.posts.length, 1);
+  assert.equal(env.calls.length, 0);
+});
+
 test("invalid sender, ID and selection fail before provider access or rate writes", async (t) => {
   const env = await runtime(t);
   assert.equal((await env.translate({}, { ...contentSender, id: "foreign" }).done).error.code, "unsupported_page");
@@ -440,6 +636,27 @@ test("invalid sender, ID and selection fail before provider access or rate write
   assert.equal((await env.translate({ targetLanguage: "unknown" }).done).error.code, "service_error");
   assert.equal(env.calls.length, 0);
   assert.equal(env.state.session[STORAGE_KEYS.rateStarts], undefined);
+});
+
+test("context menu handles an exact negative reply and rejected delivery", async (t) => {
+  const env = await runtime(t);
+  env.sendTabMessage = async (_tabId, message) => {
+    if (message.action === "contextMenuTranslate") return { accepted: false };
+    return undefined;
+  };
+  env.contextClick();
+  await until(() => env.state.session[STORAGE_KEYS.latestResult]?.error?.code === "no_selection");
+  assert.equal(env.tabMessages.find((args) => args[1].action === "contextMenuTranslate").length, 3);
+
+  env.sendTabMessage = async () => ({ accepted: true });
+  const previous = structuredClone(env.state.session[STORAGE_KEYS.latestResult]);
+  env.contextClick();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.deepEqual(env.state.session[STORAGE_KEYS.latestResult], previous);
+
+  env.sendTabMessage = async () => { throw new Error("Frame closed"); };
+  env.contextClick();
+  await until(() => env.state.session[STORAGE_KEYS.latestResult]?.error?.code === "frame_unavailable");
 });
 
 test("Ports enforce duplicate, per-tab and global limits and release cancellation slots", async (t) => {
@@ -491,8 +708,255 @@ test("storage reservation failure stops payment and timeout releases the slot", 
   env.provider = async (_url, init) => pendingFetch(init).promise;
   const result = await env.translate().done;
   assert.equal(result.error.code, "timeout");
+  await until(() => env.state.session[STORAGE_KEYS.activeRequestCount] === 0);
   assert.equal(env.state.session[STORAGE_KEYS.activeRequestCount], 0);
+  await until(() => env.state.session[STORAGE_KEYS.latestResult]?.error?.code === "timeout");
   assert.equal(env.state.session[STORAGE_KEYS.latestResult].error.code, "timeout");
+});
+
+test("deadline posts once while a credential read is stalled and prevents provider access", async (t) => {
+  const env = await runtime(t);
+  const nativeTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 10 : delay, ...args,
+  );
+  let releaseRead;
+  let readStarted = false;
+  env.beforeVaultRead = async () => {
+    env.beforeVaultRead = null;
+    readStarted = true;
+    await new Promise((resolve) => { releaseRead = resolve; });
+  };
+  const port = env.translate();
+  await until(() => readStarted);
+  const result = await Promise.race([
+    port.done,
+    new Promise((resolve) => nativeTimeout(() => resolve(null), 100)),
+  ]);
+  releaseRead();
+  assert.equal(result?.error.code, "timeout");
+  assert.equal(port.posts.length, 1);
+  assert.equal(env.calls.length, 0);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(env.calls.length, 0);
+});
+
+test("a late reservation read keeps the rate budget and releases its slot once", async (t) => {
+  const env = await runtime(t);
+  const nativeTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 10 : delay, ...args,
+  );
+  let releaseRead;
+  let readStarted = false;
+  env.beforeGet = async (area, keys) => {
+    if (area === "session" && keys === STORAGE_KEYS.rateStarts) {
+      env.beforeGet = null;
+      readStarted = true;
+      await new Promise((resolve) => { releaseRead = resolve; });
+    }
+  };
+  const writeStart = env.writes.length;
+  const port = env.translate();
+  await until(() => readStarted);
+  const result = await Promise.race([
+    port.done,
+    new Promise((resolve) => nativeTimeout(() => resolve(null), 100)),
+  ]);
+  releaseRead();
+  assert.equal(result?.error.code, "timeout");
+  await until(() => env.state.session[STORAGE_KEYS.activeRequestCount] === 0
+    && env.state.session[STORAGE_KEYS.rateStarts]?.length === 1);
+  const releaseWrites = env.writes.slice(writeStart).filter(({ area, values }) => area === "session"
+    && values[STORAGE_KEYS.activeRequestCount] === 0);
+  assert.equal(releaseWrites.length, 1);
+  assert.equal(port.posts.length, 1);
+  assert.equal(env.calls.length, 0);
+});
+
+test("a late reservation write keeps the rate budget and releases its slot once", async (t) => {
+  const env = await runtime(t);
+  const nativeTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 10 : delay, ...args,
+  );
+  let releaseWrite;
+  let writeStarted = false;
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.rateStarts]) {
+      env.beforeSet = null;
+      writeStarted = true;
+      await new Promise((resolve) => { releaseWrite = resolve; });
+    }
+  };
+  const writeStart = env.writes.length;
+  const port = env.translate();
+  await until(() => writeStarted);
+  const result = await Promise.race([
+    port.done,
+    new Promise((resolve) => nativeTimeout(() => resolve(null), 100)),
+  ]);
+  releaseWrite();
+  assert.equal(result?.error.code, "timeout");
+  await until(() => env.state.session[STORAGE_KEYS.activeRequestCount] === 0
+    && env.state.session[STORAGE_KEYS.rateStarts]?.length === 1);
+  const releaseWrites = env.writes.slice(writeStart).filter(({ area, values }) => area === "session"
+    && values[STORAGE_KEYS.activeRequestCount] === 0);
+  assert.equal(releaseWrites.length, 1);
+  assert.equal(port.posts.length, 1);
+  assert.equal(env.calls.length, 0);
+});
+
+test("valid success is delivered before provider status bookkeeping can stall", async (t) => {
+  const env = await runtime(t);
+  const nativeTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 20 : delay, ...args,
+  );
+  let releaseStatus;
+  env.beforeSet = async (area, values) => {
+    if (area === "local" && values[STORAGE_KEYS.apiKeyStatus]?.status === "checked") {
+      env.beforeSet = null;
+      await new Promise((resolve) => { releaseStatus = resolve; });
+    }
+  };
+  const port = env.translate();
+  await until(() => releaseStatus);
+  const result = await port.done;
+  await new Promise((resolve) => nativeTimeout(resolve, 30));
+  releaseStatus();
+  assert.equal(result.ok, true);
+  assert.equal(port.posts.length, 1);
+  await env.status();
+  assert.equal(env.state.session[STORAGE_KEYS.latestResult].status, "success");
+});
+
+test("success posts before latest-result storage finishes", async (t) => {
+  const env = await runtime(t);
+  let releaseWrite;
+  let writeStarted = false;
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.latestResult]?.status === "success") {
+      env.beforeSet = null;
+      writeStarted = true;
+      await new Promise((resolve) => { releaseWrite = resolve; });
+    }
+  };
+  const port = env.translate();
+  const result = await Promise.race([
+    port.done,
+    new Promise((resolve) => setTimeout(() => resolve(null), 100)),
+  ]);
+  await until(() => writeStarted);
+  releaseWrite();
+  assert.equal(result?.ok, true);
+  assert.equal(port.posts.length, 1);
+  await until(() => env.state.session[STORAGE_KEYS.latestResult]?.status === "success");
+  await until(async () => (await env.status()).activeRequestCount === 0);
+});
+
+test("success posts before the final active-count write finishes", async (t) => {
+  const env = await runtime(t);
+  let releaseWrite;
+  let writeStarted = false;
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.activeRequestCount] === 0) {
+      env.beforeSet = null;
+      writeStarted = true;
+      await new Promise((resolve) => { releaseWrite = resolve; });
+    }
+  };
+  const port = env.translate();
+  const result = await Promise.race([
+    port.done,
+    new Promise((resolve) => setTimeout(() => resolve(null), 100)),
+  ]);
+  await until(() => writeStarted);
+  const activeRequestCount = (await env.status()).activeRequestCount;
+  const storedActiveRequestCount = env.state.session[STORAGE_KEYS.activeRequestCount];
+  releaseWrite();
+  assert.equal(result?.ok, true);
+  assert.equal(activeRequestCount, 0);
+  assert.equal(storedActiveRequestCount, 1);
+  await until(() => env.state.session[STORAGE_KEYS.activeRequestCount] === 0);
+  assert.equal(port.posts.length, 1);
+});
+
+test("a stalled active-count write cannot block another paid request or restore an old count", async (t) => {
+  const env = await runtime(t);
+  let releaseCount;
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.activeRequestCount] === 0) {
+      env.beforeSet = null;
+      await new Promise((resolve) => { releaseCount = resolve; });
+    }
+  };
+  assert.equal((await env.translate().done).ok, true);
+  await until(() => releaseCount);
+  let provider;
+  env.provider = (_url, init) => {
+    provider = pendingFetch(init);
+    return provider.promise;
+  };
+  const next = env.translate({ text: "A different selection" });
+  await until(() => provider);
+  assert.equal((await env.status()).activeRequestCount, 1);
+  assert.equal(env.state.session[STORAGE_KEYS.rateStarts].length, 2);
+  releaseCount();
+  await until(() => env.state.session[STORAGE_KEYS.activeRequestCount] === 1);
+  provider.resolve(json(translationPayload));
+  assert.equal((await next.done).ok, true);
+  await until(() => env.state.session[STORAGE_KEYS.activeRequestCount] === 0);
+  assert.equal(next.posts.length, 1);
+});
+
+test("catalog persistence cannot start after its last waiter times out", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.modelCatalog]: undefined } });
+  const nativeTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 20 : delay, ...args,
+  );
+  let releaseRead;
+  env.beforeGet = async (area, keys) => {
+    if (area === "local" && keys === STORAGE_KEYS.apiKeyStatus) {
+      env.beforeGet = null;
+      await new Promise((resolve) => { releaseRead = resolve; });
+    }
+  };
+  const request = env.translate();
+  await until(() => releaseRead);
+  assert.equal((await request.done).error.code, "timeout");
+  const writeCount = env.writes.length;
+  releaseRead();
+  await env.status();
+  assert.equal(env.writes.slice(writeCount).some(({ values }) => Object.hasOwn(values, STORAGE_KEYS.modelCatalog)), false);
+  assert.equal(env.state.local[STORAGE_KEYS.modelCatalog], undefined);
+  assert.equal(env.calls.length, 1);
+  assert.equal(request.posts.length, 1);
+});
+
+test("late provider completion cannot replace timeout or hold a reservation", async (t) => {
+  const env = await runtime(t);
+  const nativeTimeout = globalThis.setTimeout;
+  globalThis.setTimeout = (callback, delay, ...args) => nativeTimeout(
+    callback, delay === LIMITS.requestTimeoutMs ? 10 : delay, ...args,
+  );
+  let resolveProvider;
+  env.provider = async () => new Promise((resolve) => { resolveProvider = resolve; });
+  const port = env.translate();
+  await until(() => resolveProvider);
+  const result = await Promise.race([
+    port.done,
+    new Promise((resolve) => nativeTimeout(() => resolve(null), 100)),
+  ]);
+  resolveProvider(json(translationPayload));
+  assert.equal(result.error.code, "timeout");
+  await until(async () => (await env.status()).activeRequestCount === 0);
+  assert.equal(env.state.session[STORAGE_KEYS.rateStarts].length, 1);
+  await until(() => env.state.session[STORAGE_KEYS.latestResult]?.error?.code === "timeout");
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(port.posts.length, 1);
+  assert.equal(env.state.session[STORAGE_KEYS.latestResult].status, "error");
 });
 
 test("failed active-count persistence is repaired after request completion", async (t) => {
@@ -688,12 +1152,12 @@ test("withdrawal cancels requests, rejects late results and caches, and keeps th
   await until(() => pending.length === 2);
   const withdrawn = await env.message({ action: "setDataSharing", accepted: false });
   assert.equal(withdrawn.ok, true);
-  assert.equal(withdrawn.dataSharingAccepted, false);
-  assert.equal(withdrawn.configured, false);
+  assert.equal(withdrawn.withdrawn, true);
+  assert.equal((await env.status()).configured, false);
   assert.ok(pending.every(({ init }) => init.signal.aborted));
   for (const request of pending) request.resolve(json(request.url.includes(":generateContent") ? translationPayload : modelPayload));
   assert.equal((await translation.done).error.code, "cancelled");
-  assert.equal((await modelsRequest).error.code, "agreement_required");
+  assert.equal((await modelsRequest).error.code, "cancelled");
   assert.deepEqual(env.state.local[STORAGE_KEYS.modelCatalog], originalCatalog);
   assert.deepEqual(env.vault, originalCredential);
   assert.notEqual(env.state.session[STORAGE_KEYS.latestResult]?.status, "success");
@@ -703,13 +1167,41 @@ test("withdrawal cancels requests, rejects late results and caches, and keeps th
   assert.equal((await env.reload()).dataSharingAccepted, false);
 });
 
+test("withdrawal before the final success checks prevents a late success", async (t) => {
+  const env = await runtime(t);
+  let providerReturned = false;
+  let agreementReadsAfterProvider = 0;
+  let finalCheckBlocked = false;
+  let releaseFinalCheck;
+  env.provider = async () => {
+    providerReturned = true;
+    return json(translationPayload);
+  };
+  env.beforeGet = async (area, keys) => {
+    if (area === "local" && keys === STORAGE_KEYS.dataSharingAgreement && providerReturned
+        && ++agreementReadsAfterProvider === 2) {
+      env.beforeGet = null;
+      finalCheckBlocked = true;
+      await new Promise((resolve) => { releaseFinalCheck = resolve; });
+    }
+  };
+  const translation = env.translate();
+  await until(() => finalCheckBlocked);
+  const withdrawn = await env.message({ action: "setDataSharing", accepted: false });
+  assert.equal(withdrawn.ok, true);
+  releaseFinalCheck();
+  assert.equal((await translation.done).error.code, "cancelled");
+  assert.equal(translation.posts.length, 1);
+  assert.notEqual(env.state.session[STORAGE_KEYS.latestResult]?.status, "success");
+});
+
 test("withdrawal between model pages prevents the next provider request", async (t) => {
   const env = await runtime(t, { local: { [STORAGE_KEYS.modelCatalog]: undefined } });
   env.provider = async () => {
     assert.equal((await env.message({ action: "setDataSharing", accepted: false })).ok, true);
     return json({ ...modelPayload, nextPageToken: "second-page" });
   };
-  assert.equal((await env.message({ action: "listModels", forceRefresh: true })).error.code, "agreement_required");
+  assert.equal((await env.message({ action: "listModels", forceRefresh: true })).error.code, "cancelled");
   assert.equal(env.calls.length, 1);
   assert.equal(env.state.local[STORAGE_KEYS.modelCatalog], undefined);
 });
@@ -736,13 +1228,13 @@ test("withdrawal stops requests before a pending credential read and skips an ol
   const withdrawal = env.message({ action: "setDataSharing", accepted: false });
   await new Promise((resolve) => setImmediate(resolve));
   assert.equal(request.init.signal.aborted, true);
-  assert.ok(env.state.local[STORAGE_KEYS.dataSharingAgreement], "Persistence is still waiting on the key operation");
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined, "Local withdrawal does not wait for a key operation");
   assert.equal((await env.translate({ text: "after withdrawal" }).done).error.code, "agreement_required");
   assert.equal(env.calls.length, 1);
   releaseRead();
   assert.equal((await save).error.code, "agreement_required");
   assert.equal((await acceptance).dataSharingAccepted, false);
-  assert.equal((await withdrawal).dataSharingAccepted, false);
+  assert.equal((await withdrawal).withdrawn, true);
   assert.equal((await translation.done).error.code, "cancelled");
   assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
   assert.equal(env.writes.some(({ values }) => Object.hasOwn(values, STORAGE_KEYS.dataSharingAgreement)), false);
@@ -777,7 +1269,7 @@ test("an older acceptance write and its change event cannot reopen a pending wit
   assert.equal(env.calls.length, 0);
   releaseWithdrawal();
   assert.equal((await acceptance).dataSharingAccepted, false);
-  assert.equal((await withdrawal).dataSharingAccepted, false);
+  assert.equal((await withdrawal).withdrawn, true);
   assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
   env.beforeSet = null;
   env.beforeRemove = null;
@@ -785,11 +1277,151 @@ test("an older acceptance write and its change event cannot reopen a pending wit
   assert.equal((await env.translate().done).ok, true);
 });
 
-test("failed withdrawal persistence stays blocked and reports failure until a retry removes the record", async (t) => {
+test("an older acceptance clear cannot erase a newer denial when later persistence fails", async (t) => {
+  const env = await runtime(t, { session: { [STORAGE_KEYS.dataSharingDenied]: true } });
+  let releaseClear;
+  let denialWrites = 0;
+  env.beforeRemove = async (area, key) => {
+    if (area === "session" && key === STORAGE_KEYS.dataSharingDenied) {
+      await new Promise((resolve) => { releaseClear = resolve; });
+    }
+    if (area === "local" && key === STORAGE_KEYS.dataSharingAgreement) throw new Error("Local removal failed");
+  };
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.dataSharingDenied] && ++denialWrites > 1) {
+      throw new Error("Repeated denial write failed");
+    }
+    if (area === "local" && values[STORAGE_KEYS.dataSharingAgreement]?.revokedAt) throw new Error("Local revocation failed");
+  };
+  const acceptance = env.message({ action: "setDataSharing", accepted: true });
+  await until(() => releaseClear);
+  const withdrawal = env.message({ action: "setDataSharing", accepted: false });
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+  releaseClear();
+  assert.equal((await withdrawal).ok, false);
+  await acceptance;
+  env.beforeRemove = null;
+  env.beforeSet = null;
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], true);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+  assert.equal(env.calls.length, 0);
+});
+
+test("an older withdrawal marker cannot survive a newer accepted intent", async (t) => {
+  const env = await runtime(t);
+  let releaseRead;
+  let readStarted = false;
+  env.beforeVaultRead = async () => {
+    env.beforeVaultRead = null;
+    readStarted = true;
+    await new Promise((resolve) => { releaseRead = resolve; });
+  };
+  const keyChange = env.setKey("replacement-test-key");
+  await until(() => readStarted);
+  const withdrawal = env.message({ action: "setDataSharing", accepted: false });
+  const acceptance = env.message({ action: "setDataSharing", accepted: true });
+  await until(() => env.state.session[STORAGE_KEYS.dataSharingDenied] === true);
+  releaseRead();
+  assert.equal((await keyChange).error.code, "agreement_required");
+  assert.equal((await withdrawal).withdrawn, false);
+  assert.equal((await acceptance).dataSharingAccepted, true);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], undefined);
+  assert.equal((await env.reload()).dataSharingAccepted, true);
+  assert.equal((await env.translate().done).ok, true);
+});
+
+test("local withdrawal survives restart while its session marker write is stalled", async (t) => {
+  const env = await runtime(t);
+  let releaseMarker;
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.dataSharingDenied]) {
+      await new Promise((resolve) => { releaseMarker = resolve; });
+    }
+  };
+  const withdrawal = env.message({ action: "setDataSharing", accepted: false });
+  await until(() => releaseMarker);
+  assert.equal((await withdrawal).withdrawn, true);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], undefined);
+  env.beforeSet = null;
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+  releaseMarker();
+  await until(() => env.state.session[STORAGE_KEYS.dataSharingDenied] === true);
+  delete env.state.session[STORAGE_KEYS.dataSharingDenied];
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+});
+
+test("local withdrawal stays independent of an older stalled acceptance clear", async (t) => {
+  const env = await runtime(t, { session: { [STORAGE_KEYS.dataSharingDenied]: true } });
+  let releaseClear;
+  env.beforeRemove = async (area, key) => {
+    if (area === "session" && key === STORAGE_KEYS.dataSharingDenied) {
+      delete env.state.session[STORAGE_KEYS.dataSharingDenied];
+      await new Promise((resolve) => { releaseClear = resolve; });
+    }
+  };
+  const acceptance = env.message({ action: "setDataSharing", accepted: true });
+  await until(() => releaseClear);
+  const withdrawal = env.message({ action: "setDataSharing", accepted: false });
+  const acknowledgement = await Promise.race([
+    withdrawal,
+    new Promise((resolve) => setTimeout(() => resolve(null), 100)),
+  ]);
+  assert.deepEqual(acknowledgement, { ok: true, withdrawn: true });
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], undefined);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+  env.beforeRemove = null;
+  releaseClear();
+  assert.equal((await acceptance).dataSharingAccepted, false);
+  assert.equal((await withdrawal).withdrawn, true);
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+});
+
+test("withdrawal removes the local agreement even when session marker writes fail", async (t) => {
+  const env = await runtime(t);
+  env.beforeSet = async (area, values) => {
+    if (area === "session" && values[STORAGE_KEYS.dataSharingDenied] === true) {
+      throw new Error("Cannot save session denial");
+    }
+  };
+  const withdrawn = await env.message({ action: "setDataSharing", accepted: false });
+  assert.equal(withdrawn.ok, true);
+  assert.equal(withdrawn.withdrawn, true);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], undefined);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+});
+
+test("failed agreement removal falls back to an invalid local revocation", async (t) => {
+  const env = await runtime(t);
+  env.beforeRemove = async (area, keys) => {
+    if (area === "local" && keys === STORAGE_KEYS.dataSharingAgreement) {
+      throw new Error("Cannot remove agreement");
+    }
+  };
+  const withdrawn = await env.message({ action: "setDataSharing", accepted: false });
+  assert.equal(withdrawn.ok, true);
+  assert.equal(withdrawn.withdrawn, true);
+  assert.equal(Number.isFinite(env.state.local[STORAGE_KEYS.dataSharingAgreement].revokedAt), true);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement].acceptedAt, undefined);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], true);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+});
+
+test("failed local withdrawal persistence stays denied across a worker restart", async (t) => {
   const env = await runtime(t);
   const originalAgreement = { ...env.state.local[STORAGE_KEYS.dataSharingAgreement] };
   env.beforeRemove = async (area, keys) => {
     if (area === "local" && keys === STORAGE_KEYS.dataSharingAgreement) throw new Error("Cannot remove agreement");
+  };
+  env.beforeSet = async (area, values) => {
+    if (area === "local" && values[STORAGE_KEYS.dataSharingAgreement]?.revokedAt) {
+      throw new Error("Cannot save revocation");
+    }
   };
   const result = await env.message({ action: "setDataSharing", accepted: false });
   assert.equal(result.ok, false);
@@ -797,14 +1429,40 @@ test("failed withdrawal persistence stays blocked and reports failure until a re
   assert.equal(pending.dataSharingAccepted, false);
   assert.equal(pending.dataSharingWithdrawalPending, true);
   assert.deepEqual(env.state.local[STORAGE_KEYS.dataSharingAgreement], originalAgreement);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], true);
   assert.equal((await env.translate().done).error.code, "agreement_required");
   assert.equal(env.calls.length, 0);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+  assert.equal((await env.settings()).dataSharingWithdrawalPending, true);
   env.beforeRemove = null;
+  env.beforeSet = null;
   const retried = await env.message({ action: "setDataSharing", accepted: false });
   assert.equal(retried.ok, true);
-  assert.equal(retried.dataSharingWithdrawalPending, false);
+  assert.equal(retried.withdrawn, true);
+  assert.equal((await env.settings()).dataSharingWithdrawalPending, false);
   assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
   assert.equal((await env.reload()).dataSharingAccepted, false);
+});
+
+test("acceptance stays closed when clearing the session denial marker fails", async (t) => {
+  const env = await runtime(t);
+  assert.equal((await env.message({ action: "setDataSharing", accepted: false })).ok, true);
+  env.beforeRemove = async (area, keys) => {
+    if (area === "session" && keys === STORAGE_KEYS.dataSharingDenied) {
+      throw new Error("Cannot clear denial marker");
+    }
+  };
+  const failed = await env.message({ action: "setDataSharing", accepted: true });
+  assert.equal(failed.ok, false);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], true);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement].version, DATA_SHARING_VERSION);
+  assert.equal((await env.status()).dataSharingAccepted, false);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+  env.beforeRemove = null;
+  const accepted = await env.message({ action: "setDataSharing", accepted: true });
+  assert.equal(accepted.ok, true);
+  assert.equal(accepted.dataSharingAccepted, true);
+  assert.equal(env.state.session[STORAGE_KEYS.dataSharingDenied], undefined);
 });
 
 test("stale saves and removals stay rejected after remove, re-add and worker restart", async (t) => {

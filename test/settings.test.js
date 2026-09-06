@@ -29,14 +29,16 @@ class Element {
   dispatch(name, values = {}) { return this.listeners.get(name)?.({ preventDefault() {}, ...values }); }
 }
 
-function setup({ apiKey = null, accepted = true, sync = {}, failRead, runtimeReady, runtimeState, models, failWrite, afterRead, beforeKeyWrite } = {}) {
+function setup({ apiKey = null, accepted = true, sync = {}, session = {}, failRead, runtimeReady, runtimeState, models, failWrite, afterRead, beforeKeyWrite } = {}) {
   const elements = new Map();
   const writes = [];
   const reads = [];
   const messages = [];
   const changeListeners = [];
   const windowListeners = new Map();
-  const data = { local: {}, sync: { ...sync } };
+  const data = { local: {}, sync: { ...sync }, session: { ...session } };
+  const failures = { read: failRead, write: failWrite };
+  const dataSharingDeniedKey = shared.STORAGE_KEYS.dataSharingDenied || "dataSharingDenied";
   const credentials = { apiKey, revision: apiKey ? "revision-1" : null, accepted };
   let revision = 1;
   let reloads = 0;
@@ -54,15 +56,23 @@ function setup({ apiKey = null, accepted = true, sync = {}, failRead, runtimeRea
     credentials.revision = `revision-${++revision}`;
     if (notify) emit("local", { credentialVersion: credentials.revision });
   };
-  const state = () => ({ ok: true, apiKey: credentials.apiKey, credentialRevision: credentials.revision,
-    dataSharingAccepted: credentials.accepted, apiKeyStatus: credentials.apiKey ? "saved" : "missing",
-    configured: Boolean(credentials.apiKey && credentials.accepted && shared.isSupportedLanguage(data.sync.targetLanguage)), ...runtimeState });
+  const state = () => {
+    const dataSharingDenied = data.session[dataSharingDeniedKey] === true;
+    const configuredModel = !Object.hasOwn(data.sync, shared.STORAGE_KEYS.aiModel)
+      || shared.isValidModelId(data.sync[shared.STORAGE_KEYS.aiModel]);
+    return { ok: true, apiKey: credentials.apiKey, credentialRevision: credentials.revision,
+      dataSharingAccepted: credentials.accepted && !dataSharingDenied,
+      dataSharingWithdrawalPending: dataSharingDenied && credentials.accepted,
+      apiKeyStatus: credentials.apiKey ? "saved" : "missing",
+      configured: Boolean(credentials.apiKey && credentials.accepted && !dataSharingDenied
+        && configuredModel && shared.isSupportedLanguage(data.sync.targetLanguage)), ...runtimeState };
+  };
   const storageArea = (area) => ({
     async get(keys) {
       assert.equal(area, "sync", "Settings must not read plaintext local credentials");
       assert.ok(!keys.includes(shared.STORAGE_KEYS.apiKey));
       reads.push(area);
-      if (failRead === area) throw new Error("Fake read failure");
+      if (failures.read === area) throw new Error("Fake read failure");
       const snapshot = { ...data[area] };
       if (afterRead) await afterRead(area);
       return snapshot;
@@ -70,7 +80,7 @@ function setup({ apiKey = null, accepted = true, sync = {}, failRead, runtimeRea
     async set(values) {
       assert.equal(area, "sync", "Settings must not write plaintext local credentials");
       assert.ok(!Object.hasOwn(values, shared.STORAGE_KEYS.apiKey));
-      if (failWrite === area) throw new Error("Fake write failure");
+      if (failures.write === area) throw new Error("Fake write failure");
       writes.push([area, { ...values }]);
       emit(area, values);
     },
@@ -88,32 +98,37 @@ function setup({ apiKey = null, accepted = true, sync = {}, failRead, runtimeRea
       addEventListener() {},
     },
     chrome: {
-      storage: { local: storageArea("local"), sync: storageArea("sync"), onChanged: { addListener: (listener) => changeListeners.push(listener) } },
+      storage: { local: storageArea("local"), sync: storageArea("sync"), session: storageArea("session"), onChanged: { addListener: (listener) => changeListeners.push(listener) } },
       runtime: {
         async sendMessage(message) {
           messages.push(message);
           if (message.action === "getSettingsState" || message.action === "getRuntimeState") {
             if (runtimeReady) await runtimeReady;
-            if (failRead === "credential") throw new Error("Fake credential read failure");
+            if (failures.read === "credential") throw new Error("Fake credential read failure");
             return state();
           }
           if (message.action === "setApiKey") {
             if (beforeKeyWrite) await beforeKeyWrite(credentials);
             if (message.expectedRevision !== credentials.revision) return { ok: false, error: { code: "credential_conflict" } };
-            if (failWrite === "credential") throw new Error("Fake credential write failure");
+            if (failures.write === "credential") throw new Error("Fake credential write failure");
             if (message.apiKey && !credentials.accepted) return { ok: false, error: { code: "agreement_required" } };
             writes.push(["credential", { apiKey: message.apiKey }]);
             replaceCredential(message.apiKey);
             return state();
           }
           if (message.action === "setDataSharing") {
+            if (!message.accepted && failures.write === "agreement") {
+              emit("session", { [dataSharingDeniedKey]: true });
+              throw new Error("Fake agreement write failure");
+            }
             credentials.accepted = message.accepted;
             writes.push(["agreement", { accepted: message.accepted }]);
             emit("local", { dataSharingAgreement: message.accepted ? { version: 1 } : undefined });
-            return state();
+            emit("session", { [dataSharingDeniedKey]: undefined });
+            return message.accepted ? state() : { ok: true, withdrawn: true };
           }
           if (message.action === "resetDamagedKey") {
-            if (failWrite === "credential") return { ok: false, error: { code: "credential_storage_error", message: "Saved key cannot be opened." } };
+            if (failures.write === "credential") return { ok: false, error: { code: "credential_storage_error", message: "Saved key cannot be opened." } };
             writes.push(["credential", { apiKey: null }]);
             replaceCredential(null);
             return { ok: true, apiKey: null, credentialRevision: credentials.revision, dataSharingAccepted: credentials.accepted };
@@ -127,7 +142,7 @@ function setup({ apiKey = null, accepted = true, sync = {}, failRead, runtimeRea
     },
   });
   vm.runInContext(source, context);
-  return { context, element, data, credentials, replaceCredential, emit, writes, reads, messages, windowListeners, get reloads() { return reloads; }, ready: context.initialization };
+  return { context, element, data, credentials, failures, replaceCredential, emit, writes, reads, messages, windowListeners, get reloads() { return reloads; }, ready: context.initialization };
 }
 
 async function flush() { await new Promise((resolve) => setImmediate(resolve)); }
@@ -167,6 +182,30 @@ test("Settings never writes after either initial read fails", async () => {
   }
 });
 
+test("A current focus read failure locks Settings and keeps the saved credential and draft", async () => {
+  const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "de" } });
+  await page.ready;
+  page.element("apiKey").value = "unsaved-draft-fake-key";
+  page.element("apiKey").dispatch("input");
+  page.failures.read = "credential";
+  page.windowListeners.get("focus")();
+  await flush();
+
+  const state = vm.runInContext("({ initialized, storedApiKey, credentialRevision })", page.context);
+  assert.equal(state.initialized, false);
+  assert.equal(state.storedApiKey, "saved-fake-key");
+  assert.equal(state.credentialRevision, "revision-1");
+  assert.equal(page.element("apiKey").value, "unsaved-draft-fake-key");
+  assert.equal(page.element("apiKey").disabled, true);
+  assert.equal(page.element("saveButton").disabled, true);
+  assert.equal(page.element("removeKey").disabled, true);
+  assert.equal(page.element("reloadSettings").hidden, false);
+  assert.match(page.element("saveStatus").textContent, /Saving is disabled/);
+  await submit(page);
+  await page.element("removeKey").dispatch("click");
+  assert.deepEqual(page.writes, []);
+});
+
 test("An invalid saved language requires a real choice instead of a silent default", async () => {
   const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "unknown-language" } });
   await page.ready;
@@ -176,6 +215,56 @@ test("An invalid saved language requires a real choice instead of a silent defau
   await submit(page);
   assert.equal(page.data.sync.targetLanguage, "uk");
   assert.equal(page.element("setupGuide").hidden, true);
+});
+
+test("A malformed saved model stays unselected when no catalog is available", async () => {
+  const page = setup({
+    apiKey: "saved-fake-key",
+    accepted: false,
+    sync: { targetLanguage: "de", aiModel: "invalid model id" },
+  });
+  await page.ready;
+  assert.equal(page.element("aiModel").value, "");
+  assert.equal(page.element("aiModel").options.length, 0);
+  assert.equal(page.data.sync.aiModel, "invalid model id");
+  assert.equal(page.element("saveButton").disabled, true);
+  assert.deepEqual(page.writes, []);
+});
+
+test("A malformed saved model needs an explicit recovery after the catalog loads", async () => {
+  const page = setup({
+    apiKey: "saved-fake-key",
+    sync: { targetLanguage: "de", aiModel: "invalid model id" },
+    models: () => ({ ok: true, models: [{ id: shared.DEFAULTS.aiModel }, { id: "other-model" }] }),
+  });
+  await page.ready;
+  assert.equal(page.element("aiModel").value, "");
+  assert.deepEqual(page.element("aiModel").options.map((option) => option.value), [shared.DEFAULTS.aiModel, "other-model"]);
+  assert.equal(page.data.sync.aiModel, "invalid model id");
+  assert.deepEqual(page.writes, []);
+  change(page, "targetLanguage", "fr");
+  await submit(page);
+  assert.deepEqual(page.writes, []);
+  assert.equal(page.data.sync.targetLanguage, "de");
+  change(page, "aiModel", "other-model");
+  await submit(page);
+  assert.deepEqual(page.writes, [["sync", { targetLanguage: "fr", aiModel: "other-model" }]]);
+});
+
+test("An incoming malformed model remains unselected until a valid choice is saved", async () => {
+  const page = setup({
+    apiKey: "saved-fake-key",
+    sync: { targetLanguage: "de", aiModel: shared.DEFAULTS.aiModel },
+    models: () => ({ ok: true, models: [{ id: shared.DEFAULTS.aiModel }, { id: "other-model" }] }),
+  });
+  await page.ready;
+  page.emit("sync", { aiModel: "invalid model id" });
+  assert.equal(page.element("aiModel").value, "");
+  assert.equal(page.data.sync.aiModel, "invalid model id");
+  assert.equal(page.element("saveButton").disabled, true);
+  change(page, "aiModel", "other-model");
+  await submit(page);
+  assert.deepEqual(page.writes, [["sync", { aiModel: "other-model" }]]);
 });
 
 test("Settings waits for runtime migration before storage reads", async () => {
@@ -747,37 +836,39 @@ test("A dirty key keeps Show usable and lets Finish setup handle its own save", 
   assert.equal(page.messages.filter((message) => message.action === "setApiKey").length, 1);
 });
 
-test("A failed withdrawal keeps an explicit retry even when runtime state is already denied", async () => {
+test("A failed local withdrawal propagates through session state and a new acceptance clears it", async () => {
   const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "de" } });
   await page.ready;
-  const send = page.context.chrome.runtime.sendMessage;
-  let failWithdrawal = true;
-  page.context.chrome.runtime.sendMessage = async (message) => {
-    if (message.action === "setDataSharing" && !message.accepted && failWithdrawal) {
-      page.credentials.accepted = false;
-      return { ok: false, error: { code: "service_error", message: "Agreement removal failed." } };
-    }
-    return send(message);
-  };
+  page.failures.write = "agreement";
   await page.element("withdrawDataSharing").dispatch("click");
-  assert.equal(page.credentials.accepted, false);
+  assert.equal(page.credentials.accepted, true);
+  assert.equal(page.data.session[shared.STORAGE_KEYS.dataSharingDenied], true);
   assert.equal(page.element("withdrawDataSharing").hidden, false);
   assert.equal(page.element("withdrawDataSharing").disabled, false);
   assert.equal(page.element("withdrawDataSharing").textContent, "Retry withdrawal");
   assert.equal(page.element("agreeDataSharing").hidden, true);
   assert.match(page.element("agreementStatus").textContent, /not confirmed/);
+  assert.deepEqual(page.writes, []);
+  page.credentials.accepted = true;
+  page.emit("local", { dataSharingAgreement: { version: 1 } });
+  page.emit("session", { [shared.STORAGE_KEYS.dataSharingDenied]: undefined });
+  await flush();
+  assert.equal(page.element("withdrawDataSharing").hidden, false);
+  assert.equal(page.element("agreeDataSharing").hidden, true);
+  assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
+  assert.equal(page.element("apiKey").disabled, false);
+});
+
+test("A focus refresh restores a missed session withdrawal failure", async () => {
+  const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "de" } });
+  await page.ready;
+  page.data.session[shared.STORAGE_KEYS.dataSharingDenied] = true;
   page.windowListeners.get("focus")();
   await flush();
   assert.equal(page.element("withdrawDataSharing").hidden, false);
+  assert.equal(page.element("withdrawDataSharing").textContent, "Retry withdrawal");
+  assert.equal(page.element("agreeDataSharing").hidden, true);
   assert.match(page.element("agreementStatus").textContent, /not confirmed/);
-  failWithdrawal = false;
-  await page.element("withdrawDataSharing").dispatch("click");
-  await flush();
-  assert.equal(page.element("withdrawDataSharing").hidden, true);
-  assert.equal(page.element("agreeDataSharing").hidden, false);
-  assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
-  assert.deepEqual(page.writes, [["agreement", { accepted: false }]]);
-  assert.equal(page.messages.filter((message) => message.action === "listModels").length, 1);
 });
 
 test("Reloaded Settings retains withdrawal retry when the background reports unfinished persistence", async () => {
@@ -795,4 +886,255 @@ test("Reloaded Settings retains withdrawal retry when the background reports unf
   await flush();
   assert.equal(page.element("withdrawDataSharing").hidden, true);
   assert.equal(page.element("agreeDataSharing").hidden, false);
+});
+
+test("A narrow withdrawal acknowledgement preserves credentials and drafts while its full refresh stalls", async () => {
+  for (const draft of ["saved-fake-key", "unsaved-draft-fake-key"]) {
+    const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "de" } });
+    await page.ready;
+    change(page, "targetLanguage", "fr");
+    page.element("apiKey").value = draft;
+    page.element("apiKey").dispatch("input");
+    const send = page.context.chrome.runtime.sendMessage;
+    let rejectRead;
+    let fullReads = 0;
+    const pendingRead = new Promise((_, reject) => { rejectRead = reject; });
+    page.context.chrome.runtime.sendMessage = (message) => {
+      if (message.action === "getSettingsState") {
+        fullReads += 1;
+        return pendingRead;
+      }
+      return send(message);
+    };
+    let acknowledged = false;
+    const withdrawal = page.element("withdrawDataSharing").dispatch("click").then(() => { acknowledged = true; });
+    try {
+      await flush();
+      assert.equal(acknowledged, true, "Withdrawal must not await the full credential read");
+      assert.equal(fullReads, 1, "Own storage events must share the optional refresh");
+      const state = vm.runInContext("({ storedApiKey, credentialRevision, savingAgreement, initialized })", page.context);
+      assert.equal(state.storedApiKey, "saved-fake-key");
+      assert.equal(state.credentialRevision, "revision-1");
+      assert.equal(state.savingAgreement, false);
+      assert.equal(state.initialized, true);
+      assert.equal(page.element("apiKey").value, draft);
+      assert.equal(page.element("targetLanguage").value, "fr");
+      assert.equal(page.element("withdrawDataSharing").hidden, true);
+      assert.equal(page.element("agreeDataSharing").hidden, false);
+      assert.equal(page.element("agreeDataSharing").disabled, false);
+      assert.equal(page.element("apiKey").disabled, true);
+      assert.equal(page.element("refreshModels").disabled, true);
+      assert.equal(page.element("removeKey").hidden, false);
+      assert.equal(page.element("removeKey").disabled, false);
+      assert.equal(page.element("targetLanguage").disabled, false);
+      assert.equal(page.element("saveButton").disabled, false);
+
+      rejectRead(new Error("Older credential operation timed out"));
+      await flush();
+      // A delayed denial-marker event must also remain a best-effort refresh.
+      page.emit("session", { [shared.STORAGE_KEYS.dataSharingDenied]: true });
+      await flush();
+      assert.equal(vm.runInContext("initialized", page.context), true);
+      assert.equal(page.element("reloadSettings").hidden, true);
+      assert.equal(page.element("apiKey").value, draft);
+      assert.equal(page.element("targetLanguage").value, "fr");
+      assert.equal(page.element("removeKey").disabled, false);
+      assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
+      assert.deepEqual(page.writes, [["agreement", { accepted: false }]]);
+    } finally {
+      rejectRead(new Error("Finish test"));
+      await withdrawal;
+      await flush();
+    }
+  }
+});
+
+test("An obsolete focus read rejection cannot undo confirmed withdrawal and a newer full refresh", async () => {
+  const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "de" } });
+  await page.ready;
+  change(page, "targetLanguage", "fr");
+  page.element("apiKey").value = "unsaved-draft-fake-key";
+  page.element("apiKey").dispatch("input");
+  const send = page.context.chrome.runtime.sendMessage;
+  let rejectOldRead;
+  const oldRead = new Promise((_, reject) => { rejectOldRead = reject; });
+  let fullReads = 0;
+  let completedFullReads = 0;
+  page.context.chrome.runtime.sendMessage = async (message) => {
+    if (message.action !== "getSettingsState") return send(message);
+    fullReads += 1;
+    if (fullReads === 1) return oldRead;
+    const response = await send(message);
+    completedFullReads += 1;
+    return response;
+  };
+  try {
+    page.windowListeners.get("focus")();
+    await flush();
+    assert.equal(fullReads, 1);
+    assert.equal(completedFullReads, 0, "The older focus read is still pending");
+
+    await page.element("withdrawDataSharing").dispatch("click");
+    await flush();
+    assert.equal(fullReads, 2, "Withdrawal starts a newer optional full refresh");
+    assert.equal(completedFullReads, 1, "The newer full refresh succeeds before the old read rejects");
+    assert.equal(page.credentials.accepted, false);
+
+    rejectOldRead(new Error("Obsolete focus read failed"));
+    await flush();
+    const state = vm.runInContext("({ initialized, storedApiKey, credentialRevision, savingAgreement, dataSharingAccepted, withdrawalFailed })", page.context);
+    assert.equal(state.initialized, true);
+    assert.equal(state.storedApiKey, "saved-fake-key");
+    assert.equal(state.credentialRevision, "revision-1");
+    assert.equal(state.savingAgreement, false);
+    assert.equal(state.dataSharingAccepted, false);
+    assert.equal(state.withdrawalFailed, false);
+    assert.equal(page.element("apiKey").value, "unsaved-draft-fake-key");
+    assert.equal(page.element("targetLanguage").value, "fr");
+    assert.equal(page.element("removeKey").hidden, false);
+    assert.equal(page.element("removeKey").disabled, false);
+    assert.equal(page.element("reloadSettings").hidden, true);
+    assert.equal(page.element("saveButton").disabled, false);
+    assert.equal(page.element("apiKey").disabled, true);
+    assert.equal(page.element("refreshModels").disabled, true);
+    assert.equal(page.element("withdrawDataSharing").hidden, true);
+    assert.equal(page.element("agreeDataSharing").disabled, false);
+    assert.doesNotMatch(page.element("saveStatus").textContent, /Saving is disabled/);
+    assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
+    assert.deepEqual(page.writes, [["agreement", { accepted: false }]]);
+  } finally {
+    rejectOldRead(new Error("Finish test"));
+    await flush();
+  }
+});
+
+test("A superseded withdrawal stays closed until a later full state confirms the newer acceptance", async () => {
+  const page = setup({ apiKey: "saved-fake-key", sync: { targetLanguage: "de" } });
+  await page.ready;
+  const send = page.context.chrome.runtime.sendMessage;
+  let releaseRead;
+  const pendingRead = new Promise((resolve) => { releaseRead = resolve; });
+  page.context.chrome.runtime.sendMessage = (message) => {
+    if (message.action === "setDataSharing" && !message.accepted) return Promise.resolve({ ok: true, withdrawn: false });
+    if (message.action === "getSettingsState") return pendingRead;
+    return send(message);
+  };
+  let acknowledged = false;
+  const withdrawal = page.element("withdrawDataSharing").dispatch("click").then(() => { acknowledged = true; });
+  try {
+    await flush();
+    assert.equal(acknowledged, true);
+    assert.equal(vm.runInContext("savingAgreement", page.context), false);
+    assert.equal(page.element("apiKey").value, "saved-fake-key");
+    assert.equal(page.element("apiKey").disabled, true);
+    assert.equal(page.element("refreshModels").disabled, true);
+    assert.equal(page.element("withdrawDataSharing").disabled, false);
+    assert.match(page.element("agreementStatus").textContent, /not confirmed/);
+    assert.equal(page.messages.filter((message) => message.action === "listModels").length, 1);
+
+    releaseRead(await send({ action: "getSettingsState" }));
+    await flush();
+    assert.equal(page.element("apiKey").disabled, false);
+    assert.equal(page.element("agreeDataSharing").hidden, true);
+    assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
+    assert.equal(vm.runInContext("credentialRevision", page.context), "revision-1");
+  } finally {
+    releaseRead(await send({ action: "getSettingsState" }));
+    await withdrawal;
+    await flush();
+  }
+});
+
+test("A failed withdrawal shows Retry promptly and a confirmed retry clears it without a full read", async () => {
+  const page = setup({ apiKey: "saved-fake-key", failWrite: "agreement" });
+  await page.ready;
+  const send = page.context.chrome.runtime.sendMessage;
+  let rejectRead;
+  const pendingRead = new Promise((_, reject) => { rejectRead = reject; });
+  page.context.chrome.runtime.sendMessage = (message) => message.action === "getSettingsState" ? pendingRead : send(message);
+  let acknowledged = false;
+  const withdrawal = page.element("withdrawDataSharing").dispatch("click").then(() => { acknowledged = true; });
+  try {
+    await flush();
+    assert.equal(acknowledged, true, "The error must not await reconciliation");
+    assert.equal(vm.runInContext("savingAgreement", page.context), false);
+    assert.equal(page.element("withdrawDataSharing").hidden, false);
+    assert.equal(page.element("withdrawDataSharing").disabled, false);
+    assert.match(page.element("agreementStatus").textContent, /not confirmed/);
+
+    page.failures.write = null;
+    await page.element("withdrawDataSharing").dispatch("click");
+    assert.equal(page.element("withdrawDataSharing").hidden, true);
+    assert.equal(page.element("agreeDataSharing").disabled, false);
+    assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
+    rejectRead(new Error("Full read unavailable"));
+    await flush();
+    assert.equal(vm.runInContext("initialized", page.context), true);
+    assert.equal(page.element("apiKey").value, "saved-fake-key");
+    assert.equal(page.element("reloadSettings").hidden, true);
+  } finally {
+    rejectRead(new Error("Finish test"));
+    await withdrawal;
+    await flush();
+  }
+});
+
+test("Withdrawal's deferred refresh stays optional after an older key save finishes", async () => {
+  let releaseSave;
+  const pendingSave = new Promise((resolve) => { releaseSave = resolve; });
+  const page = setup({ apiKey: "saved-fake-key", beforeKeyWrite: () => pendingSave });
+  await page.ready;
+  const saving = change(page, "apiKey", "draft-fake-key");
+  try {
+    await flush();
+    await page.element("withdrawDataSharing").dispatch("click");
+    assert.equal(vm.runInContext("savingAgreement", page.context), false);
+    assert.equal(page.element("agreeDataSharing").hidden, false);
+    page.failures.read = "credential";
+    releaseSave();
+    await saving;
+    await flush();
+    assert.equal(vm.runInContext("initialized", page.context), true);
+    assert.equal(page.element("reloadSettings").hidden, true);
+    assert.equal(page.element("apiKey").value, "draft-fake-key");
+    assert.equal(page.element("removeKey").disabled, false);
+    assert.equal(page.element("agreeDataSharing").disabled, false);
+    assert.doesNotMatch(page.element("agreementStatus").textContent, /not confirmed/);
+  } finally {
+    releaseSave();
+    await saving;
+  }
+});
+
+test("A late key-save success cannot clear a newer withdrawal failure while reconciliation is unavailable", async () => {
+  const page = setup({ apiKey: "saved-fake-key", failWrite: "agreement" });
+  await page.ready;
+  let releaseSave;
+  const pendingReply = new Promise((resolve) => { releaseSave = resolve; });
+  const send = page.context.chrome.runtime.sendMessage;
+  page.context.chrome.runtime.sendMessage = async (message) => {
+    const response = await send(message);
+    if (message.action === "setApiKey") await pendingReply;
+    return response;
+  };
+  const saving = change(page, "apiKey", "replacement-fake-key");
+  try {
+    await flush();
+    await page.element("withdrawDataSharing").dispatch("click");
+    assert.match(page.element("agreementStatus").textContent, /not confirmed/);
+    page.failures.read = "credential";
+    releaseSave();
+    await saving;
+    await flush();
+    assert.equal(vm.runInContext("initialized", page.context), true);
+    assert.equal(page.element("apiKey").value, "replacement-fake-key");
+    assert.equal(page.element("apiKey").disabled, true);
+    assert.equal(page.element("refreshModels").disabled, true);
+    assert.equal(page.element("withdrawDataSharing").hidden, false);
+    assert.equal(page.element("withdrawDataSharing").disabled, false);
+    assert.match(page.element("agreementStatus").textContent, /not confirmed/);
+  } finally {
+    releaseSave();
+    await saving;
+  }
 });

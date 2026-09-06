@@ -8,6 +8,7 @@ The repository is already public: [source and project guide](https://github.com/
 
 | Artifact | Use |
 | --- | --- |
+| [Production audit](../PRODUCTION_AUDIT_2026-09-06.md) | Version 1.5.1 findings, corrections, reviewer decisions and separate submission gates. |
 | [I18N.md](../I18N.md) | All 55 packaged interface locales, language defaults and the Chrome i18n guide review. |
 | [LISTING.md](LISTING.md) | English description, category, homepage, support and privacy URLs, and reviewer instructions. |
 | [assets](assets/) | Three screenshots, required small promo tile, optional marquee, and separate Store icon. |

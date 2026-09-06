@@ -6,85 +6,27 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as delay } from "node:timers/promises";
 import { RECOMMENDED_MODEL } from "../shared.js";
-import { waitForRuntimeState } from "./browser-runtime-state.mjs";
+import { findExtensionWorker, waitForRuntimeState } from "./browser-runtime-state.mjs";
 import { SUPPORTED_LOCALES } from "./locales.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const extension = process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist", import.meta.url));
-const locales = (process.env.I18N_TEST_LOCALES || "en,de,ar,ja,uk,zh_CN,ur").split(",");
+const locales = (process.env.I18N_TEST_LOCALES || "en,en_AU,de,ar,ja,nb,uk,zh_CN,ur").split(",");
 
-async function findExtensionWorker(context, locale) {
-  const matches = (worker) => worker.url().startsWith("chrome-extension://") && worker.url().endsWith("/background.js");
-  const existing = context.serviceWorkers().find(matches);
-  if (existing) return existing;
-
-  // CDP can attach after a worker has stopped. A registered version remains
-  // discoverable even when Playwright has no running worker to report.
-  const inspection = await context.newPage();
-  const cdp = await context.newCDPSession(inspection);
-  let timer;
-  let settled = false;
-  let wakeStarted = false;
-  let latestVersion;
-  const startupErrors = [];
-  let onWorker;
-  let onVersions;
-  const onError = ({ errorMessage }) => startupErrors.push(errorMessage);
-  const ready = new Promise((resolve, reject) => {
-    const fail = (error) => {
-      if (settled) return;
-      settled = true;
-      reject(new Error(`${locale}: extension worker startup failed (${latestVersion
-        ? `${latestVersion.status}/${latestVersion.runningStatus}` : "no registered background worker"}): ${error.message}; ${JSON.stringify(startupErrors)}`));
-    };
-    onWorker = (worker) => {
-      if (settled || !matches(worker)) return;
-      settled = true;
-      resolve(worker);
-    };
-    onVersions = ({ versions }) => {
-      latestVersion = versions.find((version) => version.scriptURL.startsWith("chrome-extension://")
-        && version.scriptURL.endsWith("/background.js") && version.status !== "redundant") || latestVersion;
-      if (settled || wakeStarted || latestVersion?.status !== "activated") return;
-      const current = context.serviceWorkers().find(matches);
-      if (current) return onWorker(current);
-      wakeStarted = true;
-      console.log(`Native locale ${locale}: waking registered ${latestVersion.runningStatus} extension worker.`);
-      const scopeURL = `chrome-extension://${new URL(latestVersion.scriptURL).host}/`;
-      void cdp.send("ServiceWorker.startWorker", { scopeURL }).catch(fail);
-    };
-    timer = setTimeout(() => fail(new Error("Timed out after 10 seconds")), 10_000);
-    context.on("serviceworker", onWorker);
-    cdp.on("ServiceWorker.workerVersionUpdated", onVersions);
-    cdp.on("ServiceWorker.workerErrorReported", onError);
-  });
-  try {
-    // Await both together so a failed discovery cannot leave a rejected wait behind.
-    const [, worker] = await Promise.all([cdp.send("ServiceWorker.enable"), ready]);
-    return worker;
-  } finally {
-    clearTimeout(timer);
-    settled = true;
-    context.off("serviceworker", onWorker);
-    cdp.off("ServiceWorker.workerVersionUpdated", onVersions);
-    cdp.off("ServiceWorker.workerErrorReported", onError);
-    await cdp.detach();
-    await inspection.close();
-  }
-}
 
 for (const locale of locales) {
   const profile = await mkdtemp(path.join(os.tmpdir(), "ai-translator-locale-"));
-  // Select an explicit English region because Chrome normalizes generic en to en-US.
+  // Chrome resolves generic English to en-US and Australian English to en-GB.
   const language = locale === "en" ? "en-US" : locale.replaceAll("_", "-");
-  const catalogLocale = locale === "en" ? "en_US" : SUPPORTED_LOCALES.includes(locale) ? locale : "en";
+  const catalogLocale = locale === "en" ? "en_US" : locale === "en_AU" ? "en_GB"
+    : SUPPORTED_LOCALES.includes(locale) ? locale : "en";
   const catalog = JSON.parse(await readFile(path.join(extension, "_locales", catalogLocale, "messages.json"), "utf8"));
   // macOS needs a process-only Apple language override for real Chrome message selection.
   // Playwright's locale option changes web APIs but does not select extension catalogs.
   const child = spawn(process.env.CHROME_PATH || chromium.executablePath(), [
     "--headless=new", "--no-sandbox", `--user-data-dir=${profile}`, "--remote-debugging-port=0",
     "--no-first-run", "--no-default-browser-check", "--disable-background-networking",
-    "--disable-component-extensions-with-background-pages",
+    "--disable-component-extensions-with-background-pages", "--use-mock-keychain",
     `--disable-extensions-except=${extension}`, `--load-extension=${extension}`, `--lang=${language}`,
     ...(process.platform === "darwin" ? ["-AppleLanguages", `(${language})`] : []),
   ], { env: { ...process.env, LANGUAGE: language }, stdio: "ignore" });
@@ -213,7 +155,7 @@ for (const locale of locales) {
     assert.equal(result.value.close, catalog.runtime_close_card.message);
     await cdp.detach();
     assert.deepEqual(errors, []);
-    console.log(`Native locale ${locale}: four pages, setup, refresh dialog, narrow layout, saved target and translation card passed (${browser.version()}).`);
+    console.log(`Native locale ${locale}, displayed catalog ${catalogLocale}: four pages, setup, refresh dialog, narrow layout, saved target and translation card passed (${browser.version()}).`);
   } finally {
     await browser?.close();
     if (child.exitCode === null) child.kill("SIGTERM");

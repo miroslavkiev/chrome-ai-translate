@@ -44,6 +44,7 @@ export const STORAGE_KEYS = Object.freeze({
   apiKey: "geminiApiKey",
   credentialVersion: "credentialVersion",
   dataSharingAgreement: "dataSharingAgreement",
+  dataSharingDenied: "dataSharingDenied",
   apiKeyStatus: "apiKeyStatus",
   modelCatalog: "modelCatalog",
   targetLanguage: "targetLanguage",
@@ -302,11 +303,12 @@ export function getErrorPresentation(error) {
     ? Math.min(error.retryAfterMs, 3_600_000)
     : 0;
   const delay = retryAfterMs ? t("error_retry_delay", [Math.ceil(retryAfterMs / 1_000)]) : "";
-  const action = ["missing_api_key", "missing_target_language", "invalid_api_key", "invalid_model", "agreement_required", "credential_conflict", "credential_storage_error"].includes(code)
+  const checkSetup = error?.code === "service_error" && error?.retryable === false;
+  const action = checkSetup || ["missing_api_key", "missing_target_language", "invalid_api_key", "invalid_model", "agreement_required", "credential_conflict", "credential_storage_error"].includes(code)
     ? "settings"
     : ["busy", "rate_limited", "timeout", "offline", "network_error", "quota_exceeded",
       "service_error", "invalid_response", "cancelled"].includes(code) ? "retry" : null;
-  return { code, message: message + delay, action, retryAfterMs };
+  return { code, message: (checkSetup ? t("runtime_check_setup") : message) + delay, action, retryAfterMs };
 }
 
 export function stableTextHash(value) {

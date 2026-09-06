@@ -37,6 +37,7 @@ try {
           supportedGenerationMethods: ["generateContent"] }] }));
       }
       probe.starts += 1;
+      if (probe.responseGate) await probe.responseGate;
       if (probe.delay) await new Promise((resolve, reject) => {
         const timer = setTimeout(resolve, probe.delay);
         options.signal.addEventListener("abort", () => {
@@ -89,9 +90,9 @@ try {
     }, selector);
     await pause();
   }
-  async function trigger(expected = "success") {
+  async function trigger(expected = "success", key = "Control") {
     const previousId = (await roots()).length ? (await state()).id : null;
-    await page.keyboard.press("Control");
+    await page.keyboard.press(key);
     // Negative checks allow pending key events to settle without inventing a result.
     if (expected === "none") return pause();
     return waitForCard(expected, { previousId });
@@ -123,6 +124,7 @@ try {
         phase: visualStatus.classList.contains("loading") ? "loading"
           : visualStatus.classList.contains("error") ? "error" : output.hidden ? "new" : "success",
         text: output.textContent, hidden: output.hidden, lang: output.lang, shellLang: this.host.lang,
+        selectedLanguage: this.querySelector("select").value,
         status: this.querySelector(".state").textContent, active: this.activeElement?.className,
         languageDisabled: this.querySelector("select").disabled,
         retryDisabled: [...this.querySelectorAll("button")].find((button) => button.textContent === "Retry").disabled,
@@ -218,6 +220,95 @@ try {
       } } });` });
   }
 
+  async function checkPendingLanguage(selectedLanguage, key = "Control") {
+    // Hold the fake reply so the content preference can be checked before the
+    // worker's saved language becomes authoritative on completion.
+    await worker.evaluate(() => {
+      probe.responseGate = new Promise((resolve) => { probe.releaseResponse = resolve; });
+    });
+    try {
+      const card = await trigger("loading", key);
+      assert.equal(card.selectedLanguage, selectedLanguage);
+      assert.equal(card.hidden, true);
+    } finally {
+      await worker.evaluate(() => {
+        probe.releaseResponse();
+        delete probe.responseGate;
+        delete probe.releaseResponse;
+      });
+    }
+    const completed = await waitForCard("success");
+    assert.equal(completed.lang, "fr", "The result must use the worker's saved language");
+    assert.equal(completed.selectedLanguage, "fr");
+  }
+
+  async function evaluateInContent(expression) {
+    assert.ok(contentContext, "Expected the AI Translator isolated-world context");
+    const response = await cdp.send("Runtime.evaluate", {
+      contextId: contentContext,
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+    });
+    if (response.exceptionDetails) throw new Error(response.exceptionDetails.text);
+    return response.result.value;
+  }
+
+  async function contentPreferences() {
+    return evaluateInContent(`(async () => {
+      const response = await chrome.runtime.sendMessage({ action: "getContentPreferences" });
+      return {
+        ok: response?.ok === true,
+        targetLanguage: response?.targetLanguage,
+        triggerKey: response?.triggerKey,
+        fields: Object.keys(response || {}).sort(),
+      };
+    })()`);
+  }
+
+  async function contentStorageAccess() {
+    return evaluateInContent(`(async () => {
+      const canRead = async (area, key) => {
+        try {
+          await chrome.storage[area].get(key);
+          return true;
+        } catch {
+          return false;
+        }
+      };
+      return {
+        local: await canRead("local", "geminiApiKey"),
+        sync: await canRead("sync", "geminiApiKey"),
+      };
+    })()`);
+  }
+
+  async function extensionPageCanReadContentPreferences() {
+    const extensionPage = await context.newPage();
+    try {
+      await extensionPage.goto(`chrome-extension://${extensionId}/popup.html`);
+      return await extensionPage.evaluate(async () => {
+        try {
+          const response = await chrome.runtime.sendMessage({ action: "getContentPreferences" });
+          return response?.ok === true;
+        } catch {
+          return false;
+        }
+      });
+    } finally {
+      await extensionPage.close();
+    }
+  }
+
+  async function invalidateContentPreferences() {
+    await page.bringToFront();
+    await worker.evaluate(async () => {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (!Number.isInteger(tab?.id)) throw new Error("The test page is not the active tab");
+      await chrome.tabs.sendMessage(tab.id, { action: "contentPreferencesChanged" }, { frameId: 0 }).catch(() => undefined);
+    });
+  }
+
   async function sendContextMenu(text) {
     // The extension no longer has permission to read arbitrary tab URLs.
     await page.bringToFront();
@@ -227,6 +318,105 @@ try {
       return chrome.tabs.sendMessage(tab.id, { action: "contextMenuTranslate", selectionText: text }, { frameId: 0 });
     }, text);
   }
+
+  await load("preference-contract");
+  const initialPreferences = await waitUntil("the content preference response", contentPreferences,
+    (preferences) => preferences.ok && preferences.targetLanguage === "uk" && preferences.triggerKey === "Control");
+  assert.deepEqual(initialPreferences.fields, ["ok", "targetLanguage", "triggerKey"]);
+  assert.deepEqual(await contentStorageAccess(), { local: false, sync: false });
+  assert.equal(await extensionPageCanReadContentPreferences(), false);
+
+  await worker.evaluate(() => chrome.storage.sync.set({ targetLanguage: "fr", triggerKey: "Control" }));
+  await pause();
+  await select("#one"); await trigger();
+  assert.equal((await state()).lang, "fr");
+  await page.keyboard.press("Escape");
+
+  await evaluateInContent(`(() => {
+    const original = chrome.runtime.sendMessage.bind(chrome.runtime);
+    const defaultLanguage = (message) => message?.action === "getContentPreferences"
+      ? Promise.resolve({ ok: true, targetLanguage: null, triggerKey: "Control" })
+      : original(message);
+    globalThis.contentPreferenceTest = { original, defaultLanguage };
+    chrome.runtime.sendMessage = defaultLanguage;
+  })()`);
+  await invalidateContentPreferences();
+  await pause();
+  await select("#one"); await checkPendingLanguage(DEFAULTS.targetLanguage);
+  await page.keyboard.press("Escape");
+  await evaluateInContent(`(() => {
+    chrome.runtime.sendMessage = globalThis.contentPreferenceTest.original;
+    delete globalThis.contentPreferenceTest;
+  })()`);
+  await invalidateContentPreferences();
+
+  await evaluateInContent(`(() => {
+    const original = chrome.runtime.sendMessage.bind(chrome.runtime);
+    const forged = (message) => message?.action === "getContentPreferences"
+      ? Promise.resolve({ ok: true, targetLanguage: "invalid-language", triggerKey: "Control" })
+      : original(message);
+    globalThis.contentPreferenceTest = { original, forged };
+    chrome.runtime.sendMessage = forged;
+    return chrome.runtime.sendMessage === forged;
+  })()`);
+  await invalidateContentPreferences();
+  await pause();
+  await select("#one"); await trigger("none");
+  assert.equal((await roots()).length, 0);
+
+  await evaluateInContent(`(() => {
+    chrome.runtime.sendMessage = globalThis.contentPreferenceTest.original;
+    delete globalThis.contentPreferenceTest;
+  })()`);
+  await invalidateContentPreferences();
+  await waitUntil("recovery from an invalid content preference reply", contentPreferences,
+    (preferences) => preferences.ok && preferences.targetLanguage === "fr" && preferences.triggerKey === "Control");
+
+  await evaluateInContent(`(() => {
+    const original = chrome.runtime.sendMessage.bind(chrome.runtime);
+    let calls = 0;
+    let releaseFirst;
+    const delayed = (message) => {
+      if (message?.action !== "getContentPreferences") return original(message);
+      calls += 1;
+      if (calls === 1) return new Promise((resolve) => { releaseFirst = resolve; });
+      return Promise.resolve({ ok: true, targetLanguage: "de", triggerKey: "Shift" });
+    };
+    globalThis.contentPreferenceTest = {
+      original,
+      delayed,
+      calls: () => calls,
+      releaseFirst: () => releaseFirst?.({ ok: true, targetLanguage: "fr", triggerKey: "Control" }),
+    };
+    chrome.runtime.sendMessage = delayed;
+  })()`);
+  await invalidateContentPreferences();
+  await waitUntil("the delayed content preference read", () => evaluateInContent("globalThis.contentPreferenceTest.calls()"), (calls) => calls === 1);
+  await invalidateContentPreferences();
+  await waitUntil("the newer content preference read", () => evaluateInContent("globalThis.contentPreferenceTest.calls()"), (calls) => calls === 2);
+  await pause();
+  await select("#one"); await trigger("none");
+  assert.equal((await roots()).length, 0);
+  await checkPendingLanguage("de", "Shift");
+  await page.keyboard.press("Escape");
+
+  await evaluateInContent(`(() => {
+    globalThis.contentPreferenceTest.releaseFirst();
+    chrome.runtime.sendMessage = globalThis.contentPreferenceTest.original;
+    delete globalThis.contentPreferenceTest;
+  })()`);
+  await pause();
+  await select("#one"); await trigger("none");
+  assert.equal((await roots()).length, 0);
+  await checkPendingLanguage("de", "Shift");
+  await page.keyboard.press("Escape");
+
+  await worker.evaluate(() => chrome.storage.sync.set({ triggerKey: null }));
+  await pause();
+  await select("#one"); await trigger("none", "Shift");
+  assert.equal((await roots()).length, 0);
+  await worker.evaluate(() => chrome.storage.sync.set({ targetLanguage: "uk", triggerKey: "Control" }));
+  await pause();
 
   await load("http", "http"); await select("#one"); await trigger();
   assert.equal((await state()).text, "Переклад");
@@ -350,7 +540,7 @@ try {
   const settingsPage = context.waitForEvent("page"); await click("Settings"); const opened = await settingsPage;
   await opened.waitForURL(`chrome-extension://${extensionId}/settings.html`);
   assert.equal(exceptions.length, 0, exceptions.join("\n"));
-  console.log(`Content browser checks passed (${sourceRoot ? "source root" : "built extension"}): HTTP, context-menu delivery, shadow/password, size errors, modal/fullscreen, keyboard, Copy/Settings, and unchanged cancellation/result clearing.`);
+  console.log(`Content browser checks passed (${sourceRoot ? "source root" : "built extension"}): private live preferences, recovery from invalid or late replies, HTTP, context-menu delivery, shadow/password, size errors, modal/fullscreen, keyboard, Copy/Settings, and unchanged cancellation/result clearing.`);
 } finally {
   await context?.close();
   await rm(temporary, { recursive: true, force: true });

@@ -41,10 +41,10 @@ Google's terms allow processing in countries where Google or its agents have fac
 - The data-agreement version and date are kept locally. A non-secret storage revision can remain after key removal to prevent an older Settings tab from restoring stale data.
 - The last model list and known key/model check state are also stored locally. They contain provider model metadata and a key fingerprint, not source text or translation history. Key replacement or removal invalidates the old catalog.
 - Your default language, selected model, and trigger key are stored in Chrome sync storage.
-- The latest translation or failure, active request count, and recent request timestamps are stored in session storage. They are cleared when the browser session ends.
+- The latest translation or failure, active request count, recent request timestamps, and a data-sharing withdrawal marker are stored in session storage. They are cleared when the browser session ends.
 - Source text is not kept in translation history or persistent storage.
 
-An upgrade moves older plain text keys from local or sync storage into the encrypted database. If both exist, the local key takes priority. The extension saves and decrypts the encrypted record to verify it before removing plain text copies from both stores. If migration fails, the old plain text value remains to avoid data loss, an error is shown and Google requests stay blocked. Missing, damaged or inaccessible encrypted storage is not silently overwritten. No Google request is needed for migration.
+Local, sync and session storage are restricted to trusted extension pages and the background service. Page content scripts receive only the default language and trigger key through a checked message. An upgrade moves older plain text keys from local or sync storage into the encrypted database. If both exist, the local key takes priority. The extension saves and decrypts the encrypted record to verify it before removing plain text copies from both stores. If migration fails, the old plain text value remains to avoid data loss, an error is shown and Google requests stay blocked. Missing, damaged or inaccessible encrypted storage is not silently overwritten. No Google request is needed for migration.
 
 New setup records an unselected language until you make a choice. An upgrade preserves existing saved choices and earlier defaults. Setup adds no tracking or separate first-run history.
 

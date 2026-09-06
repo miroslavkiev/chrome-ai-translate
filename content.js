@@ -6,12 +6,11 @@ import {
   DEFAULTS,
   LANGUAGES,
   LIMITS,
-  STORAGE_KEYS,
   copyText,
   createRequestId,
   getErrorPresentation,
-  getStoredTriggerKey,
   isSupportedLanguage,
+  isSupportedTriggerKey,
   normalizeTriggerKey,
   validateSourceText,
 } from "./shared.js";
@@ -198,6 +197,7 @@ const completedCards = [];
 let defaultTargetLanguage = DEFAULTS.targetLanguage;
 let keyTrigger = null;
 let keyboardEntryCard = null;
+let contentPreferencesSequence = 0;
 
 function makeElement(tagName, className, text) {
   const node = document.createElement(tagName);
@@ -761,6 +761,38 @@ function cancelTrigger() {
   keyTrigger?.cancel();
 }
 
+function applyContentPreferences(preferences) {
+  const targetLanguage = preferences?.targetLanguage === null
+    ? DEFAULTS.targetLanguage
+    : preferences?.targetLanguage;
+  if (
+    preferences?.ok !== true
+    || !isSupportedLanguage(targetLanguage)
+    || !isSupportedTriggerKey(preferences.triggerKey)
+  ) {
+    configureTrigger(null);
+    return false;
+  }
+
+  defaultTargetLanguage = targetLanguage;
+  configureTrigger(preferences.triggerKey);
+  return true;
+}
+
+async function refreshContentPreferences() {
+  const sequence = ++contentPreferencesSequence;
+  configureTrigger(null);
+
+  try {
+    const preferences = await chrome.runtime.sendMessage({ action: "getContentPreferences" });
+    if (sequence !== contentPreferencesSequence) return false;
+    return applyContentPreferences(preferences);
+  } catch {
+    if (sequence === contentPreferencesSequence) configureTrigger(null);
+    return false;
+  }
+}
+
 function disconnectDocumentRequests() {
   cancelTrigger();
   for (const card of cards) {
@@ -816,13 +848,24 @@ window.addEventListener("blur", cancelTrigger, true);
 window.addEventListener("pagehide", disconnectDocumentRequests, true);
 document.addEventListener("freeze", cancelTrigger, true);
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden) cancelTrigger();
+  if (document.hidden) {
+    cancelTrigger();
+  } else {
+    void refreshContentPreferences();
+  }
 }, true);
 window.addEventListener("resize", () => {
   for (const card of cards) positionCard(card);
 });
 
-chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (sender?.id !== chrome.runtime.id) return undefined;
+
+  if (message?.action === "contentPreferencesChanged") {
+    void refreshContentPreferences();
+    return false;
+  }
+
   if (message?.action !== CONTEXT_MENU_ACTION) return undefined;
   const snapshot = contextMenuSnapshot(message.selectionText);
   const accepted = snapshot.ok || snapshot.code === "selection_too_large";
@@ -831,31 +874,8 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   return false;
 });
 
-chrome.storage.onChanged.addListener((changes, areaName) => {
-  if (areaName !== "sync") return;
-  if (changes[STORAGE_KEYS.triggerKey]) {
-    const change = changes[STORAGE_KEYS.triggerKey];
-    configureTrigger(getStoredTriggerKey(Object.hasOwn(change, "newValue")
-      ? { [STORAGE_KEYS.triggerKey]: change.newValue }
-      : {}));
-  }
-  if (changes[STORAGE_KEYS.targetLanguage]) {
-    const language = changes[STORAGE_KEYS.targetLanguage].newValue;
-    defaultTargetLanguage = isSupportedLanguage(language) ? language : DEFAULTS.targetLanguage;
-  }
-});
+window.addEventListener("pageshow", () => {
+  void refreshContentPreferences();
+}, true);
 
-(async () => {
-  try {
-    const settings = await chrome.storage.sync.get([
-      STORAGE_KEYS.triggerKey,
-      STORAGE_KEYS.targetLanguage,
-    ]);
-    if (isSupportedLanguage(settings[STORAGE_KEYS.targetLanguage])) {
-      defaultTargetLanguage = settings[STORAGE_KEYS.targetLanguage];
-    }
-    configureTrigger(getStoredTriggerKey(settings));
-  } catch {
-    configureTrigger(null);
-  }
-})();
+void refreshContentPreferences();

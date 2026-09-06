@@ -1,5 +1,15 @@
 # Release checks and translation sample
 
+## Version 1.5.1 production hardening
+
+The full finding report, review decisions and policy sources are in [the production audit](PRODUCTION_AUDIT_2026-09-06.md). This release protects legacy sync keys from content scripts, makes withdrawal persist independently through storage stalls, requires an explicit valid model, bounds provider bodies and keeps request deadlines and cancellation reliable. Slow display-count or completed-result writes cannot block the request gate. Norwegian uses Chrome's native `nb` interface catalog while its translation-target code remains `no`.
+
+The approved interface is preserved. Provider permission failures give Settings guidance. Negative context-menu replies produce safe selection feedback. The browser test now handles stopped workers, has a complete discovery deadline, and checks native locale aliases.
+
+Before the final GitHub CI stage, all 144 Node tests passed on Node 25.2.1 and minimum Node 20.19.0. Source checks and the exact 76-file package passed, including 55 catalogs with 326 messages each. No production dependency or Chrome permission was added. See the audit for the final browser and reviewer results. These checks use disposable profiles and fake provider data.
+
+Store submission remains separate: publisher details, dashboard declarations, reviewer access and the stated provider/privacy/legal conditions still need completion. Reloading the installed extension remains manual because browser security policy blocks extension controls. Finish active translations, choose Reload for AI Translator at chrome://extensions, then refresh open web pages. Keep the same installation folder.
+
 ## Version 1.5.0 interface languages and first setup
 
 The interface now includes all 55 Chrome locales. Manifest text, Settings, popup, translation cards, Help, About, errors and accessibility labels use native Chrome messages with English fallback. The Chrome Concepts and usage guide review is recorded in [I18N.md](I18N.md). Catalog checks require complete message IDs, matching placeholders, safe numbered tags and valid manifest lengths. The 325 translated text messages plus one language metadata message are packaged for each locale. Translations are AI-assisted and have not all had native-speaker review. Setup screenshots and the Store long description remain in English.

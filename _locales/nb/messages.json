@@ -1049,7 +1049,7 @@
     "message": "<1>Oppdater åpne sider</1> etter oppsettet før du oversetter. Chrome må laste utvidelsen på sider som var åpne før installasjonen eller den nye innlastingen. Nye sider er automatisk klare."
   },
   "ui_locale": {
-    "message": "no",
+    "message": "nb",
     "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
   }
 }

@@ -30,7 +30,7 @@ The [Store release pack](store/README.md) contains listing text, screenshots, pr
 
 ## Requirements
 
-- Google Chrome 140 or later. Earlier versions cannot apply the local-storage access protection used for API keys.
+- Google Chrome 140 or later. Earlier versions cannot apply the local and sync storage protection used for older API keys.
 - Your own Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
 - A Gemini project with [active billing](https://ai.google.dev/gemini-api/docs/billing#verify-billing-status) in every country. Keep optional [sharing of this extension's request logs and datasets with Google](https://ai.google.dev/gemini-api/docs/logs-policy) off. A paid Gemini app subscription is not a substitute for API project billing.
 - Eligible adult professional or business use under the [Gemini API terms](https://ai.google.dev/gemini-api/terms). The extension does not verify your billing, sharing settings or other service conditions.

@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { getEventListeners } from "node:events";
 import test from "node:test";
 import {
   DEFAULTS,
@@ -7,6 +9,7 @@ import {
   getStoredTriggerKey,
 } from "../shared.js";
 import {
+  MAX_RESPONSE_BYTES,
   checkRequestGate,
   classifyProviderError,
   extractTranslation,
@@ -14,11 +17,42 @@ import {
   normalizeApiKey,
   normalizeModels,
   pruneRateStarts,
+  readResponseJson,
   validateContentSender,
   validateModelCache,
   validateTranslateRequest,
   validateTranslationEnvelope,
 } from "../request-policy.js";
+
+const encoder = new TextEncoder();
+
+function makeStreamResponse(chunks, {
+  contentLength,
+  keepOpen = false,
+  status = 200,
+  cancelResult,
+} = {}) {
+  const state = { cancelled: false };
+  let index = 0;
+  const body = new ReadableStream({
+    pull(controller) {
+      if (index < chunks.length) {
+        controller.enqueue(chunks[index]);
+        index += 1;
+      } else if (!keepOpen) {
+        controller.close();
+      }
+    },
+    cancel() {
+      state.cancelled = true;
+      return cancelResult;
+    },
+  });
+  const headers = contentLength === undefined
+    ? undefined
+    : { "Content-Length": String(contentLength) };
+  return { response: new Response(body, { headers, status }), state };
+}
 
 const requestId = "123e4567-e89b-42d3-a456-426614174000";
 const sender = {
@@ -78,6 +112,171 @@ test("request gate enforces duplicate, concurrency, and rolling rate limits", ()
   assert.deepEqual(accepted, { ok: true, starts: [now] });
 });
 
+test("response JSON reader accepts exactly the byte cap and rejects one byte more", async () => {
+  const exactJson = encoder.encode(`"${"a".repeat(MAX_RESPONSE_BYTES - 2)}"`);
+  const exact = makeStreamResponse([exactJson], { contentLength: MAX_RESPONSE_BYTES });
+  const value = await readResponseJson(exact.response);
+  assert.equal(value.length, MAX_RESPONSE_BYTES - 2);
+  assert.equal(exact.response.body.locked, false);
+
+  const tooLargeJson = encoder.encode(`"${"a".repeat(MAX_RESPONSE_BYTES - 1)}"`);
+  const tooLarge = makeStreamResponse([
+    tooLargeJson.subarray(0, MAX_RESPONSE_BYTES),
+    tooLargeJson.subarray(MAX_RESPONSE_BYTES),
+  ], { keepOpen: true });
+  await assert.rejects(readResponseJson(tooLarge.response), RangeError);
+  assert.equal(tooLarge.state.cancelled, true);
+  assert.equal(tooLarge.response.body.locked, false);
+});
+
+test("response JSON reader preserves UTF-8 characters split across chunks", async () => {
+  const encoded = encoder.encode(JSON.stringify({ text: "A🙂B" }));
+  const emojiStart = encoded.indexOf(0xf0);
+  const split = makeStreamResponse([
+    encoded.subarray(0, emojiStart + 2),
+    encoded.subarray(emojiStart + 2),
+  ]);
+  assert.deepEqual(await readResponseJson(split.response), { text: "A🙂B" });
+  assert.equal(split.response.body.locked, false);
+});
+
+test("response JSON reader rejects oversized advertised bodies for success and error responses", async () => {
+  for (const status of [200, 401, 429]) {
+    const oversized = makeStreamResponse([encoder.encode("{}")], {
+      contentLength: MAX_RESPONSE_BYTES + 1,
+      keepOpen: true,
+      status,
+    });
+    await assert.rejects(readResponseJson(oversized.response), RangeError);
+    assert.equal(oversized.state.cancelled, true);
+    assert.equal(oversized.response.body.locked, false);
+  }
+});
+
+test("response JSON reader caps chunked bodies with missing or dishonest lengths", async () => {
+  const oversizedJson = encoder.encode(`"${"a".repeat(MAX_RESPONSE_BYTES - 1)}"`);
+  for (const options of [
+    { status: 200 },
+    { contentLength: 2, status: 401 },
+    { status: 429 },
+  ]) {
+    const oversized = makeStreamResponse([
+      oversizedJson.subarray(0, MAX_RESPONSE_BYTES),
+      oversizedJson.subarray(MAX_RESPONSE_BYTES),
+    ], { ...options, keepOpen: true });
+    await assert.rejects(readResponseJson(oversized.response), RangeError);
+    assert.equal(oversized.state.cancelled, true);
+    assert.equal(oversized.response.body.locked, false);
+  }
+});
+
+test("response JSON reader keeps memory bounded across many small chunks", (t) => {
+  const probe = async () => {
+    const controller = new AbortController();
+    const chunkCount = 100_002;
+    const quote = Uint8Array.of(34);
+    const letter = Uint8Array.of(97);
+    let sent = 0;
+    let baseline;
+    let heapGrowth;
+    let listenersDuringRead;
+    const body = new ReadableStream({
+      pull(source) {
+        if (sent < chunkCount) {
+          source.enqueue(sent === 0 || sent === chunkCount - 1 ? quote : letter);
+          sent += 1;
+          return;
+        }
+        return new Promise((resolve) => setImmediate(() => {
+          // Measure while the read is pending, before completion can free handlers.
+          global.gc();
+          heapGrowth = process.memoryUsage().heapUsed - baseline;
+          listenersDuringRead = getEventListeners(controller.signal, "abort").length;
+          source.close();
+          resolve();
+        }));
+      },
+    }, { highWaterMark: 0 });
+    const response = new Response(body);
+    global.gc();
+    baseline = process.memoryUsage().heapUsed;
+    const value = await readResponseJson(response, controller.signal);
+    process.stdout.write(JSON.stringify({
+      length: value.length,
+      heapGrowth,
+      listenersDuringRead,
+      listenersAfterRead: getEventListeners(controller.signal, "abort").length,
+      locked: body.locked,
+    }));
+  };
+  const result = JSON.parse(execFileSync(process.execPath, [
+    "--expose-gc", "--input-type=module", "--eval",
+    `import { getEventListeners } from "node:events";
+import { readResponseJson } from ${JSON.stringify(new URL("../request-policy.js", import.meta.url).href)};
+await (${probe.toString()})();`,
+  ], { encoding: "utf8", timeout: 10_000 }));
+  t.diagnostic(`100,002 one-byte chunks retained ${result.heapGrowth} extra heap bytes during the read.`);
+  assert.equal(result.length, 100_000);
+  assert(result.heapGrowth < 16 * 1024 * 1024,
+    `Tiny chunks retained ${result.heapGrowth} extra heap bytes.`);
+  assert.equal(result.listenersDuringRead, 1);
+  assert.equal(result.listenersAfterRead, 0);
+  assert.equal(result.locked, false);
+});
+
+for (const [label, reason] of [
+  ["default reason", undefined],
+  ["custom reason", new Error("Reader cancelled.")],
+  ["null reason", null],
+]) {
+  test(`response JSON reader aborts a stalled body without waiting for source cleanup (${label})`, { timeout: 2_000 }, async () => {
+    let markStalled;
+    const stalled = new Promise((resolve) => {
+      markStalled = resolve;
+    });
+    const neverSettles = new Promise(() => {});
+    let sentFirstChunk = false;
+    const state = { cancelled: false };
+    const body = new ReadableStream({
+      pull(controller) {
+        if (!sentFirstChunk) {
+          sentFirstChunk = true;
+          controller.enqueue(encoder.encode('{"value":'));
+          return;
+        }
+        markStalled();
+        return neverSettles;
+      },
+      cancel(abortReason) {
+        state.cancelled = true;
+        state.reason = abortReason;
+        return neverSettles;
+      },
+    });
+    const response = new Response(body);
+    const controller = new AbortController();
+    const pending = readResponseJson(response, controller.signal);
+    await stalled;
+    controller.abort(reason);
+
+    let timeoutId;
+    try {
+      await assert.rejects(Promise.race([
+        pending,
+        new Promise((resolve, reject) => {
+          timeoutId = setTimeout(() => reject(new Error("Response reader did not abort.")), 500);
+        }),
+      ]), (error) => error === controller.signal.reason);
+    } finally {
+      clearTimeout(timeoutId);
+    }
+    assert.equal(state.cancelled, true);
+    assert.equal(state.reason, controller.signal.reason);
+    assert.equal(response.body.locked, false);
+    assert.equal(getEventListeners(controller.signal, "abort").length, 0);
+  });
+}
+
 test("model catalog and provider responses are normalized without raw errors", () => {
   const models = normalizeModels({ models: [
     { name: "models/gemma-4-26b-a4b-it", displayName: "Gemma", outputTokenLimit: 8_192, supportedGenerationMethods: ["generateContent"], thinking: true },
@@ -104,10 +303,26 @@ test("model catalog and provider responses are normalized without raw errors", (
   assert.equal(extractTranslation({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "reasoning only", thought: true }] } }] }).error.code, "invalid_response");
   assert.equal(extractTranslation({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "a".repeat(LIMITS.maxOutputCodePoints + 1) }] } }] }).error.code, "output_too_large");
   assert.equal(extractTranslation({ candidates: [] }).error.code, "invalid_response");
-  assert.equal(classifyProviderError(403, {}, undefined).code, "service_error");
-  assert.equal(classifyProviderError(403, { error: { details: [{ reason: "API_KEY_INVALID" }] } }, undefined).code, "invalid_api_key");
+  const genericForbidden = classifyProviderError(403, null, 500);
+  assert.equal(genericForbidden.code, "service_error");
+  assert.equal(genericForbidden.retryable, false);
+  assert.equal(genericForbidden.retryAfterMs, undefined);
+  assert.equal(classifyProviderError(401, null, undefined).code, "invalid_api_key");
+  const invalidKeyForbidden = classifyProviderError(403, {
+    error: { details: [{ reason: "API_KEY_INVALID" }] },
+  }, undefined);
+  assert.equal(invalidKeyForbidden.code, "invalid_api_key");
+  assert.equal(invalidKeyForbidden.retryable, undefined);
+  const quotaForbidden = classifyProviderError(403, {
+    error: { status: "RESOURCE_EXHAUSTED" },
+  }, 500);
+  assert.equal(quotaForbidden.code, "quota_exceeded");
+  assert.equal(quotaForbidden.retryAfterMs, 500);
+  assert.equal(quotaForbidden.retryable, undefined);
   assert.equal(classifyProviderError(404, {}, undefined).code, "invalid_model");
-  assert.equal(classifyProviderError(429, {}, 500).code, "quota_exceeded");
+  const quotaWithoutPayload = classifyProviderError(429, null, 500);
+  assert.equal(quotaWithoutPayload.code, "quota_exceeded");
+  assert.equal(quotaWithoutPayload.retryAfterMs, 500);
   assert.equal(classifyProviderError(500, { error: { message: "secret" } }, undefined).message.includes("secret"), false);
   assert.equal(normalizeApiKey("  valid-key-value  "), "valid-key-value");
   assert.equal(normalizeApiKey("short"), null);
