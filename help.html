@@ -22,7 +22,8 @@
     <section class="card" aria-labelledby="key-heading">
       <h2 id="key-heading">1. Get your API key</h2>
       <p>An API key lets this extension use Gemini through your Google account. Keep it private, like a password.</p>
-      <p>Check eligibility first. Google's current terms limit the API to adult professional or business use in supported regions. Apps offered in the European Economic Area, UK, or Switzerland must use a Google Cloud project with active billing. A key that works does not prove that its project meets these terms. Read the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API terms</a>.</p>
+      <p>This extension is for people aged 18 or older, for work or business use, in <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">Google's supported countries and regions</a>. If you use it in the European Economic Area, UK or Switzerland, your API key must belong to a Google Cloud project with active billing.</p>
+      <p>By using this extension, you agree to follow these conditions, the <a href="https://developers.google.com/terms" target="_blank" rel="noopener noreferrer">Google API Terms</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API Additional Terms</a>. Do not use it if you cannot meet these conditions. The extension does not verify these facts or ask for identity documents.</p>
       <ol class="steps">
         <li>
           <h3>Open Google AI Studio</h3>
@@ -36,10 +37,10 @@
         </li>
         <li>
           <h3>Copy your key</h3>
-          <p>Copy the key from AI Studio. Return to this extension's Settings and paste it into the <strong>API key</strong> field. Pasting saves it automatically and loads your model list. Wait for the result before continuing.</p>
+          <p>Copy the key from AI Studio. Return to this extension's Settings and read the data-sharing details. Choose <strong>Agree and connect to Google</strong>, then paste your key into the <strong>API key</strong> field. It is encrypted and saved automatically, and your model list loads. Wait for the result before continuing.</p>
           <figure>
-            <img src="setup-key.png" width="760" height="510" alt="AI Translator Settings with an empty API key field, a model selector, and the dated Flash-Lite recommendation." loading="lazy">
-            <figcaption class="note">In AI Translator: paste your own key into the empty field. The model list is checked after the key is saved.</figcaption>
+            <img src="setup-key.png" width="760" height="876" alt="AI Translator Settings showing the data-sharing notice and Agree button above an empty API key field and the Flash-Lite model recommendation." loading="lazy">
+            <figcaption class="note">In AI Translator: agree to data sharing first, then paste your own key. The model list is checked after the encrypted key is saved.</figcaption>
           </figure>
         </li>
       </ol>
@@ -58,7 +59,7 @@
           <h3>Choose your target language</h3>
           <p>Choose the language you want to read from <strong>Default language</strong>. The choices follow <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/google-models#language_support" target="_blank" rel="noopener noreferrer">Google's documented Gemini languages</a>. Translation quality can vary by language and text.</p>
           <figure>
-            <img src="setup-language.png" width="760" height="317" alt="AI Translator Translation settings with Choose a target language and the keyboard trigger controls." loading="lazy">
+            <img src="setup-language.png" width="760" height="284" alt="AI Translator Translation settings with Choose a target language and the keyboard trigger controls." loading="lazy">
             <figcaption class="note">Choose the language for your translations, then finish setup.</figcaption>
           </figure>
         </li>
@@ -79,8 +80,10 @@
 
     <section class="card" aria-labelledby="privacy-heading">
       <h2 id="privacy-heading">Your key, data, and Google costs</h2>
-      <p>Your key is stored in local extension storage and is not synced. Chrome does not encrypt this storage against access to your local browser profile. Never share your key in screenshots or public messages.</p>
-      <p>Selected text goes directly to Google only when you ask for a translation. Loading the model list uses your key but sends no selected text. The extension has no analytics or translation history. Your language, model, and trigger choices can sync through Chrome.</p>
+      <p>Your key is encrypted on this device and is not synced. It stays available across normal Chrome restarts without an unlock password. Someone with access to this browser profile may still recover it. This is not an OS keychain or password-protected vault. Never share your key in screenshots or public messages.</p>
+      <p>No Google API request is made before you choose <strong>Agree and connect to Google</strong> in Settings. After that, selected text goes directly to Google only when you ask for a translation. Loading the model list uses your key but sends no selected text. The extension has no analytics or translation history. Your language, model, and trigger choices can sync through Chrome.</p>
+      <p>Your data agreement is saved for this browser profile and survives normal restarts and updates. The details stay visible in <a href="settings.html">Settings</a>. Choose <strong>Withdraw data agreement</strong> there to stop new requests and cancel active ones locally. Your encrypted key and preferences stay saved, so you can agree again later. Choose <strong>Remove saved key</strong> to delete the saved key and its model cache. Neither action recalls data already sent to Google.</p>
+      <p>On an upgrade, an older key is encrypted and checked before its plain text copies are removed. If that fails, the old copy stays saved, requests remain blocked and Settings explains the problem. A migrated key still needs your data agreement before its first Google request.</p>
       <p>Google API use can have costs. A billing-enabled project gets Google's paid data-use terms: prompts and responses are not used for product improvement, but limited safety and legal logging remains. Some unpaid use outside the European Economic Area, UK, and Switzerland permits product improvement and human review. Do not send private or personal text under unpaid terms that permit this use. Read <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noopener noreferrer">Google's pricing and data-use notes</a> and the <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Gemini API terms</a> before sending private text.</p>
       <p>AI translations can be wrong. Check important wording. <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Read the full privacy details</a>.</p>
       <p class="note">Cannot open AI Studio? Check Google's <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">region and account requirements</a>. A Google account must meet the service's age requirements.</p>

@@ -1,25 +1,27 @@
 # Publication legal review
 
-Checked: September 5, 2026. This is a publication checklist, not a legal opinion or a statement of compliance. It does not authorise a Store submission or disclosure of personal details.
+Checked: September 6, 2026. This is a publication checklist, not a legal opinion or a statement of compliance. It does not authorise a Store submission or disclosure of personal details.
 
-The publisher has confirmed that this is a free personal hobby project. That fact must remain separate from whether users translate text for work. The publisher requests a visible notice of Google's use conditions, with acceptance through use rather than an eligibility checkbox or identity checks. The draft listing now contains that notice. This records the requested approach, not a finding that every publication duty is met.
+The publisher has confirmed that this is a free personal hobby project. That fact must remain separate from whether users translate text for work. The publisher chose a visible notice of Google's use conditions, with acceptance through use rather than an eligibility checkbox or identity checks, and a separate button to agree to data sharing. Option D, automatic use of an encrypted key on this device, is approved for implementation.
+
+On September 6, 2026, the publisher explicitly chose not to provide a public postal address after reviewing the address issue. No address will be inferred, added to the repository, or published. This is a recorded decision with a remaining publication risk, not a finding that an address is unnecessary. It does not block the approved local implementation or call for asking the same question again.
 
 ## Open publication items
 
 | Item | What must be resolved |
 | --- | --- |
-| Publisher details | Resolve the notice duty for this public hobby offering. If it applies, confirm the full public name and a suitable public service address, plus a public contact email. A home address is not requested and must not be added to the repository. No identity or address may be inferred from Git or account records. |
-| Google eligibility | Show the use conditions before first API use and in the listing. Choose supported distribution countries. Check that the actual offering matches Google's audience and availability rules; no individual identity or billing verification system is proposed. |
+| Publisher details | The publisher chose to omit a public postal address. If the notice duty applies, the required notice remains incomplete. The exact duty and applicable privacy contact information remain unresolved. Record this risk without treating it as a block on local work. No identity, address or contact details may be inferred from Git or account records. |
+| Google eligibility | The use conditions are shown before first API use and in the listing. Choose supported distribution countries. Check that the actual offering matches Google's audience and availability rules; no individual identity or billing verification system is used. |
 | Privacy roles | Record who is responsible for each processing activity, including support and any public website. Finish the applicable privacy information. |
-| Disclosure and consent | Decide what users must see and agree to before their first Google request. Keep legal consent and Store policy requirements separate. |
-| Key storage | Choose and test the key-handling design. Current local extension storage is not encrypted against access to the Chrome profile. Review this against the [Store's storage-encryption requirement](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) before submission. |
-| Public pages | Provide working privacy and legal-notice links with complete, approved details. The template in this folder is not a public legal notice. |
+| Disclosure and consent | The selected flow shows the data details and uses Agree and connect to Google before any Google API request. Verify the final build, persistent agreement, review and withdrawal behavior. Keep legal consent and Store policy requirements separate. |
+| Key storage | Option D encrypts the saved key with AES-256-GCM and keeps a nonextractable encryption key in the same browser profile for automatic use. Someone with profile access may still recover the API key. Verify migration, restart, recovery and removal against the [Store's storage-encryption requirement](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq); the design alone does not establish approval. |
+| Public pages | Keep working project, support and privacy links. Complete applicable privacy information without invented details. The legal-notice template remains unused and must not be linked as an active notice. |
 
 ## German legal notice
 
 [MStV section 18(1)](https://www.gesetze-bayern.de/Content/Document/MStV-18) requires name and address for online services that do not serve exclusively personal or family purposes. A public hobby release should not assume that it has this exemption. Whether the particular offering falls within scope remains a legal assessment.
 
-For the planned individual publisher, prepare the full name and postal address. A public contact email also provides a useful support/privacy route. Email is not an extra requirement stated in MStV section 18(1) itself. [DDG section 5](https://www.gesetze-im-internet.de/ddg/__5.html) separately requires email and suitable direct contact for the business-like digital services within its scope. Do not assume that DDG section 5 applies solely because the author writes software or users use it at work.
+If this individual publisher is within MStV section 18(1), the required notice includes the full name and postal address. A public contact email also provides a useful support/privacy route. Email is not an extra requirement stated in MStV section 18(1) itself. [DDG section 5](https://www.gesetze-im-internet.de/ddg/__5.html) separately requires email and suitable direct contact for the business-like digital services within its scope. Do not assume that DDG section 5 applies solely because the author writes software or users use it at work.
 
 The home address does not have to be the chosen public address. The Lower Saxony media regulator's guidance for MStV section 18 expressly allows an agency, office service, lawyer or family member's address where legal documents can validly be served. This requires a real authorisation to receive legal service, with the rights and duties agreed. A lawyer is one option, not an automatic requirement. A borrowed address, ordinary mailbox or post-office box alone is insufficient. [NLM guide, section 2.3.2](https://www.nlm.de/fileadmin/dateien/pdf/leitfaden_impressumspflicht_2024.pdf).
 
@@ -27,9 +29,9 @@ A standard DHL Packstation address plus a Postnummer is not a suitable substitut
 
 A reviewed c/o arrangement can show the publisher's name and the authorised recipient's address instead of the home address. The c/o label alone does not create the authorisation. A complete notice can live on a separate public page linked from the product, so there is no need to commit the home address to this repository. [Media regulator guidance](https://www.medienanstalt-nrw.de/aufsicht/transparenz-im-internet.html).
 
-If the notice duty applies, email or a contact form cannot replace the postal address. Omitting a required address leaves the notice incomplete and can lead to enforcement or a fine. The free hobby status does not by itself settle the narrow personal/family exception. A privacy-preserving next step is to ask the relevant state media authority whether this specific public utility needs the notice, or to arrange a valid service address. Do not present public release as cleared while this remains unresolved. [NLM guide, sections 2.3 and 4](https://www.nlm.de/fileadmin/dateien/pdf/leitfaden_impressumspflicht_2024.pdf).
+If the notice duty applies, email or a contact form cannot replace the postal address. Omitting a required address leaves the notice incomplete and can lead to enforcement or a fine. The free hobby status does not by itself settle the narrow personal/family exception. The publisher has chosen to proceed with local work without a public address. Do not describe that decision as legal clearance. An authority assessment or a valid service address remains an option if the publisher later changes this decision. [NLM guide, sections 2.3 and 4](https://www.nlm.de/fileadmin/dateien/pdf/leitfaden_impressumspflicht_2024.pdf).
 
-Keep the notice easy to find from About and the public project page. Do not add company, VAT, register or editorial-officer statements unless the facts and the relevant duties require them. MStV section 18(2)'s editorial duty concerns journalistic/editorial offerings; it is not automatically a duty of this translation utility.
+If a complete notice is later provided, keep it easy to find from About and the public project page. Until then, do not link the template or publish placeholders as a notice. Do not add company, VAT, register or editorial-officer statements unless the facts and the relevant duties require them. MStV section 18(2)'s editorial duty concerns journalistic/editorial offerings; it is not automatically a duty of this translation utility.
 
 ## Chrome trader status
 
@@ -49,7 +51,7 @@ The reviewed Google clauses do not expressly require a separate checkbox, identi
 
 A sentence saying that use means acceptance is not a guarantee that terms are legally binding. Where [BGB section 305(2)](https://www.gesetze-im-internet.de/bgb/__305.html) applies, users need clear notice, a reasonable opportunity to read the terms, and agreement. Its application depends on the parties and circumstances. Show the conditions before use rather than relying only on a legal-notice page that users may not see.
 
-This use notice is separate from permission to handle data. [Chrome's disclosure FAQ, question 10](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) requires a prominent in-product disclosure and a specific action clearly agreeing before data is handled. A description or legal notice alone does not meet that requirement. A clearly labelled setup button can provide that action; a checkbox is not the only possible control. The current automatic key-save and model-loading flow still needs that separate change.
+This use notice is separate from permission to handle data. [Chrome's disclosure FAQ, question 10](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) requires a prominent in-product disclosure and a specific action clearly agreeing before data is handled. A description or legal notice alone does not meet that requirement. The selected flow uses **Agree and connect to Google** before key entry or provider requests. The data details stay visible for review, and **Withdraw data agreement** blocks new requests and aborts active work locally. A checkbox is not the only possible control. This product control does not by itself settle every GDPR legal basis or permission involving other people's selected data.
 
 ## GDPR roles and information
 
@@ -85,4 +87,4 @@ The July amendment was verified in the official publication: [Regulation (EU) 20
 
 ## Release decision
 
-Artwork, narrower permissions, working links and accurate technical privacy text are prepared. The requested use notice is in the draft listing; its final setup placement remains to be completed. Review the four key-handling options before changing that user flow. Keep publication pending until the audience/service restriction, key protection, disclosure/consent and publisher-information items above are resolved. Recheck these sources at submission time.
+The publisher approved option D, the in-app use notice and the separate data-agreement button. Local implementation proceeds with that choice and the decision to omit a public postal address. Verify the final storage, migration, agreement and withdrawal behavior before treating the build as tested. Provider, privacy, Store account and publisher-information questions remain recorded; an omitted required address remains a publication risk. Do not describe this work as legal clearance or Store approval, and do not ask again for the same address decision. Recheck sources at submission time.

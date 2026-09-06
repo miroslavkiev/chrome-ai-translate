@@ -1,6 +1,6 @@
 # Chrome Web Store release pack
 
-Status: **prepared for review, not ready to submit**. Checked September 5, 2026.
+Status: **prepared for review, not ready to submit**. Checked September 6, 2026.
 
 The repository is already public: [source and project guide](https://github.com/miroslavkiev/chrome-ai-translate). No Chrome Web Store listing has been submitted or published by this work.
 
@@ -12,20 +12,20 @@ The repository is already public: [source and project guide](https://github.com/
 | [assets](assets/) | Three screenshots, required small promo tile, optional marquee, and separate Store icon. |
 | [REVIEW_CHECKLIST.md](REVIEW_CHECKLIST.md) | Current code and policy review, data categories, and open release checks. |
 | [LEGAL_REVIEW.md](LEGAL_REVIEW.md) | Germany/EU review with official sources and missing facts. |
-| [KEY_STORAGE_OPTIONS.md](KEY_STORAGE_OPTIONS.md) | Four key-storage choices, including automatic encryption and its tested limits. |
+| [KEY_STORAGE_OPTIONS.md](KEY_STORAGE_OPTIONS.md) | Selected option D, automatic encryption, the data agreement and the limits of browser-profile protection. |
 | [LEGAL_NOTICE_TEMPLATE.md](LEGAL_NOTICE_TEMPLATE.md) | Preparation only. Never use the placeholder document as a legal notice. |
 | [PRIVACY.md](../PRIVACY.md) | Current technical data handling. Legal contact and release items remain open. |
 | [extension ZIP](../dist/chrome-ai-translate.zip) | Current build only. Upload after the open release checks are closed. |
 
-## What prevents submission
+## Remaining publication checks and recorded risks
 
-1. Show Google's use conditions before the first API request and in the listing, without a separate eligibility checkbox as requested. The draft description is ready. Choose supported Store distribution countries and ensure the actual offering matches the provider's audience rules. This does not call for collecting identity documents or proving each user's occupation or billing.
-2. Choose and implement the reviewed API-key storage and consent flow. Current local key storage is not encrypted. Model loading must also wait for the required disclosure and consent.
-3. Supply approved publisher name, suitable postal address, public email and the applicable privacy information. Do not infer those details from Git records.
+1. Google's use conditions are shown before the first API request and in the listing, without a separate eligibility checkbox. Choose supported Store distribution countries and ensure the actual offering matches the provider's audience rules. The extension does not collect identity documents or prove each user's occupation or billing.
+2. The selected encrypted storage and data-agreement flow passed the final local checks, including a real Chrome 143 to 151 profile upgrade. Review [the evidence and limits](../RELEASE_CHECKS.md) when completing the Store disclosures. Passing tests do not establish Store approval.
+3. The publisher explicitly chose not to provide a public postal address. No personal information or substitute address is invented. This leaves a known publication risk if an address is required; it does not block the approved local implementation or reopen the same decision. Applicable privacy contact information remains unresolved. The legal-notice template stays unused.
 4. Resolve the third-party data-use conditions, then add an accurate Limited Use statement and complete Chrome's privacy certifications.
 5. Verify the developer account, two-step verification, contact email and accurate trader/non-trader declaration in the Store dashboard. No account declaration has been made here.
 
-The draft artwork and copy are reusable, but final screenshots must match the final setup flow. Google approval and a legal compliance finding cannot be guaranteed by automated code checks.
+The refreshed artwork and copy match the final setup flow. Local work proceeds with the recorded address decision. Neither that decision nor passing code checks establish legal compliance or Google approval.
 
 ## Build and refresh
 

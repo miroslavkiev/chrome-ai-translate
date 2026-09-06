@@ -89,7 +89,7 @@ for (const name of names) {
 }
 
 await Promise.all([
-  assertFresh("background.js", ["background.js", "request-policy.js", "shared.js", ...buildInputs]),
+  assertFresh("background.js", ["background.js", "credential-store.js", "request-policy.js", "shared.js", ...buildInputs]),
   assertFresh("content.js", ["content.js", "trigger.js", "shared.js", ...buildInputs]),
   assertFresh("popup.js", ["popup.js", "shared.js", ...buildInputs]),
   assertFresh("settings.js", ["settings.js", "shared.js", ...buildInputs]),

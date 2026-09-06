@@ -148,6 +148,11 @@
     .model-status[data-kind="error"] { color: var(--danger); }
     .model-status[data-kind="success"] { color: var(--success); }
     .privacy { padding: 18px 22px; }
+    .data-agreement { border-top: 1px solid var(--line); }
+    .data-agreement h3 { margin: 0 0 10px; font-size: 16px; }
+    .agreement-copy { margin: 0 0 12px; font-size: 14px; line-height: 1.5; }
+    .data-agreement .button-row { margin-top: 16px; }
+    .data-agreement .model-status { margin-top: 10px; }
 
     summary {
       cursor: pointer;
@@ -235,7 +240,7 @@
         <ol class="setup-list">
           <li>
             <strong>Get your own API key.</strong>
-            Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>, sign in, and create a key. Paste it in the API key field below.
+            Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>, sign in, and create a key. Review data sharing below, then paste your key.
             <a href="help.html" target="_blank" rel="noopener noreferrer">Read the step-by-step guide</a> for help.
             <span id="setupKeyStep" class="setup-step"></span>
           </li>
@@ -246,7 +251,7 @@
           </li>
           <li>
             <strong>Save and start translating.</strong>
-            Use Finish setup at the bottom of this page. Then select text on a web page and choose Translate Selected Text from the right-click menu.
+            Use Finish setup at the bottom of this page. Then select text on a web page and press Control, or choose Translate Selected Text from the right-click menu.
           </li>
         </ol>
       </section>
@@ -255,20 +260,32 @@
         <div class="card-header">
           <h2 id="api-heading">Gemini</h2>
           <p class="help">Connect your own Gemini API key and choose a compatible model.</p>
-          <p class="help">Selected text and your target language go directly to Google when you ask for a translation. Your key is sent to Google to load models and translate. It is currently saved without encryption in this browser profile. Read the <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">privacy details</a> before adding a key.</p>
-          <p class="help">Google's current API terms require adult professional or business use. Apps offered in the European Economic Area, UK, or Switzerland must use a project with active billing. <a href="help.html" target="_blank" rel="noopener noreferrer">Read the requirements and key guide</a>.</p>
           <p id="setupStatus" class="model-status" role="status" aria-live="polite">Loading setup state...</p>
         </div>
+
+        <section id="dataAgreement" class="privacy data-agreement" aria-labelledby="data-sharing-heading">
+          <h3 id="data-sharing-heading">Before you connect to Google</h3>
+          <p class="agreement-copy">Google receives your API key to check available models. When you request a translation, Google also receives your selected text and target language, including text from local files. AI translations can be wrong.</p>
+          <p class="agreement-copy">Your key is saved encrypted in this Chrome profile and opens automatically after restarts. No extra password is needed. Someone with full access to your browser profile may still recover it. <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Read the privacy details</a>.</p>
+          <p class="agreement-copy">Google may use content from unpaid services to improve its products, and people may review it. Paid services have different data terms. Do not send sensitive or confidential text through unpaid services.</p>
+          <p id="googleUsageNotice" class="help"><strong>Google's use conditions.</strong> By using Gemini through this extension, you agree to follow <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google's terms</a>. Use is for people aged 18 or older for professional or business purposes, in <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">supported regions</a>. Use in the European Economic Area, UK, or Switzerland requires a Google project with active billing.</p>
+          <div class="button-row">
+            <button id="agreeDataSharing" class="button primary" type="button" disabled>Agree and connect to Google</button>
+            <button id="withdrawDataSharing" class="button danger" type="button" hidden disabled>Withdraw data agreement</button>
+          </div>
+          <p id="agreementStatus" class="model-status" role="status" aria-live="polite">Review the data sharing details before connecting.</p>
+        </section>
 
         <div class="row">
           <div class="row-copy">
             <label for="apiKey">API key</label>
-            <p id="apiKeyHelp" class="help">Paste a key to save it automatically and load models.</p>
+            <p id="apiKeyHelp" class="help">After you agree, paste a key to save it encrypted and load models automatically.</p>
           </div>
           <div class="control-stack">
-            <input id="apiKey" name="apiKey" type="password" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp apiKeyStatus">
+            <input id="apiKey" name="apiKey" type="password" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp apiKeyStatus" disabled>
             <div class="button-row">
               <button id="revealKey" class="button" type="button" aria-pressed="false">Show</button>
+              <button id="removeKey" class="button danger" type="button" hidden disabled>Remove saved key</button>
             </div>
             <p id="apiKeyStatus" class="model-status" role="status" aria-live="polite"></p>
           </div>
@@ -348,7 +365,8 @@
 
       <section class="card privacy" aria-labelledby="privacy-heading">
         <h2 id="privacy-heading">Privacy</h2>
-        <p class="privacy-copy">This extension runs locally, but translation is not offline: selected text, including text from local files, is sent directly to Google. Your API key stays in local extension storage. Your language, model, and trigger preference can sync through Chrome. Selected text is sent to Gemini only when you request a translation. The extension keeps only the latest result for this browser session and does not keep translation history.</p>
+        <p class="privacy-copy">Translation is not offline. After you agree above, your key is sent directly to Google for model checks. Selected text, including text from local files, is sent with your target language only when you request a translation. Your saved key is encrypted in this Chrome profile. Your language, model, and trigger preference can sync through Chrome. The extension keeps only the latest result for this browser session and does not keep translation history.</p>
+        <p class="privacy-copy">You can review data sharing above and withdraw your agreement at any time. This stops model checks and translations until you agree again. Your saved key is kept unless you choose Remove saved key.</p>
       </section>
 
       <div class="save-bar">

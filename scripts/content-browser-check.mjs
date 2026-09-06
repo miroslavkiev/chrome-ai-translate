@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DEFAULTS, stableTextHash } from "../shared.js";
-import { waitForRuntimeState } from "./browser-runtime-state.mjs";
+import { setTestApiKey, waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 // Use only a temporary profile, fixture pages, fake credentials, and fake provider replies.
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -25,14 +25,10 @@ try {
   const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
   const extensionId = new URL(worker.url()).host;
   const startupPage = await context.newPage();
-  try {
     // Older Chrome exposes the worker before its module imports and bindings finish.
     const deadline = Date.now() + 10_000;
-    await startupPage.goto(`chrome-extension://${extensionId}/popup.html`, { timeout: 10_000 });
+    await startupPage.goto(`chrome-extension://${extensionId}/settings.html`, { timeout: 10_000 });
     await waitForRuntimeState(startupPage, undefined, { allowStartup: true, timeout: Math.max(1, deadline - Date.now()) });
-  } finally {
-    await startupPage.close();
-  }
   await worker.evaluate(async ({ model, hash }) => {
     globalThis.probe = { starts: 0, delay: 0, failure: null, status: 503 };
     globalThis.fetch = async (url, options = {}) => {
@@ -51,12 +47,12 @@ try {
       if (probe.failure) return new Response(JSON.stringify({ error: { status: probe.failure } }), { status: probe.status, headers: probe.status === 429 ? { "Retry-After": "1" } : {} });
       return new Response(JSON.stringify({ candidates: [{ finishReason: "STOP", content: { parts: [{ text: "Переклад" }] } }] }));
     };
-    await chrome.storage.local.set({ geminiApiKey: "browser-check-fake-key" });
-    await new Promise((resolve) => setTimeout(resolve, 50));
     await chrome.storage.local.set({ modelCatalog: { apiKeyHash: hash, fetchedAt: Date.now(),
       models: [{ id: model, displayName: "Test model", outputTokenLimit: 8192, thinking: false }] } });
     await chrome.storage.sync.set({ triggerKey: "Control", targetLanguage: "uk", aiModel: model });
   }, { model: DEFAULTS.aiModel, hash: stableTextHash("browser-check-fake-key") });
+  await setTestApiKey(startupPage, "browser-check-fake-key");
+  await waitForRuntimeState(startupPage, (state) => state.configured);
 
   const html = `<!doctype html><html lang="de"><body>
     <p id="one">First sample paragraph.</p><p id="two">Second sample paragraph.</p>
@@ -347,7 +343,8 @@ try {
   await waitUntil("Retry to become available after the rate delay", state, (card) => !card.retryDisabled);
   await worker.evaluate(() => { probe.failure = null; probe.status = 503; });
 
-  await load("settings-action"); await worker.evaluate(() => chrome.storage.local.remove("geminiApiKey"));
+  await load("settings-action"); await setTestApiKey(startupPage, null);
+  await startupPage.close();
   await select("#one"); await trigger("error"); assert.ok((await state()).buttons.includes("Settings")); assert.ok(!(await state()).buttons.includes("Retry"));
   const settingsPage = context.waitForEvent("page"); await click("Settings"); const opened = await settingsPage;
   await opened.waitForURL(`chrome-extension://${extensionId}/settings.html`);

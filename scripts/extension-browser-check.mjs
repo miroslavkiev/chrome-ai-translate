@@ -11,16 +11,19 @@ const extension = process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist",
 const temporary = await mkdtemp(path.join(os.tmpdir(), "ai-translator-pages-"));
 // Only the temporary browser profile contains these fake credentials and replies.
 let context;
-try {
-context = await chromium.launchPersistentContext(path.join(temporary, "profile"), {
+const launchOptions = {
   headless: false,
   ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : { channel: "chromium" }),
   ignoreDefaultArgs: ["--disable-extensions"],
   args: ["--headless=new", `--disable-extensions-except=${extension}`, `--load-extension=${extension}`, "--disable-background-networking"],
-});
+};
+try {
+  context = await chromium.launchPersistentContext(path.join(temporary, "profile"), launchOptions);
+  const initialBrowserVersion = context.browser().version();
   const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
   const extensionId = new URL(worker.url()).host;
-  await worker.evaluate(({ model, recommended }) => {
+  async function installFakeProvider(targetWorker) {
+    await targetWorker.evaluate(({ model, recommended }) => {
     globalThis.probe = { calls: 0, reject: false };
     globalThis.fetch = async (url) => {
       probe.calls += 1;
@@ -30,7 +33,9 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
         : { models: [model, recommended, "gemini-test-model"].map((id) => ({ name: `models/${id}`, displayName: id,
           outputTokenLimit: 8192, supportedGenerationMethods: ["generateContent"] })) }));
     };
-  }, { model: DEFAULTS.aiModel, recommended: RECOMMENDED_MODEL });
+    }, { model: DEFAULTS.aiModel, recommended: RECOMMENDED_MODEL });
+  }
+  await installFakeProvider(worker);
   const exceptions = [];
   context.on("page", (page) => page.on("pageerror", (error) => exceptions.push(error.message)));
   async function open(name) {
@@ -54,7 +59,9 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   await popup.reload();
   await textIs(popup, "openSettings", "Start setup");
   const first = await open("settings");
-  await textIs(first, "setupStatus", "Add an API key");
+  await first.locator("#agreeDataSharing").waitFor({ state: "visible" });
+  assert.equal(await first.locator("#apiKey").isDisabled(), true);
+  assert.equal(await worker.evaluate(() => probe.calls), 0, "No Google request before the agreement");
   assert.equal(await first.locator("#setupGuide").isVisible(), true);
   assert.equal(await first.locator("#targetLanguage").inputValue(), "");
   assert.equal(await first.locator("#targetLanguage option").count(), LANGUAGES.length + 1);
@@ -66,9 +73,12 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
       await first.locator(`section[aria-labelledby='${heading}']`).screenshot({ path: path.join(process.env.BROWSER_EVIDENCE_DIR, file) });
     }
   }
+  await first.locator("#agreeDataSharing").click();
   await first.locator("#apiKey").fill("browser-ui-fake-key");
   await first.locator("#apiKey").blur();
   await textIs(first, "setupStatus", "Choose a target language");
+  assert.equal(await worker.evaluate(async () => Object.hasOwn(await chrome.storage.local.get(null), "geminiApiKey")), false);
+  assert.equal(await worker.evaluate(async () => Object.hasOwn(await chrome.storage.sync.get(null), "geminiApiKey")), false);
   await textIs(popup, "openSettings", "Finish setup");
   assert.equal(await popup.locator("#welcome").isVisible(), false);
   await first.reload();
@@ -78,6 +88,25 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   await first.locator("#saveButton").click();
   await textIs(first, "setupStatus", "Ready");
   await textIs(popup, "status", "Ready");
+
+  const beforeWithdrawal = await worker.evaluate(() => probe.calls);
+  const beforeWithdrawalKey = await first.evaluate(() => chrome.runtime.sendMessage({ action: "getSettingsState" }));
+  await first.locator("#apiKey").fill("browser-draft-must-not-save");
+  await first.locator("#revealKey").click();
+  assert.equal(await first.locator("#apiKey").getAttribute("type"), "text");
+  await first.locator("#apiKey").focus();
+  await first.locator("#withdrawDataSharing").click();
+  await first.locator("#agreeDataSharing").waitFor({ state: "visible" });
+  const afterWithdrawalKey = await first.evaluate(() => chrome.runtime.sendMessage({ action: "getSettingsState" }));
+  assert.equal(afterWithdrawalKey.apiKey, beforeWithdrawalKey.apiKey);
+  assert.equal(afterWithdrawalKey.credentialRevision, beforeWithdrawalKey.credentialRevision);
+  await textIs(popup, "status", "Setup required");
+  await first.reload();
+  await first.locator("#agreeDataSharing").waitFor({ state: "visible" });
+  assert.equal(await worker.evaluate(() => probe.calls), beforeWithdrawal);
+  assert.equal(await first.locator("#apiKey").inputValue(), "browser-ui-fake-key");
+  await first.locator("#agreeDataSharing").click();
+  await textIs(first, "setupStatus", "Ready");
   assert.equal(await first.locator("#setupGuide").isVisible(), false);
   await first.locator("#aiModel").selectOption("gemini-test-model");
   await first.locator("#recommendedModel").click();
@@ -206,8 +235,12 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   assert.equal(await page.locator("ai-translator-card").count(), 0);
 
   // Stop only the fixture worker, with no provider key, and check real session survival.
+  const beforeRemoval = await worker.evaluate(() => probe.calls);
+  await first.locator("#apiKey").fill("browser-removal-draft-must-not-save");
+  await first.locator("#removeKey").click();
+  await waitForRuntimeState(first, (state) => !state.hasApiKey);
+  assert.equal(await worker.evaluate(() => probe.calls), beforeRemoval);
   await first.close(); await second.close(); await popup.close();
-  await worker.evaluate(() => chrome.storage.local.remove("geminiApiKey"));
   const beforeRestart = await worker.evaluate(async () => {
     await chrome.storage.session.set({ activeRequestCount: 9 });
     return chrome.storage.session.get(["latestResult", "rateStarts"]);
@@ -234,18 +267,55 @@ context = await chromium.launchPersistentContext(path.join(temporary, "profile")
   assert.equal(afterRestart.activeRequestCount, 0);
   await restartedPopup.close();
 
-  await management.evaluate((extensionId) => chrome.developerPrivate.updateExtensionConfiguration({ extensionId, fileAccess: false }), extensionId);
-  assert.equal(await management.evaluate(async (id) => (await chrome.developerPrivate.getExtensionInfo(id)).fileAccess.isActive, extensionId), false);
-  await page.goto(pathToFileURL(localFile).href);
-  await page.locator("#text").click();
-  await page.evaluate(() => {
+  assert.equal(exceptions.length, 0, exceptions.join("\n"));
+
+  // Keep the same installation/profile for a full restart or a real Chrome upgrade.
+  const wakePopup = await open("popup");
+  const liveWorker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
+  await installFakeProvider(liveWorker);
+  await wakePopup.close();
+  const restartSettings = await open("settings");
+  await restartSettings.locator("#apiKey").fill("browser-restart-fake-key");
+  await restartSettings.locator("#saveButton").click();
+  await waitForRuntimeState(restartSettings, (state) => state.configured);
+  const beforeClose = await restartSettings.evaluate(() => chrome.runtime.sendMessage({ action: "getSettingsState" }));
+  await context.close();
+  context = await chromium.launchPersistentContext(path.join(temporary, "profile"), {
+    ...launchOptions,
+    ...(process.env.CHROME_UPGRADE_TO ? { executablePath: process.env.CHROME_UPGRADE_TO } : {}),
+  });
+  // Opening the popup wakes an idle worker without loading models or calling Google.
+  const reopenedPopup = await open("popup");
+  const reopenedWorker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
+  assert.equal(new URL(reopenedWorker.url()).host, extensionId);
+  await installFakeProvider(reopenedWorker);
+  await reopenedPopup.close();
+  const reopenedSettings = await open("settings");
+  await waitForRuntimeState(reopenedSettings, (state) => state.configured, { allowStartup: true });
+  const afterClose = await reopenedSettings.evaluate(() => chrome.runtime.sendMessage({ action: "getSettingsState" }));
+  assert.equal(afterClose.apiKey, beforeClose.apiKey);
+  assert.equal(afterClose.credentialRevision, beforeClose.credentialRevision);
+  assert.equal(afterClose.dataSharingAccepted, true);
+  assert.equal(afterClose.targetLanguage, beforeClose.targetLanguage);
+  assert.equal(afterClose.aiModel, beforeClose.aiModel);
+  assert.equal(await reopenedSettings.locator("#agreeDataSharing").isVisible(), false);
+  assert.equal(await reopenedSettings.locator("#apiKey").inputValue(), "browser-restart-fake-key");
+  assert.equal(await reopenedWorker.evaluate(async () => Object.hasOwn(await chrome.storage.local.get(null), "geminiApiKey")), false);
+
+  // Changing file access reloads the temporary extension, so do this last.
+  const reopenedManagement = await context.newPage(); await reopenedManagement.goto("chrome://extensions");
+  await reopenedManagement.evaluate((extensionId) => chrome.developerPrivate.updateExtensionConfiguration({ extensionId, fileAccess: false }), extensionId);
+  assert.equal(await reopenedManagement.evaluate(async (id) => (await chrome.developerPrivate.getExtensionInfo(id)).fileAccess.isActive, extensionId), false);
+  const deniedFile = await context.newPage();
+  await deniedFile.goto(pathToFileURL(localFile).href);
+  await deniedFile.locator("#text").click();
+  await deniedFile.evaluate(() => {
     const range = document.createRange(); range.selectNodeContents(document.querySelector("#text"));
     getSelection().removeAllRanges(); getSelection().addRange(range);
   });
-  await page.waitForTimeout(100); await page.keyboard.press("Control"); await page.waitForTimeout(100);
-  assert.equal(await page.locator("ai-translator-card").count(), 0);
-  assert.equal(exceptions.length, 0, exceptions.join("\n"));
-  console.log(`Extension page checks passed on Chrome ${context.browser().version()}: setup, stale/conflicting tabs, key recovery, popup languages/Copy, narrow layouts, frames, file access on/off, and worker restart.`);
+  await deniedFile.waitForTimeout(100); await deniedFile.keyboard.press("Control"); await deniedFile.waitForTimeout(100);
+  assert.equal(await deniedFile.locator("ai-translator-card").count(), 0);
+  console.log(`Extension page checks passed on Chrome ${initialBrowserVersion}, reopened on ${context.browser().version()}: setup, consent, stale/conflicting tabs, key recovery, popup languages/Copy, narrow layouts, frames, file access on/off, worker restart, and encrypted key/agreement survival after closing Chrome.`);
 } finally {
   await context?.close();
   await rm(temporary, { recursive: true, force: true });

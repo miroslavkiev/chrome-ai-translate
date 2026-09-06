@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { RECOMMENDED_MODEL, stableTextHash } from "../shared.js";
-import { waitForRuntimeState } from "./browser-runtime-state.mjs";
+import { setTestApiKey, waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 // Capture real extension UI using only a disposable profile and offline example data.
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
@@ -42,12 +42,16 @@ try {
   await settings.locator("#setupGuide").waitFor({ state: "visible" });
   assert.equal(await settings.locator("#apiKey").inputValue(), "");
   assert.equal(await settings.locator("#targetLanguage").inputValue(), "");
-  await settings.evaluate(() => window.scrollTo(0, 40));
+  await settings.locator("section[aria-labelledby='api-heading']").evaluate((element) => {
+    window.scrollTo(0, element.getBoundingClientRect().top + scrollY - 24);
+  });
   const keyBounds = await settings.locator("#apiKey").boundingBox();
   assert.ok(keyBounds && keyBounds.y >= 0 && keyBounds.y + keyBounds.height <= 800, "The empty key field must fit in the setup screenshot");
   const keyRowBounds = await settings.locator(".row").filter({ has: settings.locator("#apiKey") }).boundingBox();
-  const headerBounds = await settings.locator(".page-header").boundingBox();
-  assert.ok(headerBounds && headerBounds.y >= 0, "The setup header must remain visible");
+  const headerBounds = await settings.locator("#api-heading").boundingBox();
+  const agreementBounds = await settings.locator("#dataAgreement").boundingBox();
+  assert.ok(headerBounds && headerBounds.y >= 0, "The Gemini heading must remain visible");
+  assert.ok(agreementBounds && agreementBounds.y >= 0 && agreementBounds.y + agreementBounds.height <= 800, "The complete agreement must remain visible");
   assert.ok(keyRowBounds && keyRowBounds.y + keyRowBounds.height <= 800, "The full API key row must fit in the setup screenshot");
   await settings.screenshot({ path: path.join(output, "03-guided-setup.png"), scale: "css" });
 
@@ -60,10 +64,12 @@ try {
         : { models: [{ name: `models/${model}`, displayName: "Gemini 3.5 Flash-Lite", outputTokenLimit: 8192,
           supportedGenerationMethods: ["generateContent"] }] }));
     };
-    await chrome.storage.local.set({ geminiApiKey: key, modelCatalog: { apiKeyHash: hash, fetchedAt: Date.now(),
+    await chrome.storage.local.set({ modelCatalog: { apiKeyHash: hash, fetchedAt: Date.now(),
       models: [{ id: model, displayName: "Gemini 3.5 Flash-Lite", outputTokenLimit: 8192, thinking: false }] } });
     await chrome.storage.sync.set({ triggerKey: "Control", targetLanguage: "uk", aiModel: model });
   }, { model: RECOMMENDED_MODEL, translatedText: translation, key: fakeKey, hash: stableTextHash(fakeKey) });
+  await setTestApiKey(settings, fakeKey);
+  await waitForRuntimeState(settings, (state) => state.configured);
 
   const icon = `data:image/png;base64,${(await readFile(path.join(root, "icon.png"))).toString("base64")}`;
   const fixture = `<!doctype html><html lang="en"><meta charset="utf-8"><title>A fresh view | Example document</title>

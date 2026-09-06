@@ -1,12 +1,20 @@
 # Privacy and security
 
-Updated September 5, 2026. This page describes the current build. The public-release review is still open: publisher contact details, applicable legal bases, key storage protection, and Google's service eligibility must be settled before Store submission. See the [release checklist](https://github.com/miroslavkiev/chrome-ai-translate/blob/main/store/README.md).
+Updated September 6, 2026. This page describes the current build. The public-release review is still open, including applicable privacy contact information and legal bases, Google's service conditions and Store certifications. See the [release checklist](https://github.com/miroslavkiev/chrome-ai-translate/blob/main/store/README.md).
 
 AI Translator has no analytics, advertising, remote backend, or translation history.
 
+## Your data agreement
+
+Settings explains which data goes to Google, how your API key is saved and the limits of that protection. Choose **Agree and connect to Google** before entering a new key or using a migrated key. Until that agreement is saved, the extension makes no Google API requests, including model checks and translations. Having a cached model list does not bypass this step.
+
+The agreement version and date are stored locally for this browser profile. They are not sent to the developer or synced to other browsers. The agreement remains in place across normal restarts and updates; withdrawal or clearing its storage requires you to agree again. The data-sharing details remain visible in Settings for review.
+
+Google's age, work/business, region and billing conditions are shown separately and apply through use of the extension. There is no eligibility checkbox, identity check or independent verification of these facts. Your data agreement does not prove eligibility and does not provide permission on behalf of other people whose information may appear in selected text.
+
 ## Data sent to Google
 
-When you start a translation, the selected text, target language, and translation instruction are sent directly from the extension to the Google Gemini API. This also applies to text selected from a local file after you enable Chrome's file URL access for the extension. Google processes that request under the terms of the Gemini API and your Google account.
+After you agree to data sharing, starting a translation sends the selected text, target language, and translation instruction directly from the extension to the Google Gemini API. This also applies to text selected from a local file after you enable Chrome's file URL access for the extension. Google processes that request under the terms of the Gemini API and your Google account.
 
 Model-list refreshes send only your API authentication and a request for available model metadata.
 
@@ -18,13 +26,15 @@ Google's terms allow processing in countries where Google or its agents have fac
 
 ## Data stored by Chrome
 
-- Your Gemini API key is stored in local extension storage. It is not synced to other browsers. Chrome extension storage is not encrypted against access to your local browser profile.
+- Your Gemini API key is encrypted with AES-256-GCM and stored in the extension's IndexedDB database. Its nonextractable encryption key is stored there too, so the extension can use your API key automatically after a restart. The API key and encryption key are not synced to other browsers.
+- This is not an OS keychain or a password-protected vault. Extension code can use the saved encryption key to decrypt the API key. Someone with access to the Chrome profile, or hostile code running inside the extension, may still recover it. Nonextractable does not guarantee protection of key material on disk.
+- The data-agreement version and date are kept locally. A non-secret storage revision can remain after key removal to prevent an older Settings tab from restoring stale data.
 - The last model list and known key/model check state are also stored locally. They contain provider model metadata and a key fingerprint, not source text or translation history. Key replacement or removal invalidates the old catalog.
 - Your default language, selected model, and trigger key are stored in Chrome sync storage.
 - The latest translation or failure, active request count, and recent request timestamps are stored in session storage. They are cleared when the browser session ends.
 - Source text is not kept in translation history or persistent storage.
 
-An upgrade migrates any API key saved by version 1.0 from sync storage to local storage and removes the synced copy after verification.
+An upgrade moves older plain text keys from local or sync storage into the encrypted database. If both exist, the local key takes priority. The extension saves and decrypts the encrypted record to verify it before removing plain text copies from both stores. If migration fails, the old plain text value remains to avoid data loss, an error is shown and Google requests stay blocked. Missing, damaged or inaccessible encrypted storage is not silently overwritten. No Google request is needed for migration.
 
 New setup records an unselected language until you make a choice. An upgrade preserves existing saved choices and earlier defaults. Setup adds no tracking or separate first-run history.
 
@@ -38,20 +48,22 @@ Chrome pages, browser settings, the built-in PDF viewer, and other restricted pa
 
 ## Controls and limits
 
-You can disable the global key and keep the context menu. You can replace the API key by pasting another key or remove it by emptying the field. The extension limits input size, active requests, rapid requests, response size, and request duration. Failed requests are not retried automatically.
+You can disable the global key and keep the context menu. After data agreement, you can replace the API key by pasting another key. Use **Remove saved key** to delete it. The extension limits input size, active requests, rapid requests, response size, and request duration. Failed requests are not retried automatically.
+
+Use **Withdraw data agreement** in Settings to block new Google requests and abort active requests locally. Your encrypted key and preferences remain saved so you can resume if you agree again. Withdrawal does not delete Google's copies of earlier requests.
 
 Copy runs only when you choose it and writes only the displayed result to the clipboard. If the browser blocks copying, the result remains selectable. No new clipboard permission is requested.
 
 Help and About contain links to Google, the project, and an optional donation website. These open only when you click them. The extension does not process donations or send your API key or translation text with these links.
 
-Cancelling a request stops local waiting and attempts to abort the network request. Removing a key prevents future requests after the current-key check. Neither action guarantees that already dispatched provider work stops or becomes free. No translation data is sent to any service other than the configured Gemini API endpoint.
+Cancelling a request stops local waiting and attempts to abort the network request. Withdrawing agreement or removing a key blocks future requests and attempts to abort active work. These actions do not guarantee that already dispatched provider work stops or becomes free. No translation data is sent to any service other than the configured Gemini API endpoint.
 
 ## Deletion and external support
 
-Empty the key field in Settings to remove the saved key. This also invalidates its model cache. Ending the browser session clears the session result. Uninstalling the extension removes its extension storage from that browser; manage Chrome sync separately if you use it. Revoking a key or deleting Google-side data requires the controls provided by Google. Removing local data does not recall requests already sent.
+Choose **Remove saved key** in Settings to delete the encrypted API key, its encryption key and model cache. A non-secret revision marker remains to protect against stale Settings tabs. Ending the browser session clears the session result. Uninstalling the extension removes its extension storage from that browser; manage Chrome sync separately if you use it. Revoking a key or deleting Google-side data requires the controls provided by Google. Removing local data does not recall requests already sent.
 
-The [source repository](https://github.com/miroslavkiev/chrome-ai-translate) and [support issues](https://github.com/miroslavkiev/chrome-ai-translate/issues) are public and hosted by GitHub. Do not post API keys, private translations, account details, or sensitive screenshots there. Visiting GitHub or sending an issue involves GitHub's own [privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). A private publisher contact and the applicable privacy-rights information still need to be supplied before Store submission.
+The [source repository](https://github.com/miroslavkiev/chrome-ai-translate) and [support issues](https://github.com/miroslavkiev/chrome-ai-translate/issues) are public and hosted by GitHub. Do not post API keys, private translations, account details, or sensitive screenshots there. Visiting GitHub or sending an issue involves GitHub's own [privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Applicable publisher contact and privacy-rights information remains unresolved. No contact details are invented here, and the unused legal-notice template is not a public notice.
 
 ## Store review status
 
-No Limited Use compliance certification is made for this build. The saved key is not encrypted at rest, the setup needs the selected consent/storage flow, and unpaid provider data use can conflict with the Store's single-purpose restrictions. These issues must be resolved before completing the Store's privacy certifications. See the [Chrome user-data requirements](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) and [Limited Use policy](https://developer.chrome.com/docs/webstore/program-policies/policies).
+No Limited Use compliance certification is made for this build. Encrypted local key storage and the data-agreement step do not establish Store approval. Some unpaid provider data use can conflict with the Store's single-purpose restrictions, and applicable publisher/privacy information remains unresolved. Review these points before completing the Store's privacy certifications. See the [Chrome user-data requirements](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq) and [Limited Use policy](https://developer.chrome.com/docs/webstore/program-policies/policies).

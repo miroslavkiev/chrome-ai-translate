@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { DEFAULTS, RECOMMENDED_MODEL, LIMITS, STORAGE_KEYS, stableTextHash } from "../shared.js";
+import { randomUUID } from "node:crypto";
+import { DEFAULTS, DATA_SHARING_VERSION, RECOMMENDED_MODEL, LIMITS, STORAGE_KEYS, normalizeApiKey, stableTextHash } from "../shared.js";
+import { loadBackground } from "./helpers/background-module.js";
 
 const extensionId = "runtime-test-extension";
 const apiKey = "test-api-key-value";
@@ -15,7 +17,6 @@ const uiSender = { id: extensionId, url: `chrome-extension://${extensionId}/sett
 const models = [{ id: DEFAULTS.aiModel, displayName: "Test model", outputTokenLimit: 8192, thinking: false }];
 const modelPayload = { models: models.map(({ id, ...model }) => ({ ...model, name: `models/${id}`, supportedGenerationMethods: ["generateContent"] })) };
 const translationPayload = { candidates: [{ finishReason: "STOP", content: { parts: [{ text: "Translation" }] } }] };
-let importId = 0;
 let requestId = 0;
 
 function event() {
@@ -56,12 +57,39 @@ async function runtime(t, seed = {}) {
     local: {
       [STORAGE_KEYS.apiKey]: apiKey,
       [STORAGE_KEYS.modelCatalog]: { models, fetchedAt: Date.now(), apiKeyHash: stableTextHash(apiKey) },
+      [STORAGE_KEYS.dataSharingAgreement]: { version: DATA_SHARING_VERSION, acceptedAt: Date.now() },
       ...seed.local,
     },
     sync: { ...(seed.fresh ? {} : { [STORAGE_KEYS.triggerKey]: "Off" }), ...seed.sync },
     session: { ...seed.session },
   };
-  const env = { state, calls: [], writes: [], beforeGet: seed.beforeGet, beforeSet: seed.beforeSet, openedSettings: 0 };
+  const env = {
+    state, calls: [], writes: [], beforeGet: seed.beforeGet, beforeSet: seed.beforeSet,
+    beforeRemove: seed.beforeRemove, beforeVaultRead: seed.beforeVaultRead, beforeVaultWrite: seed.beforeVaultWrite,
+    beforeVaultVerify: seed.beforeVaultVerify, openedSettings: 0,
+    vault: { apiKey: null, revision: null, ...seed.vault }, corruptVault: seed.corruptVault === true,
+  };
+  const fakeStore = {
+    async readState() {
+      if (env.beforeVaultRead) await env.beforeVaultRead();
+      if (env.corruptVault) throw new Error("Fake damaged vault");
+      return { ...env.vault };
+    },
+    async write(value) {
+      if (env.beforeVaultWrite) await env.beforeVaultWrite(value);
+      env.vault = { apiKey: value, revision: randomUUID() };
+      env.corruptVault = false;
+      if (env.beforeVaultVerify) await env.beforeVaultVerify();
+      return fakeStore.readState();
+    },
+    async remove() { return fakeStore.write(null); },
+    async migrate({ localKey, syncKey }) {
+      const current = await fakeStore.readState();
+      if (current.revision !== null) return current;
+      const value = normalizeApiKey(localKey) || normalizeApiKey(syncKey);
+      return value ? fakeStore.write(value) : current;
+    },
+  };
   const area = (name) => ({
     setAccessLevel: async () => undefined,
     get: async (keys) => {
@@ -83,6 +111,7 @@ async function runtime(t, seed = {}) {
       if (Object.keys(changes).length) changed.emit(changes, name);
     },
     remove: async (keys) => {
+      if (env.beforeRemove) await env.beforeRemove(name, keys);
       const changes = {};
       for (const key of Array.isArray(keys) ? keys : [keys]) {
         if (Object.hasOwn(state[name], key)) changes[key] = { oldValue: state[name][key] };
@@ -114,6 +143,8 @@ async function runtime(t, seed = {}) {
     if (!handled.includes(true)) resolve(undefined);
   });
   env.status = () => env.message({ action: "getRuntimeState" });
+  env.settings = () => env.message({ action: "getSettingsState" });
+  env.setKey = (value, revision = env.vault.revision) => env.message({ action: "setApiKey", apiKey: value, expectedRevision: revision });
   env.translate = (overrides = {}, sender = contentSender) => {
     let complete;
     const port = {
@@ -135,7 +166,7 @@ async function runtime(t, seed = {}) {
     changed.clear();
     env.chrome.runtime.onMessage = event();
     env.chrome.runtime.onConnect = event();
-    await import(`../background.js?runtime-test=${++importId}`);
+    await loadBackground(() => fakeStore);
     return env.status();
   };
   t.after(() => {
@@ -152,7 +183,8 @@ test("runtime readiness waits for migration, keeps Off, and limits Settings acce
   assert.equal(env.ready.ok, true);
   assert.equal(env.ready.hasApiKey, true);
   assert.equal(env.ready.triggerKey, null);
-  assert.equal(env.state.local[STORAGE_KEYS.apiKey], apiKey);
+  assert.equal(env.vault.apiKey, apiKey);
+  assert.equal(Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey), false);
   assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey), false);
   assert.equal(await env.message({ action: "getRuntimeState" }, contentSender), undefined);
   assert.deepEqual(await env.message({ action: "openSettings" }, contentSender), { ok: true });
@@ -165,15 +197,13 @@ test("migration storage failure reports startup failure and preserves the old ke
   const env = await runtime(t, {
     local: { [STORAGE_KEYS.apiKey]: null },
     sync: { [STORAGE_KEYS.apiKey]: apiKey },
-    beforeSet: async (area, values) => {
-      if (area === "local" && values[STORAGE_KEYS.apiKey]) throw new Error("Cannot save key");
-    },
+    beforeVaultWrite: async () => { throw new Error("Cannot save key"); },
   });
   assert.equal(env.ready.ok, false);
-  assert.equal(env.ready.error.code, "service_error");
+  assert.equal(env.ready.error.code, "credential_storage_error");
   assert.equal(env.state.sync[STORAGE_KEYS.apiKey], apiKey);
   assert.equal(env.state.local[STORAGE_KEYS.apiKey], null);
-  assert.equal((await env.translate().done).error.code, "service_error");
+  assert.equal((await env.translate().done).error.code, "credential_storage_error");
   assert.equal(env.calls.length, 0);
 });
 
@@ -304,10 +334,10 @@ test("an old key failure cannot invalidate a replacement key or its catalog", as
   const old = env.translate();
   await until(() => oldRequest);
   const replacement = "replacement-api-key";
-  await env.chrome.storage.local.set({ [STORAGE_KEYS.apiKey]: replacement });
+  assert.equal((await env.setKey(replacement)).ok, true);
   assert.equal((await env.message({ action: "listModels", forceRefresh: true })).ok, true);
   oldRequest.resolve(json({}, 401));
-  assert.equal((await old.done).error.code, "invalid_api_key");
+  assert.equal((await old.done).error.code, "cancelled");
   assert.equal((await env.status()).configured, true);
   assert.equal((await env.status()).configurationError, null);
   assert.equal(env.state.local[STORAGE_KEYS.modelCatalog].apiKeyHash, stableTextHash(replacement));
@@ -345,11 +375,11 @@ test("delayed old rejection persistence is cleared before replacement-key valida
   const old = env.translate();
   await until(() => waiting);
   const replacement = "replacement-api-key";
-  await env.chrome.storage.local.set({ [STORAGE_KEYS.apiKey]: replacement });
-  const refreshed = env.message({ action: "listModels", forceRefresh: true });
+  const replacementWrite = env.setKey(replacement);
   releaseWrite();
-  assert.equal((await old.done).error.code, "invalid_api_key");
-  assert.equal((await refreshed).ok, true);
+  assert.equal((await replacementWrite).ok, true);
+  assert.equal((await old.done).error.code, "cancelled");
+  assert.equal((await env.message({ action: "listModels", forceRefresh: true })).ok, true);
   assert.equal((await env.status()).configured, true);
   assert.equal(env.state.local[STORAGE_KEYS.modelCatalog].apiKeyHash, stableTextHash(replacement));
 });
@@ -373,8 +403,8 @@ test("an authentication response keeps its error when the key-state read tempora
   const env = await runtime(t);
   env.provider = async () => {
     let failed = false;
-    env.beforeGet = async (area, keys) => {
-      if (!failed && area === "local" && keys === STORAGE_KEYS.apiKey) {
+    env.beforeVaultRead = async () => {
+      if (!failed) {
         failed = true;
         throw new Error("Temporary read failure");
       }
@@ -502,7 +532,7 @@ test("new setup requires a saved language even after key save and worker restart
   assert.equal(env.ready.hasApiKey, false);
   assert.equal(env.state.sync.targetLanguage, null);
   assert.equal(env.state.sync.aiModel, RECOMMENDED_MODEL);
-  await env.chrome.storage.local.set({ geminiApiKey: apiKey });
+  assert.equal((await env.setKey(apiKey)).ok, true);
   const reopened = await env.reload();
   assert.equal(reopened.hasApiKey, true);
   assert.equal(reopened.configured, false);
@@ -530,4 +560,372 @@ test("existing profiles keep legacy defaults and incoming synced preferences", a
   await env.reload();
   assert.equal(env.state.sync.targetLanguage, "es");
   assert.equal(env.state.sync.aiModel, "gemini-chosen-model");
+});
+
+for (const [label, agreement] of [
+  ["missing", undefined],
+  ["outdated", { version: DATA_SHARING_VERSION - 1, acceptedAt: Date.now() }],
+  ["invalid", { version: DATA_SHARING_VERSION, acceptedAt: "not-a-date" }],
+]) {
+  test(`${label} agreement blocks saved keys and cached models without provider calls`, async (t) => {
+    const env = await runtime(t, { local: { [STORAGE_KEYS.dataSharingAgreement]: agreement } });
+    assert.equal(env.ready.ok, true);
+    assert.equal(env.ready.hasApiKey, true);
+    assert.equal(env.ready.configured, false);
+    assert.equal(env.ready.configurationError.code, "agreement_required");
+    assert.equal((await env.message({ action: "listModels" })).error.code, "agreement_required");
+    assert.equal((await env.message({ action: "listModels", forceRefresh: true })).error.code, "agreement_required");
+    assert.equal((await env.translate().done).error.code, "agreement_required");
+    assert.equal((await env.setKey("replacement-test-key")).error.code, "agreement_required");
+    assert.equal(env.calls.length, 0);
+    assert.equal(env.vault.apiKey, apiKey);
+    assert.equal(env.state.session[STORAGE_KEYS.rateStarts], undefined);
+  });
+}
+
+test("only Settings can read or change the credential and agreement; acceptance persists locally", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.dataSharingAgreement]: undefined } });
+  const deniedSenders = [
+    contentSender,
+    { id: extensionId, url: `chrome-extension://${extensionId}/popup.html` },
+    { id: extensionId, url: `chrome-extension://${extensionId}/help.html` },
+    { ...uiSender, id: "foreign" },
+    { ...uiSender, url: `${uiSender.url}?pretend=settings` },
+    { ...uiSender, url: `${uiSender.url}#pretend` },
+    { ...uiSender, url: `${uiSender.url}/extra` },
+  ];
+  for (const sender of deniedSenders) {
+    for (const message of [
+      { action: "getSettingsState" },
+      { action: "setApiKey", apiKey: null, expectedRevision: env.vault.revision },
+      { action: "setDataSharing", accepted: true },
+      { action: "setDataSharing", accepted: false },
+      { action: "resetDamagedKey" },
+    ]) assert.equal(await env.message(message, sender), undefined);
+  }
+  const publicState = await env.status();
+  assert.equal(Object.hasOwn(publicState, "apiKey"), false);
+  assert.equal(Object.hasOwn(publicState, "credentialRevision"), false);
+  assert.equal((await env.settings()).apiKey, apiKey);
+  assert.equal(env.vault.apiKey, apiKey);
+  assert.equal(env.calls.length, 0);
+  const before = Date.now();
+  const accepted = await env.message({ action: "setDataSharing", accepted: true, version: 999, acceptedAt: 1 });
+  assert.equal(accepted.ok, true);
+  assert.equal(accepted.configured, true);
+  const record = { ...env.state.local[STORAGE_KEYS.dataSharingAgreement] };
+  assert.equal(record.version, DATA_SHARING_VERSION);
+  assert.ok(record.acceptedAt >= before && record.acceptedAt <= Date.now());
+  assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.dataSharingAgreement), false);
+  assert.equal((await env.reload()).dataSharingAccepted, true);
+  assert.equal((await env.setKey("replacement-test-key")).ok, true);
+  assert.deepEqual(env.state.local[STORAGE_KEYS.dataSharingAgreement], record);
+  assert.equal((await env.reload()).dataSharingAccepted, true);
+  assert.equal(env.calls.length, 0);
+});
+
+test("a failed agreement save leaves Google access blocked", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.dataSharingAgreement]: undefined } });
+  env.beforeSet = async (area, values) => {
+    if (area === "local" && values[STORAGE_KEYS.dataSharingAgreement]) throw new Error("Cannot save agreement");
+  };
+  assert.equal((await env.message({ action: "setDataSharing", accepted: true })).ok, false);
+  assert.equal((await env.status()).dataSharingAccepted, false);
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+  assert.equal((await env.message({ action: "listModels", forceRefresh: true })).error.code, "agreement_required");
+  assert.equal(env.calls.length, 0);
+  assert.equal(env.vault.apiKey, apiKey);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+});
+
+test("new setup accepts data sharing once before saving a key or loading models", async (t) => {
+  const env = await runtime(t, { fresh: true, local: {
+    [STORAGE_KEYS.apiKey]: null, [STORAGE_KEYS.modelCatalog]: null,
+    [STORAGE_KEYS.dataSharingAgreement]: undefined,
+  } });
+  assert.equal(env.ready.hasApiKey, false);
+  assert.equal(env.ready.dataSharingAccepted, false);
+  assert.equal((await env.setKey(apiKey)).error.code, "agreement_required");
+  assert.equal(env.vault.apiKey, null);
+  assert.equal((await env.message({ action: "setDataSharing", accepted: true })).ok, true);
+  const agreement = { ...env.state.local[STORAGE_KEYS.dataSharingAgreement] };
+  assert.equal((await env.setKey(apiKey)).ok, true);
+  assert.equal(env.calls.length, 0);
+  assert.equal((await env.message({ action: "listModels" })).ok, true);
+  assert.equal((await env.status()).configurationError.code, "missing_target_language");
+  await env.chrome.storage.sync.set({ targetLanguage: "fr", aiModel: DEFAULTS.aiModel });
+  assert.equal((await env.reload()).configured, true);
+  assert.deepEqual(env.state.local[STORAGE_KEYS.dataSharingAgreement], agreement);
+  assert.equal(env.calls.length, 1);
+});
+
+test("withdrawal cancels requests, rejects late results and caches, and keeps the saved key", async (t) => {
+  const env = await runtime(t);
+  const originalCredential = { ...env.vault };
+  const originalCatalog = structuredClone(env.state.local[STORAGE_KEYS.modelCatalog]);
+  const pending = [];
+  env.provider = (url, init) => new Promise((resolve) => pending.push({ url, init, resolve }));
+  const translation = env.translate();
+  const modelsRequest = env.message({ action: "listModels", forceRefresh: true });
+  await until(() => pending.length === 2);
+  const withdrawn = await env.message({ action: "setDataSharing", accepted: false });
+  assert.equal(withdrawn.ok, true);
+  assert.equal(withdrawn.dataSharingAccepted, false);
+  assert.equal(withdrawn.configured, false);
+  assert.ok(pending.every(({ init }) => init.signal.aborted));
+  for (const request of pending) request.resolve(json(request.url.includes(":generateContent") ? translationPayload : modelPayload));
+  assert.equal((await translation.done).error.code, "cancelled");
+  assert.equal((await modelsRequest).error.code, "agreement_required");
+  assert.deepEqual(env.state.local[STORAGE_KEYS.modelCatalog], originalCatalog);
+  assert.deepEqual(env.vault, originalCredential);
+  assert.notEqual(env.state.session[STORAGE_KEYS.latestResult]?.status, "success");
+  assert.equal(env.state.local[STORAGE_KEYS.apiKeyStatus], undefined);
+  assert.equal((await env.translate({ text: "after withdrawal" }).done).error.code, "agreement_required");
+  assert.equal(env.calls.length, 2);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+});
+
+test("withdrawal between model pages prevents the next provider request", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.modelCatalog]: undefined } });
+  env.provider = async () => {
+    assert.equal((await env.message({ action: "setDataSharing", accepted: false })).ok, true);
+    return json({ ...modelPayload, nextPageToken: "second-page" });
+  };
+  assert.equal((await env.message({ action: "listModels", forceRefresh: true })).error.code, "agreement_required");
+  assert.equal(env.calls.length, 1);
+  assert.equal(env.state.local[STORAGE_KEYS.modelCatalog], undefined);
+});
+
+test("withdrawal stops requests before a pending credential read and skips an older queued acceptance", async (t) => {
+  const env = await runtime(t);
+  let request;
+  env.provider = async (_url, init) => {
+    request = { init, ...pendingFetch(init) };
+    return request.promise;
+  };
+  const translation = env.translate();
+  await until(() => request);
+  let releaseRead;
+  let readStarted = false;
+  env.beforeVaultRead = async () => {
+    env.beforeVaultRead = null;
+    readStarted = true;
+    await new Promise((resolve) => { releaseRead = resolve; });
+  };
+  const save = env.setKey("replacement-test-key");
+  await until(() => readStarted);
+  const acceptance = env.message({ action: "setDataSharing", accepted: true });
+  const withdrawal = env.message({ action: "setDataSharing", accepted: false });
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(request.init.signal.aborted, true);
+  assert.ok(env.state.local[STORAGE_KEYS.dataSharingAgreement], "Persistence is still waiting on the key operation");
+  assert.equal((await env.translate({ text: "after withdrawal" }).done).error.code, "agreement_required");
+  assert.equal(env.calls.length, 1);
+  releaseRead();
+  assert.equal((await save).error.code, "agreement_required");
+  assert.equal((await acceptance).dataSharingAccepted, false);
+  assert.equal((await withdrawal).dataSharingAccepted, false);
+  assert.equal((await translation.done).error.code, "cancelled");
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+  assert.equal(env.writes.some(({ values }) => Object.hasOwn(values, STORAGE_KEYS.dataSharingAgreement)), false);
+  assert.equal(env.vault.apiKey, apiKey);
+});
+
+test("an older acceptance write and its change event cannot reopen a pending withdrawal", async (t) => {
+  const env = await runtime(t, { local: { [STORAGE_KEYS.dataSharingAgreement]: undefined } });
+  let releaseAcceptance;
+  let acceptanceStarted = false;
+  env.beforeSet = async (area, values) => {
+    if (area === "local" && values[STORAGE_KEYS.dataSharingAgreement]) {
+      acceptanceStarted = true;
+      await new Promise((resolve) => { releaseAcceptance = resolve; });
+    }
+  };
+  let releaseWithdrawal;
+  let withdrawalStarted = false;
+  env.beforeRemove = async (area, keys) => {
+    if (area === "local" && keys === STORAGE_KEYS.dataSharingAgreement) {
+      withdrawalStarted = true;
+      await new Promise((resolve) => { releaseWithdrawal = resolve; });
+    }
+  };
+  const acceptance = env.message({ action: "setDataSharing", accepted: true });
+  await until(() => acceptanceStarted);
+  const withdrawal = env.message({ action: "setDataSharing", accepted: false });
+  releaseAcceptance();
+  await until(() => withdrawalStarted);
+  assert.ok(env.state.local[STORAGE_KEYS.dataSharingAgreement], "The older acceptance event has been delivered");
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+  assert.equal(env.calls.length, 0);
+  releaseWithdrawal();
+  assert.equal((await acceptance).dataSharingAccepted, false);
+  assert.equal((await withdrawal).dataSharingAccepted, false);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+  env.beforeSet = null;
+  env.beforeRemove = null;
+  assert.equal((await env.message({ action: "setDataSharing", accepted: true })).dataSharingAccepted, true);
+  assert.equal((await env.translate().done).ok, true);
+});
+
+test("failed withdrawal persistence stays blocked and reports failure until a retry removes the record", async (t) => {
+  const env = await runtime(t);
+  const originalAgreement = { ...env.state.local[STORAGE_KEYS.dataSharingAgreement] };
+  env.beforeRemove = async (area, keys) => {
+    if (area === "local" && keys === STORAGE_KEYS.dataSharingAgreement) throw new Error("Cannot remove agreement");
+  };
+  const result = await env.message({ action: "setDataSharing", accepted: false });
+  assert.equal(result.ok, false);
+  const pending = await env.settings();
+  assert.equal(pending.dataSharingAccepted, false);
+  assert.equal(pending.dataSharingWithdrawalPending, true);
+  assert.deepEqual(env.state.local[STORAGE_KEYS.dataSharingAgreement], originalAgreement);
+  assert.equal((await env.translate().done).error.code, "agreement_required");
+  assert.equal(env.calls.length, 0);
+  env.beforeRemove = null;
+  const retried = await env.message({ action: "setDataSharing", accepted: false });
+  assert.equal(retried.ok, true);
+  assert.equal(retried.dataSharingWithdrawalPending, false);
+  assert.equal(env.state.local[STORAGE_KEYS.dataSharingAgreement], undefined);
+  assert.equal((await env.reload()).dataSharingAccepted, false);
+});
+
+test("stale saves and removals stay rejected after remove, re-add and worker restart", async (t) => {
+  const env = await runtime(t);
+  const oldRevision = (await env.settings()).credentialRevision;
+  const removed = await env.setKey(null, oldRevision);
+  assert.equal(removed.ok, true);
+  assert.equal(removed.hasApiKey, false);
+  assert.notEqual(removed.credentialRevision, oldRevision);
+  const readded = await env.setKey(apiKey, removed.credentialRevision);
+  assert.equal(readded.ok, true);
+  assert.notEqual(readded.credentialRevision, oldRevision);
+  assert.notEqual(readded.credentialRevision, removed.credentialRevision);
+  await env.reload();
+  assert.equal((await env.settings()).credentialRevision, readded.credentialRevision);
+  assert.equal((await env.setKey("stale-replacement-key", oldRevision)).error.code, "credential_conflict");
+  assert.equal((await env.setKey(null, oldRevision)).error.code, "credential_conflict");
+  assert.equal((await env.message({ action: "setApiKey", apiKey: null })).error.code, "credential_conflict");
+  assert.equal(env.vault.apiKey, apiKey);
+  assert.equal(env.vault.revision, readded.credentialRevision);
+  assert.equal(env.calls.length, 0);
+});
+
+test("verified migration removes plaintext and a removal tombstone blocks legacy restoration", async (t) => {
+  const env = await runtime(t, { sync: { [STORAGE_KEYS.apiKey]: "other-legacy-test-key" } });
+  assert.equal(env.vault.apiKey, apiKey);
+  assert.ok(env.vault.revision);
+  assert.equal(Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey), false);
+  assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey), false);
+  assert.equal(env.writes.some(({ values }) => Object.hasOwn(values, STORAGE_KEYS.apiKey)), false);
+  assert.equal((await env.setKey(null)).ok, true);
+  const removedRevision = env.vault.revision;
+  env.state.local[STORAGE_KEYS.apiKey] = apiKey;
+  env.state.sync[STORAGE_KEYS.apiKey] = "old-synced-test-key";
+  assert.equal((await env.reload()).hasApiKey, false);
+  assert.equal(env.vault.revision, removedRevision);
+  assert.equal(Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey), false);
+  assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey), false);
+  assert.equal(env.calls.length, 0);
+});
+
+test("verification failure keeps legacy keys and a later startup safely completes migration", async (t) => {
+  const env = await runtime(t, {
+    sync: { [STORAGE_KEYS.apiKey]: "old-synced-test-key" },
+    beforeVaultVerify: async () => { throw new Error("Read-back failed after commit"); },
+  });
+  assert.equal(env.ready.error.code, "credential_storage_error");
+  assert.equal(env.state.local[STORAGE_KEYS.apiKey], apiKey);
+  assert.equal(env.state.sync[STORAGE_KEYS.apiKey], "old-synced-test-key");
+  assert.equal((await env.translate().done).error.code, "credential_storage_error");
+  assert.equal(env.calls.length, 0);
+  env.beforeVaultVerify = null;
+  assert.equal((await env.reload()).hasApiKey, true);
+  assert.equal(env.vault.apiKey, apiKey);
+  assert.equal(Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey), false);
+  assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey), false);
+});
+
+test("Settings retries a failed verification without restarting or replacing the migrated key", async (t) => {
+  const env = await runtime(t, {
+    sync: { [STORAGE_KEYS.apiKey]: "old-synced-test-key" },
+    beforeVaultVerify: async () => { throw new Error("Read-back failed after commit"); },
+  });
+  assert.equal(env.ready.error.code, "credential_storage_error");
+  const committed = { ...env.vault };
+  assert.equal(env.state.local[STORAGE_KEYS.apiKey], apiKey);
+  assert.equal(env.state.sync[STORAGE_KEYS.apiKey], "old-synced-test-key");
+  const recovered = await env.settings();
+  assert.equal(recovered.ok, true);
+  assert.equal(recovered.apiKey, apiKey);
+  assert.equal(recovered.credentialRevision, committed.revision);
+  assert.deepEqual(env.vault, committed);
+  assert.equal(Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey), false);
+  assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey), false);
+  assert.equal((await env.status()).configured, true);
+  assert.equal(env.calls.length, 0);
+});
+
+test("late local and sync legacy keys are cleared without replacing the encrypted key or tombstone", async (t) => {
+  const env = await runtime(t);
+  const original = { ...env.vault };
+  const originalCatalog = structuredClone(env.state.local[STORAGE_KEYS.modelCatalog]);
+  await env.chrome.storage.local.set({ [STORAGE_KEYS.apiKey]: "late-local-test-key" });
+  await env.chrome.storage.sync.set({ [STORAGE_KEYS.apiKey]: "late-synced-test-key" });
+  await until(() => !Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey) && !Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey));
+  assert.deepEqual(env.vault, original);
+  assert.deepEqual(env.state.local[STORAGE_KEYS.modelCatalog], originalCatalog);
+  assert.equal((await env.status()).configured, true);
+
+  assert.equal((await env.setKey(null)).ok, true);
+  const removed = { ...env.vault };
+  await env.chrome.storage.sync.set({ [STORAGE_KEYS.apiKey]: "late-synced-test-key" });
+  await until(() => !Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey));
+  assert.deepEqual(env.vault, removed);
+  assert.equal((await env.status()).hasApiKey, false);
+  assert.equal(env.calls.length, 0);
+});
+
+test("a first legacy key arriving after startup migrates without contacting Google", async (t) => {
+  const env = await runtime(t, { fresh: true, local: {
+    [STORAGE_KEYS.apiKey]: null, [STORAGE_KEYS.modelCatalog]: null,
+    [STORAGE_KEYS.dataSharingAgreement]: undefined,
+  } });
+  assert.equal(env.vault.revision, null);
+  await env.chrome.storage.sync.set({ [STORAGE_KEYS.apiKey]: apiKey });
+  await until(() => env.vault.apiKey === apiKey && !Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey));
+  assert.ok(env.vault.revision);
+  const state = await env.settings();
+  assert.equal(state.hasApiKey, true);
+  assert.equal(state.dataSharingAccepted, false);
+  assert.equal(state.configurationError.code, "agreement_required");
+  assert.equal(env.state.local[STORAGE_KEYS.modelCatalog], undefined);
+  assert.equal(env.calls.length, 0);
+});
+
+test("damaged storage never falls back to legacy keys and needs explicit Settings removal", async (t) => {
+  const env = await runtime(t, {
+    corruptVault: true, vault: { apiKey: "unreadable-test-key", revision: randomUUID() },
+    sync: { [STORAGE_KEYS.apiKey]: "old-synced-test-key" },
+  });
+  assert.equal(env.ready.error.code, "credential_storage_error");
+  assert.equal((await env.settings()).canRemoveKey, true);
+  assert.equal((await env.setKey("replacement-test-key")).error.code, "credential_storage_error");
+  assert.equal((await env.translate().done).error.code, "credential_storage_error");
+  assert.equal(await env.message({ action: "resetDamagedKey" }, {
+    id: extensionId, url: `chrome-extension://${extensionId}/popup.html`,
+  }), undefined);
+  assert.equal(env.corruptVault, true);
+  assert.equal(env.state.local[STORAGE_KEYS.apiKey], apiKey);
+  assert.equal(env.calls.length, 0);
+  const recovered = await env.message({ action: "resetDamagedKey" });
+  assert.equal(recovered.ok, true);
+  assert.equal(recovered.hasApiKey, false);
+  assert.equal(env.vault.apiKey, null);
+  assert.ok(env.vault.revision);
+  assert.equal(Object.hasOwn(env.state.local, STORAGE_KEYS.apiKey), false);
+  assert.equal(Object.hasOwn(env.state.sync, STORAGE_KEYS.apiKey), false);
+  assert.equal((await env.setKey("replacement-test-key")).ok, true);
+  const validState = { ...env.vault };
+  assert.equal((await env.message({ action: "resetDamagedKey" })).error.code, "credential_conflict");
+  assert.deepEqual(env.vault, validState);
 });

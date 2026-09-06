@@ -8,7 +8,7 @@ The [source repository](https://github.com/miroslavkiev/chrome-ai-translate) is 
 
 ## Chrome Web Store preparation
 
-The [Store release pack](store/README.md) contains listing text, screenshots, promotional images, reviewer notes and a Germany/EU legal review. It is a draft, not a published Store listing. Key-storage protection, disclosure/consent, Google's audience/service conditions and approved publisher details remain open. No personal address is inferred or published.
+The [Store release pack](store/README.md) contains listing text, screenshots, promotional images, reviewer notes and a Germany/EU legal review. It is a draft, not a published Store listing. The build remembers an encrypted key on this device and asks for agreement before any Google request. Store approval, Google's service conditions and applicable publisher information remain under review.
 
 ## Features
 
@@ -17,6 +17,8 @@ The [Store release pack](store/README.md) contains listing text, screenshots, pr
 - Change the target language for one result without changing the saved default.
 - Choose from Google's documented Gemini languages, including separate Simplified and Traditional Chinese choices.
 - Follow a first-use checklist and an API key guide inside the extension.
+- Keep an encrypted API key across normal Chrome restarts, without a separate unlock password.
+- Review data sharing in Settings and withdraw your agreement at any time.
 - Choose from the compatible models returned by the Gemini Models API.
 - See loading, success, timeout, quota, network, and other failure states.
 - Retry failed translations manually. The extension does not retry paid requests automatically.
@@ -60,11 +62,18 @@ For a new install, load the generated `dist` folder from `chrome://extensions`. 
 
 1. Open the extension toolbar popup. Without a saved API key, it shows a welcome guide. Choose Start setup to open the checklist in Settings.
 2. Follow the API key guide to open Google AI Studio, sign in, and create or choose your own key. The guide opens in a separate tab and contains links to Google's current instructions.
-3. Paste your key into Settings. The key saves and the model list loads automatically. A manually typed key saves when you leave the field. Delete the field contents to remove it.
-4. Choose a model, target language, and optional keyboard trigger. Choose Finish setup to save these choices and complete the checklist.
-5. Open a normal web page, select text, then tap and release Control. You can also choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
+3. Read the use conditions and data-sharing details in Settings. Choose **Agree and connect to Google** to allow model checks and the translations you request. Until you agree, the extension makes no Google API request.
+4. Paste your key into Settings. After agreement, the key is encrypted and saved, and the model list loads automatically. A manually typed key saves when you leave the field. On an upgrade, a saved key can be migrated safely without entering it again; model loading still waits for your agreement.
+5. Choose a model, target language, and optional keyboard trigger. Choose Finish setup to save these choices and complete the checklist.
+6. Open a normal web page, select text, then tap and release Control. You can also choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
 
 After setup, the popup returns to the standard view. A saved key with unfinished setup keeps a Finish setup action so you can return to the checklist. Removing the key brings back the welcome guide. Existing users keep their saved language and model. Later changes use Save Preferences in Settings.
+
+The data agreement is saved for this browser profile and stays in place across normal restarts and updates. It is separate from Google's use conditions, which apply through use of the extension without an eligibility checkbox. The extension does not verify your age, work, location or billing.
+
+The key opens automatically for use after a restart. It is encrypted with AES-256-GCM in the extension's local database and is not synced. This protects the saved value, but it is not an OS keychain or password-protected vault: someone with access to the Chrome profile may still recover it.
+
+The data-sharing details stay visible in Settings. Choose **Withdraw data agreement** to block new Google requests and stop waiting for active ones. Your encrypted key and preferences stay saved so you can agree again later. Choose **Remove saved key** to delete the saved key, its encryption key and model cache. Neither action recalls data already sent to Google or revokes the key in your Google account.
 
 We recommend the Gemini Flash-Lite family. For this release in September 2026, the recommended model is `gemini-3.5-flash-lite`, when it is available to your key. You can choose another listed model. Some models may not work with this extension; if one fails, choose another or use the recommended model. Use Refresh models to request an updated list.
 
@@ -102,7 +111,7 @@ Key or model errors offer Settings. Oversized or blocked text asks for a differe
 
 ## Privacy and permissions
 
-The extension sends selected text directly to Google only after a translation action. It has no analytics, advertising, remote backend, or translation history. The Gemini API key is stored in local extension storage and is not synced. The most recent result is kept only for the current browser session.
+The extension sends selected text directly to Google only after your data agreement and a translation action. Model checks also require that agreement and use your key without selected text. It has no analytics, advertising, remote backend, or translation history. The Gemini API key is encrypted in the extension's local database and is not synced. Its encryption key is kept in the same browser profile so the extension can use it automatically. The most recent result is kept only for the current browser session.
 
 Google API costs, limits, and use of submitted data depend on your plan and Google's terms. Read [Google's pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing) and the [Gemini API terms](https://ai.google.dev/gemini-api/terms). For account access issues, check [Google's region and age requirements](https://ai.google.dev/gemini-api/docs/available-regions).
 

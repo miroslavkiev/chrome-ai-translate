@@ -1,5 +1,6 @@
 import {
   DEFAULTS,
+  DATA_SHARING_VERSION,
   RECOMMENDED_MODEL,
   LIMITS,
   STORAGE_KEYS,
@@ -21,10 +22,18 @@ import {
   validateTranslateRequest,
   validateTranslationEnvelope,
 } from "./request-policy.js";
+import { createCredentialStore } from "./credential-store.js";
 
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta";
 const CONTEXT_MENU_ID = "translateText";
 const TRANSLATION_PORT = "translation";
+const credentialStore = createCredentialStore();
+const activeConnections = new Set();
+const networkControllers = new Set();
+let dataSharingAccepted = false;
+let dataSharingDenied = false;
+let dataSharingIntent = 0;
+let runtimeError = null;
 
 const activeByTab = new Map();
 const activeDuplicates = new Set();
@@ -59,20 +68,22 @@ async function initializeRuntime() {
     chrome.storage.local.setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" }),
     chrome.storage.session.setAccessLevel({ accessLevel: "TRUSTED_CONTEXTS" }),
   ]);
-  await migrateSyncedApiKey();
+  await migrateApiKey();
+  const agreement = await chrome.storage.local.get(STORAGE_KEYS.dataSharingAgreement);
+  dataSharingAccepted = !dataSharingDenied && validAgreement(agreement[STORAGE_KEYS.dataSharingAgreement]);
   await initializePreferences();
   await chrome.storage.session.set({ [STORAGE_KEYS.activeRequestCount]: 0 });
 }
 
 async function initializePreferences() {
   const keys = [STORAGE_KEYS.targetLanguage, STORAGE_KEYS.aiModel, STORAGE_KEYS.triggerKey];
-  const local = await chrome.storage.local.get(STORAGE_KEYS.apiKey);
+  const apiKey = await getApiKey();
   const initial = await chrome.storage.sync.get(keys);
   if (Object.hasOwn(initial, STORAGE_KEYS.targetLanguage) && Object.hasOwn(initial, STORAGE_KEYS.aiModel)) return;
   // Re-read before filling missing fields so an arriving sync value is preserved.
   const stored = await chrome.storage.sync.get(keys);
   const existing = stored[STORAGE_KEYS.targetLanguage] !== null
-    && (Boolean(normalizeApiKey(local[STORAGE_KEYS.apiKey])) || Object.keys(stored).length > 0);
+    && (Boolean(apiKey) || Object.keys(stored).length > 0);
   const values = {};
   if (!Object.hasOwn(stored, STORAGE_KEYS.targetLanguage)) {
     values[STORAGE_KEYS.targetLanguage] = existing ? DEFAULTS.targetLanguage : null;
@@ -83,51 +94,165 @@ async function initializePreferences() {
   if (Object.keys(values).length) await chrome.storage.sync.set(values);
 }
 
-async function migrateSyncedApiKey() {
+async function readCredentialState() {
+  try {
+    return await credentialStore.readState();
+  } catch {
+    throw runtimeFailure(publicError("credential_storage_error"));
+  }
+}
+
+async function migrateApiKey() {
   const [local, sync] = await Promise.all([
     chrome.storage.local.get(STORAGE_KEYS.apiKey),
     chrome.storage.sync.get(STORAGE_KEYS.apiKey),
   ]);
-  const localKey = normalizeApiKey(local[STORAGE_KEYS.apiKey]);
-  const syncKey = normalizeApiKey(sync[STORAGE_KEYS.apiKey]);
-  if (!syncKey) {
-    if (Object.hasOwn(sync, STORAGE_KEYS.apiKey)) {
-      await chrome.storage.sync.remove(STORAGE_KEYS.apiKey);
-    }
-    return;
+  let state;
+  try {
+    state = await credentialStore.migrate({
+      localKey: local[STORAGE_KEYS.apiKey], syncKey: sync[STORAGE_KEYS.apiKey],
+    });
+  } catch {
+    throw runtimeFailure(publicError("credential_storage_error"));
   }
-  if (!localKey) {
-    await chrome.storage.local.set({ [STORAGE_KEYS.apiKey]: syncKey });
-    const verified = await chrome.storage.local.get(STORAGE_KEYS.apiKey);
-    if (verified[STORAGE_KEYS.apiKey] !== syncKey) {
-      throw runtimeFailure(publicError("service_error"));
-    }
-  }
+  // Only discard legacy copies after the vault has verified its stored value.
+  await chrome.storage.local.set({ [STORAGE_KEYS.credentialVersion]: state.revision });
+  await chrome.storage.local.remove(STORAGE_KEYS.apiKey);
   await chrome.storage.sync.remove(STORAGE_KEYS.apiKey);
+  return state;
 }
 
 const runtimeReady = initializeRuntime().then(
   () => null,
-  () => publicError("service_error"),
+  (error) => { runtimeError = toPublicError(error); return runtimeError; },
 );
 
 async function requireRuntime() {
-  const error = await runtimeReady;
-  if (error) throw runtimeFailure(error);
+  await runtimeReady;
+  if (runtimeError) throw runtimeFailure(runtimeError);
 }
 
 chrome.storage.onChanged.addListener((changes, areaName) => {
-  if (areaName !== "local" || !changes[STORAGE_KEYS.apiKey]) return;
+  if (["local", "sync"].includes(areaName) && normalizeApiKey(changes[STORAGE_KEYS.apiKey]?.newValue)) {
+    // An older installation can sync a legacy key after this worker has started.
+    void runtimeReady.then(() => withLock("credentials", async () => {
+      const previous = await readCredentialState();
+      const state = await migrateApiKey();
+      if (state.revision !== previous.revision) await invalidateCredentials();
+    })).catch((error) => { runtimeError = toPublicError(error); });
+  }
+  if (areaName !== "local" || !changes[STORAGE_KEYS.dataSharingAgreement]) return;
+  dataSharingAccepted = !dataSharingDenied && validAgreement(changes[STORAGE_KEYS.dataSharingAgreement].newValue);
+  if (!dataSharingAccepted) cancelGoogleRequests();
+});
+
+function validAgreement(value) {
+  return value?.version === DATA_SHARING_VERSION
+    && Number.isFinite(value.acceptedAt) && value.acceptedAt > 0;
+}
+
+async function requireDataSharing() {
+  const stored = await chrome.storage.local.get(STORAGE_KEYS.dataSharingAgreement);
+  if (!dataSharingAccepted || !validAgreement(stored[STORAGE_KEYS.dataSharingAgreement])) {
+    throw runtimeFailure(publicError("agreement_required"));
+  }
+}
+
+function cancelGoogleRequests() {
+  for (const connection of activeConnections) connection.controller.abort("cancelled");
+  for (const controller of networkControllers) controller.abort("cancelled");
+  modelRefresh?.controller?.abort("cancelled");
+  modelRefresh = null;
+}
+
+async function invalidateCredentials() {
   credentialRevision += 1;
   knownApiKeyStatus = null;
   modelCheckIds.clear();
-  modelRefresh?.controller?.abort("cancelled");
-  modelRefresh = null;
-  void withLock("credentials", () => chrome.storage.local.remove([
+  cancelGoogleRequests();
+  await chrome.storage.local.remove([
     STORAGE_KEYS.modelCatalog,
     STORAGE_KEYS.apiKeyStatus,
-  ])).catch(() => undefined);
-});
+  ]);
+}
+
+async function changeCredential(message) {
+  try {
+    await requireRuntime();
+    await withLock("credentials", async () => {
+      const current = await readCredentialState();
+      if (message.expectedRevision !== current.revision) throw runtimeFailure(publicError("credential_conflict"));
+      const apiKey = message.apiKey === null ? null : normalizeApiKey(message.apiKey);
+      if (message.apiKey !== null && !apiKey) throw runtimeFailure(publicError("invalid_api_key"));
+      if (apiKey) await requireDataSharing();
+      await invalidateCredentials();
+      let state;
+      try {
+        state = apiKey ? await credentialStore.write(apiKey) : await credentialStore.remove();
+      } catch {
+        throw runtimeFailure(publicError("credential_storage_error"));
+      }
+      await chrome.storage.local.remove(STORAGE_KEYS.apiKey);
+      await chrome.storage.sync.remove(STORAGE_KEYS.apiKey);
+      await chrome.storage.local.set({ [STORAGE_KEYS.credentialVersion]: state.revision });
+    });
+    return getRuntimeState(true);
+  } catch (error) {
+    return { ok: false, error: toPublicError(error) };
+  }
+}
+
+async function changeDataSharing(accepted) {
+  try {
+    if (typeof accepted !== "boolean") throw runtimeFailure(publicError("service_error"));
+    const intent = ++dataSharingIntent;
+    if (!accepted) {
+      // Stop access before waiting for a key operation or persistence. Older
+      // acceptance writes and their storage events cannot reopen this gate.
+      dataSharingDenied = true;
+      dataSharingAccepted = false;
+      cancelGoogleRequests();
+    }
+    await requireRuntime();
+    await withLock("credentials", async () => {
+      if (intent !== dataSharingIntent) return;
+      if (accepted) {
+        await chrome.storage.local.set({
+          [STORAGE_KEYS.dataSharingAgreement]: { version: DATA_SHARING_VERSION, acceptedAt: Date.now() },
+        });
+        if (intent === dataSharingIntent) {
+          dataSharingDenied = false;
+          dataSharingAccepted = true;
+        }
+      } else {
+        await chrome.storage.local.remove(STORAGE_KEYS.dataSharingAgreement);
+      }
+    });
+    return getRuntimeState(true);
+  } catch (error) {
+    return { ok: false, error: toPublicError(error) };
+  }
+}
+
+async function resetDamagedKey() {
+  try {
+    await runtimeReady;
+    await withLock("credentials", async () => {
+      let damaged = false;
+      try { await credentialStore.readState(); } catch { damaged = true; }
+      if (!damaged) throw runtimeFailure(publicError("credential_conflict"));
+      await invalidateCredentials();
+      try { await credentialStore.remove(); } catch {
+        throw runtimeFailure(publicError("credential_storage_error"));
+      }
+      await initializeRuntime();
+      runtimeError = null;
+    });
+    return getRuntimeState(true);
+  } catch (error) {
+    return { ok: false, error: toPublicError(error) };
+  }
+}
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.removeAll(() => {
@@ -192,6 +317,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
   }
   if (!isTrustedExtensionPage(sender)) return false;
+  const settingsActions = {
+    getSettingsState: () => getRuntimeState(true),
+    setApiKey: () => changeCredential(message),
+    setDataSharing: () => changeDataSharing(message.accepted),
+    resetDamagedKey,
+  };
+  if (Object.hasOwn(settingsActions, message?.action)) {
+    if (!isSettingsPage(sender)) return false;
+    void settingsActions[message.action]().then(sendResponse);
+    return true;
+  }
   if (message?.action === "listModels") {
     void listModelsForUi(message.forceRefresh === true).then(sendResponse);
     return true;
@@ -209,7 +345,16 @@ function isTrustedExtensionPage(sender) {
     && sender.url.startsWith(`chrome-extension://${chrome.runtime.id}/`);
 }
 
+function isSettingsPage(sender) {
+  if (!isTrustedExtensionPage(sender)) return false;
+  try {
+    const url = new URL(sender.url);
+    return url.pathname === "/settings.html" && !url.search && !url.hash;
+  } catch { return false; }
+}
+
 async function handleTranslation(port, connection, message) {
+  activeConnections.add(connection);
   let reservation = null;
   let request = null;
   let requestId = null;
@@ -224,6 +369,7 @@ async function handleTranslation(port, connection, message) {
     });
     if (!envelope.ok) throw runtimeFailure(envelope.error);
     requestId = envelope.requestId;
+    await requireDataSharing();
 
     const apiKey = await getApiKey();
     throwIfAborted(connection.controller.signal);
@@ -254,6 +400,7 @@ async function handleTranslation(port, connection, message) {
     await requireCurrentApiKey(apiKey);
     throwIfAborted(connection.controller.signal);
     const translatedText = await requestTranslation(apiKey, request, connection.controller.signal);
+    await requireDataSharing();
     throwIfAborted(connection.controller.signal);
     const result = {
       action: "result",
@@ -277,6 +424,7 @@ async function handleTranslation(port, connection, message) {
     if (requestId) await setLatestFailure(requestId, failure);
     postTerminal(port, connection, requestId, false, failure);
   } finally {
+    activeConnections.delete(connection);
     clearTimeout(deadline);
   }
 }
@@ -314,8 +462,7 @@ function throwIfAborted(signal) {
 }
 
 async function getApiKey() {
-  const stored = await chrome.storage.local.get(STORAGE_KEYS.apiKey);
-  return normalizeApiKey(stored[STORAGE_KEYS.apiKey]);
+  return (await readCredentialState()).apiKey;
 }
 
 async function requireCurrentApiKey(apiKey) {
@@ -407,6 +554,7 @@ async function requestTranslation(apiKey, request, signal) {
 async function listModelsForUi(forceRefresh) {
   try {
     await requireRuntime();
+    await requireDataSharing();
     const apiKey = await getApiKey();
     if (!apiKey) throw runtimeFailure(publicError("missing_api_key"));
     const catalog = await getModelCatalog(apiKey, forceRefresh);
@@ -422,6 +570,7 @@ async function listModelsForUi(forceRefresh) {
 async function getModelCatalog(apiKey, forceRefresh = false, options = {}) {
   const { signal, allowStale = false } = options;
   await locks.credentials;
+  await requireDataSharing();
   const stored = await chrome.storage.local.get([STORAGE_KEYS.modelCatalog, STORAGE_KEYS.apiKeyStatus]);
   await requireCurrentApiKey(apiKey);
   if (!forceRefresh && isRejectedApiKey(apiKey, stored)) {
@@ -443,16 +592,16 @@ async function getModelCatalog(apiKey, forceRefresh = false, options = {}) {
     if (currentKey !== apiKey) {
       throw runtimeFailure(publicError(currentKey ? "cancelled" : "missing_api_key"));
     }
-    if (["cancelled", "invalid_api_key", "missing_api_key"].includes(error?.publicError?.code)) {
+    if (["cancelled", "invalid_api_key", "missing_api_key", "agreement_required", "credential_storage_error"].includes(error?.publicError?.code)) {
       throw error;
     }
     return withLock("credentials", async () => {
+      await requireDataSharing();
       const current = await chrome.storage.local.get([
-        STORAGE_KEYS.apiKey,
         STORAGE_KEYS.apiKeyStatus,
         STORAGE_KEYS.modelCatalog,
       ]);
-      const currentKey = normalizeApiKey(current[STORAGE_KEYS.apiKey]);
+      const currentKey = await getApiKey();
       if (currentKey !== apiKey) {
         throw runtimeFailure(publicError(currentKey ? "cancelled" : "missing_api_key"));
       }
@@ -542,6 +691,7 @@ async function fetchModelCatalog(apiKey, parentSignal) {
   if (!compatible.length) throw runtimeFailure(publicError("invalid_response"));
   const catalog = { models: compatible, fetchedAt: Date.now() };
   await withLock("credentials", async () => {
+    await requireDataSharing();
     await requireCurrentApiKey(apiKey);
     const status = await chrome.storage.local.get(STORAGE_KEYS.apiKeyStatus);
     if (isRejectedApiKey(apiKey, status)) throw runtimeFailure(publicError("invalid_api_key"));
@@ -611,6 +761,9 @@ async function recordModelStatus(apiKey, model, available, revision, catalogVers
 
 async function fetchJson(url, init, signal) {
   const apiKey = normalizeApiKey(init.headers["x-goog-api-key"]);
+  await requireCurrentApiKey(apiKey);
+  await requireDataSharing();
+  throwIfAborted(signal);
   const revision = credentialRevision;
   const checkId = ++credentialCheckId;
   const catalogVersion = catalogRevision;
@@ -622,6 +775,9 @@ async function fetchJson(url, init, signal) {
   } catch {
     if (response.ok) throw runtimeFailure(publicError("invalid_response"));
   }
+  await requireDataSharing();
+  throwIfAborted(signal);
+  if (revision !== credentialRevision) throw runtimeFailure(publicError("cancelled"));
   if (!response.ok) {
     const error = classifyProviderError(
       response.status,
@@ -635,6 +791,7 @@ async function fetchJson(url, init, signal) {
     }
     throw runtimeFailure(error);
   }
+  await requireCurrentApiKey(apiKey);
   if (!payload || typeof payload !== "object") {
     throw runtimeFailure(publicError("invalid_response"));
   }
@@ -645,6 +802,7 @@ async function fetchJson(url, init, signal) {
 
 async function runWithTimeout(task, parentSignal) {
   const controller = new AbortController();
+  networkControllers.add(controller);
   let timedOut = false;
   const abortFromParent = () => controller.abort(parentSignal.reason);
   if (parentSignal?.aborted) controller.abort(parentSignal.reason);
@@ -666,6 +824,7 @@ async function runWithTimeout(task, parentSignal) {
     if (globalThis.navigator?.onLine === false) throw runtimeFailure(publicError("offline"));
     throw runtimeFailure(publicError("network_error"));
   } finally {
+    networkControllers.delete(controller);
     clearTimeout(timer);
     parentSignal?.removeEventListener("abort", abortFromParent);
   }
@@ -706,31 +865,46 @@ async function setLatestFailure(requestId, error) {
   }).catch(() => undefined);
 }
 
-async function getRuntimeState() {
+async function getRuntimeState(includeCredential = false) {
   try {
+    await runtimeReady;
+    if (includeCredential && runtimeError) {
+      await withLock("credentials", async () => {
+        if (!runtimeError) return;
+        try {
+          await initializeRuntime();
+          runtimeError = null;
+        } catch (error) { runtimeError = toPublicError(error); }
+      });
+    }
     await requireRuntime();
     await locks.credentials;
-    const [local, preferences, session] = await Promise.all([
+    const [local, preferences, session, credential] = await Promise.all([
       chrome.storage.local.get([
-        STORAGE_KEYS.apiKey,
         STORAGE_KEYS.modelCatalog,
         STORAGE_KEYS.apiKeyStatus,
+        STORAGE_KEYS.dataSharingAgreement,
       ]),
       getPreferences(),
       chrome.storage.session.get(STORAGE_KEYS.latestResult),
+      readCredentialState(),
     ]);
-    const apiKey = normalizeApiKey(local[STORAGE_KEYS.apiKey]);
+    const apiKey = credential.apiKey;
     const catalog = apiKey
       ? validateModelCache(local[STORAGE_KEYS.modelCatalog], stableTextHash(apiKey))
       : null;
     const rejected = apiKey && isRejectedApiKey(apiKey, local);
-    const configurationError = rejected ? publicError("invalid_api_key")
+    const configurationError = !dataSharingAccepted ? publicError("agreement_required")
+      : rejected ? publicError("invalid_api_key")
       : apiKey && !isSupportedLanguage(preferences.targetLanguage) ? publicError("missing_target_language")
         : catalog && !catalog.models.some(({ id }) => id === preferences.aiModel)
         ? publicError("invalid_model") : null;
     return {
       ok: true,
       hasApiKey: Boolean(apiKey),
+      dataSharingAccepted,
+      dataSharingWithdrawalPending: dataSharingDenied && validAgreement(local[STORAGE_KEYS.dataSharingAgreement]),
+      ...(includeCredential ? { apiKey, credentialRevision: credential.revision } : {}),
       apiKeyStatus: !apiKey ? "missing" : rejected ? "rejected" : catalog ? "checked" : "saved",
       configurationError,
       configured: Boolean(apiKey && catalog && !configurationError),
@@ -739,6 +913,7 @@ async function getRuntimeState() {
       latestResult: session[STORAGE_KEYS.latestResult] ?? null,
     };
   } catch (error) {
-    return { ok: false, error: toPublicError(error) };
+    const failure = toPublicError(error);
+    return { ok: false, error: failure, ...(includeCredential && failure.code === "credential_storage_error" ? { canRemoveKey: true } : {}) };
   }
 }

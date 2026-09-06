@@ -1,4 +1,5 @@
 export const RECOMMENDED_MODEL = "gemini-3.5-flash-lite";
+export const DATA_SHARING_VERSION = 1;
 
 // Legacy defaults remain for existing profiles. New setup requires a language choice.
 export const DEFAULTS = Object.freeze({
@@ -23,6 +24,8 @@ export const LIMITS = Object.freeze({
 
 export const STORAGE_KEYS = Object.freeze({
   apiKey: "geminiApiKey",
+  credentialVersion: "credentialVersion",
+  dataSharingAgreement: "dataSharingAgreement",
   apiKeyStatus: "apiKeyStatus",
   modelCatalog: "modelCatalog",
   targetLanguage: "targetLanguage",
@@ -166,6 +169,9 @@ export const PUBLIC_ERROR_MESSAGES = Object.freeze({
   unsupported_selection: "This text selection is not supported.",
   selection_too_large: "The selection is longer than 10,000 characters. Select less text and try again.",
   missing_api_key: "Add your Gemini API key in Settings.",
+  agreement_required: "Review and agree to data sharing in Settings before connecting to Google.",
+  credential_conflict: "The saved key changed in another page. Reload saved settings before trying again.",
+  credential_storage_error: "The saved key cannot be opened. Try reopening Settings, or remove it and enter it again.",
   missing_target_language: "Choose your target language in Settings to finish setup.",
   invalid_api_key: "Gemini rejected the API key. Check it in Settings.",
   invalid_model: "This model cannot be used for translation. Choose another model or the recommended Flash-Lite model in Settings.",
@@ -296,7 +302,7 @@ export function getErrorPresentation(error) {
     ? Math.min(error.retryAfterMs, 3_600_000)
     : 0;
   const delay = retryAfterMs ? ` Try again in ${Math.ceil(retryAfterMs / 1_000)} seconds.` : "";
-  const action = ["missing_api_key", "missing_target_language", "invalid_api_key", "invalid_model"].includes(code)
+  const action = ["missing_api_key", "missing_target_language", "invalid_api_key", "invalid_model", "agreement_required", "credential_conflict", "credential_storage_error"].includes(code)
     ? "settings"
     : ["busy", "rate_limited", "timeout", "offline", "network_error", "quota_exceeded",
       "service_error", "invalid_response", "cancelled"].includes(code) ? "retry" : null;

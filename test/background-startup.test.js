@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { loadBackground } from "./helpers/background-module.js";
 
 test("background starts when Chrome has no contextMenus.onShown event", async () => {
   const listeners = { connect: [], message: [] };
@@ -34,7 +35,13 @@ test("background starts when Chrome has no contextMenus.onShown event", async ()
   };
 
   try {
-    await import(`../background.js?startup-test=${Date.now()}`);
+    await loadBackground(() => ({
+      readState: async () => ({ apiKey: null, revision: null }),
+      migrate: async () => ({ apiKey: null, revision: null }),
+    }));
+    await new Promise((resolve) => listeners.message[0]({ action: "getRuntimeState" }, {
+      id: "test-extension", url: "chrome-extension://test-extension/popup.html",
+    }, resolve));
     assert.equal(listeners.connect.length, 1);
     assert.equal(listeners.message.length, 1);
     installed();

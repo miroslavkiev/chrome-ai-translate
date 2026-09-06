@@ -60,7 +60,7 @@ function render(response) {
   elements.statusCard.hidden = needsKey;
   elements.latestCard.hidden = needsKey;
   elements.openSettings.textContent = needsKey ? "Start setup"
-    : response.configurationError?.code === "missing_target_language" ? "Finish setup" : "Settings";
+    : ["missing_target_language", "agreement_required"].includes(response.configurationError?.code) ? "Finish setup" : "Settings";
   const configured = response.configured === true
     && isSupportedLanguage(response.targetLanguage)
     && isValidModelId(response.aiModel ?? DEFAULTS.aiModel);
@@ -92,7 +92,13 @@ async function loadState() {
   try {
     const response = await chrome.runtime.sendMessage({ action: "getRuntimeState" });
     if (sequence !== loadSequence) return;
-    if (!response?.ok) throw new Error("Runtime state is unavailable.");
+    if (!response?.ok) {
+      if (response?.error?.code === "credential_storage_error") {
+        render({ ...response, configurationError: response.error });
+        return;
+      }
+      throw new Error("Runtime state is unavailable.");
+    }
     render(response);
   } catch {
     if (sequence !== loadSequence) return;

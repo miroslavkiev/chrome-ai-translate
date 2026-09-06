@@ -1,16 +1,24 @@
-# API key storage options
+# API key storage design and alternatives
 
-Research checked September 5, 2026. This is a proposal for review. No storage option has been selected, and none of these changes has been added to the production extension. The current build still saves the API key without encryption in `chrome.storage.local`.
+Research checked September 6, 2026. The publisher selected option D: remember an encrypted key on this device and use it automatically. This document records that design and its limits. Final implementation and release evidence belongs in [RELEASE_CHECKS.md](../RELEASE_CHECKS.md); the isolated proof below is not a substitute for those checks.
 
-## Fourth option: remember the key on this device
+## Selected option D: remember the key on this device
 
-The user's requested flow is possible in a standalone extension: enter an API key once, keep it across normal Chrome restarts and updates, and use it without a password unlock. The proposed design encrypts the API key with AES-256-GCM and stores a nonextractable `CryptoKey` in the extension's IndexedDB. WebCrypto supports storing these key objects through structured serialization, so they can be loaded in a later browser session. A fourth mock is pending user choice; this document does not approve or implement it. [WebCrypto key storage](https://www.w3.org/TR/webcrypto-2/#concepts-key-storage), [key serialization](https://www.w3.org/TR/webcrypto-2/#cryptokey-interface)
+Enter an API key once, keep it across normal Chrome restarts and updates, and use it without a password unlock. The design encrypts the API key with AES-256-GCM and stores a nonextractable `CryptoKey` in the extension's IndexedDB. WebCrypto supports storing these key objects through structured serialization, so they can be loaded in a later browser session. [WebCrypto key storage](https://www.w3.org/TR/webcrypto-2/#concepts-key-storage), [key serialization](https://www.w3.org/TR/webcrypto-2/#cryptokey-interface)
 
 This provides real encryption of the saved API key. It does not provide an OS keychain or a password-protected vault. Nonextractable means ordinary scripts cannot export the encryption key through WebCrypto. It does not stop authorized extension code from using that key to decrypt data. The WebCrypto specification also does not guarantee protection of the underlying key material on disk. Someone who can read the browser profile, or run hostile code in the extension, may recover the API key. Browser storage deletion, extension removal, or losing the profile can require entering it again. [WebCrypto security limits](https://www.w3.org/TR/webcrypto-2/#security-considerations)
 
 Chrome's secure-handling FAQ calls for strong encryption at rest and names AES as an example. This design uses that algorithm, but this research does not establish Chrome Web Store approval or settle every key-management requirement. Public wording must explain the local-profile limit and must not claim OS keychain protection. [Chrome secure-handling FAQ](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq)
 
-Suggested short wording for the mock: **Remember my key on this device.** The key is encrypted and opens automatically. Someone with access to this browser profile may still recover it.
+User-facing wording: **Remember my key on this device.** The key is encrypted and opens automatically. Someone with access to this browser profile may still recover it.
+
+## Data agreement and controls
+
+The data-sharing details remain visible in Settings. **Agree and connect to Google** records the agreement version and date for this browser profile. It enables new key entry or model loading for a safely migrated key. All Google API requests wait for that agreement, including refreshes and requests with an existing model cache. Normal restarts and updates keep the agreement.
+
+**Withdraw data agreement** blocks new requests and aborts active ones locally. It keeps the encrypted key and preferences so the user can agree again later. **Remove saved key** deletes the ciphertext, encryption key and model cache. A non-secret revision marker remains to protect against stale Settings tabs. Neither action recalls data already sent to Google.
+
+Google's use conditions are visible before use and apply through use, without an eligibility checkbox or identity checks. That notice and the data-agreement button serve different purposes.
 
 ## Offline proof and its scope
 
@@ -20,12 +28,17 @@ Private local evidence is kept outside the repository at `/private/tmp/chrome-ai
 
 This tested a full browser restart, not an actual Chrome version update. Persistence across normal updates is expected when the extension keeps the same ID, browser profile, and compatible database schema, and no code or user action clears storage. Update migration must be tested before releasing an implemented version. The result does not prove resistance to copying or reading the profile.
 
-## Implementation checks after user choice
+## Final extension verification
+
+Version 1.4.0 implements option D. The actual extension passed setup and agreement checks on Chrome 143.0.7499.4 on Mac, then the same temporary profile was fully closed and reopened with Chrome 151.0.7922.34. The encrypted key, its revision, agreement, language and model survived without a password or another acceptance. Native AES-GCM/IndexedDB tests also passed for corruption, failed writes, migration verification and removal. All tests used fake data. See [RELEASE_CHECKS.md](../RELEASE_CHECKS.md) for the complete scope. This is evidence for those versions, not a guarantee about future updates or profile loss.
+
+## Checks for the selected implementation
 
 - Use browser WebCrypto, a random 256-bit key, and a fresh random 12-byte IV for every AES-GCM write. Keep the encryption key nonextractable.
 - Keep the encrypted record and encryption key in extension IndexedDB. Decrypt and call Google in the background worker. Do not send the saved API key to page content scripts.
-- Verify that the encrypted record can be read before deleting the old plain text value. Handle an interrupted migration without losing the user's key or silently falling back to plain text storage.
-- Make Remove key delete both the encrypted record and encryption key. If storage is missing or damaged, explain that the user needs to enter the key again.
+- Prefer a legacy local key over a legacy synced key. Verify that the encrypted record can be decrypted before deleting plain text copies from both stores. If migration fails, retain the old value and block requests with a clear error. Do not silently fall back to plain text use or overwrite a damaged encrypted record.
+- Make Remove saved key delete both the encrypted record and encryption key, invalidate model caches, and retain only the non-secret revision needed for stale-tab protection. Explain missing or damaged storage without silently deleting the user's key.
+- Test that no Google request starts before agreement, including with migrated keys and cached models. Test agreement persistence, withdrawal during active work, and agreement again after withdrawal.
 - Test full restart, worker restart, update migration, removal, failed decryption, and interrupted migration. Recheck disclosure, consent, screenshots, and the privacy policy against the implemented behavior.
 
 ## Other choices

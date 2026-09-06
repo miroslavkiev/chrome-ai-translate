@@ -8,7 +8,7 @@ These assets are drafts for review. They are not a Store approval or a release d
 | --- | --- | --- |
 | `assets/01-select-and-translate.png` | 1280 x 800 | Actual translation card after selecting example text and pressing Control. |
 | `assets/02-latest-result.png` | 1280 x 800 | Actual popup capture with an example result, placed beside its source text. |
-| `assets/03-guided-setup.png` | 1280 x 800 | Actual first-use Settings page with an empty API key field. |
+| `assets/03-guided-setup.png` | 1280 x 800 | Actual first-use Settings page, showing the complete data agreement, use notice and empty API key field. |
 | `assets/promo-small.png` | 440 x 280 | Purple icon and the message: Select text. Press Control. |
 | `assets/promo-marquee.png` | 1400 x 560 | Optional wide promotional image in the same style. |
 | `assets/store-icon-128.png` | 128 x 128 | A separate Store icon with 96 x 96 artwork and 16 pixels of transparent padding per side. |
@@ -24,7 +24,7 @@ The script creates and removes a temporary browser profile. It loads the actual 
 
 The source paragraph and its Ukrainian translation are original example content. The page and popup presentation label this content as an example. The setup screenshot is captured before the temporary fake key is entered. The key is never shown in any image. The popup capture retains the actual extension UI; the surrounding text is presentation copy, not part of the extension.
 
-The script checks all six output dimensions, the blank setup key, the full key row and page header in view, a completed translation, the visible Copy button, and that no unexpected external page request was attempted. The setup page is scrolled down 40 pixels to show the complete key help text without changing the UI. Public PNG exports contain no text or EXIF metadata. The source master retains only PNG image data and required structural chunks. Visually review each image after regeneration, especially if the extension layout changes.
+The script checks all six output dimensions, the blank setup key, the full key row, the Gemini heading, the complete data agreement in view, a completed translation, the visible Copy button, and that no unexpected external page request was attempted. The setup page is scrolled to its Gemini card without changing the UI. Public PNG exports contain no text or EXIF metadata. The source master retains only PNG image data and required structural chunks. Visually review each image after regeneration, especially if the extension layout changes.
 
 ## Chrome image requirements
 

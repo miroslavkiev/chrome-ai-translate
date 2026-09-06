@@ -2,7 +2,9 @@
 
 This is a preparation document with missing information. It is not the publisher's legal notice, must not be linked as one, and must not be included in the extension package. Do not present the placeholder text as an active notice. Keeping this template in the source repository does not make it a valid legal notice.
 
-## Information to obtain
+On September 6, 2026, the publisher chose not to provide a public postal address. This template therefore remains unused. Do not fill it from Git, screenshots or account records, and do not ask for the address again as part of the approved local implementation. The remaining publication risk is recorded in [LEGAL_REVIEW.md](LEGAL_REVIEW.md).
+
+## Information needed only if the publisher later chooses a public notice
 
 - The individual publisher's full name, approved for public use.
 - A suitable public postal address, including street and house number, postal code, city and country. A post-office box alone is insufficient. Confirm any authorised-recipient arrangement.

@@ -1,5 +1,19 @@
 # Release checks and translation sample
 
+## Version 1.4.0 encrypted key and data agreement
+
+The selected option D stores the API key with native AES-256-GCM and a nonextractable CryptoKey in extension IndexedDB. It opens automatically in the same Chrome profile. No extra dependency or password unlock was added. Profile access remains a limit; this is not an OS keychain. Legacy keys are encrypted and decrypted for verification before their old local/sync copies are removed. Failed migration preserves the old value and blocks requests. Damaged storage requires an explicit removal action.
+
+Settings now shows the final Google use notice and a separate **Agree and connect to Google** button. No model or translation request starts before that agreement, including with migrated keys or cached models. **Withdraw data agreement** stops new access and aborts active requests locally, while keeping the encrypted key and preferences. **Remove saved key** deletes its ciphertext, encryption key and catalog, retaining a non-secret revision to reject stale Settings writes. Neither action recalls data already sent to Google.
+
+The Help screenshots and Store setup screenshot show the actual agreement flow before any key is entered. Their PNG files contain no text or EXIF metadata. No real key, Google account, project name or private address is included. The publisher chose not to provide a postal address; the existing legal review records that decision and its limits without inventing a replacement. The Store listing remains unsubmitted and its outstanding account, provider and legal checks remain open.
+
+The source checks, Node suite, build and exact 20-file package checks passed on September 6, 2026. Chrome 151 passed the built-folder and source-root content checks. The extension-page check passed on Chrome 143.0.7499.4, fully closed Chrome, and reopened the same temporary profile with Chrome 151.0.7922.34. The API key, credential revision, agreement, language and model survived that real browser upgrade without another acceptance or password. This verifies those versions and the same extension ID/profile, not every future update.
+
+Native Chrome 151 checks passed for AES-GCM/IndexedDB, full restart, failed transactions, verification before migration cleanup, corruption and removal. Runtime and Settings regressions cover requests before agreement, stale tabs, immediate cancellation during a stalled save, older acceptance replies, failed withdrawal persistence and its explicit retry. Independent code and UX review found no remaining material issue, including first-click Show, Finish setup, Withdraw and Remove behavior. All browser checks used fake data in disposable profiles, with no real Google request.
+
+Redacted secret scans found no credentials in the final source or extracted ZIP. The ZIP was version 1.4.0 with 20 root files, SHA-256 `68687440a1cc5bf1585635d2cfd0624439da2d5cbeed67f11156e50b3301aa3e`. Git history/reflog and the previously audited stored-object/archive corpus also had no findings. This is scoped evidence, not a guarantee about external copies. The installed extension still needs the user's manual Reload action because browser security blocks those controls.
+
 ## Version 1.3.3 Store preparation
 
 This is a preparation build, not a Store-approved release. It adds the public repository as the extension homepage, links to support/privacy, uses the approved purple icon in Settings and the popup, and moves the key/data notice above the key field. Google eligibility and AI accuracy limits are stated in Help and the project guides. The explicit background network permission is limited to the Gemini endpoint; declarative web and local-file content access remains.
@@ -65,7 +79,7 @@ Independent review found and fixed additional races: startup changes lost betwee
 
 1. Install from the lockfile with `npm ci`.
 2. Run `npm run ci`. This checks repository text and syntax, runs Node tests, builds, packages, and verifies exact archive contents, source freshness, CRC, checksum, and matching versions.
-3. Install the test browser with `npx playwright install chromium`, then run `npm run test:browser`. This tests the built folder and source-root content script. Use `CHROME_PATH` to repeat with a specific Chrome for Testing executable. Both scripts use new temporary profiles and fake provider replies. They must never use a personal API key.
+3. Install the test browser with `npx playwright install chromium`, then run `npm run test:browser`. This tests the built folder, source-root content script, extension pages and native encrypted storage. Use `CHROME_PATH` to repeat with a specific Chrome for Testing executable. The extension-page check accepts `CHROME_UPGRADE_TO` to reopen its temporary profile with a newer Chrome executable. All checks use disposable profiles and fake data. They must never use a personal API key.
 4. Run `npm audit --audit-level=high`. Review any advisory against its actual runtime/build use.
 5. Check light/dark layouts, keyboard focus, long text, Copy failure, and recovery text. Optional `BROWSER_EVIDENCE_DIR` saves popup/settings screenshots in an existing directory.
 6. Finish active translations before reloading the installed extension. Keep the unpacked folder path, reload through Chrome, and refresh a test page. Verify version, saved settings, model/setup state, and active count. Do not uninstall or restart the whole browser to update.

@@ -1,6 +1,6 @@
 # Store listing draft
 
-Do not submit yet. See [the open release items](README.md). The description below states Google's use conditions without a separate eligibility checkbox, as requested by the publisher. This notice does not verify users or replace the separate data-disclosure and consent requirements. Recheck the final setup and key-storage flow before submission.
+Do not submit yet. See [the open release items and recorded risks](README.md). The description states Google's use conditions without a separate eligibility checkbox. The build uses a separate data-agreement button and the selected encrypted key storage. Check all claims against the final tested package. The publisher chose not to provide a public postal address; no substitute or personal details are invented, and this decision is not legal clearance.
 
 ## Dashboard fields
 
@@ -39,6 +39,8 @@ YOUR GEMINI KEY AND MODEL
 
 You need your own Google Gemini API key. The first-use guide explains how to get a key, choose a target language and select a model. We recommend the Flash-Lite family. At this release in September 2026, our choice is Gemini 3.5 Flash-Lite when it is available to your key. You may choose another listed model. Some models may not work; if one fails, choose an alternative or the recommended model.
 
+Read the data-sharing details in Settings and choose Agree and connect to Google before adding your key. No Google API request is made before this agreement. The key is encrypted on this device and stays available across normal Chrome restarts without an unlock password. Someone with access to this browser profile may still recover it.
+
 The extension is free, but Google API charges and limits can apply. It is not an offline translator.
 
 CONDITIONS OF USE
@@ -58,6 +60,8 @@ Gemini API Additional Terms: https://ai.google.dev/gemini-api/terms
 YOUR TEXT AND PRIVACY
 
 When you request a translation, the selected text, target language and translation instruction go directly to Google with your API authentication. Loading the model list also contacts Google. The developer has no translation server, analytics or advertising. The extension has no translation history; the popup keeps only the latest result for the browser session. Language, model and trigger preferences can sync through Chrome.
+
+The data-sharing details stay visible in Settings. Your agreement is saved for this browser profile. Choose Withdraw data agreement to stop new Google requests and cancel active ones locally, while keeping the encrypted key and preferences. Choose Remove saved key to delete the saved key and model cache. Neither action recalls data already sent to Google.
 
 Google's terms govern provider processing and retention. Do not send text that you are not allowed to share. Read the privacy page and Google's terms before adding a key. AI translations can be wrong; check important wording before relying on it.
 
@@ -82,10 +86,10 @@ Support is optional and never unlocks features. Donations are handled by the fou
 Use a reviewer-owned eligible Gemini key and a project that meets Google's terms. No shared demo credential is provided. Never paste a real key into public issues or listing text.
 
 1. Install the final ZIP and open AI Translator from the toolbar.
-2. Follow the welcome guide. Add the eligible key, choose a listed text model and a target language, then finish setup.
+2. Follow the welcome guide. Read the use conditions and data-sharing details. Choose Agree and connect to Google, add the eligible key, choose a listed text model and a target language, then finish setup.
 3. Open or refresh an ordinary HTTPS page. Select a short non-sensitive sentence and tap/release Control. Confirm the nearby result card.
 4. Try the right-click Translate Selected Text command, Copy, a different card language and the latest-result popup.
-5. Open Settings. Confirm key removal returns the extension to setup. Check the final key-storage flow documented for the release.
+5. Open Settings. Confirm that Withdraw data agreement blocks model checks and translations while retaining the encrypted key. Agree again to resume. Confirm that Remove saved key returns the extension to setup. Restart Chrome to check that a saved encrypted key and agreement remain available without a password unlock.
 6. For local HTML only, enable Allow access to file URLs. Chrome blocks its built-in PDF viewer and protected pages by design.
 
 If reviewers cannot use their own provider access, resolve their testing needs through the dashboard's private reviewer channel. Do not invent a demo-key path or expose the publisher's key.
