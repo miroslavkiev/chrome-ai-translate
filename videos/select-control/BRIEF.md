@@ -19,7 +19,7 @@ Most of the film demonstrates the copy-paste problem and the useful, free extens
 
 The user asked for final renders only, overriding earlier mockup and preview approval steps. Choose and review the visual direction internally. No app UI redesign is included.
 
-Show real supported actions with clearly marked illustrative text and translations. Do not claim offline translation, unlimited free API usage, measured quality superiority, surrounding-page context or a published Store listing. The extension is free; Google API charges may apply. Keep that short and unobtrusive.
+Show real supported actions with clearly marked illustrative text and translations. Do not claim offline translation, unlimited free API usage, measured quality superiority, surrounding-page context or a published Store listing before its release. The extension is free; Google API charges may apply. Keep that short and unobtrusive.
 
 ## Internal directions
 
@@ -30,3 +30,7 @@ Show real supported actions with clearly marked illustrative text and translatio
 ## Delivery
 
 One native 4K 60 fps H.264 master with Adam narration at 1.15x and a quiet original local music bed. Editable HyperFrames source and QA record live beside it. No reduced-resolution delivery.
+
+## Chrome Web Store revision
+
+The user approved replacing only the developer install scene with a simple Chrome Web Store listing, Add to Chrome and Add extension. This scene is prepared for the planned store release. Use the approved extension icon and generic store address without invented ratings, users, badges or a listing URL. Preserve all other scenes, scene boundaries and audio outside the install scene.

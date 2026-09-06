@@ -1,309 +1,160 @@
 {
-  "final_sha256": "d6b0911087810390dc29803c628e770dde49f141d8490016ce488e915c2be2f8",
-  "file": "renders/ai-translator-select-control-4k60.mp4",
-  "size_bytes": 30168391,
-  "format": {
-    "width": 3840,
-    "height": 2160,
-    "fps": "60/1",
-    "frames": 7532,
-    "duration_seconds": 125.53333333333333,
-    "video_codec": "h264",
-    "pixel_format": "yuv420p",
-    "audio_codec": "aac",
-    "audio_sample_rate": 48000,
-    "audio_channels": 2,
-    "color_tags": "bt709"
+  "revision": "Chrome Web Store install scene",
+  "final_master": "renders/ai-translator-select-control-4k60.mp4",
+  "final_sha256": "11420aabcafa9cda7b348f6905b30fd3069e83922492b8f882e7dea5652b8fa0",
+  "automated_checks": {
+    "pass": true,
+    "file": "renders/ai-translator-select-control-4k60.mp4",
+    "sha256": "11420aabcafa9cda7b348f6905b30fd3069e83922492b8f882e7dea5652b8fa0",
+    "matches_preservation_receipt": true,
+    "bytes": 30670491,
+    "video": {
+      "codec": "h264",
+      "width": 3840,
+      "height": 2160,
+      "fps": "60/1",
+      "declared_frames": 7532,
+      "decoded_frames": 7532,
+      "duration_seconds": 125.533333,
+      "pixel_format": "yuv420p",
+      "color": "BT.709"
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 48000,
+      "channels": 2,
+      "integrated_lufs": -16.0,
+      "true_peak_dbtp": -3.24,
+      "max_mixed_audio_silence_seconds": 0.157354,
+      "silence_threshold_db": -50,
+      "silence_minimum_seconds": 0.05
+    },
+    "full_decode_passed": true,
+    "decode_error_policy": "-xerror -err_detect explode",
+    "black_segments": [],
+    "black_detection": {
+      "minimum_seconds": 0.016,
+      "pixel_threshold": 0.02,
+      "picture_ratio": 0.98
+    },
+    "elapsed_seconds": 24.85,
+    "scope": "Final encoded master measurements only. No listening or visual inspection claimed."
   },
-  "full_video_decode": "pass",
-  "black_intervals": [],
-  "blackdetect_parameters": {
-    "min_duration": 0.05,
-    "pixel_threshold": 0.01,
-    "picture_threshold": 0.98
-  },
-  "mixed_audio": {
-    "integrated_lufs": -16.01,
-    "true_peak_dbtp": -3.24,
-    "loudness_range_lu": 1.4,
-    "silence_threshold_db": -50,
-    "silence_min_duration_seconds": 0.05,
-    "silence_intervals_seconds": [
-      0.157354
-    ],
-    "max_detected_silence_seconds": 0.157354
-  },
-  "samples": [
-    {
-      "scene": "s01",
-      "kind": "mid",
-      "frame": 169,
-      "time": 2.816666666666667,
-      "file": "s01-mid.png"
-    },
-    {
-      "scene": "s01",
-      "kind": "late",
-      "frame": 297,
-      "time": 4.95,
-      "file": "s01-late.png"
-    },
-    {
-      "scene": "s02",
-      "kind": "mid",
-      "frame": 560,
-      "time": 9.333333333333334,
-      "file": "s02-mid.png"
-    },
-    {
-      "scene": "s02",
-      "kind": "late",
-      "frame": 729,
-      "time": 12.15,
-      "file": "s02-late.png"
-    },
-    {
-      "scene": "s03",
-      "kind": "mid",
-      "frame": 1002,
-      "time": 16.7,
-      "file": "s03-mid.png"
-    },
-    {
-      "scene": "s03",
-      "kind": "late",
-      "frame": 1168,
-      "time": 19.466666666666665,
-      "file": "s03-late.png"
-    },
-    {
-      "scene": "s04",
-      "kind": "mid",
-      "frame": 1433,
-      "time": 23.883333333333333,
-      "file": "s04-mid.png"
-    },
-    {
-      "scene": "s04",
-      "kind": "late",
-      "frame": 1595,
-      "time": 26.583333333333332,
-      "file": "s04-late.png"
-    },
-    {
-      "scene": "s05",
-      "kind": "mid",
-      "frame": 1879,
-      "time": 31.316666666666666,
-      "file": "s05-mid.png"
-    },
-    {
-      "scene": "s05",
-      "kind": "late",
-      "frame": 2056,
-      "time": 34.266666666666666,
-      "file": "s05-late.png"
-    },
-    {
-      "scene": "s06",
-      "kind": "mid",
-      "frame": 2326,
-      "time": 38.766666666666666,
-      "file": "s06-mid.png"
-    },
-    {
-      "scene": "s06",
-      "kind": "late",
-      "frame": 2489,
-      "time": 41.483333333333334,
-      "file": "s06-late.png"
-    },
-    {
-      "scene": "s07",
-      "kind": "mid",
-      "frame": 2748,
-      "time": 45.8,
-      "file": "s07-mid.png"
-    },
-    {
-      "scene": "s07",
-      "kind": "late",
-      "frame": 2906,
-      "time": 48.43333333333333,
-      "file": "s07-late.png"
-    },
-    {
-      "scene": "s08",
-      "kind": "mid",
-      "frame": 3196,
-      "time": 53.266666666666666,
-      "file": "s08-mid.png"
-    },
-    {
-      "scene": "s08",
-      "kind": "late",
-      "frame": 3379,
-      "time": 56.31666666666667,
-      "file": "s08-late.png"
-    },
-    {
-      "scene": "s09",
-      "kind": "mid",
-      "frame": 3679,
-      "time": 61.31666666666667,
-      "file": "s09-mid.png"
-    },
-    {
-      "scene": "s09",
-      "kind": "late",
-      "frame": 3862,
-      "time": 64.36666666666666,
-      "file": "s09-late.png"
-    },
-    {
-      "scene": "s10",
-      "kind": "mid",
-      "frame": 4124,
-      "time": 68.73333333333333,
-      "file": "s10-mid.png"
-    },
-    {
-      "scene": "s10",
-      "kind": "late",
-      "frame": 4278,
-      "time": 71.3,
-      "file": "s10-late.png"
-    },
-    {
-      "scene": "s11",
-      "kind": "mid",
-      "frame": 4544,
-      "time": 75.73333333333333,
-      "file": "s11-mid.png"
-    },
-    {
-      "scene": "s11",
-      "kind": "late",
-      "frame": 4709,
-      "time": 78.48333333333333,
-      "file": "s11-late.png"
-    },
-    {
-      "scene": "s12",
-      "kind": "mid",
-      "frame": 4999,
-      "time": 83.31666666666666,
-      "file": "s12-mid.png"
-    },
-    {
-      "scene": "s12",
-      "kind": "late",
-      "frame": 5179,
-      "time": 86.31666666666666,
-      "file": "s12-late.png"
-    },
-    {
-      "scene": "s13",
-      "kind": "mid",
-      "frame": 5488,
-      "time": 91.46666666666667,
-      "file": "s13-mid.png"
-    },
-    {
-      "scene": "s13",
-      "kind": "late",
-      "frame": 5679,
-      "time": 94.65,
-      "file": "s13-late.png"
-    },
-    {
-      "scene": "s14",
-      "kind": "mid",
-      "frame": 6005,
-      "time": 100.08333333333333,
-      "file": "s14-mid.png"
-    },
-    {
-      "scene": "s14",
-      "kind": "late",
-      "frame": 6206,
-      "time": 103.43333333333334,
-      "file": "s14-late.png"
-    },
-    {
-      "scene": "s15",
-      "kind": "mid",
-      "frame": 6508,
-      "time": 108.46666666666667,
-      "file": "s15-mid.png"
-    },
-    {
-      "scene": "s15",
-      "kind": "late",
-      "frame": 6689,
-      "time": 111.48333333333333,
-      "file": "s15-late.png"
-    },
-    {
-      "scene": "s16",
-      "kind": "mid",
-      "frame": 6970,
-      "time": 116.16666666666667,
-      "file": "s16-mid.png"
-    },
-    {
-      "scene": "s16",
-      "kind": "late",
-      "frame": 7140,
-      "time": 119.0,
-      "file": "s16-late.png"
-    },
-    {
-      "scene": "s17",
-      "kind": "early-url",
-      "frame": 7338,
-      "time": 122.3,
-      "file": "s17-early-url.png"
-    },
-    {
-      "scene": "s17",
-      "kind": "mid",
-      "frame": 7363,
-      "time": 122.71666666666667,
-      "file": "s17-mid.png"
-    },
-    {
-      "scene": "s17",
-      "kind": "late",
-      "frame": 7491,
-      "time": 124.85,
-      "file": "s17-late.png"
-    }
-  ],
-  "automated_checks": "pass",
   "visual_review": {
     "status": "pass",
-    "contact_sheets": [
-      "renders/final-qa/contact-mid.jpg",
-      "renders/final-qa/contact-late.jpg"
+    "changed_scene": "s14",
+    "encoded_scene_frames": [
+      0,
+      114,
+      213,
+      264,
+      348,
+      444,
+      522,
+      530
     ],
-    "coverage": "Midpoint and late frames from all 17 scenes, plus an earlier ending URL frame, extracted from the final MP4.",
-    "native_frames_inspected": [
-      "renders/final-qa/s10-late.png",
-      "renders/final-qa/s15-late.png",
-      "renders/final-qa/s17-early-url.png"
+    "master_cut_frames": [
+      5738,
+      5739,
+      6269,
+      6270
     ],
+    "native_frames": "renders/store-revision/final-frames/",
     "observations": [
-      "All 17 scenes appear in both contact sheets with no missing content, accidental black frame, or evident layout clipping in the reviewed samples.",
-      "Scene s10 at 71.300 seconds: latest-result label sits below the popup; the session note stays separate and readable.",
-      "Scene s15 at 111.483 seconds: the saved-agreement badge fits inside the taller panel with clear bottom space.",
-      "Scene s17 at 122.300 seconds, 2.4 seconds into the closing scene: the full repository URL is visible, with about 3.23 seconds remaining."
+      "Store listing, Add to Chrome, Add extension and installed state are readable.",
+      "Cursor remains fully visible at both buttons.",
+      "ZIP, extracted folder, Developer mode and Load unpacked were removed from the install scene.",
+      "Both scene boundaries match the encoded replacement segment."
     ],
     "material_issues": []
   },
+  "preserved_scenes": [
+    {
+      "scene": "s01",
+      "sha256": "8a024d4eadc30ed972e632efb41d47214e059b3410b2b8d6d37504cd9e254ee1",
+      "source_fingerprint": "5b5091e282c67090fd6868e12a318735035c1f9ad998b3e859941edff1e142b4"
+    },
+    {
+      "scene": "s02",
+      "sha256": "118af4260c5913eb09146a02e6ba938bb2c05ae9e94222afe2cd639f6b11ba19",
+      "source_fingerprint": "a683aeeb0e5d5b3d9b590fdfa9b14a2cbcb2398de1359e7e8b208cac2f62ffe7"
+    },
+    {
+      "scene": "s03",
+      "sha256": "6ebff003adeaba9f4dc8181ecb0299fcc4963ce39c366d3b16f217b8a5aeb48a",
+      "source_fingerprint": "4f1e6c172b8c5d995584b94ec67c3acf4bc66221d89d6fb8c7b94264b21926c5"
+    },
+    {
+      "scene": "s04",
+      "sha256": "d1c84c467e4f7b46b4f0d58753ab9cbd2e55b19a797a6feae6b3da90a10fc2c8",
+      "source_fingerprint": "f19c907bf88d00805a30a06a14bbeed8102f48ac5f344c4d8efb311807389f42"
+    },
+    {
+      "scene": "s05",
+      "sha256": "6a52f44d298abb53884e8ea8fae75806a66ee23a737ae4b5ab2907267c1d49ce",
+      "source_fingerprint": "5b2a68d0e12681e3796f530a2038102477a947a64eb762d1a5428389dbe3807e"
+    },
+    {
+      "scene": "s06",
+      "sha256": "12c3af6f75e9d2cccb362b4441e80eed5bdc6ac477059eace25006fc3d30b88a",
+      "source_fingerprint": "6d15feb6947a2a71e4eae4aa95ee5e4fa97c7e4d5760c36ff2c5a1535ce5847a"
+    },
+    {
+      "scene": "s07",
+      "sha256": "54a886cf47269b5a9c5f816d5f1707d87f7367e91ccdd880d9ca37aa48325095",
+      "source_fingerprint": "aac08e1ea71ad5507902080c6dd631e6237af471f22f81dedb3d0337b60455db"
+    },
+    {
+      "scene": "s08",
+      "sha256": "0ec318138c31cff39d25d26504b27b556611eeb0aea0ad9f5ee5e65682b267e4",
+      "source_fingerprint": "0e9a7a7d68f2c89c4ba997e4a6a90cafe26e84696c4e68c9a0ab4e6cdc975361"
+    },
+    {
+      "scene": "s09",
+      "sha256": "2d9866f57de52007fed10588d750d551036ef3b255bc705c7d98f9287e1d5801",
+      "source_fingerprint": "bf2a54f24a13549b08cfd703034f4643daa3bdba04c6bddb3b52421120ff90ab"
+    },
+    {
+      "scene": "s10",
+      "sha256": "a631f6d6f4fd377545a1a32ff6fb3d7c805dd4f85a4bb5b555866b1bfbe8bb64",
+      "source_fingerprint": "0cd7325fcae2ed16f801e1578371afd42256566751a46eb200b12a1619447046"
+    },
+    {
+      "scene": "s11",
+      "sha256": "480dee94b2585f878f521b8d41530c1792ff089b5fb4e1360b822d6acb5149cd",
+      "source_fingerprint": "b6385f36ba068d70dec097bbceff429b4c6370310a123618020d9afa6ed71c28"
+    },
+    {
+      "scene": "s12",
+      "sha256": "e03ac48d1241e4e4004976f4d6f781b2d488306124c54930d8f12e0f41bec167",
+      "source_fingerprint": "0d4b23fecfe7c15071c7aea02f0073196b08e2bab63eb6d7104784b9bf84ed2e"
+    },
+    {
+      "scene": "s13",
+      "sha256": "23bddf0b183e28cff8d67c749ae914035b14587a2adfc0d1f1fd63d5cd7bc7d6",
+      "source_fingerprint": "6c271d31b61f73fa5ba21a4be79ff0d4f65971e7d485d09f9f28c1224930cd20"
+    },
+    {
+      "scene": "s15",
+      "sha256": "309e11e3925c3f1ed31b05a567a9fca85809eecbfb83385da7a78d85a83bfd7c",
+      "source_fingerprint": "87d521764ae8a33c10b0b15e30c0a118cbdb862d51b841bdcdf3a90b170b92f0"
+    },
+    {
+      "scene": "s16",
+      "sha256": "c66b25ba1e4388b0fbbece015955e5fad81ecfc37c7444183db892141cf0ae08",
+      "source_fingerprint": "6f69ee69d84dbbab2fd0430d73266d36a9ee6835c0ebc8792375ea302ab9a58a"
+    },
+    {
+      "scene": "s17",
+      "sha256": "a1e1f9502769cf19fe5072f17b28f8782562308a21fe1caf181d8a5204e9098a",
+      "source_fingerprint": "d4cee649c1c328522672959cdc30db4cb0eaa0828f0427ad032c43104bc22295"
+    }
+  ],
+  "baseline_final_sha256": "d6b0911087810390dc29803c628e770dde49f141d8490016ce488e915c2be2f8",
+  "preservation": "The other 16 visual sources and encoded scene segments are unchanged. Lossless audio samples outside 95.65-104.5 seconds match the approved original exactly. The final AAC track was encoded from that revised master.",
   "limits": [
-    "This pass used automated audio checks. It does not claim listening or end-to-end real-time playback.",
-    "Final visual checks cover sampled frames rather than every rendered frame. The full video was decoded automatically.",
-    "Narration-only pause and voice-speed checks are recorded separately in audio-QA.json. The silence measurement here is from the final mixed AAC track."
+    "Visual review covers sampled frames; the full master was decoded automatically.",
+    "Audio checks are measured tests and do not claim listening or real-time playback.",
+    "The store listing is an illustration prepared for the planned release."
   ]
 }

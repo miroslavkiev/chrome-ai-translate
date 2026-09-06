@@ -1,29 +1,36 @@
 # Final delivery
 
-Final master: `renders/ai-translator-select-control-4k60.mp4`.
+[Download the current public master](https://github.com/miroslavkiev/chrome-ai-translate/releases/download/promo-video-2026-09-06/ai-translator-select-control-4k60.mp4).
+
+Local master: `renders/ai-translator-select-control-4k60.mp4`.
 
 - Native picture: 3840x2160, exact 60 fps, 7,532 frames.
 - Runtime: 125.533333 seconds.
 - Encoding: software libx264, slow preset, CRF 15, no bitrate cap, BT.709.
 - Capture: lossless PNG, software browser rendering, full motion.
-- Audio: stereo AAC at 48 kHz and 256 kbps, mixed from the lossless WAV master.
+- Audio: stereo AAC at 48 kHz and 256 kbps, from the lossless WAV master.
 - Narrator: Kokoro Adam (`am_adam`), generated at exactly 1.15x.
-- Longest measured voice pause: 0.65625 seconds. No internal pause needed shortening.
+- Longest measured voice pause: 0.727396 seconds.
 - Setup: 24.25 seconds, 19.32% of the film.
-- File SHA-256: `d6b0911087810390dc29803c628e770dde49f141d8490016ce488e915c2be2f8`.
+- File size: 30,670,491 bytes.
+- File SHA-256: `11420aabcafa9cda7b348f6905b30fd3069e83922492b8f882e7dea5652b8fa0`.
 
-The film, voice, original music, motion and final render were made locally. No paid media tool or cloud renderer was used. Example translations are illustrative, and the extension itself remains unchanged.
+## Chrome Web Store revision
+
+Only scene s14, from 95.65 to 104.5 seconds, changes. The illustrated store listing shows Add to Chrome, Add extension and an installed state. ZIP extraction and developer installation steps are removed. The listing is prepared for the planned store release without invented ratings, users, badges or a listing URL.
+
+The other 16 visual scenes reuse their approved encoded segments after exact visual source, timing, settings, version and checksum checks. All music files and all lossless audio samples outside s14 are unchanged. The original video remains backed up in the local render cache. The public GitHub asset is replaced at the same download link.
 
 ## Checks
 
-The source passed HyperFrames runtime, layout and contrast checks with zero issues. Two structural lint warnings were reviewed: repeated icon images and the full preview's 17 scene clips sharing one lane. The final renderer captures separate scene projects. The native language dropdown intentionally covers the card controls while it is open.
+The changed scene and both cuts passed HyperFrames runtime, layout and contrast checks. Two existing structural lint warnings remain: repeated icon images and the full preview's 17 clips sharing one lane. Independent review inspected native encoded frames through the install action, completion state, first and last scene frames, and both cuts in the full master.
 
-Independent source review checked all 17 scenes in forward and reverse order, then compared 68 full-film and isolated-scene states. The text and geometry matched. The complete render passed exact dimensions, frame rate, frame count and stream checks. The final MP4 also passed an independent full decode and black-frame scan. Its audio measured -16.01 LUFS and -3.24 dBTP, with no mixed-audio silence above 0.158 seconds. Final image review is recorded in `media-QA.json`.
-
-`npm run check` passed at repository root. The audio checker and renderer self-check passed. Inspect `source-QA.json`, `audio-QA.json`, `media-QA.json` and the render receipts for exact evidence.
+The final master passed exact dimensions, frame rate, frame count, streams and strict full decode checks. No black segments were detected. Its AAC mix measured -16.0 LUFS and -3.24 dBTP, with no mixed-audio silence above 0.158 seconds. The audio self-test, audio checker, renderer self-check and repository source check passed. Evidence is recorded in `source-QA.json`, `audio-QA.json`, `media-QA.json` and `renders/store-revision/`.
 
 ## Reproduction
 
-HyperFrames 0.8.29 and GSAP 3.14.2 were reused. Kokoro ONNX 0.6.1 used the existing cached model and Adam voice. The local audio environment is `/Users/mk/Documents/Codex/OpenMontage/.venv/bin/python`. The renderer uses the installed `hyperframes`, `ffmpeg` and `ffprobe` commands.
+The project and render wrapper stay pinned to HyperFrames 0.8.29 to preserve the approved output. GSAP 3.14.2 and Kokoro ONNX 0.6.1 reuse the installed local assets and model. The audio Python environment is `/Users/mk/Documents/Codex/OpenMontage/.venv/bin/python`.
 
-The MP4 and render caches stay local. The source, audio master and documentation are saved in the repository. Opening the final MP4 provides the local preview; no extension reload is needed for a video-only change.
+Run `npm run render` for the complete film. Run the audio tool with `--replace-scene s14` for a measured voice edit inside the existing scene window. A fixed `duration` in `narrative.json` preserves that window during a full audio rebuild.
+
+The source, lossless audio master and documentation are stored in Git. MP4 files and render caches are ignored by Git; the final MP4 is delivered through the existing GitHub release. No extension code changed, so no extension reload is needed.

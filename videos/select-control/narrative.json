@@ -69,7 +69,8 @@
     {
       "id": "s14",
       "title": "Install once",
-      "text": "To get started, extract the extension download. Open Chrome Extensions, enable Developer mode, and choose Load unpacked. Select the extracted folder."
+      "text": "To get started, find AI Translator in the Chrome Web Store. Choose Add to Chrome, then Add extension to confirm. That's it. Now you're ready for setup.",
+      "duration": 8.85
     },
     {
       "id": "s15",

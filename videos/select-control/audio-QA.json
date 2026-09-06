@@ -1,6 +1,6 @@
 {
   "duration": 125.53333333333333,
-  "max_narration_pause_seconds": 0.65625,
+  "max_narration_pause_seconds": 0.727396,
   "sample_rate": 48000,
   "channels": 2,
   "integrated_lufs": -16.0,
@@ -11,7 +11,7 @@
   "speed": 1.15,
   "engine": "0.6.1",
   "original_music": "Locally synthesized D-major plucks, bass, and ticks at 120 BPM. No sampled or external music.",
-  "source_sha256": "89bb4269168bf853ba27b5e9517fc1f08021c4a89322d75f8e0cbabc3eb8e5e7",
+  "source_sha256": "a1458a03376ccbd25914764ed2264fc377d05d39bf28b6b4ec064e9a0ecddd97",
   "scenes": [
     {
       "id": "s01",
@@ -80,8 +80,9 @@
     },
     {
       "id": "s14",
-      "seconds": 8.60325,
-      "shortened_internal_pauses": []
+      "seconds": 8.190291666666667,
+      "shortened_internal_pauses": [],
+      "headroom_gain": 0.9632456733728808
     },
     {
       "id": "s15",
@@ -98,5 +99,34 @@
       "seconds": 5.019666666666667,
       "shortened_internal_pauses": []
     }
-  ]
+  ],
+  "scene_replacement": {
+    "id": "s14",
+    "start": 95.65,
+    "duration": 8.85,
+    "baseline": "renders/store-revision/f4820ab4b3f0",
+    "unchanged_audio": {
+      "narration-raw.wav": {
+        "before_samples": 2295600,
+        "after_samples": 504800,
+        "pcm_equal_outside_scene": true
+      },
+      "narration.wav": {
+        "before_samples": 4591200,
+        "after_samples": 1009600,
+        "pcm_equal_outside_scene": true
+      },
+      "mix-raw.wav": {
+        "before_samples": 4591200,
+        "after_samples": 1009600,
+        "pcm_equal_outside_scene": true
+      },
+      "master.wav": {
+        "before_samples": 4591200,
+        "after_samples": 1009600,
+        "pcm_equal_outside_scene": true
+      }
+    },
+    "music_sha256": "a86628792834eae72c82e1303fda91a5d1832f720909f0b81ca6480c8ecccb01"
+  }
 }

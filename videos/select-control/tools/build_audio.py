@@ -7,6 +7,7 @@ import importlib.metadata
 import json
 import math
 import re
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -30,8 +31,8 @@ def levels(path):
     return json.JSONDecoder().raw_decode(log[log.rfind("{"):])[0]
 
 
-def normalize(source, target, integrated=-16, peak=-1.7):
-    measured = levels(source)
+def normalize(source, target, integrated=-16, peak=-1.7, reference=None):
+    measured = levels(reference or source)
     filters = (f"loudnorm=I={integrated}:TP={peak}:LRA=7:linear=true:"
                f"measured_I={measured['input_i']}:measured_TP={measured['input_tp']}:"
                f"measured_LRA={measured['input_lra']}:measured_thresh={measured['input_thresh']}:"
@@ -65,6 +66,12 @@ def trim(samples, rate):
     return samples.astype(np.float32), shortened
 
 
+def with_headroom(samples):
+    peak = float(np.max(np.abs(samples)))
+    gain = (1 - 2 ** -23) / peak if peak >= 1 else 1.0
+    return samples * gain, gain
+
+
 def pack(scenes, clips):
     parts, timed, cursor = [], [], 0
     for index, scene in enumerate(scenes):
@@ -78,6 +85,9 @@ def pack(scenes, clips):
         speech_end = cursor
         tail = ENDING if index == len(scenes) - 1 else GAP
         end = math.ceil((cursor + round(tail * RATE)) / (RATE // FPS)) * (RATE // FPS)
+        if "duration" in scene:
+            end = start + round(scene["duration"] * RATE)
+            assert end >= cursor, f"Speech exceeds fixed scene window: {scene['id']}"
         parts.append(np.zeros(end - cursor, dtype=np.float32))
         cursor = end
         timed.append({**scene, "start": start / RATE, "duration": (end - start) / RATE,
@@ -159,6 +169,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--self-test", action="store_true")
+    parser.add_argument("--replace-scene", help="Replace one voice line, keeping existing scene windows and all other audio samples")
     parser.add_argument("--model", type=Path, default=Path.home() / ".cache/hyperframes/tts/models/kokoro-v1.0.onnx")
     parser.add_argument("--voices", type=Path, default=Path.home() / ".cache/hyperframes/tts/voices/voices-v1.0.bin")
     args = parser.parse_args()
@@ -171,7 +182,12 @@ def main():
         packed, timing = pack([{"id": "a", "text": "One"}, {"id": "b", "text": "Two"}], {"a": clip, "b": clip})
         assert len(packed) == round(timing["duration"] * RATE)
         assert timing["scenes"][0]["speechStart"] == OPENING
-        print("PASS: silence shortening preserves speech and scene packing keeps exact frame boundaries")
+        _, fixed = pack([{"id": "a", "text": "One", "duration": 3.0}, {"id": "b", "text": "Two"}], {"a": clip, "b": clip})
+        assert fixed["scenes"][0]["duration"] == fixed["scenes"][1]["start"] == 3.0
+        safe, gain = with_headroom(np.array([0.5, 1.0381566, -0.9], dtype=np.float32))
+        assert gain < 1 and np.max(np.abs(safe)) <= 1 - 2 ** -23
+        assert np.array_equal(with_headroom(clip)[0], clip)
+        print("PASS: silence trimming, fixed frame windows and clipping prevention")
         return
     if args.check:
         print(json.dumps(verify(json.loads((PROJECT / "timings.json").read_text()), narration, master), indent=2))
@@ -179,11 +195,21 @@ def main():
     story = json.loads((PROJECT / "narrative.json").read_text())
     assert len({scene["id"] for scene in story["scenes"]}) == len(story["scenes"])
     assert all(scene["text"].strip() and not any(char in scene["text"] for char in ("\u2013", "\u2014")) for scene in story["scenes"])
+    backup = None
+    if args.replace_scene:
+        assert args.replace_scene in {scene["id"] for scene in story["scenes"]}, "Unknown scene"
+        backup = PROJECT / "renders/store-revision" / hashlib.sha256(master.read_bytes()).hexdigest()[:12]
+        backup.mkdir(parents=True, exist_ok=True)
+        for source in [*audio.glob("*.wav"), *(PROJECT / name for name in ("timings.json", "timings.js", "SCRIPT.md", "audio-QA.json"))]:
+            if not (backup / source.name).exists():
+                shutil.copy2(source, backup / source.name)
     cache = audio / "cache"
     cache.mkdir(parents=True, exist_ok=True)
     engine = importlib.metadata.version("kokoro-onnx")
     model, clips, records = None, {}, []
     for scene in story["scenes"]:
+        if args.replace_scene and scene["id"] != args.replace_scene:
+            continue
         key = hashlib.sha256(json.dumps([scene["text"], VOICE, SPEED, engine, "trim45ms-cap450ms-v1"]).encode()).hexdigest()
         cached = cache / f"{key}.wav"
         if cached.exists():
@@ -196,30 +222,73 @@ def main():
             samples, shortened = trim(samples, rate)
             sf.write(cached, samples, rate, subtype="FLOAT")
         assert rate == RATE and samples.ndim == 1 and np.isfinite(samples).all()
+        samples, headroom_gain = with_headroom(samples)
         clips[scene["id"]] = samples
-        records.append({"id": scene["id"], "seconds": len(samples) / rate, "shortened_internal_pauses": shortened})
+        record = {"id": scene["id"], "seconds": len(samples) / rate, "shortened_internal_pauses": shortened}
+        if headroom_gain < 1:
+            record["headroom_gain"] = headroom_gain
+        records.append(record)
         print(f"{scene['id']}: {len(samples) / rate:.3f}s", flush=True)
-    packed, timing = pack(story["scenes"], clips)
+    if args.replace_scene:
+        timing = json.loads((backup / "timings.json").read_text())
+        scene = next(scene for scene in timing["scenes"] if scene["id"] == args.replace_scene)
+        replacement = next(item for item in story["scenes"] if item["id"] == args.replace_scene)
+        assert replacement.get("duration", scene["duration"]) == scene["duration"], "Replacement cannot change the existing scene window"
+        scene.update(replacement)
+        packed, rate = sf.read(backup / "narration-raw.wav", dtype="float32")
+        assert rate == RATE
+        start, end = round(scene["start"] * RATE), round((scene["start"] + scene["duration"]) * RATE)
+        speech_start = start + round(scene["localSpeechStart"] * RATE)
+        clip = clips[scene["id"]]
+        assert speech_start + len(clip) <= end, "Replacement speech exceeds existing scene window"
+        packed[start:end] = 0
+        packed[speech_start:speech_start + len(clip)] = clip
+        scene["speechEnd"] = (speech_start + len(clip)) / RATE
+        scene["localSpeechEnd"] = scene["speechEnd"] - scene["start"]
+        replaced_scene = scene
+        replacement_record = records[0]
+        records = json.loads((backup / "audio-QA.json").read_text())["scenes"]
+        records = [replacement_record if record["id"] == args.replace_scene else record for record in records]
+    else:
+        packed, timing = pack(story["scenes"], clips)
     (PROJECT / "timings.json").write_text(json.dumps(timing, indent=2) + "\n")
     (PROJECT / "timings.js").write_text("window.FILM_TIMINGS = " + json.dumps(timing, indent=2) + ";\n")
-    script = ["# Narration", "", "Local Kokoro Adam (am_adam), speed 1.15. Speech determines scene timing.", ""]
+    script = ["# Narration", "", "Local Kokoro Adam (am_adam), speed 1.15. Speech determines scene timing unless the scene has a fixed window.", ""]
     for scene in timing["scenes"]:
         script.extend([f"## {scene['id']}: {scene['title']}", "", scene["text"], ""])
     (PROJECT / "SCRIPT.md").write_text("\n".join(script))
     print(f"TIMINGS READY: {timing['duration']:.3f}s", flush=True)
     raw = audio / "narration-raw.wav"
     sf.write(raw, packed, RATE, subtype="PCM_24")
-    normalize(raw, narration)
-    sf.write(audio / "music-raw.wav", music(timing["duration"]), 48000, subtype="PCM_24")
-    normalize(audio / "music-raw.wav", audio / "music.wav", integrated=-33, peak=-8)
+    normalize(raw, narration, reference=backup / "narration-raw.wav" if backup else None)
+    if not backup:
+        sf.write(audio / "music-raw.wav", music(timing["duration"]), 48000, subtype="PCM_24")
+        normalize(audio / "music-raw.wav", audio / "music.wav", integrated=-33, peak=-8)
     mix = audio / "mix-raw.wav"
     ffmpeg("-y", "-i", narration, "-i", audio / "music.wav", "-filter_complex",
            "[0:a]aformat=channel_layouts=stereo[v];[v][1:a]amix=inputs=2:duration=first:normalize=0[m]",
            "-map", "[m]", "-ar", 48000, "-c:a", "pcm_s24le", mix)
-    normalize(mix, master)
+    normalize(mix, master, reference=backup / "mix-raw.wav" if backup else None)
+    unchanged = {}
+    if backup:
+        for target in (raw, narration, mix, master):
+            original, rate = sf.read(backup / target.name, dtype="int32")
+            revised, revised_rate = sf.read(target, dtype="int32")
+            assert rate == revised_rate and original.shape == revised.shape
+            first = round(replaced_scene["start"] * rate)
+            last = round((replaced_scene["start"] + replaced_scene["duration"]) * rate)
+            revised[:first], revised[last:] = original[:first], original[last:]
+            sf.write(target, revised, rate, subtype="PCM_24")
+            checked, _ = sf.read(target, dtype="int32")
+            assert np.array_equal(checked[:first], original[:first]) and np.array_equal(checked[last:], original[last:])
+            unchanged[target.name] = {"before_samples": first, "after_samples": len(original) - last, "pcm_equal_outside_scene": True}
     qa = verify(timing, narration, master)
     qa.update(voice=VOICE, speed=SPEED, engine=engine, original_music="Locally synthesized D-major plucks, bass, and ticks at 120 BPM. No sampled or external music.",
               source_sha256=hashlib.sha256((PROJECT / "narrative.json").read_bytes()).hexdigest(), scenes=records)
+    if backup:
+        qa["scene_replacement"] = {"id": args.replace_scene, "start": replaced_scene["start"], "duration": replaced_scene["duration"],
+                                   "baseline": str(backup.relative_to(PROJECT)), "unchanged_audio": unchanged,
+                                   "music_sha256": hashlib.sha256((audio / "music.wav").read_bytes()).hexdigest()}
     (PROJECT / "audio-QA.json").write_text(json.dumps(qa, indent=2) + "\n")
     print(json.dumps(qa, indent=2), flush=True)
 

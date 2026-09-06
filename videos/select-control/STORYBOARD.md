@@ -142,9 +142,9 @@ Motion: first reveal within 0.7 seconds; visual action develops across the measu
 
 Time: 95.650 to 104.500 seconds.
 
-Voice: To get started, extract the extension download. Open Chrome Extensions, enable Developer mode, and choose Load unpacked. Select the extracted folder.
+Voice: To get started, find AI Translator in the Chrome Web Store. Choose Add to Chrome, then Add extension to confirm. That's it. Now you're ready for setup.
 
-Assets: approved icon-master.png, source-derived HTML controls, local GSAP. Example text is illustrative.
+Assets: approved icon-master.png, source-derived HTML controls, local GSAP. Illustrative Chrome Web Store listing for the planned release.
 
 Motion: first reveal within 0.7 seconds; visual action develops across the measured narration. See scene source for exact seekable timing.
 

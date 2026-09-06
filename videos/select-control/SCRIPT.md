@@ -1,6 +1,6 @@
 # Narration
 
-Local Kokoro Adam (am_adam), speed 1.15. Speech determines scene timing.
+Local Kokoro Adam (am_adam), speed 1.15. Speech determines scene timing unless the scene has a fixed window.
 
 ## s01: Good translation. Too many steps.
 
@@ -56,7 +56,7 @@ Less copying. Less switching. More understanding. From the first unfamiliar phra
 
 ## s14: Install once
 
-To get started, extract the extension download. Open Chrome Extensions, enable Developer mode, and choose Load unpacked. Select the extracted folder.
+To get started, find AI Translator in the Chrome Web Store. Choose Add to Chrome, then Add extension to confirm. That's it. Now you're ready for setup.
 
 ## s15: Get your Gemini key
 
