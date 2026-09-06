@@ -12,6 +12,67 @@ import { SUPPORTED_LOCALES } from "./locales.mjs";
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const extension = process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist", import.meta.url));
 const locales = (process.env.I18N_TEST_LOCALES || "en,de,ar,ja,uk,zh_CN,ur").split(",");
+
+async function findExtensionWorker(context, locale) {
+  const matches = (worker) => worker.url().startsWith("chrome-extension://") && worker.url().endsWith("/background.js");
+  const existing = context.serviceWorkers().find(matches);
+  if (existing) return existing;
+
+  // CDP can attach after a worker has stopped. A registered version remains
+  // discoverable even when Playwright has no running worker to report.
+  const inspection = await context.newPage();
+  const cdp = await context.newCDPSession(inspection);
+  let timer;
+  let settled = false;
+  let wakeStarted = false;
+  let latestVersion;
+  const startupErrors = [];
+  let onWorker;
+  let onVersions;
+  const onError = ({ errorMessage }) => startupErrors.push(errorMessage);
+  const ready = new Promise((resolve, reject) => {
+    const fail = (error) => {
+      if (settled) return;
+      settled = true;
+      reject(new Error(`${locale}: extension worker startup failed (${latestVersion
+        ? `${latestVersion.status}/${latestVersion.runningStatus}` : "no registered background worker"}): ${error.message}; ${JSON.stringify(startupErrors)}`));
+    };
+    onWorker = (worker) => {
+      if (settled || !matches(worker)) return;
+      settled = true;
+      resolve(worker);
+    };
+    onVersions = ({ versions }) => {
+      latestVersion = versions.find((version) => version.scriptURL.startsWith("chrome-extension://")
+        && version.scriptURL.endsWith("/background.js") && version.status !== "redundant") || latestVersion;
+      if (settled || wakeStarted || latestVersion?.status !== "activated") return;
+      const current = context.serviceWorkers().find(matches);
+      if (current) return onWorker(current);
+      wakeStarted = true;
+      console.log(`Native locale ${locale}: waking registered ${latestVersion.runningStatus} extension worker.`);
+      const scopeURL = `chrome-extension://${new URL(latestVersion.scriptURL).host}/`;
+      void cdp.send("ServiceWorker.startWorker", { scopeURL }).catch(fail);
+    };
+    timer = setTimeout(() => fail(new Error("Timed out after 10 seconds")), 10_000);
+    context.on("serviceworker", onWorker);
+    cdp.on("ServiceWorker.workerVersionUpdated", onVersions);
+    cdp.on("ServiceWorker.workerErrorReported", onError);
+  });
+  try {
+    // Await both together so a failed discovery cannot leave a rejected wait behind.
+    const [, worker] = await Promise.all([cdp.send("ServiceWorker.enable"), ready]);
+    return worker;
+  } finally {
+    clearTimeout(timer);
+    settled = true;
+    context.off("serviceworker", onWorker);
+    cdp.off("ServiceWorker.workerVersionUpdated", onVersions);
+    cdp.off("ServiceWorker.workerErrorReported", onError);
+    await cdp.detach();
+    await inspection.close();
+  }
+}
+
 for (const locale of locales) {
   const profile = await mkdtemp(path.join(os.tmpdir(), "ai-translator-locale-"));
   // Select an explicit English region because Chrome normalizes generic en to en-US.
@@ -42,9 +103,12 @@ for (const locale of locales) {
     assert.ok(port, "Chrome must open a debugging port");
     browser = await chromium.connectOverCDP(`http://127.0.0.1:${port}`);
     const context = browser.contexts()[0];
-    const worker = context.serviceWorkers().find((item) => item.url().endsWith("/background.js"))
-      || await context.waitForEvent("serviceworker", { predicate: (item) => item.url().endsWith("/background.js") });
+    const worker = await findExtensionWorker(context, locale);
     const base = `chrome-extension://${new URL(worker.url()).host}`;
+    const errors = [];
+    context.on("page", (page) => page.on("pageerror", (error) => errors.push(error.message)));
+    const page = await context.newPage();
+    await page.setViewportSize({ width: 320, height: 800 });
     await worker.evaluate((model) => {
       globalThis.providerCalls = 0;
       globalThis.translationCalls = 0;
@@ -59,10 +123,8 @@ for (const locale of locales) {
           outputTokenLimit: 8192, supportedGenerationMethods: ["generateContent"] }] }));
       };
     }, RECOMMENDED_MODEL);
-    const errors = [];
-    context.on("page", (page) => page.on("pageerror", (error) => errors.push(error.message)));
-    const page = await context.newPage();
-    await page.setViewportSize({ width: 320, height: 800 });
+    await page.goto(`${base}/settings.html`);
+    await waitForRuntimeState(page, undefined, { allowStartup: true });
     for (const route of ["help", "about", "popup", "settings"]) {
       await page.goto(`${base}/${route}.html`);
       if (route === "settings") await waitForRuntimeState(page);
