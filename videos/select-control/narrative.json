@@ -1,0 +1,90 @@
+{
+  "title": "AI Translator: Select. Control. Understand.",
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Good translation. Too many steps.",
+      "text": "AI can make translation feel more natural. So why does getting there still take so many steps?"
+    },
+    {
+      "id": "s02",
+      "title": "The copy-paste loop",
+      "text": "Select. Copy. Switch tabs. Paste. Ask for a translation. Then find your place again. One small question becomes a break in your flow."
+    },
+    {
+      "id": "s03",
+      "title": "Meet AI Translator",
+      "text": "Meet AI Translator for Chrome. Gemini translation, right where you read. A free extension built around one simple action."
+    },
+    {
+      "id": "s04",
+      "title": "Select. Tap Control.",
+      "text": "Select the words you want. Tap and release Control. Your translation appears beside the text. Keep the original in view, and keep going."
+    },
+    {
+      "id": "s05",
+      "title": "Meaning first",
+      "text": "Because useful translation is about meaning. Not just swapping words. An everyday phrase can become something that sounds natural in your language."
+    },
+    {
+      "id": "s06",
+      "title": "Read with confidence",
+      "text": "A work message. A useful article. Details for your next trip. Translate the part you need, without moving your whole task somewhere else."
+    },
+    {
+      "id": "s07",
+      "title": "A little. Or a lot.",
+      "text": "A word, a sentence, or a whole paragraph. You choose the selection. Get the answer in place, while the rest of the page stays familiar."
+    },
+    {
+      "id": "s08",
+      "title": "Your language. Your choice.",
+      "text": "Choose from one hundred and ten language options. Need another language for this result? Change it in the card. Your saved default stays the same."
+    },
+    {
+      "id": "s09",
+      "title": "Keep the useful parts together",
+      "text": "A new phrase. A new question. Translate as you go, with each result close to its source. No growing stack of translation tabs to manage."
+    },
+    {
+      "id": "s10",
+      "title": "Use the result",
+      "text": "Copy a translation when you need it. Open the toolbar popup to read the latest result again during your current browser session."
+    },
+    {
+      "id": "s11",
+      "title": "Fits the way you work",
+      "text": "Prefer a different key? Choose it in Settings. Or use the right-click menu. Pick your language and Gemini model. Make the workflow yours."
+    },
+    {
+      "id": "s12",
+      "title": "Free extension. Less friction.",
+      "text": "The extension is free and open source, with no ads or analytics. Only text you select is sent to Google for the translation you request."
+    },
+    {
+      "id": "s13",
+      "title": "Keep your flow",
+      "text": "Less copying. Less switching. More understanding. From the first unfamiliar phrase to the next useful idea, translation stays part of what you are doing."
+    },
+    {
+      "id": "s14",
+      "title": "Install once",
+      "text": "To get started, extract the extension download. Open Chrome Extensions, enable Developer mode, and choose Load unpacked. Select the extracted folder."
+    },
+    {
+      "id": "s15",
+      "title": "Get your Gemini key",
+      "text": "Open Settings. Get your Gemini API key from Google AI Studio. Review the data details, then choose Agree and connect to Google."
+    },
+    {
+      "id": "s16",
+      "title": "Paste. Choose. Finish.",
+      "text": "Paste your key. Choose your target language and model. Finish setup, then refresh your open pages. Your key stays saved on this device."
+    },
+    {
+      "id": "s17",
+      "title": "Select. Control. Understand.",
+      "text": "You're ready. Select text. Tap Control. Understand, and keep going. AI Translator for Chrome."
+    }
+  ]
+}

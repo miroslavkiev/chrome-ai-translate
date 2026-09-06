@@ -1,0 +1,102 @@
+{
+  "duration": 125.53333333333333,
+  "max_narration_pause_seconds": 0.65625,
+  "sample_rate": 48000,
+  "channels": 2,
+  "integrated_lufs": -16.0,
+  "true_peak_dbtp": -3.22,
+  "setup_seconds": 24.25,
+  "setup_percent": 19.32,
+  "voice": "am_adam",
+  "speed": 1.15,
+  "engine": "0.6.1",
+  "original_music": "Locally synthesized D-major plucks, bass, and ticks at 120 BPM. No sampled or external music.",
+  "source_sha256": "89bb4269168bf853ba27b5e9517fc1f08021c4a89322d75f8e0cbabc3eb8e5e7",
+  "scenes": [
+    {
+      "id": "s01",
+      "seconds": 5.033125,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s02",
+      "seconds": 7.153,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s03",
+      "seconds": 7.071875,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s04",
+      "seconds": 6.8300833333333335,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s05",
+      "seconds": 7.524125,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s06",
+      "seconds": 6.884708333333333,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s07",
+      "seconds": 6.681916666666667,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s08",
+      "seconds": 7.7709166666666665,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s09",
+      "seconds": 7.801625,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s10",
+      "seconds": 6.5425,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s11",
+      "seconds": 6.99025,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s12",
+      "seconds": 7.6645,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s13",
+      "seconds": 8.133416666666667,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s14",
+      "seconds": 8.60325,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s15",
+      "seconds": 7.6803333333333335,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s16",
+      "seconds": 7.21925,
+      "shortened_internal_pauses": []
+    },
+    {
+      "id": "s17",
+      "seconds": 5.019666666666667,
+      "shortened_internal_pauses": []
+    }
+  ]
+}

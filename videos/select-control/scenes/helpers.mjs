@@ -1,0 +1,6 @@
+export const logo = '<img class="app-icon" src="assets/icon-master.png" alt="AI Translator icon">';
+export const heading = (kicker, title, sub = '') => `<header class="scene-heading"><p class="eyebrow">${kicker}</p><h1>${title}</h1>${sub ? `<p class="subtitle">${sub}</p>` : ''}</header>`;
+export const card = (text, lang = 'German', extra = '') => `<div class="translation-card ${extra}"><div class="card-head"><strong>Translation</strong><span class="language">${lang}<span class="chevron">⌄</span></span><span class="close">×</span></div><p class="translated">${text}</p><div class="card-actions"><span class="copy-button">Copy</span></div></div>`;
+export const browser = (body, url = 'example.com', extra = '') => `<div class="browser ${extra}"><div class="browser-bar"><div class="traffic"><i></i><i></i><i></i></div><div class="address">${url}</div><img src="assets/icon-master.png" alt="AI Translator" class="toolbar-icon"></div><div class="page-content">${body}</div></div>`;
+export const key = (label = 'Ctrl', extra = '') => `<div class="keycap ${extra}"><span>${label}</span><small>control</small></div>`;
+export const cursor = '<svg class="cursor" width="54" height="70" viewBox="0 0 40 52" aria-hidden="true"><path d="M5 3V40L15 30L23 48L30 44L21 26L35 25Z" fill="#1d1d1f" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>';

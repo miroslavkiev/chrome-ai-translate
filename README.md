@@ -6,6 +6,8 @@ Manually tested on Mac only. Windows and Linux have not been manually tested.
 
 The [source repository](https://github.com/miroslavkiev/chrome-ai-translate) is public under the MIT license. For help, use [public issues](https://github.com/miroslavkiev/chrome-ai-translate/issues) without sharing keys or private text. Read the [privacy details](PRIVACY.md).
 
+The [promo video project](videos/select-control/README.md) shows the translation workflow and quick setup in a 4K 60 fps film, with editable HyperFrames source.
+
 ## Chrome Web Store preparation
 
 The [Store release pack](store/README.md) contains listing text, screenshots, promotional images, reviewer notes and a Germany/EU legal review. It is a draft, not a published Store listing. The build remembers an encrypted key on this device and asks for agreement before any Google request. Store approval, Google's service conditions and applicable publisher information remain under review.

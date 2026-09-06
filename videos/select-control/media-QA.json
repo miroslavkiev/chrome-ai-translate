@@ -1,0 +1,309 @@
+{
+  "final_sha256": "d6b0911087810390dc29803c628e770dde49f141d8490016ce488e915c2be2f8",
+  "file": "renders/ai-translator-select-control-4k60.mp4",
+  "size_bytes": 30168391,
+  "format": {
+    "width": 3840,
+    "height": 2160,
+    "fps": "60/1",
+    "frames": 7532,
+    "duration_seconds": 125.53333333333333,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "audio_channels": 2,
+    "color_tags": "bt709"
+  },
+  "full_video_decode": "pass",
+  "black_intervals": [],
+  "blackdetect_parameters": {
+    "min_duration": 0.05,
+    "pixel_threshold": 0.01,
+    "picture_threshold": 0.98
+  },
+  "mixed_audio": {
+    "integrated_lufs": -16.01,
+    "true_peak_dbtp": -3.24,
+    "loudness_range_lu": 1.4,
+    "silence_threshold_db": -50,
+    "silence_min_duration_seconds": 0.05,
+    "silence_intervals_seconds": [
+      0.157354
+    ],
+    "max_detected_silence_seconds": 0.157354
+  },
+  "samples": [
+    {
+      "scene": "s01",
+      "kind": "mid",
+      "frame": 169,
+      "time": 2.816666666666667,
+      "file": "s01-mid.png"
+    },
+    {
+      "scene": "s01",
+      "kind": "late",
+      "frame": 297,
+      "time": 4.95,
+      "file": "s01-late.png"
+    },
+    {
+      "scene": "s02",
+      "kind": "mid",
+      "frame": 560,
+      "time": 9.333333333333334,
+      "file": "s02-mid.png"
+    },
+    {
+      "scene": "s02",
+      "kind": "late",
+      "frame": 729,
+      "time": 12.15,
+      "file": "s02-late.png"
+    },
+    {
+      "scene": "s03",
+      "kind": "mid",
+      "frame": 1002,
+      "time": 16.7,
+      "file": "s03-mid.png"
+    },
+    {
+      "scene": "s03",
+      "kind": "late",
+      "frame": 1168,
+      "time": 19.466666666666665,
+      "file": "s03-late.png"
+    },
+    {
+      "scene": "s04",
+      "kind": "mid",
+      "frame": 1433,
+      "time": 23.883333333333333,
+      "file": "s04-mid.png"
+    },
+    {
+      "scene": "s04",
+      "kind": "late",
+      "frame": 1595,
+      "time": 26.583333333333332,
+      "file": "s04-late.png"
+    },
+    {
+      "scene": "s05",
+      "kind": "mid",
+      "frame": 1879,
+      "time": 31.316666666666666,
+      "file": "s05-mid.png"
+    },
+    {
+      "scene": "s05",
+      "kind": "late",
+      "frame": 2056,
+      "time": 34.266666666666666,
+      "file": "s05-late.png"
+    },
+    {
+      "scene": "s06",
+      "kind": "mid",
+      "frame": 2326,
+      "time": 38.766666666666666,
+      "file": "s06-mid.png"
+    },
+    {
+      "scene": "s06",
+      "kind": "late",
+      "frame": 2489,
+      "time": 41.483333333333334,
+      "file": "s06-late.png"
+    },
+    {
+      "scene": "s07",
+      "kind": "mid",
+      "frame": 2748,
+      "time": 45.8,
+      "file": "s07-mid.png"
+    },
+    {
+      "scene": "s07",
+      "kind": "late",
+      "frame": 2906,
+      "time": 48.43333333333333,
+      "file": "s07-late.png"
+    },
+    {
+      "scene": "s08",
+      "kind": "mid",
+      "frame": 3196,
+      "time": 53.266666666666666,
+      "file": "s08-mid.png"
+    },
+    {
+      "scene": "s08",
+      "kind": "late",
+      "frame": 3379,
+      "time": 56.31666666666667,
+      "file": "s08-late.png"
+    },
+    {
+      "scene": "s09",
+      "kind": "mid",
+      "frame": 3679,
+      "time": 61.31666666666667,
+      "file": "s09-mid.png"
+    },
+    {
+      "scene": "s09",
+      "kind": "late",
+      "frame": 3862,
+      "time": 64.36666666666666,
+      "file": "s09-late.png"
+    },
+    {
+      "scene": "s10",
+      "kind": "mid",
+      "frame": 4124,
+      "time": 68.73333333333333,
+      "file": "s10-mid.png"
+    },
+    {
+      "scene": "s10",
+      "kind": "late",
+      "frame": 4278,
+      "time": 71.3,
+      "file": "s10-late.png"
+    },
+    {
+      "scene": "s11",
+      "kind": "mid",
+      "frame": 4544,
+      "time": 75.73333333333333,
+      "file": "s11-mid.png"
+    },
+    {
+      "scene": "s11",
+      "kind": "late",
+      "frame": 4709,
+      "time": 78.48333333333333,
+      "file": "s11-late.png"
+    },
+    {
+      "scene": "s12",
+      "kind": "mid",
+      "frame": 4999,
+      "time": 83.31666666666666,
+      "file": "s12-mid.png"
+    },
+    {
+      "scene": "s12",
+      "kind": "late",
+      "frame": 5179,
+      "time": 86.31666666666666,
+      "file": "s12-late.png"
+    },
+    {
+      "scene": "s13",
+      "kind": "mid",
+      "frame": 5488,
+      "time": 91.46666666666667,
+      "file": "s13-mid.png"
+    },
+    {
+      "scene": "s13",
+      "kind": "late",
+      "frame": 5679,
+      "time": 94.65,
+      "file": "s13-late.png"
+    },
+    {
+      "scene": "s14",
+      "kind": "mid",
+      "frame": 6005,
+      "time": 100.08333333333333,
+      "file": "s14-mid.png"
+    },
+    {
+      "scene": "s14",
+      "kind": "late",
+      "frame": 6206,
+      "time": 103.43333333333334,
+      "file": "s14-late.png"
+    },
+    {
+      "scene": "s15",
+      "kind": "mid",
+      "frame": 6508,
+      "time": 108.46666666666667,
+      "file": "s15-mid.png"
+    },
+    {
+      "scene": "s15",
+      "kind": "late",
+      "frame": 6689,
+      "time": 111.48333333333333,
+      "file": "s15-late.png"
+    },
+    {
+      "scene": "s16",
+      "kind": "mid",
+      "frame": 6970,
+      "time": 116.16666666666667,
+      "file": "s16-mid.png"
+    },
+    {
+      "scene": "s16",
+      "kind": "late",
+      "frame": 7140,
+      "time": 119.0,
+      "file": "s16-late.png"
+    },
+    {
+      "scene": "s17",
+      "kind": "early-url",
+      "frame": 7338,
+      "time": 122.3,
+      "file": "s17-early-url.png"
+    },
+    {
+      "scene": "s17",
+      "kind": "mid",
+      "frame": 7363,
+      "time": 122.71666666666667,
+      "file": "s17-mid.png"
+    },
+    {
+      "scene": "s17",
+      "kind": "late",
+      "frame": 7491,
+      "time": 124.85,
+      "file": "s17-late.png"
+    }
+  ],
+  "automated_checks": "pass",
+  "visual_review": {
+    "status": "pass",
+    "contact_sheets": [
+      "renders/final-qa/contact-mid.jpg",
+      "renders/final-qa/contact-late.jpg"
+    ],
+    "coverage": "Midpoint and late frames from all 17 scenes, plus an earlier ending URL frame, extracted from the final MP4.",
+    "native_frames_inspected": [
+      "renders/final-qa/s10-late.png",
+      "renders/final-qa/s15-late.png",
+      "renders/final-qa/s17-early-url.png"
+    ],
+    "observations": [
+      "All 17 scenes appear in both contact sheets with no missing content, accidental black frame, or evident layout clipping in the reviewed samples.",
+      "Scene s10 at 71.300 seconds: latest-result label sits below the popup; the session note stays separate and readable.",
+      "Scene s15 at 111.483 seconds: the saved-agreement badge fits inside the taller panel with clear bottom space.",
+      "Scene s17 at 122.300 seconds, 2.4 seconds into the closing scene: the full repository URL is visible, with about 3.23 seconds remaining."
+    ],
+    "material_issues": []
+  },
+  "limits": [
+    "This pass used automated audio checks. It does not claim listening or end-to-end real-time playback.",
+    "Final visual checks cover sampled frames rather than every rendered frame. The full video was decoded automatically.",
+    "Narration-only pause and voice-speed checks are recorded separately in audio-QA.json. The silence measurement here is from the final mixed AAC track."
+  ]
+}

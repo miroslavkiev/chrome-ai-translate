@@ -1,0 +1,12 @@
+{
+  "name": "select-control",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.29 preview",
+    "check": "npx --yes hyperframes@0.8.29 check",
+    "render": "node build.mjs && python3 tools/render_hq.py",
+    "publish": "npx --yes hyperframes@0.8.29 publish",
+    "build": "node build.mjs"
+  }
+}

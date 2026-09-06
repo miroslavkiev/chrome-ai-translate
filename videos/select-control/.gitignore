@@ -1,0 +1,7 @@
+renders/
+snapshots/
+.hyperframes/
+__pycache__/
+assets/audio/*
+!assets/audio/master.wav
+*.log
