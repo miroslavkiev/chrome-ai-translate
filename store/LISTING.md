@@ -8,7 +8,7 @@ Do not submit yet. See [the open release items and recorded risks](README.md). T
 | --- | --- |
 | Name | AI Translator |
 | Summary | Super easy translation: select text and press Control. Translate into your chosen language with Gemini. |
-| Category | Productivity, or the closest current language/translation subcategory offered by the dashboard. |
+| Category | Productivity > Tools, confirmed from the dashboard choices on September 6, 2026. |
 | Listing language | English. This is the interface language, not the set of translation target languages. |
 | Homepage URL | https://github.com/miroslavkiev/chrome-ai-translate |
 | Support URL | https://github.com/miroslavkiev/chrome-ai-translate/issues |
@@ -22,64 +22,79 @@ The summary is taken from the manifest and is below Chrome's 132-character limit
 
 ## Detailed description to paste after release review
 
-Super easy translation: just select text and press the Control key.
+💜 Super easy translation: select text and tap Control.
 
-AI Translator uses Google Gemini to translate the words you choose. The result appears beside your selection, so you can keep reading without leaving the page.
+AI Translator uses Google Gemini to translate the words you choose. Read the result beside your selection and keep going, without leaving the page.
 
-WHAT YOU CAN DO
+🌍 Translate your way
 
-- Translate selected text with a tap and release of Control, or use the right-click menu.
-- Choose your target language from 110 language and script choices based on Google's shared Gemini language list.
-- Change the language in a result card without changing your default.
-- Copy a translation and see your latest result in the toolbar popup.
-- Choose another supported trigger key, or turn it off and use the right-click menu.
-- Translate text from local HTML files when you enable Chrome's file access setting.
+• Choose from 110 language and script options based on Google's shared Gemini language list.
+• Tap and release Control, or use the right-click menu.
+• Change the language in a result card without changing your default.
+• Copy a translation or view the latest result in the toolbar popup.
+• Choose another trigger key, or turn it off and use the right-click menu.
+• Translate selected text in local HTML files when Chrome's file access is enabled.
 
-YOUR GEMINI KEY AND MODEL
+🔑 Guided setup with your own Gemini key
 
-You need your own Google Gemini API key from a project with active billing. The first-use guide explains how to get a key, choose a target language and select a model. We recommend the Flash-Lite family. At this release in September 2026, our choice is Gemini 3.5 Flash-Lite when it is available to your key. You may choose another listed model. Some models may not work; if one fails, choose an alternative or the recommended model.
+1. Open the extension and follow the guide to get your own Google Gemini API key.
+2. Read the data-sharing notice and choose Agree and connect to Google.
+3. Add your key, choose a model and target language, then finish setup.
 
-Read the data-sharing details in Settings and choose Agree and connect to Google before adding your key. No Google API request is made before this agreement. The key is encrypted on this device and stays available across normal Chrome restarts without an unlock password. Someone with access to this browser profile may still recover it.
+The built-in FAQ explains API keys, billing, privacy and why each requirement exists, with links to the official rules.
 
-The extension is free, but Google API charges and limits can apply. It is not an offline translator.
+We recommend the Flash-Lite family. For this release in September 2026, our choice is Gemini 3.5 Flash-Lite when available to your key. You can choose another listed model. If a model does not work, choose an alternative or the recommended model.
 
-CONDITIONS OF USE
+💳 Free extension, separate Google API costs
 
-This extension is for people aged 18 or older, for work or business use, in Google's supported countries and regions. It is not designed for children.
+The extension is free. Google API charges and limits may apply, and an internet connection is needed.
 
-In every country, your API key must belong to a Google Cloud project with active billing. Unpaid projects are not supported. Keep optional sharing of this extension's request logs and datasets with Google for product improvement or model training disabled. Do not contribute this data through feedback or dataset sharing. The extension does not verify these settings.
+Your key must belong to a Google Cloud project with active billing in every country. Unpaid projects are not supported. A paid Gemini app subscription does not replace API project billing.
 
-By using this extension, you agree to follow these conditions, the Google API Terms and the Gemini API Additional Terms. Do not use it if you cannot meet these conditions.
+Keep optional sharing of this extension's request logs and datasets with Google for training or product improvement OFF. Do not contribute this data through feedback or dataset sharing. Private project logging is separate. The extension does not verify these settings.
 
-Supported countries and regions: https://ai.google.dev/gemini-api/docs/available-regions
+🔒 Your key, your text and your choices
 
+• No Google API request starts before your data agreement.
+• Your key is encrypted on this device and opens automatically after normal Chrome restarts. No unlock password is needed. Someone with access to your browser profile may still recover it.
+• Requested translations send selected text, target language and translation instructions directly to Google with your API authentication. Model-list checks also contact Google.
+• The developer has no translation server, analytics or advertising. There is no translation history; only the latest result stays for the browser session. Language, model and shortcut preferences can sync through Chrome.
+• Withdraw data agreement blocks new requests and cancels active ones locally, keeping your saved key and preferences. Remove saved key deletes the key and model cache. Neither recalls data already sent to Google.
+• Your agreement stays saved. If the notice changes, review it and agree again before connecting.
+
+AI Translator follows Chrome's Limited Use requirements for its required paid-service setup. Google's paid terms exclude product improvement use of prompts and responses, while allowing limited security and legal handling. Only send text you may share. AI translations can be wrong, so check important wording.
+
+📋 Before you use it
+
+For people aged 18 or older, for work or business use, in Google's supported regions. Not designed for children.
+
+By using this extension, you agree to follow these conditions, the Google API Terms and the Gemini API Additional Terms. Do not use it if you cannot meet them.
+
+Supported regions: https://ai.google.dev/gemini-api/docs/available-regions
 Google API Terms: https://developers.google.com/terms
-
 Gemini API Additional Terms: https://ai.google.dev/gemini-api/terms
 
-YOUR TEXT AND PRIVACY
+💻 Compatibility
 
-When you request a translation, the selected text, target language and translation instruction go directly to Google with your API authentication. Loading the model list also contacts Google. The developer has no translation server, analytics or advertising. The extension has no translation history; the popup keeps only the latest result for the browser session. Language, model and trigger preferences can sync through Chrome.
+Chrome 140 or later. Manually tested on Mac only; Windows and Linux have not been manually tested.
 
-The data-sharing details stay visible in Settings. Your agreement is saved for this browser profile. If the notice changes, review it and agree again before connecting. Choose Withdraw data agreement to stop new Google requests and cancel active ones locally, while keeping the encrypted key and preferences. Choose Remove saved key to delete the saved key and model cache. Neither action recalls data already sent to Google.
+Chrome settings pages, the Chrome Web Store, the built-in PDF viewer and other protected pages do not allow translation. Refresh open pages after installing or updating.
 
-AI Translator follows Chrome's Limited Use requirements for its required paid-service setup. Google's paid-service terms exclude using prompts and responses for product improvement, while allowing limited security and legal handling. Private project logging is separate from sharing data with Google. Do not send text that you are not allowed to share. Read the privacy page and Google's terms before adding a key. AI translations can be wrong; check important wording before relying on it.
+🔗 Open source and support
 
-COMPATIBILITY
-
-Chrome 140 or later is required. Manually tested on Mac only. Windows and Linux have not been manually tested. Chrome settings pages, the Chrome Web Store, the built-in PDF viewer and other protected pages do not allow translation. Refresh open pages after installing or updating the extension.
-
-OPEN SOURCE AND SUPPORT
-
-Source code and project guide: https://github.com/miroslavkiev/chrome-ai-translate
-
-Help and issue reports: https://github.com/miroslavkiev/chrome-ai-translate/issues
-
+Source code and guide: https://github.com/miroslavkiev/chrome-ai-translate
+Help and issues: https://github.com/miroslavkiev/chrome-ai-translate/issues
 Privacy: https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md
 
-AI Translator is an independent project, not a Google product. The developer made it to help people read and connect across languages. If you wish to support the work, the developer asks you to support Ukraine in its defence against Russian aggression through the foundation he trusts: https://www.sternenkofund.org/en/donate
+AI Translator is an independent project, not a Google product.
 
-Support is optional and never unlocks features. Donations are handled by the foundation, not this extension.
+🇺🇦 Support Ukraine
+
+The developer created this extension to help people read and connect across languages. If you would like to support the work, please support Ukraine in its defence against Russian aggression through the foundation the developer trusts:
+
+https://www.sternenkofund.org/en/donate
+
+Support is optional and never unlocks features. Donations are handled by the foundation, not the extension.
 
 ## Reviewer instructions
 
