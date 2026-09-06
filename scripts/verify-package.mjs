@@ -5,6 +5,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Script } from "node:vm";
 import JSZip from "jszip";
+import { PACKAGE_FILES } from "./package-files.mjs";
+import { SUPPORTED_LOCALES } from "./locales.mjs";
+import { parseCatalog, readCatalogs, validateCatalogs } from "./check-locales.mjs";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const dist = path.join(root, "dist");
@@ -25,35 +28,32 @@ async function assertFresh(output, inputs) {
 
 assert(names.includes("manifest.json"), "manifest.json must be at the archive root");
 assert(!names.some((name) => name.startsWith("dist/")), "archive entries must not use a dist prefix");
-assert.deepEqual(names, [
-  "INSTALL.md",
-  "LICENSE",
-  "PRIVACY.md",
-  "about.html",
-  "background.js",
-  "content.js",
-  "guide.css",
-  "help.html",
-  "icon-16.png",
-  "icon-32.png",
-  "icon-48.png",
-  "icon.png",
-  "manifest.json",
-  "popup.html",
-  "popup.js",
-  "settings.html",
-  "settings.js",
-  "setup-key.png",
-  "setup-language.png",
-  "ui.css",
-]);
+assert.deepEqual(names, PACKAGE_FILES, "Archive contains missing or unexpected files");
+
+const sourceCatalogs = await readCatalogs(root);
+const { localeCount, messageCount } = validateCatalogs(sourceCatalogs);
+const packagedCatalogs = {};
+for (const locale of SUPPORTED_LOCALES) {
+  const name = `_locales/${locale}/messages.json`;
+  packagedCatalogs[locale] = parseCatalog(await zip.file(name).async("string"), name);
+  assert.equal(await zip.file(name).async("string"), await readFile(path.join(root, name), "utf8"), `${name} differs from the source catalog`);
+}
+validateCatalogs(packagedCatalogs);
 
 const manifest = JSON.parse(await zip.file("manifest.json").async("string"));
 const sourceManifest = JSON.parse(await readFile(path.join(root, "manifest.json"), "utf8"));
 const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
 assert.equal(manifest.version, packageJson.version, "manifest and package versions must match");
 assert.equal(sourceManifest.version, packageJson.version, "source and package versions must match");
-assert(manifest.description.length <= 132, "Chrome descriptions must fit within 132 characters");
+assert.equal(manifest.default_locale, "en");
+assert.equal(manifest.name, "__MSG_extName__");
+assert.equal(manifest.description, "__MSG_extDescription__");
+assert.equal(sourceManifest.default_locale, manifest.default_locale);
+assert.equal(sourceManifest.name, manifest.name);
+assert.equal(sourceManifest.description, manifest.description);
+assert.equal(sourceManifest.background.service_worker, "dist/background.js");
+assert.equal(manifest.background.service_worker, "background.js");
+new Script(await zip.file("background.js").async("string"), { filename: "background.js" });
 assert.deepEqual(manifest.host_permissions, ["https://generativelanguage.googleapis.com/*"], "Background network access must stay limited to Gemini");
 assert.deepEqual(sourceManifest.host_permissions, manifest.host_permissions);
 assert.equal(manifest.homepage_url, "https://github.com/miroslavkiev/chrome-ai-translate");
@@ -89,19 +89,21 @@ for (const name of names) {
 }
 
 await Promise.all([
-  assertFresh("background.js", ["background.js", "credential-store.js", "request-policy.js", "shared.js", ...buildInputs]),
-  assertFresh("content.js", ["content.js", "trigger.js", "shared.js", ...buildInputs]),
-  assertFresh("popup.js", ["popup.js", "shared.js", ...buildInputs]),
-  assertFresh("settings.js", ["settings.js", "shared.js", ...buildInputs]),
+  assertFresh("background.js", ["background.js", "credential-store.js", "request-policy.js", "shared.js", "i18n.js", "_locales/en/messages.json", ...buildInputs]),
+  assertFresh("content.js", ["content.js", "trigger.js", "shared.js", "i18n.js", "_locales/en/messages.json", ...buildInputs]),
+  assertFresh("popup.js", ["popup.js", "shared.js", "i18n.js", "_locales/en/messages.json", ...buildInputs]),
+  assertFresh("settings.js", ["settings.js", "shared.js", "i18n.js", "_locales/en/messages.json", ...buildInputs]),
+  assertFresh("guide.js", ["guide.js", "i18n.js", "_locales/en/messages.json", ...buildInputs]),
   assertFresh("manifest.json", ["manifest.json", ...buildInputs]),
   assertFresh("popup.html", ["popup.html", ...buildInputs]),
   assertFresh("settings.html", ["settings.html", ...buildInputs]),
   ...Object.values(manifest.icons).map((name) => assertFresh(name, [name, ...buildInputs])),
   ...["ui.css", "guide.css", "help.html", "about.html", "setup-key.png", "setup-language.png", "INSTALL.md", "PRIVACY.md", "LICENSE"].map((name) => assertFresh(name, [name, ...buildInputs])),
-  assertFresh(archiveName, ["scripts/package.mjs", "package.json", "package-lock.json"]),
+  ...SUPPORTED_LOCALES.map((locale) => assertFresh(`_locales/${locale}/messages.json`, [`_locales/${locale}/messages.json`, ...buildInputs])),
+  assertFresh(archiveName, ["scripts/package.mjs", "scripts/package-files.mjs", "scripts/locales.mjs", "package.json", "package-lock.json"]),
 ]);
 
 const expected = (await readFile(path.join(dist, `${archiveName}.sha256`), "utf8")).split(/\s+/)[0];
 const actual = createHash("sha256").update(bytes).digest("hex");
 assert.equal(actual, expected, "archive checksum does not match");
-console.log(`Verified ${archiveName}: ${names.join(", ")}`);
+console.log(`Verified ${archiveName}: ${names.length} files, ${localeCount} locales, ${messageCount} messages per locale.`);

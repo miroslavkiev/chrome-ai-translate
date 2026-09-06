@@ -250,7 +250,8 @@ try {
   await load(); await select("#one"); await trigger();
   await page.keyboard.press("Escape"); assert.equal((await roots()).length, 0);
   await select("#one"); await trigger();
-  assert.equal((await state()).lang, "uk"); assert.equal((await state()).shellLang, "en");
+  assert.equal((await state()).lang, "uk");
+  assert.equal((await state()).shellLang, await worker.evaluate(() => chrome.i18n.getMessage("ui_locale")));
   await page.keyboard.press("Tab"); assert.equal((await state()).active, "output");
   await page.keyboard.press("Tab"); assert.notEqual((await state()).active, "output");
   await stubClipboard(true); await click("Copy"); assert.equal((await state()).status, "Copied.");

@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Traducere foarte simplă: selectați textul și apăsați Control. Traduceți în limba aleasă cu Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Selectați un text și încercați din nou."
+  },
+  "error_unsupported_selection": {
+    "message": "Această selecție de text nu este acceptată."
+  },
+  "error_selection_too_large": {
+    "message": "Selecția depășește 10.000 de caractere. Selectați mai puțin text și încercați din nou."
+  },
+  "error_missing_api_key": {
+    "message": "Adăugați cheia Gemini API în Setări."
+  },
+  "error_agreement_required": {
+    "message": "Înainte de conectarea la Google, citiți și acceptați partajarea datelor în Setări."
+  },
+  "error_credential_conflict": {
+    "message": "Cheia salvată s-a schimbat pe altă pagină. Reîncărcați setările salvate înainte să încercați din nou."
+  },
+  "error_credential_storage_error": {
+    "message": "Cheia salvată nu poate fi deschisă. Redeschideți Setările sau eliminați cheia și introduceți-o din nou."
+  },
+  "error_missing_target_language": {
+    "message": "Alegeți limba țintă în Setări pentru a termina configurarea."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini a respins cheia API. Verificați-o în Setări."
+  },
+  "error_invalid_model": {
+    "message": "Acest model nu poate fi folosit pentru traducere. În Setări, alegeți alt model sau modelul Flash-Lite recomandat."
+  },
+  "error_busy": {
+    "message": "Sunt prea multe traduceri active. Încercați după terminarea uneia."
+  },
+  "error_duplicate_request": {
+    "message": "Această selecție este deja în curs de traducere."
+  },
+  "error_rate_limited": {
+    "message": "S-a atins limita de solicitări. Încercați în curând."
+  },
+  "error_timeout": {
+    "message": "Traducerea a durat prea mult. Puteți încerca din nou."
+  },
+  "error_offline": {
+    "message": "Se pare că sunteți offline. Verificați conexiunea și încercați din nou."
+  },
+  "error_network_error": {
+    "message": "Gemini nu poate fi contactat. Verificați conexiunea și încercați din nou."
+  },
+  "error_quota_exceeded": {
+    "message": "S-a atins cota Gemini. Verificați contul și încercați mai târziu."
+  },
+  "error_service_error": {
+    "message": "Gemini nu a putut termina traducerea. Încercați mai târziu."
+  },
+  "error_invalid_response": {
+    "message": "Gemini a trimis un răspuns ilizibil. Puteți încerca din nou."
+  },
+  "error_output_too_large": {
+    "message": "Traducerea a depășit limita de ieșire. Selectați mai puțin text și încercați din nou."
+  },
+  "error_content_blocked": {
+    "message": "Gemini a blocat acest text. Încercați altă selecție."
+  },
+  "error_unsupported_page": {
+    "message": "Traducerea nu este disponibilă pe această pagină."
+  },
+  "error_frame_unavailable": {
+    "message": "Cadrul selectat nu mai este disponibil."
+  },
+  "error_cancelled": {
+    "message": "Traducerea a fost anulată."
+  },
+  "key_Off": {
+    "message": "Dezactivat"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Încercați din nou peste $seconds$ secunde.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Setări AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Setări private pentru traduceri rapide și concentrate."
+  },
+  "html_help_and_information": {
+    "message": "Ajutor și informații"
+  },
+  "html_api_key_guide": {
+    "message": "Ghid pentru cheia API"
+  },
+  "html_about": {
+    "message": "Despre"
+  },
+  "html_privacy": {
+    "message": "Confidențialitate"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Configurați AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Urmați acești pași în Setări. Aveți nevoie de propria cheie Google API pentru traducere."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Obțineți propria cheie API.</1> Deschideți <2>Google AI Studio</2>, conectați-vă și creați o cheie. Citiți despre partajarea datelor mai jos, apoi lipiți cheia. Pentru ajutor, <3>citiți ghidul pas cu pas</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Alegeți limba țintă și modelul.</1> Selectați limba traducerilor. Recomandăm Gemini Flash-Lite când este disponibil în lista de modele."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Salvați și începeți traducerea.</1> Folosiți Finalizați configurarea în partea de jos a paginii. Apoi selectați text pe o pagină web și apăsați Control sau alegeți Traduceți textul selectat din meniul clic dreapta."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Conectați propria cheie Gemini API și alegeți un model compatibil."
+  },
+  "html_loading_setup_state": {
+    "message": "Se încarcă starea configurării..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Înainte de conectarea la Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google primește cheia API pentru a verifica modelele disponibile. Când solicitați o traducere, primește și textul selectat și limba țintă, inclusiv text din fișiere locale. Traducerile AI pot fi greșite."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Cheia se salvează criptat în acest profil Chrome și se deschide automat după repornire. Nu trebuie o parolă suplimentară. Cineva cu acces complet la profilul browserului o poate totuși recupera. <1>Citiți detaliile de confidențialitate</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Obligatoriu în orice țară:</1> folosiți o cheie Gemini API dintr-un proiect cu <2>facturare activă</2>. Mențineți dezactivată <3>partajarea opțională cu Google a jurnalelor de solicitări și seturilor de date ale extensiei</3>. Cu aceste setări, condițiile plătite Google exclud utilizarea solicitărilor și răspunsurilor pentru îmbunătățirea produselor; prelucrarea pentru securitate și cerințe legale continuă. Extensia este gratuită, dar pot exista taxe Google API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Condiții de utilizare.</1> Folosind Gemini prin extensie, acceptați cerințele de mai sus și <2>condițiile Google</2>. Utilizarea este pentru persoane de cel puțin 18 ani, în scopuri profesionale sau comerciale, în <3>regiunile acceptate</3>. Extensia nu verifică setările de facturare sau partajare."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Acceptați și conectați-vă la Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Retrageți acordul pentru date"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Citiți detaliile partajării datelor înainte de conectare."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>De ce sunt necesare aceste cerințe? Citiți întrebările frecvente</1>."
+  },
+  "html_api_key": {
+    "message": "Cheie API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "După acceptare, lipiți cheia pentru a o salva criptat și a încărca automat modelele."
+  },
+  "html_show": {
+    "message": "Afișați"
+  },
+  "html_remove_saved_key": {
+    "message": "Eliminați cheia salvată"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Modelele cunoscute doar pentru conținut media sau scopuri speciale sunt ascunse."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Recomandăm familia Gemini Flash-Lite. Pentru această versiune din septembrie 2026 am ales Gemini 3.5 Flash-Lite. Puteți alege alt model din listă. Unele modele pot să nu funcționeze cu extensia. Dacă unul eșuează, alegeți altul sau modelul recomandat."
+  },
+  "html_refresh_models": {
+    "message": "Actualizați modelele"
+  },
+  "html_use_recommended_model": {
+    "message": "Folosiți modelul recomandat"
+  },
+  "html_translation": {
+    "message": "Traducere"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Stabiliți limba și tasta opțională de activare."
+  },
+  "html_default_language": {
+    "message": "Limba implicită"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Un card de rezultat poate folosi altă limbă fără schimbarea acestei valori implicite."
+  },
+  "html_keyboard_trigger": {
+    "message": "Tastă de activare"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Tastele individuale pot intra în conflict cu site-uri sau instrumente de accesibilitate. Alegeți Dezactivat pentru a folosi doar meniul contextual."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Înregistrați tasta"
+  },
+  "html_off": {
+    "message": "Dezactivat"
+  },
+  "html_behavior": {
+    "message": "Comportament"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Protecțiile fixe păstrează traducerile rapide și protejează cota API."
+  },
+  "html_parallel_requests": {
+    "message": "Solicitări simultane"
+  },
+  "html_request_timeout": {
+    "message": "Timp limită pentru solicitare"
+  },
+  "html_page_access": {
+    "message": "Acces la pagini"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Pentru fișiere locale, activați Permiteți accesul la adresele URL ale fișierelor în gestionarea extensiei"
+  },
+  "html_help_and_recovery": {
+    "message": "Ajutor și recuperare"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Dacă un model nu este disponibil, actualizați modelele, alegeți unul din listă și salvați preferințele. Dacă lista nu se încarcă, verificați cheia și conexiunea, apoi încercați Actualizați modelele."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Paginile de setări Chrome și Chrome Web Store nu permit traducerea. Pentru fișiere locale, permiteți accesul la URL-urile fișierelor în gestionarea extensiei. După actualizarea sau reîncărcarea extensiei, reîmprospătați paginile deschise. Reîncărcarea poate întrerupe o traducere."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Traducerea necesită internet. După acceptarea de mai sus, cheia merge direct la Google pentru verificarea modelelor. Textul selectat, inclusiv din fișiere locale, este trimis cu limba țintă doar când solicitați traducerea. Cheia salvată este criptată în acest profil Chrome. Limba, modelul și tasta se pot sincroniza prin Chrome. Extensia păstrează doar ultimul rezultat al sesiunii curente și nu are istoric de traduceri."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Puteți consulta partajarea datelor mai sus și retrage acordul oricând. Verificările de modele și traducerile se opresc până acceptați din nou. Cheia rămâne salvată dacă nu alegeți Eliminați cheia salvată."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Aici se salvează schimbările limbii, modelului și tastei de activare."
+  },
+  "html_reload_saved_settings": {
+    "message": "Reîncărcați setările salvate"
+  },
+  "html_save_preferences": {
+    "message": "Salvați preferințele"
+  },
+  "html_gemini_translation": {
+    "message": "Traducere Gemini"
+  },
+  "html_setup_required": {
+    "message": "Configurare necesară"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Bun venit la AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Traduceți textul selectat într-o limbă cunoscută. Configurați aceste două lucruri pentru început:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Cheia dvs. Gemini API.</1> Obțineți propria cheie din Google AI Studio. Ghidul vă arată cum."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Limba dvs. țintă.</1> Alegeți limba în care vreți să citiți."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Cum obțineți o cheie API"
+  },
+  "html_extension_status": {
+    "message": "Starea extensiei"
+  },
+  "html_active_translations": {
+    "message": "Traduceri active"
+  },
+  "html_latest_this_session": {
+    "message": "Ultimul rezultat din sesiune"
+  },
+  "html_no_translation_yet": {
+    "message": "Nu există încă traduceri."
+  },
+  "html_copy": {
+    "message": "Copiați"
+  },
+  "html_settings": {
+    "message": "Setări"
+  },
+  "html_key_guide": {
+    "message": "Ghid pentru cheie"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Începeți cu AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Paginile extensiei"
+  },
+  "html_faq": {
+    "message": "Întrebări frecvente"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Obțineți propria cheie Google API, alegeți o limbă și traduceți prima selecție."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Obțineți cheia API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Cheia API permite extensiei să folosească Gemini prin contul Google. Păstrați-o privată, ca pe o parolă."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Extensia este pentru persoane de minimum 18 ani, pentru lucru sau afaceri, în <1>țările și regiunile acceptate de Google</1>. În orice țară, cheia trebuie să aparțină unui proiect Gemini cu facturare activă. Păstrați dezactivată partajarea opțională cu Google a jurnalelor și seturilor de date ale extensiei."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Prin folosirea extensiei acceptați aceste condiții, <1>Condițiile Google API</1> și <2>Condițiile suplimentare Gemini API</2>. Nu o folosiți dacă nu puteți respecta condițiile. Extensia nu verifică aceste date și nu solicită acte de identitate."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Deschideți Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Conectați-vă la contul Google. Acceptați condițiile Google dacă vi se cere."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Creați sau alegeți o cheie"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Pe pagina Chei API alegeți <1>Creați o cheie API</1> și urmați pașii Google pentru alegerea sau crearea unui proiect. Proiectul grupează utilizarea API și facturarea. Dacă sunteți nou în AI Studio, Google poate să fi creat deja un proiect și o cheie implicite."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Dacă proiectul existent lipsește, deschideți <1>Panou de control > Proiecte > Importați proiecte</1>. Importați proiectul, apoi reveniți la Chei API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Înainte de folosire, urmați <1>ghidul de facturare Google</1> și verificați facturarea activă a proiectului. Un abonament plătit la aplicația Gemini nu înlocuiește facturarea proiectului API. Dezactivați partajarea opțională cu Google a jurnalelor și seturilor de date ale extensiei; citiți <2>politica Google de partajare a jurnalelor</2>. Jurnalele private ale proiectului sunt separate de partajare."
+  },
+  "html_copy_your_key": {
+    "message": "Copiați cheia"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Copiați cheia din AI Studio. Reveniți la Setările extensiei și citiți despre partajarea datelor. Alegeți <1>Acceptați și conectați-vă la Google</1>, apoi lipiți cheia în câmpul <2>Cheie API</2>. Se criptează și se salvează automat, apoi se încarcă lista de modele. Așteptați rezultatul înainte să continuați."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Setările AI Translator cu notificarea de partajare și butonul de acceptare deasupra câmpului gol pentru cheia API și recomandării Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Exemplul este în engleză. În AI Translator, acceptați mai întâi partajarea datelor, apoi lipiți propria cheie. Lista modelelor se verifică după salvarea cheii criptate."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google poate schimba aceste ecrane. Pentru pașii actuali sau erori, citiți <1>ghidul Google pentru chei API</1>. Folosiți o cheie nouă din AI Studio dacă cea veche nu mai funcționează."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Alegeți setările traducerii"
+  },
+  "html_choose_a_model": {
+    "message": "Alegeți un model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Recomandăm familia Gemini Flash-Lite. Pentru această versiune din septembrie 2026, alegerea este <1>Gemini 3.5 Flash-Lite</1>. Folosiți-l dacă este disponibil în lista de modele."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Puteți alege alt model din listă. Unele modele pot să nu funcționeze cu extensia. Dacă unul eșuează, alegeți altul sau modelul recomandat."
+  },
+  "html_choose_your_target_language": {
+    "message": "Alegeți limba țintă"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Alegeți limba în care vreți să citiți din <1>Limba implicită</1>. Opțiunile urmează <2>limbile Gemini documentate de Google</2>. Calitatea traducerii poate varia în funcție de limbă și text."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Setările traducerii AI Translator cu alegerea limbii țintă și comenzile tastei de activare."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Exemplul este în engleză. Alegeți limba traducerilor și finalizați configurarea."
+  },
+  "html_finish_setup": {
+    "message": "Finalizați configurarea"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Păstrați Control ca tastă de activare, înregistrați alta sau alegeți <1>Dezactivat</1> pentru a folosi doar meniul clic dreapta. Alegeți <2>Finalizați configurarea</2> la baza Setărilor. Puteți modifica ulterior folosind <3>Salvați preferințele</3>."
+  },
+  "html_open_settings": {
+    "message": "Deschideți Setările"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Traduceți prima selecție"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Deschideți o pagină web obișnuită și selectați un text scurt. Faceți clic dreapta și alegeți <1>Traduceți textul selectat</1> sau apăsați și eliberați tasta aleasă. Rezultatul apare lângă selecție."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Dacă extensia tocmai a fost instalată sau reîncărcată, reîmprospătați pagina mai întâi. Setările Chrome, Chrome Web Store și vizualizatorul PDF integrat nu permit traducerea."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Fereastra din bara de instrumente arată ultimul rezultat. După configurare deschide vizualizarea standard. Dacă eliminați cheia API, ghidul de bun venit apare din nou."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Întrebări frecvente: chei, costuri și confidențialitate"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "De ce am nevoie de propria cheie API?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Extensia trimite solicitări direct proiectului dvs. Google folosind propria cheie. Aceasta este o alegere de proiectare, nu o regulă Chrome. Cheia permite solicitările și le leagă de utilizare și facturare. Nu o partajați niciodată în capturi sau mesaje publice. Consultați <1>ghidul Google pentru chei API</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "De ce facturarea activă este obligatorie și nu doar recomandată?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Regulile de utilizare limitată Chrome, punctele 3 și 5</1>, limitează folosirea datelor la scopul extensiei și operațiunile conexe. Unele utilizări gratuite Gemini permit antrenare mai largă și verificare umană. Condițiile plătite exclud îmbunătățirea produselor, dar permit păstrarea limitată pentru securitate și cerințe legale și prelucrarea în afara UE."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Pentru a rezolva conflictul, dezvoltatorul cere facturare activă în întreaga lume. O recomandare ar permite în continuare utilizarea gratuită. Regula regională Google cere servicii plătite pentru aplicațiile oferite în Spațiul Economic European, Regatul Unit și Elveția. Consultați <1>condițiile Gemini: restricții de utilizare, servicii gratuite și plătite</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "De ce partajarea opțională cu Google trebuie să rămână oprită?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Partajarea jurnalelor sau seturilor de date poate permite antrenare și verificare umană chiar cu facturare activă. Nu contribuiți cu datele extensiei prin partajare de seturi sau feedback. Jurnalele private ale proiectului sunt permise de această regulă. Consultați <1>politica jurnalelor Google: date care pot fi partajate și utilizarea lor</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Extensia este gratuită dacă trebuie acces API plătit?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Da. Extensia este gratuită, dar pot exista taxe Google API. Abonamentul plătit la aplicația Gemini nu înlocuiește facturarea proiectului API. Consultați <1>verificarea facturării</1> și <2>prețurile Google API</2>. Extensia nu verifică facturarea sau setările partajării."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "De ce trebuie să aleg Acceptați și conectați-vă la Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Cerințele Chrome de informare, punctele 1 și 2</1>, cer detalii clare despre date și consimțământ informat. Butonul vă oferă alegerea înaintea oricărei solicitări Google API. Nu verifică identitatea sau facturarea și nu acordă permisiunea de a partaja informațiile private ale altora."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Ce anume ajunge la Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Verificarea modelelor trimite cheia și solicită modelele disponibile. Traducerea trimite textul selectat, limba țintă, modelul și instrucțiunile, inclusiv textul selectat din fișiere locale. Extensia nu adaugă toată pagina, adresa sau istoricul navigării. Google primește și detalii de conexiune precum adresa IP. Dezvoltatorul nu primește aceste solicitări. Trimiteți doar text pe care aveți voie să-l partajați."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Cum se salvează și se deschide automat cheia?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Cheia API se salvează criptat. Ea și cheia de criptare rămân în acest profil Chrome pentru folosire automată după repornire. Nu se sincronizează. Cineva cu acces la profil poate recupera totuși cheia API. Nu este un portchei al sistemului sau un seif cu parolă. Limba, modelul și tasta se pot sincroniza. În sesiune rămâne doar ultimul rezultat; nu există analiză sau istoric de traduceri."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Actualizarea criptează și verifică o cheie veche înainte de ștergerea copiilor necriptate. Dacă eșuează, vechea copie rămâne și solicitările sunt blocate. Setările explică eroarea. Mutarea unei chei vechi nu ocolește acordul."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Pot retrage acordul sau elimina cheia?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "În <1>Setări</1>, <2>Retrageți acordul pentru date</2> blochează solicitările noi și le anulează local pe cele active, păstrând cheia și preferințele. <3>Eliminați cheia salvată</3> șterge cheia, cheia de criptare și memoria cache a modelelor. Niciuna nu retrage datele trimise și nu garantează gratuitatea solicitării trimise. Revocați cheia în AI Studio pentru a o dezactiva și la Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Acordul rămâne salvat la reporniri și actualizări normale. Dacă notificarea se schimbă, solicitările așteaptă până o citiți și acceptați din nou."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "De ce este pentru adulți și utilizare profesională sau comercială?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google cere vârsta minimă de 18 ani și utilizare profesională sau comercială în regiunile acceptate. Consultați <1>condițiile Gemini: cerințe de vârstă și restricții de utilizare</1> și <2>regiunile disponibile</2>. Extensia nu are o casetă separată de eligibilitate sau verificare de identitate."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "De ce există o politică de confidențialitate pe lângă notificare?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Notificarea explică alegerea înainte de conectare. Politica oferă toate detaliile despre date, stocare și ștergere. <1>Regulile Chrome privind confidențialitatea</1> cer acest lucru extensiilor care prelucrează date. Citiți <2>politica noastră de confidențialitate</2>. Notificările nu înseamnă că Google a aprobat extensia."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Traducerile AI pot fi greșite. Verificați formulările importante înainte de folosire."
+  },
+  "html_about_ai_translator": {
+    "message": "Despre AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Traducere foarte simplă: selectați textul și apăsați Control."
+  },
+  "html_made_for_people": {
+    "message": "Creat pentru oameni"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Am creat AI Translator pentru a ajuta oamenii să citească, să învețe și să comunice dincolo de limbi. Sper să fie util oamenilor din întreaga lume."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Extensia traduce textul selectat folosind propria cheie Google Gemini API. Alegeți ce trimiteți și în ce limbă citiți."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Apăsați și eliberați Control pentru a traduce selecția. Control este tasta implicită și poate fi schimbată în Setări. Puteți folosi și meniul clic dreapta al paginii."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Testat manual doar pe Mac. Windows și Linux nu au fost testate manual."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Vedeți codul sursă și ghidul proiectului</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Primiți ajutor sau raportați o problemă</1>. Sesizările sunt publice. Nu includeți chei API, texte private sau detalii personale."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Dacă doriți să-mi susțineți munca"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Vă rog să susțineți țara mea, Ucraina, care se apără împotriva agresiunii ruse."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Am încredere în Fundația Comunității Sternenko. Dacă puteți și doriți să ajutați, donați prin site-ul ei oficial."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Susțineți Ucraina prin fundație</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Sprijinul este opțional și nu este necesar pentru folosirea extensiei. Linkul deschide un site extern. Donațiile trec prin fundație, nu prin extensie."
+  },
+  "html_privacy_and_costs": {
+    "message": "Confidențialitate și costuri"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Cheia API este criptată pe acest dispozitiv și nu se sincronizează. Rămâne disponibilă după reporniri normale Chrome fără parolă de deblocare. Cineva cu acces la profilul browserului o poate totuși recupera."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Înaintea primei solicitări Google, Setările explică partajarea datelor și cer <1>Acceptați și conectați-vă la Google</1>. Apoi textul selectat merge direct la Google doar la cererea dvs. de traducere. Verificările de modele trimit cheia, dar nu text selectat. Extensia nu are analiză, reclame sau istoric de traduceri."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Consultați detaliile din <1>Setări</1> oricând. Alegeți <2>Retrageți acordul pentru date</2> pentru a opri solicitările noi și a păstra cheia criptată și preferințele sau <3>Eliminați cheia salvată</3> pentru a șterge cheia și memoria cache a modelelor. Datele trimise nu pot fi retrase."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Traducerile sunt generate de AI și pot fi greșite. Verificați formulările importante înainte de folosire."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Citiți detaliile de confidențialitate</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator este un proiect independent și gratuit. Pot exista taxe Google API. În orice țară, folosiți o cheie Gemini API dintr-un proiect cu <1>facturare activă</1> și opriți <2>partajarea opțională cu Google a jurnalelor și seturilor de date ale extensiei</2>. Cu aceste setări, condițiile plătite Google exclud folosirea solicitărilor și răspunsurilor pentru îmbunătățirea produselor; prelucrarea de securitate și legală continuă. Citiți <3>prețurile Google și informațiile despre folosirea datelor</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Extensia este pentru persoane de minimum 18 ani, pentru lucru sau afaceri, în <1>regiunile acceptate de Google</1>. Folosind-o acceptați aceste condiții, <2>Condițiile Google API</2> și <3>Condițiile suplimentare Gemini API</3>. Nu o folosiți dacă nu le puteți îndeplini. Nu există casetă de eligibilitate sau control de identitate. Extensia nu verifică facturarea sau partajarea."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Modificări nesalvate."
+  },
+  "runtime_settings_conflict": {
+    "message": "Setările s-au schimbat în altă pagină. Modificările dvs. rămân aici. Reîncărcați setările salvate pentru a renunța la modificări și a folosi valorile salvate."
+  },
+  "runtime_preferences_current": {
+    "message": "Preferințele sunt actualizate."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Cheia salvată nu se poate deschide. Redeschideți Setările sau eliminați cheia și introduceți-o din nou."
+  },
+  "runtime_key_conflict": {
+    "message": "Cheia API s-a schimbat pe altă pagină. Reîncărcați setările salvate înainte de salvarea unei chei."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Cheia este salvată criptat. Acceptați partajarea datelor înainte de conectare la Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Acceptați partajarea de mai sus înainte de adăugarea cheii API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini a respins cheia salvată. Înlocuiți-o sau folosiți Actualizați modelele pentru o nouă verificare."
+  },
+  "runtime_paste_key": {
+    "message": "Lipiți o cheie API pentru a conecta Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Cheie API salvată. Gemini a acceptat-o la ultima verificare a listei de modele."
+  },
+  "runtime_key_saved_check": {
+    "message": "Cheia API este salvată criptat pe dispozitiv. Actualizați modelele pentru verificarea cu Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Reîncercați retragerea"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Retrageți acordul pentru date"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Retragerea nu este confirmată. Reîncercați pentru a salva alegerea."
+  },
+  "runtime_agreement_saved": {
+    "message": "Partajarea datelor a fost acceptată pentru acest profil Chrome. Puteți retrage acordul oricând."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Nu există conexiune la Google până acceptați. Cheia se păstrează dacă retrageți acordul."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini a respins cheia salvată. Înlocuiți-o mai jos."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Cheia este salvată criptat pe acest dispozitiv."
+  },
+  "runtime_setup_create_key": {
+    "message": "Creați propria cheie în Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Limbă selectată. Finalizați configurarea pentru a salva alegerile."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Alegeți limba țintă mai jos."
+  },
+  "runtime_finish_setup": {
+    "message": "Finalizați configurarea"
+  },
+  "runtime_save_preferences": {
+    "message": "Salvați preferințele"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Adăugați o cheie API, verificați lista de modele și salvați modelul ales."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Rezolvați conflictul de setări înainte de traducere."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Citiți și acceptați partajarea înainte de conectarea la Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Terminați salvarea cheii API înainte de verificarea configurării."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Configurarea necesită atenție: Gemini a respins cheia API salvată."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Cheie salvată. Alegeți limba țintă și finalizați configurarea."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Alegeți un model disponibil și salvați preferințele."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model selectat. Salvați preferințele pentru a-l folosi."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Cheia și limba sunt pregătite. Finalizați configurarea pentru a salva opțiunile, apoi încercați traducerea. Accesul la modele și cota se pot schimba."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Pregătit pentru a încerca traducerea. Modelul salvat este în lista verificată; accesul la solicitări și cota se pot schimba."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Cheie salvată. Actualizați modelele pentru a verifica cheia și modelul ales."
+  },
+  "runtime_show_key": {
+    "message": "Afișați"
+  },
+  "runtime_hide_key": {
+    "message": "Ascundeți"
+  },
+  "runtime_choose_target_language": {
+    "message": "Alegeți o limbă țintă"
+  },
+  "runtime_background_no_response": {
+    "message": "Procesul de fundal al extensiei nu a răspuns. Reîncărcați extensia și încercați din nou."
+  },
+  "runtime_refresh_models": {
+    "message": "Actualizați modelele"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Acceptați partajarea înainte de încărcarea modelelor."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Terminați salvarea cheii API înainte de actualizarea modelelor."
+  },
+  "runtime_refreshing": {
+    "message": "Se actualizează..."
+  },
+  "runtime_loading": {
+    "message": "Se încarcă..."
+  },
+  "runtime_models_checking": {
+    "message": "Se verifică modelele compatibile Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Se încarcă modelele compatibile..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Modelele compatibile nu au putut fi încărcate."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini nu a returnat modele compatibile."
+  },
+  "runtime_model_not_available": {
+    "message": "Modelul ales nu este în lista compatibilă. Alegeți alt model."
+  },
+  "runtime_record_key": {
+    "message": "Înregistrați tasta"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Înregistrare anulată."
+  },
+  "runtime_unknown_key": {
+    "message": "Această tastă"
+  },
+  "runtime_press_key": {
+    "message": "Apăsați o tastă..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Apăsați o singură tastă acceptată care nu introduce caractere. Escape anulează."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Actualizați modelele pentru a verifica cheia API salvată."
+  },
+  "runtime_models_add_key": {
+    "message": "Adăugați o cheie API pentru a încărca modelele compatibile."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Extensia nu a putut încărca starea salvată."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini a respins cheia API salvată. Înlocuiți-o sau actualizați modelele pentru o nouă verificare."
+  },
+  "runtime_settings_reopen": {
+    "message": "Setările nu s-au încărcat. Redeschideți-le pentru a încerca din nou."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Setările nu s-au încărcat. Reîncărcați setările salvate pentru a încerca din nou. Salvarea este dezactivată pentru a proteja alegerile salvate."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Starea configurării nu s-a încărcat."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Introduceți o cheie API completă, fără spații."
+  },
+  "runtime_key_use_remove": {
+    "message": "Folosiți Eliminați cheia salvată pentru ștergerea cheii."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Acceptați partajarea de mai sus înainte de salvarea cheii API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Se salvează cheia API criptat..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Cheia API nu poate fi citită sau salvată. Datele introduse rămân. Folosiți Salvați preferințele pentru a încerca din nou."
+  },
+  "runtime_connecting_google": {
+    "message": "Conectare la Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Se opresc conexiunile la Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Acordul pentru date nu a fost salvat. Încercați din nou."
+  },
+  "runtime_key_removing": {
+    "message": "Se elimină cheia salvată..."
+  },
+  "runtime_key_removed": {
+    "message": "Cheie salvată eliminată. Puteți adăuga alta după acceptarea partajării."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Cheia salvată nu a fost eliminată. Încercați din nou."
+  },
+  "runtime_saving": {
+    "message": "Se salvează..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Alegeți o limbă și un model valide."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Alegeți o tastă acceptată sau Dezactivat."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Alegeți un model din lista compatibilă actuală."
+  },
+  "runtime_preferences_saving": {
+    "message": "Se salvează preferințele..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Preferințe salvate."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Preferințe salvate. Adăugați cheia API pentru a finaliza configurarea."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Preferințele nu pot fi citite sau salvate. Modificările rămân. Încercați din nou."
+  },
+  "runtime_key_will_save": {
+    "message": "Cheia API se va salva automat."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Terminați introducerea cheii API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Terminați salvarea cheii API pentru a încărca modelele compatibile."
+  },
+  "runtime_recommended_selected": {
+    "message": "Model recomandat selectat. Salvați alegerea pentru a-l folosi."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Tasta de activare va fi dezactivată după salvare."
+  },
+  "runtime_connection_changed": {
+    "message": "Setările conexiunii s-au schimbat. Se verifică setările salvate..."
+  },
+  "runtime_models_changed": {
+    "message": "Lista de modele s-a schimbat. Se verifică modelele compatibile..."
+  },
+  "runtime_no_translation": {
+    "message": "Nu există încă traduceri."
+  },
+  "runtime_start_setup": {
+    "message": "Începeți configurarea"
+  },
+  "runtime_settings": {
+    "message": "Setări"
+  },
+  "runtime_key_rejected": {
+    "message": "Cheie respinsă"
+  },
+  "runtime_setup_required": {
+    "message": "Configurare necesară"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Adăugați o cheie API în Setări pentru a începe traducerea."
+  },
+  "runtime_add_key": {
+    "message": "Adăugați cheia API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Cheia este salvată. Deschideți Setările pentru a verifica modelul și a finaliza alegerea limbii."
+  },
+  "runtime_check_setup": {
+    "message": "Verificați configurarea"
+  },
+  "runtime_translating": {
+    "message": "În curs de traducere"
+  },
+  "runtime_error": {
+    "message": "Eroare"
+  },
+  "runtime_ready": {
+    "message": "Pregătit"
+  },
+  "runtime_status_load_failed": {
+    "message": "Starea extensiei nu s-a încărcat. Reîncărcați extensia, apoi reîmprospătați pagina."
+  },
+  "runtime_copied": {
+    "message": "Copiat."
+  },
+  "runtime_copy_blocked": {
+    "message": "Copierea a fost blocată. Selectați textul rezultat și copiați-l."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Setările nu au putut fi deschise. Încercați din nou."
+  },
+  "runtime_translating_progress": {
+    "message": "Se traduce..."
+  },
+  "runtime_translation_started": {
+    "message": "Traducerea a început."
+  },
+  "runtime_translation_complete": {
+    "message": "Traducerea s-a terminat."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Traducere terminată. Folosiți textul rezultat sau comenzile cardului."
+  },
+  "runtime_translation": {
+    "message": "Traducere"
+  },
+  "runtime_target_language": {
+    "message": "Limba țintă"
+  },
+  "runtime_card_target_language": {
+    "message": "Limba țintă pentru acest card"
+  },
+  "runtime_close_card": {
+    "message": "Închideți cardul traducerii"
+  },
+  "runtime_translated_text": {
+    "message": "Text tradus"
+  },
+  "runtime_retry": {
+    "message": "Reîncercați"
+  },
+  "runtime_copy": {
+    "message": "Copiați"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Setările nu s-au deschis. Folosiți bara de instrumente a extensiei."
+  },
+  "runtime_copy_failed": {
+    "message": "Copiere eșuată. Selectați textul rezultat și copiați-l."
+  },
+  "runtime_context_menu": {
+    "message": "Traduceți textul selectat"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Nu este în lista actuală)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Încă neverificat)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Se folosește lista de modele din cache din $value1$. Actualizarea live a eșuat. Încercați mai târziu.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Se folosește lista de modele din cache. Actualizarea live a eșuat. Încercați mai târziu."
+  },
+  "runtime_models_cache_at": {
+    "message": "Se folosește lista de modele din cache din $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Se folosește lista de modele din cache."
+  },
+  "runtime_models_updated_at": {
+    "message": "Lista de modele a fost actualizată din $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Lista de modele a fost actualizată."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ nu este acceptat. Apăsați altă tastă sau Escape pentru anulare.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ va fi folosit după salvare.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Până la $value1$ pe filă și $value2$ în total",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ secunde",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Apăsați Tab pentru a folosi cardul sau Escape pentru închidere.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Traducerea a eșuat. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Reîmprospătați paginile deschise"
+  },
+  "refresh_message": {
+    "message": "Cheia API este salvată. După finalizarea configurării, reîmprospătați paginile care erau deja deschise. Apoi selectați textul și apăsați Control pentru traducere."
+  },
+  "refresh_continue": {
+    "message": "Continuați configurarea"
+  },
+  "refresh_faq_question": {
+    "message": "De ce trebuie să reîmprospătez paginile deschise?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Reîmprospătați paginile deschise</1> după configurare, înainte să încercați traducerea. Chrome trebuie să încarce extensia pe paginile deschise înainte de instalarea sau reîncărcarea ei. Paginile nou deschise sunt pregătite automat."
+  },
+  "ui_locale": {
+    "message": "ro",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

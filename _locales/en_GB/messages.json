@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Super easy translation: select text and press Control. Translate into your chosen language with Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Select some text and try again."
+  },
+  "error_unsupported_selection": {
+    "message": "This text selection is not supported."
+  },
+  "error_selection_too_large": {
+    "message": "The selection is longer than 10,000 characters. Select less text and try again."
+  },
+  "error_missing_api_key": {
+    "message": "Add your Gemini API key in Settings."
+  },
+  "error_agreement_required": {
+    "message": "Review and agree to data sharing in Settings before connecting to Google."
+  },
+  "error_credential_conflict": {
+    "message": "The saved key changed in another page. Reload saved settings before trying again."
+  },
+  "error_credential_storage_error": {
+    "message": "The saved key cannot be opened. Try reopening Settings, or remove it and enter it again."
+  },
+  "error_missing_target_language": {
+    "message": "Choose your target language in Settings to finish setup."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini rejected the API key. Check it in Settings."
+  },
+  "error_invalid_model": {
+    "message": "This model cannot be used for translation. Choose another model or the recommended Flash-Lite model in Settings."
+  },
+  "error_busy": {
+    "message": "Too many translations are active. Try again when one finishes."
+  },
+  "error_duplicate_request": {
+    "message": "This selection is already being translated."
+  },
+  "error_rate_limited": {
+    "message": "The request limit was reached. Try again shortly."
+  },
+  "error_timeout": {
+    "message": "Translation took too long. You can retry it."
+  },
+  "error_offline": {
+    "message": "You appear to be offline. Check your connection and retry."
+  },
+  "error_network_error": {
+    "message": "Gemini could not be reached. Check your connection and retry."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini quota was reached. Check your account and retry later."
+  },
+  "error_service_error": {
+    "message": "Gemini could not complete the translation. Try again later."
+  },
+  "error_invalid_response": {
+    "message": "Gemini returned an unreadable response. You can retry it."
+  },
+  "error_output_too_large": {
+    "message": "The translation exceeded the output limit. Select less text and try again."
+  },
+  "error_content_blocked": {
+    "message": "Gemini blocked this text. Try a different selection."
+  },
+  "error_unsupported_page": {
+    "message": "Translation is not available on this page."
+  },
+  "error_frame_unavailable": {
+    "message": "The selected frame is no longer available."
+  },
+  "error_cancelled": {
+    "message": "Translation was cancelled."
+  },
+  "key_Off": {
+    "message": "Off"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Try again in $seconds$ seconds.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator Settings"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Private settings for quick, focused translation."
+  },
+  "html_help_and_information": {
+    "message": "Help and information"
+  },
+  "html_api_key_guide": {
+    "message": "API key guide"
+  },
+  "html_about": {
+    "message": "About"
+  },
+  "html_privacy": {
+    "message": "Privacy"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Set up AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Follow these steps here in Settings. You need your own Google API key to translate."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Get your own API key.</1> Open <2>Google AI Studio</2>, sign in, and create a key. Review data sharing below, then paste your key. <3>Read the step-by-step guide</3> for help."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Choose your target language and model.</1> Pick the language you want translations in. We recommend Gemini Flash-Lite when it is available in your model list."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Save and start translating.</1> Use Finish setup at the bottom of this page. Then select text on a web page and press Control, or choose Translate Selected Text from the right-click menu."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Connect your own Gemini API key and choose a compatible model."
+  },
+  "html_loading_setup_state": {
+    "message": "Loading setup state..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Before you connect to Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google receives your API key to check available models. When you request a translation, Google also receives your selected text and target language, including text from local files. AI translations can be wrong."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Your key is saved encrypted in this Chrome profile and opens automatically after restarts. No extra password is needed. Someone with full access to your browser profile may still recover it. <1>Read the privacy details</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Required in every country:</1> use a Gemini API key from a project with <2>active billing</2>. Keep optional <3>sharing of this extension's request logs and datasets with Google</3> off. With these settings, Google's paid terms exclude product improvement use of prompts and responses; safety and legal processing still applies. The extension is free, but Google API charges may apply."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Use conditions.</1> By using Gemini through this extension, you agree to follow the requirements above and <2>Google's terms</2>. Use is for people aged 18 or older for professional or business purposes, in <3>supported regions</3>. The extension does not verify your billing or sharing settings."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Agree and connect to Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Withdraw data agreement"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Review the data sharing details before connecting."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Why are these requirements needed? Read the FAQ</1>."
+  },
+  "html_api_key": {
+    "message": "API key"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "After you agree, paste a key to save it encrypted and load models automatically."
+  },
+  "html_show": {
+    "message": "Show"
+  },
+  "html_remove_saved_key": {
+    "message": "Remove saved key"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Known media-only and special-purpose models are hidden."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "We recommend the Gemini Flash-Lite family. At this release (September 2026), our choice is Gemini 3.5 Flash-Lite. You are free to choose another listed model. Some models may not work with this extension. If one fails, choose another model or the recommended one."
+  },
+  "html_refresh_models": {
+    "message": "Refresh models"
+  },
+  "html_use_recommended_model": {
+    "message": "Use recommended model"
+  },
+  "html_translation": {
+    "message": "Translation"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Set the language and optional keyboard trigger."
+  },
+  "html_default_language": {
+    "message": "Default language"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "A result card can use another language without changing this default."
+  },
+  "html_keyboard_trigger": {
+    "message": "Keyboard trigger"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Single keys can conflict with websites or accessibility tools. Choose Off to use only the context menu."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Record key"
+  },
+  "html_off": {
+    "message": "Off"
+  },
+  "html_behavior": {
+    "message": "Behavior"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Fixed safeguards keep translations responsive and protect API quota."
+  },
+  "html_parallel_requests": {
+    "message": "Parallel requests"
+  },
+  "html_request_timeout": {
+    "message": "Request timeout"
+  },
+  "html_page_access": {
+    "message": "Page access"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "For local files, enable Allow access to file URLs in Manage Extension"
+  },
+  "html_help_and_recovery": {
+    "message": "Help and recovery"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "If a model is unavailable, refresh models, choose one from the list, and save preferences. If the list cannot load, check your key and connection, then try Refresh models."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome settings pages and the Chrome Web Store do not allow translation. For local files, enable Allow access to file URLs in Manage Extension. After an extension update or reload, refresh open web pages. Reloading can interrupt a translation."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Translation is not offline. After you agree above, your key is sent directly to Google for model checks. Selected text, including text from local files, is sent with your target language only when you request a translation. Your saved key is encrypted in this Chrome profile. Your language, model, and trigger preference can sync through Chrome. The extension keeps only the latest result for this browser session and does not keep translation history."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "You can review data sharing above and withdraw your agreement at any time. This stops model checks and translations until you agree again. Your saved key is kept unless you choose Remove saved key."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Language, model, and trigger changes are saved here."
+  },
+  "html_reload_saved_settings": {
+    "message": "Reload saved settings"
+  },
+  "html_save_preferences": {
+    "message": "Save Preferences"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini translation"
+  },
+  "html_setup_required": {
+    "message": "Setup required"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Welcome to AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Translate selected text into a language you know. Set up these two things to start:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Your Gemini API key.</1> Get your own key from Google AI Studio. Our guide shows you how."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Your target language.</1> Choose the language you want to read."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "How to get an API key"
+  },
+  "html_extension_status": {
+    "message": "Extension status"
+  },
+  "html_active_translations": {
+    "message": "Active translations"
+  },
+  "html_latest_this_session": {
+    "message": "Latest this session"
+  },
+  "html_no_translation_yet": {
+    "message": "No translation yet."
+  },
+  "html_copy": {
+    "message": "Copy"
+  },
+  "html_settings": {
+    "message": "Settings"
+  },
+  "html_key_guide": {
+    "message": "Key guide"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Get started with AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Extension pages"
+  },
+  "html_faq": {
+    "message": "FAQ"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Get your own Google API key, choose a language, and translate your first selection."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Get your API key"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "An API key lets this extension use Gemini through your Google account. Keep it private, like a password."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "This extension is for people aged 18 or older, for work or business use, in <1>Google's supported countries and regions</1>. In every country, your API key must belong to a Gemini project with active billing. Keep optional sharing of this extension's request logs and datasets with Google off."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "By using this extension, you agree to follow these conditions, the <1>Google API Terms</1> and the <2>Gemini API Additional Terms</2>. Do not use it if you cannot meet these conditions. The extension does not verify these facts or ask for identity documents."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Open Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Sign in to your Google account. Accept Google's terms if asked."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Create or choose a key"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "On the API Keys page, choose <1>Create API key</1> and follow Google's steps to choose or create a project. A project groups your API use and any billing. If you are new to AI Studio, Google may have already created a default project and key."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "If your existing project is missing, open <1>Dashboard > Projects > Import projects</1>. Import your project, then return to API Keys."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Before using the key, follow <1>Google's billing guide</1> to check that its project has active billing. A paid Gemini app subscription is not a substitute for API project billing. Keep optional sharing of this extension's request logs and datasets with Google off; read <2>Google's log-sharing policy</2>. Private project logging is separate from sharing."
+  },
+  "html_copy_your_key": {
+    "message": "Copy your key"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Copy the key from AI Studio. Return to this extension's Settings and read the data-sharing details. Choose <1>Agree and connect to Google</1>, then paste your key into the <2>API key</2> field. It is encrypted and saved automatically, and your model list loads. Wait for the result before continuing."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator Settings showing the data-sharing notice and Agree button above an empty API key field and the Flash-Lite model recommendation."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Example shown in English. In AI Translator: agree to data sharing first, then paste your own key. The model list is checked after the encrypted key is saved."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google can change these screens. For current steps or key errors, read <1>Google's API key guide</1>. Use a new key from AI Studio if an older key no longer works."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Choose your translation settings"
+  },
+  "html_choose_a_model": {
+    "message": "Choose a model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "We recommend the Gemini Flash-Lite family. For this release in September 2026, our choice is <1>Gemini 3.5 Flash-Lite</1>. Use it when it is available in your model list."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "You can choose another listed model. Some models may not work with this extension. If a model fails, choose another one or use the recommended model."
+  },
+  "html_choose_your_target_language": {
+    "message": "Choose your target language"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Choose the language you want to read from <1>Default language</1>. The choices follow <2>Google's documented Gemini languages</2>. Translation quality can vary by language and text."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator Translation settings with Choose a target language and the keyboard trigger controls."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Example shown in English. Choose the language for your translations, then finish setup."
+  },
+  "html_finish_setup": {
+    "message": "Finish setup"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Keep the Control key trigger, record another key, or choose <1>Off</1> to use only the right-click menu. Choose <2>Finish setup</2> at the bottom of Settings. You can change these choices later with <3>Save Preferences</3>."
+  },
+  "html_open_settings": {
+    "message": "Open Settings"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Translate your first selection"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Open a normal web page and select a short piece of text. Right-click and choose <1>Translate Selected Text</1>, or press and release your chosen key. The result appears beside the selection."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "If the extension was just installed or reloaded, refresh the web page first. Chrome settings pages, the Chrome Web Store, and the built-in PDF viewer do not allow translation."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "The toolbar popup shows the latest result. Once setup is complete, it opens the standard view. If you remove your API key, the welcome guide appears again."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "FAQ: keys, costs and privacy"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Why do I need my own API key?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "This extension is designed to send requests straight to your Google project using your own key. This is a design choice, not a Chrome rule. Your key allows requests and links them to your usage and billing. Never share it in screenshots or public messages. See <1>Google's API key guide</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Why is active billing required, instead of just recommended?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome's <1>Limited Use rules, points 3 and 5</1>, limit data use to the extension's purpose and related operations. Some unpaid Gemini use allows wider training and human review. Paid terms exclude product improvement use, but allow limited safety and legal retention and processing outside the EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "To address this conflict, the developer requires active project billing worldwide. A recommendation would still allow unpaid use. Google's own regional rule requires Paid Services for apps offered in the European Economic Area, UK and Switzerland. See <1>Gemini terms: Use Restrictions, Unpaid Services and Paid Services</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Why must optional sharing with Google stay off?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Sharing logs or datasets can allow training and human review even with active billing. Do not contribute this extension's data through dataset sharing or feedback. Private logging for your own project is allowed under this rule. See <1>Google's logging policy: Data that can be shared and How we use your data</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Is the extension free if I need paid API access?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Yes. The extension is free, but Google API charges may apply. A paid Gemini app subscription does not replace API project billing. See <1>how to check billing</1> and <2>Google's API prices</2>. The extension does not verify billing or sharing settings."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Why do I need to choose Agree and connect to Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome's <1>Disclosure Requirements, points 1 and 2</1>, call for clear data-use details and informed consent. Our button lets you make that choice before any Google API request. It does not check your identity or billing, or give permission to share other people's private information."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "What exactly goes to Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Model checks send your key and ask for available models. Translation sends the selected text, target language, model and translation instructions. This includes selected local-file text. The extension does not add the full page, page address or browsing history. Google also receives connection details such as your IP address. The developer receives none of these requests. Only send text you may share."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "How is my key saved and opened automatically?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Your API key is saved encrypted. It and its encryption key stay in this Chrome profile for automatic use after restarts. They are not synced. Someone with access to the profile may still recover the API key. This is not an OS keychain or password-protected vault. Language, model and trigger choices can sync. Only the latest result stays for the browser session; there is no analytics or translation history."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "An upgrade encrypts and checks an older saved key before deleting its plain text copies. If this fails, the old copy stays saved and requests remain blocked. Settings explains the error. Moving an old key does not bypass agreement."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Can I withdraw my agreement or remove my key?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "In <1>Settings</1>, <2>Withdraw data agreement</2> blocks new requests and cancels active ones locally, keeping your key and preferences. <3>Remove saved key</3> deletes the saved key, its encryption key and model cache. Neither recalls data already sent or guarantees that a sent request becomes free. Revoke the key in AI Studio to disable it at Google too."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Your agreement stays saved across normal restarts and updates. If the notice changes, requests wait until you review it and agree again."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Why is this for adults and work or business use?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google requires users to be at least 18, with professional or business use in supported regions. See <1>Gemini terms: Age Requirements and Use Restrictions</1> and <2>available regions</2>. This extension has no separate eligibility checkbox or identity check."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Why have a privacy policy as well as this notice?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "The notice explains the choice before you connect. The policy gives full data, storage and removal details. Chrome's <1>Privacy Policy rules</1> require this for extensions handling user data. Read <2>our privacy policy</2>. These notices do not mean Google has approved the extension."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI translations can be wrong. Check important wording before relying on it."
+  },
+  "html_about_ai_translator": {
+    "message": "About AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Super easy translation: select text and press Control."
+  },
+  "html_made_for_people": {
+    "message": "Made for people"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "I created AI Translator to help people read, learn, and connect across languages. I hope it is useful to people around the world."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "The extension translates the text you select using your own Google Gemini API key. You choose what to send and which language to read."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Tap and release Control to translate your selection. Control is the default key and can be changed in Settings. You can also use the page's right-click menu."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Manually tested on Mac only. Windows and Linux have not been manually tested."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>View the source code and project guide</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Get help or report a problem</1>. Issues are public. Do not include API keys, private text, or personal details."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "If you would like to support my work"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Please support my country, Ukraine, as it defends itself against Russian aggression."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "I trust the Sternenko Community Foundation. If you are able and wish to help, you can donate through its official website."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Support Ukraine through the foundation</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Support is optional and is never needed to use this extension. This link opens an external website. Donations go through the foundation, not the extension."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privacy and costs"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Your API key is encrypted on this device and is not synced. It stays available across normal Chrome restarts without an unlock password. Someone with access to the browser profile may still recover it."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Before the first Google request, Settings explains data sharing and asks you to choose <1>Agree and connect to Google</1>. After that, selected text is sent directly to Google only when you ask for a translation. Model checks send your key but no selected text. The extension has no analytics, advertising, or translation history."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Review the details in <1>Settings</1> at any time. Choose <2>Withdraw data agreement</2> to stop new requests while keeping your encrypted key and preferences, or <3>Remove saved key</3> to delete the key and model cache. Data already sent cannot be recalled."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Translations are generated by AI and can be wrong. Check important wording before relying on it."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Read the privacy details</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator is a free, independent project. Google API charges may apply. In every country, use a Gemini API key from a project with <1>active billing</1> and keep optional <2>sharing of this extension's request logs and datasets with Google</2> off. With these settings, Google's paid terms exclude product improvement use of prompts and responses; safety and legal processing still applies. Read <3>Google's pricing and data-use notes</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "This extension is for people aged 18 or older, for work or business use, in <1>Google's supported regions</1>. By using the extension, you agree to follow these conditions, the <2>Google API Terms</2> and the <3>Gemini API Additional Terms</3>. Do not use it if you cannot meet them. No eligibility checkbox or identity check is used. The extension does not verify your billing or sharing settings."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Unsaved changes."
+  },
+  "runtime_settings_conflict": {
+    "message": "Settings changed in another page. Your edits are kept here. Reload saved settings to discard your edits and use the saved values."
+  },
+  "runtime_preferences_current": {
+    "message": "Preferences are up to date."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Saved key cannot be opened. Try reopening Settings, or remove it and enter it again."
+  },
+  "runtime_key_conflict": {
+    "message": "The API key changed in another page. Reload saved settings before saving a key."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Your key is saved encrypted. Agree to data sharing before connecting to Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Agree to data sharing above before adding your API key."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini rejected this saved key. Replace it or use Refresh models to check it again."
+  },
+  "runtime_paste_key": {
+    "message": "Paste an API key to connect Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "API key saved. Gemini accepted it at the last model-list check."
+  },
+  "runtime_key_saved_check": {
+    "message": "API key saved encrypted on this device. Refresh models to check it with Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Retry withdrawal"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Withdraw data agreement"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Your withdrawal is not confirmed. Retry withdrawal to save your choice."
+  },
+  "runtime_agreement_saved": {
+    "message": "Data sharing agreed for this Chrome profile. You can withdraw at any time."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "No connection to Google until you agree. Your saved key is kept if you withdraw."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini rejected the saved key. Replace it below."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Your key is saved encrypted on this device."
+  },
+  "runtime_setup_create_key": {
+    "message": "Create your own key in Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Language selected. Finish setup to save your choices."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Choose a target language below."
+  },
+  "runtime_finish_setup": {
+    "message": "Finish setup"
+  },
+  "runtime_save_preferences": {
+    "message": "Save Preferences"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Add an API key, check the model list, and save your model choice."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Resolve the settings conflict before translating."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Review data sharing and agree before connecting to Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Finish saving the API key before checking setup."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Setup needs attention: Gemini rejected the saved API key."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Key saved. Choose a target language, then finish setup."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Choose an available model and save preferences."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model selected. Save preferences to use it."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Key and language are ready. Finish setup to save your choices, then try a translation. Model access and quota can still change."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Ready to try a translation. The saved model is in the checked model list; request access and quota can still change."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Key saved. Refresh models to check the key and selected model."
+  },
+  "runtime_show_key": {
+    "message": "Show"
+  },
+  "runtime_hide_key": {
+    "message": "Hide"
+  },
+  "runtime_choose_target_language": {
+    "message": "Choose a target language"
+  },
+  "runtime_background_no_response": {
+    "message": "The extension background did not respond. Reload the extension and try again."
+  },
+  "runtime_refresh_models": {
+    "message": "Refresh models"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Agree to data sharing before loading models."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Finish saving the API key before refreshing models."
+  },
+  "runtime_refreshing": {
+    "message": "Refreshing..."
+  },
+  "runtime_loading": {
+    "message": "Loading..."
+  },
+  "runtime_models_checking": {
+    "message": "Checking Gemini for compatible models..."
+  },
+  "runtime_models_loading": {
+    "message": "Loading compatible models..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Compatible models could not be loaded."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini returned no compatible models."
+  },
+  "runtime_model_not_available": {
+    "message": "The selected model is not in the compatible list. Choose another model."
+  },
+  "runtime_record_key": {
+    "message": "Record key"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Recording cancelled."
+  },
+  "runtime_unknown_key": {
+    "message": "That key"
+  },
+  "runtime_press_key": {
+    "message": "Press a key..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Press one supported non-printable key. Press Escape to cancel."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Refresh models to check the saved API key."
+  },
+  "runtime_models_add_key": {
+    "message": "Add an API key to load compatible models."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "The extension could not load its saved state."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini rejected the saved API key. Replace it or refresh models to check it again."
+  },
+  "runtime_settings_reopen": {
+    "message": "Settings could not be loaded. Reopen Settings to try again."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Settings could not be loaded. Reload saved settings to try again. Saving is disabled to protect your saved choices."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Setup state could not be loaded."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Enter a complete API key with no spaces."
+  },
+  "runtime_key_use_remove": {
+    "message": "Use Remove saved key to delete your saved key."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Agree to data sharing above before saving an API key."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Saving API key encrypted..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API key could not be read or saved. Your entry is kept. Use Save Preferences to try again."
+  },
+  "runtime_connecting_google": {
+    "message": "Connecting to Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Stopping connections to Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Your data agreement could not be saved. Try again."
+  },
+  "runtime_key_removing": {
+    "message": "Removing saved key..."
+  },
+  "runtime_key_removed": {
+    "message": "Saved key removed. You can add a new key after agreeing to data sharing."
+  },
+  "runtime_key_remove_failed": {
+    "message": "The saved key could not be removed. Try again."
+  },
+  "runtime_saving": {
+    "message": "Saving..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Choose a valid language and model."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Choose a supported trigger key or Off."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Choose a model from the current compatible list."
+  },
+  "runtime_preferences_saving": {
+    "message": "Saving preferences..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Preferences saved."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Preferences saved. Add your API key to finish setup."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Preferences could not be read or saved. Your edits are kept. Try again."
+  },
+  "runtime_key_will_save": {
+    "message": "The API key will save automatically."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Finish entering the API key."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Finish saving the API key to load compatible models."
+  },
+  "runtime_recommended_selected": {
+    "message": "Recommended model selected. Save your choice to use it."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "The keyboard trigger will be Off after you save."
+  },
+  "runtime_connection_changed": {
+    "message": "Connection settings changed. Checking saved settings..."
+  },
+  "runtime_models_changed": {
+    "message": "The model list changed. Checking compatible models..."
+  },
+  "runtime_no_translation": {
+    "message": "No translation yet."
+  },
+  "runtime_start_setup": {
+    "message": "Start setup"
+  },
+  "runtime_settings": {
+    "message": "Settings"
+  },
+  "runtime_key_rejected": {
+    "message": "Key rejected"
+  },
+  "runtime_setup_required": {
+    "message": "Setup required"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Add an API key in Settings to start translating."
+  },
+  "runtime_add_key": {
+    "message": "Add API key"
+  },
+  "runtime_finish_model_language": {
+    "message": "The key is saved. Open Settings to check the model and finish your language choice."
+  },
+  "runtime_check_setup": {
+    "message": "Check setup"
+  },
+  "runtime_translating": {
+    "message": "Translating"
+  },
+  "runtime_error": {
+    "message": "Error"
+  },
+  "runtime_ready": {
+    "message": "Ready"
+  },
+  "runtime_status_load_failed": {
+    "message": "Extension status could not be loaded. Reload the extension, then refresh the page."
+  },
+  "runtime_copied": {
+    "message": "Copied."
+  },
+  "runtime_copy_blocked": {
+    "message": "Copy was blocked. Select the result text and copy it."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Settings could not be opened. Try again."
+  },
+  "runtime_translating_progress": {
+    "message": "Translating..."
+  },
+  "runtime_translation_started": {
+    "message": "Translation started."
+  },
+  "runtime_translation_complete": {
+    "message": "Translation complete."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Translation complete. Use the result text or card controls."
+  },
+  "runtime_translation": {
+    "message": "Translation"
+  },
+  "runtime_target_language": {
+    "message": "Target language"
+  },
+  "runtime_card_target_language": {
+    "message": "Target language for this card"
+  },
+  "runtime_close_card": {
+    "message": "Close translation card"
+  },
+  "runtime_translated_text": {
+    "message": "Translated text"
+  },
+  "runtime_retry": {
+    "message": "Retry"
+  },
+  "runtime_copy": {
+    "message": "Copy"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Settings could not be opened. Use the extension toolbar."
+  },
+  "runtime_copy_failed": {
+    "message": "Copy failed. Select the result text and copy it."
+  },
+  "runtime_context_menu": {
+    "message": "Translate Selected Text"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Not in current list)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Not checked yet)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Using cached model list from $value1$. Live refresh failed. Try again later.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Using cached model list. Live refresh failed. Try again later."
+  },
+  "runtime_models_cache_at": {
+    "message": "Using cached model list from $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Using cached model list."
+  },
+  "runtime_models_updated_at": {
+    "message": "Model list updated from $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Model list updated."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ is not supported. Press another key or Escape to cancel.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ will be used after you save.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Up to $value1$ per tab and $value2$ in total",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ seconds",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Press Tab to use this card or Escape to close it.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Translation failed. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Refresh open pages"
+  },
+  "refresh_message": {
+    "message": "Your API key is saved. After you finish setup, refresh the pages that were already open. Then select text and press Control to translate."
+  },
+  "refresh_continue": {
+    "message": "Continue setup"
+  },
+  "refresh_faq_question": {
+    "message": "Why do I need to refresh open pages?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Refresh open pages</1> after you finish setup, before you try to translate. Chrome needs to load the extension on pages that were open before you installed or reloaded it. Newly opened pages are ready automatically."
+  },
+  "ui_locale": {
+    "message": "en-GB",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

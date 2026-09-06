@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Velmi snadný překlad: označte text a stiskněte Control. Překládejte do zvoleného jazyka pomocí Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Označte text a zkuste to znovu."
+  },
+  "error_unsupported_selection": {
+    "message": "Tento výběr textu není podporován."
+  },
+  "error_selection_too_large": {
+    "message": "Výběr je delší než 10 000 znaků. Označte méně textu a zkuste to znovu."
+  },
+  "error_missing_api_key": {
+    "message": "Přidejte klíč Gemini API v Nastavení."
+  },
+  "error_agreement_required": {
+    "message": "Před připojením ke Google si v Nastavení přečtěte a odsouhlaste sdílení dat."
+  },
+  "error_credential_conflict": {
+    "message": "Uložený klíč se změnil na jiné stránce. Před dalším pokusem znovu načtěte uložená nastavení."
+  },
+  "error_credential_storage_error": {
+    "message": "Uložený klíč nelze otevřít. Zkuste znovu otevřít Nastavení nebo klíč odeberte a zadejte znovu."
+  },
+  "error_missing_target_language": {
+    "message": "Dokončete nastavení výběrem cílového jazyka v Nastavení."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini odmítlo klíč API. Zkontrolujte ho v Nastavení."
+  },
+  "error_invalid_model": {
+    "message": "Tento model nelze použít k překladu. V Nastavení vyberte jiný model nebo doporučený Flash-Lite."
+  },
+  "error_busy": {
+    "message": "Probíhá příliš mnoho překladů. Zkuste to po dokončení některého z nich."
+  },
+  "error_duplicate_request": {
+    "message": "Tento výběr se již překládá."
+  },
+  "error_rate_limited": {
+    "message": "Byl dosažen limit požadavků. Zkuste to za chvíli."
+  },
+  "error_timeout": {
+    "message": "Překlad trval příliš dlouho. Můžete ho zkusit znovu."
+  },
+  "error_offline": {
+    "message": "Zřejmě jste offline. Zkontrolujte připojení a zkuste to znovu."
+  },
+  "error_network_error": {
+    "message": "Gemini není dostupné. Zkontrolujte připojení a zkuste to znovu."
+  },
+  "error_quota_exceeded": {
+    "message": "Byla vyčerpána kvóta Gemini. Zkontrolujte účet a zkuste to později."
+  },
+  "error_service_error": {
+    "message": "Gemini nemohlo dokončit překlad. Zkuste to později."
+  },
+  "error_invalid_response": {
+    "message": "Gemini vrátilo nečitelnou odpověď. Můžete to zkusit znovu."
+  },
+  "error_output_too_large": {
+    "message": "Překlad překročil limit výstupu. Vyberte méně textu a zkuste to znovu."
+  },
+  "error_content_blocked": {
+    "message": "Gemini tento text zablokovalo. Zkuste jiný výběr."
+  },
+  "error_unsupported_page": {
+    "message": "Na této stránce není překlad dostupný."
+  },
+  "error_frame_unavailable": {
+    "message": "Vybraný rámec již není dostupný."
+  },
+  "error_cancelled": {
+    "message": "Překlad byl zrušen."
+  },
+  "key_Off": {
+    "message": "Vypnuto"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Zkuste to znovu za $seconds$ s.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Nastavení AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Soukromá nastavení pro rychlý a soustředěný překlad."
+  },
+  "html_help_and_information": {
+    "message": "Nápověda a informace"
+  },
+  "html_api_key_guide": {
+    "message": "Průvodce klíčem API"
+  },
+  "html_about": {
+    "message": "O rozšíření"
+  },
+  "html_privacy": {
+    "message": "Soukromí"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Nastavit AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Postupujte podle těchto kroků v Nastavení. K překladu potřebujete vlastní klíč Google API."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Získejte vlastní klíč API.</1> Otevřete <2>Google AI Studio</2>, přihlaste se a vytvořte klíč. Níže si přečtěte informace o sdílení dat a vložte klíč. Pomůže vám <3>podrobný průvodce</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Vyberte cílový jazyk a model.</1> Zvolte jazyk překladů. Doporučujeme Gemini Flash-Lite, pokud ho máte v seznamu modelů."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Uložte a začněte překládat.</1> Dole na stránce zvolte Dokončit nastavení. Pak označte text na webové stránce a stiskněte Control nebo v nabídce pravého tlačítka vyberte Přeložit vybraný text."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Připojte vlastní klíč Gemini API a vyberte kompatibilní model."
+  },
+  "html_loading_setup_state": {
+    "message": "Načítání stavu nastavení..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Před připojením ke Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google dostává klíč API pro ověření dostupných modelů. Když požádáte o překlad, dostane také vybraný text a cílový jazyk, včetně textu z místních souborů. Překlady AI mohou být chybné."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Klíč je uložen zašifrovaný v tomto profilu Chrome a po restartu se automaticky otevře. Další heslo není potřeba. Člověk s úplným přístupem k profilu prohlížeče ho přesto může obnovit. <1>Přečtěte si podrobnosti o soukromí</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Povinné v každé zemi:</1> používejte klíč Gemini API z projektu s <2>aktivní fakturací</2>. Volitelné <3>sdílení protokolů požadavků a datových sad tohoto rozšíření s Google</3> nechte vypnuté. Za těchto nastavení placené podmínky Google vylučují použití zadání a odpovědí ke zlepšování produktů; bezpečnostní a právní zpracování zůstává. Rozšíření je zdarma, ale za Google API mohou vzniknout poplatky."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Podmínky použití.</1> Používáním Gemini přes toto rozšíření souhlasíte s uvedenými požadavky a <2>podmínkami Google</2>. Použití je určeno lidem od 18 let pro profesní nebo obchodní účely v <3>podporovaných regionech</3>. Rozšíření neověřuje nastavení fakturace ani sdílení."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Souhlasit a připojit se ke Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Odvolat souhlas se sdílením dat"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Před připojením si přečtěte podrobnosti o sdílení dat."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Proč jsou tyto požadavky nutné? Přečtěte si časté dotazy</1>."
+  },
+  "html_api_key": {
+    "message": "Klíč API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Po souhlasu vložte klíč. Uloží se zašifrovaný a modely se načtou automaticky."
+  },
+  "html_show": {
+    "message": "Zobrazit"
+  },
+  "html_remove_saved_key": {
+    "message": "Odebrat uložený klíč"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Známé modely pouze pro média a zvláštní účely jsou skryté."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Doporučujeme řadu Gemini Flash-Lite. Pro toto vydání v září 2026 jsme vybrali Gemini 3.5 Flash-Lite. Můžete si vybrat jiný model ze seznamu. Některé modely nemusí s rozšířením fungovat. Při chybě vyberte jiný nebo doporučený model."
+  },
+  "html_refresh_models": {
+    "message": "Obnovit modely"
+  },
+  "html_use_recommended_model": {
+    "message": "Použít doporučený model"
+  },
+  "html_translation": {
+    "message": "Překlad"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Nastavte jazyk a volitelnou spouštěcí klávesu."
+  },
+  "html_default_language": {
+    "message": "Výchozí jazyk"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Karta výsledku může použít jiný jazyk, aniž změní tento výchozí."
+  },
+  "html_keyboard_trigger": {
+    "message": "Spouštěcí klávesa"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Samostatné klávesy mohou kolidovat s weby nebo nástroji přístupnosti. Zvolte Vypnuto, chcete-li používat pouze kontextovou nabídku."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Zaznamenat klávesu"
+  },
+  "html_off": {
+    "message": "Vypnuto"
+  },
+  "html_behavior": {
+    "message": "Chování"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Pevné ochranné limity udržují překlady rychlé a chrání kvótu API."
+  },
+  "html_parallel_requests": {
+    "message": "Souběžné požadavky"
+  },
+  "html_request_timeout": {
+    "message": "Časový limit požadavku"
+  },
+  "html_page_access": {
+    "message": "Přístup ke stránkám"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Pro místní soubory zapněte Povolit přístup k adresám URL souborů ve správě rozšíření"
+  },
+  "html_help_and_recovery": {
+    "message": "Nápověda a obnova"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Pokud model není dostupný, obnovte modely, vyberte jeden ze seznamu a uložte předvolby. Pokud seznam nelze načíst, zkontrolujte klíč a připojení a zkuste Obnovit modely."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Stránky nastavení Chrome a Chrome Web Store překlad nepovolují. Pro místní soubory povolte přístup k adresám URL souborů ve správě rozšíření. Po aktualizaci nebo opětovném načtení rozšíření obnovte otevřené webové stránky. Opětovné načtení může přerušit překlad."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Překlad není offline. Po souhlasu výše se klíč posílá přímo do Google ke kontrole modelů. Vybraný text včetně místních souborů se s cílovým jazykem odesílá jen na vaši žádost o překlad. Uložený klíč je zašifrovaný v tomto profilu Chrome. Jazyk, model a klávesa se mohou synchronizovat přes Chrome. Rozšíření uchovává jen poslední výsledek aktuální relace prohlížeče, nikoli historii překladů."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Sdílení dat si můžete prohlédnout výše a souhlas kdykoli odvolat. Kontroly modelů a překlady se zastaví do nového souhlasu. Klíč zůstane uložený, pokud nezvolíte Odebrat uložený klíč."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Zde se ukládají změny jazyka, modelu a spouštěcí klávesy."
+  },
+  "html_reload_saved_settings": {
+    "message": "Znovu načíst uložená nastavení"
+  },
+  "html_save_preferences": {
+    "message": "Uložit předvolby"
+  },
+  "html_gemini_translation": {
+    "message": "Překlad Gemini"
+  },
+  "html_setup_required": {
+    "message": "Vyžaduje nastavení"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Vítejte v AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Přeložte vybraný text do jazyka, který znáte. Pro začátek nastavte tyto dvě věci:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Váš klíč Gemini API.</1> Získejte vlastní klíč z Google AI Studio. Náš průvodce ukazuje postup."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Váš cílový jazyk.</1> Vyberte jazyk, ve kterém chcete číst."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Jak získat klíč API"
+  },
+  "html_extension_status": {
+    "message": "Stav rozšíření"
+  },
+  "html_active_translations": {
+    "message": "Aktivní překlady"
+  },
+  "html_latest_this_session": {
+    "message": "Poslední v této relaci"
+  },
+  "html_no_translation_yet": {
+    "message": "Zatím žádný překlad."
+  },
+  "html_copy": {
+    "message": "Kopírovat"
+  },
+  "html_settings": {
+    "message": "Nastavení"
+  },
+  "html_key_guide": {
+    "message": "Průvodce klíčem"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Začínáme s AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Stránky rozšíření"
+  },
+  "html_faq": {
+    "message": "Časté dotazy"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Získejte vlastní klíč Google API, vyberte jazyk a přeložte první výběr."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Získejte klíč API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Klíč API umožňuje rozšíření používat Gemini přes váš účet Google. Uchovávejte ho v soukromí jako heslo."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Toto rozšíření je pro lidi od 18 let pro pracovní nebo obchodní použití v <1>zemích a regionech podporovaných Google</1>. V každé zemi musí klíč patřit k projektu Gemini s aktivní fakturací. Volitelné sdílení protokolů požadavků a datových sad tohoto rozšíření s Google nechte vypnuté."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Používáním rozšíření přijímáte tyto podmínky, <1>Podmínky Google API</1> a <2>Dodatečné podmínky Gemini API</2>. Pokud je nemůžete splnit, rozšíření nepoužívejte. Rozšíření tyto skutečnosti neověřuje a nežádá doklady totožnosti."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Otevřít Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Přihlaste se k účtu Google. Přijměte podmínky Google, pokud budete vyzváni."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Vytvořte nebo vyberte klíč"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Na stránce Klíče API vyberte <1>Vytvořit klíč API</1> a podle kroků Google vyberte nebo vytvořte projekt. Projekt sdružuje používání API a fakturaci. Pokud jste v AI Studio noví, Google už mohl vytvořit výchozí projekt a klíč."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Pokud projekt chybí, otevřete <1>Přehled > Projekty > Importovat projekty</1>. Importujte projekt a vraťte se ke klíčům API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Před použitím klíče ověřte aktivní fakturaci projektu podle <1>průvodce fakturací Google</1>. Placené předplatné aplikace Gemini nenahrazuje fakturaci projektu API. Volitelné sdílení protokolů a datových sad rozšíření s Google nechte vypnuté; přečtěte si <2>zásady Google pro sdílení protokolů</2>. Soukromé protokolování projektu je oddělené od sdílení."
+  },
+  "html_copy_your_key": {
+    "message": "Zkopírujte klíč"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Zkopírujte klíč z AI Studio. Vraťte se do Nastavení rozšíření a přečtěte si sdílení dat. Vyberte <1>Souhlasit a připojit se ke Google</1> a vložte klíč do pole <2>Klíč API</2>. Automaticky se zašifruje a uloží a načte se seznam modelů. Před pokračováním vyčkejte na výsledek."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Nastavení AI Translator s oznámením o sdílení dat a tlačítkem souhlasu nad prázdným polem klíče API a doporučením Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Ukázka je v angličtině. V AI Translator nejprve odsouhlaste sdílení dat a pak vložte vlastní klíč. Seznam modelů se kontroluje po uložení šifrovaného klíče."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google může tyto obrazovky změnit. Aktuální postup a pomoc s chybami klíče najdete v <1>průvodci Google pro klíče API</1>. Pokud starý klíč nefunguje, použijte nový z AI Studio."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Vyberte nastavení překladu"
+  },
+  "html_choose_a_model": {
+    "message": "Vyberte model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Doporučujeme řadu Gemini Flash-Lite. Pro toto vydání v září 2026 jsme vybrali <1>Gemini 3.5 Flash-Lite</1>. Použijte ho, pokud je ve vašem seznamu modelů."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Můžete zvolit jiný model ze seznamu. Některé modely nemusí s rozšířením fungovat. Pokud model selže, vyberte jiný nebo doporučený."
+  },
+  "html_choose_your_target_language": {
+    "message": "Vyberte cílový jazyk"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "V položce <1>Výchozí jazyk</1> vyberte jazyk, ve kterém chcete číst. Nabídka odpovídá <2>jazykům Gemini zdokumentovaným Google</2>. Kvalita překladu se může lišit podle jazyka a textu."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Nastavení překladu AI Translator s volbou cílového jazyka a ovládáním spouštěcí klávesy."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Ukázka je v angličtině. Vyberte jazyk překladů a dokončete nastavení."
+  },
+  "html_finish_setup": {
+    "message": "Dokončit nastavení"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Ponechte Control, zaznamenejte jinou klávesu nebo zvolte <1>Vypnuto</1> pro použití jen nabídky pravého tlačítka. Dole v Nastavení zvolte <2>Dokončit nastavení</2>. Později můžete volby změnit pomocí <3>Uložit předvolby</3>."
+  },
+  "html_open_settings": {
+    "message": "Otevřít Nastavení"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Přeložte první výběr"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Otevřete běžnou webovou stránku a označte krátký text. Pravým tlačítkem zvolte <1>Přeložit vybraný text</1> nebo stiskněte a uvolněte zvolenou klávesu. Výsledek se objeví vedle výběru."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Pokud bylo rozšíření právě nainstalováno nebo znovu načteno, nejprve obnovte stránku. Nastavení Chrome, Chrome Web Store a vestavěný prohlížeč PDF překlad nepovolují."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Okno na panelu nástrojů ukazuje poslední výsledek. Po dokončení nastavení otevře běžný pohled. Když odeberete klíč API, znovu se objeví uvítací průvodce."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Časté dotazy: klíče, náklady a soukromí"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Proč potřebuji vlastní klíč API?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Rozšíření posílá požadavky přímo do vašeho projektu Google pomocí vlastního klíče. Je to návrhová volba, ne pravidlo Chrome. Klíč povoluje požadavky a spojuje je s využitím a fakturací. Nikdy ho nesdílejte na snímcích obrazovky nebo veřejných zprávách. Viz <1>průvodce Google pro klíče API</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Proč je aktivní fakturace povinná, nejen doporučená?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Pravidla omezeného použití Chrome, body 3 a 5</1>, omezují použití dat na účel rozšíření a související provoz. Některé bezplatné služby Gemini umožňují širší trénování a lidskou kontrolu. Placené podmínky vylučují zlepšování produktů, ale umožňují omezené uchování pro bezpečnost a právní účely i zpracování mimo EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "K vyřešení tohoto rozporu vývojář vyžaduje aktivní fakturaci projektu po celém světě. Doporučení by dál umožňovalo bezplatné použití. Regionální pravidlo Google vyžaduje placené služby pro aplikace nabízené v Evropském hospodářském prostoru, Británii a Švýcarsku. Viz <1>podmínky Gemini: omezení použití, bezplatné a placené služby</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Proč musí volitelné sdílení s Google zůstat vypnuté?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Sdílení protokolů nebo datových sad může umožnit trénování a lidskou kontrolu i s aktivní fakturací. Nepřispívejte daty rozšíření přes sdílení sad nebo zpětnou vazbu. Soukromé protokolování vlastního projektu toto pravidlo dovoluje. Viz <1>zásady protokolování Google: sdílená data a jejich použití</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Je rozšíření zdarma, když potřebuji placený přístup k API?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Ano. Rozšíření je zdarma, ale mohou se účtovat poplatky Google API. Placené předplatné aplikace Gemini nenahrazuje fakturaci projektu API. Viz <1>kontrola fakturace</1> a <2>ceny Google API</2>. Rozšíření fakturaci ani sdílení neověřuje."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Proč musím zvolit Souhlasit a připojit se ke Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Požadavky Chrome na informování, body 1 a 2</1>, vyžadují jasné informace o použití dat a informovaný souhlas. Naše tlačítko umožňuje tuto volbu před jakýmkoli požadavkem Google API. Neověřuje totožnost ani fakturaci a nedává oprávnění sdílet soukromé informace jiných lidí."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Co přesně se posílá do Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Kontroly modelů posílají klíč a dotaz na dostupné modely. Překlad posílá vybraný text, cílový jazyk, model a pokyny, včetně vybraného textu z místních souborů. Rozšíření nepřidává celou stránku, její adresu ani historii prohlížení. Google dostává i údaje o připojení, například IP adresu. Vývojář žádné tyto požadavky nedostává. Posílejte jen text, který smíte sdílet."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Jak se klíč ukládá a automaticky otevírá?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Klíč API se ukládá zašifrovaný. Spolu se šifrovacím klíčem zůstává v tomto profilu Chrome pro automatické použití po restartu. Nesynchronizují se. Osoba s přístupem k profilu přesto může klíč obnovit. Nejde o systémovou klíčenku ani úložiště chráněné heslem. Jazyk, model a klávesa se mohou synchronizovat. V relaci zůstává pouze poslední výsledek; není tu analytika ani historie překladů."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Aktualizace zašifruje a ověří starý klíč před smazáním jeho nešifrovaných kopií. Při selhání původní kopie zůstává a požadavky jsou blokované. Nastavení vysvětluje chybu. Přenos starého klíče neobchází souhlas."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Mohu odvolat souhlas nebo odebrat klíč?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "V <1>Nastavení</1> volba <2>Odvolat souhlas se sdílením dat</2> blokuje nové požadavky a místně ruší aktivní, ale ponechá klíč a předvolby. <3>Odebrat uložený klíč</3> smaže klíč, šifrovací klíč a mezipaměť modelů. Ani jedna volba nevrací odeslaná data a nezaručuje bezplatnost odeslaného požadavku. Klíč odvolejte v AI Studio, chcete-li ho vypnout i u Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Souhlas zůstává uložen při běžných restartech a aktualizacích. Pokud se oznámení změní, požadavky počkají na nové přečtení a souhlas."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Proč je to pro dospělé a pracovní nebo obchodní použití?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google vyžaduje věk alespoň 18 let a profesní či obchodní použití v podporovaných regionech. Viz <1>podmínky Gemini: věkové požadavky a omezení použití</1> a <2>dostupné regiony</2>. Rozšíření nemá samostatné pole způsobilosti ani ověření totožnosti."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Proč kromě oznámení existují i zásady ochrany soukromí?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Oznámení vysvětluje volbu před připojením. Zásady uvádějí úplné údaje o datech, ukládání a mazání. <1>Pravidla ochrany soukromí Chrome</1> to vyžadují u rozšíření pracujících s daty uživatelů. Přečtěte si <2>naše zásady ochrany soukromí</2>. Tato oznámení neznamenají schválení rozšíření Googlem."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Překlady AI mohou být chybné. Před použitím ověřte důležitá znění."
+  },
+  "html_about_ai_translator": {
+    "message": "O AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Velmi snadný překlad: označte text a stiskněte Control."
+  },
+  "html_made_for_people": {
+    "message": "Vytvořeno pro lidi"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Vytvořil jsem AI Translator, abych lidem pomohl číst, učit se a dorozumívat se napříč jazyky. Doufám, že bude užitečný lidem po celém světě."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Rozšíření překládá vybraný text vlastním klíčem Google Gemini API. Vy vybíráte, co poslat a v jakém jazyce číst."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Pro překlad stiskněte a uvolněte Control. Control je výchozí klávesa a lze ji změnit v Nastavení. Můžete také použít nabídku pravého tlačítka stránky."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Ručně testováno pouze na Macu. Windows a Linux nebyly ručně testovány."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Zobrazit zdrojový kód a průvodce projektem</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Získat pomoc nebo nahlásit problém</1>. Hlášení jsou veřejná. Nepřidávejte klíče API, soukromé texty ani osobní údaje."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Pokud chcete podpořit mou práci"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Podpořte prosím mou zemi, Ukrajinu, která se brání ruské agresi."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Důvěřuji Nadaci komunity Sternenko. Pokud můžete a chcete pomoci, přispějte přes její oficiální web."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Podpořit Ukrajinu přes nadaci</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Podpora je dobrovolná a k použití rozšíření nikdy není nutná. Odkaz otevírá externí web. Dary procházejí přes nadaci, nikoli rozšíření."
+  },
+  "html_privacy_and_costs": {
+    "message": "Soukromí a náklady"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Klíč API je na tomto zařízení zašifrovaný a nesynchronizuje se. Je dostupný po běžném restartu Chrome bez odemykacího hesla. Osoba s přístupem k profilu prohlížeče ho přesto může obnovit."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Před prvním požadavkem Google vysvětlí Nastavení sdílení dat a vyzve ke zvolení <1>Souhlasit a připojit se ke Google</1>. Pak se vybraný text posílá přímo do Google pouze na vaši žádost o překlad. Kontroly modelů posílají klíč, ale žádný vybraný text. Rozšíření nemá analytiku, reklamu ani historii překladů."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Podrobnosti si můžete kdykoli prohlédnout v <1>Nastavení</1>. Zvolte <2>Odvolat souhlas se sdílením dat</2>, chcete-li zastavit nové požadavky a ponechat šifrovaný klíč a předvolby, nebo <3>Odebrat uložený klíč</3>, chcete-li smazat klíč a mezipaměť modelů. Odeslaná data nelze vzít zpět."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Překlady vytváří AI a mohou být chybné. Před použitím ověřte důležitá znění."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Přečtěte si podrobnosti o soukromí</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator je bezplatný nezávislý projekt. Mohou se účtovat poplatky Google API. V každé zemi použijte klíč Gemini API z projektu s <1>aktivní fakturací</1> a nechte vypnuté volitelné <2>sdílení protokolů a datových sad rozšíření s Google</2>. Za těchto nastavení placené podmínky Google vylučují použití zadání a odpovědí ke zlepšování produktů; bezpečnostní a právní zpracování zůstává. Přečtěte si <3>ceny Google a informace o použití dat</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Rozšíření je pro osoby od 18 let pro pracovní či obchodní použití v <1>regionech podporovaných Google</1>. Používáním přijímáte tyto podmínky, <2>Podmínky Google API</2> a <3>Dodatečné podmínky Gemini API</3>. Pokud je nemůžete splnit, nepoužívejte ho. Neexistuje pole způsobilosti ani kontrola totožnosti. Rozšíření neověřuje fakturaci ani sdílení."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Neuložené změny."
+  },
+  "runtime_settings_conflict": {
+    "message": "Nastavení se změnilo na jiné stránce. Vaše úpravy tu zůstávají. Znovu načtěte uložená nastavení, chcete-li úpravy zahodit a použít uložené hodnoty."
+  },
+  "runtime_preferences_current": {
+    "message": "Předvolby jsou aktuální."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Uložený klíč nelze otevřít. Otevřete znovu Nastavení nebo ho odeberte a zadejte znovu."
+  },
+  "runtime_key_conflict": {
+    "message": "Klíč API se změnil na jiné stránce. Před uložením klíče znovu načtěte uložená nastavení."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Klíč je uložen zašifrovaný. Před připojením ke Google odsouhlaste sdílení dat."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Před přidáním klíče API odsouhlaste výše sdílení dat."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini odmítlo uložený klíč. Nahraďte ho nebo ho znovu ověřte pomocí Obnovit modely."
+  },
+  "runtime_paste_key": {
+    "message": "Připojte Gemini vložením klíče API."
+  },
+  "runtime_key_checked": {
+    "message": "Klíč API uložen. Gemini ho přijalo při poslední kontrole seznamu modelů."
+  },
+  "runtime_key_saved_check": {
+    "message": "Klíč API je na tomto zařízení uložen zašifrovaný. Obnovte modely pro ověření u Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Znovu zkusit odvolání"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Odvolat souhlas se sdílením dat"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Odvolání není potvrzeno. Zkuste ho znovu, aby se volba uložila."
+  },
+  "runtime_agreement_saved": {
+    "message": "Sdílení dat bylo odsouhlaseno pro tento profil Chrome. Souhlas můžete kdykoli odvolat."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Bez souhlasu nebude připojení ke Google. Při odvolání zůstane klíč uložený."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini odmítlo uložený klíč. Nahraďte ho níže."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Klíč je na tomto zařízení uložen zašifrovaný."
+  },
+  "runtime_setup_create_key": {
+    "message": "Vytvořte vlastní klíč v Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Jazyk vybrán. Dokončete nastavení pro uložení voleb."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Níže vyberte cílový jazyk."
+  },
+  "runtime_finish_setup": {
+    "message": "Dokončit nastavení"
+  },
+  "runtime_save_preferences": {
+    "message": "Uložit předvolby"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Přidejte klíč API, ověřte seznam modelů a uložte výběr modelu."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Před překládáním vyřešte konflikt nastavení."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Před připojením ke Google si přečtěte a odsouhlaste sdílení dat."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Před kontrolou nastavení dokončete uložení klíče API."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Nastavení vyžaduje pozornost: Gemini odmítlo uložený klíč API."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Klíč uložen. Vyberte cílový jazyk a dokončete nastavení."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Vyberte dostupný model a uložte předvolby."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model vybrán. Pro použití uložte předvolby."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Klíč a jazyk jsou připravené. Dokončete nastavení pro uložení voleb a vyzkoušejte překlad. Přístup k modelům a kvóta se mohou změnit."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Připraveno vyzkoušet překlad. Uložený model je v ověřeném seznamu; přístup k požadavkům a kvóta se mohou změnit."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Klíč uložen. Obnovte modely pro ověření klíče a zvoleného modelu."
+  },
+  "runtime_show_key": {
+    "message": "Zobrazit"
+  },
+  "runtime_hide_key": {
+    "message": "Skrýt"
+  },
+  "runtime_choose_target_language": {
+    "message": "Vyberte cílový jazyk"
+  },
+  "runtime_background_no_response": {
+    "message": "Pozadí rozšíření neodpovědělo. Znovu načtěte rozšíření a zkuste to znovu."
+  },
+  "runtime_refresh_models": {
+    "message": "Obnovit modely"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Před načtením modelů odsouhlaste sdílení dat."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Před obnovením modelů dokončete uložení klíče API."
+  },
+  "runtime_refreshing": {
+    "message": "Obnovování..."
+  },
+  "runtime_loading": {
+    "message": "Načítání..."
+  },
+  "runtime_models_checking": {
+    "message": "Kontrola kompatibilních modelů u Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Načítání kompatibilních modelů..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Kompatibilní modely nelze načíst."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini nevrátilo žádné kompatibilní modely."
+  },
+  "runtime_model_not_available": {
+    "message": "Vybraný model není v seznamu kompatibilních. Vyberte jiný model."
+  },
+  "runtime_record_key": {
+    "message": "Zaznamenat klávesu"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Záznam zrušen."
+  },
+  "runtime_unknown_key": {
+    "message": "Tato klávesa"
+  },
+  "runtime_press_key": {
+    "message": "Stiskněte klávesu..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Stiskněte jednu podporovanou netisknutelnou klávesu. Escape záznam zruší."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Obnovte modely pro ověření uloženého klíče API."
+  },
+  "runtime_models_add_key": {
+    "message": "Přidejte klíč API pro načtení kompatibilních modelů."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Rozšíření nemohlo načíst uložený stav."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini odmítlo uložený klíč API. Nahraďte ho nebo obnovte modely pro nové ověření."
+  },
+  "runtime_settings_reopen": {
+    "message": "Nastavení se nepodařilo načíst. Otevřete ho znovu a zkuste to ještě jednou."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Nastavení se nepodařilo načíst. Znovu načtěte uložená nastavení. Ukládání je vypnuté, aby chránilo uložené volby."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Stav nastavení se nepodařilo načíst."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Zadejte úplný klíč API bez mezer."
+  },
+  "runtime_key_use_remove": {
+    "message": "Pro smazání klíče použijte Odebrat uložený klíč."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Před uložením klíče API odsouhlaste výše sdílení dat."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Ukládání zašifrovaného klíče API..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Klíč API nelze přečíst nebo uložit. Zadaný údaj zůstává. Zkuste to znovu přes Uložit předvolby."
+  },
+  "runtime_connecting_google": {
+    "message": "Připojování ke Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Zastavování připojení ke Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Souhlas se sdílením dat se nepodařilo uložit. Zkuste to znovu."
+  },
+  "runtime_key_removing": {
+    "message": "Odebírání uloženého klíče..."
+  },
+  "runtime_key_removed": {
+    "message": "Uložený klíč odebrán. Nový můžete přidat po souhlasu se sdílením dat."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Uložený klíč se nepodařilo odebrat. Zkuste to znovu."
+  },
+  "runtime_saving": {
+    "message": "Ukládání..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Vyberte platný jazyk a model."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Vyberte podporovanou klávesu nebo Vypnuto."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Vyberte model z aktuálního seznamu kompatibilních."
+  },
+  "runtime_preferences_saving": {
+    "message": "Ukládání předvoleb..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Předvolby uloženy."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Předvolby uloženy. Přidejte klíč API pro dokončení nastavení."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Předvolby nelze přečíst nebo uložit. Úpravy zůstávají. Zkuste to znovu."
+  },
+  "runtime_key_will_save": {
+    "message": "Klíč API se uloží automaticky."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Dokončete zadávání klíče API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Dokončete uložení klíče API pro načtení kompatibilních modelů."
+  },
+  "runtime_recommended_selected": {
+    "message": "Doporučený model vybrán. Uložte volbu pro jeho použití."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Po uložení bude spouštěcí klávesa vypnutá."
+  },
+  "runtime_connection_changed": {
+    "message": "Nastavení připojení se změnilo. Kontrola uložených nastavení..."
+  },
+  "runtime_models_changed": {
+    "message": "Seznam modelů se změnil. Kontrola kompatibilních modelů..."
+  },
+  "runtime_no_translation": {
+    "message": "Zatím žádný překlad."
+  },
+  "runtime_start_setup": {
+    "message": "Začít nastavení"
+  },
+  "runtime_settings": {
+    "message": "Nastavení"
+  },
+  "runtime_key_rejected": {
+    "message": "Klíč odmítnut"
+  },
+  "runtime_setup_required": {
+    "message": "Vyžaduje nastavení"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Přidejte klíč API v Nastavení, abyste mohli překládat."
+  },
+  "runtime_add_key": {
+    "message": "Přidat klíč API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Klíč je uložen. Otevřete Nastavení, ověřte model a dokončete volbu jazyka."
+  },
+  "runtime_check_setup": {
+    "message": "Ověřit nastavení"
+  },
+  "runtime_translating": {
+    "message": "Překládání"
+  },
+  "runtime_error": {
+    "message": "Chyba"
+  },
+  "runtime_ready": {
+    "message": "Připraveno"
+  },
+  "runtime_status_load_failed": {
+    "message": "Stav rozšíření nelze načíst. Znovu načtěte rozšíření a obnovte stránku."
+  },
+  "runtime_copied": {
+    "message": "Zkopírováno."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopírování bylo zablokováno. Označte text výsledku a zkopírujte ho."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Nastavení nelze otevřít. Zkuste to znovu."
+  },
+  "runtime_translating_progress": {
+    "message": "Překládání..."
+  },
+  "runtime_translation_started": {
+    "message": "Překlad zahájen."
+  },
+  "runtime_translation_complete": {
+    "message": "Překlad dokončen."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Překlad dokončen. Použijte text výsledku nebo ovládání karty."
+  },
+  "runtime_translation": {
+    "message": "Překlad"
+  },
+  "runtime_target_language": {
+    "message": "Cílový jazyk"
+  },
+  "runtime_card_target_language": {
+    "message": "Cílový jazyk této karty"
+  },
+  "runtime_close_card": {
+    "message": "Zavřít kartu překladu"
+  },
+  "runtime_translated_text": {
+    "message": "Přeložený text"
+  },
+  "runtime_retry": {
+    "message": "Zkusit znovu"
+  },
+  "runtime_copy": {
+    "message": "Kopírovat"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Nastavení nelze otevřít. Použijte panel nástrojů rozšíření."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopírování selhalo. Označte text výsledku a zkopírujte ho."
+  },
+  "runtime_context_menu": {
+    "message": "Přeložit vybraný text"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Není v aktuálním seznamu)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Dosud neověřeno)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Používá se seznam modelů z mezipaměti z $value1$. Živé obnovení selhalo. Zkuste to později.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Používá se seznam modelů z mezipaměti. Živé obnovení selhalo. Zkuste to později."
+  },
+  "runtime_models_cache_at": {
+    "message": "Používá se seznam modelů z mezipaměti z $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Používá se seznam modelů z mezipaměti."
+  },
+  "runtime_models_updated_at": {
+    "message": "Seznam modelů aktualizován z $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Seznam modelů aktualizován."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ není podporováno. Stiskněte jinou klávesu nebo Escape pro zrušení.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Po uložení se použije $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Až $value1$ na kartu a celkem $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ s",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Stiskněte Tab pro použití karty nebo Escape pro zavření.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Překlad selhal. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Obnovte otevřené stránky"
+  },
+  "refresh_message": {
+    "message": "Klíč API je uložen. Po dokončení nastavení obnovte stránky, které už byly otevřené. Potom označte text a stiskněte Control pro překlad."
+  },
+  "refresh_continue": {
+    "message": "Pokračovat v nastavení"
+  },
+  "refresh_faq_question": {
+    "message": "Proč musím obnovit otevřené stránky?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Obnovte otevřené stránky</1> po dokončení nastavení, než zkusíte překládat. Chrome musí načíst rozšíření na stránkách otevřených před jeho instalací nebo opětovným načtením. Nově otevřené stránky jsou připravené automaticky."
+  },
+  "ui_locale": {
+    "message": "cs",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

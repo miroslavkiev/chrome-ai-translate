@@ -1,4 +1,5 @@
 import {
+  t,
   DEFAULTS,
   DATA_SHARING_VERSION,
   RECOMMENDED_MODEL,
@@ -254,17 +255,20 @@ async function resetDamagedKey() {
   }
 }
 
-chrome.runtime.onInstalled.addListener(() => {
+function refreshContextMenu() {
   chrome.contextMenus.removeAll(() => {
     void chrome.runtime.lastError;
     chrome.contextMenus.create({
       id: CONTEXT_MENU_ID,
-      title: "Translate Selected Text",
+      title: t("runtime_context_menu"),
       contexts: ["selection"],
       documentUrlPatterns: ["http://*/*", "https://*/*", "file://*/*"],
     }, () => void chrome.runtime.lastError);
   });
-});
+}
+
+chrome.runtime.onInstalled.addListener(refreshContextMenu);
+chrome.runtime.onStartup.addListener(refreshContextMenu);
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   const frameId = info.frameId ?? 0;

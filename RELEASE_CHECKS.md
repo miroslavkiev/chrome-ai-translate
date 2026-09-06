@@ -1,5 +1,23 @@
 # Release checks and translation sample
 
+## Version 1.5.0 interface languages and first setup
+
+The interface now includes all 55 Chrome locales. Manifest text, Settings, popup, translation cards, Help, About, errors and accessibility labels use native Chrome messages with English fallback. The Chrome Concepts and usage guide review is recorded in [I18N.md](I18N.md). Catalog checks require complete message IDs, matching placeholders, safe numbered tags and valid manifest lengths. The 325 translated text messages plus one language metadata message are packaged for each locale. Translations are AI-assisted and have not all had native-speaker review. Setup screenshots and the Store long description remain in English.
+
+New setup suggests the first supported language in Chrome's preferred-language list, then the raw Chrome interface language, then English. Users confirm or change it with Finish setup. Existing saved choices are preserved. A first successful key save opens the approved native dialog with **Refresh open pages** in bold. The same reminder is the first FAQ answer. The existing paid-service notice, agreement version 2, encrypted key storage, model choices and permissions remain unchanged.
+
+The browser review caught a source-folder worker restart issue caused by a native JSON import. Source-folder and packaged installs now use the existing bundled background script. The source-folder browser flow checks worker and full-browser restart. An unsupported Urdu interface also exposed incorrect text direction on English fallback; catalog language metadata now keeps English left-to-right while Urdu remains available as a translation target. The right-click menu refreshes its language on browser startup.
+
+On September 6, 2026, all 92 Node tests passed. Chrome 151.0.7922.34 passed both built-folder and source-folder content checks and full extension flows, including setup, data agreement, first-key reminder, saved language, conflicting tabs, worker restart and encrypted key/agreement survival after closing Chrome. Native encryption checks also passed with real Web Crypto and IndexedDB. These checks used disposable profiles and fake provider replies. No real Google request was made.
+
+Native Chrome locale checks passed for English, German, Arabic, Japanese, Ukrainian, Simplified Chinese, Amharic, Kannada and Malayalam, plus an Urdu Chrome interface using English fallback. Each checked four pages, the full first-key flow, bold refresh dialog, narrow light/dark layouts, preserved target language and one successful translation request. The browser test also passed with an artificial 750 ms delay in content-settings initialization and still produced exactly one card and one request.
+
+The final source checks, 92 tests, build and exact 76-file package checks passed. The ZIP contains all 55 catalogs with 326 messages each. Dependency audit reported zero vulnerabilities. Redacted working-tree and final ZIP scans found no credentials. Git history has one known false positive, the published 1.4.1 ZIP checksum; the previously audited stored-object/archive corpus also has no findings.
+
+ZIP SHA-256: `2eccc56523e7e76478628e85eb2c5217509572c7d704f9062f61877c7866b5d4`.
+
+The refreshed setup and Store images were checked for keys, account details and project names. All eight public screenshots and Store images contain no text or EXIF metadata. Independent code and UX reviews found no remaining material issue. The existing publisher address decision and dashboard submission steps remain recorded separately. Nothing was submitted to the Store. The installed extension still needs a manual Reload action, followed by refreshing open pages.
+
 ## Version 1.4.2 paid-service notice and FAQ
 
 The publisher approved active API project billing in every country and disabled optional contribution of extension request logs or datasets to Google as required supported use. This replaces the earlier unpaid-project decision. Settings, Help, About, privacy and Store documents now agree on these requirements, possible Google charges, private logging versus sharing, and the lack of automatic billing or sharing checks. The public privacy page includes an affirmative Chrome Limited Use commitment for this setup. Store approval, applicable publisher information and submission declarations remain separate matters.
@@ -105,7 +123,7 @@ Independent review found and fixed additional races: startup changes lost betwee
 
 1. Install from the lockfile with `npm ci`.
 2. Run `npm run ci`. This checks repository text and syntax, runs Node tests, builds, packages, and verifies exact archive contents, source freshness, CRC, checksum, and matching versions.
-3. Install the test browser with `npx playwright install chromium`, then run `npm run test:browser`. This tests the built folder, source-root content script, extension pages and native encrypted storage. Use `CHROME_PATH` to repeat with a specific Chrome for Testing executable. The extension-page check accepts `CHROME_UPGRADE_TO` to reopen its temporary profile with a newer Chrome executable. All checks use disposable profiles and fake data. They must never use a personal API key.
+3. Install the test browser with `npx playwright install chromium`, then run `npm run test:browser`. This tests the built folder, source-root content and extension pages, native encrypted storage, and real Chrome locale selection. Use `CHROME_PATH` to repeat with a specific Chrome for Testing executable. The extension-page check accepts `CHROME_UPGRADE_TO` to reopen its temporary profile with a newer Chrome executable. All checks use disposable profiles and fake data. They must never use a personal API key.
 4. Run `npm audit --audit-level=high`. Review any advisory against its actual runtime/build use.
 5. Check light/dark layouts, keyboard focus, long text, Copy failure, and recovery text. Optional `BROWSER_EVIDENCE_DIR` saves popup/settings screenshots in an existing directory.
 6. Finish active translations before reloading the installed extension. Keep the unpacked folder path, reload through Chrome, and refresh a test page. Verify version, saved settings, model/setup state, and active count. Do not uninstall or restart the whole browser to update.

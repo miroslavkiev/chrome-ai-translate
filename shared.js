@@ -1,5 +1,23 @@
+import { t } from "./i18n.js";
+export { t, localizeDocument, uiLocale, uiDirection, languageDisplayName } from "./i18n.js";
+
 export const RECOMMENDED_MODEL = "gemini-3.5-flash-lite";
 export const DATA_SHARING_VERSION = 2;
+
+export function preferredTargetLanguage(languages = []) {
+  for (const language of [...languages, globalThis.chrome?.i18n?.getUILanguage?.() || "en", "en"]) {
+    try {
+      const locale = new Intl.Locale(language.replaceAll("_", "-"));
+      const scriptCode = `${locale.language}-${locale.script}`;
+      const code = locale.language === "zh"
+        ? `zh-${locale.maximize().script}`
+        : isSupportedLanguage(scriptCode) ? scriptCode
+          : ({ nb: "no", nn: "no" }[locale.language] || locale.language);
+      if (isSupportedLanguage(code)) return code;
+    } catch { /* Skip language tags that Chrome cannot resolve. */ }
+  }
+  return "en";
+}
 
 // Legacy defaults remain for existing profiles. New setup requires a language choice.
 export const DEFAULTS = Object.freeze({
@@ -164,32 +182,14 @@ export const SUPPORTED_TRIGGER_KEYS = Object.freeze([
   ...Array.from({ length: 24 }, (_, index) => `F${index + 1}`),
 ]);
 
-export const PUBLIC_ERROR_MESSAGES = Object.freeze({
-  no_selection: "Select some text and try again.",
-  unsupported_selection: "This text selection is not supported.",
-  selection_too_large: "The selection is longer than 10,000 characters. Select less text and try again.",
-  missing_api_key: "Add your Gemini API key in Settings.",
-  agreement_required: "Review and agree to data sharing in Settings before connecting to Google.",
-  credential_conflict: "The saved key changed in another page. Reload saved settings before trying again.",
-  credential_storage_error: "The saved key cannot be opened. Try reopening Settings, or remove it and enter it again.",
-  missing_target_language: "Choose your target language in Settings to finish setup.",
-  invalid_api_key: "Gemini rejected the API key. Check it in Settings.",
-  invalid_model: "This model cannot be used for translation. Choose another model or the recommended Flash-Lite model in Settings.",
-  busy: "Too many translations are active. Try again when one finishes.",
-  duplicate_request: "This selection is already being translated.",
-  rate_limited: "The request limit was reached. Try again shortly.",
-  timeout: "Translation took too long. You can retry it.",
-  offline: "You appear to be offline. Check your connection and retry.",
-  network_error: "Gemini could not be reached. Check your connection and retry.",
-  quota_exceeded: "Gemini quota was reached. Check your account and retry later.",
-  service_error: "Gemini could not complete the translation. Try again later.",
-  invalid_response: "Gemini returned an unreadable response. You can retry it.",
-  output_too_large: "The translation exceeded the output limit. Select less text and try again.",
-  content_blocked: "Gemini blocked this text. Try a different selection.",
-  unsupported_page: "Translation is not available on this page.",
-  frame_unavailable: "The selected frame is no longer available.",
-  cancelled: "Translation was cancelled.",
-});
+const publicErrorCodes = new Set([
+  "no_selection", "unsupported_selection", "selection_too_large", "missing_api_key",
+  "agreement_required", "credential_conflict", "credential_storage_error", "missing_target_language",
+  "invalid_api_key", "invalid_model", "busy", "duplicate_request",
+  "rate_limited", "timeout", "offline", "network_error",
+  "quota_exceeded", "service_error", "invalid_response", "output_too_large",
+  "content_blocked", "unsupported_page", "frame_unavailable", "cancelled",
+]);
 
 const languageCodes = new Set(LANGUAGES.map(({ code }) => code));
 const triggerKeys = new Set(SUPPORTED_TRIGGER_KEYS);
@@ -219,12 +219,12 @@ export function getStoredTriggerKey(record) {
 
 export function formatTriggerKey(key, platform = globalThis.navigator?.userAgentData?.platform
   || globalThis.navigator?.platform || "") {
-  if (key === null) return "Off";
+  if (key === null) return t("key_Off");
   if (/mac/i.test(platform)) {
-    if (key === "Meta") return "Command";
-    if (key === "Alt") return "Option";
+    if (key === "Meta") return t("key_Command");
+    if (key === "Alt") return t("key_Option");
   }
-  return key;
+  return /^F\d+$/.test(key) ? key : t(`key_${key}`);
 }
 
 export function createRequestId(cryptoSource = globalThis.crypto) {
@@ -288,11 +288,11 @@ export function validateSourceText(value) {
 }
 
 export function publicError(code, details = {}) {
-  const safeCode = Object.hasOwn(PUBLIC_ERROR_MESSAGES, code) ? code : "service_error";
+  const safeCode = publicErrorCodes.has(code) ? code : "service_error";
   return {
     ...details,
     code: safeCode,
-    message: PUBLIC_ERROR_MESSAGES[safeCode],
+    message: t(`error_${safeCode}`),
   };
 }
 
@@ -301,7 +301,7 @@ export function getErrorPresentation(error) {
   const retryAfterMs = Number.isFinite(error?.retryAfterMs) && error.retryAfterMs > 0
     ? Math.min(error.retryAfterMs, 3_600_000)
     : 0;
-  const delay = retryAfterMs ? ` Try again in ${Math.ceil(retryAfterMs / 1_000)} seconds.` : "";
+  const delay = retryAfterMs ? t("error_retry_delay", [Math.ceil(retryAfterMs / 1_000)]) : "";
   const action = ["missing_api_key", "missing_target_language", "invalid_api_key", "invalid_model", "agreement_required", "credential_conflict", "credential_storage_error"].includes(code)
     ? "settings"
     : ["busy", "rate_limited", "timeout", "offline", "network_error", "quota_exceeded",

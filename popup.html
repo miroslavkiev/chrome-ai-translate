@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>AI Translator</title>
+  <title data-i18n="html_ai_translator">AI Translator</title>
   <link rel="stylesheet" href="ui.css">
   <style>
     :root {
@@ -64,7 +64,8 @@
       background: var(--control);
       font-size: 11px;
       font-weight: 700;
-      white-space: nowrap;
+      white-space: normal;
+      min-width: 0;
     }
 
     .status::before {
@@ -103,7 +104,7 @@
       overflow: hidden;
       font-size: 13px;
       font-weight: 650;
-      text-align: right;
+      text-align: end;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
@@ -133,7 +134,7 @@
     .result-text:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 
     .result-meta, .copy-status { margin: 8px 0; color: var(--muted); font-size: 12px; }
-    .result-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+    .result-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; }
     .copy-status { margin: 0; }
 
     .settings-button {
@@ -150,9 +151,9 @@
     .settings-button:hover { filter: brightness(1.06); }
     .welcome { padding: 16px; font-size: 13px; line-height: 1.5; }
     .welcome h2 { font-size: 16px; margin-bottom: 8px; }
-    .welcome ol { padding-left: 20px; }
+    .welcome ol { padding-inline-start: 20px; }
     .welcome li + li { margin-top: 9px; }
-    .page-links { display: flex; justify-content: center; gap: 16px; margin-top: 15px; font-size: 12px; }
+    .page-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 15px; font-size: 12px; }
     .page-links a { padding: 5px 0; }
 
     @media (prefers-color-scheme: dark) {
@@ -180,48 +181,48 @@
     <header class="header">
       <img class="app-icon" src="icon.png" alt="" width="42" height="42">
       <div class="title-wrap">
-        <h1>AI Translator</h1>
-        <p class="subtitle">Gemini translation</p>
+        <h1 data-i18n="html_ai_translator">AI Translator</h1>
+        <p class="subtitle" data-i18n="html_gemini_translation">Gemini translation</p>
       </div>
-      <span id="status" class="status" data-state="setup" role="status" aria-live="polite">Setup required</span>
+      <span id="status" class="status" data-state="setup" role="status" aria-live="polite" data-i18n="html_setup_required">Setup required</span>
     </header>
 
     <section id="welcome" class="card welcome" aria-labelledby="welcome-heading" hidden>
-      <h2 id="welcome-heading">Welcome to AI Translator</h2>
-      <p>Translate selected text into a language you know. Set up these two things to start:</p>
+      <h2 id="welcome-heading" data-i18n="html_welcome_to_ai_translator">Welcome to AI Translator</h2>
+      <p data-i18n="html_translate_selected_text_into_a_language_you_know_set">Translate selected text into a language you know. Set up these two things to start:</p>
       <ol>
-        <li><strong>Your Gemini API key.</strong> Get your own key from Google AI Studio. Our guide shows you how.</li>
-        <li><strong>Your target language.</strong> Choose the language you want to read.</li>
+        <li data-i18n="html_your_gemini_api_key_get_your_own_key_from"><strong>Your Gemini API key.</strong> Get your own key from Google AI Studio. Our guide shows you how.</li>
+        <li data-i18n="html_your_target_language_choose_the_language_you_want_to"><strong>Your target language.</strong> Choose the language you want to read.</li>
       </ol>
-      <a href="help.html" target="_blank" rel="noopener noreferrer">How to get an API key</a>
+      <a href="help.html" target="_blank" rel="noopener noreferrer" data-i18n="html_how_to_get_an_api_key">How to get an API key</a>
     </section>
 
-    <section id="statusCard" class="card" aria-label="Extension status">
+    <section id="statusCard" class="card" aria-label="Extension status" data-i18n-aria-label="html_extension_status">
       <div class="metric">
-        <span class="metric-label">Keyboard trigger</span>
-        <span id="shortcut" class="metric-value">Control</span>
+        <span class="metric-label" data-i18n="html_keyboard_trigger">Keyboard trigger</span>
+        <span id="shortcut" class="metric-value" data-i18n="html_control">Control</span>
       </div>
       <div class="metric">
-        <span class="metric-label">Active translations</span>
+        <span class="metric-label" data-i18n="html_active_translations">Active translations</span>
         <span id="activeCount" class="metric-value">0</span>
       </div>
     </section>
 
     <section id="latestCard" class="card result" aria-labelledby="latest-heading">
-      <h2 id="latest-heading">Latest this session</h2>
-      <p id="latestResult" class="result-text" data-kind="empty" tabindex="0" aria-live="polite" aria-labelledby="latest-heading">No translation yet.</p>
+      <h2 id="latest-heading" data-i18n="html_latest_this_session">Latest this session</h2>
+      <p id="latestResult" class="result-text" data-kind="empty" tabindex="0" aria-live="polite" aria-labelledby="latest-heading" data-i18n="html_no_translation_yet">No translation yet.</p>
       <p id="latestMeta" class="result-meta" hidden></p>
       <div class="result-actions">
-        <button id="copyResult" class="button" type="button" hidden>Copy</button>
+        <button id="copyResult" class="button" type="button" hidden data-i18n="html_copy">Copy</button>
         <p id="copyStatus" class="copy-status" role="status"></p>
       </div>
     </section>
 
-    <button id="openSettings" class="settings-button" type="button">Settings</button>
-    <nav class="page-links" aria-label="Help and information">
-      <a href="help.html" target="_blank" rel="noopener noreferrer">Key guide</a>
-      <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
-      <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a>
+    <button id="openSettings" class="settings-button" type="button" data-i18n="html_settings">Settings</button>
+    <nav class="page-links" aria-label="Help and information" data-i18n-aria-label="html_help_and_information">
+      <a href="help.html" target="_blank" rel="noopener noreferrer" data-i18n="html_key_guide">Key guide</a>
+      <a href="about.html" target="_blank" rel="noopener noreferrer" data-i18n="html_about">About</a>
+      <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer" data-i18n="html_privacy">Privacy</a>
     </nav>
   </main>
   <script type="module" src="popup.js"></script>

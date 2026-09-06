@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
-  <title>AI Translator Settings</title>
+  <title data-i18n="html_ai_translator_settings">AI Translator Settings</title>
   <link rel="stylesheet" href="ui.css">
   <style>
     :root {
@@ -36,6 +36,8 @@
       margin: 0 4px 30px;
     }
 
+    .page-header > div { min-width: 0; }
+
     .app-icon {
       display: block;
       width: 56px;
@@ -61,7 +63,7 @@
     .page-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 14px 0 0; }
     a { color: var(--focus); }
     a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-    .setup-list { margin: 16px 0 0; padding-left: 24px; line-height: 1.5; }
+    .setup-list { margin: 16px 0 0; padding-inline-start: 24px; line-height: 1.5; }
     .setup-list li + li { margin-top: 14px; }
     .setup-step { display: block; color: var(--muted); font-size: 13px; }
 
@@ -223,33 +225,37 @@
     <header class="page-header">
       <img class="app-icon" src="icon.png" alt="" width="56" height="56">
       <div>
-        <h1>AI Translator</h1>
-        <p class="subtitle">Private settings for quick, focused translation.</p>
-        <nav class="page-links" aria-label="Help and information">
-          <a href="help.html" target="_blank" rel="noopener noreferrer">API key guide</a>
-          <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
-          <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a>
+        <h1 data-i18n="html_ai_translator">AI Translator</h1>
+        <p class="subtitle" data-i18n="html_private_settings_for_quick_focused_translation">Private settings for quick, focused translation.</p>
+        <nav class="page-links" aria-label="Help and information" data-i18n-aria-label="html_help_and_information">
+          <a href="help.html" target="_blank" rel="noopener noreferrer" data-i18n="html_api_key_guide">API key guide</a>
+          <a href="about.html" target="_blank" rel="noopener noreferrer" data-i18n="html_about">About</a>
+          <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer" data-i18n="html_privacy">Privacy</a>
         </nav>
       </div>
     </header>
 
     <form id="settingsForm" class="stack" novalidate>
       <section id="setupGuide" class="card privacy" aria-labelledby="setup-heading" hidden>
-        <h2 id="setup-heading">Set up AI Translator</h2>
-        <p class="help">Follow these steps here in Settings. You need your own Google API key to translate.</p>
+        <h2 id="setup-heading" data-i18n="html_set_up_ai_translator">Set up AI Translator</h2>
+        <p class="help" data-i18n="html_follow_these_steps_here_in_settings_you_need_your">Follow these steps here in Settings. You need your own Google API key to translate.</p>
         <ol class="setup-list">
           <li>
+            <span data-i18n="html_get_your_own_api_key_open_google_ai_studio">
             <strong>Get your own API key.</strong>
             Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>, sign in, and create a key. Review data sharing below, then paste your key.
             <a href="help.html" target="_blank" rel="noopener noreferrer">Read the step-by-step guide</a> for help.
+            </span>
             <span id="setupKeyStep" class="setup-step"></span>
           </li>
           <li>
+            <span data-i18n="html_choose_your_target_language_and_model_pick_the_language">
             <strong>Choose your target language and model.</strong>
             Pick the language you want translations in. We recommend Gemini Flash-Lite when it is available in your model list.
+            </span>
             <span id="setupLanguageStep" class="setup-step"></span>
           </li>
-          <li>
+          <li data-i18n="html_save_and_start_translating_use_finish_setup_at_the">
             <strong>Save and start translating.</strong>
             Use Finish setup at the bottom of this page. Then select text on a web page and press Control, or choose Translate Selected Text from the right-click menu.
           </li>
@@ -258,35 +264,35 @@
 
       <section class="card" aria-labelledby="api-heading">
         <div class="card-header">
-          <h2 id="api-heading">Gemini</h2>
-          <p class="help">Connect your own Gemini API key and choose a compatible model.</p>
-          <p id="setupStatus" class="model-status" role="status" aria-live="polite">Loading setup state...</p>
+          <h2 id="api-heading" data-i18n="html_gemini">Gemini</h2>
+          <p class="help" data-i18n="html_connect_your_own_gemini_api_key_and_choose_a">Connect your own Gemini API key and choose a compatible model.</p>
+          <p id="setupStatus" class="model-status" role="status" aria-live="polite" data-i18n="html_loading_setup_state">Loading setup state...</p>
         </div>
 
         <section id="dataAgreement" class="privacy data-agreement" aria-labelledby="data-sharing-heading">
-          <h3 id="data-sharing-heading">Before you connect to Google</h3>
-          <p class="agreement-copy">Google receives your API key to check available models. When you request a translation, Google also receives your selected text and target language, including text from local files. AI translations can be wrong.</p>
-          <p class="agreement-copy">Your key is saved encrypted in this Chrome profile and opens automatically after restarts. No extra password is needed. Someone with full access to your browser profile may still recover it. <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Read the privacy details</a>.</p>
-          <p class="agreement-copy"><strong>Required in every country:</strong> use a Gemini API key from a project with <a href="https://ai.google.dev/gemini-api/docs/billing#verify-billing-status" target="_blank" rel="noopener noreferrer">active billing</a>. Keep optional <a href="https://ai.google.dev/gemini-api/docs/logs-policy" target="_blank" rel="noopener noreferrer">sharing of this extension's request logs and datasets with Google</a> off. With these settings, Google's paid terms exclude product improvement use of prompts and responses; safety and legal processing still applies. The extension is free, but Google API charges may apply.</p>
-          <p id="googleUsageNotice" class="help"><strong>Use conditions.</strong> By using Gemini through this extension, you agree to follow the requirements above and <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google's terms</a>. Use is for people aged 18 or older for professional or business purposes, in <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">supported regions</a>. The extension does not verify your billing or sharing settings.</p>
+          <h3 id="data-sharing-heading" data-i18n="html_before_you_connect_to_google">Before you connect to Google</h3>
+          <p class="agreement-copy" data-i18n="html_google_receives_your_api_key_to_check_available_models">Google receives your API key to check available models. When you request a translation, Google also receives your selected text and target language, including text from local files. AI translations can be wrong.</p>
+          <p class="agreement-copy" data-i18n="html_your_key_is_saved_encrypted_in_this_chrome_profile">Your key is saved encrypted in this Chrome profile and opens automatically after restarts. No extra password is needed. Someone with full access to your browser profile may still recover it. <a href="https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Read the privacy details</a>.</p>
+          <p class="agreement-copy" data-i18n="html_required_in_every_country_use_a_gemini_api_key"><strong>Required in every country:</strong> use a Gemini API key from a project with <a href="https://ai.google.dev/gemini-api/docs/billing#verify-billing-status" target="_blank" rel="noopener noreferrer">active billing</a>. Keep optional <a href="https://ai.google.dev/gemini-api/docs/logs-policy" target="_blank" rel="noopener noreferrer">sharing of this extension's request logs and datasets with Google</a> off. With these settings, Google's paid terms exclude product improvement use of prompts and responses; safety and legal processing still applies. The extension is free, but Google API charges may apply.</p>
+          <p id="googleUsageNotice" class="help" data-i18n="html_use_conditions_by_using_gemini_through_this_extension_you"><strong>Use conditions.</strong> By using Gemini through this extension, you agree to follow the requirements above and <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener noreferrer">Google's terms</a>. Use is for people aged 18 or older for professional or business purposes, in <a href="https://ai.google.dev/gemini-api/docs/available-regions" target="_blank" rel="noopener noreferrer">supported regions</a>. The extension does not verify your billing or sharing settings.</p>
           <div class="button-row">
-            <button id="agreeDataSharing" class="button primary" type="button" disabled>Agree and connect to Google</button>
-            <button id="withdrawDataSharing" class="button danger" type="button" hidden disabled>Withdraw data agreement</button>
+            <button id="agreeDataSharing" class="button primary" type="button" disabled data-i18n="html_agree_and_connect_to_google">Agree and connect to Google</button>
+            <button id="withdrawDataSharing" class="button danger" type="button" hidden disabled data-i18n="html_withdraw_data_agreement">Withdraw data agreement</button>
           </div>
-          <p id="agreementStatus" class="model-status" role="status" aria-live="polite">Review the data sharing details before connecting.</p>
-          <p class="help"><a href="help.html#faq" target="_blank" rel="noopener noreferrer">Why are these requirements needed? Read the FAQ</a>.</p>
+          <p id="agreementStatus" class="model-status" role="status" aria-live="polite" data-i18n="html_review_the_data_sharing_details_before_connecting">Review the data sharing details before connecting.</p>
+          <p class="help" data-i18n="html_why_are_these_requirements_needed_read_the_faq"><a href="help.html#faq" target="_blank" rel="noopener noreferrer">Why are these requirements needed? Read the FAQ</a>.</p>
         </section>
 
         <div class="row">
           <div class="row-copy">
-            <label for="apiKey">API key</label>
-            <p id="apiKeyHelp" class="help">After you agree, paste a key to save it encrypted and load models automatically.</p>
+            <label for="apiKey" data-i18n="html_api_key">API key</label>
+            <p id="apiKeyHelp" class="help" data-i18n="html_after_you_agree_paste_a_key_to_save_it">After you agree, paste a key to save it encrypted and load models automatically.</p>
           </div>
           <div class="control-stack">
-            <input id="apiKey" name="apiKey" type="password" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp apiKeyStatus" disabled>
+            <input id="apiKey" name="apiKey" type="password" dir="ltr" autocomplete="off" spellcheck="false" aria-describedby="apiKeyHelp apiKeyStatus" disabled>
             <div class="button-row">
-              <button id="revealKey" class="button" type="button" aria-pressed="false">Show</button>
-              <button id="removeKey" class="button danger" type="button" hidden disabled>Remove saved key</button>
+              <button id="revealKey" class="button" type="button" aria-pressed="false" data-i18n="html_show">Show</button>
+              <button id="removeKey" class="button danger" type="button" hidden disabled data-i18n="html_remove_saved_key">Remove saved key</button>
             </div>
             <p id="apiKeyStatus" class="model-status" role="status" aria-live="polite"></p>
           </div>
@@ -294,15 +300,15 @@
 
         <div class="row">
           <div class="row-copy">
-            <label for="aiModel">Model</label>
-            <p class="help">Known media-only and special-purpose models are hidden.</p>
+            <label for="aiModel" data-i18n="html_model">Model</label>
+            <p class="help" data-i18n="html_known_media_only_and_special_purpose_models_are_hidden">Known media-only and special-purpose models are hidden.</p>
           </div>
           <div class="control-stack">
-            <select id="aiModel" name="aiModel" aria-describedby="modelRecommendation modelStatus" required></select>
-            <p id="modelRecommendation" class="help">We recommend the Gemini Flash-Lite family. At this release (September 2026), our choice is Gemini 3.5 Flash-Lite. You are free to choose another listed model. Some models may not work with this extension. If one fails, choose another model or the recommended one.</p>
+            <select id="aiModel" name="aiModel" dir="ltr" aria-describedby="modelRecommendation modelStatus" required></select>
+            <p id="modelRecommendation" class="help" data-i18n="html_we_recommend_the_gemini_flash_lite_family_at_this">We recommend the Gemini Flash-Lite family. At this release (September 2026), our choice is Gemini 3.5 Flash-Lite. You are free to choose another listed model. Some models may not work with this extension. If one fails, choose another model or the recommended one.</p>
             <div class="button-row">
-              <button id="refreshModels" class="button" type="button" disabled>Refresh models</button>
-              <button id="recommendedModel" class="button" type="button" disabled>Use recommended model</button>
+              <button id="refreshModels" class="button" type="button" disabled data-i18n="html_refresh_models">Refresh models</button>
+              <button id="recommendedModel" class="button" type="button" disabled data-i18n="html_use_recommended_model">Use recommended model</button>
             </div>
             <p id="modelStatus" class="model-status" role="status" aria-live="polite"></p>
           </div>
@@ -311,28 +317,28 @@
 
       <section class="card" aria-labelledby="translation-heading">
         <div class="card-header">
-          <h2 id="translation-heading">Translation</h2>
-          <p class="help">Set the language and optional keyboard trigger.</p>
+          <h2 id="translation-heading" data-i18n="html_translation">Translation</h2>
+          <p class="help" data-i18n="html_set_the_language_and_optional_keyboard_trigger">Set the language and optional keyboard trigger.</p>
         </div>
 
         <div class="row">
           <div class="row-copy">
-            <label for="targetLanguage">Default language</label>
-            <p class="help">A result card can use another language without changing this default.</p>
+            <label for="targetLanguage" data-i18n="html_default_language">Default language</label>
+            <p class="help" data-i18n="html_a_result_card_can_use_another_language_without_changing">A result card can use another language without changing this default.</p>
           </div>
           <select id="targetLanguage" name="targetLanguage" required></select>
         </div>
 
         <div class="row">
           <div class="row-copy">
-            <span class="label" id="shortcutLabel">Keyboard trigger</span>
-            <p id="shortcutHelp" class="help">Single keys can conflict with websites or accessibility tools. Choose Off to use only the context menu.</p>
+            <span class="label" id="shortcutLabel" data-i18n="html_keyboard_trigger">Keyboard trigger</span>
+            <p id="shortcutHelp" class="help" data-i18n="html_single_keys_can_conflict_with_websites_or_accessibility_tools">Single keys can conflict with websites or accessibility tools. Choose Off to use only the context menu.</p>
           </div>
           <div class="control-stack" aria-labelledby="shortcutLabel" aria-describedby="shortcutHelp keyStatus">
             <div class="button-row">
-              <kbd id="shortcutValue" class="shortcut-value">Control</kbd>
-              <button id="recordKey" class="button" type="button" aria-pressed="false">Record key</button>
-              <button id="disableKey" class="button" type="button" aria-pressed="false">Off</button>
+              <kbd id="shortcutValue" class="shortcut-value" data-i18n="html_control">Control</kbd>
+              <button id="recordKey" class="button" type="button" aria-pressed="false" data-i18n="html_record_key">Record key</button>
+              <button id="disableKey" class="button" type="button" aria-pressed="false" data-i18n="html_off">Off</button>
             </div>
             <p id="keyStatus" class="model-status" role="status" aria-live="polite"></p>
           </div>
@@ -341,42 +347,49 @@
 
       <section class="card" aria-labelledby="behavior-heading">
         <div class="card-header">
-          <h2 id="behavior-heading">Behavior</h2>
-          <p class="help">Fixed safeguards keep translations responsive and protect API quota.</p>
+          <h2 id="behavior-heading" data-i18n="html_behavior">Behavior</h2>
+          <p class="help" data-i18n="html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota">Fixed safeguards keep translations responsive and protect API quota.</p>
         </div>
         <div class="row">
-          <div class="row-copy"><span class="label">Parallel requests</span></div>
+          <div class="row-copy"><span class="label" data-i18n="html_parallel_requests">Parallel requests</span></div>
           <p id="parallelLimits" class="value-copy"></p>
         </div>
         <div class="row">
-          <div class="row-copy"><span class="label">Request timeout</span></div>
+          <div class="row-copy"><span class="label" data-i18n="html_request_timeout">Request timeout</span></div>
           <p id="timeoutLimit" class="value-copy"></p>
         </div>
         <div class="row">
-          <div class="row-copy"><span class="label">Page access</span></div>
-          <p class="value-copy">For local files, enable Allow access to file URLs in Manage Extension</p>
+          <div class="row-copy"><span class="label" data-i18n="html_page_access">Page access</span></div>
+          <p class="value-copy" data-i18n="html_for_local_files_enable_allow_access_to_file_urls">For local files, enable Allow access to file URLs in Manage Extension</p>
         </div>
       </section>
 
       <section class="card privacy" aria-labelledby="recovery-heading">
-        <h2 id="recovery-heading">Help and recovery</h2>
-        <p class="privacy-copy">If a model is unavailable, refresh models, choose one from the list, and save preferences. If the list cannot load, check your key and connection, then try Refresh models.</p>
-        <p class="privacy-copy">Chrome settings pages and the Chrome Web Store do not allow translation. For local files, enable Allow access to file URLs in Manage Extension. After an extension update or reload, refresh open web pages. Reloading can interrupt a translation.</p>
+        <h2 id="recovery-heading" data-i18n="html_help_and_recovery">Help and recovery</h2>
+        <p class="privacy-copy" data-i18n="html_if_a_model_is_unavailable_refresh_models_choose_one">If a model is unavailable, refresh models, choose one from the list, and save preferences. If the list cannot load, check your key and connection, then try Refresh models.</p>
+        <p class="privacy-copy" data-i18n="html_chrome_settings_pages_and_the_chrome_web_store_do">Chrome settings pages and the Chrome Web Store do not allow translation. For local files, enable Allow access to file URLs in Manage Extension. After an extension update or reload, refresh open web pages. Reloading can interrupt a translation.</p>
       </section>
 
       <section class="card privacy" aria-labelledby="privacy-heading">
-        <h2 id="privacy-heading">Privacy</h2>
-        <p class="privacy-copy">Translation is not offline. After you agree above, your key is sent directly to Google for model checks. Selected text, including text from local files, is sent with your target language only when you request a translation. Your saved key is encrypted in this Chrome profile. Your language, model, and trigger preference can sync through Chrome. The extension keeps only the latest result for this browser session and does not keep translation history.</p>
-        <p class="privacy-copy">You can review data sharing above and withdraw your agreement at any time. This stops model checks and translations until you agree again. Your saved key is kept unless you choose Remove saved key.</p>
+        <h2 id="privacy-heading" data-i18n="html_privacy">Privacy</h2>
+        <p class="privacy-copy" data-i18n="html_translation_is_not_offline_after_you_agree_above_your">Translation is not offline. After you agree above, your key is sent directly to Google for model checks. Selected text, including text from local files, is sent with your target language only when you request a translation. Your saved key is encrypted in this Chrome profile. Your language, model, and trigger preference can sync through Chrome. The extension keeps only the latest result for this browser session and does not keep translation history.</p>
+        <p class="privacy-copy" data-i18n="html_you_can_review_data_sharing_above_and_withdraw_your">You can review data sharing above and withdraw your agreement at any time. This stops model checks and translations until you agree again. Your saved key is kept unless you choose Remove saved key.</p>
       </section>
 
       <div class="save-bar">
-        <p id="saveStatus" class="save-status" role="status" aria-live="polite">Language, model, and trigger changes are saved here.</p>
-        <button id="reloadSettings" class="button" type="button" hidden>Reload saved settings</button>
-        <button id="saveButton" class="button primary" type="submit" disabled>Save Preferences</button>
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite" data-i18n="html_language_model_and_trigger_changes_are_saved_here">Language, model, and trigger changes are saved here.</p>
+        <button id="reloadSettings" class="button" type="button" hidden data-i18n="html_reload_saved_settings">Reload saved settings</button>
+        <button id="saveButton" class="button primary" type="submit" disabled data-i18n="html_save_preferences">Save Preferences</button>
       </div>
     </form>
   </main>
+  <dialog id="refreshPagesDialog" aria-labelledby="refreshPagesHeading" aria-describedby="refreshPagesMessage">
+    <h2 id="refreshPagesHeading" data-i18n="refresh_heading">Refresh open pages</h2>
+    <p id="refreshPagesMessage" data-i18n="refresh_message">Your API key is saved. After you finish setup, refresh the pages that were already open. Then select text and press Control to translate.</p>
+    <form method="dialog">
+      <button id="refreshPagesDismiss" class="button primary" data-i18n="refresh_continue">Continue setup</button>
+    </form>
+  </dialog>
   <script type="module" src="settings.js"></script>
 </body>
 </html>

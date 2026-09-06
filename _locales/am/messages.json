@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "ቀላል ትርጉም፦ ጽሑፍ ይምረጡና Control ይጫኑ። በGemini ወደ መረጡት ቋንቋ ይተርጉሙ።",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "ጥቂት ጽሑፍ ይምረጡና እንደገና ይሞክሩ።"
+  },
+  "error_unsupported_selection": {
+    "message": "ይህ የጽሑፍ ምርጫ አይደገፍም።"
+  },
+  "error_selection_too_large": {
+    "message": "ምርጫው ከ10,000 ቁምፊዎች ይበልጣል። ያነሰ ጽሑፍ ይምረጡና እንደገና ይሞክሩ።"
+  },
+  "error_missing_api_key": {
+    "message": "የGemini API ቁልፍዎን በቅንብሮች ውስጥ ያክሉ።"
+  },
+  "error_agreement_required": {
+    "message": "ከGoogle ጋር ከመገናኘትዎ በፊት በቅንብሮች ውስጥ የውሂብ ማጋራትን ያንብቡና ይስማሙ።"
+  },
+  "error_credential_conflict": {
+    "message": "የተቀመጠው ቁልፍ በሌላ ገጽ ላይ ተቀይሯል። እንደገና ከመሞከርዎ በፊት የተቀመጡ ቅንብሮችን ዳግም ይጫኑ።"
+  },
+  "error_credential_storage_error": {
+    "message": "የተቀመጠውን ቁልፍ መክፈት አልተቻለም። ቅንብሮችን እንደገና ይክፈቱ፣ ወይም ቁልፉን ያስወግዱና እንደገና ያስገቡ።"
+  },
+  "error_missing_target_language": {
+    "message": "ማዋቀሩን ለመጨረስ በቅንብሮች ውስጥ የትርጉም ቋንቋዎን ይምረጡ።"
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini የAPI ቁልፉን አልተቀበለም። በቅንብሮች ውስጥ ያረጋግጡት።"
+  },
+  "error_invalid_model": {
+    "message": "ይህን ሞዴል ለትርጉም መጠቀም አይቻልም። በቅንብሮች ውስጥ ሌላ ሞዴል ወይም የሚመከረውን Flash-Lite ሞዴል ይምረጡ።"
+  },
+  "error_busy": {
+    "message": "ብዙ ትርጉሞች በአንድ ጊዜ እየተሠሩ ነው። አንዱ ሲጠናቀቅ እንደገና ይሞክሩ።"
+  },
+  "error_duplicate_request": {
+    "message": "ይህ ምርጫ አስቀድሞ እየተተረጎመ ነው።"
+  },
+  "error_rate_limited": {
+    "message": "የጥያቄ ገደቡ ደርሷል። ትንሽ ቆይተው እንደገና ይሞክሩ።"
+  },
+  "error_timeout": {
+    "message": "ትርጉሙ ብዙ ጊዜ ወስዷል። እንደገና መሞከር ይችላሉ።"
+  },
+  "error_offline": {
+    "message": "ከመስመር ውጭ የሆኑ ይመስላል። ግንኙነትዎን ያረጋግጡና እንደገና ይሞክሩ።"
+  },
+  "error_network_error": {
+    "message": "Gemini ላይ መድረስ አልተቻለም። ግንኙነትዎን ያረጋግጡና እንደገና ይሞክሩ።"
+  },
+  "error_quota_exceeded": {
+    "message": "የGemini አጠቃቀም ገደብ ደርሷል። መለያዎን ያረጋግጡና በኋላ ይሞክሩ።"
+  },
+  "error_service_error": {
+    "message": "Gemini ትርጉሙን መጨረስ አልቻለም። በኋላ ይሞክሩ።"
+  },
+  "error_invalid_response": {
+    "message": "Gemini ሊነበብ የማይችል ምላሽ መልሷል። እንደገና መሞከር ይችላሉ።"
+  },
+  "error_output_too_large": {
+    "message": "ትርጉሙ የውጤት ገደቡን አልፏል። ያነሰ ጽሑፍ ይምረጡና እንደገና ይሞክሩ።"
+  },
+  "error_content_blocked": {
+    "message": "Gemini ይህን ጽሑፍ አግዷል። ሌላ ምርጫ ይሞክሩ።"
+  },
+  "error_unsupported_page": {
+    "message": "በዚህ ገጽ ላይ ትርጉም አይገኝም።"
+  },
+  "error_frame_unavailable": {
+    "message": "የተመረጠው ፍሬም ከእንግዲህ የለም።"
+  },
+  "error_cancelled": {
+    "message": "ትርጉሙ ተሰርዟል።"
+  },
+  "key_Off": {
+    "message": "ጠፍቷል"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " ከ$seconds$ ሰከንዶች በኋላ እንደገና ይሞክሩ።",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "የAI Translator ቅንብሮች"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "ለፈጣንና ትኩረት ላለው ትርጉም የግል ቅንብሮች።"
+  },
+  "html_help_and_information": {
+    "message": "እገዛና መረጃ"
+  },
+  "html_api_key_guide": {
+    "message": "የAPI ቁልፍ መመሪያ"
+  },
+  "html_about": {
+    "message": "ስለ ቅጥያው"
+  },
+  "html_privacy": {
+    "message": "ግላዊነት"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translator ያዋቅሩ"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "በቅንብሮች ውስጥ እነዚህን እርምጃዎች ይከተሉ። ለመተርጎም የራስዎ የGoogle API ቁልፍ ያስፈልግዎታል።"
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>የራስዎን የAPI ቁልፍ ያግኙ።</1> <2>Google AI Studio</2> ይክፈቱ፣ ይግቡና ቁልፍ ይፍጠሩ። ከታች ስለ ውሂብ ማጋራት ያንብቡ፣ ከዚያ ቁልፍዎን ይለጥፉ። ለእገዛ <3>የደረጃ በደረጃ መመሪያውን ያንብቡ</3>።"
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>የትርጉም ቋንቋዎንና ሞዴል ይምረጡ።</1> ትርጉሞችን የሚፈልጉበትን ቋንቋ ይምረጡ። በሞዴል ዝርዝርዎ ሲገኝ Gemini Flash-Lite እንመክራለን።"
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>ያስቀምጡና መተርጎም ይጀምሩ።</1> በዚህ ገጽ ግርጌ ላይ ማዋቀርን ጨርስ ይጠቀሙ። ከዚያ በድረ ገጽ ላይ ጽሑፍ ይምረጡና Control ይጫኑ፣ ወይም ከቀኝ ጠቅታ ምናሌ የተመረጠውን ጽሑፍ ተርጉም ይምረጡ።"
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "የራስዎን የGemini API ቁልፍ ያገናኙና ተስማሚ ሞዴል ይምረጡ።"
+  },
+  "html_loading_setup_state": {
+    "message": "የማዋቀር ሁኔታ እየተጫነ ነው..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "ከGoogle ጋር ከመገናኘትዎ በፊት"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google ያሉትን ሞዴሎች ለማረጋገጥ የAPI ቁልፍዎን ይቀበላል። ትርጉም ሲጠይቁ፣ Google ከአካባቢያዊ ፋይሎች የመጣን ጽሑፍ ጨምሮ የመረጡትን ጽሑፍና የትርጉም ቋንቋ ይቀበላል። በሰው ሰራሽ አስተዋይነት የሚሠሩ ትርጉሞች ሊሳሳቱ ይችላሉ።"
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "ቁልፍዎ በዚህ የChrome መገለጫ ውስጥ ተመስጥሮ ይቀመጣል፣ ከዳግም ጅምር በኋላም በራሱ ይከፈታል። ተጨማሪ የይለፍ ቃል አያስፈልግም። የአሳሽዎን መገለጫ ሙሉ በሙሉ ማግኘት የሚችል ሰው ግን ቁልፉን ሊያወጣው ይችላል። <1>የግላዊነት ዝርዝሮችን ያንብቡ</1>።"
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>በሁሉም አገሮች የሚያስፈልግ፦</1> <2>ንቁ ክፍያ ሂሳብ</2> ካለው ፕሮጀክት የGemini API ቁልፍ ይጠቀሙ። የዚህን ቅጥያ <3>የጥያቄ መዝገቦችና የውሂብ ስብስቦች ከGoogle ጋር የማጋራት</3> አማራጭ ያጥፉ። በእነዚህ ቅንብሮች፣ የGoogle የክፍያ ውሎች ጥያቄዎችንና ምላሾችን ለምርት ማሻሻያ መጠቀምን አይፈቅዱም፤ ለደህንነትና ለሕጋዊ ጉዳዮች ማቀናበር ግን ይቀጥላል። ቅጥያው ነፃ ነው፣ ግን የGoogle API ክፍያዎች ሊኖሩ ይችላሉ።"
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>የአጠቃቀም ሁኔታዎች።</1> Gemini በዚህ ቅጥያ ሲጠቀሙ፣ ከላይ ያሉትን መስፈርቶችና <2>የGoogle ውሎችን</2> ለመከተል ይስማማሉ። አጠቃቀሙ 18 ዓመት ወይም ከዚያ በላይ ለሆኑ ሰዎች፣ ለሙያ ወይም ለንግድ ዓላማ፣ <3>በሚደገፉ ክልሎች</3> ነው። ቅጥያው የክፍያ ወይም የማጋራት ቅንብሮችዎን አያረጋግጥም።"
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "ተስማምቻለሁ፣ ከGoogle ጋር አገናኝ"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "የውሂብ ስምምነትን መልስ"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "ከመገናኘትዎ በፊት የውሂብ ማጋራት ዝርዝሮችን ያንብቡ።"
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>እነዚህ መስፈርቶች ለምን ያስፈልጋሉ? ተደጋጋሚ ጥያቄዎችን ያንብቡ</1>።"
+  },
+  "html_api_key": {
+    "message": "የAPI ቁልፍ"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "ከተስማሙ በኋላ፣ ቁልፉ ተመስጥሮ እንዲቀመጥና ሞዴሎች በራሳቸው እንዲጫኑ ቁልፍ ይለጥፉ።"
+  },
+  "html_show": {
+    "message": "አሳይ"
+  },
+  "html_remove_saved_key": {
+    "message": "የተቀመጠውን ቁልፍ አስወግድ"
+  },
+  "html_model": {
+    "message": "ሞዴል"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "ለሚዲያ ብቻና ለልዩ ዓላማ የታወቁ ሞዴሎች ተደብቀዋል።"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "የGemini Flash-Lite ቤተሰብን እንመክራለን። በዚህ ልቀት (ሴፕቴምበር 2026) ምርጫችን Gemini 3.5 Flash-Lite ነው። ሌላ በዝርዝሩ ያለ ሞዴል መምረጥ ይችላሉ። አንዳንድ ሞዴሎች ከዚህ ቅጥያ ጋር ላይሠሩ ይችላሉ። አንዱ ካልሠራ፣ ሌላ ወይም የሚመከረውን ይምረጡ።"
+  },
+  "html_refresh_models": {
+    "message": "ሞዴሎችን አድስ"
+  },
+  "html_use_recommended_model": {
+    "message": "የሚመከረውን ሞዴል ተጠቀም"
+  },
+  "html_translation": {
+    "message": "ትርጉም"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "ቋንቋውንና አማራጭ የማስጀመሪያ ቁልፉን ያዘጋጁ።"
+  },
+  "html_default_language": {
+    "message": "ነባሪ ቋንቋ"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "የውጤት ካርድ ይህን ነባሪ ሳይቀይር ሌላ ቋንቋ መጠቀም ይችላል።"
+  },
+  "html_keyboard_trigger": {
+    "message": "የማስጀመሪያ ቁልፍ"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "ነጠላ ቁልፎች ከድረ ገጾች ወይም ከተደራሽነት መሣሪያዎች ጋር ሊጋጩ ይችላሉ። የአውድ ምናሌውን ብቻ ለመጠቀም ጠፍቷል ይምረጡ።"
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "ቁልፍ መዝግብ"
+  },
+  "html_off": {
+    "message": "ጠፍቷል"
+  },
+  "html_behavior": {
+    "message": "አሠራር"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "ቋሚ መከላከያዎች ትርጉሞች ፈጣን እንዲሆኑ ያደርጋሉ፣ የAPI አጠቃቀም ገደብንም ይጠብቃሉ።"
+  },
+  "html_parallel_requests": {
+    "message": "በአንድ ጊዜ የሚላኩ ጥያቄዎች"
+  },
+  "html_request_timeout": {
+    "message": "የጥያቄ የጊዜ ገደብ"
+  },
+  "html_page_access": {
+    "message": "የገጽ መዳረሻ"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "ለአካባቢያዊ ፋይሎች፣ በቅጥያ አስተዳደር ውስጥ ወደ ፋይል URL መዳረሻን ይፍቀዱ"
+  },
+  "html_help_and_recovery": {
+    "message": "እገዛና መመለስ"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "ሞዴል ከሌለ፣ ሞዴሎችን ያድሱ፣ ከዝርዝሩ አንዱን ይምረጡና ምርጫዎችን ያስቀምጡ። ዝርዝሩ መጫን ካልቻለ፣ ቁልፍዎንና ግንኙነትዎን ያረጋግጡ፣ ከዚያ ሞዴሎችን አድስ ይሞክሩ።"
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "የChrome ቅንብር ገጾችና Chrome Web Store ትርጉም አይፈቅዱም። ለአካባቢያዊ ፋይሎች፣ በቅጥያ አስተዳደር ውስጥ ወደ ፋይል URL መዳረሻን ይፍቀዱ። ቅጥያው ከተዘመነ ወይም እንደገና ከተጫነ በኋላ የተከፈቱ ድረ ገጾችን ያድሱ። ዳግም መጫን ትርጉምን ሊያቋርጥ ይችላል።"
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "ትርጉም ያለ ኢንተርኔት አይሠራም። ከላይ ከተስማሙ በኋላ፣ ቁልፍዎ ለሞዴል ማረጋገጫ በቀጥታ ወደ Google ይላካል። ከአካባቢያዊ ፋይሎች የተመረጠን ጨምሮ ጽሑፍ፣ ትርጉም ሲጠይቁ ብቻ ከትርጉም ቋንቋዎ ጋር ይላካል። የተቀመጠው ቁልፍ በዚህ የChrome መገለጫ ውስጥ ተመስጥሯል። የቋንቋ፣ ሞዴልና ቁልፍ ምርጫዎችዎ በChrome ሊመሳሰሉ ይችላሉ። ቅጥያው ለዚህ የአሳሽ ክፍለ ጊዜ የመጨረሻውን ውጤት ብቻ ይይዛል፣ የትርጉም ታሪክ አያስቀምጥም።"
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "ከላይ የውሂብ ማጋራትን ማየትና ስምምነትዎን በማንኛውም ጊዜ መመለስ ይችላሉ። ይህ እንደገና እስኪስማሙ ድረስ የሞዴል ማረጋገጫዎችንና ትርጉሞችን ያቆማል። የተቀመጠውን ቁልፍ አስወግድ ካልመረጡ በስተቀር ቁልፍዎ ይቀመጣል።"
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "የቋንቋ፣ ሞዴልና ቁልፍ ለውጦች እዚህ ይቀመጣሉ።"
+  },
+  "html_reload_saved_settings": {
+    "message": "የተቀመጡ ቅንብሮችን ዳግም ጫን"
+  },
+  "html_save_preferences": {
+    "message": "ምርጫዎችን አስቀምጥ"
+  },
+  "html_gemini_translation": {
+    "message": "የGemini ትርጉም"
+  },
+  "html_setup_required": {
+    "message": "ማዋቀር ያስፈልጋል"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "ወደ AI Translator እንኳን ደህና መጡ"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "የተመረጠ ጽሑፍ ወደሚያውቁት ቋንቋ ይተርጉሙ። ለመጀመር እነዚህን ሁለት ነገሮች ያዋቅሩ፦"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>የGemini API ቁልፍዎ።</1> ከGoogle AI Studio የራስዎን ቁልፍ ያግኙ። መመሪያችን እንዴት እንደሆነ ያሳያል።"
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>የትርጉም ቋንቋዎ።</1> ማንበብ የሚፈልጉበትን ቋንቋ ይምረጡ።"
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "የAPI ቁልፍ እንዴት ማግኘት ይቻላል"
+  },
+  "html_extension_status": {
+    "message": "የቅጥያ ሁኔታ"
+  },
+  "html_active_translations": {
+    "message": "ንቁ ትርጉሞች"
+  },
+  "html_latest_this_session": {
+    "message": "በዚህ ክፍለ ጊዜ የመጨረሻው"
+  },
+  "html_no_translation_yet": {
+    "message": "ገና ትርጉም የለም።"
+  },
+  "html_copy": {
+    "message": "ቅዳ"
+  },
+  "html_settings": {
+    "message": "ቅንብሮች"
+  },
+  "html_key_guide": {
+    "message": "የቁልፍ መመሪያ"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translator መጠቀም ይጀምሩ"
+  },
+  "html_extension_pages": {
+    "message": "የቅጥያ ገጾች"
+  },
+  "html_faq": {
+    "message": "ተደጋጋሚ ጥያቄዎች"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "የራስዎን የGoogle API ቁልፍ ያግኙ፣ ቋንቋ ይምረጡና የመጀመሪያ ምርጫዎን ይተርጉሙ።"
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. የAPI ቁልፍዎን ያግኙ"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "የAPI ቁልፍ ይህ ቅጥያ በGoogle መለያዎ በኩል Gemini እንዲጠቀም ያስችላል። እንደ የይለፍ ቃል በሚስጥር ይያዙት።"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "ይህ ቅጥያ 18 ዓመት ወይም ከዚያ በላይ ለሆኑ ሰዎች፣ ለሥራ ወይም ለንግድ አጠቃቀም፣ <1>Google በሚደግፋቸው አገሮችና ክልሎች</1> ነው። በሁሉም አገሮች የAPI ቁልፍዎ ንቁ ክፍያ ሂሳብ ያለው የGemini ፕሮጀክት መሆን አለበት። የዚህን ቅጥያ የጥያቄ መዝገቦችና የውሂብ ስብስቦች ከGoogle ጋር የማጋራት አማራጭ ያጥፉ።"
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "ይህን ቅጥያ በመጠቀም እነዚህን ሁኔታዎች፣ <1>የGoogle API ውሎችን</1> እና <2>የGemini API ተጨማሪ ውሎችን</2> ለመከተል ይስማማሉ። እነዚህን ሁኔታዎች ማሟላት ካልቻሉ አይጠቀሙበት። ቅጥያው እነዚህን እውነታዎች አያረጋግጥም፣ የመታወቂያ ሰነዶችንም አይጠይቅም።"
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio ይክፈቱ"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "ወደ Google መለያዎ ይግቡ። ከተጠየቁ የGoogle ውሎችን ይቀበሉ።"
+  },
+  "html_create_or_choose_a_key": {
+    "message": "ቁልፍ ይፍጠሩ ወይም ይምረጡ"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "በAPI Keys ገጽ ላይ <1>Create API key</1> ይምረጡና ፕሮጀክት ለመምረጥ ወይም ለመፍጠር የGoogle እርምጃዎችን ይከተሉ። ፕሮጀክት የAPI አጠቃቀምዎንና ማንኛውንም ክፍያ ያሰባስባል። ለAI Studio አዲስ ከሆኑ፣ Google ነባሪ ፕሮጀክትና ቁልፍ አስቀድሞ ፈጥሮልዎት ሊሆን ይችላል።"
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "ነባሩ ፕሮጀክትዎ ካልታየ፣ <1>Dashboard > Projects > Import projects</1> ይክፈቱ። ፕሮጀክትዎን ያስመጡና ወደ API Keys ይመለሱ።"
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "ቁልፉን ከመጠቀምዎ በፊት፣ ፕሮጀክቱ ንቁ ክፍያ ሂሳብ እንዳለው ለማረጋገጥ <1>የGoogle የክፍያ መመሪያን</1> ይከተሉ። የGemini መተግበሪያ የክፍያ ደንበኝነት የAPI ፕሮጀክት ክፍያን አይተካም። የዚህን ቅጥያ የጥያቄ መዝገቦችና የውሂብ ስብስቦች ከGoogle ጋር የማጋራት አማራጭ ያጥፉ፤ <2>የGoogle የመዝገብ ማጋራት ፖሊሲን</2> ያንብቡ። የፕሮጀክት የግል መዝገብ ማስቀመጥ ከማጋራት የተለየ ነው።"
+  },
+  "html_copy_your_key": {
+    "message": "ቁልፍዎን ይቅዱ"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "ቁልፉን ከAI Studio ይቅዱ። ወደ ቅጥያው ቅንብሮች ይመለሱና የውሂብ ማጋራት ዝርዝሮችን ያንብቡ። <1>ተስማምቻለሁ፣ ከGoogle ጋር አገናኝ</1> ይምረጡ፣ ከዚያ ቁልፍዎን በ<2>የAPI ቁልፍ</2> መስክ ውስጥ ይለጥፉ። በራሱ ተመስጥሮ ይቀመጣል፣ የሞዴል ዝርዝርዎም ይጫናል። ከመቀጠልዎ በፊት ውጤቱን ይጠብቁ።"
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "የውሂብ ማጋራት ማሳወቂያን፣ ከባዶ የAPI ቁልፍ መስክ በላይ ያለውን የስምምነት አዝራርና የFlash-Lite ሞዴል ምክርን የሚያሳዩ የAI Translator ቅንብሮች።"
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "ምሳሌው በእንግሊዝኛ ታይቷል። በAI Translator ውስጥ፣ መጀመሪያ በውሂብ ማጋራት ይስማሙ፣ ከዚያ የራስዎን ቁልፍ ይለጥፉ። የሞዴል ዝርዝሩ የተመሰጠረው ቁልፍ ከተቀመጠ በኋላ ይረጋገጣል።"
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google እነዚህን ማያዎች ሊቀይር ይችላል። ለወቅታዊ እርምጃዎች ወይም ለቁልፍ ስህተቶች <1>የGoogle የAPI ቁልፍ መመሪያን</1> ያንብቡ። የቆየ ቁልፍ ካልሠራ ከAI Studio አዲስ ቁልፍ ይጠቀሙ።"
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. የትርጉም ቅንብሮችዎን ይምረጡ"
+  },
+  "html_choose_a_model": {
+    "message": "ሞዴል ይምረጡ"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "የGemini Flash-Lite ቤተሰብን እንመክራለን። ለዚህ የሴፕቴምበር 2026 ልቀት ምርጫችን <1>Gemini 3.5 Flash-Lite</1> ነው። በሞዴል ዝርዝርዎ ሲገኝ ይጠቀሙበት።"
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "ሌላ በዝርዝሩ ያለ ሞዴል መምረጥ ይችላሉ። አንዳንድ ሞዴሎች ከዚህ ቅጥያ ጋር ላይሠሩ ይችላሉ። ሞዴል ካልሠራ፣ ሌላ ይምረጡ ወይም የሚመከረውን ይጠቀሙ።"
+  },
+  "html_choose_your_target_language": {
+    "message": "የትርጉም ቋንቋዎን ይምረጡ"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "በ<1>ነባሪ ቋንቋ</1> ውስጥ ማንበብ የሚፈልጉበትን ቋንቋ ይምረጡ። ምርጫዎቹ <2>Google የዘረዘራቸውን የGemini ቋንቋዎች</2> ይከተላሉ። የትርጉም ጥራት እንደ ቋንቋና ጽሑፍ ሊለያይ ይችላል።"
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "የትርጉም ቋንቋ ምርጫንና የማስጀመሪያ ቁልፍ መቆጣጠሪያዎችን የሚያሳዩ የAI Translator የትርጉም ቅንብሮች።"
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "ምሳሌው በእንግሊዝኛ ታይቷል። የትርጉም ቋንቋዎን ይምረጡ፣ ከዚያ ማዋቀሩን ይጨርሱ።"
+  },
+  "html_finish_setup": {
+    "message": "ማዋቀርን ጨርስ"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control እንደ ማስጀመሪያ ቁልፍ ይያዙ፣ ሌላ ቁልፍ ይመዝግቡ፣ ወይም የቀኝ ጠቅታ ምናሌውን ብቻ ለመጠቀም <1>ጠፍቷል</1> ይምረጡ። በቅንብሮች ግርጌ <2>ማዋቀርን ጨርስ</2> ይምረጡ። እነዚህን ምርጫዎች በኋላ <3>ምርጫዎችን አስቀምጥ</3> በመጠቀም መቀየር ይችላሉ።"
+  },
+  "html_open_settings": {
+    "message": "ቅንብሮችን ክፈት"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. የመጀመሪያ ምርጫዎን ይተርጉሙ"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "መደበኛ ድረ ገጽ ይክፈቱና አጭር ጽሑፍ ይምረጡ። በቀኝ ይጫኑና <1>የተመረጠውን ጽሑፍ ተርጉም</1> ይምረጡ፣ ወይም የመረጡትን ቁልፍ ይጫኑና ይልቀቁ። ውጤቱ ከምርጫው አጠገብ ይታያል።"
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "ቅጥያው አሁን ከተጫነ ወይም ዳግም ከተጫነ፣ መጀመሪያ ድረ ገጹን ያድሱ። የChrome ቅንብር ገጾች፣ Chrome Web Store እና አብሮ የተካተተው የPDF መመልከቻ ትርጉም አይፈቅዱም።"
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "የመሣሪያ አሞሌው ብቅ ባይ የመጨረሻውን ውጤት ያሳያል። ማዋቀር ሲጠናቀቅ መደበኛውን እይታ ይከፍታል። የAPI ቁልፍዎን ካስወገዱ፣ የእንኳን ደህና መጡ መመሪያው እንደገና ይታያል።"
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "ተደጋጋሚ ጥያቄዎች፦ ቁልፎች፣ ወጪዎችና ግላዊነት"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "የራሴ የAPI ቁልፍ ለምን ያስፈልገኛል?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "ይህ ቅጥያ የራስዎን ቁልፍ ተጠቅሞ ጥያቄዎችን በቀጥታ ወደ Google ፕሮጀክትዎ ለመላክ ተዘጋጅቷል። ይህ የንድፍ ምርጫ ነው፣ የChrome ደንብ አይደለም። ቁልፍዎ ጥያቄዎችን ይፈቅዳል፣ ከአጠቃቀምዎና ከክፍያዎ ጋርም ያገናኛቸዋል። በስክሪን ቀረጻዎች ወይም በይፋዊ መልእክቶች ፈጽሞ አያጋሩት። <1>የGoogle የAPI ቁልፍ መመሪያን</1> ይመልከቱ።"
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "ንቁ ክፍያ ሂሳብ ለምን ምክር ብቻ ሳይሆን ግዴታ ሆነ?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>የChrome የተገደበ አጠቃቀም ደንቦች፣ ነጥብ 3 እና 5</1>፣ የውሂብ አጠቃቀምን ለቅጥያው ዓላማና ለተዛማጅ ሥራዎች ይገድባሉ። አንዳንድ ነፃ የGemini አጠቃቀም ሰፊ የሞዴል ሥልጠናና የሰው ግምገማ ይፈቅዳል። የክፍያ ውሎች ለምርት ማሻሻያ መጠቀምን ያስወግዳሉ፣ ግን ለደህንነትና ለሕጋዊ ጉዳዮች የተገደበ ማቆየትና ከአውሮፓ ህብረት ውጭ ማቀናበርን ይፈቅዳሉ።"
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "ይህን ግጭት ለመፍታት፣ አዘጋጁ በዓለም ሁሉ ንቁ የፕሮጀክት ክፍያ ሂሳብ ይጠይቃል። ምክር ብቻ ቢሆን ነፃ አጠቃቀም ይፈቀዳል። የGoogle የራሱ ክልላዊ ደንብ በአውሮፓ ኢኮኖሚ አካባቢ፣ በዩናይትድ ኪንግደምና በስዊዘርላንድ ለሚቀርቡ መተግበሪያዎች የክፍያ አገልግሎቶችን ይጠይቃል። <1>የGemini ውሎች፦ የአጠቃቀም ገደቦች፣ ነፃ አገልግሎቶችና የክፍያ አገልግሎቶች</1> ይመልከቱ።"
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "ከGoogle ጋር የማጋራት አማራጭ ለምን መጥፋት አለበት?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "መዝገቦችን ወይም የውሂብ ስብስቦችን ማጋራት፣ ንቁ ክፍያ ሂሳብ ቢኖርም የሞዴል ሥልጠናና የሰው ግምገማ ሊፈቅድ ይችላል። በውሂብ ስብስብ ማጋራት ወይም በግብረመልስ በኩል የዚህን ቅጥያ ውሂብ አያበርክቱ። በዚህ ደንብ የራስዎን ፕሮጀክት መዝገብ በግል ማስቀመጥ ይፈቀዳል። <1>የGoogle የመዝገብ ፖሊሲ፦ ሊጋራ የሚችል ውሂብ እና ውሂብዎን እንዴት እንጠቀማለን</1> ይመልከቱ።"
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "የክፍያ API መዳረሻ ካስፈለገኝ ቅጥያው ነፃ ነው?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "አዎ። ቅጥያው ነፃ ነው፣ ግን የGoogle API ክፍያዎች ሊኖሩ ይችላሉ። የGemini መተግበሪያ የክፍያ ደንበኝነት የAPI ፕሮጀክት ክፍያን አይተካም። <1>ክፍያን እንዴት ማረጋገጥ እንደሚቻል</1> እና <2>የGoogle API ዋጋዎችን</2> ይመልከቱ። ቅጥያው የክፍያ ወይም የማጋራት ቅንብሮችን አያረጋግጥም።"
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "ተስማምቻለሁ፣ ከGoogle ጋር አገናኝ ለምን መምረጥ አለብኝ?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>የChrome የመግለጫ መስፈርቶች፣ ነጥብ 1 እና 2</1>፣ ግልጽ የውሂብ አጠቃቀም ዝርዝሮችና መረጃን መሠረት ያደረገ ስምምነት ይጠይቃሉ። አዝራራችን ማንኛውም የGoogle API ጥያቄ ከመላኩ በፊት ይህን ምርጫ እንዲያደርጉ ያስችላል። ማንነትዎን ወይም ክፍያዎን አያረጋግጥም፣ የሌሎች ሰዎችን የግል መረጃ ለማጋራትም ፈቃድ አይሰጥም።"
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "በትክክል ምን ወደ Google ይላካል?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "የሞዴል ማረጋገጫ ቁልፍዎን ይልካል፣ ያሉ ሞዴሎችንም ይጠይቃል። ትርጉም የተመረጠውን ጽሑፍ፣ የትርጉም ቋንቋ፣ ሞዴልና የትርጉም መመሪያዎች ይልካል። ይህ የተመረጠ የአካባቢያዊ ፋይል ጽሑፍን ያካትታል። ቅጥያው ሙሉ ገጹን፣ የገጹን አድራሻ ወይም የአሰሳ ታሪክ አይጨምርም። Google እንደ IP አድራሻዎ ያሉ የግንኙነት ዝርዝሮችንም ይቀበላል። አዘጋጁ ከእነዚህ ጥያቄዎች ምንም አይቀበልም። ማጋራት የሚፈቀድልዎትን ጽሑፍ ብቻ ይላኩ።"
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "ቁልፌ እንዴት ይቀመጣል፣ በራሱስ እንዴት ይከፈታል?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "የAPI ቁልፍዎ ተመስጥሮ ይቀመጣል። እሱና የምስጠራ ቁልፉ ከዳግም ጅምር በኋላ በራሳቸው ለመሥራት በዚህ የChrome መገለጫ ውስጥ ይቆያሉ። አይመሳሰሉም። መገለጫውን ማግኘት የሚችል ሰው የAPI ቁልፉን አሁንም ሊያወጣ ይችላል። ይህ የስርዓተ ክወና የቁልፍ ማከማቻ ወይም በይለፍ ቃል የተጠበቀ ሳጥን አይደለም። የቋንቋ፣ ሞዴልና ማስጀመሪያ ቁልፍ ምርጫዎች ሊመሳሰሉ ይችላሉ። ለአሳሹ ክፍለ ጊዜ የመጨረሻው ውጤት ብቻ ይቆያል፤ የአጠቃቀም ትንተና ወይም የትርጉም ታሪክ የለም።"
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "ማሻሻያ የቆየ የተቀመጠ ቁልፍን ከመመስጠርና ከማረጋገጥ በኋላ ያልተመሰጠሩ ቅጂዎቹን ይሰርዛል። ይህ ካልተሳካ፣ የቆየው ቅጂ ተቀምጦ ይቆያል፣ ጥያቄዎችም ተዘግተው ይቀጥላሉ። ቅንብሮች ስህተቱን ያብራራሉ። የቆየ ቁልፍ ማዛወር ስምምነትን አያልፍም።"
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "ስምምነቴን መመለስ ወይም ቁልፌን ማስወገድ እችላለሁ?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "በ<1>ቅንብሮች</1> ውስጥ፣ <2>የውሂብ ስምምነትን መልስ</2> አዲስ ጥያቄዎችን ያግዳል፣ ንቁ ጥያቄዎችንም በመሣሪያዎ ላይ ይሰርዛል፣ ቁልፍዎንና ምርጫዎችዎን ግን ያቆያል። <3>የተቀመጠውን ቁልፍ አስወግድ</3> የተቀመጠውን ቁልፍ፣ የምስጠራ ቁልፉንና የሞዴል ጊዜያዊ ማከማቻን ይሰርዛል። ሁለቱም አስቀድሞ የተላከ ውሂብ አይመልሱም፣ የተላከ ጥያቄ ነፃ እንደሚሆንም አያረጋግጡም። ቁልፉን በGoogle በኩልም ለማቦዘን በAI Studio ውስጥ ይሻሩት።"
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "ስምምነትዎ በመደበኛ ዳግም ጅምሮችና ዝመናዎች ውስጥ ተቀምጦ ይቆያል። ማሳወቂያው ከተቀየረ፣ እስኪያነቡትና እንደገና እስኪስማሙ ድረስ ጥያቄዎች ይጠብቃሉ።"
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "ይህ ለምን ለአዋቂዎችና ለሥራ ወይም ለንግድ አጠቃቀም ብቻ ነው?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google ተጠቃሚዎች ቢያንስ 18 ዓመት እንዲሆኑና በሚደገፉ ክልሎች ለሙያ ወይም ለንግድ እንዲጠቀሙ ይጠይቃል። <1>የGemini ውሎች፦ የዕድሜ መስፈርቶችና የአጠቃቀም ገደቦች</1> እና <2>የሚገኙ ክልሎችን</2> ይመልከቱ። ይህ ቅጥያ የተለየ የብቁነት ማረጋገጫ ሳጥን ወይም የማንነት ማረጋገጫ የለውም።"
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "ከዚህ ማሳወቂያ በተጨማሪ የግላዊነት ፖሊሲ ለምን ያስፈልጋል?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "ማሳወቂያው ከመገናኘትዎ በፊት ምርጫውን ያብራራል። ፖሊሲው የውሂብ፣ ማከማቻና ማስወገድ ሙሉ ዝርዝሮችን ይሰጣል። <1>የChrome የግላዊነት ፖሊሲ ደንቦች</1> የተጠቃሚ ውሂብ ለሚያቀናብሩ ቅጥያዎች ይህን ይጠይቃሉ። <2>የግላዊነት ፖሊሲያችንን</2> ያንብቡ። እነዚህ ማሳወቂያዎች Google ቅጥያውን አጽድቆታል ማለት አይደሉም።"
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "በሰው ሰራሽ አስተዋይነት የሚሠሩ ትርጉሞች ሊሳሳቱ ይችላሉ። በእነሱ ከመተማመንዎ በፊት አስፈላጊ አገላለጾችን ያረጋግጡ።"
+  },
+  "html_about_ai_translator": {
+    "message": "ስለ AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "ቀላል ትርጉም፦ ጽሑፍ ይምረጡና Control ይጫኑ።"
+  },
+  "html_made_for_people": {
+    "message": "ለሰዎች የተሠራ"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "AI Translator ሰዎች ከቋንቋ ድንበሮች ባሻገር እንዲያነቡ፣ እንዲማሩና እንዲገናኙ ለመርዳት ፈጠርኩት። በዓለም ዙሪያ ላሉ ሰዎች ጠቃሚ እንዲሆን ተስፋ አደርጋለሁ።"
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "ቅጥያው የራስዎን የGoogle Gemini API ቁልፍ በመጠቀም የመረጡትን ጽሑፍ ይተረጉማል። ምን እንደሚላክና በምን ቋንቋ እንደሚያነቡ እርስዎ ይመርጣሉ።"
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "ምርጫዎን ለመተርጎም Control ይጫኑና ይልቀቁ። Control ነባሪ ቁልፍ ነው፣ በቅንብሮች ውስጥም ሊቀየር ይችላል። የገጹን የቀኝ ጠቅታ ምናሌም መጠቀም ይችላሉ።"
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "በMac ላይ ብቻ በሰው ተፈትኗል። Windows እና Linux በሰው አልተፈተኑም።"
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>የምንጭ ኮዱንና የፕሮጀክት መመሪያውን ይመልከቱ</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>እገዛ ያግኙ ወይም ችግር ያሳውቁ</1>። ሪፖርቶች ይፋዊ ናቸው። የAPI ቁልፎች፣ የግል ጽሑፍ ወይም የግል ዝርዝሮች አያካትቱ።"
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "ሥራዬን መደገፍ ከፈለጉ"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "እባክዎ አገሬን ዩክሬንን ከሩሲያ ጥቃት እራሷን ስትከላከል ይደግፉ።"
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Sternenko Community Foundation አምነዋለሁ። መርዳት ከቻሉና ከፈለጉ፣ በይፋዊ ድረ ገጹ በኩል መለገስ ይችላሉ።"
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>በፋውንዴሽኑ በኩል ዩክሬንን ይደግፉ</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "ድጋፍ የፈቃድ ነው፣ ይህን ቅጥያ ለመጠቀም ፈጽሞ አያስፈልግም። ይህ አገናኝ ውጫዊ ድረ ገጽ ይከፍታል። ልገሳዎች በፋውንዴሽኑ በኩል እንጂ በቅጥያው በኩል አይሄዱም።"
+  },
+  "html_privacy_and_costs": {
+    "message": "ግላዊነትና ወጪዎች"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "የAPI ቁልፍዎ በዚህ መሣሪያ ላይ ተመስጥሯል፣ አይመሳሰልም። Chrome በመደበኛ መንገድ እንደገና ሲጀምር፣ የመክፈቻ የይለፍ ቃል ሳያስፈልግ ይገኛል። የአሳሹን መገለጫ ማግኘት የሚችል ሰው ግን ቁልፉን ሊያወጣ ይችላል።"
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "የመጀመሪያው የGoogle ጥያቄ ከመላኩ በፊት፣ ቅንብሮች የውሂብ ማጋራትን ያብራራሉ፣ <1>ተስማምቻለሁ፣ ከGoogle ጋር አገናኝ</1> እንዲመርጡም ይጠይቃሉ። ከዚያ በኋላ የተመረጠው ጽሑፍ ትርጉም ሲጠይቁ ብቻ በቀጥታ ወደ Google ይላካል። የሞዴል ማረጋገጫዎች ቁልፍዎን እንጂ የተመረጠ ጽሑፍ አይልኩም። ቅጥያው የአጠቃቀም ትንተና፣ ማስታወቂያ ወይም የትርጉም ታሪክ የለውም።"
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "ዝርዝሮቹን በ<1>ቅንብሮች</1> ውስጥ በማንኛውም ጊዜ ያንብቡ። የተመሰጠረውን ቁልፍና ምርጫዎችዎን እያቆዩ አዲስ ጥያቄዎችን ለማቆም <2>የውሂብ ስምምነትን መልስ</2> ይምረጡ፣ ወይም ቁልፉንና የሞዴል ጊዜያዊ ማከማቻን ለመሰረዝ <3>የተቀመጠውን ቁልፍ አስወግድ</3> ይምረጡ። አስቀድሞ የተላከ ውሂብ መመለስ አይቻልም።"
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "ትርጉሞች በሰው ሰራሽ አስተዋይነት ይፈጠራሉ፣ ሊሳሳቱም ይችላሉ። በእነሱ ከመተማመንዎ በፊት አስፈላጊ አገላለጾችን ያረጋግጡ።"
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>የግላዊነት ዝርዝሮችን ያንብቡ</1>።"
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator ነፃና ገለልተኛ ፕሮጀክት ነው። የGoogle API ክፍያዎች ሊኖሩ ይችላሉ። በሁሉም አገሮች <1>ንቁ ክፍያ ሂሳብ</1> ካለው ፕሮጀክት የGemini API ቁልፍ ይጠቀሙ፣ የዚህን ቅጥያ <2>የጥያቄ መዝገቦችና የውሂብ ስብስቦች ከGoogle ጋር የማጋራት</2> አማራጭም ያጥፉ። በእነዚህ ቅንብሮች፣ የGoogle የክፍያ ውሎች ጥያቄዎችንና ምላሾችን ለምርት ማሻሻያ መጠቀምን አይፈቅዱም፤ ለደህንነትና ለሕጋዊ ጉዳዮች ማቀናበር ግን ይቀጥላል። <3>የGoogle የዋጋና የውሂብ አጠቃቀም ማስታወሻዎችን</3> ያንብቡ።"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "ይህ ቅጥያ 18 ዓመት ወይም ከዚያ በላይ ለሆኑ ሰዎች፣ ለሥራ ወይም ለንግድ አጠቃቀም፣ <1>Google በሚደግፋቸው ክልሎች</1> ነው። ቅጥያውን በመጠቀም እነዚህን ሁኔታዎች፣ <2>የGoogle API ውሎችን</2> እና <3>የGemini API ተጨማሪ ውሎችን</3> ለመከተል ይስማማሉ። ማሟላት ካልቻሉ አይጠቀሙበት። የብቁነት ማረጋገጫ ሳጥን ወይም የማንነት ማረጋገጫ አይጠቀምም። ቅጥያው የክፍያ ወይም የማጋራት ቅንብሮችዎን አያረጋግጥም።"
+  },
+  "runtime_unsaved_changes": {
+    "message": "ያልተቀመጡ ለውጦች።"
+  },
+  "runtime_settings_conflict": {
+    "message": "ቅንብሮች በሌላ ገጽ ላይ ተቀይረዋል። ለውጦችዎ እዚህ ተይዘዋል። ለውጦችዎን ለመተውና የተቀመጡ እሴቶችን ለመጠቀም የተቀመጡ ቅንብሮችን ዳግም ይጫኑ።"
+  },
+  "runtime_preferences_current": {
+    "message": "ምርጫዎች ወቅታዊ ናቸው።"
+  },
+  "runtime_key_cannot_open": {
+    "message": "የተቀመጠው ቁልፍ መከፈት አልቻለም። ቅንብሮችን እንደገና ይክፈቱ፣ ወይም ቁልፉን ያስወግዱና እንደገና ያስገቡ።"
+  },
+  "runtime_key_conflict": {
+    "message": "የAPI ቁልፉ በሌላ ገጽ ላይ ተቀይሯል። ቁልፍ ከማስቀመጥዎ በፊት የተቀመጡ ቅንብሮችን ዳግም ይጫኑ።"
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "ቁልፍዎ ተመስጥሮ ተቀምጧል። ከGoogle ጋር ከመገናኘትዎ በፊት በውሂብ ማጋራት ይስማሙ።"
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "የAPI ቁልፍዎን ከማከልዎ በፊት ከላይ በውሂብ ማጋራት ይስማሙ።"
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini ይህን የተቀመጠ ቁልፍ አልተቀበለም። ይተኩት ወይም እንደገና ለማረጋገጥ ሞዴሎችን አድስ ይጠቀሙ።"
+  },
+  "runtime_paste_key": {
+    "message": "Gemini ለማገናኘት የAPI ቁልፍ ይለጥፉ።"
+  },
+  "runtime_key_checked": {
+    "message": "የAPI ቁልፍ ተቀምጧል። Gemini በመጨረሻው የሞዴል ዝርዝር ማረጋገጫ ጊዜ ተቀብሎታል።"
+  },
+  "runtime_key_saved_check": {
+    "message": "የAPI ቁልፍ በዚህ መሣሪያ ላይ ተመስጥሮ ተቀምጧል። በGemini ለማረጋገጥ ሞዴሎችን ያድሱ።"
+  },
+  "runtime_retry_withdrawal": {
+    "message": "ስምምነትን መመለስ እንደገና ሞክር"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "የውሂብ ስምምነትን መልስ"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "ስምምነትዎን መመለስ አልተረጋገጠም። ምርጫዎን ለማስቀመጥ መመለሱን እንደገና ይሞክሩ።"
+  },
+  "runtime_agreement_saved": {
+    "message": "ለዚህ የChrome መገለጫ የውሂብ ማጋራት ተፈቅዷል። በማንኛውም ጊዜ ስምምነቱን መመለስ ይችላሉ።"
+  },
+  "runtime_agreement_not_saved": {
+    "message": "እስኪስማሙ ድረስ ከGoogle ጋር ግንኙነት የለም። ስምምነቱን ከመለሱ የተቀመጠው ቁልፍ ይቆያል።"
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini የተቀመጠውን ቁልፍ አልተቀበለም። ከታች ይተኩት።"
+  },
+  "runtime_setup_key_saved": {
+    "message": "ቁልፍዎ በዚህ መሣሪያ ላይ ተመስጥሮ ተቀምጧል።"
+  },
+  "runtime_setup_create_key": {
+    "message": "በGoogle AI Studio ውስጥ የራስዎን ቁልፍ ይፍጠሩ።"
+  },
+  "runtime_setup_language_selected": {
+    "message": "ቋንቋ ተመርጧል። ምርጫዎችዎን ለማስቀመጥ ማዋቀሩን ይጨርሱ።"
+  },
+  "runtime_setup_choose_language": {
+    "message": "ከታች የትርጉም ቋንቋ ይምረጡ።"
+  },
+  "runtime_finish_setup": {
+    "message": "ማዋቀርን ጨርስ"
+  },
+  "runtime_save_preferences": {
+    "message": "ምርጫዎችን አስቀምጥ"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "የAPI ቁልፍ ያክሉ፣ የሞዴል ዝርዝሩን ያረጋግጡና የሞዴል ምርጫዎን ያስቀምጡ።"
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "ከመተርጎምዎ በፊት የቅንብሮችን ግጭት ይፍቱ።"
+  },
+  "runtime_setup_agreement_required": {
+    "message": "ከGoogle ጋር ከመገናኘትዎ በፊት የውሂብ ማጋራትን ያንብቡና ይስማሙ።"
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "ማዋቀሩን ከማረጋገጥዎ በፊት የAPI ቁልፉን ማስቀመጥ ይጨርሱ።"
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "ማዋቀሩ ትኩረት ይፈልጋል፦ Gemini የተቀመጠውን የAPI ቁልፍ አልተቀበለም።"
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "ቁልፍ ተቀምጧል። የትርጉም ቋንቋ ይምረጡ፣ ከዚያ ማዋቀሩን ይጨርሱ።"
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "የሚገኝ ሞዴል ይምረጡና ምርጫዎችን ያስቀምጡ።"
+  },
+  "runtime_setup_model_selected": {
+    "message": "ሞዴል ተመርጧል። ለመጠቀም ምርጫዎችን ያስቀምጡ።"
+  },
+  "runtime_setup_ready_finish": {
+    "message": "ቁልፉና ቋንቋው ዝግጁ ናቸው። ምርጫዎችዎን ለማስቀመጥ ማዋቀሩን ይጨርሱ፣ ከዚያ ትርጉም ይሞክሩ። የሞዴል መዳረሻና የአጠቃቀም ገደብ አሁንም ሊቀየሩ ይችላሉ።"
+  },
+  "runtime_setup_ready_translate": {
+    "message": "ትርጉም ለመሞከር ዝግጁ ነው። የተቀመጠው ሞዴል በተረጋገጠው ዝርዝር ውስጥ አለ፤ የጥያቄ መዳረሻና የአጠቃቀም ገደብ አሁንም ሊቀየሩ ይችላሉ።"
+  },
+  "runtime_setup_refresh_models": {
+    "message": "ቁልፍ ተቀምጧል። ቁልፉንና የተመረጠውን ሞዴል ለማረጋገጥ ሞዴሎችን ያድሱ።"
+  },
+  "runtime_show_key": {
+    "message": "አሳይ"
+  },
+  "runtime_hide_key": {
+    "message": "ደብቅ"
+  },
+  "runtime_choose_target_language": {
+    "message": "የትርጉም ቋንቋ ይምረጡ"
+  },
+  "runtime_background_no_response": {
+    "message": "የቅጥያው ዳራ ምላሽ አልሰጠም። ቅጥያውን ዳግም ይጫኑና እንደገና ይሞክሩ።"
+  },
+  "runtime_refresh_models": {
+    "message": "ሞዴሎችን አድስ"
+  },
+  "runtime_models_need_agreement": {
+    "message": "ሞዴሎችን ከመጫንዎ በፊት በውሂብ ማጋራት ይስማሙ።"
+  },
+  "runtime_models_finish_key_save": {
+    "message": "ሞዴሎችን ከማደስዎ በፊት የAPI ቁልፉን ማስቀመጥ ይጨርሱ።"
+  },
+  "runtime_refreshing": {
+    "message": "እየታደሰ ነው..."
+  },
+  "runtime_loading": {
+    "message": "እየተጫነ ነው..."
+  },
+  "runtime_models_checking": {
+    "message": "ተስማሚ ሞዴሎችን በGemini እያረጋገጠ ነው..."
+  },
+  "runtime_models_loading": {
+    "message": "ተስማሚ ሞዴሎች እየተጫኑ ነው..."
+  },
+  "runtime_models_load_failed": {
+    "message": "ተስማሚ ሞዴሎችን መጫን አልተቻለም።"
+  },
+  "runtime_models_empty": {
+    "message": "Gemini ተስማሚ ሞዴሎችን አልመለሰም።"
+  },
+  "runtime_model_not_available": {
+    "message": "የተመረጠው ሞዴል በተስማሚ ዝርዝሩ ውስጥ የለም። ሌላ ሞዴል ይምረጡ።"
+  },
+  "runtime_record_key": {
+    "message": "ቁልፍ መዝግብ"
+  },
+  "runtime_recording_cancelled": {
+    "message": "መመዝገብ ተሰርዟል።"
+  },
+  "runtime_unknown_key": {
+    "message": "ያ ቁልፍ"
+  },
+  "runtime_press_key": {
+    "message": "ቁልፍ ይጫኑ..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "አንድ የሚደገፍ፣ ቁምፊ የማያስገባ ቁልፍ ይጫኑ። ለመሰረዝ Escape ይጫኑ።"
+  },
+  "runtime_refresh_saved_key": {
+    "message": "የተቀመጠውን የAPI ቁልፍ ለማረጋገጥ ሞዴሎችን ያድሱ።"
+  },
+  "runtime_models_add_key": {
+    "message": "ተስማሚ ሞዴሎችን ለመጫን የAPI ቁልፍ ያክሉ።"
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "ቅጥያው የተቀመጠውን ሁኔታ መጫን አልቻለም።"
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini የተቀመጠውን የAPI ቁልፍ አልተቀበለም። ይተኩት ወይም እንደገና ለማረጋገጥ ሞዴሎችን ያድሱ።"
+  },
+  "runtime_settings_reopen": {
+    "message": "ቅንብሮችን መጫን አልተቻለም። እንደገና ለመሞከር ቅንብሮችን ዳግም ይክፈቱ።"
+  },
+  "runtime_settings_load_failed": {
+    "message": "ቅንብሮችን መጫን አልተቻለም። እንደገና ለመሞከር የተቀመጡ ቅንብሮችን ዳግም ይጫኑ። የተቀመጡ ምርጫዎችዎን ለመጠበቅ ማስቀመጥ ተሰናክሏል።"
+  },
+  "runtime_setup_load_failed": {
+    "message": "የማዋቀር ሁኔታ መጫን አልተቻለም።"
+  },
+  "runtime_key_no_spaces": {
+    "message": "ያለ ክፍተት ሙሉ የAPI ቁልፍ ያስገቡ።"
+  },
+  "runtime_key_use_remove": {
+    "message": "የተቀመጠውን ቁልፍ ለመሰረዝ የተቀመጠውን ቁልፍ አስወግድ ይጠቀሙ።"
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "የAPI ቁልፍ ከማስቀመጥዎ በፊት ከላይ በውሂብ ማጋራት ይስማሙ።"
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "የAPI ቁልፍ ተመስጥሮ እየተቀመጠ ነው..."
+  },
+  "runtime_key_save_failed": {
+    "message": "የAPI ቁልፉን ማንበብ ወይም ማስቀመጥ አልተቻለም። ያስገቡት ተይዟል። እንደገና ለመሞከር ምርጫዎችን አስቀምጥ ይጠቀሙ።"
+  },
+  "runtime_connecting_google": {
+    "message": "ከGoogle ጋር እየተገናኘ ነው..."
+  },
+  "runtime_stopping_google": {
+    "message": "ከGoogle ጋር ያሉ ግንኙነቶችን እያቆመ ነው..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "የውሂብ ስምምነትዎን ማስቀመጥ አልተቻለም። እንደገና ይሞክሩ።"
+  },
+  "runtime_key_removing": {
+    "message": "የተቀመጠውን ቁልፍ እያስወገደ ነው..."
+  },
+  "runtime_key_removed": {
+    "message": "የተቀመጠው ቁልፍ ተወግዷል። በውሂብ ማጋራት ከተስማሙ በኋላ አዲስ ቁልፍ ማከል ይችላሉ።"
+  },
+  "runtime_key_remove_failed": {
+    "message": "የተቀመጠውን ቁልፍ ማስወገድ አልተቻለም። እንደገና ይሞክሩ።"
+  },
+  "runtime_saving": {
+    "message": "እየተቀመጠ ነው..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "ትክክለኛ ቋንቋና ሞዴል ይምረጡ።"
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "የሚደገፍ የማስጀመሪያ ቁልፍ ወይም ጠፍቷል ይምረጡ።"
+  },
+  "runtime_choose_listed_model": {
+    "message": "ከአሁኑ ተስማሚ ዝርዝር ሞዴል ይምረጡ።"
+  },
+  "runtime_preferences_saving": {
+    "message": "ምርጫዎች እየተቀመጡ ነው..."
+  },
+  "runtime_preferences_saved": {
+    "message": "ምርጫዎች ተቀምጠዋል።"
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "ምርጫዎች ተቀምጠዋል። ማዋቀሩን ለመጨረስ የAPI ቁልፍዎን ያክሉ።"
+  },
+  "runtime_preferences_save_failed": {
+    "message": "ምርጫዎችን ማንበብ ወይም ማስቀመጥ አልተቻለም። ለውጦችዎ ተይዘዋል። እንደገና ይሞክሩ።"
+  },
+  "runtime_key_will_save": {
+    "message": "የAPI ቁልፉ በራሱ ይቀመጣል።"
+  },
+  "runtime_key_finish_entry": {
+    "message": "የAPI ቁልፉን ማስገባት ይጨርሱ።"
+  },
+  "runtime_key_finish_save_models": {
+    "message": "ተስማሚ ሞዴሎችን ለመጫን የAPI ቁልፉን ማስቀመጥ ይጨርሱ።"
+  },
+  "runtime_recommended_selected": {
+    "message": "የሚመከረው ሞዴል ተመርጧል። ለመጠቀም ምርጫዎን ያስቀምጡ።"
+  },
+  "runtime_trigger_will_disable": {
+    "message": "ካስቀመጡ በኋላ የማስጀመሪያ ቁልፉ ይጠፋል።"
+  },
+  "runtime_connection_changed": {
+    "message": "የግንኙነት ቅንብሮች ተቀይረዋል። የተቀመጡ ቅንብሮችን እያረጋገጠ ነው..."
+  },
+  "runtime_models_changed": {
+    "message": "የሞዴል ዝርዝሩ ተቀይሯል። ተስማሚ ሞዴሎችን እያረጋገጠ ነው..."
+  },
+  "runtime_no_translation": {
+    "message": "ገና ትርጉም የለም።"
+  },
+  "runtime_start_setup": {
+    "message": "ማዋቀር ጀምር"
+  },
+  "runtime_settings": {
+    "message": "ቅንብሮች"
+  },
+  "runtime_key_rejected": {
+    "message": "ቁልፉ አልተቀበለም"
+  },
+  "runtime_setup_required": {
+    "message": "ማዋቀር ያስፈልጋል"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "መተርጎም ለመጀመር በቅንብሮች ውስጥ የAPI ቁልፍ ያክሉ።"
+  },
+  "runtime_add_key": {
+    "message": "የAPI ቁልፍ አክል"
+  },
+  "runtime_finish_model_language": {
+    "message": "ቁልፉ ተቀምጧል። ሞዴሉን ለማረጋገጥና የቋንቋ ምርጫዎን ለመጨረስ ቅንብሮችን ይክፈቱ።"
+  },
+  "runtime_check_setup": {
+    "message": "ማዋቀርን አረጋግጥ"
+  },
+  "runtime_translating": {
+    "message": "በመተርጎም ላይ"
+  },
+  "runtime_error": {
+    "message": "ስህተት"
+  },
+  "runtime_ready": {
+    "message": "ዝግጁ"
+  },
+  "runtime_status_load_failed": {
+    "message": "የቅጥያውን ሁኔታ መጫን አልተቻለም። ቅጥያውን ዳግም ይጫኑ፣ ከዚያ ገጹን ያድሱ።"
+  },
+  "runtime_copied": {
+    "message": "ተቀድቷል።"
+  },
+  "runtime_copy_blocked": {
+    "message": "መቅዳት ታግዷል። የውጤቱን ጽሑፍ ይምረጡና ይቅዱት።"
+  },
+  "runtime_settings_open_failed": {
+    "message": "ቅንብሮችን መክፈት አልተቻለም። እንደገና ይሞክሩ።"
+  },
+  "runtime_translating_progress": {
+    "message": "እየተተረጎመ ነው..."
+  },
+  "runtime_translation_started": {
+    "message": "ትርጉም ተጀምሯል።"
+  },
+  "runtime_translation_complete": {
+    "message": "ትርጉም ተጠናቋል።"
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "ትርጉም ተጠናቋል። የውጤቱን ጽሑፍ ወይም የካርዱን መቆጣጠሪያዎች ይጠቀሙ።"
+  },
+  "runtime_translation": {
+    "message": "ትርጉም"
+  },
+  "runtime_target_language": {
+    "message": "የትርጉም ቋንቋ"
+  },
+  "runtime_card_target_language": {
+    "message": "የዚህ ካርድ የትርጉም ቋንቋ"
+  },
+  "runtime_close_card": {
+    "message": "የትርጉም ካርዱን ዝጋ"
+  },
+  "runtime_translated_text": {
+    "message": "የተተረጎመ ጽሑፍ"
+  },
+  "runtime_retry": {
+    "message": "እንደገና ሞክር"
+  },
+  "runtime_copy": {
+    "message": "ቅዳ"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "ቅንብሮችን መክፈት አልተቻለም። የቅጥያውን የመሣሪያ አሞሌ ይጠቀሙ።"
+  },
+  "runtime_copy_failed": {
+    "message": "መቅዳት አልተሳካም። የውጤቱን ጽሑፍ ይምረጡና ይቅዱት።"
+  },
+  "runtime_context_menu": {
+    "message": "የተመረጠውን ጽሑፍ ተርጉም"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (በአሁኑ ዝርዝር ውስጥ የለም)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (ገና አልተረጋገጠም)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "ከ$value1$ የተቀመጠ የሞዴል ዝርዝር እየተጠቀመ ነው። የቀጥታ ማደስ አልተሳካም። በኋላ ይሞክሩ።",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "የተቀመጠ የሞዴል ዝርዝር እየተጠቀመ ነው። የቀጥታ ማደስ አልተሳካም። በኋላ ይሞክሩ።"
+  },
+  "runtime_models_cache_at": {
+    "message": "ከ$value1$ የተቀመጠ የሞዴል ዝርዝር እየተጠቀመ ነው።",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "የተቀመጠ የሞዴል ዝርዝር እየተጠቀመ ነው።"
+  },
+  "runtime_models_updated_at": {
+    "message": "የሞዴል ዝርዝሩ ከ$value1$ ተዘምኗል።",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "የሞዴል ዝርዝሩ ተዘምኗል።"
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ አይደገፍም። ሌላ ቁልፍ ይጫኑ፣ ወይም ለመሰረዝ Escape ይጫኑ።",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "ካስቀመጡ በኋላ $value1$ ይጠቀማል።",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "በእያንዳንዱ ትር እስከ $value1$፣ በጠቅላላ $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ ሰከንዶች",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ ይህን ካርድ ለመጠቀም Tab ይጫኑ፣ ወይም ለመዝጋት Escape ይጫኑ።",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "ትርጉም አልተሳካም። $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "የተከፈቱ ገጾችን ያድሱ"
+  },
+  "refresh_message": {
+    "message": "የAPI ቁልፍዎ ተቀምጧል። ማዋቀሩን ከጨረሱ በኋላ፣ አስቀድመው የተከፈቱ ገጾችን ያድሱ። ከዚያ ለመተርጎም ጽሑፍ ይምረጡና Control ይጫኑ።"
+  },
+  "refresh_continue": {
+    "message": "ማዋቀርን ቀጥል"
+  },
+  "refresh_faq_question": {
+    "message": "የተከፈቱ ገጾችን ለምን ማደስ አለብኝ?"
+  },
+  "refresh_faq_answer": {
+    "message": "ማዋቀሩን ከጨረሱ በኋላ፣ መተርጎም ከመሞከርዎ በፊት <1>የተከፈቱ ገጾችን ያድሱ</1>። Chrome ቅጥያው ከመጫኑ ወይም ከዳግም መጫኑ በፊት ተከፍተው በነበሩ ገጾች ላይ ቅጥያውን መጫን አለበት። አዲስ የተከፈቱ ገጾች በራሳቸው ዝግጁ ይሆናሉ።"
+  },
+  "ui_locale": {
+    "message": "am",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

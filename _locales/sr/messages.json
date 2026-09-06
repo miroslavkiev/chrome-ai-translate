@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Веома лак превод: означите текст и притисните Control. Преводите на изабрани језик уз Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Означите текст и покушајте поновно."
+  },
+  "error_unsupported_selection": {
+    "message": "Овај одабир текста није подржан."
+  },
+  "error_selection_too_large": {
+    "message": "Одабир има више од 10.000 знакова. Одаберите мање текста и покушајте поновно."
+  },
+  "error_missing_api_key": {
+    "message": "Додајте свој Gemini API кључ у Поставкама."
+  },
+  "error_agreement_required": {
+    "message": "Прије повезивања с Googleom прегледајте и прихватите дијељење података у Поставкама."
+  },
+  "error_credential_conflict": {
+    "message": "Спремљени кључ промијењен је на другој страници. Поновно учитајте спремљене поставке прије новог покушаја."
+  },
+  "error_credential_storage_error": {
+    "message": "Спремљени кључ није могуће отворити. Поновно отворите Поставке или га уклоните па поновно унесите."
+  },
+  "error_missing_target_language": {
+    "message": "Одаберите циљни језик у Поставкама да довршите постављање."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini је одбио API кључ. Провјерите га у Поставкама."
+  },
+  "error_invalid_model": {
+    "message": "Овај модел није могуће користити за пријевод. У Поставкама одаберите други или препоручени Flash-Lite модел."
+  },
+  "error_busy": {
+    "message": "Превише је активних пријевода. Покушајте након што један заврши."
+  },
+  "error_duplicate_request": {
+    "message": "Овај се одабир већ преводи."
+  },
+  "error_rate_limited": {
+    "message": "Досегнуто је ограничење захтјева. Покушајте ускоро."
+  },
+  "error_timeout": {
+    "message": "Пријевод је трајао предуго. Можете покушати поновно."
+  },
+  "error_offline": {
+    "message": "Изгледа да немате интернетску везу. Провјерите везу и покушајте поновно."
+  },
+  "error_network_error": {
+    "message": "Није могуће приступити Geminiju. Провјерите везу и покушајте поновно."
+  },
+  "error_quota_exceeded": {
+    "message": "Досегнута је Gemini квота. Провјерите рачун и покушајте касније."
+  },
+  "error_service_error": {
+    "message": "Gemini није могао довршити пријевод. Покушајте касније."
+  },
+  "error_invalid_response": {
+    "message": "Gemini је вратио нечитљив одговор. Можете покушати поновно."
+  },
+  "error_output_too_large": {
+    "message": "Пријевод је премашио излазно ограничење. Одаберите мање текста и покушајте поновно."
+  },
+  "error_content_blocked": {
+    "message": "Gemini је блокирао овај текст. Покушајте с другим одабиром."
+  },
+  "error_unsupported_page": {
+    "message": "Пријевод није доступан на овој страници."
+  },
+  "error_frame_unavailable": {
+    "message": "Одабрани оквир више није доступан."
+  },
+  "error_cancelled": {
+    "message": "Пријевод је отказан."
+  },
+  "key_Off": {
+    "message": "Искључено"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Покушајте поновно за $seconds$ секунди.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Поставке AI Translatora"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Приватне поставке за брз и усмјерен пријевод."
+  },
+  "html_help_and_information": {
+    "message": "Помоћ и информације"
+  },
+  "html_api_key_guide": {
+    "message": "Водич за API кључ"
+  },
+  "html_about": {
+    "message": "О проширењу"
+  },
+  "html_privacy": {
+    "message": "Приватност"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Поставите AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Слиједите ове кораке у Поставкама. За пријевод требате властити Google API кључ."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Набавите властити API кључ.</1> Отворите <2>Google AI Studio</2>, пријавите се и израдите кључ. Прегледајте дијељење података у наставку па залијепите кључ. За помоћ <3>прочитајте водич корак по корак</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Одаберите циљни језик и модел.</1> Одаберите језик пријевода. Препоручујемо Gemini Flash-Lite када је доступан на вашем попису модела."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Спремите и почните преводити.</1> На дну странице одаберите Доврши постављање. Затим означите текст на wеб-страници и притисните Control или у изборнику десног клика одаберите Преведи одабрани текст."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Повежите властити Gemini API кључ и одаберите компатибилан модел."
+  },
+  "html_loading_setup_state": {
+    "message": "Учитавање стања постављања..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Прије повезивања с Googleom"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google прима API кључ ради провјере доступних модела. Када затражите пријевод, прима и одабрани текст и циљни језик, укључујући текст из локалних датотека. Пријеводи умјетне интелигенције могу бити погрешни."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Кључ је спремљен шифриран у овом Chrome профилу и аутоматски се отвара након поновног покретања. Додатна лозинка није потребна. Особа с потпуним приступом профилу прегледника ипак га може обновити. <1>Прочитајте појединости о приватности</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Обавезно у свакој земљи:</1> користите Gemini API кључ из пројекта с <2>активном наплатом</2>. Необавезно <3>дијељење записника захтјева и скупова података овог проширења с Googleom</3> мора остати искључено. Уз те поставке Googleovi плаћени услови искључују употребу упита и одговора за побољшање производа; сигурносна и законска обрада и даље вриједи. Проширење је бесплатно, али могуће су накнаде за Google API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Услови употребе.</1> Кориштењем Geminija кроз ово проширење прихваћате наведене захтјеве и <2>Googleove услове</2>. Упораба је намијењена особама од 18 година за професионалне или пословне сврхе у <3>подржаним регијама</3>. Проширење не провјерава поставке наплате или дијељења."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Прихвати и повежи с Googleom"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Повуци сугласност за дијељење података"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Прије повезивања прегледајте појединости о дијељењу података."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Зашто су ти захтјеви потребни? Прочитајте честа питања</1>."
+  },
+  "html_api_key": {
+    "message": "API кључ"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Након прихваћања залијепите кључ како би се спремио шифриран и аутоматски учитао моделе."
+  },
+  "html_show": {
+    "message": "Прикажи"
+  },
+  "html_remove_saved_key": {
+    "message": "Уклони спремљени кључ"
+  },
+  "html_model": {
+    "message": "Модел"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Познати модели само за медије и посебне намјене скривени су."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Препоручујемо обитељ Gemini Flash-Lite. За ово издање у септембру 2026. одабрали смо Gemini 3.5 Flash-Lite. Можете одабрати други модел с пописа. Неки модели можда неће радити с проширењем. Ако један не ради, одаберите други или препоручени модел."
+  },
+  "html_refresh_models": {
+    "message": "Освјежи моделе"
+  },
+  "html_use_recommended_model": {
+    "message": "Користи препоручени модел"
+  },
+  "html_translation": {
+    "message": "Пријевод"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Поставите језик и необавезну типку за покретање."
+  },
+  "html_default_language": {
+    "message": "Задани језик"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Картица резултата може користити други језик без промјене овог заданог."
+  },
+  "html_keyboard_trigger": {
+    "message": "Типка за покретање"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Појединачне типке могу бити у сукобу са страницама или алатима приступачности. Одаберите Искључено за употребу само контекстног изборника."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Забиљежи типку"
+  },
+  "html_off": {
+    "message": "Искључено"
+  },
+  "html_behavior": {
+    "message": "Понашање"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Сталне заштитне мјере одржавају брзину пријевода и чувају API квоту."
+  },
+  "html_parallel_requests": {
+    "message": "Истодобни захтјеви"
+  },
+  "html_request_timeout": {
+    "message": "Временско ограничење захтјева"
+  },
+  "html_page_access": {
+    "message": "Приступ страницама"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "За локалне датотеке омогућите Допусти приступ URL-овима датотека у управљању проширењем"
+  },
+  "html_help_and_recovery": {
+    "message": "Помоћ и опоравак"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Ако модел није доступан, освјежите моделе, одаберите један с пописа и спремите поставке. Ако се попис не учитава, провјерите кључ и везу па покушајте Освјежи моделе."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Странице поставки Chromea и Chrome Web Store не допуштају пријевод. За локалне датотеке омогућите приступ URL-овима датотека у управљању проширењем. Након ажурирања или поновног учитавања проширења освјежите отворене странице. Поновно учитавање може прекинути пријевод."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "За пријевод је потребан интернет. Након прихваћања изнад кључ се шаље директно Googleu ради провјере модела. Одабрани текст, укључујући локалне датотеке, шаље се с циљним језиком само када затражите пријевод. Спремљени кључ шифриран је у овом Chrome профилу. Језик, модел и типка могу се синкронизирати кроз Chrome. Проширење чува само задњи резултат текуће сесије прегледника и не води историју пријевода."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Дијељење можете прегледати изнад и повући сугласност у било којем тренутку. Провјере модела и пријеводи заустављају се до новог прихваћања. Кључ остаје спремљен ако не одаберете Уклони спремљени кључ."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Овдје се спремају промјене језика, модела и типке за покретање."
+  },
+  "html_reload_saved_settings": {
+    "message": "Поновно учитај спремљене поставке"
+  },
+  "html_save_preferences": {
+    "message": "Спреми поставке"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini пријевод"
+  },
+  "html_setup_required": {
+    "message": "Потребно је постављање"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Добро дошли у AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Преведите одабрани текст на језик који знате. За почетак поставите ове двије ствари:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Ваш Gemini API кључ.</1> Набавите властити кључ из Google AI Studija. Водич показује како."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Ваш циљни језик.</1> Одаберите језик на којем желите читати."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Како набавити API кључ"
+  },
+  "html_extension_status": {
+    "message": "Стање проширења"
+  },
+  "html_active_translations": {
+    "message": "Активни пријеводи"
+  },
+  "html_latest_this_session": {
+    "message": "Задње у овој сесији"
+  },
+  "html_no_translation_yet": {
+    "message": "Још нема пријевода."
+  },
+  "html_copy": {
+    "message": "Копирај"
+  },
+  "html_settings": {
+    "message": "Поставке"
+  },
+  "html_key_guide": {
+    "message": "Водич за кључ"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Почетак рада с AI Translatorom"
+  },
+  "html_extension_pages": {
+    "message": "Странице проширења"
+  },
+  "html_faq": {
+    "message": "Честа питања"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Набавите властити Google API кључ, одаберите језик и преведите први одабир."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Набавите API кључ"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API кључ омогућује проширењу употребу Geminija путем вашег Google рачуна. Чувајте га као лозинку."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Проширење је намијењено особама од 18 година за рад или посао у <1>земљама и регијама које Google подржава</1>. У свакој земљи кључ мора припадати Gemini пројекту с активном наплатом. Искључите необавезно дијељење записника захтјева и скупова података проширења с Googleom."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Употребом проширења прихваћате ове услове, <1>Услове Google API-ја</1> и <2>Додатне услове Gemini API-ја</2>. Не користите га ако не можете испунити услове. Проширење не провјерава те чињенице и не тражи личне документе."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Отвори Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Пријавите се на Google рачун. Прихватите Googleove услове ако се то затражи."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Израдите или одаберите кључ"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "На страници API кључева одаберите <1>Изради API кључ</1> и слиједите Googleove кораке за одабир или израду пројекта. Пројект обједињује употребу API-ја и наплату. Ако сте нови у AI Studiju, Google је можда већ израдио задани пројект и кључ."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Ако ваш пројект недостаје, отворите <1>Надзорна плоча > Пројекти > Увези пројекте</1>. Увезите пројект и вратите се API кључевима."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Прије употребе кључа пратите <1>Googleov водич за наплату</1> да провјерите активну наплату пројекта. Плаћена претплата на апликацију Gemini не замјењује наплату API пројекта. Искључите необавезно дијељење записника и скупова података проширења с Googleom; прочитајте <2>Googleova правила дијељења записника</2>. Приватно биљежење у пројекту одвојено је од дијељења."
+  },
+  "html_copy_your_key": {
+    "message": "Копирајте кључ"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Копирајте кључ из AI Studija. Вратите се у Поставке проширења и прочитајте податке о дијељењу. Одаберите <1>Прихвати и повежи с Googleom</1> па залијепите кључ у поље <2>API кључ</2>. Аутоматски се шифрира и спрема те учитава попис модела. Прије наставка причекајте резултат."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Поставке AI Translatora с обавијести о дијељењу података и гумбом за прихваћање изнад празног поља API кључа и препоруке Flash-Lite модела."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Примјер је на енглеском. У AI Translatoru прво прихватите дијељење па залијепите властити кључ. Попис модела провјерава се након спремања шифрираног кључа."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google може мијењати ове заслоне. За актуалне кораке и погрешке кључа прочитајте <1>Googleov водич за API кључеве</1>. Ако стари кључ више не ради, користите нови из AI Studija."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Одаберите поставке пријевода"
+  },
+  "html_choose_a_model": {
+    "message": "Одаберите модел"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Препоручујемо обитељ Gemini Flash-Lite. За ово издање у септембру 2026. изабрали смо <1>Gemini 3.5 Flash-Lite</1>. Користите га када је на вашем попису модела."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Можете одабрати други модел с пописа. Неки модели можда неће радити с проширењем. Ако модел не ради, одаберите други или препоручени."
+  },
+  "html_choose_your_target_language": {
+    "message": "Одаберите циљни језик"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "У <1>Задани језик</1> одаберите језик на којем желите читати. Избор прати <2>Googleove документиране језике Geminija</2>. Квалитета пријевода може овисити о језику и тексту."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Поставке пријевода AI Translatora с избором циљног језика и контролама типке за покретање."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Примјер је на енглеском. Одаберите језик пријевода и довршите постављање."
+  },
+  "html_finish_setup": {
+    "message": "Доврши постављање"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Задржите Control за покретање, забиљежите другу типку или одаберите <1>Искључено</1> за употребу само изборника десног клика. При дну Поставки одаберите <2>Доврши постављање</2>. Избор касније можете мијењати уз <3>Спреми поставке</3>."
+  },
+  "html_open_settings": {
+    "message": "Отвори Поставке"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Преведите први одабир"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Отворите обичну wеб-страницу и означите кратак текст. Десним кликом одаберите <1>Преведи одабрани текст</1> или притисните и отпустите одабрану типку. Резултат се појављује уз одабир."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Ако је проширење управо инсталирано или поновно учитано, прво освјежите страницу. Поставке Chromea, Chrome Web Store и уграђени PDF прегледник не допуштају пријевод."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Скочни прозор алатне траке показује задњи резултат. Након постављања отвара стандардни приказ. Уклањање API кључа поновно приказује почетни водич."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Честа питања: кључеви, трошкови и приватност"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Зашто требам властити API кључ?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Проширење је осмишљено за слање захтјева директно вашем Google пројекту властитим кључем. То је избор дизајна, а не правило Chromea. Кључ омогућује захтјеве и повезује их с употребом и наплатом. Никада га не дијелите у снимкама заслона или јавним порукама. Погледајте <1>Googleov водич за API кључеве</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Зашто је активна наплата обавезна, а не само препоручена?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Правила ограничене употребе Chromea, точке 3 и 5</1>, ограничавају употребу података на сврху проширења и повезане радње. Неке бесплатне употребе Geminija допуштају шире тренирање и људски преглед. Плаћени услови искључују побољшање производа, али допуштају ограничено чување ради сигурности и закона те обраду изван ЕУ-а."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "За рјешавање овог сукоба програмер захтијева активну наплату пројекта диљем свијета. Препорука би и даље допуштала бесплатну употребу. Googleovo регионално правило захтијева плаћене услуге за апликације у Еуропском господарском простору, Уједињеном Краљевству и Швицарској. Погледајте <1>Gemini услове: ограничења употребе, бесплатне и плаћене услуге</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Зашто необавезно дијељење с Googleom мора бити искључено?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Дијељење записника или скупова података може допустити тренирање и људски преглед чак и уз активну наплату. Не шаљите податке проширења кроз дијељење скупова или повратне информације. Приватно биљежење властитог пројекта допуштено је овим правилом. Погледајте <1>Googleova правила записника: подаци за дијељење и њихова употреба</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Је ли проширење бесплатно ако требам плаћени API приступ?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Да. Проширење је бесплатно, али могу настати накнаде за Google API. Плаћена претплата на апликацију Gemini не замјењује наплату API пројекта. Погледајте <1>како провјерити наплату</1> и <2>цијене Google API-ја</2>. Проширење не провјерава наплату или поставке дијељења."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Зашто требам одабрати Прихвати и повежи с Googleom?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Chromeovi захтјеви за објаву информација, точке 1 и 2</1>, траже јасно објашњење употребе података и информирани пристанак. Гумб омогућује тај избор прије било којег Google API захтјева. Не провјерава идентитет или наплату и не даје допуштење за дијељење туђих приватних података."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Што се точно шаље Googleu?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Провјере модела шаљу кључ и траже доступне моделе. Пријевод шаље одабрани текст, циљни језик, модел и упуте, укључујући одабрани текст локалних датотека. Проширење не додаје цијелу страницу, њену адресу или историју прегледавања. Google прима и детаље везе попут ИП адресе. Програмер не прима те захтјеве. Шаљите само текст који смијете дијелити."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Како се мој кључ спрема и аутоматски отвара?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API кључ спрема се шифриран. Он и кључ шифрирања остају у овом Chrome профилу за аутоматску употребу након поновног покретања. Не синкронизирају се. Особа с приступом профилу ипак може обновити API кључ. Ово није системски привјесак кључева или трезор заштићен лозинком. Језик, модел и типка могу се синкронизирати. Само задњи резултат остаје за сесију; нема аналитике ни историје пријевода."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Ажурирање шифрира и провјерава стари кључ прије брисања његових нешифрираних копија. Ако не успије, стара копија остаје, а захтјеви су блокирани. Поставке објашњавају погрешку. Пријенос старог кључа не заобилази пристанак."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Могу ли повући сугласност или уклонити кључ?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "У <1>Поставкама</1> <2>Повуци сугласност за дијељење података</2> блокира нове захтјеве и локално отказује активне уз задржавање кључа и поставки. <3>Уклони спремљени кључ</3> брише кључ, његов кључ шифрирања и предмеморију модела. Ниједно не повлачи послане податке нити јамчи да послани захтјев постаје бесплатан. Опозовите кључ у AI Studiju да га искључите и код Googlea."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Сугласност остаје спремљена након редовитих поновних покретања и ажурирања. Ако се обавијест промијени, захтјеви чекају док је не прегледате и опет прихватите."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Зашто је ово за одрасле и рад или посао?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google тражи најмање 18 година и професионалну или пословну употребу у подржаним регијама. Погледајте <1>Gemini услове: добни захтјеви и ограничења употребе</1> и <2>доступне регије</2>. Проширење нема посебну кућицу прихватљивости нити провјеру идентитета."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Зашто уз ову обавијест постоји политика приватности?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Обавијест објашњава избор прије повезивања. Политика даје све податке о обради, спремању и брисању. <1>Правила приватности Chromea</1> захтијевају то за проширења која обрађују корисничке податке. Прочитајте <2>нашу политику приватности</2>. Обавијести не значе да је Google одобрио проширење."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Пријеводи умјетне интелигенције могу бити погрешни. Провјерите важне формулације прије ослањања на њих."
+  },
+  "html_about_ai_translator": {
+    "message": "О AI Translatoru"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Врло једноставан пријевод: означите текст и притисните Control."
+  },
+  "html_made_for_people": {
+    "message": "Створено за људе"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Израдио сам AI Translator да помогнем људима читати, учити и повезивати се преко језичних граница. Надам се да је користан људима диљем свијета."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Проширење преводи одабрани текст вашим властитим Google Gemini API кључем. Ви бирате што послати и на којем језику читати."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Притисните и отпустите Control за пријевод одабира. Control је задана типка и може се промијенити у Поставкама. Можете користити и изборник десног клика странице."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Ручно тестирано само на Macu. Windows и Linux нису ручно тестирани."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Погледајте изворни код и водич пројекта</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Затражите помоћ или пријавите проблем</1>. Пријаве су јавне. Не укључујте API кључеве, приватни текст ни личне податке."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Ако желите подржати мој рад"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Молим вас подржите моју земљу, Украјину, која се брани од руске агресије."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Вјерујем Фондацији заједнице Sternenko. Ако можете и желите помоћи, донирајте путем њене службене странице."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Подржите Украјину путем фондације</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Подршка је необавезна и никада није потребна за употребу проширења. Веза отвара вањску страницу. Донације иду путем фондације, не проширења."
+  },
+  "html_privacy_and_costs": {
+    "message": "Приватност и трошкови"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API кључ је шифриран на овом уређају и не синкронизира се. Доступан је након редовитих поновних покретања Chromea без лозинке за откључавање. Особа с приступом профилу прегледника ипак га може обновити."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Прије првог Google захтјева Поставке објашњавају дијељење и траже <1>Прихвати и повежи с Googleom</1>. Након тога одабрани текст шаље се директно Googleu само када затражите пријевод. Провјере модела шаљу кључ, али не и одабрани текст. Проширење нема аналитику, огласе ни историју пријевода."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Појединости прегледајте у <1>Поставкама</1> било када. Одаберите <2>Повуци сугласност за дијељење података</2> да зауставите нове захтјеве уз задржавање шифрираног кључа и поставки или <3>Уклони спремљени кључ</3> за брисање кључа и предмеморије модела. Послани подаци не могу се повући."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Пријеводе ствара умјетна интелигенција и могу бити погрешни. Провјерите важне формулације прије употребе."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Прочитајте појединости о приватности</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator је бесплатан независан пројект. Могуће су накнаде Google API-ја. У свакој земљи користите Gemini API кључ пројекта с <1>активном наплатом</1> и искључите необавезно <2>дијељење записника захтјева и скупова података проширења с Googleom</2>. Уз те поставке плаћени Googleovi услови искључују употребу упита и одговора за побољшање производа; сигурносна и законска обрада и даље вриједи. Прочитајте <3>Googleove цијене и напомене о употреби података</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Ово проширење је за особе од 18 година за рад или посао у <1>регијама које Google подржава</1>. Употребом прихваћате ове услове, <2>Услове Google API-ја</2> и <3>Додатне услове Gemini API-ја</3>. Не користите га ако их не можете испунити. Нема кућице прихватљивости или провјере идентитета. Проширење не провјерава наплату или дијељење."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Неспремљене промјене."
+  },
+  "runtime_settings_conflict": {
+    "message": "Поставке су промијењене на другој страници. Ваше измјене остају овдје. Поновно учитајте спремљене поставке да одбаците измјене и користите спремљене вриједности."
+  },
+  "runtime_preferences_current": {
+    "message": "Поставке су ажурне."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Спремљени кључ није могуће отворити. Поновно отворите Поставке или га уклоните па унесите поновно."
+  },
+  "runtime_key_conflict": {
+    "message": "API кључ промијењен је на другој страници. Прије спремања кључа поновно учитајте спремљене поставке."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Кључ је спремљен шифриран. Прихватите дијељење прије повезивања с Googleom."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Прихватите дијељење података изнад прије додавања API кључа."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini је одбио спремљени кључ. Замијените га или користите Освјежи моделе за нову провјеру."
+  },
+  "runtime_paste_key": {
+    "message": "Залијепите API кључ за повезивање Geminija."
+  },
+  "runtime_key_checked": {
+    "message": "API кључ спремљен. Gemini га је прихватио при задњој провјери пописа модела."
+  },
+  "runtime_key_saved_check": {
+    "message": "API кључ спремљен је шифриран на уређају. Освјежите моделе за провјеру с Geminijem."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Понови повлачење"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Повуци сугласност за дијељење података"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Повлачење није потврђено. Поновите га да спремите избор."
+  },
+  "runtime_agreement_saved": {
+    "message": "Дијељење је прихваћено за овај Chrome профил. Можете га повући било када."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Нема везе с Googleom док не прихватите. При повлачењу сугласности кључ се задржава."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini је одбио спремљени кључ. Замијените га у наставку."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Кључ је спремљен шифриран на овом уређају."
+  },
+  "runtime_setup_create_key": {
+    "message": "Израдите властити кључ у Google AI Studiju."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Језик одабран. Довршите постављање за спремање избора."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Одаберите циљни језик у наставку."
+  },
+  "runtime_finish_setup": {
+    "message": "Доврши постављање"
+  },
+  "runtime_save_preferences": {
+    "message": "Спреми поставке"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Додајте API кључ, провјерите попис модела и спремите избор модела."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Ријешите сукоб поставки прије превођења."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Прегледајте и прихватите дијељење прије повезивања с Googleom."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Довршите спремање API кључа прије провјере постављања."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Постављање захтијева пажњу: Gemini је одбио спремљени API кључ."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Кључ спремљен. Одаберите циљни језик па довршите постављање."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Одаберите доступан модел и спремите поставке."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Модел одабран. Спремите поставке за употребу."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Кључ и језик су спремни. Довршите постављање да спремите избор па покушајте превести. Приступ моделу и квота и даље се могу промијенити."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Спремно за покушај пријевода. Спремљени модел је на провјереном попису; приступ захтјевима и квота и даље се могу промијенити."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Кључ спремљен. Освјежите моделе за провјеру кључа и одабраног модела."
+  },
+  "runtime_show_key": {
+    "message": "Прикажи"
+  },
+  "runtime_hide_key": {
+    "message": "Сакриј"
+  },
+  "runtime_choose_target_language": {
+    "message": "Одаберите циљни језик"
+  },
+  "runtime_background_no_response": {
+    "message": "Позадина проширења није одговорила. Поновно учитајте проширење и покушајте опет."
+  },
+  "runtime_refresh_models": {
+    "message": "Освјежи моделе"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Прихватите дијељење прије учитавања модела."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Довршите спремање API кључа прије освјежавања модела."
+  },
+  "runtime_refreshing": {
+    "message": "Освјежавање..."
+  },
+  "runtime_loading": {
+    "message": "Учитавање..."
+  },
+  "runtime_models_checking": {
+    "message": "Провјера компатибилних модела у Geminiju..."
+  },
+  "runtime_models_loading": {
+    "message": "Учитавање компатибилних модела..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Компатибилне моделе није могуће учитати."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini није вратио компатибилне моделе."
+  },
+  "runtime_model_not_available": {
+    "message": "Одабрани модел није на попису компатибилних. Одаберите други модел."
+  },
+  "runtime_record_key": {
+    "message": "Забиљежи типку"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Биљежење отказано."
+  },
+  "runtime_unknown_key": {
+    "message": "Та типка"
+  },
+  "runtime_press_key": {
+    "message": "Притисните типку..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Притисните једну подржану типку која не уноси знакове. Притисните Escape за одустајање."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Освјежите моделе за провјеру спремљеног API кључа."
+  },
+  "runtime_models_add_key": {
+    "message": "Додајте API кључ за учитавање компатибилних модела."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Проширење није могло учитати спремљено стање."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini је одбио спремљени API кључ. Замијените га или освјежите моделе за поновну провјеру."
+  },
+  "runtime_settings_reopen": {
+    "message": "Поставке се нису учитале. Поновно их отворите да покушате опет."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Поставке се нису учитале. Поновно учитајте спремљене поставке да покушате опет. Спремање је онемогућено ради заштите спремљеног избора."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Стање постављања није се учитало."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Унесите цијели API кључ без размака."
+  },
+  "runtime_key_use_remove": {
+    "message": "За брисање кључа користите Уклони спремљени кључ."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Прихватите дијељење изнад прије спремања API кључа."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Спремање шифрираног API кључа..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API кључ није могуће прочитати или спремити. Унос је задржан. Користите Спреми поставке за поновни покушај."
+  },
+  "runtime_connecting_google": {
+    "message": "Повезивање с Googleom..."
+  },
+  "runtime_stopping_google": {
+    "message": "Заустављање веза с Googleom..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Сугласност за податке није спремљена. Покушајте поновно."
+  },
+  "runtime_key_removing": {
+    "message": "Уклањање спремљеног кључа..."
+  },
+  "runtime_key_removed": {
+    "message": "Спремљени кључ уклоњен. Можете додати нови након прихваћања дијељења."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Спремљени кључ није уклоњен. Покушајте поновно."
+  },
+  "runtime_saving": {
+    "message": "Спремање..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Одаберите ваљан језик и модел."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Одаберите подржану типку или Искључено."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Одаберите модел с тренутачног пописа компатибилних."
+  },
+  "runtime_preferences_saving": {
+    "message": "Спремање поставки..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Поставке спремљене."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Поставке спремљене. Додајте API кључ за довршетак постављања."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Поставке није могуће прочитати или спремити. Измјене су задржане. Покушајте поновно."
+  },
+  "runtime_key_will_save": {
+    "message": "API кључ спремит ће се аутоматски."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Довршите унос API кључа."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Довршите спремање API кључа за учитавање компатибилних модела."
+  },
+  "runtime_recommended_selected": {
+    "message": "Препоручени модел одабран. Спремите избор за употребу."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Типка за покретање бит ће искључена након спремања."
+  },
+  "runtime_connection_changed": {
+    "message": "Поставке везе промијењене. Провјера спремљених поставки..."
+  },
+  "runtime_models_changed": {
+    "message": "Попис модела промијењен. Провјера компатибилних модела..."
+  },
+  "runtime_no_translation": {
+    "message": "Још нема пријевода."
+  },
+  "runtime_start_setup": {
+    "message": "Почни постављање"
+  },
+  "runtime_settings": {
+    "message": "Поставке"
+  },
+  "runtime_key_rejected": {
+    "message": "Кључ одбијен"
+  },
+  "runtime_setup_required": {
+    "message": "Потребно је постављање"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Додајте API кључ у Поставкама да почнете преводити."
+  },
+  "runtime_add_key": {
+    "message": "Додај API кључ"
+  },
+  "runtime_finish_model_language": {
+    "message": "Кључ је спремљен. Отворите Поставке да провјерите модел и довршите избор језика."
+  },
+  "runtime_check_setup": {
+    "message": "Провјери постављање"
+  },
+  "runtime_translating": {
+    "message": "Преводи се"
+  },
+  "runtime_error": {
+    "message": "Погрешка"
+  },
+  "runtime_ready": {
+    "message": "Спремно"
+  },
+  "runtime_status_load_failed": {
+    "message": "Стање проширења није се учитало. Поновно учитајте проширење па освјежите страницу."
+  },
+  "runtime_copied": {
+    "message": "Копирано."
+  },
+  "runtime_copy_blocked": {
+    "message": "Копирање је блокирано. Одаберите текст резултата и копирајте га."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Поставке није могуће отворити. Покушајте поновно."
+  },
+  "runtime_translating_progress": {
+    "message": "Превођење..."
+  },
+  "runtime_translation_started": {
+    "message": "Пријевод покренут."
+  },
+  "runtime_translation_complete": {
+    "message": "Пријевод довршен."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Пријевод довршен. Користите текст резултата или контроле картице."
+  },
+  "runtime_translation": {
+    "message": "Пријевод"
+  },
+  "runtime_target_language": {
+    "message": "Циљни језик"
+  },
+  "runtime_card_target_language": {
+    "message": "Циљни језик ове картице"
+  },
+  "runtime_close_card": {
+    "message": "Затвори картицу пријевода"
+  },
+  "runtime_translated_text": {
+    "message": "Преведени текст"
+  },
+  "runtime_retry": {
+    "message": "Покушај поновно"
+  },
+  "runtime_copy": {
+    "message": "Копирај"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Поставке није могуће отворити. Користите алатну траку проширења."
+  },
+  "runtime_copy_failed": {
+    "message": "Копирање није успјело. Одаберите текст резултата и копирајте га."
+  },
+  "runtime_context_menu": {
+    "message": "Преведи одабрани текст"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Није на тренутачном попису)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Још није провјерено)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Користи се предмеморирани попис модела од $value1$. Освјежавање уживо није успјело. Покушајте касније.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Користи се предмеморирани попис модела. Освјежавање уживо није успјело. Покушајте касније."
+  },
+  "runtime_models_cache_at": {
+    "message": "Користи се предмеморирани попис модела од $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Користи се предмеморирани попис модела."
+  },
+  "runtime_models_updated_at": {
+    "message": "Попис модела ажуриран од $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Попис модела ажуриран."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ није подржано. Притисните другу типку или Escape за одустајање.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ користит ће се након спремања.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "До $value1$ по картици и укупно $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ секунди",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Притисните Tab за употребу картице или Escape за затварање.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Пријевод није успио. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Освјежите отворене странице"
+  },
+  "refresh_message": {
+    "message": "API кључ је спремљен. Након довршетка постављања освјежите странице које су већ биле отворене. Затим означите текст и притисните Control за пријевод."
+  },
+  "refresh_continue": {
+    "message": "Настави постављање"
+  },
+  "refresh_faq_question": {
+    "message": "Зашто требам освјежити отворене странице?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Освјежите отворене странице</1> након довршетка постављања, прије покушаја пријевода. Chrome треба учитати проширење на страницама отвореним прије инсталације или поновног учитавања проширења. Новоотворене странице аутоматски су спремне."
+  },
+  "ui_locale": {
+    "message": "sr",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

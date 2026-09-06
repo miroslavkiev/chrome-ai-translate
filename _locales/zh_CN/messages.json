@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "选中文字，按下 Control，即可用 Gemini 轻松翻译成你选择的语言。",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "请选择一些文字后重试。"
+  },
+  "error_unsupported_selection": {
+    "message": "不支持这种文字选择。"
+  },
+  "error_selection_too_large": {
+    "message": "所选文字超过10,000个字符。请少选一些后重试。"
+  },
+  "error_missing_api_key": {
+    "message": "请在设置中添加 Gemini API 密钥。"
+  },
+  "error_agreement_required": {
+    "message": "连接 Google 前，请在设置中阅读并同意数据共享说明。"
+  },
+  "error_credential_conflict": {
+    "message": "保存的密钥已在其他页面更改。请重新加载已保存的设置后重试。"
+  },
+  "error_credential_storage_error": {
+    "message": "无法打开保存的密钥。请重新打开设置，或删除密钥后重新输入。"
+  },
+  "error_missing_target_language": {
+    "message": "请在设置中选择目标语言，以完成设置。"
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini 拒绝了此 API 密钥。请在设置中检查。"
+  },
+  "error_invalid_model": {
+    "message": "此模型不能用于翻译。请在设置中选择其他模型或推荐的 Flash-Lite 模型。"
+  },
+  "error_busy": {
+    "message": "正在进行的翻译过多。请等一项完成后重试。"
+  },
+  "error_duplicate_request": {
+    "message": "正在翻译这段文字。"
+  },
+  "error_rate_limited": {
+    "message": "已达到请求次数上限。请稍后重试。"
+  },
+  "error_timeout": {
+    "message": "翻译超时。你可以重试。"
+  },
+  "error_offline": {
+    "message": "你似乎处于离线状态。请检查网络后重试。"
+  },
+  "error_network_error": {
+    "message": "无法连接 Gemini。请检查网络后重试。"
+  },
+  "error_quota_exceeded": {
+    "message": "已达到 Gemini 用量上限。请检查账户，稍后重试。"
+  },
+  "error_service_error": {
+    "message": "Gemini 未能完成翻译。请稍后重试。"
+  },
+  "error_invalid_response": {
+    "message": "Gemini 返回了无法读取的回复。你可以重试。"
+  },
+  "error_output_too_large": {
+    "message": "翻译结果超过输出上限。请少选一些文字后重试。"
+  },
+  "error_content_blocked": {
+    "message": "Gemini 屏蔽了这段文字。请尝试其他内容。"
+  },
+  "error_unsupported_page": {
+    "message": "此页面无法使用翻译。"
+  },
+  "error_frame_unavailable": {
+    "message": "所选框架已不可用。"
+  },
+  "error_cancelled": {
+    "message": "翻译已取消。"
+  },
+  "key_Off": {
+    "message": "关闭"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " 请在 $seconds$ 秒后重试。",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator 设置"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "让翻译快速、专注的个人设置。"
+  },
+  "html_help_and_information": {
+    "message": "帮助与信息"
+  },
+  "html_api_key_guide": {
+    "message": "API 密钥指南"
+  },
+  "html_about": {
+    "message": "关于"
+  },
+  "html_privacy": {
+    "message": "隐私"
+  },
+  "html_set_up_ai_translator": {
+    "message": "设置 AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "请在此设置页面按步骤操作。翻译需要你自己的 Google API 密钥。"
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>获取你自己的 API 密钥。</1>打开 <2>Google AI Studio</2>，登录并创建密钥。阅读下面的数据共享说明，然后粘贴密钥。需要帮助时请<3>阅读分步指南</3>。"
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>选择目标语言和模型。</1>选择希望阅读译文的语言。如果模型列表中有 Gemini Flash-Lite，我们推荐使用它。"
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>保存并开始翻译。</1>点击本页底部的“完成设置”。然后在网页中选择文字并按下 Control，或在右键菜单中选择“翻译所选文字”。"
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "连接你自己的 Gemini API 密钥，并选择兼容的模型。"
+  },
+  "html_loading_setup_state": {
+    "message": "正在加载设置状态..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "连接 Google 之前"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google 会接收你的 API 密钥，用于查询可用模型。你请求翻译时，Google 还会接收所选文字及目标语言，其中也包括本地文件中的文字。AI 翻译可能出错。"
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "密钥会加密保存在此 Chrome 配置文件中，并在重启后自动解锁，无需额外密码。但能完全访问浏览器配置文件的人仍可能恢复密钥。<1>阅读隐私详情</1>。"
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>所有国家均须遵守：</1>使用来自<2>已启用结算</2>项目的 Gemini API 密钥。关闭可选的<3>与 Google 共享此扩展的请求日志和数据集</3>设置。在这些设置下，Google 的付费服务条款禁止将提示和回复用于产品改进，但仍允许安全及法律所需的处理。扩展免费，但可能产生 Google API 费用。"
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>使用条件。</1>通过此扩展使用 Gemini，即表示你同意遵守上述要求和 <2>Google 的条款</2>。仅供<3>支持地区</3>内年满18岁的用户用于专业或商业用途。扩展不会验证你的结算或共享设置。"
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "同意并连接 Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "撤回数据共享同意"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "连接前请阅读数据共享详情。"
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>为什么需要这些要求？阅读常见问题</1>。"
+  },
+  "html_api_key": {
+    "message": "API 密钥"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "同意后粘贴密钥，即可加密保存并自动加载模型。"
+  },
+  "html_show": {
+    "message": "显示"
+  },
+  "html_remove_saved_key": {
+    "message": "删除已保存的密钥"
+  },
+  "html_model": {
+    "message": "模型"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "已知仅适用于媒体或特定用途的模型不会显示。"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "推荐使用 Gemini Flash-Lite 系列。本次发布时（2026年9月）推荐 Gemini 3.5 Flash-Lite。你也可以选择列表中的其他模型。部分模型可能不兼容；如使用失败，请选择其他模型或推荐模型。"
+  },
+  "html_refresh_models": {
+    "message": "刷新模型"
+  },
+  "html_use_recommended_model": {
+    "message": "使用推荐模型"
+  },
+  "html_translation": {
+    "message": "翻译"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "设置语言和可选的键盘触发键。"
+  },
+  "html_default_language": {
+    "message": "默认语言"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "结果卡片可使用其他语言，而不改变此默认值。"
+  },
+  "html_keyboard_trigger": {
+    "message": "键盘触发键"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "单个按键可能与网站或辅助工具冲突。选择“关闭”可仅使用右键菜单。"
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "录入按键"
+  },
+  "html_off": {
+    "message": "关闭"
+  },
+  "html_behavior": {
+    "message": "行为"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "固定的保护措施保持翻译响应速度，并保护 API 配额。"
+  },
+  "html_parallel_requests": {
+    "message": "并行请求"
+  },
+  "html_request_timeout": {
+    "message": "请求超时"
+  },
+  "html_page_access": {
+    "message": "页面访问"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "如需翻译本地文件，请在扩展管理中启用“允许访问文件网址”"
+  },
+  "html_help_and_recovery": {
+    "message": "帮助与恢复"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "如模型不可用，请刷新列表，选择一个模型并保存设置。如无法加载列表，请检查密钥和网络，再尝试“刷新模型”。"
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome 设置页面和 Chrome 应用商店不允许翻译。对于本地文件，请在扩展管理中允许访问文件网址。更新或重新加载扩展后，请刷新已打开的网页。重新加载可能中断翻译。"
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "翻译需要联网。同意以上说明后，密钥将直接发送给 Google 以查询模型。只有你请求翻译时，才会发送所选文字及目标语言，包括本地文件的文字。密钥加密保存在此 Chrome 配置文件中。语言、模型和触发键偏好可通过 Chrome 同步。扩展只在本次浏览器会话中保留最新结果，不保存翻译历史。"
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "你可以在上方查看数据共享说明，并随时撤回同意。这会停止模型查询和翻译，直到你再次同意。除非选择“删除已保存的密钥”，否则密钥会保留。"
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "在此保存语言、模型和触发键的更改。"
+  },
+  "html_reload_saved_settings": {
+    "message": "重新加载已保存的设置"
+  },
+  "html_save_preferences": {
+    "message": "保存偏好设置"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini 翻译"
+  },
+  "html_setup_required": {
+    "message": "需要设置"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "欢迎使用 AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "将所选文字翻译成你熟悉的语言。请先设置以下两项："
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>你的 Gemini API 密钥。</1>在 Google AI Studio 获取自己的密钥。指南会说明具体步骤。"
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>你的目标语言。</1>选择你想阅读的语言。"
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "如何获取 API 密钥"
+  },
+  "html_extension_status": {
+    "message": "扩展状态"
+  },
+  "html_active_translations": {
+    "message": "正在进行的翻译"
+  },
+  "html_latest_this_session": {
+    "message": "本次会话的最新结果"
+  },
+  "html_no_translation_yet": {
+    "message": "尚无翻译。"
+  },
+  "html_copy": {
+    "message": "复制"
+  },
+  "html_settings": {
+    "message": "设置"
+  },
+  "html_key_guide": {
+    "message": "密钥指南"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "开始使用 AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "扩展页面"
+  },
+  "html_faq": {
+    "message": "常见问题"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "获取你自己的 Google API 密钥，选择语言，然后翻译第一段文字。"
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. 获取 API 密钥"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API 密钥让此扩展通过你的 Google 账户使用 Gemini。请像保护密码一样保护它。"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "此扩展仅供<1>Google 支持的国家和地区</1>内年满18岁的用户用于工作或商业用途。无论在哪个国家，API 密钥都必须属于已启用结算的 Gemini 项目。关闭与 Google 可选共享此扩展请求日志和数据集的设置。"
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "使用此扩展即表示你同意遵守这些条件、<1>Google API 服务条款</1>和 <2>Gemini API 附加条款</2>。如果无法满足条件，请勿使用。扩展不会验证这些情况，也不要求身份证件。"
+  },
+  "html_open_google_ai_studio": {
+    "message": "打开 Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "登录 Google 账户。如有要求，请接受 Google 的条款。"
+  },
+  "html_create_or_choose_a_key": {
+    "message": "创建或选择密钥"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "在 API 密钥页面选择<1>创建 API 密钥</1>，然后按 Google 的步骤选择或创建项目。项目用于归集 API 使用量及费用。如果你首次使用 AI Studio，Google 可能已创建默认项目和密钥。"
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "如果找不到已有项目，请打开<1>控制台 > 项目 > 导入项目</1>。导入后返回 API 密钥页面。"
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "使用前，请按 <1>Google 的结算指南</1>确认项目已启用结算。Gemini 应用的付费订阅不能替代 API 项目的结算。关闭与 Google 可选共享此扩展日志和数据集的设置，并阅读 <2>Google 的日志共享政策</2>。项目的私人日志记录不同于共享。"
+  },
+  "html_copy_your_key": {
+    "message": "复制密钥"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "从 AI Studio 复制密钥，返回扩展设置并阅读数据共享说明。选择<1>同意并连接 Google</1>，然后粘贴到 <2>API 密钥</2>栏。密钥会自动加密保存，并加载模型列表。请等待结果后再继续。"
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator 设置：空白 API 密钥栏上方显示数据共享说明和同意按钮，以及 Flash-Lite 模型推荐。"
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "图中为英语示例。在 AI Translator 中先同意数据共享，再粘贴自己的密钥。密钥加密保存后才会查询模型列表。"
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google 可能更改这些页面。最新步骤或密钥错误请参阅 <1>Google 的 API 密钥指南</1>。旧密钥无法使用时，请从 AI Studio 获取新密钥。"
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. 选择翻译设置"
+  },
+  "html_choose_a_model": {
+    "message": "选择模型"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "推荐使用 Gemini Flash-Lite 系列。在2026年9月的此版本中，推荐 <1>Gemini 3.5 Flash-Lite</1>。如果它在模型列表中，请使用它。"
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "你可选择列表中的其他模型。部分模型可能不兼容。如某模型失败，请选择其他模型或推荐模型。"
+  },
+  "html_choose_your_target_language": {
+    "message": "选择目标语言"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "从<1>默认语言</1>中选择想阅读的语言。选项依据 <2>Google 公布的 Gemini 支持语言</2>。翻译质量会因语言和文字内容而异。"
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator 翻译设置中的目标语言选择及键盘触发键控件。"
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "图中为英语示例。选择译文的语言，然后完成设置。"
+  },
+  "html_finish_setup": {
+    "message": "完成设置"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "保留 Control 触发键，录入其他按键，或选择<1>关闭</1>以仅使用右键菜单。点击设置底部的<2>完成设置</2>。以后可通过<3>保存偏好设置</3>更改。"
+  },
+  "html_open_settings": {
+    "message": "打开设置"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. 翻译第一段文字"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "打开普通网页并选取一小段文字。右键选择<1>翻译所选文字</1>，或按下并松开设置的触发键。结果会显示在选区旁边。"
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "刚安装或重新加载扩展后，请先刷新网页。Chrome 设置页面、Chrome 应用商店和内置 PDF 查看器不允许翻译。"
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "工具栏弹窗显示最新结果。设置完成后会打开标准界面。删除 API 密钥后，会再次显示欢迎指南。"
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "常见问题：密钥、费用与隐私"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "为什么需要我自己的 API 密钥？"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "此扩展设计为使用你的密钥，将请求直接发送到你的 Google 项目。这是设计选择，而非 Chrome 规定。密钥授权请求，并将它们关联到你的用量和结算。切勿在截图或公开消息中分享密钥。参阅 <1>Google 的 API 密钥指南</1>。"
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "为什么启用结算是必需的，而不只是建议？"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome 的<1>“有限用途”规则第3及第5项</1>规定，数据用途应限于扩展的功能及相关操作。Gemini 的部分免费使用允许更广泛的训练和人工审查。付费条款排除产品改进用途，但仍允许安全及法律所需的有限保留，以及在欧盟以外处理数据。"
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "为解决这一冲突，开发者要求在全球范围启用项目结算。如果只作建议，仍会允许免费使用。Google 自身的地区规则也要求在欧洲经济区、英国和瑞士提供的应用使用付费服务。参阅 <1>Gemini 条款：使用限制、免费服务和付费服务</1>。"
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "为什么必须关闭与 Google 的可选共享？"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "即使启用结算，共享日志或数据集也可能允许训练及人工审查。请勿通过数据集共享或反馈提供此扩展的数据。此规则允许你自己项目内的私人日志。参阅 <1>Google 日志政策：可共享的数据及我们如何使用数据</1>。"
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "如果需要付费 API，扩展还是免费的吗？"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "是的。扩展免费，但可能产生 Google API 费用。Gemini 应用的付费订阅不能替代 API 项目的结算。参阅<1>如何检查结算</1>和 <2>Google API 价格</2>。扩展不验证结算或共享设置。"
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "为什么需要点击“同意并连接 Google”？"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome 的<1>披露要求第1及第2项</1>要求明确说明数据用途，并获得知情同意。此按钮让你在任何 Google API 请求前作出选择。它不验证身份或结算，也不授权你分享他人的隐私信息。"
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "具体会向 Google 发送哪些内容？"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "查询模型会发送密钥并询问可用模型。翻译会发送所选文字、目标语言、模型和翻译指令，也包括所选本地文件文字。扩展不会附加整页内容、网页地址或浏览历史。Google 还会收到 IP 地址等连接信息。开发者不会收到这些请求。请只发送你有权分享的文字。"
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "密钥如何保存并自动解锁？"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API 密钥加密保存。它与加密密钥都留在此 Chrome 配置文件中，以便重启后自动使用，不会同步。能访问配置文件的人仍可能恢复 API 密钥。这不是操作系统钥匙串或受密码保护的保险库。语言、模型和触发键设置可以同步。只在浏览器会话中保留最新结果，不做分析或保存翻译历史。"
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "升级时，会先加密并检查旧密钥，再删除其明文副本。如果失败，旧副本仍会保存，请求继续被阻止。设置会显示错误。迁移旧密钥不会绕过同意步骤。"
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "我可以撤回同意或删除密钥吗？"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "在<1>设置</1>中，<2>撤回数据共享同意</2>会阻止新请求，并在本地取消正在进行的请求，同时保留密钥和偏好。<3>删除已保存的密钥</3>会删除密钥、加密密钥和模型缓存。两者都不能收回已发送的数据，也不保证已发送的请求免费。要在 Google 端禁用密钥，请在 AI Studio 撤销它。"
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "同意会在正常重启和更新后保留。如果说明改变，请求将暂停，直到你阅读并再次同意。"
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "为什么仅供成年人用于工作或商业用途？"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google 要求用户年满18岁，并在支持地区用于专业或商业目的。参阅 <1>Gemini 条款：年龄要求和使用限制</1>及<2>可用地区</2>。此扩展没有额外的资格确认框或身份验证。"
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "为什么除了这份说明，还需要隐私政策？"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "此说明解释连接前的选择，隐私政策提供数据、存储和删除的完整详情。Chrome 的<1>隐私政策规则</1>要求处理用户数据的扩展提供此类政策。请阅读<2>我们的隐私政策</2>。这些说明不表示 Google 已批准此扩展。"
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI 翻译可能出错。依赖重要文字前，请先核对。"
+  },
+  "html_about_ai_translator": {
+    "message": "关于 AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "选中文字并按 Control，轻松翻译。"
+  },
+  "html_made_for_people": {
+    "message": "为人们而开发"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "我创建 AI Translator，是为了帮助人们跨越语言阅读、学习和交流。希望它能帮助世界各地的人。"
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "此扩展使用你自己的 Google Gemini API 密钥翻译所选文字。你决定发送什么，以及使用哪种语言阅读。"
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "按下并松开 Control 即可翻译选区。Control 是默认键，可在设置中更改。也可使用网页的右键菜单。"
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "仅在 Mac 上进行过手动测试。尚未在 Windows 和 Linux 上手动测试。"
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>查看源代码与项目指南</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>获取帮助或报告问题</1>。问题报告是公开的，请勿包含 API 密钥、私人文字或个人信息。"
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "如果你想支持我的工作"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "请支持我的祖国乌克兰，帮助它抵御俄罗斯的侵略。"
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "我信任 Sternenko Community Foundation。如果你有能力并愿意提供帮助，可通过其官方网站捐款。"
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>通过基金会支持乌克兰</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "支持完全自愿，使用此扩展不需要捐款。链接会打开外部网站。捐款通过基金会进行，不经过此扩展。"
+  },
+  "html_privacy_and_costs": {
+    "message": "隐私与费用"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API 密钥在此设备上加密，不会同步。正常重启 Chrome 后仍可使用，无需解锁密码。但能访问浏览器配置文件的人仍可能恢复它。"
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "首次向 Google 发送请求前，设置会说明数据共享，并请你选择<1>同意并连接 Google</1>。之后，只有你请求翻译时，才将所选文字直接发送给 Google。模型查询会发送密钥，但不发送所选文字。扩展没有分析、广告或翻译历史。"
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "可随时在<1>设置</1>中查看详情。选择<2>撤回数据共享同意</2>，可保留加密密钥和偏好并停止新请求；选择<3>删除已保存的密钥</3>，可删除密钥和模型缓存。已经发送的数据无法收回。"
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "译文由 AI 生成，可能出错。依赖重要文字前请先核对。"
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>阅读隐私详情</1>。"
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator 是独立的免费项目，可能产生 Google API 费用。在所有国家，都请使用<1>已启用结算</1>项目的 Gemini API 密钥，并关闭<2>与 Google 可选共享此扩展请求日志和数据集</2>的设置。在这些设置下，Google 的付费条款排除将提示和回复用于产品改进，但安全及法律处理仍适用。请阅读 <3>Google 的价格和数据使用说明</3>。"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "此扩展仅供<1>Google 支持地区</1>内年满18岁的用户用于工作或商业用途。使用即表示你同意遵守这些条件、<2>Google API 服务条款</2>和 <3>Gemini API 附加条款</3>。如果无法满足，请勿使用。没有资格确认框或身份验证，扩展也不会验证结算或共享设置。"
+  },
+  "runtime_unsaved_changes": {
+    "message": "有未保存的更改。"
+  },
+  "runtime_settings_conflict": {
+    "message": "设置已在其他页面更改。这里的编辑已保留。如要放弃编辑并使用保存值，请重新加载已保存的设置。"
+  },
+  "runtime_preferences_current": {
+    "message": "偏好设置已是最新。"
+  },
+  "runtime_key_cannot_open": {
+    "message": "无法打开保存的密钥。请重新打开设置，或删除后重新输入。"
+  },
+  "runtime_key_conflict": {
+    "message": "API 密钥已在其他页面更改。保存密钥前请重新加载已保存的设置。"
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "密钥已加密保存。连接 Google 前请同意数据共享。"
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "添加 API 密钥前，请先同意上方的数据共享说明。"
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini 拒绝了保存的密钥。请替换它，或使用“刷新模型”重新检查。"
+  },
+  "runtime_paste_key": {
+    "message": "粘贴 API 密钥以连接 Gemini。"
+  },
+  "runtime_key_checked": {
+    "message": "API 密钥已保存，上次查询模型列表时 Gemini 已接受它。"
+  },
+  "runtime_key_saved_check": {
+    "message": "API 密钥已加密保存在此设备上。请刷新模型以通过 Gemini 检查。"
+  },
+  "runtime_retry_withdrawal": {
+    "message": "重试撤回"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "撤回数据共享同意"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "尚未确认撤回。请重试以保存你的选择。"
+  },
+  "runtime_agreement_saved": {
+    "message": "已为此 Chrome 配置文件同意数据共享，可随时撤回。"
+  },
+  "runtime_agreement_not_saved": {
+    "message": "同意前不会连接 Google。撤回后仍会保留保存的密钥。"
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini 拒绝了保存的密钥。请在下方替换。"
+  },
+  "runtime_setup_key_saved": {
+    "message": "密钥已加密保存在此设备上。"
+  },
+  "runtime_setup_create_key": {
+    "message": "请在 Google AI Studio 创建你自己的密钥。"
+  },
+  "runtime_setup_language_selected": {
+    "message": "语言已选择。请完成设置以保存选择。"
+  },
+  "runtime_setup_choose_language": {
+    "message": "请在下方选择目标语言。"
+  },
+  "runtime_finish_setup": {
+    "message": "完成设置"
+  },
+  "runtime_save_preferences": {
+    "message": "保存偏好设置"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "添加 API 密钥，检查模型列表，并保存模型选择。"
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "翻译前请解决设置冲突。"
+  },
+  "runtime_setup_agreement_required": {
+    "message": "连接 Google 前，请阅读并同意数据共享说明。"
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "检查设置前，请先完成 API 密钥保存。"
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "设置需要处理：Gemini 拒绝了保存的 API 密钥。"
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "密钥已保存。请选择目标语言，然后完成设置。"
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "请选择可用模型并保存偏好设置。"
+  },
+  "runtime_setup_model_selected": {
+    "message": "模型已选择。请保存偏好设置后使用。"
+  },
+  "runtime_setup_ready_finish": {
+    "message": "密钥和语言已就绪。完成设置以保存选择，然后尝试翻译。模型访问权限和配额仍可能变化。"
+  },
+  "runtime_setup_ready_translate": {
+    "message": "可以尝试翻译了。保存的模型在已检查的模型列表中，但请求权限和配额仍可能变化。"
+  },
+  "runtime_setup_refresh_models": {
+    "message": "密钥已保存。请刷新模型以检查密钥和所选模型。"
+  },
+  "runtime_show_key": {
+    "message": "显示"
+  },
+  "runtime_hide_key": {
+    "message": "隐藏"
+  },
+  "runtime_choose_target_language": {
+    "message": "选择目标语言"
+  },
+  "runtime_background_no_response": {
+    "message": "扩展后台未响应。请重新加载扩展后重试。"
+  },
+  "runtime_refresh_models": {
+    "message": "刷新模型"
+  },
+  "runtime_models_need_agreement": {
+    "message": "加载模型前请同意数据共享。"
+  },
+  "runtime_models_finish_key_save": {
+    "message": "刷新模型前，请完成 API 密钥保存。"
+  },
+  "runtime_refreshing": {
+    "message": "正在刷新..."
+  },
+  "runtime_loading": {
+    "message": "正在加载..."
+  },
+  "runtime_models_checking": {
+    "message": "正在向 Gemini 查询兼容模型..."
+  },
+  "runtime_models_loading": {
+    "message": "正在加载兼容模型..."
+  },
+  "runtime_models_load_failed": {
+    "message": "无法加载兼容模型。"
+  },
+  "runtime_models_empty": {
+    "message": "Gemini 没有返回兼容模型。"
+  },
+  "runtime_model_not_available": {
+    "message": "所选模型不在兼容列表中。请选择其他模型。"
+  },
+  "runtime_record_key": {
+    "message": "录入按键"
+  },
+  "runtime_recording_cancelled": {
+    "message": "已取消录入。"
+  },
+  "runtime_unknown_key": {
+    "message": "该按键"
+  },
+  "runtime_press_key": {
+    "message": "请按一个键..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "请按一个支持的非字符键。按 Escape 取消。"
+  },
+  "runtime_refresh_saved_key": {
+    "message": "请刷新模型以检查保存的 API 密钥。"
+  },
+  "runtime_models_add_key": {
+    "message": "添加 API 密钥以加载兼容模型。"
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "扩展无法加载保存的状态。"
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini 拒绝了保存的 API 密钥。请替换密钥或刷新模型后重试。"
+  },
+  "runtime_settings_reopen": {
+    "message": "无法加载设置。请重新打开设置后重试。"
+  },
+  "runtime_settings_load_failed": {
+    "message": "无法加载设置。请重新加载已保存的设置后重试。为保护保存的选择，已禁用保存。"
+  },
+  "runtime_setup_load_failed": {
+    "message": "无法加载设置状态。"
+  },
+  "runtime_key_no_spaces": {
+    "message": "请输入不含空格的完整 API 密钥。"
+  },
+  "runtime_key_use_remove": {
+    "message": "请使用“删除已保存的密钥”来删除密钥。"
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "保存 API 密钥前，请同意上方的数据共享说明。"
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "正在加密保存 API 密钥..."
+  },
+  "runtime_key_save_failed": {
+    "message": "无法读取或保存 API 密钥。输入内容已保留，请使用“保存偏好设置”重试。"
+  },
+  "runtime_connecting_google": {
+    "message": "正在连接 Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "正在停止与 Google 的连接..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "无法保存数据共享同意。请重试。"
+  },
+  "runtime_key_removing": {
+    "message": "正在删除已保存的密钥..."
+  },
+  "runtime_key_removed": {
+    "message": "已删除保存的密钥。同意数据共享后可添加新密钥。"
+  },
+  "runtime_key_remove_failed": {
+    "message": "无法删除保存的密钥。请重试。"
+  },
+  "runtime_saving": {
+    "message": "正在保存..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "请选择有效的语言和模型。"
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "请选择支持的触发键或“关闭”。"
+  },
+  "runtime_choose_listed_model": {
+    "message": "请从当前兼容列表中选择模型。"
+  },
+  "runtime_preferences_saving": {
+    "message": "正在保存偏好设置..."
+  },
+  "runtime_preferences_saved": {
+    "message": "偏好设置已保存。"
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "偏好设置已保存。请添加 API 密钥以完成设置。"
+  },
+  "runtime_preferences_save_failed": {
+    "message": "无法读取或保存偏好设置。编辑内容已保留，请重试。"
+  },
+  "runtime_key_will_save": {
+    "message": "API 密钥将自动保存。"
+  },
+  "runtime_key_finish_entry": {
+    "message": "请完成 API 密钥输入。"
+  },
+  "runtime_key_finish_save_models": {
+    "message": "完成 API 密钥保存后，即可加载兼容模型。"
+  },
+  "runtime_recommended_selected": {
+    "message": "已选择推荐模型。请保存选择后使用。"
+  },
+  "runtime_trigger_will_disable": {
+    "message": "保存后将关闭键盘触发键。"
+  },
+  "runtime_connection_changed": {
+    "message": "连接设置已更改。正在检查保存的设置..."
+  },
+  "runtime_models_changed": {
+    "message": "模型列表已更改。正在检查兼容模型..."
+  },
+  "runtime_no_translation": {
+    "message": "尚无翻译。"
+  },
+  "runtime_start_setup": {
+    "message": "开始设置"
+  },
+  "runtime_settings": {
+    "message": "设置"
+  },
+  "runtime_key_rejected": {
+    "message": "密钥被拒绝"
+  },
+  "runtime_setup_required": {
+    "message": "需要设置"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "请在设置中添加 API 密钥以开始翻译。"
+  },
+  "runtime_add_key": {
+    "message": "添加 API 密钥"
+  },
+  "runtime_finish_model_language": {
+    "message": "密钥已保存。请打开设置检查模型并完成语言选择。"
+  },
+  "runtime_check_setup": {
+    "message": "检查设置"
+  },
+  "runtime_translating": {
+    "message": "正在翻译"
+  },
+  "runtime_error": {
+    "message": "错误"
+  },
+  "runtime_ready": {
+    "message": "就绪"
+  },
+  "runtime_status_load_failed": {
+    "message": "无法加载扩展状态。请重新加载扩展，然后刷新页面。"
+  },
+  "runtime_copied": {
+    "message": "已复制。"
+  },
+  "runtime_copy_blocked": {
+    "message": "复制被阻止。请选择结果文字并手动复制。"
+  },
+  "runtime_settings_open_failed": {
+    "message": "无法打开设置。请重试。"
+  },
+  "runtime_translating_progress": {
+    "message": "正在翻译..."
+  },
+  "runtime_translation_started": {
+    "message": "翻译已开始。"
+  },
+  "runtime_translation_complete": {
+    "message": "翻译已完成。"
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "翻译已完成。你可以使用结果文字或卡片上的控件。"
+  },
+  "runtime_translation": {
+    "message": "翻译"
+  },
+  "runtime_target_language": {
+    "message": "目标语言"
+  },
+  "runtime_card_target_language": {
+    "message": "此卡片的目标语言"
+  },
+  "runtime_close_card": {
+    "message": "关闭翻译卡片"
+  },
+  "runtime_translated_text": {
+    "message": "翻译后的文字"
+  },
+  "runtime_retry": {
+    "message": "重试"
+  },
+  "runtime_copy": {
+    "message": "复制"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "无法打开设置。请使用扩展工具栏。"
+  },
+  "runtime_copy_failed": {
+    "message": "复制失败。请选择结果文字并手动复制。"
+  },
+  "runtime_context_menu": {
+    "message": "翻译所选文字"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$（不在当前列表中）",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$（尚未检查）",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "正在使用 $value1$ 的缓存模型列表。实时刷新失败，请稍后重试。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "正在使用缓存模型列表。实时刷新失败，请稍后重试。"
+  },
+  "runtime_models_cache_at": {
+    "message": "正在使用 $value1$ 的缓存模型列表。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "正在使用缓存模型列表。"
+  },
+  "runtime_models_updated_at": {
+    "message": "模型列表已于 $value1$ 更新。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "模型列表已更新。"
+  },
+  "runtime_key_not_supported": {
+    "message": "不支持 $value1$。请按其他键，或按 Escape 取消。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "保存后将使用 $value1$。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "每个标签页最多 $value1$ 项，总计最多 $value2$ 项",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ 秒",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ 按 Tab 操作此卡片，或按 Escape 关闭。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "翻译失败。$value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "刷新已打开的网页"
+  },
+  "refresh_message": {
+    "message": "API 密钥已保存。完成设置后，请刷新之前已打开的网页。然后选择文字并按 Control 即可翻译。"
+  },
+  "refresh_continue": {
+    "message": "继续设置"
+  },
+  "refresh_faq_question": {
+    "message": "为什么需要刷新已打开的网页？"
+  },
+  "refresh_faq_answer": {
+    "message": "完成设置后，翻译前请先<1>刷新已打开的网页</1>。对于安装或重新加载扩展之前就已打开的网页，Chrome 需要在其中加载扩展。新打开的网页会自动就绪。"
+  },
+  "ui_locale": {
+    "message": "zh-CN",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
-import { copyFile, mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import webpack from "webpack";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -18,12 +19,14 @@ async function launch() {
     args: ["--headless=new", `--disable-extensions-except=${extension}`, `--load-extension=${extension}`, "--disable-background-networking"],
   });
   await context.route("**/*", (route) => /^https?:/.test(route.request().url()) ? route.abort() : route.continue());
-  const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker");
-  for (let attempt = 0; attempt < 100; attempt += 1) {
-    if (await worker.evaluate(() => typeof globalThis.createTestStore === "function")) return worker;
-    await new Promise((resolve) => setTimeout(resolve, 50));
-  }
-  throw new Error("The isolated credential test did not start");
+  const worker = context.serviceWorkers()[0] || await context.waitForEvent("serviceworker", { timeout: 15_000 });
+  const page = await context.newPage();
+  await page.goto(`chrome-extension://${new URL(worker.url()).host}/test.html`);
+  await page.waitForFunction(async () => {
+    try { return await chrome.runtime.sendMessage("testReady") === true; }
+    catch { return false; }
+  }, undefined, { timeout: 15_000 });
+  return context.serviceWorkers().find((candidate) => candidate.url() === worker.url()) || worker;
 }
 
 function check(results) {
@@ -32,13 +35,18 @@ function check(results) {
 
 try {
   await mkdir(extension);
-  await Promise.all(["credential-store.js", "shared.js"].map((name) => copyFile(path.join(root, name), path.join(extension, name))));
   await writeFile(path.join(extension, "manifest.json"), JSON.stringify({
     manifest_version: 3, name: "Offline credential store check", version: "1.0",
     background: { service_worker: "background.js", type: "module" },
   }));
-  await writeFile(path.join(extension, "background.js"),
-    'import { createCredentialStore } from "./credential-store.js"; globalThis.createTestStore = createCredentialStore;');
+  const entry = path.join(temporary, "entry.js");
+  await writeFile(entry,
+    `import { createCredentialStore } from ${JSON.stringify(path.join(root, "credential-store.js"))}; globalThis.createTestStore = createCredentialStore; chrome.runtime.onMessage.addListener((_message, _sender, reply) => reply(true));`);
+  // Match production bundling: extension workers do not support native JSON imports reliably.
+  await new Promise((resolve, reject) => webpack({ mode: "none", target: "webworker", entry,
+    output: { path: extension, filename: "background.js" }, devtool: false,
+  }, (error, stats) => error || stats.hasErrors() ? reject(error || new Error(stats.toString())) : resolve()));
+  await writeFile(path.join(extension, "test.html"), '<!doctype html><title>Offline credential test</title>');
 
   let worker = await launch();
   const first = await worker.evaluate(async () => {

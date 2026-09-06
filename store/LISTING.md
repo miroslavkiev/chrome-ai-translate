@@ -9,7 +9,7 @@ Do not submit yet. See [the open release items and recorded risks](README.md). T
 | Name | AI Translator |
 | Summary | Super easy translation: select text and press Control. Translate into your chosen language with Gemini. |
 | Category | Productivity > Tools, confirmed from the dashboard choices on September 6, 2026. |
-| Listing language | English. This is the interface language, not the set of translation target languages. |
+| Listing language | English is the default listing and fallback. The packaged interface supports all 55 Chrome locales. Translation targets are a separate list. |
 | Homepage URL | https://github.com/miroslavkiev/chrome-ai-translate |
 | Support URL | https://github.com/miroslavkiev/chrome-ai-translate/issues |
 | Privacy policy URL | https://github.com/miroslavkiev/chrome-ai-translate/blob/main/PRIVACY.md |
@@ -28,6 +28,7 @@ AI Translator uses Google Gemini to translate the words you choose. Read the res
 
 🌍 Translate your way
 
+• Use the interface in 55 Chrome-supported locales, following Chrome's interface language.
 • Choose from 110 language and script options based on Google's shared Gemini language list.
 • Tap and release Control, or use the right-click menu.
 • Change the language in a result card without changing your default.
@@ -39,7 +40,8 @@ AI Translator uses Google Gemini to translate the words you choose. Read the res
 
 1. Open the extension and follow the guide to get your own Google Gemini API key.
 2. Read the data-sharing notice and choose Agree and connect to Google.
-3. Add your key, choose a model and target language, then finish setup.
+3. Add your key, check the suggested target language, choose a model, then finish setup.
+4. Refresh pages that were already open before you start translating.
 
 The built-in FAQ explains API keys, billing, privacy and why each requirement exists, with links to the official rules.
 

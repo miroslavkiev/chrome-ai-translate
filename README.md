@@ -16,6 +16,8 @@ The [Store release pack](store/README.md) contains listing text, screenshots, pr
 - Translate several selections on the same page.
 - Change the target language for one result without changing the saved default.
 - Choose from Google's documented Gemini languages, including separate Simplified and Traditional Chinese choices.
+- Use the interface in all 55 Chrome-supported locales, following Chrome's interface language.
+- Start with a target language suggested from Chrome's preferred languages.
 - Follow a first-use checklist and an API key guide inside the extension.
 - Keep an encrypted API key across normal Chrome restarts, without a separate unlock password.
 - Review data sharing in Settings and withdraw your agreement at any time.
@@ -52,7 +54,7 @@ npm ci
 npm run ci
 ```
 
-For a new install, load the generated `dist` folder from `chrome://extensions`. An existing install may keep the repository root as its loaded folder. Its manifest now uses the built `dist/content.js`, so build again after source changes, reload the extension, and refresh web pages. Keep the same loaded folder to preserve the extension identity and saved settings.
+For a new install, load the generated `dist` folder from `chrome://extensions`. An existing install may keep the repository root as its loaded folder. Its manifest uses the built `dist/content.js` and `dist/background.js`, so build again after source changes, reload the extension, and refresh web pages. Keep the same loaded folder to preserve the extension identity and saved settings.
 
 `npm run package` creates and verifies:
 
@@ -67,10 +69,13 @@ The in-app guide includes an FAQ explaining API keys, paid project billing, priv
 2. Follow the API key guide to open Google AI Studio, sign in, and create or choose your own key. Check that its project has active billing and optional sharing of this extension's request logs and datasets with Google is off. The guide opens in a separate tab and contains links to Google's current instructions.
 3. Read the use conditions and data-sharing details in Settings. Choose **Agree and connect to Google** to allow model checks and the translations you request. Until you agree, the extension makes no Google API request.
 4. Paste your key into Settings. After agreement, the key is encrypted and saved, and the model list loads automatically. A manually typed key saves when you leave the field. On an upgrade, a saved key can be migrated safely without entering it again; model loading still waits for your agreement.
-5. Choose a model, target language, and optional keyboard trigger. Choose Finish setup to save these choices and complete the checklist.
-6. Open a normal web page, select text, then tap and release Control. You can also choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
+5. Check the suggested target language, choose a model and optional keyboard trigger, then choose Finish setup.
+6. **Refresh open pages** before translating on pages that were open before installation or extension reload. A one-time dialog reminds you after your first key is saved.
+7. Open a normal web page, select text, then tap and release Control. You can also choose Translate Selected Text from the right-click menu. Refresh the web page first if the extension was just installed or reloaded.
 
 After setup, the popup returns to the standard view. A saved key with unfinished setup keeps a Finish setup action so you can return to the checklist. Removing the key brings back the welcome guide. Existing users keep their saved language and model. Later changes use Save Preferences in Settings.
+
+The interface follows Chrome's interface language. On Mac, this follows the system language setting. New setup suggests the first supported language in Chrome's preferred-language list, then the interface language, then English. Confirm or change it before Finish setup. A saved target always wins, even if Chrome's language changes. Unsupported interface languages fall back to English. See [I18N.md](I18N.md) for coverage and translation maintenance.
 
 The data agreement is saved for this browser profile and stays in place across normal restarts and updates unless the notice changes. If it changes, requests wait until you review it and agree again. Google's use conditions apply through use of the extension without a separate eligibility checkbox. The extension does not verify your age, work, location, billing or sharing settings.
 

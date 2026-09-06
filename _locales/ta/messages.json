@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "எளிய மொழிபெயர்ப்பு: உரையைத் தேர்ந்து Control அழுத்துங்கள். Gemini மூலம் விரும்பிய மொழியில் படியுங்கள்.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "சிறிது உரையைத் தேர்ந்து மீண்டும் முயலுங்கள்."
+  },
+  "error_unsupported_selection": {
+    "message": "இந்த உரைத் தேர்வு ஆதரிக்கப்படவில்லை."
+  },
+  "error_selection_too_large": {
+    "message": "தேர்ந்த உரை 10,000 எழுத்துகளுக்கு மேல் உள்ளது. குறைவாகத் தேர்ந்து மீண்டும் முயலுங்கள்."
+  },
+  "error_missing_api_key": {
+    "message": "அமைப்புகளில் உங்கள் Gemini API விசையைச் சேருங்கள்."
+  },
+  "error_agreement_required": {
+    "message": "Google உடன் இணையும் முன் அமைப்புகளில் தரவுப் பகிர்வைப் படித்து ஒப்புக்கொள்ளுங்கள்."
+  },
+  "error_credential_conflict": {
+    "message": "சேமித்த விசை மற்றொரு பக்கத்தில் மாறியுள்ளது. மீண்டும் முயலும் முன் சேமித்த அமைப்புகளை மீளேற்றுங்கள்."
+  },
+  "error_credential_storage_error": {
+    "message": "சேமித்த விசையைத் திறக்க முடியவில்லை. அமைப்புகளை மீண்டும் திறக்கவும் அல்லது விசையை நீக்கி மீண்டும் உள்ளிடவும்."
+  },
+  "error_missing_target_language": {
+    "message": "அமைவை முடிக்க அமைப்புகளில் இலக்கு மொழியைத் தேர்ந்தெடுங்கள்."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini API விசையை நிராகரித்தது. அமைப்புகளில் சரிபாருங்கள்."
+  },
+  "error_invalid_model": {
+    "message": "இந்த மாடலை மொழிபெயர்க்கப் பயன்படுத்த முடியாது. அமைப்புகளில் வேறு மாடல் அல்லது பரிந்துரைத்த Flash-Liteஐத் தேருங்கள்."
+  },
+  "error_busy": {
+    "message": "பல மொழிபெயர்ப்புகள் நடக்கின்றன. ஒன்று முடிந்ததும் மீண்டும் முயலுங்கள்."
+  },
+  "error_duplicate_request": {
+    "message": "இந்தத் தேர்வு ஏற்கனவே மொழிபெயர்க்கப்படுகிறது."
+  },
+  "error_rate_limited": {
+    "message": "கோரிக்கை வரம்பை அடைந்துவிட்டது. சிறிது நேரத்தில் மீண்டும் முயலுங்கள்."
+  },
+  "error_timeout": {
+    "message": "மொழிபெயர்ப்பு அதிக நேரம் எடுத்தது. மீண்டும் முயலலாம்."
+  },
+  "error_offline": {
+    "message": "நீங்கள் இணையத்தில் இல்லை போல் தெரிகிறது. இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்."
+  },
+  "error_network_error": {
+    "message": "Geminiஐ அணுக முடியவில்லை. இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini ஒதுக்கீடு முடிந்தது. கணக்கைச் சரிபார்த்து பிறகு முயலுங்கள்."
+  },
+  "error_service_error": {
+    "message": "Gemini மொழிபெயர்ப்பை முடிக்கவில்லை. பிறகு மீண்டும் முயலுங்கள்."
+  },
+  "error_invalid_response": {
+    "message": "Gemini படிக்க முடியாத பதிலைத் தந்தது. மீண்டும் முயலலாம்."
+  },
+  "error_output_too_large": {
+    "message": "மொழிபெயர்ப்பு வெளியீட்டு வரம்பை மீறியது. குறைந்த உரையைத் தேர்ந்து மீண்டும் முயலுங்கள்."
+  },
+  "error_content_blocked": {
+    "message": "Gemini இந்த உரையைத் தடுத்தது. வேறு உரையைத் தேருங்கள்."
+  },
+  "error_unsupported_page": {
+    "message": "இந்தப் பக்கத்தில் மொழிபெயர்க்க முடியாது."
+  },
+  "error_frame_unavailable": {
+    "message": "தேர்ந்த சட்டகம் இனி கிடைக்காது."
+  },
+  "error_cancelled": {
+    "message": "மொழிபெயர்ப்பு ரத்தானது."
+  },
+  "key_Off": {
+    "message": "அணை"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ வினாடிகளில் மீண்டும் முயலுங்கள்.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator அமைப்புகள்"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "விரைவான, கவனமான மொழிபெயர்ப்புக்கான தனிப்பட்ட அமைப்புகள்."
+  },
+  "html_help_and_information": {
+    "message": "உதவியும் தகவலும்"
+  },
+  "html_api_key_guide": {
+    "message": "API விசை வழிகாட்டி"
+  },
+  "html_about": {
+    "message": "அறிமுகம்"
+  },
+  "html_privacy": {
+    "message": "தனியுரிமை"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translatorஐ அமைக்கவும்"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "இந்த அமைப்புப் பக்கத்தின் படிகளைப் பின்பற்றுங்கள். மொழிபெயர்க்க உங்கள் சொந்த Google API விசை தேவை."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>உங்கள் API விசையைப் பெறுங்கள்.</1> <2>Google AI Studio</2>ஐத் திறந்து உள்நுழைந்து விசை உருவாக்குங்கள். கீழே தரவுப் பகிர்வைப் படித்துவிட்டு விசையை ஒட்டுங்கள். உதவிக்கு <3>படிப்படியான வழிகாட்டியைப் படியுங்கள்</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>இலக்கு மொழியையும் மாடலையும் தேருங்கள்.</1> மொழிபெயர்ப்பைப் படிக்க விரும்பும் மொழியைத் தேருங்கள். பட்டியலில் இருந்தால் Gemini Flash-Liteஐப் பரிந்துரைக்கிறோம்."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>சேமித்து மொழிபெயர்க்கத் தொடங்குங்கள்.</1> பக்கத்தின் கீழே அமைவை முடி என்பதைப் பயன்படுத்துங்கள். பிறகு வலைப்பக்கத்தில் உரையைத் தேர்ந்து Control அழுத்துங்கள் அல்லது வலது கிளிக் பட்டியில் தேர்ந்த உரையை மொழிபெயர் என்பதைத் தேருங்கள்."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "உங்கள் Gemini API விசையை இணைத்து பொருந்தும் மாடலைத் தேருங்கள்."
+  },
+  "html_loading_setup_state": {
+    "message": "அமைவு நிலை ஏற்றப்படுகிறது..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Google உடன் இணையும் முன்"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "கிடைக்கும் மாடல்களைச் சரிபார்க்க Google உங்கள் API விசையைப் பெறுகிறது. மொழிபெயர்ப்பு கேட்கும்போது தேர்ந்த உரையையும் இலக்கு மொழியையும் பெறுகிறது; உள்ளூர் கோப்பு உரையும் இதில் அடங்கும். AI மொழிபெயர்ப்பில் தவறுகள் இருக்கலாம்."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "விசை இந்த Chrome சுயவிவரத்தில் மறையாக்கிச் சேமிக்கப்பட்டு மறுதொடக்கத்துக்குப் பின் தானாகத் திறக்கும். கூடுதல் கடவுச்சொல் தேவையில்லை. ஆனால் உலாவிச் சுயவிவரத்தின் முழு அணுகல் உள்ளவர் விசையை மீட்கலாம். <1>தனியுரிமை விவரங்களைப் படியுங்கள்</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>எல்லா நாடுகளிலும் அவசியம்:</1> <2>செயலில் உள்ள பில்லிங்</2> கொண்ட திட்டத்தின் Gemini API விசையைப் பயன்படுத்துங்கள். இந்த நீட்சியின் <3>கோரிக்கைப் பதிவுகளையும் தரவுத்தொகுப்புகளையும் Google உடன் விருப்பப்படி பகிர்வதை</3> அணைத்து வையுங்கள். இந்த அமைப்புகளில் Google கட்டண விதிகளின்படி ப்ராம்ப்ட்களும் பதில்களும் தயாரிப்பு மேம்பாட்டுக்குப் பயன்படுத்தப்படாது; பாதுகாப்பு மற்றும் சட்டச் செயலாக்கம் தொடரும். நீட்சி இலவசம், ஆனால் Google API கட்டணம் வரலாம்."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>பயன்பாட்டு நிபந்தனைகள்.</1> இந்த நீட்சி வழியாக Gemini பயன்படுத்தும்போது மேலுள்ள தேவைகளையும் <2>Google விதிகளையும்</2> பின்பற்ற ஒப்புக்கொள்கிறீர்கள். <3>ஆதரிக்கப்படும் பகுதிகளில்</3> குறைந்தது 18 வயதானவர்கள் தொழில்முறை அல்லது வணிக நோக்கில் பயன்படுத்த வேண்டும். நீட்சி உங்கள் பில்லிங் அல்லது பகிர்வு அமைப்புகளைச் சரிபார்க்காது."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "ஒப்புக்கொண்டு Google உடன் இணை"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "தரவுப் பகிர்வு ஒப்புதலைத் திரும்பப் பெறு"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "இணையும் முன் தரவுப் பகிர்வு விவரங்களைப் படியுங்கள்."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>இந்தத் தேவைகள் ஏன்? பொதுக் கேள்விகளைப் படியுங்கள்</1>."
+  },
+  "html_api_key": {
+    "message": "API விசை"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "ஒப்புக்கொண்ட பின் விசையை ஒட்டினால் மறையாக்கிச் சேமித்து மாடல்களைத் தானாக ஏற்றும்."
+  },
+  "html_show": {
+    "message": "காட்டு"
+  },
+  "html_remove_saved_key": {
+    "message": "சேமித்த விசையை நீக்கு"
+  },
+  "html_model": {
+    "message": "மாடல்"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "ஊடகம் அல்லது சிறப்புப் பணிகளுக்கானவை என அறியப்பட்ட மாடல்கள் மறைக்கப்பட்டுள்ளன."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Gemini Flash-Lite குடும்பத்தைப் பரிந்துரைக்கிறோம். இந்த வெளியீட்டில் (செப்டம்பர் 2026) எங்கள் தேர்வு Gemini 3.5 Flash-Lite. பட்டியலில் வேறு மாடலைத் தேரலாம். சில மாடல்கள் இந்த நீட்சியில் இயங்காமல் இருக்கலாம். தோல்வியுற்றால் வேறு மாடல் அல்லது பரிந்துரைத்ததைத் தேருங்கள்."
+  },
+  "html_refresh_models": {
+    "message": "மாடல்களைப் புதுப்பி"
+  },
+  "html_use_recommended_model": {
+    "message": "பரிந்துரைத்த மாடலைப் பயன்படுத்து"
+  },
+  "html_translation": {
+    "message": "மொழிபெயர்ப்பு"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "மொழியையும் விருப்பமான விசைப்பலகைத் தூண்டியையும் அமைக்கவும்."
+  },
+  "html_default_language": {
+    "message": "இயல்புநிலை மொழி"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "இந்த இயல்புநிலையை மாற்றாமல் முடிவு அட்டையில் வேறு மொழியைப் பயன்படுத்தலாம்."
+  },
+  "html_keyboard_trigger": {
+    "message": "விசைப்பலகைத் தூண்டி"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "ஒற்றை விசை வலைத்தளங்கள் அல்லது அணுகல்தன்மைக் கருவிகளுடன் முரண்படலாம். வலது கிளிக் பட்டியை மட்டும் பயன்படுத்த அணை என்பதைத் தேருங்கள்."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "விசையைப் பதிவு செய்"
+  },
+  "html_off": {
+    "message": "அணை"
+  },
+  "html_behavior": {
+    "message": "செயல்பாடு"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "நிலையான பாதுகாப்பு வரம்புகள் மொழிபெயர்ப்பின் வேகத்தையும் API ஒதுக்கீட்டையும் காக்கின்றன."
+  },
+  "html_parallel_requests": {
+    "message": "ஒரேநேரக் கோரிக்கைகள்"
+  },
+  "html_request_timeout": {
+    "message": "கோரிக்கைக் காலவரம்பு"
+  },
+  "html_page_access": {
+    "message": "பக்க அணுகல்"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "உள்ளூர் கோப்புகளுக்கு நீட்சி நிர்வாகத்தில் கோப்பு URL அணுகலை அனுமதியுங்கள்"
+  },
+  "html_help_and_recovery": {
+    "message": "உதவியும் மீட்பும்"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "மாடல் கிடைக்காவிட்டால் பட்டியலைப் புதுப்பித்து ஒன்றைத் தேர்ந்து விருப்பங்களைச் சேமியுங்கள். பட்டியல் ஏறாவிட்டால் விசையையும் இணைப்பையும் சரிபார்த்து மாடல்களைப் புதுப்பியுங்கள்."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome அமைப்புப் பக்கங்களும் Chrome Web Storeமும் மொழிபெயர்க்க அனுமதிக்காது. உள்ளூர் கோப்புகளுக்கு நீட்சி நிர்வாகத்தில் கோப்பு URL அணுகலை அனுமதியுங்கள். நீட்சியைப் புதுப்பித்த அல்லது மீளேற்றிய பின் திறந்த வலைப்பக்கங்களைப் புதுப்பியுங்கள். மீளேற்றுவது மொழிபெயர்ப்பை இடைநிறுத்தலாம்."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "மொழிபெயர்க்க இணையம் தேவை. மேலே ஒப்புக்கொண்ட பின் மாடல்களைச் சரிபார்க்க விசை நேரடியாக Googleக்கு அனுப்பப்படும். உள்ளூர் கோப்பு உட்பட தேர்ந்த உரையும் இலக்கு மொழியும் மொழிபெயர்ப்பு கேட்கும்போது மட்டுமே அனுப்பப்படும். விசை Chrome சுயவிவரத்தில் மறையாக்கப்பட்டிருக்கும். மொழி, மாடல், தூண்டி Chrome வழியாக ஒத்திசையலாம். உலாவி அமர்வில் சமீபத்திய முடிவு மட்டுமே இருக்கும்; மொழிபெயர்ப்பு வரலாறு இல்லை."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "மேலே தரவுப் பகிர்வைப் பார்த்து எப்போது வேண்டுமானாலும் ஒப்புதலைத் திரும்பப் பெறலாம். மீண்டும் ஒப்புக்கொள்ளும் வரை மாடல் சரிபார்ப்பும் மொழிபெயர்ப்பும் நிற்கும். சேமித்த விசையை நீக்கு என்பதைத் தேராதவரை விசை இருக்கும்."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "மொழி, மாடல், தூண்டி மாற்றங்களை இங்கே சேமியுங்கள்."
+  },
+  "html_reload_saved_settings": {
+    "message": "சேமித்த அமைப்புகளை மீளேற்று"
+  },
+  "html_save_preferences": {
+    "message": "விருப்பங்களைச் சேமி"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini மொழிபெயர்ப்பு"
+  },
+  "html_setup_required": {
+    "message": "அமைவு தேவை"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "AI Translatorக்கு வரவேற்கிறோம்"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "தேர்ந்த உரையை உங்களுக்குத் தெரிந்த மொழியில் மொழிபெயருங்கள். தொடங்க இந்த இரண்டை அமைக்கவும்:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>உங்கள் Gemini API விசை.</1> Google AI Studioவில் சொந்த விசையைப் பெறுங்கள். வழிகாட்டி முறையை விளக்கும்."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>உங்கள் இலக்கு மொழி.</1> படிக்க விரும்பும் மொழியைத் தேருங்கள்."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API விசை பெறுவது எப்படி"
+  },
+  "html_extension_status": {
+    "message": "நீட்சியின் நிலை"
+  },
+  "html_active_translations": {
+    "message": "செயலில் உள்ள மொழிபெயர்ப்புகள்"
+  },
+  "html_latest_this_session": {
+    "message": "இந்த அமர்வின் சமீபத்திய முடிவு"
+  },
+  "html_no_translation_yet": {
+    "message": "இன்னும் மொழிபெயர்ப்பு இல்லை."
+  },
+  "html_copy": {
+    "message": "நகலெடு"
+  },
+  "html_settings": {
+    "message": "அமைப்புகள்"
+  },
+  "html_key_guide": {
+    "message": "விசை வழிகாட்டி"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translatorஐத் தொடங்குங்கள்"
+  },
+  "html_extension_pages": {
+    "message": "நீட்சிப் பக்கங்கள்"
+  },
+  "html_faq": {
+    "message": "பொதுக் கேள்விகள்"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "உங்கள் Google API விசையைப் பெற்று மொழியைத் தேர்ந்து முதல் உரையை மொழிபெயருங்கள்."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. API விசையைப் பெறுங்கள்"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API விசையால் உங்கள் Google கணக்கு வழியாக நீட்சி Geminiஐப் பயன்படுத்தலாம். கடவுச்சொல் போல் ரகசியமாக வையுங்கள்."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "இந்த நீட்சி <1>Google ஆதரிக்கும் நாடுகள் மற்றும் பகுதிகளில்</1> குறைந்தது 18 வயதானவர்களின் வேலை அல்லது வணிகப் பயன்பாட்டுக்கானது. எல்லா நாடுகளிலும் API விசை செயலில் உள்ள பில்லிங் கொண்ட Gemini திட்டத்துக்குச் சொந்தமாக வேண்டும். நீட்சியின் கோரிக்கைப் பதிவுகள் மற்றும் தரவுத்தொகுப்புகளை Google உடன் விருப்பப்படி பகிர்வதை அணையுங்கள்."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "பயன்படுத்துவதால் இந்த நிபந்தனைகள், <1>Google API விதிகள்</1> மற்றும் <2>Gemini API கூடுதல் விதிகளை</2> ஏற்கிறீர்கள். பின்பற்ற முடியாவிட்டால் பயன்படுத்தாதீர்கள். நீட்சி இதைச் சரிபார்க்கவோ அடையாள ஆவணங்கள் கேட்கவோ செய்யாது."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studioஐத் திற"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Google கணக்கில் உள்நுழையுங்கள். கேட்டால் Google விதிகளை ஏற்றுக்கொள்ளுங்கள்."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "விசையை உருவாக்குங்கள் அல்லது தேருங்கள்"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API Keys பக்கத்தில் <1>API விசை உருவாக்கு</1> என்பதைத் தேர்ந்து திட்டத்தைத் தேர அல்லது உருவாக்க Google படிகளைப் பின்பற்றுங்கள். திட்டம் API பயன்பாட்டையும் பில்லிங்கையும் இணைக்கிறது. AI Studioக்கு புதியவராக இருந்தால் Google ஏற்கனவே இயல்புநிலைத் திட்டமும் விசையும் உருவாக்கியிருக்கலாம்."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "பழைய திட்டம் தெரியாவிட்டால் <1>டாஷ்போர்டு > திட்டங்கள் > திட்டங்களை இறக்குமதி செய்</1> என்பதைத் திறக்கவும். திட்டத்தை இறக்குமதி செய்து API Keysக்கு வரவும்."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "விசையைப் பயன்படுத்தும் முன் <1>Google பில்லிங் வழிகாட்டி</1> மூலம் திட்டத்தின் பில்லிங் செயலில் உள்ளதா பாருங்கள். கட்டண Gemini செயலிச் சந்தா API திட்ட பில்லிங்கிற்கு மாற்றல்ல. நீட்சியின் பதிவுகள் மற்றும் தரவுத்தொகுப்புகளை Google உடன் விருப்பப்படி பகிர்வதை அணைத்து, <2>Google பதிவு பகிர்வுக் கொள்கையைப்</2> படியுங்கள். திட்டத்தின் தனிப்பட்ட பதிவு பகிர்விலிருந்து வேறுபட்டது."
+  },
+  "html_copy_your_key": {
+    "message": "விசையை நகலெடு"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "AI Studioவில் விசையை நகலெடுங்கள். நீட்சி அமைப்புகளுக்குத் திரும்பி தரவுப் பகிர்வைப் படியுங்கள். <1>ஒப்புக்கொண்டு Google உடன் இணை</1> என்பதைத் தேர்ந்து <2>API விசை</2> புலத்தில் ஒட்டுங்கள். அது தானாக மறையாக்கிச் சேமிக்கப்பட்டு மாடல் பட்டியல் ஏறும். தொடரும் முன் முடிவுக்குக் காத்திருங்கள்."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "காலியான API விசைப் புலத்தின் மேல் தரவுப் பகிர்வு அறிவிப்பும் ஒப்புதல் பொத்தானும், Flash-Lite பரிந்துரையும் காட்டும் AI Translator அமைப்புகள்."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "எடுத்துக்காட்டு ஆங்கிலத்தில் உள்ளது. AI Translatorல் முதலில் தரவுப் பகிர்வை ஏற்று உங்கள் விசையை ஒட்டுங்கள். மறையாக்கிய விசையைச் சேமித்த பின் மாடல் பட்டியல் சரிபார்க்கப்படும்."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google இந்தத் திரைகளை மாற்றலாம். புதிய படிகள் அல்லது விசைப் பிழைகளுக்கு <1>Google API விசை வழிகாட்டியைப்</1> படியுங்கள். பழைய விசை இயங்காவிட்டால் AI Studioவில் புதியதைப் பெறுங்கள்."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. மொழிபெயர்ப்பு அமைப்புகளைத் தேருங்கள்"
+  },
+  "html_choose_a_model": {
+    "message": "மாடலைத் தேருங்கள்"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Gemini Flash-Lite குடும்பத்தைப் பரிந்துரைக்கிறோம். செப்டம்பர் 2026 வெளியீட்டில் எங்கள் தேர்வு <1>Gemini 3.5 Flash-Lite</1>. பட்டியலில் இருந்தால் பயன்படுத்துங்கள்."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "பட்டியலில் வேறு மாடலைத் தேரலாம். சில மாடல்கள் இயங்காமல் இருக்கலாம். தோல்வியுற்றால் வேறு அல்லது பரிந்துரைத்த மாடலைத் தேருங்கள்."
+  },
+  "html_choose_your_target_language": {
+    "message": "இலக்கு மொழியைத் தேருங்கள்"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "<1>இயல்புநிலை மொழியில்</1> படிக்க விரும்பும் மொழியைத் தேருங்கள். தேர்வுகள் <2>Google ஆவணப்படுத்திய Gemini மொழிகளின்படி</2> உள்ளன. மொழி மற்றும் உரைக்கேற்ப தரம் மாறலாம்."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "இலக்கு மொழித் தேர்வும் விசைப்பலகைத் தூண்டி கட்டுப்பாடுகளும் கொண்ட AI Translator மொழிபெயர்ப்பு அமைப்புகள்."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "எடுத்துக்காட்டு ஆங்கிலத்தில் உள்ளது. மொழிபெயர்ப்பு மொழியைத் தேர்ந்து அமைவை முடிக்கவும்."
+  },
+  "html_finish_setup": {
+    "message": "அமைவை முடி"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Controlஐ வைத்திருங்கள், வேறு விசையைப் பதிவு செய்யுங்கள் அல்லது வலது கிளிக் பட்டிக்கு மட்டும் <1>அணை</1> என்பதைத் தேருங்கள். அமைப்புகளின் கீழே <2>அமைவை முடி</2> என்பதைத் தேருங்கள். பின்னர் <3>விருப்பங்களைச் சேமி</3> மூலம் மாற்றலாம்."
+  },
+  "html_open_settings": {
+    "message": "அமைப்புகளைத் திற"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. முதல் உரையை மொழிபெயருங்கள்"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "சாதாரண வலைப்பக்கத்தில் சிறு உரையைத் தேருங்கள். வலது கிளிக்கில் <1>தேர்ந்த உரையை மொழிபெயர்</1> என்பதைத் தேருங்கள் அல்லது தேர்ந்த விசையை அழுத்திவிடுங்கள். உரைக்கு அருகே முடிவு வரும்."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "நீட்சியை இப்போது நிறுவியோ மீளேற்றியோ இருந்தால் முதலில் பக்கத்தைப் புதுப்பியுங்கள். Chrome அமைப்புகள், Chrome Web Store, உள்ளமைந்த PDF பார்வையாளர் ஆகியவை மொழிபெயர்க்க அனுமதிக்காது."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "கருவிப்பட்டியின் பாப்அப் சமீபத்திய முடிவைக் காட்டும். அமைவு முடிந்தபின் வழக்கமான காட்சி திறக்கும். API விசையை நீக்கினால் வரவேற்பு வழிகாட்டி மீண்டும் தோன்றும்."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "பொதுக் கேள்விகள்: விசை, செலவு, தனியுரிமை"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "என் சொந்த API விசை ஏன் தேவை?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "உங்கள் விசையால் உங்கள் Google திட்டத்துக்கு நேரடியாகக் கோரிக்கை அனுப்பும்படி நீட்சி வடிவமைக்கப்பட்டது. இது வடிவமைப்புத் தேர்வு, Chrome விதி அல்ல. விசை கோரிக்கையை அனுமதித்து உங்கள் பயன்பாடு மற்றும் பில்லிங்குடன் இணைக்கிறது. திரைப்பிடிப்புகள் அல்லது பொதுச் செய்திகளில் பகிராதீர்கள். <1>Google API விசை வழிகாட்டியைப்</1> பாருங்கள்."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "செயலில் உள்ள பில்லிங் ஏன் பரிந்துரை மட்டும் அல்லாமல் கட்டாயம்?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chromeன் <1>வரையறுக்கப்பட்ட பயன்பாட்டு விதிகள், பிரிவுகள் 3 மற்றும் 5</1>, தரவை நீட்சியின் நோக்கம் மற்றும் தொடர்புடைய செயல்களுக்கே பயன்படுத்தச் சொல்கின்றன. சில இலவச Gemini பயன்பாடுகள் விரிவான பயிற்சி மற்றும் மனித ஆய்வை அனுமதிக்கின்றன. கட்டண விதிகள் தயாரிப்பு மேம்பாட்டுக்கான பயன்பாட்டை விலக்கினாலும், பாதுகாப்பு மற்றும் சட்டத்திற்காக வரையறுக்கப்பட்ட சேமிப்பையும் EUக்கு வெளியே செயலாக்கத்தையும் அனுமதிக்கின்றன."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "இந்த முரண்பாட்டைத் தீர்க்க உருவாக்குநர் உலகம் முழுவதும் திட்ட பில்லிங் செயலில் இருக்கக் கோருகிறார். பரிந்துரை மட்டும் இருந்தால் இலவசப் பயன்பாடு தொடரும். Googleன் பகுதி விதியும் ஐரோப்பிய பொருளாதாரப் பகுதி, UK, சுவிட்சர்லாந்தில் வழங்கும் செயலிகளுக்குக் கட்டணச் சேவைகளைக் கோருகிறது. <1>Gemini விதிகள்: பயன்பாட்டுக் கட்டுப்பாடுகள், இலவசச் சேவைகள், கட்டணச் சேவைகள்</1> பார்க்கவும்."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Google உடன் விருப்பப் பகிர்வை ஏன் அணைக்க வேண்டும்?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "பில்லிங் செயலில் இருந்தாலும் பதிவுகள் அல்லது தரவுத்தொகுப்புகளைப் பகிர்வது பயிற்சி மற்றும் மனித ஆய்வை அனுமதிக்கலாம். தரவுத்தொகுப்பு பகிர்வு அல்லது கருத்து மூலம் இந்த நீட்சியின் தரவை வழங்காதீர்கள். உங்கள் திட்டத்தின் தனிப்பட்ட பதிவு இந்த விதியில் அனுமதிக்கப்படுகிறது. <1>Google பதிவுக் கொள்கை: பகிரக்கூடிய தரவு மற்றும் உங்கள் தரவைப் பயன்படுத்தும் முறை</1> பார்க்கவும்."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "கட்டண API தேவைப்பட்டாலும் நீட்சி இலவசமா?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "ஆம். நீட்சி இலவசம்; Google API கட்டணம் வரலாம். கட்டண Gemini செயலிச் சந்தா API திட்ட பில்லிங்கிற்கு மாற்றல்ல. <1>பில்லிங் சரிபார்க்கும் முறை</1> மற்றும் <2>Google API விலைகள்</2> பார்க்கவும். நீட்சி பில்லிங் அல்லது பகிர்வு அமைப்புகளைச் சரிபார்க்காது."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "ஒப்புக்கொண்டு Google உடன் இணை என்பதை ஏன் தேர வேண்டும்?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chromeன் <1>தகவல் வெளியீட்டுத் தேவைகள், பிரிவுகள் 1 மற்றும் 2</1>, தெளிவான தரவுப் பயன்பாட்டுத் தகவலையும் தகவலறிந்த ஒப்புதலையும் கோருகின்றன. எந்த Google API கோரிக்கைக்கும் முன் தேர்வு செய்ய இந்தப் பொத்தான் உதவுகிறது. இது அடையாளம் அல்லது பில்லிங் சரிபார்ப்பு அல்ல; பிறரின் தனிப்பட்ட தகவலைப் பகிர அனுமதியும் அல்ல."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Googleக்கு சரியாக என்ன அனுப்பப்படுகிறது?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "மாடல் சரிபார்ப்பு விசையை அனுப்பி கிடைக்கும் மாடல்களைக் கேட்கிறது. மொழிபெயர்ப்பு தேர்ந்த உரை, இலக்கு மொழி, மாடல் மற்றும் மொழிபெயர்ப்பு வழிமுறைகளை அனுப்புகிறது; உள்ளூர் கோப்பு உரையும் அடங்கும். முழுப் பக்கம், பக்க முகவரி அல்லது உலாவல் வரலாறு சேர்க்கப்படாது. Google IP முகவரி போன்ற இணைப்புத் தகவல்களையும் பெறும். உருவாக்குநர் இந்தக் கோரிக்கைகளைப் பெறுவதில்லை. பகிர உரிமையுள்ள உரையை மட்டும் அனுப்புங்கள்."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "என் விசை எப்படிச் சேமிக்கப்பட்டுத் தானாகத் திறக்கப்படுகிறது?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API விசை மறையாக்கிச் சேமிக்கப்படுகிறது. மறுதொடக்கத்திற்குப் பின் தானாகப் பயன்படுத்த அது மற்றும் மறையாக்க விசை Chrome சுயவிவரத்தில் இருக்கும்; ஒத்திசைக்கப்படாது. சுயவிவர அணுகல் உள்ளவர் API விசையை மீட்கலாம். இது OS விசைத்தொகுப்பு அல்லது கடவுச்சொல் பாதுகாப்புப் பெட்டகம் அல்ல. மொழி, மாடல், தூண்டி ஒத்திசையலாம். சமீபத்திய முடிவு மட்டுமே உலாவி அமர்வில் இருக்கும்; பகுப்பாய்வு அல்லது மொழிபெயர்ப்பு வரலாறு இல்லை."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "மேம்படுத்தும்போது பழைய விசையை மறையாக்கிச் சரிபார்த்த பிறகே அதன் சாதாரண உரைப் பிரதிகளை நீக்கும். தோல்வியுற்றால் பழைய பிரதி இருக்கும்; கோரிக்கைகள் தடுக்கப்படும். அமைப்புகள் பிழையை விளக்கும். பழைய விசையை நகர்த்துவது ஒப்புதல் படியைத் தவிர்க்காது."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "ஒப்புதலைத் திரும்பப் பெறவோ விசையை நீக்கவோ முடியுமா?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>அமைப்புகளில்</1> <2>தரவுப் பகிர்வு ஒப்புதலைத் திரும்பப் பெறு</2> புதிய கோரிக்கைகளைத் தடுத்து நடப்பவற்றை உள்ளூரில் ரத்து செய்யும்; விசை மற்றும் விருப்பங்கள் இருக்கும். <3>சேமித்த விசையை நீக்கு</3> விசை, மறையாக்க விசை மற்றும் மாடல் தேக்ககத்தை நீக்கும். இரண்டும் அனுப்பிய தரவைத் திரும்பப் பெறவோ அனுப்பிய கோரிக்கை இலவசமாகும் என உறுதிசெய்யவோ முடியாது. Googleலும் முடக்க AI Studioவில் விசையை ரத்து செய்யுங்கள்."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "ஒப்புதல் சாதாரண மறுதொடக்கம் மற்றும் புதுப்பிப்புகளுக்குப் பின்னும் சேமிக்கப்பட்டிருக்கும். அறிவிப்பு மாறினால் படித்து மீண்டும் ஒப்புக்கொள்ளும் வரை கோரிக்கைகள் காத்திருக்கும்."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "ஏன் பெரியவர்களின் வேலை அல்லது வணிகப் பயன்பாட்டுக்கு மட்டும்?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "குறைந்தது 18 வயதுடன் ஆதரிக்கப்படும் பகுதிகளில் தொழில்முறை அல்லது வணிகப் பயன்பாட்டை Google கோருகிறது. <1>Gemini விதிகள்: வயதுத் தேவைகள் மற்றும் பயன்பாட்டுக் கட்டுப்பாடுகள்</1>, <2>கிடைக்கும் பகுதிகள்</2> பார்க்கவும். நீட்சியில் தனித் தகுதி தேர்வுப்பெட்டி அல்லது அடையாளச் சோதனை இல்லை."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "இந்த அறிவிப்புடன் தனியுரிமைக் கொள்கையும் ஏன்?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "அறிவிப்பு இணையும் முன் தேர்வை விளக்குகிறது. கொள்கை தரவு, சேமிப்பு, நீக்கம் பற்றிய முழுத் தகவலை அளிக்கிறது. பயனர் தரவைக் கையாளும் நீட்சிகளுக்கு Chromeன் <1>தனியுரிமைக் கொள்கை விதிகள்</1> இதைக் கோருகின்றன. <2>எங்கள் தனியுரிமைக் கொள்கையைப்</2> படியுங்கள். இந்த அறிவிப்புகள் Google நீட்சியை அங்கீகரித்ததைக் குறிக்காது."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI மொழிபெயர்ப்பு தவறாகலாம். நம்பும் முன் முக்கிய சொற்களைச் சரிபாருங்கள்."
+  },
+  "html_about_ai_translator": {
+    "message": "AI Translator பற்றி"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "மிக எளிய மொழிபெயர்ப்பு: உரையைத் தேர்ந்து Control அழுத்துங்கள்."
+  },
+  "html_made_for_people": {
+    "message": "மக்களுக்காக உருவாக்கப்பட்டது"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "மொழிகளைக் கடந்து படிக்கவும் கற்கவும் இணையவும் மக்களுக்கு உதவ AI Translatorஐ உருவாக்கினேன். உலகெங்கும் பயனளிக்கும் என நம்புகிறேன்."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "நீட்சி உங்கள் சொந்த Google Gemini API விசையால் தேர்ந்த உரையை மொழிபெயர்க்கிறது. என்ன அனுப்புவது, எந்த மொழியில் படிப்பது என்பதை நீங்களே தேர்கிறீர்கள்."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "தேர்ந்த உரையை மொழிபெயர்க்க Controlஐ அழுத்திவிடுங்கள். Control இயல்புநிலை விசை; அமைப்புகளில் மாற்றலாம். வலது கிளிக் பட்டியையும் பயன்படுத்தலாம்."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Macல் மட்டுமே கைமுறையாகச் சோதிக்கப்பட்டது. Windows மற்றும் Linuxல் கைமுறைச் சோதனை செய்யவில்லை."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>மூலக்குறியீட்டையும் திட்ட வழிகாட்டியையும் பாருங்கள்</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>உதவி பெறுங்கள் அல்லது சிக்கலைத் தெரிவியுங்கள்</1>. புகார்கள் பொதுவானவை. API விசை, தனிப்பட்ட உரை அல்லது தனிநபர் தகவல் சேர்க்காதீர்கள்."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "என் பணியை ஆதரிக்க விரும்பினால்"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "ரஷ்ய ஆக்கிரமிப்புக்கு எதிராகத் தன்னைப் பாதுகாக்கும் என் நாடான உக்ரைனை ஆதரியுங்கள்."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Sternenko Community Foundationஐ நம்புகிறேன். முடிந்தால், உதவ விரும்பினால் அதன் அதிகாரப்பூர்வ இணையதளத்தில் நன்கொடை வழங்கலாம்."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>அறக்கட்டளை வழியாக உக்ரைனை ஆதரியுங்கள்</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "ஆதரவு விருப்பமானது; நீட்சியைப் பயன்படுத்த அவசியமில்லை. இணைப்பு வெளி இணையதளத்தைத் திறக்கும். நன்கொடை அறக்கட்டளை வழியாகச் செல்லும், நீட்சி வழியாக அல்ல."
+  },
+  "html_privacy_and_costs": {
+    "message": "தனியுரிமையும் செலவும்"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API விசை இந்தச் சாதனத்தில் மறையாக்கப்பட்டு ஒத்திசைக்கப்படாது. சாதாரண Chrome மறுதொடக்கத்திற்குப் பின் திறப்புக் கடவுச்சொல் இன்றி கிடைக்கும். உலாவிச் சுயவிவர அணுகல் உள்ளவர் மீட்கலாம்."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "முதல் Google கோரிக்கைக்கு முன் அமைப்புகள் தரவுப் பகிர்வை விளக்கி <1>ஒப்புக்கொண்டு Google உடன் இணை</1> என்பதைத் தேரக் கேட்கும். பிறகு மொழிபெயர்ப்பு கேட்கும்போது மட்டுமே தேர்ந்த உரை நேரடியாக Googleக்கு அனுப்பப்படும். மாடல் சரிபார்ப்பு விசையை அனுப்பும், தேர்ந்த உரையை அல்ல. பகுப்பாய்வு, விளம்பரம், மொழிபெயர்ப்பு வரலாறு இல்லை."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "எப்போது வேண்டுமானாலும் <1>அமைப்புகளில்</1> விவரங்களைப் பாருங்கள். மறையாக்க விசையையும் விருப்பங்களையும் வைத்துப் புதிய கோரிக்கைகளை நிறுத்த <2>தரவுப் பகிர்வு ஒப்புதலைத் திரும்பப் பெறு</2>, அல்லது விசையும் மாடல் தேக்ககமும் நீங்க <3>சேமித்த விசையை நீக்கு</3> என்பதைத் தேருங்கள். ஏற்கனவே அனுப்பிய தரவை மீட்க முடியாது."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "மொழிபெயர்ப்பு AIஆல் உருவாக்கப்படுவதால் தவறாகலாம். நம்பும் முன் முக்கிய சொற்களைச் சரிபாருங்கள்."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>தனியுரிமை விவரங்களைப் படியுங்கள்</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator இலவசமான சுயாதீனத் திட்டம். Google API கட்டணம் வரலாம். எல்லா நாடுகளிலும் <1>செயலில் உள்ள பில்லிங்</1> கொண்ட திட்டத்தின் Gemini API விசையைப் பயன்படுத்தி, <2>நீட்சியின் கோரிக்கைப் பதிவுகளையும் தரவுத்தொகுப்புகளையும் Google உடன் விருப்பப்படி பகிர்வதை</2> அணையுங்கள். இவ்வமைப்புகளில் Google கட்டண விதிகளின்படி ப்ராம்ப்ட்களும் பதில்களும் தயாரிப்பு மேம்பாட்டுக்குப் பயன்படுத்தப்படாது; பாதுகாப்பு மற்றும் சட்டச் செயலாக்கம் தொடரும். <3>Google விலை மற்றும் தரவுப் பயன்பாட்டுக் குறிப்புகளைப்</3> படியுங்கள்."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "இந்த நீட்சி <1>Google ஆதரிக்கும் பகுதிகளில்</1> குறைந்தது 18 வயதானவர்களின் வேலை அல்லது வணிகத்துக்கானது. பயன்படுத்துவதால் இந்த நிபந்தனைகள், <2>Google API விதிகள்</2>, <3>Gemini API கூடுதல் விதிகளை</3> ஏற்கிறீர்கள். பின்பற்ற முடியாவிட்டால் பயன்படுத்தாதீர்கள். தகுதி தேர்வுப்பெட்டி அல்லது அடையாளச் சோதனை இல்லை. பில்லிங் அல்லது பகிர்வு அமைப்புகளும் சரிபார்க்கப்படாது."
+  },
+  "runtime_unsaved_changes": {
+    "message": "சேமிக்காத மாற்றங்கள் உள்ளன."
+  },
+  "runtime_settings_conflict": {
+    "message": "வேறு பக்கத்தில் அமைப்புகள் மாறியுள்ளன. உங்கள் திருத்தங்கள் இங்கே உள்ளன. திருத்தங்களை விட்டுச் சேமித்த மதிப்புகளைப் பெற அமைப்புகளை மீளேற்றுங்கள்."
+  },
+  "runtime_preferences_current": {
+    "message": "விருப்பங்கள் புதுப்பித்த நிலையில் உள்ளன."
+  },
+  "runtime_key_cannot_open": {
+    "message": "சேமித்த விசையைத் திறக்க முடியவில்லை. அமைப்புகளை மீண்டும் திறக்கவும் அல்லது விசையை நீக்கி மீண்டும் உள்ளிடவும்."
+  },
+  "runtime_key_conflict": {
+    "message": "வேறு பக்கத்தில் API விசை மாறியது. விசையைச் சேமிக்கும் முன் சேமித்த அமைப்புகளை மீளேற்றுங்கள்."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "விசை மறையாக்கிச் சேமிக்கப்பட்டது. Google உடன் இணையும் முன் தரவுப் பகிர்வை ஏற்றுக்கொள்ளுங்கள்."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "API விசை சேர்க்கும் முன் மேலே தரவுப் பகிர்வை ஏற்றுக்கொள்ளுங்கள்."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini சேமித்த விசையை நிராகரித்தது. மாற்றுங்கள் அல்லது மாடல்களைப் புதுப்பித்து மீண்டும் சரிபாருங்கள்."
+  },
+  "runtime_paste_key": {
+    "message": "Gemini உடன் இணைய API விசையை ஒட்டுங்கள்."
+  },
+  "runtime_key_checked": {
+    "message": "API விசை சேமிக்கப்பட்டது. கடைசி மாடல் பட்டியல் சோதனையில் Gemini ஏற்றுக்கொண்டது."
+  },
+  "runtime_key_saved_check": {
+    "message": "API விசை சாதனத்தில் மறையாக்கிச் சேமிக்கப்பட்டது. Geminiயில் சரிபார்க்க மாடல்களைப் புதுப்பியுங்கள்."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "ஒப்புதல் மீட்பை மீண்டும் முயல்"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "தரவுப் பகிர்வு ஒப்புதலைத் திரும்பப் பெறு"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "ஒப்புதல் திரும்பப் பெறப்பட்டது உறுதியாகவில்லை. தேர்வைச் சேமிக்க மீண்டும் முயலுங்கள்."
+  },
+  "runtime_agreement_saved": {
+    "message": "இந்த Chrome சுயவிவரத்தில் தரவுப் பகிர்வு ஏற்கப்பட்டது. எப்போதும் திரும்பப் பெறலாம்."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "ஒப்புக்கொள்ளும் வரை Google உடன் இணைப்பு இல்லை. திரும்பப் பெற்றாலும் சேமித்த விசை இருக்கும்."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini சேமித்த விசையை நிராகரித்தது. கீழே மாற்றுங்கள்."
+  },
+  "runtime_setup_key_saved": {
+    "message": "இந்தச் சாதனத்தில் விசை மறையாக்கிச் சேமிக்கப்பட்டது."
+  },
+  "runtime_setup_create_key": {
+    "message": "Google AI Studioவில் சொந்த விசையை உருவாக்குங்கள்."
+  },
+  "runtime_setup_language_selected": {
+    "message": "மொழி தேர்ந்தெடுக்கப்பட்டது. தேர்வைச் சேமிக்க அமைவை முடிக்கவும்."
+  },
+  "runtime_setup_choose_language": {
+    "message": "கீழே இலக்கு மொழியைத் தேருங்கள்."
+  },
+  "runtime_finish_setup": {
+    "message": "அமைவை முடி"
+  },
+  "runtime_save_preferences": {
+    "message": "விருப்பங்களைச் சேமி"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "API விசை சேர்த்து மாடல் பட்டியலைச் சரிபார்த்து தேர்வைச் சேமியுங்கள்."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "மொழிபெயர்க்கும் முன் அமைப்பு முரண்பாட்டைத் தீர்க்கவும்."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Google உடன் இணையும் முன் தரவுப் பகிர்வைப் படித்து ஒப்புக்கொள்ளுங்கள்."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "அமைவைச் சரிபார்க்கும் முன் API விசையைச் சேமித்து முடிக்கவும்."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "அமைவில் கவனம் தேவை: Gemini சேமித்த API விசையை நிராகரித்தது."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "விசை சேமிக்கப்பட்டது. இலக்கு மொழியைத் தேர்ந்து அமைவை முடிக்கவும்."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "கிடைக்கும் மாடலைத் தேர்ந்து விருப்பங்களைச் சேமியுங்கள்."
+  },
+  "runtime_setup_model_selected": {
+    "message": "மாடல் தேர்ந்தெடுக்கப்பட்டது. பயன்படுத்த விருப்பங்களைச் சேமியுங்கள்."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "விசையும் மொழியும் தயார். தேர்வைச் சேமிக்க அமைவை முடித்து மொழிபெயர்க்க முயலுங்கள். மாடல் அணுகலும் ஒதுக்கீடும் மாறலாம்."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "மொழிபெயர்க்க முயலத் தயார். சேமித்த மாடல் சரிபார்த்த பட்டியலில் உள்ளது; கோரிக்கை அணுகலும் ஒதுக்கீடும் மாறலாம்."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "விசை சேமிக்கப்பட்டது. விசையையும் தேர்ந்த மாடலையும் சரிபார்க்க மாடல்களைப் புதுப்பியுங்கள்."
+  },
+  "runtime_show_key": {
+    "message": "காட்டு"
+  },
+  "runtime_hide_key": {
+    "message": "மறை"
+  },
+  "runtime_choose_target_language": {
+    "message": "இலக்கு மொழியைத் தேருங்கள்"
+  },
+  "runtime_background_no_response": {
+    "message": "நீட்சியின் பின்னணி பதிலளிக்கவில்லை. நீட்சியை மீளேற்றி முயலுங்கள்."
+  },
+  "runtime_refresh_models": {
+    "message": "மாடல்களைப் புதுப்பி"
+  },
+  "runtime_models_need_agreement": {
+    "message": "மாடல்களை ஏற்றும் முன் தரவுப் பகிர்வை ஏற்கவும்."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "மாடல்களைப் புதுப்பிக்கும் முன் API விசையைச் சேமித்து முடிக்கவும்."
+  },
+  "runtime_refreshing": {
+    "message": "புதுப்பிக்கப்படுகிறது..."
+  },
+  "runtime_loading": {
+    "message": "ஏற்றப்படுகிறது..."
+  },
+  "runtime_models_checking": {
+    "message": "Geminiயில் பொருந்தும் மாடல்கள் சரிபார்க்கப்படுகின்றன..."
+  },
+  "runtime_models_loading": {
+    "message": "பொருந்தும் மாடல்கள் ஏற்றப்படுகின்றன..."
+  },
+  "runtime_models_load_failed": {
+    "message": "பொருந்தும் மாடல்களை ஏற்ற முடியவில்லை."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini பொருந்தும் மாடல்களைத் தரவில்லை."
+  },
+  "runtime_model_not_available": {
+    "message": "தேர்ந்த மாடல் பொருந்தும் பட்டியலில் இல்லை. வேறொன்றைத் தேருங்கள்."
+  },
+  "runtime_record_key": {
+    "message": "விசையைப் பதிவு செய்"
+  },
+  "runtime_recording_cancelled": {
+    "message": "விசைப் பதிவு ரத்தானது."
+  },
+  "runtime_unknown_key": {
+    "message": "அந்த விசை"
+  },
+  "runtime_press_key": {
+    "message": "ஒரு விசையை அழுத்துங்கள்..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "ஆதரிக்கப்படும், எழுத்தை உள்ளிடாத ஒரு விசையை அழுத்துங்கள். ரத்து செய்ய Escape அழுத்துங்கள்."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "சேமித்த API விசையைச் சரிபார்க்க மாடல்களைப் புதுப்பியுங்கள்."
+  },
+  "runtime_models_add_key": {
+    "message": "பொருந்தும் மாடல்களை ஏற்ற API விசையைச் சேருங்கள்."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "நீட்சியின் சேமித்த நிலையை ஏற்ற முடியவில்லை."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini சேமித்த API விசையை நிராகரித்தது. மாற்றுங்கள் அல்லது மாடல்களைப் புதுப்பித்து மீண்டும் சரிபாருங்கள்."
+  },
+  "runtime_settings_reopen": {
+    "message": "அமைப்புகளை ஏற்ற முடியவில்லை. மீண்டும் திறந்து முயலுங்கள்."
+  },
+  "runtime_settings_load_failed": {
+    "message": "அமைப்புகளை ஏற்ற முடியவில்லை. சேமித்த அமைப்புகளை மீளேற்றுங்கள். சேமித்த தேர்வுகளைப் பாதுகாக்க சேமிப்பு முடக்கப்பட்டுள்ளது."
+  },
+  "runtime_setup_load_failed": {
+    "message": "அமைவு நிலையை ஏற்ற முடியவில்லை."
+  },
+  "runtime_key_no_spaces": {
+    "message": "இடைவெளியின்றி முழு API விசையை உள்ளிடுங்கள்."
+  },
+  "runtime_key_use_remove": {
+    "message": "விசையை நீக்க சேமித்த விசையை நீக்கு என்பதைப் பயன்படுத்துங்கள்."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API விசையைச் சேமிக்கும் முன் மேலே தரவுப் பகிர்வை ஏற்கவும்."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API விசை மறையாக்கிச் சேமிக்கப்படுகிறது..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API விசையைப் படிக்கவோ சேமிக்கவோ முடியவில்லை. உங்கள் உள்ளீடு உள்ளது. மீண்டும் முயல விருப்பங்களைச் சேமி பயன்படுத்துங்கள்."
+  },
+  "runtime_connecting_google": {
+    "message": "Google உடன் இணைகிறது..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google இணைப்புகள் நிறுத்தப்படுகின்றன..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "தரவுப் பகிர்வு ஒப்புதலைச் சேமிக்க முடியவில்லை. மீண்டும் முயலுங்கள்."
+  },
+  "runtime_key_removing": {
+    "message": "சேமித்த விசை நீக்கப்படுகிறது..."
+  },
+  "runtime_key_removed": {
+    "message": "சேமித்த விசை நீக்கப்பட்டது. தரவுப் பகிர்வை ஏற்ற பின் புதிய விசை சேர்க்கலாம்."
+  },
+  "runtime_key_remove_failed": {
+    "message": "சேமித்த விசையை நீக்க முடியவில்லை. மீண்டும் முயலுங்கள்."
+  },
+  "runtime_saving": {
+    "message": "சேமிக்கப்படுகிறது..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "செல்லுபடியாகும் மொழியையும் மாடலையும் தேருங்கள்."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "ஆதரிக்கப்படும் தூண்டி விசை அல்லது அணை என்பதைத் தேருங்கள்."
+  },
+  "runtime_choose_listed_model": {
+    "message": "தற்போதைய பொருந்தும் பட்டியலில் மாடலைத் தேருங்கள்."
+  },
+  "runtime_preferences_saving": {
+    "message": "விருப்பங்கள் சேமிக்கப்படுகின்றன..."
+  },
+  "runtime_preferences_saved": {
+    "message": "விருப்பங்கள் சேமிக்கப்பட்டன."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "விருப்பங்கள் சேமிக்கப்பட்டன. அமைவை முடிக்க API விசை சேருங்கள்."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "விருப்பங்களைப் படிக்கவோ சேமிக்கவோ முடியவில்லை. திருத்தங்கள் உள்ளன. மீண்டும் முயலுங்கள்."
+  },
+  "runtime_key_will_save": {
+    "message": "API விசை தானாகச் சேமிக்கப்படும்."
+  },
+  "runtime_key_finish_entry": {
+    "message": "API விசையை உள்ளிட்டு முடிக்கவும்."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "பொருந்தும் மாடல்களை ஏற்ற API விசையைச் சேமித்து முடிக்கவும்."
+  },
+  "runtime_recommended_selected": {
+    "message": "பரிந்துரைத்த மாடல் தேர்ந்தெடுக்கப்பட்டது. பயன்படுத்த தேர்வைச் சேமியுங்கள்."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "சேமித்த பின் விசைப்பலகைத் தூண்டி அணைக்கப்படும்."
+  },
+  "runtime_connection_changed": {
+    "message": "இணைப்பு அமைப்புகள் மாறின. சேமித்த அமைப்புகள் சரிபார்க்கப்படுகின்றன..."
+  },
+  "runtime_models_changed": {
+    "message": "மாடல் பட்டியல் மாறியது. பொருந்தும் மாடல்கள் சரிபார்க்கப்படுகின்றன..."
+  },
+  "runtime_no_translation": {
+    "message": "இன்னும் மொழிபெயர்ப்பு இல்லை."
+  },
+  "runtime_start_setup": {
+    "message": "அமைவைத் தொடங்கு"
+  },
+  "runtime_settings": {
+    "message": "அமைப்புகள்"
+  },
+  "runtime_key_rejected": {
+    "message": "விசை நிராகரிக்கப்பட்டது"
+  },
+  "runtime_setup_required": {
+    "message": "அமைவு தேவை"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "மொழிபெயர்க்கத் தொடங்க அமைப்புகளில் API விசையைச் சேருங்கள்."
+  },
+  "runtime_add_key": {
+    "message": "API விசையைச் சேர்"
+  },
+  "runtime_finish_model_language": {
+    "message": "விசை சேமிக்கப்பட்டது. மாடலைச் சரிபார்த்து மொழித் தேர்வை முடிக்க அமைப்புகளைத் திறக்கவும்."
+  },
+  "runtime_check_setup": {
+    "message": "அமைவைச் சரிபார்"
+  },
+  "runtime_translating": {
+    "message": "மொழிபெயர்க்கப்படுகிறது"
+  },
+  "runtime_error": {
+    "message": "பிழை"
+  },
+  "runtime_ready": {
+    "message": "தயார்"
+  },
+  "runtime_status_load_failed": {
+    "message": "நீட்சியின் நிலையை ஏற்ற முடியவில்லை. நீட்சியை மீளேற்றிப் பக்கத்தைப் புதுப்பியுங்கள்."
+  },
+  "runtime_copied": {
+    "message": "நகலெடுக்கப்பட்டது."
+  },
+  "runtime_copy_blocked": {
+    "message": "நகலெடுப்பது தடுக்கப்பட்டது. முடிவு உரையைத் தேர்ந்து நகலெடுங்கள்."
+  },
+  "runtime_settings_open_failed": {
+    "message": "அமைப்புகளைத் திறக்க முடியவில்லை. மீண்டும் முயலுங்கள்."
+  },
+  "runtime_translating_progress": {
+    "message": "மொழிபெயர்க்கப்படுகிறது..."
+  },
+  "runtime_translation_started": {
+    "message": "மொழிபெயர்ப்பு தொடங்கியது."
+  },
+  "runtime_translation_complete": {
+    "message": "மொழிபெயர்ப்பு முடிந்தது."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "மொழிபெயர்ப்பு முடிந்தது. முடிவு உரை அல்லது அட்டைக் கட்டுப்பாடுகளைப் பயன்படுத்துங்கள்."
+  },
+  "runtime_translation": {
+    "message": "மொழிபெயர்ப்பு"
+  },
+  "runtime_target_language": {
+    "message": "இலக்கு மொழி"
+  },
+  "runtime_card_target_language": {
+    "message": "இந்த அட்டையின் இலக்கு மொழி"
+  },
+  "runtime_close_card": {
+    "message": "மொழிபெயர்ப்பு அட்டையை மூடு"
+  },
+  "runtime_translated_text": {
+    "message": "மொழிபெயர்த்த உரை"
+  },
+  "runtime_retry": {
+    "message": "மீண்டும் முயல்"
+  },
+  "runtime_copy": {
+    "message": "நகலெடு"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "அமைப்புகளைத் திறக்க முடியவில்லை. நீட்சிக் கருவிப்பட்டியைப் பயன்படுத்துங்கள்."
+  },
+  "runtime_copy_failed": {
+    "message": "நகலெடுப்பு தோல்வி. முடிவு உரையைத் தேர்ந்து நகலெடுங்கள்."
+  },
+  "runtime_context_menu": {
+    "message": "தேர்ந்த உரையை மொழிபெயர்"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (தற்போதைய பட்டியலில் இல்லை)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (இன்னும் சரிபார்க்கவில்லை)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "$value1$இன் தேக்கிய மாடல் பட்டியல் பயன்படுத்தப்படுகிறது. நேரடிப் புதுப்பிப்பு தோல்வி. பிறகு முயலுங்கள்.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "தேக்கிய மாடல் பட்டியல் பயன்படுத்தப்படுகிறது. நேரடிப் புதுப்பிப்பு தோல்வி. பிறகு முயலுங்கள்."
+  },
+  "runtime_models_cache_at": {
+    "message": "$value1$இன் தேக்கிய மாடல் பட்டியல் பயன்படுத்தப்படுகிறது.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "தேக்கிய மாடல் பட்டியல் பயன்படுத்தப்படுகிறது."
+  },
+  "runtime_models_updated_at": {
+    "message": "மாடல் பட்டியல் $value1$இலிருந்து புதுப்பிக்கப்பட்டது.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "மாடல் பட்டியல் புதுப்பிக்கப்பட்டது."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ ஆதரிக்கப்படவில்லை. வேறு விசை அல்லது ரத்து செய்ய Escape அழுத்துங்கள்.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "சேமித்த பின் $value1$ பயன்படுத்தப்படும்.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "ஒவ்வொரு தாவலிலும் அதிகபட்சம் $value1$, மொத்தம் $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ வினாடிகள்",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ அட்டையைப் பயன்படுத்த Tab அல்லது மூட Escape அழுத்துங்கள்.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "மொழிபெயர்ப்பு தோல்வி. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "திறந்த பக்கங்களைப் புதுப்பியுங்கள்"
+  },
+  "refresh_message": {
+    "message": "உங்கள் API விசை சேமிக்கப்பட்டது. அமைவை முடித்த பின் ஏற்கனவே திறந்திருந்த பக்கங்களைப் புதுப்பியுங்கள். பிறகு உரையைத் தேர்ந்து மொழிபெயர்க்க Control அழுத்துங்கள்."
+  },
+  "refresh_continue": {
+    "message": "அமைவைத் தொடருங்கள்"
+  },
+  "refresh_faq_question": {
+    "message": "திறந்த பக்கங்களை ஏன் புதுப்பிக்க வேண்டும்?"
+  },
+  "refresh_faq_answer": {
+    "message": "அமைவை முடித்து மொழிபெயர்க்க முயலும் முன் <1>திறந்த பக்கங்களைப் புதுப்பியுங்கள்</1>. நிறுவுவதற்கு அல்லது மீளேற்றுவதற்கு முன் திறந்த பக்கங்களில் Chrome நீட்சியை ஏற்ற வேண்டும். புதிதாகத் திறக்கும் பக்கங்கள் தானாகத் தயாராகும்."
+  },
+  "ui_locale": {
+    "message": "ta",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

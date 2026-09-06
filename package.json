@@ -1,6 +1,6 @@
 {
   "name": "chrome-ai-translate",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "private": true,
   "description": "Super easy translation: select text and press Control. Translate into your chosen language with Gemini.",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "package": "npm run build && node scripts/package.mjs && npm run verify:package",
     "verify:package": "node scripts/verify-package.mjs",
     "ci": "npm run check && npm test && npm run package",
-    "test:browser": "node scripts/content-browser-check.mjs && node scripts/content-browser-check.mjs --source && node scripts/extension-browser-check.mjs && node scripts/credential-store-browser-check.mjs",
+    "test:browser": "node scripts/content-browser-check.mjs && node scripts/content-browser-check.mjs --source && node scripts/extension-browser-check.mjs && node scripts/extension-browser-check.mjs --source && node scripts/credential-store-browser-check.mjs && node scripts/i18n-browser-check.mjs",
     "store:assets": "node scripts/store-assets.mjs"
   },
   "devDependencies": {

@@ -13,6 +13,7 @@ export default {
     content: "./content.js",
     popup: "./popup.js",
     settings: "./settings.js",
+    guide: "./guide.js",
   },
   output: {
     path: path.join(root, "dist"),
@@ -30,6 +31,7 @@ export default {
           from: "manifest.json",
           transform(content) {
             const manifest = JSON.parse(content.toString());
+            manifest.background.service_worker = manifest.background.service_worker.replace(/^dist\//, "");
             for (const script of manifest.content_scripts) {
               script.js = script.js.map((file) => file.replace(/^dist\//, ""));
             }
@@ -37,6 +39,7 @@ export default {
           },
         },
         "popup.html", "settings.html", "help.html", "about.html", "guide.css", "ui.css", "icon-16.png", "icon-32.png", "icon-48.png", "icon.png", "setup-key.png", "setup-language.png", "INSTALL.md", "PRIVACY.md", "LICENSE",
+        { from: "_locales", to: "_locales" },
       ],
     }),
   ],

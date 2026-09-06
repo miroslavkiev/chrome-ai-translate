@@ -8,6 +8,7 @@ The repository is already public: [source and project guide](https://github.com/
 
 | Artifact | Use |
 | --- | --- |
+| [I18N.md](../I18N.md) | All 55 packaged interface locales, language defaults and the Chrome i18n guide review. |
 | [LISTING.md](LISTING.md) | English description, category, homepage, support and privacy URLs, and reviewer instructions. |
 | [assets](assets/) | Three screenshots, required small promo tile, optional marquee, and separate Store icon. |
 | [REVIEW_CHECKLIST.md](REVIEW_CHECKLIST.md) | Current code and policy review, data categories, and open release checks. |

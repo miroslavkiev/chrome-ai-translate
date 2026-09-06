@@ -10,6 +10,8 @@ Draft, checked September 6, 2026. This is a release checklist, not a statement t
 - [x] The approved purple icon, plain feature description, Mac-only manual-testing note, and AI accuracy note are included.
 - [x] No real credentials were found in the audit through commit `c81bd6e`: 21 commits, 182 unique file blobs, and 14 ZIP versions. This is evidence for that snapshot, not a guarantee about later edits or external copies.
 
+- [x] Packaged interface translations cover all 55 Chrome locales, with English fallback, native message lookup, safe placeholders and right-to-left layouts. The Store long description remains an English draft. See [I18N.md](../I18N.md) for coverage and checks.
+
 ## Final checks and recorded publication risks
 
 - [x] **Verify the selected key storage.** The publisher selected option D: AES-256-GCM with a nonextractable encryption key in IndexedDB, for automatic use after restart. Both are kept in the same profile, so profile access remains a limit. Test full restart, legacy migration, damaged storage, removal and stale Settings tabs. Verify decryption before deleting legacy plain text copies; failed migration must retain the old key and block requests. Remove saved key must delete ciphertext, encryption key and model cache, retaining only the non-secret revision marker. Record final evidence in [RELEASE_CHECKS.md](../RELEASE_CHECKS.md). AES is named in Chrome's secure-handling FAQ, but using it alone does not establish approval. [Selected design](KEY_STORAGE_OPTIONS.md), [Chrome data FAQ](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq).

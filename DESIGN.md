@@ -76,7 +76,7 @@ The latest session entry never contains source text. Success has status, request
 
 ## Result card
 
-The result card uses a closed shadow root, static styles, and textContent. It is fixed to a clamped viewport position near the captured selection. A manual native popover places it in the top layer; its host is inside the source modal or fullscreen container when needed for input and focus. Nearby cards use free positions when space permits. It does not steal focus. English UI controls have lang=en; successful text gets its validated target language.
+The result card uses a closed shadow root, static styles, and textContent. It is fixed to a clamped viewport position near the captured selection. A manual native popover places it in the top layer; its host is inside the source modal or fullscreen container when needed for input and focus. Nearby cards use free positions when space permits. It does not steal focus. UI controls inherit Chrome's interface language and direction; successful text gets its validated target language and automatic text direction.
 
 Each card has loading, success, and error states. Key and model errors offer Settings. Temporary errors offer Retry; output limits and blocks give selection guidance. A known retry delay disables Retry and language requests until it expires. Retry is manual and counts as a new paid request. Choosing another language starts one new request for that card immediately and does not change the saved default language. Successful text has Copy, with selectable output and an honest failure message when clipboard access is unavailable.
 
@@ -86,11 +86,13 @@ A frame keeps at most five completed cards. It removes the oldest completed card
 
 ## Settings and popup
 
-Version 1.3.0 uses a checklist above the existing Settings form. It appears when the key is missing or the language is unselected, remains visible through key autosave, and closes after Finish setup saves the choices. A fresh language select has a placeholder. Preferences remain editable without a key. The no-key popup explains the steps and offers Start setup; a saved key with no chosen language uses the normal popup with Finish setup. Rejected existing keys use normal repair guidance. Local Help and About pages reuse ui.css and guide.css. About alone has the optional external Ukraine support link; donation is never required.
+Version 1.3.0 uses a checklist above the existing Settings form. It appears when the key is missing or the language is unselected, remains visible through key autosave, and closes after Finish setup saves the choices. A fresh language select suggests the first supported Chrome preferred language, with interface-language and English fallbacks. The suggestion stays unsaved until Finish setup. Invalid saved values still need an explicit correction. Preferences remain editable without a key. The no-key popup explains the steps and offers Start setup; a saved key with no chosen language uses the normal popup with Finish setup. Rejected existing keys use normal repair guidance. Local Help and About pages reuse ui.css and guide.css. About alone has the optional external Ukraine support link; donation is never required.
+
+The first successful key save opens a native dialog headed **Refresh open pages**. Existing credential revisions, including deletion tombstones, prevent repeats for key replacement. The same reminder is the first FAQ answer.
 
 The settings page uses native HTML, CSS, and JavaScript with system fonts, grouped cards, restrained color, responsive layout, keyboard support, visible focus, dark mode, high contrast, and reduced motion. ui.css shares the popup/settings colors and controls; the injected card keeps its isolated stylesheet. shared.js owns language, key labels, source validation, error guidance, UUID generation, and Copy behavior. No UI framework or production dependency is needed.
 
-Pasting a valid API key saves it and loads models automatically. A manually typed key saves when the field loses focus, and an empty field removes the key. The page supports masked reveal, live compatible-model selection, manual model refresh, default target language, key recording, Off, privacy disclosure, and explicit preference Save feedback.
+Pasting a valid API key saves it and loads models automatically. A manually typed key saves when the field loses focus, and an empty draft keeps the saved key. Only Remove saved key deletes it. The page supports masked reveal, live compatible-model selection, manual model refresh, default target language, key recording, Off, privacy disclosure, and explicit preference Save feedback.
 
 Settings awaits background migration and reads saved state before it enables writing. Initialization changes are replayed. It tracks a baseline and dirty fields, merges untouched external values, rechecks storage before saving, and writes only changed fields. Known conflicts preserve the edit and require Reload saved settings to discard it. Key-save failures preserve the typed key for retry. Direct Chrome storage is last-writer-wins: simultaneous writes to the same field in the tiny interval between read and write cannot be made atomic by this UI. No broad state store is added for this local tool. null and legacy string Off both mean a disabled trigger.
 
@@ -110,7 +112,7 @@ Build, watch, and package are separate commands. Build cleans the output, compil
 
 The manifest declares only HTTP, HTTPS, and local-file persistent access, all-frame behavior, required permissions, the minimum Chrome version, and the new release version. README, privacy notes, and license match the shipped behavior.
 
-The source-root manifest points its classic content script at dist/content.js. Background, Settings, and popup source entries already use modules. Webpack removes the dist/ prefix from content-script paths in the packaged manifest, where the bundle is at the archive root. Both install layouts use the same content bundle. Package verification parses both entries as classic scripts, and browser checks exercise both install folders. Existing source-root installs keep their path and saved settings; rebuilding is required after source changes.
+The source-root manifest points to dist/content.js and dist/background.js. Both install layouts use built content and background scripts. This keeps JSON message imports out of native service-worker loading, which failed on worker restart during testing. Settings and popup source entries use page modules. Webpack removes dist/ from background and content paths in the packaged manifest. Package verification parses both entries as classic scripts, and browser checks exercise both install folders. Existing source-root installs keep their path and saved settings; rebuilding is required after source changes.
 
 ## Accepted residual limits
 
@@ -121,3 +123,7 @@ The source-root manifest points its classic content script at dist/content.js. B
 - Restricted browser pages and the built-in PDF viewer are unsupported.
 - Single keys can conflict with other software. Off and the context menu remain available.
 - A result card inside a very small frame is constrained by that frame's viewport. The toolbar popup provides the latest session result as a fallback.
+
+## Interface localization
+
+Chrome native i18n selects one of 55 packaged catalogs. i18n.js centralizes message lookup, locale formatting, display names, direction and trusted inline text slots. Rich messages can reorder numbered slots but cannot create HTML or change link destinations. English is the fallback. Provider model IDs, prompts, language codes and validation remain stable. Catalog checks enforce complete keys, matching placeholders/tags and manifest limits; browser checks use native Chrome locales. See I18N.md for maintenance.

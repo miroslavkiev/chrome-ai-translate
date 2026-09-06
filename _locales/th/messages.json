@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "แปลง่าย ๆ เพียงเลือกข้อความแล้วกด Control ใช้ Gemini แปลเป็นภาษาที่คุณเลือก",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "เลือกข้อความแล้วลองอีกครั้ง"
+  },
+  "error_unsupported_selection": {
+    "message": "ไม่รองรับการเลือกข้อความแบบนี้"
+  },
+  "error_selection_too_large": {
+    "message": "ข้อความที่เลือกยาวเกิน 10,000 อักขระ โปรดเลือกให้น้อยลงแล้วลองอีกครั้ง"
+  },
+  "error_missing_api_key": {
+    "message": "เพิ่มคีย์ API ของ Gemini ในการตั้งค่า"
+  },
+  "error_agreement_required": {
+    "message": "อ่านและยอมรับการแชร์ข้อมูลในการตั้งค่าก่อนเชื่อมต่อ Google"
+  },
+  "error_credential_conflict": {
+    "message": "คีย์ที่บันทึกไว้ถูกเปลี่ยนในหน้าอื่น โหลดการตั้งค่าที่บันทึกไว้อีกครั้งก่อนลองใหม่"
+  },
+  "error_credential_storage_error": {
+    "message": "เปิดคีย์ที่บันทึกไว้ไม่ได้ ลองเปิดการตั้งค่าใหม่ หรือลบคีย์แล้วป้อนอีกครั้ง"
+  },
+  "error_missing_target_language": {
+    "message": "เลือกภาษาเป้าหมายในการตั้งค่าเพื่อทำการตั้งค่าให้เสร็จ"
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini ปฏิเสธคีย์ API โปรดตรวจสอบในการตั้งค่า"
+  },
+  "error_invalid_model": {
+    "message": "ใช้โมเดลนี้แปลไม่ได้ เลือกโมเดลอื่นหรือ Flash-Lite ที่แนะนำในการตั้งค่า"
+  },
+  "error_busy": {
+    "message": "มีงานแปลพร้อมกันมากเกินไป รอให้งานหนึ่งเสร็จแล้วลองอีกครั้ง"
+  },
+  "error_duplicate_request": {
+    "message": "กำลังแปลข้อความที่เลือกนี้อยู่แล้ว"
+  },
+  "error_rate_limited": {
+    "message": "ถึงขีดจำกัดคำขอแล้ว โปรดลองอีกครั้งในอีกสักครู่"
+  },
+  "error_timeout": {
+    "message": "การแปลใช้เวลานานเกินไป คุณลองใหม่ได้"
+  },
+  "error_offline": {
+    "message": "ดูเหมือนคุณออฟไลน์อยู่ ตรวจสอบการเชื่อมต่อแล้วลองใหม่"
+  },
+  "error_network_error": {
+    "message": "ติดต่อ Gemini ไม่ได้ ตรวจสอบการเชื่อมต่อแล้วลองใหม่"
+  },
+  "error_quota_exceeded": {
+    "message": "ถึงโควตา Gemini แล้ว ตรวจสอบบัญชีและลองอีกครั้งภายหลัง"
+  },
+  "error_service_error": {
+    "message": "Gemini แปลไม่สำเร็จ โปรดลองอีกครั้งภายหลัง"
+  },
+  "error_invalid_response": {
+    "message": "Gemini ส่งคำตอบที่อ่านไม่ได้ คุณลองใหม่ได้"
+  },
+  "error_output_too_large": {
+    "message": "คำแปลยาวเกินขีดจำกัดผลลัพธ์ เลือกข้อความให้น้อยลงแล้วลองใหม่"
+  },
+  "error_content_blocked": {
+    "message": "Gemini บล็อกข้อความนี้ ลองเลือกข้อความอื่น"
+  },
+  "error_unsupported_page": {
+    "message": "หน้านี้ใช้การแปลไม่ได้"
+  },
+  "error_frame_unavailable": {
+    "message": "เฟรมที่เลือกไม่พร้อมใช้งานแล้ว"
+  },
+  "error_cancelled": {
+    "message": "ยกเลิกการแปลแล้ว"
+  },
+  "key_Off": {
+    "message": "ปิด"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " ลองอีกครั้งใน $seconds$ วินาที",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "การตั้งค่า AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "การตั้งค่าส่วนตัวเพื่อแปลได้รวดเร็วและตรงจุด"
+  },
+  "html_help_and_information": {
+    "message": "ความช่วยเหลือและข้อมูล"
+  },
+  "html_api_key_guide": {
+    "message": "คู่มือคีย์ API"
+  },
+  "html_about": {
+    "message": "เกี่ยวกับ"
+  },
+  "html_privacy": {
+    "message": "ความเป็นส่วนตัว"
+  },
+  "html_set_up_ai_translator": {
+    "message": "ตั้งค่า AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "ทำตามขั้นตอนในหน้าการตั้งค่านี้ คุณต้องมีคีย์ API ของ Google ของตนเองเพื่อแปล"
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>รับคีย์ API ของตนเอง</1> เปิด <2>Google AI Studio</2> ลงชื่อเข้าใช้และสร้างคีย์ อ่านเรื่องการแชร์ข้อมูลด้านล่างแล้ววางคีย์ <3>อ่านคู่มือทีละขั้นตอน</3>หากต้องการความช่วยเหลือ"
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>เลือกภาษาเป้าหมายและโมเดล</1> เลือกภาษาที่ต้องการอ่านคำแปล เราแนะนำ Gemini Flash-Lite หากมีในรายการโมเดล"
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>บันทึกแล้วเริ่มแปล</1> ใช้ปุ่มตั้งค่าให้เสร็จที่ด้านล่างของหน้า จากนั้นเลือกข้อความบนเว็บแล้วกด Control หรือเลือกแปลข้อความที่เลือกจากเมนูคลิกขวา"
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "เชื่อมต่อคีย์ API ของ Gemini ของคุณแล้วเลือกโมเดลที่ใช้ได้"
+  },
+  "html_loading_setup_state": {
+    "message": "กำลังโหลดสถานะการตั้งค่า..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "ก่อนเชื่อมต่อ Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google จะได้รับคีย์ API เพื่อตรวจสอบโมเดลที่ใช้ได้ เมื่อคุณขอแปล Google จะได้รับข้อความที่เลือกและภาษาเป้าหมายด้วย รวมถึงข้อความจากไฟล์ในเครื่อง คำแปลจาก AI อาจผิดพลาด"
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "คีย์ถูกเข้ารหัสและเก็บในโปรไฟล์ Chrome นี้ โดยเปิดอัตโนมัติหลังเริ่มใหม่ ไม่ต้องใช้รหัสผ่านเพิ่ม แต่ผู้ที่เข้าถึงโปรไฟล์เบราว์เซอร์ได้ทั้งหมดอาจกู้คืนคีย์ได้ <1>อ่านรายละเอียดความเป็นส่วนตัว</1>"
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>จำเป็นในทุกประเทศ:</1> ใช้คีย์ API ของ Gemini จากโปรเจ็กต์ที่<2>เปิดใช้งานการเรียกเก็บเงิน</2> ปิดตัวเลือก<3>แชร์บันทึกคำขอและชุดข้อมูลของส่วนขยายนี้กับ Google</3> ภายใต้การตั้งค่านี้ ข้อกำหนดบริการแบบชำระเงินของ Google ไม่อนุญาตให้นำพรอมต์และคำตอบไปปรับปรุงผลิตภัณฑ์ แต่ยังมีการประมวลผลเพื่อความปลอดภัยและกฎหมาย ส่วนขยายฟรี แต่อาจมีค่าบริการ Google API"
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>เงื่อนไขการใช้</1> เมื่อใช้ Gemini ผ่านส่วนขยายนี้ คุณตกลงทำตามข้อกำหนดข้างต้นและ<2>ข้อกำหนดของ Google</2> สำหรับผู้มีอายุอย่างน้อย 18 ปี เพื่อวิชาชีพหรือธุรกิจใน<3>ภูมิภาคที่รองรับ</3> ส่วนขยายไม่ตรวจสอบการตั้งค่าการเรียกเก็บเงินหรือการแชร์ของคุณ"
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "ยอมรับและเชื่อมต่อ Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "ถอนความยินยอมแชร์ข้อมูล"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "อ่านรายละเอียดการแชร์ข้อมูลก่อนเชื่อมต่อ"
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>ทำไมต้องมีข้อกำหนดเหล่านี้? อ่านคำถามที่พบบ่อย</1>"
+  },
+  "html_api_key": {
+    "message": "คีย์ API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "หลังยอมรับ ให้วางคีย์เพื่อบันทึกแบบเข้ารหัสและโหลดโมเดลอัตโนมัติ"
+  },
+  "html_show": {
+    "message": "แสดง"
+  },
+  "html_remove_saved_key": {
+    "message": "ลบคีย์ที่บันทึกไว้"
+  },
+  "html_model": {
+    "message": "โมเดล"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "ซ่อนโมเดลที่ทราบว่าใช้เฉพาะสื่อหรือวัตถุประสงค์พิเศษ"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "เราแนะนำตระกูล Gemini Flash-Lite ในรุ่นนี้ (กันยายน 2026) เราเลือก Gemini 3.5 Flash-Lite คุณเลือกโมเดลอื่นในรายการได้ บางโมเดลอาจใช้กับส่วนขยายนี้ไม่ได้ หากล้มเหลวให้เลือกโมเดลอื่นหรือโมเดลที่แนะนำ"
+  },
+  "html_refresh_models": {
+    "message": "รีเฟรชโมเดล"
+  },
+  "html_use_recommended_model": {
+    "message": "ใช้โมเดลที่แนะนำ"
+  },
+  "html_translation": {
+    "message": "การแปล"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "ตั้งค่าภาษาและปุ่มเรียกแปลบนคีย์บอร์ดที่เป็นตัวเลือก"
+  },
+  "html_default_language": {
+    "message": "ภาษาเริ่มต้น"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "การ์ดผลลัพธ์ใช้ภาษาอื่นได้โดยไม่เปลี่ยนค่าเริ่มต้นนี้"
+  },
+  "html_keyboard_trigger": {
+    "message": "ปุ่มเรียกแปล"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "ปุ่มเดี่ยวอาจขัดแย้งกับเว็บไซต์หรือเครื่องมือช่วยการเข้าถึง เลือกปิดเพื่อใช้เฉพาะเมนูคลิกขวา"
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "บันทึกปุ่ม"
+  },
+  "html_off": {
+    "message": "ปิด"
+  },
+  "html_behavior": {
+    "message": "การทำงาน"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "ระบบป้องกันที่กำหนดไว้ช่วยให้แปลได้รวดเร็วและปกป้องโควตา API"
+  },
+  "html_parallel_requests": {
+    "message": "คำขอพร้อมกัน"
+  },
+  "html_request_timeout": {
+    "message": "เวลารอคำขอ"
+  },
+  "html_page_access": {
+    "message": "การเข้าถึงหน้า"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "สำหรับไฟล์ในเครื่อง ให้เปิดอนุญาตการเข้าถึง URL ของไฟล์ในจัดการส่วนขยาย"
+  },
+  "html_help_and_recovery": {
+    "message": "ความช่วยเหลือและการกู้คืน"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "หากโมเดลใช้ไม่ได้ ให้รีเฟรชรายการ เลือกโมเดลและบันทึกค่ากำหนด หากโหลดรายการไม่ได้ ให้ตรวจสอบคีย์และการเชื่อมต่อแล้วลองรีเฟรชโมเดล"
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "หน้าการตั้งค่า Chrome และ Chrome เว็บสโตร์ไม่อนุญาตการแปล สำหรับไฟล์ในเครื่อง ให้เปิดการเข้าถึง URL ของไฟล์ในจัดการส่วนขยาย หลังอัปเดตหรือโหลดส่วนขยายใหม่ ให้รีเฟรชหน้าเว็บที่เปิดอยู่ การโหลดใหม่อาจขัดจังหวะการแปล"
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "การแปลต้องใช้อินเทอร์เน็ต หลังยอมรับด้านบน คีย์จะถูกส่งตรงไป Google เพื่อตรวจสอบโมเดล ข้อความที่เลือก รวมถึงจากไฟล์ในเครื่อง จะส่งพร้อมภาษาเป้าหมายเฉพาะเมื่อคุณขอแปล คีย์เข้ารหัสอยู่ในโปรไฟล์ Chrome นี้ ภาษา โมเดลและปุ่มอาจซิงค์ผ่าน Chrome ส่วนขยายเก็บเฉพาะผลล่าสุดในเซสชันเบราว์เซอร์ ไม่เก็บประวัติการแปล"
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "คุณอ่านเรื่องการแชร์ข้อมูลด้านบนและถอนความยินยอมได้ทุกเมื่อ การตรวจสอบโมเดลและการแปลจะหยุดจนกว่าจะยอมรับอีกครั้ง คีย์ยังคงอยู่เว้นแต่คุณเลือกลบคีย์ที่บันทึกไว้"
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "บันทึกการเปลี่ยนภาษา โมเดลและปุ่มที่นี่"
+  },
+  "html_reload_saved_settings": {
+    "message": "โหลดการตั้งค่าที่บันทึกไว้อีกครั้ง"
+  },
+  "html_save_preferences": {
+    "message": "บันทึกค่ากำหนด"
+  },
+  "html_gemini_translation": {
+    "message": "การแปลด้วย Gemini"
+  },
+  "html_setup_required": {
+    "message": "ต้องตั้งค่า"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "ยินดีต้อนรับสู่ AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "แปลข้อความที่เลือกเป็นภาษาที่คุณรู้จัก ตั้งค่าสองอย่างนี้เพื่อเริ่ม:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>คีย์ API ของ Gemini ของคุณ</1> รับคีย์ของตนเองจาก Google AI Studio คู่มือของเราอธิบายวิธีทำ"
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>ภาษาเป้าหมายของคุณ</1> เลือกภาษาที่ต้องการอ่าน"
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "วิธีรับคีย์ API"
+  },
+  "html_extension_status": {
+    "message": "สถานะส่วนขยาย"
+  },
+  "html_active_translations": {
+    "message": "การแปลที่กำลังทำงาน"
+  },
+  "html_latest_this_session": {
+    "message": "ผลล่าสุดในเซสชันนี้"
+  },
+  "html_no_translation_yet": {
+    "message": "ยังไม่มีคำแปล"
+  },
+  "html_copy": {
+    "message": "คัดลอก"
+  },
+  "html_settings": {
+    "message": "การตั้งค่า"
+  },
+  "html_key_guide": {
+    "message": "คู่มือคีย์"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "เริ่มใช้ AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "หน้าของส่วนขยาย"
+  },
+  "html_faq": {
+    "message": "คำถามที่พบบ่อย"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "รับคีย์ API ของ Google ของตนเอง เลือกภาษาและแปลข้อความแรก"
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. รับคีย์ API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "คีย์ API ช่วยให้ส่วนขยายใช้ Gemini ผ่านบัญชี Google ของคุณ เก็บเป็นความลับเหมือนรหัสผ่าน"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "ส่วนขยายนี้สำหรับผู้มีอายุอย่างน้อย 18 ปี เพื่อทำงานหรือธุรกิจใน<1>ประเทศและภูมิภาคที่ Google รองรับ</1> ในทุกประเทศ คีย์ API ต้องอยู่ในโปรเจ็กต์ Gemini ที่เปิดการเรียกเก็บเงิน ปิดการแชร์บันทึกคำขอและชุดข้อมูลของส่วนขยายกับ Google ที่เป็นตัวเลือก"
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "เมื่อใช้ส่วนขยาย คุณตกลงทำตามเงื่อนไขเหล่านี้ <1>ข้อกำหนด Google API</1> และ<2>ข้อกำหนดเพิ่มเติมของ Gemini API</2> อย่าใช้หากทำตามไม่ได้ ส่วนขยายไม่ตรวจสอบข้อเท็จจริงเหล่านี้หรือขอเอกสารระบุตัวตน"
+  },
+  "html_open_google_ai_studio": {
+    "message": "เปิด Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "ลงชื่อเข้าใช้บัญชี Google และยอมรับข้อกำหนดของ Google หากมีการขอ"
+  },
+  "html_create_or_choose_a_key": {
+    "message": "สร้างหรือเลือกคีย์"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "ในหน้าคีย์ API เลือก<1>สร้างคีย์ API</1> แล้วทำตามขั้นตอนของ Google เพื่อเลือกหรือสร้างโปรเจ็กต์ โปรเจ็กต์รวมการใช้ API และการเรียกเก็บเงิน หากเพิ่งเริ่มใช้ AI Studio Google อาจสร้างโปรเจ็กต์และคีย์เริ่มต้นไว้แล้ว"
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "หากไม่พบโปรเจ็กต์เดิม ให้เปิด<1>แดชบอร์ด > โปรเจ็กต์ > นำเข้าโปรเจ็กต์</1> นำเข้าโปรเจ็กต์แล้วกลับไปที่คีย์ API"
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "ก่อนใช้คีย์ ให้ทำตาม<1>คู่มือการเรียกเก็บเงินของ Google</1>เพื่อตรวจว่าการเรียกเก็บเงินของโปรเจ็กต์เปิดอยู่ การสมัครแอป Gemini แบบชำระเงินไม่แทนการเรียกเก็บเงินของโปรเจ็กต์ API ปิดการแชร์บันทึกและชุดข้อมูลของส่วนขยายกับ Google ที่เป็นตัวเลือก และอ่าน<2>นโยบายการแชร์บันทึกของ Google</2> การบันทึกส่วนตัวในโปรเจ็กต์ต่างจากการแชร์"
+  },
+  "html_copy_your_key": {
+    "message": "คัดลอกคีย์"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "คัดลอกคีย์จาก AI Studio กลับมาที่การตั้งค่าส่วนขยายและอ่านรายละเอียดการแชร์ข้อมูล เลือก<1>ยอมรับและเชื่อมต่อ Google</1> แล้ววางคีย์ในช่อง<2>คีย์ API</2> คีย์จะเข้ารหัสและบันทึกอัตโนมัติ จากนั้นโหลดรายการโมเดล รอผลก่อนดำเนินการต่อ"
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "การตั้งค่า AI Translator แสดงคำชี้แจงการแชร์ข้อมูลและปุ่มยอมรับเหนือช่องคีย์ API ที่ว่าง พร้อมคำแนะนำโมเดล Flash-Lite"
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "ตัวอย่างแสดงเป็นภาษาอังกฤษ ใน AI Translator ให้ยอมรับการแชร์ข้อมูลก่อน แล้ววางคีย์ของคุณ ระบบจะตรวจรายการโมเดลหลังบันทึกคีย์ที่เข้ารหัส"
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google อาจเปลี่ยนหน้าจอเหล่านี้ สำหรับขั้นตอนล่าสุดหรือข้อผิดพลาดของคีย์ โปรดอ่าน<1>คู่มือคีย์ API ของ Google</1> ใช้คีย์ใหม่จาก AI Studio หากคีย์เก่าใช้ไม่ได้แล้ว"
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. เลือกการตั้งค่าการแปล"
+  },
+  "html_choose_a_model": {
+    "message": "เลือกโมเดล"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "เราแนะนำตระกูล Gemini Flash-Lite สำหรับรุ่นเดือนกันยายน 2026 เราเลือก <1>Gemini 3.5 Flash-Lite</1> ใช้เมื่อมีในรายการโมเดล"
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "คุณเลือกโมเดลอื่นในรายการได้ บางโมเดลอาจใช้กับส่วนขยายไม่ได้ หากล้มเหลวให้เลือกโมเดลอื่นหรือโมเดลที่แนะนำ"
+  },
+  "html_choose_your_target_language": {
+    "message": "เลือกภาษาเป้าหมาย"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "เลือกภาษาที่ต้องการอ่านจาก<1>ภาษาเริ่มต้น</1> ตัวเลือกอิงจาก<2>ภาษา Gemini ที่ Google ระบุในเอกสาร</2> คุณภาพการแปลอาจต่างกันตามภาษาและข้อความ"
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "การตั้งค่าการแปล AI Translator พร้อมตัวเลือกภาษาเป้าหมายและปุ่มเรียกแปล"
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "ตัวอย่างแสดงเป็นภาษาอังกฤษ เลือกภาษาสำหรับคำแปลแล้วทำการตั้งค่าให้เสร็จ"
+  },
+  "html_finish_setup": {
+    "message": "ตั้งค่าให้เสร็จ"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "ใช้ Control ต่อไป บันทึกปุ่มอื่น หรือเลือก<1>ปิด</1>เพื่อใช้เฉพาะเมนูคลิกขวา เลือก<2>ตั้งค่าให้เสร็จ</2>ด้านล่างการตั้งค่า คุณเปลี่ยนภายหลังด้วย<3>บันทึกค่ากำหนด</3>ได้"
+  },
+  "html_open_settings": {
+    "message": "เปิดการตั้งค่า"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. แปลข้อความแรก"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "เปิดหน้าเว็บทั่วไปและเลือกข้อความสั้น ๆ คลิกขวาแล้วเลือก<1>แปลข้อความที่เลือก</1> หรือกดแล้วปล่อยปุ่มที่กำหนด ผลจะปรากฏข้างข้อความ"
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "หากเพิ่งติดตั้งหรือโหลดส่วนขยายใหม่ ให้รีเฟรชหน้าเว็บก่อน หน้าการตั้งค่า Chrome, Chrome เว็บสโตร์ และโปรแกรมดู PDF ในตัวไม่อนุญาตการแปล"
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "หน้าต่างป๊อปอัปบนแถบเครื่องมือแสดงผลล่าสุด เมื่อตั้งค่าเสร็จจะเปิดมุมมองปกติ หากลบคีย์ API คู่มือเริ่มต้นจะแสดงอีกครั้ง"
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "คำถามที่พบบ่อย: คีย์ ค่าใช้จ่าย และความเป็นส่วนตัว"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "ทำไมต้องใช้คีย์ API ของตนเอง?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "ส่วนขยายออกแบบให้ส่งคำขอตรงไปยังโปรเจ็กต์ Google ของคุณด้วยคีย์ของคุณเอง นี่เป็นทางเลือกในการออกแบบ ไม่ใช่กฎ Chrome คีย์อนุญาตคำขอและผูกกับการใช้งานและการเรียกเก็บเงินของคุณ อย่าแชร์ในภาพหน้าจอหรือข้อความสาธารณะ อ่าน<1>คู่มือคีย์ API ของ Google</1>"
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "ทำไมต้องเปิดการเรียกเก็บเงิน แทนที่จะแค่แนะนำ?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>กฎการใช้แบบจำกัดของ Chrome ข้อ 3 และ 5</1> จำกัดการใช้ข้อมูลไว้ที่วัตถุประสงค์ของส่วนขยายและงานที่เกี่ยวข้อง การใช้ Gemini แบบฟรีบางแบบอนุญาตการฝึกและการตรวจโดยคนที่กว้างกว่า ข้อกำหนดแบบชำระเงินไม่รวมการใช้เพื่อปรับปรุงผลิตภัณฑ์ แต่อนุญาตการเก็บอย่างจำกัดเพื่อความปลอดภัยและกฎหมาย รวมถึงประมวลผลนอก EU"
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "เพื่อแก้ข้อขัดแย้งนี้ ผู้พัฒนาจึงกำหนดให้เปิดการเรียกเก็บเงินของโปรเจ็กต์ทั่วโลก การแนะนำอย่างเดียวยังเปิดให้ใช้ฟรีได้ กฎภูมิภาคของ Google เองก็กำหนดบริการแบบชำระเงินสำหรับแอปที่ให้บริการในเขตเศรษฐกิจยุโรป สหราชอาณาจักร และสวิตเซอร์แลนด์ อ่าน<1>ข้อกำหนด Gemini: ข้อจำกัดการใช้ บริการฟรี และบริการแบบชำระเงิน</1>"
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "ทำไมต้องปิดการแชร์กับ Google ที่เป็นตัวเลือก?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "การแชร์บันทึกหรือชุดข้อมูลอาจอนุญาตการฝึกและการตรวจโดยคน แม้เปิดการเรียกเก็บเงิน อย่าส่งข้อมูลของส่วนขยายนี้ผ่านการแชร์ชุดข้อมูลหรือความคิดเห็น กฎนี้อนุญาตการบันทึกส่วนตัวในโปรเจ็กต์ของคุณ อ่าน<1>นโยบายบันทึกของ Google: ข้อมูลที่แชร์ได้และวิธีใช้ข้อมูลของคุณ</1>"
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "ส่วนขยายยังฟรีไหมถ้าต้องใช้ API แบบชำระเงิน?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "ใช่ ส่วนขยายฟรี แต่อาจมีค่าบริการ Google API การสมัครแอป Gemini แบบชำระเงินไม่แทนการเรียกเก็บเงินโปรเจ็กต์ API ดู<1>วิธีตรวจการเรียกเก็บเงิน</1>และ<2>ราคา Google API</2> ส่วนขยายไม่ตรวจสอบการตั้งค่าการเรียกเก็บเงินหรือการแชร์"
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "ทำไมต้องเลือกยอมรับและเชื่อมต่อ Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>ข้อกำหนดการเปิดเผยของ Chrome ข้อ 1 และ 2</1> ต้องการรายละเอียดการใช้ข้อมูลที่ชัดเจนและความยินยอมหลังรับข้อมูล ปุ่มนี้ให้คุณเลือกก่อนมีคำขอ Google API ใด ๆ ปุ่มไม่ตรวจตัวตนหรือการเรียกเก็บเงิน และไม่อนุญาตให้แชร์ข้อมูลส่วนตัวของผู้อื่น"
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "ส่งอะไรไป Google บ้าง?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "การตรวจโมเดลส่งคีย์และขอรายการโมเดลที่ใช้ได้ การแปลส่งข้อความที่เลือก ภาษาเป้าหมาย โมเดลและคำสั่งแปล รวมถึงข้อความจากไฟล์ในเครื่อง ส่วนขยายไม่เพิ่มทั้งหน้า ที่อยู่หน้า หรือประวัติการท่องเว็บ Google ยังได้รับข้อมูลการเชื่อมต่อ เช่น IP ผู้พัฒนาไม่ได้รับคำขอเหล่านี้ ส่งเฉพาะข้อความที่คุณมีสิทธิ์แชร์"
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "คีย์ถูกบันทึกและเปิดอัตโนมัติอย่างไร?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "คีย์ API ถูกบันทึกแบบเข้ารหัส ทั้งคีย์ API และคีย์เข้ารหัสอยู่ในโปรไฟล์ Chrome นี้เพื่อใช้โดยอัตโนมัติหลังเริ่มใหม่ โดยไม่ซิงค์ ผู้เข้าถึงโปรไฟล์อาจกู้คืนคีย์ API ได้ นี่ไม่ใช่พวงกุญแจของระบบปฏิบัติการหรือตู้นิรภัยที่มีรหัสผ่าน ภาษา โมเดลและปุ่มอาจซิงค์ได้ เก็บเฉพาะผลล่าสุดในเซสชันเบราว์เซอร์ ไม่มีการวิเคราะห์หรือประวัติการแปล"
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "การอัปเกรดเข้ารหัสและตรวจคีย์เก่าก่อนลบสำเนาข้อความธรรมดา หากล้มเหลว จะเก็บสำเนาเก่าไว้และยังบล็อกคำขอ การตั้งค่าอธิบายข้อผิดพลาด การย้ายคีย์เก่าไม่ข้ามขั้นตอนยินยอม"
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "ถอนความยินยอมหรือลบคีย์ได้ไหม?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "ใน<1>การตั้งค่า</1> <2>ถอนความยินยอมแชร์ข้อมูล</2>จะบล็อกคำขอใหม่และยกเลิกคำขอที่ทำงานอยู่ในเครื่อง โดยเก็บคีย์และค่ากำหนด <3>ลบคีย์ที่บันทึกไว้</3>จะลบคีย์ คีย์เข้ารหัส และแคชโมเดล ทั้งสองอย่างเรียกคืนข้อมูลที่ส่งแล้วไม่ได้ และไม่รับประกันว่าคำขอที่ส่งแล้วจะฟรี เพิกถอนคีย์ใน AI Studio เพื่อปิดที่ Google ด้วย"
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "ความยินยอมยังอยู่หลังเริ่มใหม่และอัปเดตตามปกติ หากคำชี้แจงเปลี่ยน คำขอจะรอจนกว่าคุณอ่านและยอมรับอีกครั้ง"
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "ทำไมจำกัดสำหรับผู้ใหญ่และงานหรือธุรกิจ?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google กำหนดอายุอย่างน้อย 18 ปี ใช้เพื่อวิชาชีพหรือธุรกิจในภูมิภาคที่รองรับ ดู<1>ข้อกำหนด Gemini: อายุและข้อจำกัดการใช้</1>และ<2>ภูมิภาคที่ใช้ได้</2> ส่วนขยายไม่มีช่องยืนยันคุณสมบัติแยกหรือการตรวจตัวตน"
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "ทำไมต้องมีนโยบายความเป็นส่วนตัวนอกเหนือจากคำชี้แจงนี้?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "คำชี้แจงอธิบายตัวเลือกก่อนเชื่อมต่อ นโยบายให้รายละเอียดครบเกี่ยวกับข้อมูล การเก็บและการลบ <1>กฎนโยบายความเป็นส่วนตัวของ Chrome</1>กำหนดให้ส่วนขยายที่จัดการข้อมูลผู้ใช้มีนโยบายนี้ อ่าน<2>นโยบายความเป็นส่วนตัวของเรา</2> คำชี้แจงเหล่านี้ไม่ได้แปลว่า Google อนุมัติส่วนขยายแล้ว"
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "คำแปล AI อาจผิด ตรวจข้อความสำคัญก่อนนำไปใช้"
+  },
+  "html_about_ai_translator": {
+    "message": "เกี่ยวกับ AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "แปลง่าย ๆ เพียงเลือกข้อความแล้วกด Control"
+  },
+  "html_made_for_people": {
+    "message": "สร้างเพื่อผู้คน"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "ฉันสร้าง AI Translator เพื่อช่วยให้ผู้คนอ่าน เรียนรู้และเชื่อมถึงกันข้ามภาษา หวังว่าจะเป็นประโยชน์กับผู้คนทั่วโลก"
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "ส่วนขยายแปลข้อความที่คุณเลือกด้วยคีย์ API ของ Google Gemini ของคุณเอง คุณเลือกว่าจะส่งอะไรและอ่านภาษาไหน"
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "กดแล้วปล่อย Control เพื่อแปลข้อความที่เลือก Control เป็นปุ่มเริ่มต้นและเปลี่ยนได้ในการตั้งค่า คุณยังใช้เมนูคลิกขวาของหน้าได้"
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "ทดสอบด้วยตนเองบน Mac เท่านั้น ยังไม่ได้ทดสอบด้วยตนเองบน Windows และ Linux"
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>ดูซอร์สโค้ดและคู่มือโปรเจ็กต์</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>ขอความช่วยเหลือหรือรายงานปัญหา</1> รายงานเป็นสาธารณะ อย่าใส่คีย์ API ข้อความส่วนตัวหรือข้อมูลส่วนบุคคล"
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "หากต้องการสนับสนุนงานของฉัน"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "โปรดสนับสนุนยูเครน ประเทศของฉัน ที่กำลังป้องกันตนจากการรุกรานของรัสเซีย"
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "ฉันไว้วางใจ Sternenko Community Foundation หากคุณพร้อมและต้องการช่วย สามารถบริจาคผ่านเว็บไซต์ทางการของมูลนิธิ"
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>สนับสนุนยูเครนผ่านมูลนิธิ</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "การสนับสนุนเป็นทางเลือกและไม่จำเป็นต่อการใช้ส่วนขยาย ลิงก์นี้เปิดเว็บไซต์ภายนอก การบริจาคผ่านมูลนิธิ ไม่ผ่านส่วนขยาย"
+  },
+  "html_privacy_and_costs": {
+    "message": "ความเป็นส่วนตัวและค่าใช้จ่าย"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "คีย์ API เข้ารหัสในอุปกรณ์นี้และไม่ซิงค์ ยังใช้ได้หลังเริ่ม Chrome ใหม่ตามปกติโดยไม่ต้องใส่รหัสผ่านปลดล็อก ผู้เข้าถึงโปรไฟล์เบราว์เซอร์อาจกู้คืนคีย์ได้"
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "ก่อนส่งคำขอ Google ครั้งแรก การตั้งค่าอธิบายการแชร์ข้อมูลและให้เลือก<1>ยอมรับและเชื่อมต่อ Google</1> หลังจากนั้นส่งข้อความตรงไป Google เฉพาะเมื่อคุณขอแปล การตรวจโมเดลส่งคีย์แต่ไม่ส่งข้อความที่เลือก ไม่มีการวิเคราะห์ โฆษณาหรือประวัติการแปล"
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "อ่านรายละเอียดใน<1>การตั้งค่า</1>ได้ทุกเมื่อ เลือก<2>ถอนความยินยอมแชร์ข้อมูล</2>เพื่อหยุดคำขอใหม่โดยเก็บคีย์เข้ารหัสและค่ากำหนด หรือ<3>ลบคีย์ที่บันทึกไว้</3>เพื่อลบคีย์และแคชโมเดล ข้อมูลที่ส่งแล้วเรียกคืนไม่ได้"
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "คำแปลสร้างโดย AI และอาจผิด ตรวจข้อความสำคัญก่อนนำไปใช้"
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>อ่านรายละเอียดความเป็นส่วนตัว</1>"
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator เป็นโปรเจ็กต์อิสระที่ใช้ฟรี แต่อาจมีค่าบริการ Google API ในทุกประเทศให้ใช้คีย์จากโปรเจ็กต์ที่<1>เปิดการเรียกเก็บเงิน</1>และปิดตัวเลือก<2>แชร์บันทึกคำขอและชุดข้อมูลของส่วนขยายนี้กับ Google</2> ภายใต้การตั้งค่านี้ ข้อกำหนดแบบชำระเงินไม่อนุญาตให้นำพรอมต์และคำตอบไปปรับปรุงผลิตภัณฑ์ แต่การประมวลผลเพื่อความปลอดภัยและกฎหมายยังใช้บังคับ อ่าน<3>ราคาและคำอธิบายการใช้ข้อมูลของ Google</3>"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "ส่วนขยายนี้สำหรับผู้มีอายุอย่างน้อย 18 ปี เพื่อทำงานหรือธุรกิจใน<1>ภูมิภาคที่ Google รองรับ</1> เมื่อใช้ คุณตกลงทำตามเงื่อนไขนี้ <2>ข้อกำหนด Google API</2> และ<3>ข้อกำหนดเพิ่มเติม Gemini API</3> อย่าใช้หากทำตามไม่ได้ ไม่มีช่องยืนยันคุณสมบัติหรือการตรวจตัวตน และไม่ตรวจการตั้งค่าการเรียกเก็บเงินหรือการแชร์"
+  },
+  "runtime_unsaved_changes": {
+    "message": "มีการเปลี่ยนแปลงที่ยังไม่บันทึก"
+  },
+  "runtime_settings_conflict": {
+    "message": "การตั้งค่าเปลี่ยนในหน้าอื่น การแก้ไขของคุณยังอยู่ที่นี่ โหลดการตั้งค่าที่บันทึกไว้ใหม่เพื่อทิ้งการแก้ไขและใช้ค่าที่บันทึก"
+  },
+  "runtime_preferences_current": {
+    "message": "ค่ากำหนดเป็นปัจจุบันแล้ว"
+  },
+  "runtime_key_cannot_open": {
+    "message": "เปิดคีย์ที่บันทึกไว้ไม่ได้ เปิดการตั้งค่าใหม่ หรือลบคีย์แล้วป้อนอีกครั้ง"
+  },
+  "runtime_key_conflict": {
+    "message": "คีย์ API เปลี่ยนในหน้าอื่น โหลดการตั้งค่าที่บันทึกไว้ใหม่ก่อนบันทึกคีย์"
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "คีย์บันทึกแบบเข้ารหัสแล้ว ยอมรับการแชร์ข้อมูลก่อนเชื่อมต่อ Google"
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "ยอมรับการแชร์ข้อมูลด้านบนก่อนเพิ่มคีย์ API"
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini ปฏิเสธคีย์ที่บันทึกไว้ เปลี่ยนคีย์หรือใช้รีเฟรชโมเดลเพื่อตรวจอีกครั้ง"
+  },
+  "runtime_paste_key": {
+    "message": "วางคีย์ API เพื่อเชื่อมต่อ Gemini"
+  },
+  "runtime_key_checked": {
+    "message": "บันทึกคีย์ API แล้ว Gemini ยอมรับคีย์ในการตรวจรายการโมเดลครั้งล่าสุด"
+  },
+  "runtime_key_saved_check": {
+    "message": "บันทึกคีย์ API แบบเข้ารหัสบนอุปกรณ์นี้แล้ว รีเฟรชโมเดลเพื่อตรวจด้วย Gemini"
+  },
+  "runtime_retry_withdrawal": {
+    "message": "ลองถอนความยินยอมอีกครั้ง"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "ถอนความยินยอมแชร์ข้อมูล"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "ยังไม่ยืนยันการถอนความยินยอม ลองอีกครั้งเพื่อบันทึกตัวเลือก"
+  },
+  "runtime_agreement_saved": {
+    "message": "ยอมรับการแชร์ข้อมูลสำหรับโปรไฟล์ Chrome นี้แล้ว คุณถอนได้ทุกเมื่อ"
+  },
+  "runtime_agreement_not_saved": {
+    "message": "จะไม่เชื่อมต่อ Google จนกว่าคุณยอมรับ หากถอนความยินยอมจะยังเก็บคีย์ไว้"
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini ปฏิเสธคีย์ที่บันทึกไว้ เปลี่ยนคีย์ด้านล่าง"
+  },
+  "runtime_setup_key_saved": {
+    "message": "คีย์บันทึกแบบเข้ารหัสบนอุปกรณ์นี้แล้ว"
+  },
+  "runtime_setup_create_key": {
+    "message": "สร้างคีย์ของตนเองใน Google AI Studio"
+  },
+  "runtime_setup_language_selected": {
+    "message": "เลือกภาษาแล้ว ตั้งค่าให้เสร็จเพื่อบันทึกตัวเลือก"
+  },
+  "runtime_setup_choose_language": {
+    "message": "เลือกภาษาเป้าหมายด้านล่าง"
+  },
+  "runtime_finish_setup": {
+    "message": "ตั้งค่าให้เสร็จ"
+  },
+  "runtime_save_preferences": {
+    "message": "บันทึกค่ากำหนด"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "เพิ่มคีย์ API ตรวจรายการโมเดลและบันทึกโมเดลที่เลือก"
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "แก้ไขการตั้งค่าที่ขัดแย้งก่อนแปล"
+  },
+  "runtime_setup_agreement_required": {
+    "message": "อ่านและยอมรับการแชร์ข้อมูลก่อนเชื่อมต่อ Google"
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "บันทึกคีย์ API ให้เสร็จก่อนตรวจการตั้งค่า"
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "ต้องตรวจการตั้งค่า: Gemini ปฏิเสธคีย์ API ที่บันทึกไว้"
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "บันทึกคีย์แล้ว เลือกภาษาเป้าหมายและทำการตั้งค่าให้เสร็จ"
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "เลือกโมเดลที่ใช้ได้และบันทึกค่ากำหนด"
+  },
+  "runtime_setup_model_selected": {
+    "message": "เลือกโมเดลแล้ว บันทึกค่ากำหนดเพื่อใช้งาน"
+  },
+  "runtime_setup_ready_finish": {
+    "message": "คีย์และภาษาพร้อมแล้ว ตั้งค่าให้เสร็จเพื่อบันทึกตัวเลือก แล้วลองแปล สิทธิ์เข้าถึงโมเดลและโควตายังเปลี่ยนได้"
+  },
+  "runtime_setup_ready_translate": {
+    "message": "พร้อมลองแปล โมเดลที่บันทึกอยู่ในรายการที่ตรวจแล้ว แต่สิทธิ์ส่งคำขอและโควตายังเปลี่ยนได้"
+  },
+  "runtime_setup_refresh_models": {
+    "message": "บันทึกคีย์แล้ว รีเฟรชโมเดลเพื่อตรวจคีย์และโมเดลที่เลือก"
+  },
+  "runtime_show_key": {
+    "message": "แสดง"
+  },
+  "runtime_hide_key": {
+    "message": "ซ่อน"
+  },
+  "runtime_choose_target_language": {
+    "message": "เลือกภาษาเป้าหมาย"
+  },
+  "runtime_background_no_response": {
+    "message": "ส่วนทำงานเบื้องหลังไม่ตอบสนอง โหลดส่วนขยายใหม่แล้วลองอีกครั้ง"
+  },
+  "runtime_refresh_models": {
+    "message": "รีเฟรชโมเดล"
+  },
+  "runtime_models_need_agreement": {
+    "message": "ยอมรับการแชร์ข้อมูลก่อนโหลดโมเดล"
+  },
+  "runtime_models_finish_key_save": {
+    "message": "บันทึกคีย์ API ให้เสร็จก่อนรีเฟรชโมเดล"
+  },
+  "runtime_refreshing": {
+    "message": "กำลังรีเฟรช..."
+  },
+  "runtime_loading": {
+    "message": "กำลังโหลด..."
+  },
+  "runtime_models_checking": {
+    "message": "กำลังตรวจโมเดลที่ใช้ได้กับ Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "กำลังโหลดโมเดลที่ใช้ได้..."
+  },
+  "runtime_models_load_failed": {
+    "message": "โหลดโมเดลที่ใช้ได้ไม่สำเร็จ"
+  },
+  "runtime_models_empty": {
+    "message": "Gemini ไม่ส่งกลับโมเดลที่ใช้ได้"
+  },
+  "runtime_model_not_available": {
+    "message": "โมเดลที่เลือกไม่อยู่ในรายการที่ใช้ได้ เลือกโมเดลอื่น"
+  },
+  "runtime_record_key": {
+    "message": "บันทึกปุ่ม"
+  },
+  "runtime_recording_cancelled": {
+    "message": "ยกเลิกการบันทึกปุ่มแล้ว"
+  },
+  "runtime_unknown_key": {
+    "message": "ปุ่มนั้น"
+  },
+  "runtime_press_key": {
+    "message": "กดปุ่มหนึ่งปุ่ม..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "กดปุ่มที่ไม่พิมพ์อักขระและรองรับหนึ่งปุ่ม กด Escape เพื่อยกเลิก"
+  },
+  "runtime_refresh_saved_key": {
+    "message": "รีเฟรชโมเดลเพื่อตรวจคีย์ API ที่บันทึกไว้"
+  },
+  "runtime_models_add_key": {
+    "message": "เพิ่มคีย์ API เพื่อโหลดโมเดลที่ใช้ได้"
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "ส่วนขยายโหลดสถานะที่บันทึกไว้ไม่ได้"
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini ปฏิเสธคีย์ API ที่บันทึกไว้ เปลี่ยนคีย์หรือรีเฟรชโมเดลเพื่อตรวจอีกครั้ง"
+  },
+  "runtime_settings_reopen": {
+    "message": "โหลดการตั้งค่าไม่ได้ เปิดการตั้งค่าใหม่เพื่อลองอีกครั้ง"
+  },
+  "runtime_settings_load_failed": {
+    "message": "โหลดการตั้งค่าไม่ได้ โหลดการตั้งค่าที่บันทึกไว้ใหม่ การบันทึกถูกปิดเพื่อปกป้องตัวเลือกที่บันทึกไว้"
+  },
+  "runtime_setup_load_failed": {
+    "message": "โหลดสถานะการตั้งค่าไม่ได้"
+  },
+  "runtime_key_no_spaces": {
+    "message": "ป้อนคีย์ API ให้ครบโดยไม่มีช่องว่าง"
+  },
+  "runtime_key_use_remove": {
+    "message": "ใช้ลบคีย์ที่บันทึกไว้เพื่อลบคีย์"
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "ยอมรับการแชร์ข้อมูลด้านบนก่อนบันทึกคีย์ API"
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "กำลังบันทึกคีย์ API แบบเข้ารหัส..."
+  },
+  "runtime_key_save_failed": {
+    "message": "อ่านหรือบันทึกคีย์ API ไม่ได้ ข้อมูลที่ป้อนยังอยู่ ใช้บันทึกค่ากำหนดเพื่อลองอีกครั้ง"
+  },
+  "runtime_connecting_google": {
+    "message": "กำลังเชื่อมต่อ Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "กำลังหยุดการเชื่อมต่อ Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "บันทึกความยินยอมแชร์ข้อมูลไม่ได้ ลองอีกครั้ง"
+  },
+  "runtime_key_removing": {
+    "message": "กำลังลบคีย์ที่บันทึกไว้..."
+  },
+  "runtime_key_removed": {
+    "message": "ลบคีย์แล้ว คุณเพิ่มคีย์ใหม่ได้หลังยอมรับการแชร์ข้อมูล"
+  },
+  "runtime_key_remove_failed": {
+    "message": "ลบคีย์ที่บันทึกไว้ไม่ได้ ลองอีกครั้ง"
+  },
+  "runtime_saving": {
+    "message": "กำลังบันทึก..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "เลือกภาษาและโมเดลที่ถูกต้อง"
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "เลือกปุ่มเรียกแปลที่รองรับหรือปิด"
+  },
+  "runtime_choose_listed_model": {
+    "message": "เลือกโมเดลจากรายการที่ใช้ได้ในปัจจุบัน"
+  },
+  "runtime_preferences_saving": {
+    "message": "กำลังบันทึกค่ากำหนด..."
+  },
+  "runtime_preferences_saved": {
+    "message": "บันทึกค่ากำหนดแล้ว"
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "บันทึกค่ากำหนดแล้ว เพิ่มคีย์ API เพื่อทำการตั้งค่าให้เสร็จ"
+  },
+  "runtime_preferences_save_failed": {
+    "message": "อ่านหรือบันทึกค่ากำหนดไม่ได้ การแก้ไขยังอยู่ ลองอีกครั้ง"
+  },
+  "runtime_key_will_save": {
+    "message": "คีย์ API จะบันทึกโดยอัตโนมัติ"
+  },
+  "runtime_key_finish_entry": {
+    "message": "ป้อนคีย์ API ให้เสร็จ"
+  },
+  "runtime_key_finish_save_models": {
+    "message": "บันทึกคีย์ API ให้เสร็จเพื่อโหลดโมเดลที่ใช้ได้"
+  },
+  "runtime_recommended_selected": {
+    "message": "เลือกโมเดลที่แนะนำแล้ว บันทึกตัวเลือกเพื่อใช้"
+  },
+  "runtime_trigger_will_disable": {
+    "message": "ปุ่มเรียกแปลจะปิดหลังบันทึก"
+  },
+  "runtime_connection_changed": {
+    "message": "การตั้งค่าการเชื่อมต่อเปลี่ยน กำลังตรวจค่าที่บันทึกไว้..."
+  },
+  "runtime_models_changed": {
+    "message": "รายการโมเดลเปลี่ยน กำลังตรวจโมเดลที่ใช้ได้..."
+  },
+  "runtime_no_translation": {
+    "message": "ยังไม่มีคำแปล"
+  },
+  "runtime_start_setup": {
+    "message": "เริ่มตั้งค่า"
+  },
+  "runtime_settings": {
+    "message": "การตั้งค่า"
+  },
+  "runtime_key_rejected": {
+    "message": "คีย์ถูกปฏิเสธ"
+  },
+  "runtime_setup_required": {
+    "message": "ต้องตั้งค่า"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "เพิ่มคีย์ API ในการตั้งค่าเพื่อเริ่มแปล"
+  },
+  "runtime_add_key": {
+    "message": "เพิ่มคีย์ API"
+  },
+  "runtime_finish_model_language": {
+    "message": "บันทึกคีย์แล้ว เปิดการตั้งค่าเพื่อตรวจโมเดลและเลือกภาษาให้เสร็จ"
+  },
+  "runtime_check_setup": {
+    "message": "ตรวจการตั้งค่า"
+  },
+  "runtime_translating": {
+    "message": "กำลังแปล"
+  },
+  "runtime_error": {
+    "message": "ข้อผิดพลาด"
+  },
+  "runtime_ready": {
+    "message": "พร้อม"
+  },
+  "runtime_status_load_failed": {
+    "message": "โหลดสถานะส่วนขยายไม่ได้ โหลดส่วนขยายใหม่แล้วรีเฟรชหน้า"
+  },
+  "runtime_copied": {
+    "message": "คัดลอกแล้ว"
+  },
+  "runtime_copy_blocked": {
+    "message": "การคัดลอกถูกบล็อก เลือกข้อความผลลัพธ์แล้วคัดลอก"
+  },
+  "runtime_settings_open_failed": {
+    "message": "เปิดการตั้งค่าไม่ได้ ลองอีกครั้ง"
+  },
+  "runtime_translating_progress": {
+    "message": "กำลังแปล..."
+  },
+  "runtime_translation_started": {
+    "message": "เริ่มแปลแล้ว"
+  },
+  "runtime_translation_complete": {
+    "message": "แปลเสร็จแล้ว"
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "แปลเสร็จแล้ว ใช้ข้อความผลลัพธ์หรือปุ่มบนการ์ด"
+  },
+  "runtime_translation": {
+    "message": "การแปล"
+  },
+  "runtime_target_language": {
+    "message": "ภาษาเป้าหมาย"
+  },
+  "runtime_card_target_language": {
+    "message": "ภาษาเป้าหมายของการ์ดนี้"
+  },
+  "runtime_close_card": {
+    "message": "ปิดการ์ดคำแปล"
+  },
+  "runtime_translated_text": {
+    "message": "ข้อความที่แปลแล้ว"
+  },
+  "runtime_retry": {
+    "message": "ลองอีกครั้ง"
+  },
+  "runtime_copy": {
+    "message": "คัดลอก"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "เปิดการตั้งค่าไม่ได้ ใช้แถบเครื่องมือส่วนขยาย"
+  },
+  "runtime_copy_failed": {
+    "message": "คัดลอกไม่สำเร็จ เลือกข้อความผลลัพธ์แล้วคัดลอก"
+  },
+  "runtime_context_menu": {
+    "message": "แปลข้อความที่เลือก"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (ไม่อยู่ในรายการปัจจุบัน)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (ยังไม่ได้ตรวจ)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "ใช้รายการโมเดลที่แคชไว้จาก $value1$ รีเฟรชสดไม่สำเร็จ ลองอีกครั้งภายหลัง",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "ใช้รายการโมเดลที่แคชไว้ รีเฟรชสดไม่สำเร็จ ลองอีกครั้งภายหลัง"
+  },
+  "runtime_models_cache_at": {
+    "message": "ใช้รายการโมเดลที่แคชไว้จาก $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "ใช้รายการโมเดลที่แคชไว้"
+  },
+  "runtime_models_updated_at": {
+    "message": "อัปเดตรายการโมเดลจาก $value1$ แล้ว",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "อัปเดตรายการโมเดลแล้ว"
+  },
+  "runtime_key_not_supported": {
+    "message": "ไม่รองรับ $value1$ กดปุ่มอื่นหรือ Escape เพื่อยกเลิก",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "จะใช้ $value1$ หลังบันทึก",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "สูงสุด $value1$ ต่อแท็บ และรวม $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ วินาที",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ กด Tab เพื่อใช้การ์ดนี้ หรือ Escape เพื่อปิด",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "แปลไม่สำเร็จ $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "รีเฟรชหน้าที่เปิดอยู่"
+  },
+  "refresh_message": {
+    "message": "บันทึกคีย์ API แล้ว หลังตั้งค่าเสร็จให้รีเฟรชหน้าที่เปิดไว้ก่อนหน้านี้ จากนั้นเลือกข้อความแล้วกด Control เพื่อแปล"
+  },
+  "refresh_continue": {
+    "message": "ตั้งค่าต่อ"
+  },
+  "refresh_faq_question": {
+    "message": "ทำไมต้องรีเฟรชหน้าที่เปิดอยู่?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>รีเฟรชหน้าที่เปิดอยู่</1>หลังตั้งค่าเสร็จ ก่อนลองแปล Chrome ต้องโหลดส่วนขยายในหน้าที่เปิดก่อนติดตั้งหรือโหลดส่วนขยายใหม่ หน้าที่เปิดใหม่จะพร้อมโดยอัตโนมัติ"
+  },
+  "ui_locale": {
+    "message": "th",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

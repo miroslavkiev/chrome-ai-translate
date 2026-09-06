@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Eenvoudig vertalen: selecteer tekst en druk op Control. Vertaal met Gemini naar de taal die je kiest.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Selecteer tekst en probeer het opnieuw."
+  },
+  "error_unsupported_selection": {
+    "message": "Deze tekstselectie wordt niet ondersteund."
+  },
+  "error_selection_too_large": {
+    "message": "De selectie bevat meer dan 10.000 tekens. Selecteer minder tekst en probeer opnieuw."
+  },
+  "error_missing_api_key": {
+    "message": "Voeg je Gemini-API-sleutel toe in Instellingen."
+  },
+  "error_agreement_required": {
+    "message": "Lees en aanvaard het delen van gegevens in Instellingen voordat je verbinding maakt met Google."
+  },
+  "error_credential_conflict": {
+    "message": "De opgeslagen sleutel is op een andere pagina gewijzigd. Laad de opgeslagen instellingen opnieuw voordat je verdergaat."
+  },
+  "error_credential_storage_error": {
+    "message": "De opgeslagen sleutel kan niet worden geopend. Open Instellingen opnieuw of verwijder de sleutel en voer hem opnieuw in."
+  },
+  "error_missing_target_language": {
+    "message": "Kies de doeltaal in Instellingen om de installatie af te ronden."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini heeft de API-sleutel geweigerd. Controleer hem in Instellingen."
+  },
+  "error_invalid_model": {
+    "message": "Dit model kan niet vertalen. Kies in Instellingen een ander model of het aanbevolen Flash-Lite-model."
+  },
+  "error_busy": {
+    "message": "Er lopen te veel vertalingen. Probeer opnieuw wanneer er één klaar is."
+  },
+  "error_duplicate_request": {
+    "message": "Deze selectie wordt al vertaald."
+  },
+  "error_rate_limited": {
+    "message": "De aanvraaglimiet is bereikt. Probeer het binnenkort opnieuw."
+  },
+  "error_timeout": {
+    "message": "De vertaling duurde te lang. Je kunt opnieuw proberen."
+  },
+  "error_offline": {
+    "message": "Je lijkt offline. Controleer je verbinding en probeer opnieuw."
+  },
+  "error_network_error": {
+    "message": "Gemini is niet bereikbaar. Controleer je verbinding en probeer opnieuw."
+  },
+  "error_quota_exceeded": {
+    "message": "Het Gemini-quotum is bereikt. Controleer je account en probeer later opnieuw."
+  },
+  "error_service_error": {
+    "message": "Gemini kon de vertaling niet voltooien. Probeer later opnieuw."
+  },
+  "error_invalid_response": {
+    "message": "Gemini gaf een onleesbaar antwoord. Je kunt opnieuw proberen."
+  },
+  "error_output_too_large": {
+    "message": "De vertaling overschrijdt de uitvoerlimiet. Selecteer minder tekst en probeer opnieuw."
+  },
+  "error_content_blocked": {
+    "message": "Gemini heeft deze tekst geblokkeerd. Probeer een andere selectie."
+  },
+  "error_unsupported_page": {
+    "message": "Vertalen is niet beschikbaar op deze pagina."
+  },
+  "error_frame_unavailable": {
+    "message": "Het geselecteerde frame is niet meer beschikbaar."
+  },
+  "error_cancelled": {
+    "message": "De vertaling is geannuleerd."
+  },
+  "key_Off": {
+    "message": "Uit"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pauze"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Probeer opnieuw over $seconds$ seconden.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Instellingen van AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Privé-instellingen voor snelle, gerichte vertalingen."
+  },
+  "html_help_and_information": {
+    "message": "Hulp en informatie"
+  },
+  "html_api_key_guide": {
+    "message": "Handleiding API-sleutel"
+  },
+  "html_about": {
+    "message": "Over"
+  },
+  "html_privacy": {
+    "message": "Privacy"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translator instellen"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Volg deze stappen in Instellingen. Je hebt je eigen Google-API-sleutel nodig om te vertalen."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Maak je eigen API-sleutel.</1> Open <2>Google AI Studio</2>, meld je aan en maak een sleutel. Lees hieronder over het delen van gegevens en plak daarna je sleutel. Bekijk de <3>stapsgewijze handleiding</3> voor hulp."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Kies je doeltaal en model.</1> Kies de taal voor vertalingen. We raden Gemini Flash-Lite aan als dat in je modellenlijst staat."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Opslaan en vertalen.</1> Kies onderaan deze pagina «Instellen afronden». Selecteer daarna tekst op een webpagina en druk op Control, of kies «Geselecteerde tekst vertalen» in het rechtermuisknopmenu."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Verbind je eigen Gemini-API-sleutel en kies een geschikt model."
+  },
+  "html_loading_setup_state": {
+    "message": "Installatiestatus laden..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Voordat je verbinding maakt met Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google ontvangt je API-sleutel om beschikbare modellen te controleren. Bij een vertaalverzoek ontvangt Google ook de geselecteerde tekst en doeltaal, inclusief tekst uit lokale bestanden. AI-vertalingen kunnen fouten bevatten."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Je sleutel wordt versleuteld in dit Chrome-profiel opgeslagen en na een herstart automatisch geopend. Er is geen extra wachtwoord nodig. Iemand met volledige toegang tot je browserprofiel kan hem mogelijk toch terughalen. <1>Lees de privacydetails</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Verplicht in elk land:</1> gebruik een Gemini-API-sleutel van een project met <2>actieve facturering</2>. Laat het optioneel <3>delen van aanvraaglogboeken en datasets van deze extensie met Google</3> uitgeschakeld. Met deze instellingen sluiten Googles betaalde voorwaarden het gebruik van invoer en antwoorden voor productverbetering uit; verwerking voor veiligheid en wettelijke doelen blijft mogelijk. De extensie is gratis, maar Google kan API-kosten rekenen."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Gebruiksvoorwaarden.</1> Door Gemini via deze extensie te gebruiken, ga je akkoord met de bovenstaande eisen en <2>Googles voorwaarden</2>. Gebruik is voor personen vanaf 18 jaar voor professionele of zakelijke doelen in <3>ondersteunde regio’s</3>. De extensie controleert je facturerings- of deelinstellingen niet."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Akkoord en verbinden met Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Toestemming voor gegevens intrekken"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Lees de details over het delen van gegevens voordat je verbinding maakt."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Waarom deze eisen? Lees de veelgestelde vragen</1>."
+  },
+  "html_api_key": {
+    "message": "API-sleutel"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Plak na je toestemming een sleutel om hem versleuteld op te slaan en modellen automatisch te laden."
+  },
+  "html_show": {
+    "message": "Tonen"
+  },
+  "html_remove_saved_key": {
+    "message": "Opgeslagen sleutel verwijderen"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Bekende modellen voor alleen media of bijzondere toepassingen zijn verborgen."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "We raden de Gemini Flash-Lite-familie aan. Voor deze versie (september 2026) kiezen we Gemini 3.5 Flash-Lite. Je mag een ander vermeld model kiezen. Sommige werken mogelijk niet met deze extensie. Kies bij fouten een ander model of het aanbevolen model."
+  },
+  "html_refresh_models": {
+    "message": "Modellen vernieuwen"
+  },
+  "html_use_recommended_model": {
+    "message": "Aanbevolen model gebruiken"
+  },
+  "html_translation": {
+    "message": "Vertaling"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Stel de taal en eventueel een activeringstoets in."
+  },
+  "html_default_language": {
+    "message": "Standaardtaal"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Een resultaatkaart kan een andere taal gebruiken zonder deze standaard te wijzigen."
+  },
+  "html_keyboard_trigger": {
+    "message": "Activeringstoets"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Losse toetsen kunnen botsen met websites of toegankelijkheidshulpmiddelen. Kies «Uit» om alleen het contextmenu te gebruiken."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Toets opnemen"
+  },
+  "html_off": {
+    "message": "Uit"
+  },
+  "html_behavior": {
+    "message": "Werking"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Vaste beveiligingen houden vertalingen snel en beschermen het API-quotum."
+  },
+  "html_parallel_requests": {
+    "message": "Gelijktijdige aanvragen"
+  },
+  "html_request_timeout": {
+    "message": "Tijdslimiet per aanvraag"
+  },
+  "html_page_access": {
+    "message": "Paginatoegang"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Schakel voor lokale bestanden «Toegang tot bestands-URL’s toestaan» in bij «Extensie beheren»."
+  },
+  "html_help_and_recovery": {
+    "message": "Hulp en herstel"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Als een model niet beschikbaar is, vernieuw de modellen, kies er één uit de lijst en sla de voorkeuren op. Laadt de lijst niet, controleer dan je sleutel en verbinding en kies «Modellen vernieuwen»."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome-instellingen en de Chrome Web Store staan vertalen niet toe. Schakel voor lokale bestanden «Toegang tot bestands-URL’s toestaan» in bij «Extensie beheren». Vernieuw open webpagina’s nadat de extensie is bijgewerkt of herladen. Herladen kan een vertaling onderbreken."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Vertalen werkt niet offline. Na je toestemming hierboven wordt de sleutel rechtstreeks naar Google gestuurd om modellen te controleren. Geselecteerde tekst, ook uit lokale bestanden, wordt alleen samen met de doeltaal verstuurd wanneer je om een vertaling vraagt. De sleutel is versleuteld in dit Chrome-profiel. Taal, model en toets kunnen via Chrome synchroniseren. De extensie bewaart alleen het laatste resultaat van deze browsersessie, zonder vertaalgeschiedenis."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Je kunt het delen van gegevens hierboven bekijken en je toestemming altijd intrekken. Dit stopt modelcontroles en vertalingen tot je opnieuw akkoord gaat. Je sleutel blijft bewaard tenzij je «Opgeslagen sleutel verwijderen» kiest."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Wijzigingen aan taal, model en toets worden hier opgeslagen."
+  },
+  "html_reload_saved_settings": {
+    "message": "Opgeslagen instellingen herladen"
+  },
+  "html_save_preferences": {
+    "message": "Voorkeuren opslaan"
+  },
+  "html_gemini_translation": {
+    "message": "Vertalen met Gemini"
+  },
+  "html_setup_required": {
+    "message": "Instellen nodig"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Welkom bij AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Vertaal geselecteerde tekst naar een taal die je kent. Stel eerst deze twee zaken in:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Je Gemini-API-sleutel.</1> Maak je eigen sleutel in Google AI Studio. Onze handleiding legt uit hoe."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Je doeltaal.</1> Kies de taal waarin je wilt lezen."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Zo krijg je een API-sleutel"
+  },
+  "html_extension_status": {
+    "message": "Extensiestatus"
+  },
+  "html_active_translations": {
+    "message": "Actieve vertalingen"
+  },
+  "html_latest_this_session": {
+    "message": "Laatste resultaat deze sessie"
+  },
+  "html_no_translation_yet": {
+    "message": "Nog geen vertaling."
+  },
+  "html_copy": {
+    "message": "Kopiëren"
+  },
+  "html_settings": {
+    "message": "Instellingen"
+  },
+  "html_key_guide": {
+    "message": "Sleutelhandleiding"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Beginnen met AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Extensiepagina’s"
+  },
+  "html_faq": {
+    "message": "Veelgestelde vragen"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Maak je eigen Google-API-sleutel, kies een taal en vertaal je eerste selectie."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Maak je API-sleutel"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Met een API-sleutel kan deze extensie Gemini via je Google-account gebruiken. Houd hem geheim, net als een wachtwoord."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Deze extensie is voor personen vanaf 18 jaar voor professioneel of zakelijk gebruik in <1>landen en regio’s die Google ondersteunt</1>. In elk land moet je API-sleutel horen bij een Gemini-project met actieve facturering. Schakel optioneel delen van aanvraaglogboeken en datasets van deze extensie met Google uit."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Door deze extensie te gebruiken, ga je akkoord met deze voorwaarden, de <1>Google-API-voorwaarden</1> en de <2>aanvullende Gemini-API-voorwaarden</2>. Gebruik de extensie niet als je hier niet aan kunt voldoen. De extensie controleert deze feiten niet en vraagt geen identiteitsdocumenten."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio openen"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Meld je aan bij je Google-account. Accepteer Googles voorwaarden als daarom wordt gevraagd."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Een sleutel maken of kiezen"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Kies op de pagina API-sleutels <1>API-sleutel maken</1> en volg Googles stappen om een project te kiezen of te maken. Een project groepeert je API-gebruik en eventuele facturering. Als je nieuw bent bij AI Studio, heeft Google mogelijk al een standaardproject en sleutel gemaakt."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Ontbreekt je bestaande project, open dan <1>Dashboard > Projecten > Projecten importeren</1>. Importeer het project en ga terug naar API-sleutels."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Controleer vóór gebruik via <1>Googles factureringshandleiding</1> of het project actieve facturering heeft. Een betaald Gemini-appabonnement vervangt de API-projectfacturering niet. Schakel optioneel delen van aanvraaglogboeken en datasets van deze extensie met Google uit; lees <2>Googles beleid voor logboekdeling</2>. Privélogboeken voor je project zijn iets anders dan delen."
+  },
+  "html_copy_your_key": {
+    "message": "Je sleutel kopiëren"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopieer de sleutel uit AI Studio. Ga terug naar Instellingen en lees de details over gegevensdeling. Kies <1>Akkoord en verbinden met Google</1> en plak je sleutel in het veld <2>API-sleutel</2>. Hij wordt automatisch versleuteld opgeslagen, waarna de modellenlijst laadt. Wacht op het resultaat voordat je verdergaat."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator-instellingen met de melding over gegevensdeling en de toestemmingsknop boven een leeg API-sleutelveld en het aanbevolen Flash-Lite-model."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Voorbeeld in het Engels. In AI Translator: ga eerst akkoord met gegevensdeling en plak daarna je eigen sleutel. De modellenlijst wordt gecontroleerd nadat de sleutel versleuteld is opgeslagen."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google kan deze schermen wijzigen. Lees voor actuele stappen of sleutelfouten <1>Googles API-sleutelhandleiding</1>. Gebruik een nieuwe sleutel uit AI Studio als een oude niet meer werkt."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Kies je vertaalinstellingen"
+  },
+  "html_choose_a_model": {
+    "message": "Een model kiezen"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "We raden de Gemini Flash-Lite-familie aan. Voor deze versie van september 2026 kiezen we <1>Gemini 3.5 Flash-Lite</1>. Gebruik het wanneer het beschikbaar is in je modellenlijst."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Je kunt een ander vermeld model kiezen. Sommige modellen werken mogelijk niet met deze extensie. Kies bij fouten een ander of het aanbevolen model."
+  },
+  "html_choose_your_target_language": {
+    "message": "Kies je doeltaal"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Kies bij <1>Standaardtaal</1> de taal waarin je wilt lezen. De opties volgen <2>Googles gedocumenteerde Gemini-talen</2>. De vertaalkwaliteit kan per taal en tekst verschillen."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator-vertaalinstellingen met de keuze van een doeltaal en bediening van de activeringstoets."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Voorbeeld in het Engels. Kies de taal voor je vertalingen en rond het instellen af."
+  },
+  "html_finish_setup": {
+    "message": "Instellen afronden"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Behoud Control als activeringstoets, neem een andere toets op of kies <1>Uit</1> om alleen het rechtermuisknopmenu te gebruiken. Kies onderaan Instellingen <2>Instellen afronden</2>. Later kun je dit wijzigen met <3>Voorkeuren opslaan</3>."
+  },
+  "html_open_settings": {
+    "message": "Instellingen openen"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Vertaal je eerste selectie"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Open een gewone webpagina en selecteer een korte tekst. Klik met rechts en kies <1>Geselecteerde tekst vertalen</1>, of druk je gekozen toets in en laat hem los. Het resultaat verschijnt naast de selectie."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Vernieuw eerst de webpagina als de extensie net is geïnstalleerd of herladen. Chrome-instellingen, de Chrome Web Store en de ingebouwde PDF-viewer staan vertalen niet toe."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Het werkbalkvenster toont het laatste resultaat. Na het instellen opent het de standaardweergave. Verwijder je de API-sleutel, dan verschijnt de welkomsthandleiding opnieuw."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Veelgestelde vragen: sleutels, kosten en privacy"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Waarom heb ik mijn eigen API-sleutel nodig?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Deze extensie stuurt aanvragen rechtstreeks naar je Google-project met je eigen sleutel. Dat is een ontwerpkeuze, geen Chrome-regel. Je sleutel staat aanvragen toe en koppelt ze aan gebruik en facturering. Deel hem nooit in schermafbeeldingen of openbare berichten. Zie <1>Googles API-sleutelhandleiding</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Waarom is actieve facturering verplicht in plaats van aanbevolen?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chromes <1>Limited Use-regels, punten 3 en 5</1>, beperken gegevensgebruik tot het doel van de extensie en bijbehorende handelingen. Sommige gratis Gemini-diensten staan bredere training en menselijke beoordeling toe. Betaalde voorwaarden sluiten productverbetering uit, maar staan beperkte bewaring voor veiligheid en wettelijke doelen en verwerking buiten de EU toe."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Om dit conflict op te lossen eist de ontwikkelaar wereldwijd actieve projectfacturering. Een aanbeveling zou gratis gebruik nog toestaan. Googles regionale regel vereist betaalde diensten voor apps in de Europese Economische Ruimte, het Verenigd Koninkrijk en Zwitserland. Zie <1>Gemini-voorwaarden: gebruiksbeperkingen, gratis en betaalde diensten</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Waarom moet optioneel delen met Google uit blijven?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Het delen van logboeken of datasets kan ook met actieve facturering training en menselijke beoordeling toestaan. Draag geen gegevens van deze extensie bij via datasets of feedback. Privélogboeken voor je project zijn onder deze regel toegestaan. Zie <1>Googles logboekbeleid: deelbare gegevens en hoe je gegevens worden gebruikt</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Is de extensie gratis als betaalde API-toegang nodig is?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Ja. De extensie is gratis, maar Google kan API-kosten rekenen. Een betaald Gemini-appabonnement vervangt API-projectfacturering niet. Bekijk <1>hoe je facturering controleert</1> en <2>Googles API-prijzen</2>. De extensie controleert facturerings- of deelinstellingen niet."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Waarom moet ik «Akkoord en verbinden met Google» kiezen?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chromes <1>informatieplichten, punten 1 en 2</1>, eisen duidelijke informatie over gegevensgebruik en geïnformeerde toestemming. Onze knop laat je kiezen vóór elke eerste Google-API-aanvraag. Hij controleert geen identiteit of facturering en geeft geen toestemming om privégegevens van anderen te delen."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Wat gaat er precies naar Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Modelcontroles sturen je sleutel en vragen beschikbare modellen op. Vertalen stuurt geselecteerde tekst, doeltaal, model en vertaalinstructies, ook bij lokale bestanden. De extensie voegt niet de hele pagina, het pagina-adres of je browsegeschiedenis toe. Google ontvangt ook verbindingsgegevens zoals je IP-adres. De ontwikkelaar ontvangt geen van deze aanvragen. Stuur alleen tekst die je mag delen."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Hoe wordt mijn sleutel opgeslagen en automatisch geopend?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Je API-sleutel wordt versleuteld opgeslagen. Hij en de versleutelingssleutel blijven in dit Chrome-profiel voor automatisch gebruik na een herstart. Ze worden niet gesynchroniseerd. Iemand met profieltoegang kan de API-sleutel mogelijk toch terughalen. Dit is geen systeemsleutelhanger of kluis met wachtwoord. Taal, model en toets kunnen synchroniseren. Alleen het laatste resultaat blijft gedurende de sessie; er is geen gebruiksanalyse of vertaalgeschiedenis."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Een update versleutelt en controleert een oudere opgeslagen sleutel voordat leesbare kopieën worden verwijderd. Bij een fout blijft de oude kopie bewaard en blijven aanvragen geblokkeerd. Instellingen legt de fout uit. Een oude sleutel verplaatsen omzeilt toestemming niet."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Kan ik mijn toestemming intrekken of sleutel verwijderen?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "In <1>Instellingen</1> blokkeert <2>Toestemming voor gegevens intrekken</2> nieuwe aanvragen en annuleert actieve aanvragen lokaal, met behoud van sleutel en voorkeuren. <3>Opgeslagen sleutel verwijderen</3> wist de sleutel, de versleutelingssleutel en de modelcache. Geen van beide haalt verstuurde gegevens terug of garandeert dat een verstuurde aanvraag gratis wordt. Trek de sleutel ook in AI Studio in om hem bij Google uit te schakelen."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Je toestemming blijft bewaard bij normale herstarts en updates. Verandert de melding, dan wachten aanvragen totdat je die leest en opnieuw akkoord gaat."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Waarom alleen volwassenen en professioneel of zakelijk gebruik?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google vereist een leeftijd van minstens 18 jaar en professioneel of zakelijk gebruik in ondersteunde regio’s. Zie <1>Gemini-voorwaarden: leeftijdseisen en gebruiksbeperkingen</1> en <2>beschikbare regio’s</2>. Deze extensie heeft geen apart geschiktheidsvakje of identiteitscontrole."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Waarom een privacybeleid naast deze melding?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "De melding legt je keuze uit voordat je verbinding maakt. Het beleid geeft volledige details over gegevens, opslag en verwijdering. Chromes <1>privacybeleidsregels</1> vereisen dit voor extensies die gebruikersgegevens verwerken. Lees <2>ons privacybeleid</2>. Deze meldingen betekenen niet dat Google de extensie heeft goedgekeurd."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI-vertalingen kunnen fouten bevatten. Controleer belangrijke formuleringen voordat je erop vertrouwt."
+  },
+  "html_about_ai_translator": {
+    "message": "Over AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Eenvoudig vertalen: selecteer tekst en druk op Control."
+  },
+  "html_made_for_people": {
+    "message": "Gemaakt voor mensen"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Ik heb AI Translator gemaakt om mensen te helpen lezen, leren en verbinden over taalgrenzen heen. Ik hoop dat het mensen wereldwijd helpt."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "De extensie vertaalt geselecteerde tekst met je eigen Google Gemini-API-sleutel. Jij kiest wat je verstuurt en in welke taal je leest."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Druk Control in en laat los om je selectie te vertalen. Control is de standaardtoets en kan in Instellingen worden gewijzigd. Je kunt ook het rechtermuisknopmenu gebruiken."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Alleen handmatig getest op Mac. Windows en Linux zijn niet handmatig getest."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Broncode en projecthandleiding bekijken</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Hulp krijgen of een probleem melden</1>. Meldingen zijn openbaar. Vermeld geen API-sleutels, privétekst of persoonlijke gegevens."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Als je mijn werk wilt steunen"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Steun mijn land, Oekraïne, in zijn verdediging tegen Russische agressie."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Ik vertrouw de Sternenko Community Foundation. Als je kunt en wilt helpen, kun je via hun officiële website doneren."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Oekraïne steunen via de stichting</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Steun is vrijwillig en nooit nodig om deze extensie te gebruiken. Deze link opent een externe website. Donaties lopen via de stichting, niet via de extensie."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privacy en kosten"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Je API-sleutel is op dit apparaat versleuteld en wordt niet gesynchroniseerd. Hij blijft na normale Chrome-herstarts beschikbaar zonder ontgrendelwachtwoord. Iemand met toegang tot het browserprofiel kan hem mogelijk toch terughalen."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Vóór de eerste Google-aanvraag legt Instellingen gegevensdeling uit en vraagt je <1>Akkoord en verbinden met Google</1> te kiezen. Daarna gaat geselecteerde tekst alleen rechtstreeks naar Google als je een vertaling vraagt. Modelcontroles sturen je sleutel, zonder geselecteerde tekst. De extensie heeft geen gebruiksanalyse, reclame of vertaalgeschiedenis."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Bekijk de details altijd in <1>Instellingen</1>. Kies <2>Toestemming voor gegevens intrekken</2> om nieuwe aanvragen te stoppen met behoud van versleutelde sleutel en voorkeuren, of <3>Opgeslagen sleutel verwijderen</3> om sleutel en modelcache te wissen. Verstuurde gegevens zijn niet terug te halen."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Vertalingen worden door AI gemaakt en kunnen fouten bevatten. Controleer belangrijke formuleringen voordat je erop vertrouwt."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Lees de privacydetails</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator is een gratis, onafhankelijk project. Google kan API-kosten rekenen. Gebruik in elk land een Gemini-API-sleutel van een project met <1>actieve facturering</1> en schakel optioneel <2>delen van aanvraaglogboeken en datasets van deze extensie met Google</2> uit. Betaalde voorwaarden sluiten dan productverbetering met invoer en antwoorden uit; verwerking voor veiligheid en wettelijke doelen blijft mogelijk. Lees <3>Googles prijs- en gegevensgebruiksinformatie</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Deze extensie is voor personen vanaf 18 jaar voor professioneel of zakelijk gebruik in <1>Googles ondersteunde regio’s</1>. Gebruik betekent dat je deze voorwaarden, de <2>Google-API-voorwaarden</2> en de <3>aanvullende Gemini-API-voorwaarden</3> volgt. Gebruik de extensie niet als je daar niet aan kunt voldoen. Er is geen geschiktheidsvakje of identiteitscontrole. De extensie controleert facturering of delen niet."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Niet-opgeslagen wijzigingen."
+  },
+  "runtime_settings_conflict": {
+    "message": "Instellingen zijn gewijzigd op een andere pagina. Je wijzigingen blijven hier bewaard. Herlaad opgeslagen instellingen om je wijzigingen te verwerpen en opgeslagen waarden te gebruiken."
+  },
+  "runtime_preferences_current": {
+    "message": "Voorkeuren zijn bijgewerkt."
+  },
+  "runtime_key_cannot_open": {
+    "message": "De opgeslagen sleutel kan niet worden geopend. Open Instellingen opnieuw of verwijder hem en voer hem opnieuw in."
+  },
+  "runtime_key_conflict": {
+    "message": "De API-sleutel is op een andere pagina gewijzigd. Herlaad opgeslagen instellingen voordat je een sleutel opslaat."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Je sleutel is versleuteld opgeslagen. Ga akkoord met gegevensdeling voordat je met Google verbindt."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Ga hierboven akkoord met gegevensdeling voordat je je API-sleutel toevoegt."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini heeft deze opgeslagen sleutel geweigerd. Vervang hem of gebruik «Modellen vernieuwen» om hem opnieuw te controleren."
+  },
+  "runtime_paste_key": {
+    "message": "Plak een API-sleutel om Gemini te verbinden."
+  },
+  "runtime_key_checked": {
+    "message": "API-sleutel opgeslagen. Gemini accepteerde hem bij de laatste modellenlijstcontrole."
+  },
+  "runtime_key_saved_check": {
+    "message": "API-sleutel versleuteld opgeslagen op dit apparaat. Vernieuw modellen om hem bij Gemini te controleren."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Intrekken opnieuw proberen"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Toestemming voor gegevens intrekken"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Je intrekking is niet bevestigd. Probeer opnieuw om je keuze op te slaan."
+  },
+  "runtime_agreement_saved": {
+    "message": "Gegevensdeling aanvaard voor dit Chrome-profiel. Je kunt je toestemming altijd intrekken."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Geen verbinding met Google zonder toestemming. Je opgeslagen sleutel blijft behouden als je intrekt."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini heeft de opgeslagen sleutel geweigerd. Vervang hem hieronder."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Je sleutel is versleuteld opgeslagen op dit apparaat."
+  },
+  "runtime_setup_create_key": {
+    "message": "Maak je eigen sleutel in Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Taal gekozen. Rond het instellen af om je keuzes op te slaan."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Kies hieronder een doeltaal."
+  },
+  "runtime_finish_setup": {
+    "message": "Instellen afronden"
+  },
+  "runtime_save_preferences": {
+    "message": "Voorkeuren opslaan"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Voeg een API-sleutel toe, controleer de modellenlijst en sla je modelkeuze op."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Los het instellingenconflict op voordat je vertaalt."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Lees en aanvaard gegevensdeling voordat je verbinding maakt met Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Rond het opslaan van de API-sleutel af voordat je de installatie controleert."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Instellingen controleren: Gemini heeft de opgeslagen API-sleutel geweigerd."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Sleutel opgeslagen. Kies een doeltaal en rond het instellen af."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Kies een beschikbaar model en sla voorkeuren op."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model gekozen. Sla voorkeuren op om het te gebruiken."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Sleutel en taal zijn klaar. Rond het instellen af om keuzes op te slaan en probeer een vertaling. Modeltoegang en quotum kunnen nog veranderen."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Klaar voor een vertaalpoging. Het opgeslagen model staat in de gecontroleerde lijst; toegang en quotum kunnen nog veranderen."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Sleutel opgeslagen. Vernieuw modellen om de sleutel en het gekozen model te controleren."
+  },
+  "runtime_show_key": {
+    "message": "Tonen"
+  },
+  "runtime_hide_key": {
+    "message": "Verbergen"
+  },
+  "runtime_choose_target_language": {
+    "message": "Kies een doeltaal"
+  },
+  "runtime_background_no_response": {
+    "message": "Het achtergrondproces van de extensie reageert niet. Herlaad de extensie en probeer opnieuw."
+  },
+  "runtime_refresh_models": {
+    "message": "Modellen vernieuwen"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Ga akkoord met gegevensdeling voordat je modellen laadt."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Rond het opslaan van de API-sleutel af voordat je modellen vernieuwt."
+  },
+  "runtime_refreshing": {
+    "message": "Vernieuwen..."
+  },
+  "runtime_loading": {
+    "message": "Laden..."
+  },
+  "runtime_models_checking": {
+    "message": "Gemini controleren op geschikte modellen..."
+  },
+  "runtime_models_loading": {
+    "message": "Geschikte modellen laden..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Geschikte modellen konden niet worden geladen."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini gaf geen geschikte modellen terug."
+  },
+  "runtime_model_not_available": {
+    "message": "Het gekozen model staat niet in de geschikte lijst. Kies een ander model."
+  },
+  "runtime_record_key": {
+    "message": "Toets opnemen"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Opname geannuleerd."
+  },
+  "runtime_unknown_key": {
+    "message": "Die toets"
+  },
+  "runtime_press_key": {
+    "message": "Druk op een toets..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Druk op een ondersteunde toets die geen teken invoert. Druk op Escape om te annuleren."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Vernieuw modellen om de opgeslagen API-sleutel te controleren."
+  },
+  "runtime_models_add_key": {
+    "message": "Voeg een API-sleutel toe om geschikte modellen te laden."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "De extensie kon de opgeslagen status niet laden."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini heeft de opgeslagen API-sleutel geweigerd. Vervang hem of vernieuw modellen om hem opnieuw te controleren."
+  },
+  "runtime_settings_reopen": {
+    "message": "Instellingen konden niet worden geladen. Open Instellingen opnieuw om te proberen."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Instellingen konden niet worden geladen. Herlaad opgeslagen instellingen en probeer opnieuw. Opslaan is uitgeschakeld om je keuzes te beschermen."
+  },
+  "runtime_setup_load_failed": {
+    "message": "De installatiestatus kon niet worden geladen."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Voer een volledige API-sleutel zonder spaties in."
+  },
+  "runtime_key_use_remove": {
+    "message": "Gebruik «Opgeslagen sleutel verwijderen» om je sleutel te wissen."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Ga hierboven akkoord met gegevensdeling voordat je een API-sleutel opslaat."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API-sleutel versleuteld opslaan..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API-sleutel kon niet worden gelezen of opgeslagen. Je invoer blijft bewaard. Gebruik «Voorkeuren opslaan» om opnieuw te proberen."
+  },
+  "runtime_connecting_google": {
+    "message": "Verbinden met Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Verbindingen met Google stoppen..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Je toestemming voor gegevens kon niet worden opgeslagen. Probeer opnieuw."
+  },
+  "runtime_key_removing": {
+    "message": "Opgeslagen sleutel verwijderen..."
+  },
+  "runtime_key_removed": {
+    "message": "Opgeslagen sleutel verwijderd. Na toestemming voor gegevensdeling kun je een nieuwe toevoegen."
+  },
+  "runtime_key_remove_failed": {
+    "message": "De opgeslagen sleutel kon niet worden verwijderd. Probeer opnieuw."
+  },
+  "runtime_saving": {
+    "message": "Opslaan..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Kies een geldige taal en een geldig model."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Kies een ondersteunde activeringstoets of «Uit»."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Kies een model uit de huidige geschikte lijst."
+  },
+  "runtime_preferences_saving": {
+    "message": "Voorkeuren opslaan..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Voorkeuren opgeslagen."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Voorkeuren opgeslagen. Voeg je API-sleutel toe om het instellen af te ronden."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Voorkeuren konden niet worden gelezen of opgeslagen. Je wijzigingen blijven bewaard. Probeer opnieuw."
+  },
+  "runtime_key_will_save": {
+    "message": "De API-sleutel wordt automatisch opgeslagen."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Voer de API-sleutel volledig in."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Rond het opslaan van de API-sleutel af om geschikte modellen te laden."
+  },
+  "runtime_recommended_selected": {
+    "message": "Aanbevolen model gekozen. Sla je keuze op om het te gebruiken."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "De activeringstoets staat uit nadat je opslaat."
+  },
+  "runtime_connection_changed": {
+    "message": "Verbindingsinstellingen gewijzigd. Opgeslagen instellingen controleren..."
+  },
+  "runtime_models_changed": {
+    "message": "Modellenlijst gewijzigd. Geschikte modellen controleren..."
+  },
+  "runtime_no_translation": {
+    "message": "Nog geen vertaling."
+  },
+  "runtime_start_setup": {
+    "message": "Instellen starten"
+  },
+  "runtime_settings": {
+    "message": "Instellingen"
+  },
+  "runtime_key_rejected": {
+    "message": "Sleutel geweigerd"
+  },
+  "runtime_setup_required": {
+    "message": "Instellen nodig"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Voeg een API-sleutel toe in Instellingen om te vertalen."
+  },
+  "runtime_add_key": {
+    "message": "API-sleutel toevoegen"
+  },
+  "runtime_finish_model_language": {
+    "message": "De sleutel is opgeslagen. Open Instellingen om het model te controleren en je taalkeuze af te ronden."
+  },
+  "runtime_check_setup": {
+    "message": "Instellingen controleren"
+  },
+  "runtime_translating": {
+    "message": "Vertalen"
+  },
+  "runtime_error": {
+    "message": "Fout"
+  },
+  "runtime_ready": {
+    "message": "Gereed"
+  },
+  "runtime_status_load_failed": {
+    "message": "De extensiestatus kon niet worden geladen. Herlaad de extensie en vernieuw de pagina."
+  },
+  "runtime_copied": {
+    "message": "Gekopieerd."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopiëren geblokkeerd. Selecteer de resultaattekst en kopieer die."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Instellingen konden niet worden geopend. Probeer opnieuw."
+  },
+  "runtime_translating_progress": {
+    "message": "Vertalen..."
+  },
+  "runtime_translation_started": {
+    "message": "Vertaling gestart."
+  },
+  "runtime_translation_complete": {
+    "message": "Vertaling voltooid."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Vertaling voltooid. Gebruik de resultaattekst of kaartbediening."
+  },
+  "runtime_translation": {
+    "message": "Vertaling"
+  },
+  "runtime_target_language": {
+    "message": "Doeltaal"
+  },
+  "runtime_card_target_language": {
+    "message": "Doeltaal voor deze kaart"
+  },
+  "runtime_close_card": {
+    "message": "Vertaalkaart sluiten"
+  },
+  "runtime_translated_text": {
+    "message": "Vertaalde tekst"
+  },
+  "runtime_retry": {
+    "message": "Opnieuw proberen"
+  },
+  "runtime_copy": {
+    "message": "Kopiëren"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Instellingen konden niet worden geopend. Gebruik de werkbalk van de extensie."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopiëren mislukt. Selecteer de resultaattekst en kopieer die."
+  },
+  "runtime_context_menu": {
+    "message": "Geselecteerde tekst vertalen"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Niet in de huidige lijst)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Nog niet gecontroleerd)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Modellenlijst uit de cache van $value1$ wordt gebruikt. Live vernieuwen mislukt. Probeer later opnieuw.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Modellenlijst uit de cache wordt gebruikt. Live vernieuwen mislukt. Probeer later opnieuw."
+  },
+  "runtime_models_cache_at": {
+    "message": "Modellenlijst uit de cache van $value1$ wordt gebruikt.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Modellenlijst uit de cache wordt gebruikt."
+  },
+  "runtime_models_updated_at": {
+    "message": "Modellenlijst bijgewerkt op $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Modellenlijst bijgewerkt."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ wordt niet ondersteund. Druk op een andere toets of Escape om te annuleren.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ wordt gebruikt nadat je opslaat.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Maximaal $value1$ per tabblad en $value2$ in totaal",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ seconden",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Druk op Tab om deze kaart te gebruiken of Escape om te sluiten.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Vertalen mislukt. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Open pagina’s vernieuwen"
+  },
+  "refresh_message": {
+    "message": "Je API-sleutel is opgeslagen. Vernieuw na het instellen de pagina’s die al open waren. Selecteer daarna tekst en druk op Control om te vertalen."
+  },
+  "refresh_continue": {
+    "message": "Doorgaan met instellen"
+  },
+  "refresh_faq_question": {
+    "message": "Waarom moet ik open pagina’s vernieuwen?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Vernieuw open pagina’s</1> nadat je klaar bent met instellen en voordat je vertaalt. Chrome moet de extensie laden op pagina’s die al open waren vóór installatie of herladen. Nieuwe pagina’s zijn automatisch klaar."
+  },
+  "ui_locale": {
+    "message": "nl",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Traduisez facilement : sélectionnez du texte et appuyez sur Control. Gemini traduit dans la langue de votre choix.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Sélectionnez du texte et réessayez."
+  },
+  "error_unsupported_selection": {
+    "message": "Cette sélection de texte n’est pas prise en charge."
+  },
+  "error_selection_too_large": {
+    "message": "La sélection dépasse 10 000 caractères. Sélectionnez moins de texte et réessayez."
+  },
+  "error_missing_api_key": {
+    "message": "Ajoutez votre clé API Gemini dans les paramètres."
+  },
+  "error_agreement_required": {
+    "message": "Consultez et acceptez le partage des données dans les paramètres avant la connexion à Google."
+  },
+  "error_credential_conflict": {
+    "message": "La clé enregistrée a changé dans une autre page. Rechargez les paramètres enregistrés avant de réessayer."
+  },
+  "error_credential_storage_error": {
+    "message": "Impossible d’ouvrir la clé enregistrée. Rouvrez les paramètres, ou supprimez la clé puis saisissez-la à nouveau."
+  },
+  "error_missing_target_language": {
+    "message": "Choisissez votre langue cible dans les paramètres pour terminer la configuration."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini a refusé la clé API. Vérifiez-la dans les paramètres."
+  },
+  "error_invalid_model": {
+    "message": "Ce modèle ne permet pas la traduction. Choisissez un autre modèle ou le modèle Flash-Lite recommandé dans les paramètres."
+  },
+  "error_busy": {
+    "message": "Trop de traductions sont en cours. Réessayez lorsque l’une d’elles est terminée."
+  },
+  "error_duplicate_request": {
+    "message": "Cette sélection est déjà en cours de traduction."
+  },
+  "error_rate_limited": {
+    "message": "La limite de requêtes a été atteinte. Réessayez dans un instant."
+  },
+  "error_timeout": {
+    "message": "La traduction a pris trop de temps. Vous pouvez réessayer."
+  },
+  "error_offline": {
+    "message": "Vous semblez hors ligne. Vérifiez votre connexion et réessayez."
+  },
+  "error_network_error": {
+    "message": "Impossible de joindre Gemini. Vérifiez votre connexion et réessayez."
+  },
+  "error_quota_exceeded": {
+    "message": "Le quota Gemini a été atteint. Vérifiez votre compte et réessayez plus tard."
+  },
+  "error_service_error": {
+    "message": "Gemini n’a pas pu terminer la traduction. Réessayez plus tard."
+  },
+  "error_invalid_response": {
+    "message": "Gemini a renvoyé une réponse illisible. Vous pouvez réessayer."
+  },
+  "error_output_too_large": {
+    "message": "La traduction dépasse la limite de sortie. Sélectionnez moins de texte et réessayez."
+  },
+  "error_content_blocked": {
+    "message": "Gemini a bloqué ce texte. Essayez une autre sélection."
+  },
+  "error_unsupported_page": {
+    "message": "La traduction n’est pas disponible sur cette page."
+  },
+  "error_frame_unavailable": {
+    "message": "Le cadre sélectionné n’est plus disponible."
+  },
+  "error_cancelled": {
+    "message": "La traduction a été annulée."
+  },
+  "key_Off": {
+    "message": "Désactivé"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Verr. maj."
+  },
+  "key_Insert": {
+    "message": "Insertion"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Arrêt défil."
+  },
+  "error_retry_delay": {
+    "message": " Réessayez dans $seconds$ secondes.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Paramètres d’AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Des paramètres privés pour traduire rapidement et simplement."
+  },
+  "html_help_and_information": {
+    "message": "Aide et informations"
+  },
+  "html_api_key_guide": {
+    "message": "Guide de la clé API"
+  },
+  "html_about": {
+    "message": "À propos"
+  },
+  "html_privacy": {
+    "message": "Confidentialité"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Configurer AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Suivez ces étapes dans les paramètres. Vous avez besoin de votre propre clé API Google pour traduire."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Obtenez votre propre clé API.</1> Ouvrez <2>Google AI Studio</2>, connectez-vous et créez une clé. Consultez les informations sur le partage des données ci-dessous, puis collez votre clé. Consultez le <3>guide étape par étape</3> pour obtenir de l’aide."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Choisissez votre langue cible et votre modèle.</1> Choisissez la langue des traductions. Nous recommandons Gemini Flash-Lite s’il figure dans votre liste de modèles."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Enregistrez et commencez à traduire.</1> Choisissez « Terminer la configuration » en bas de cette page. Sélectionnez ensuite du texte sur une page Web et appuyez sur Control, ou choisissez « Traduire le texte sélectionné » dans le menu du clic droit."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Connectez votre propre clé API Gemini et choisissez un modèle compatible."
+  },
+  "html_loading_setup_state": {
+    "message": "Chargement de la configuration..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Avant la connexion à Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google reçoit votre clé API pour vérifier les modèles disponibles. Lors d’une demande de traduction, Google reçoit aussi le texte sélectionné et la langue cible, y compris le texte de fichiers locaux. Les traductions par IA peuvent être erronées."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Votre clé est enregistrée chiffrée dans ce profil Chrome et s’ouvre automatiquement après un redémarrage. Aucun mot de passe supplémentaire n’est nécessaire. Une personne ayant un accès complet à votre profil de navigateur pourrait malgré tout la récupérer. <1>Lire les détails sur la confidentialité</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Obligatoire dans tous les pays :</1> utilisez une clé API Gemini liée à un projet dont la <2>facturation est active</2>. Désactivez le <3>partage facultatif avec Google des journaux de requêtes et jeux de données de cette extension</3>. Avec ces réglages, les conditions payantes de Google excluent l’utilisation des requêtes et réponses pour améliorer les produits ; le traitement à des fins de sécurité et juridiques reste applicable. L’extension est gratuite, mais des frais d’API Google peuvent s’appliquer."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Conditions d’utilisation.</1> En utilisant Gemini dans cette extension, vous acceptez de respecter les exigences ci-dessus et les <2>conditions de Google</2>. L’utilisation est réservée aux personnes de 18 ans ou plus, à des fins professionnelles ou commerciales, dans les <3>régions prises en charge</3>. L’extension ne vérifie pas vos réglages de facturation ou de partage."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Accepter et se connecter à Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Retirer le consentement au partage"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Consultez les détails du partage des données avant de vous connecter."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Pourquoi ces exigences ? Consultez la FAQ</1>."
+  },
+  "html_api_key": {
+    "message": "Clé API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Après avoir accepté, collez une clé pour l’enregistrer chiffrée et charger automatiquement les modèles."
+  },
+  "html_show": {
+    "message": "Afficher"
+  },
+  "html_remove_saved_key": {
+    "message": "Supprimer la clé enregistrée"
+  },
+  "html_model": {
+    "message": "Modèle"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Les modèles connus réservés aux médias ou à des usages particuliers sont masqués."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Nous recommandons la famille Gemini Flash-Lite. Pour cette version (septembre 2026), notre choix est Gemini 3.5 Flash-Lite. Vous pouvez choisir un autre modèle de la liste. Certains modèles peuvent ne pas fonctionner avec cette extension. En cas d’échec, choisissez-en un autre ou le modèle recommandé."
+  },
+  "html_refresh_models": {
+    "message": "Actualiser les modèles"
+  },
+  "html_use_recommended_model": {
+    "message": "Utiliser le modèle recommandé"
+  },
+  "html_translation": {
+    "message": "Traduction"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Définissez la langue et, si souhaité, la touche de déclenchement."
+  },
+  "html_default_language": {
+    "message": "Langue par défaut"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Une carte de résultat peut utiliser une autre langue sans modifier ce choix par défaut."
+  },
+  "html_keyboard_trigger": {
+    "message": "Touche de déclenchement"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Une touche seule peut entrer en conflit avec un site ou un outil d’accessibilité. Choisissez « Désactivé » pour utiliser uniquement le menu contextuel."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Enregistrer une touche"
+  },
+  "html_off": {
+    "message": "Désactivé"
+  },
+  "html_behavior": {
+    "message": "Comportement"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Des protections fixes assurent la réactivité des traductions et préservent le quota API."
+  },
+  "html_parallel_requests": {
+    "message": "Requêtes parallèles"
+  },
+  "html_request_timeout": {
+    "message": "Délai maximal par requête"
+  },
+  "html_page_access": {
+    "message": "Accès aux pages"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Pour les fichiers locaux, activez « Autoriser l’accès aux URL de fichier » dans « Gérer l’extension »."
+  },
+  "html_help_and_recovery": {
+    "message": "Aide et récupération"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Si un modèle est indisponible, actualisez les modèles, choisissez-en un dans la liste et enregistrez les préférences. Si la liste ne se charge pas, vérifiez votre clé et votre connexion, puis choisissez « Actualiser les modèles »."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Les pages de paramètres Chrome et le Chrome Web Store n’autorisent pas la traduction. Pour les fichiers locaux, activez « Autoriser l’accès aux URL de fichier » dans « Gérer l’extension ». Après une mise à jour ou un rechargement de l’extension, actualisez les pages ouvertes. Cela peut interrompre une traduction."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "La traduction ne fonctionne pas hors ligne. Après votre accord ci-dessus, votre clé est envoyée directement à Google pour vérifier les modèles. Le texte sélectionné, y compris celui des fichiers locaux, n’est envoyé avec la langue cible que lorsque vous demandez une traduction. Votre clé est chiffrée dans ce profil Chrome. La langue, le modèle et la touche peuvent être synchronisés par Chrome. L’extension conserve uniquement le dernier résultat de cette session, sans historique des traductions."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Vous pouvez consulter le partage des données ci-dessus et retirer votre consentement à tout moment. Les vérifications de modèles et les traductions s’arrêtent jusqu’à un nouvel accord. Votre clé reste enregistrée sauf si vous choisissez « Supprimer la clé enregistrée »."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Les changements de langue, de modèle et de touche sont enregistrés ici."
+  },
+  "html_reload_saved_settings": {
+    "message": "Recharger les paramètres enregistrés"
+  },
+  "html_save_preferences": {
+    "message": "Enregistrer les préférences"
+  },
+  "html_gemini_translation": {
+    "message": "Traduction avec Gemini"
+  },
+  "html_setup_required": {
+    "message": "Configuration nécessaire"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Bienvenue dans AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Traduisez le texte sélectionné dans une langue que vous comprenez. Configurez d’abord ces deux éléments :"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Votre clé API Gemini.</1> Obtenez votre propre clé dans Google AI Studio. Notre guide vous explique comment faire."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Votre langue cible.</1> Choisissez la langue dans laquelle vous souhaitez lire."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Comment obtenir une clé API"
+  },
+  "html_extension_status": {
+    "message": "État de l’extension"
+  },
+  "html_active_translations": {
+    "message": "Traductions en cours"
+  },
+  "html_latest_this_session": {
+    "message": "Dernier résultat de la session"
+  },
+  "html_no_translation_yet": {
+    "message": "Aucune traduction pour le moment."
+  },
+  "html_copy": {
+    "message": "Copier"
+  },
+  "html_settings": {
+    "message": "Paramètres"
+  },
+  "html_key_guide": {
+    "message": "Guide de la clé"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Premiers pas avec AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Pages de l’extension"
+  },
+  "html_faq": {
+    "message": "Questions fréquentes"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Obtenez votre propre clé API Google, choisissez une langue et traduisez votre première sélection."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Obtenir votre clé API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Une clé API permet à cette extension d’utiliser Gemini via votre compte Google. Gardez-la secrète, comme un mot de passe."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Cette extension est destinée aux personnes de 18 ans ou plus, pour un usage professionnel ou commercial, dans les <1>pays et régions pris en charge par Google</1>. Dans tous les pays, votre clé API doit appartenir à un projet Gemini dont la facturation est active. Désactivez le partage facultatif avec Google des journaux de requêtes et jeux de données de cette extension."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "En utilisant cette extension, vous acceptez de respecter ces conditions, les <1>Conditions des API Google</1> et les <2>Conditions supplémentaires de l’API Gemini</2>. Ne l’utilisez pas si vous ne pouvez pas les respecter. L’extension ne vérifie pas ces éléments et ne demande pas de pièce d’identité."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Ouvrir Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Connectez-vous à votre compte Google. Acceptez les conditions de Google si cela vous est demandé."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Créer ou choisir une clé"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Sur la page des clés API, choisissez <1>Créer une clé API</1> et suivez les étapes de Google pour choisir ou créer un projet. Un projet regroupe votre utilisation de l’API et sa facturation éventuelle. Si vous découvrez AI Studio, Google a peut-être déjà créé un projet et une clé par défaut."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Si votre projet existant est absent, ouvrez <1>Tableau de bord > Projets > Importer des projets</1>. Importez votre projet, puis revenez aux clés API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Avant d’utiliser la clé, suivez le <1>guide de facturation de Google</1> pour vérifier que la facturation du projet est active. Un abonnement payant à l’application Gemini ne remplace pas la facturation du projet API. Désactivez le partage facultatif avec Google des journaux de requêtes et jeux de données de cette extension ; consultez la <2>politique de Google sur le partage des journaux</2>. La journalisation privée du projet est distincte du partage."
+  },
+  "html_copy_your_key": {
+    "message": "Copier votre clé"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Copiez la clé depuis AI Studio. Revenez aux paramètres de cette extension et lisez les détails du partage des données. Choisissez <1>Accepter et se connecter à Google</1>, puis collez la clé dans le champ <2>Clé API</2>. Elle est automatiquement chiffrée et enregistrée, puis la liste des modèles se charge. Attendez le résultat avant de continuer."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Paramètres d’AI Translator montrant l’avis de partage des données et le bouton d’accord au-dessus d’un champ de clé API vide et de la recommandation Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Exemple en anglais. Dans AI Translator : acceptez d’abord le partage des données, puis collez votre propre clé. La liste des modèles est vérifiée après l’enregistrement chiffré de la clé."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google peut modifier ces écrans. Pour les étapes actuelles ou les erreurs de clé, consultez le <1>guide des clés API de Google</1>. Utilisez une nouvelle clé d’AI Studio si une ancienne ne fonctionne plus."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Choisir vos paramètres de traduction"
+  },
+  "html_choose_a_model": {
+    "message": "Choisir un modèle"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Nous recommandons la famille Gemini Flash-Lite. Pour cette version de septembre 2026, nous avons choisi <1>Gemini 3.5 Flash-Lite</1>. Utilisez-le lorsqu’il est disponible dans votre liste de modèles."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Vous pouvez choisir un autre modèle de la liste. Certains modèles peuvent ne pas fonctionner avec cette extension. Si un modèle échoue, choisissez-en un autre ou le modèle recommandé."
+  },
+  "html_choose_your_target_language": {
+    "message": "Choisir votre langue cible"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Choisissez la langue de lecture dans <1>Langue par défaut</1>. Les choix suivent les <2>langues Gemini documentées par Google</2>. La qualité de traduction peut varier selon la langue et le texte."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Paramètres de traduction d’AI Translator avec le choix de la langue cible et les commandes de la touche de déclenchement."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Exemple en anglais. Choisissez la langue de vos traductions, puis terminez la configuration."
+  },
+  "html_finish_setup": {
+    "message": "Terminer la configuration"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Gardez Control comme touche de déclenchement, enregistrez une autre touche ou choisissez <1>Désactivé</1> pour utiliser uniquement le menu du clic droit. Choisissez <2>Terminer la configuration</2> en bas des paramètres. Vous pourrez modifier ces choix ensuite avec <3>Enregistrer les préférences</3>."
+  },
+  "html_open_settings": {
+    "message": "Ouvrir les paramètres"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Traduire votre première sélection"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Ouvrez une page Web normale et sélectionnez un court texte. Faites un clic droit et choisissez <1>Traduire le texte sélectionné</1>, ou appuyez puis relâchez la touche choisie. Le résultat apparaît à côté de la sélection."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Si l’extension vient d’être installée ou rechargée, actualisez d’abord la page Web. Les paramètres Chrome, le Chrome Web Store et le lecteur PDF intégré n’autorisent pas la traduction."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "La fenêtre de la barre d’outils affiche le dernier résultat. Une fois la configuration terminée, elle présente la vue standard. Si vous supprimez votre clé API, le guide de bienvenue réapparaît."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "FAQ : clés, coûts et confidentialité"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Pourquoi ai-je besoin de ma propre clé API ?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Cette extension envoie les requêtes directement à votre projet Google avec votre propre clé. Il s’agit d’un choix de conception, pas d’une règle Chrome. Votre clé autorise les requêtes et les associe à votre utilisation et à votre facturation. Ne la partagez jamais dans des captures d’écran ou des messages publics. Consultez le <1>guide des clés API de Google</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Pourquoi une facturation active est-elle obligatoire et pas seulement recommandée ?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Les <1>règles Limited Use de Chrome, points 3 et 5</1>, limitent l’utilisation des données à la fonction de l’extension et aux opérations associées. Certains usages gratuits de Gemini autorisent un entraînement plus large et une révision humaine. Les conditions payantes excluent l’amélioration des produits, mais permettent une conservation limitée pour la sécurité et les obligations légales, ainsi qu’un traitement hors de l’UE."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Pour résoudre ce conflit, le développeur exige une facturation active du projet dans le monde entier. Une recommandation permettrait encore un usage gratuit. La règle régionale de Google impose les services payants aux applications proposées dans l’Espace économique européen, au Royaume-Uni et en Suisse. Consultez les <1>conditions Gemini : restrictions d’utilisation, services gratuits et services payants</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Pourquoi le partage facultatif avec Google doit-il rester désactivé ?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Partager des journaux ou des jeux de données peut autoriser l’entraînement et la révision humaine, même avec une facturation active. Ne transmettez pas les données de cette extension via le partage de jeux de données ou les commentaires. La journalisation privée de votre propre projet est autorisée. Consultez la <1>politique de journalisation de Google : données partageables et utilisation de vos données</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "L’extension est-elle gratuite si l’accès API doit être payant ?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Oui. L’extension est gratuite, mais des frais d’API Google peuvent s’appliquer. Un abonnement payant à l’application Gemini ne remplace pas la facturation du projet API. Consultez <1>la vérification de la facturation</1> et <2>les tarifs des API Google</2>. L’extension ne vérifie pas les réglages de facturation ou de partage."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Pourquoi dois-je choisir « Accepter et se connecter à Google » ?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Les <1>exigences de transparence de Chrome, points 1 et 2</1>, demandent des informations claires sur l’utilisation des données et un consentement éclairé. Notre bouton vous permet de choisir avant toute requête API Google. Il ne vérifie ni votre identité ni la facturation et n’autorise pas le partage des informations privées d’autrui."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Que reçoit exactement Google ?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Les vérifications de modèles envoient votre clé et demandent les modèles disponibles. La traduction envoie le texte sélectionné, la langue cible, le modèle et les instructions de traduction, y compris le texte de fichiers locaux. L’extension n’ajoute ni la page entière, ni son adresse, ni l’historique de navigation. Google reçoit aussi des informations de connexion comme votre adresse IP. Le développeur ne reçoit aucune de ces requêtes. Envoyez uniquement du texte que vous pouvez partager."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Comment ma clé est-elle enregistrée et ouverte automatiquement ?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Votre clé API est enregistrée chiffrée. Elle et sa clé de chiffrement restent dans ce profil Chrome pour être utilisables automatiquement après un redémarrage. Elles ne sont pas synchronisées. Une personne ayant accès au profil pourrait malgré tout récupérer la clé API. Ce n’est ni un trousseau système ni un coffre protégé par mot de passe. Langue, modèle et touche peuvent être synchronisés. Seul le dernier résultat reste pendant la session ; il n’y a ni analyse d’usage ni historique des traductions."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Une mise à jour chiffre et vérifie une ancienne clé enregistrée avant de supprimer ses copies en clair. En cas d’échec, l’ancienne copie reste enregistrée et les requêtes restent bloquées. Les paramètres expliquent l’erreur. Déplacer une ancienne clé ne contourne pas le consentement."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Puis-je retirer mon consentement ou supprimer ma clé ?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "Dans les <1>Paramètres</1>, <2>Retirer le consentement au partage</2> bloque les nouvelles requêtes et annule localement celles en cours, tout en conservant clé et préférences. <3>Supprimer la clé enregistrée</3> supprime la clé, sa clé de chiffrement et le cache des modèles. Aucune de ces actions ne rappelle les données déjà envoyées ni ne garantit la gratuité d’une requête envoyée. Révoquez aussi la clé dans AI Studio pour la désactiver chez Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Votre consentement reste enregistré après les redémarrages et mises à jour habituels. Si l’avis change, les requêtes attendent que vous le lisiez et acceptiez à nouveau."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Pourquoi réserver l’usage aux adultes et aux activités professionnelles ?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google exige un âge minimal de 18 ans et un usage professionnel ou commercial dans les régions prises en charge. Consultez les <1>conditions Gemini : âge requis et restrictions d’utilisation</1> et les <2>régions disponibles</2>. Cette extension ne comporte ni case d’éligibilité séparée ni contrôle d’identité."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Pourquoi une politique de confidentialité en plus de cet avis ?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "L’avis explique votre choix avant la connexion. La politique détaille les données, leur stockage et leur suppression. Les <1>règles de confidentialité de Chrome</1> l’exigent pour les extensions traitant des données utilisateur. Lisez <2>notre politique de confidentialité</2>. Ces avis ne signifient pas que Google a approuvé l’extension."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Les traductions par IA peuvent être erronées. Vérifiez les formulations importantes avant de vous y fier."
+  },
+  "html_about_ai_translator": {
+    "message": "À propos d’AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Traduisez facilement : sélectionnez du texte et appuyez sur Control."
+  },
+  "html_made_for_people": {
+    "message": "Créé pour les gens"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "J’ai créé AI Translator pour aider les gens à lire, à apprendre et à communiquer au-delà des langues. J’espère qu’il sera utile partout dans le monde."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "L’extension traduit le texte sélectionné avec votre propre clé API Google Gemini. Vous choisissez le texte envoyé et la langue de lecture."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Appuyez sur Control puis relâchez pour traduire votre sélection. Control est la touche par défaut, modifiable dans les paramètres. Vous pouvez aussi utiliser le menu du clic droit de la page."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Tests manuels effectués sur Mac uniquement. Windows et Linux n’ont pas été testés manuellement."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Voir le code source et le guide du projet</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Obtenir de l’aide ou signaler un problème</1>. Les signalements sont publics. N’incluez aucune clé API, aucun texte privé ni renseignement personnel."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Si vous souhaitez soutenir mon travail"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Soutenez mon pays, l’Ukraine, qui se défend contre l’agression russe."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Je fais confiance à la Sternenko Community Foundation. Si vous le pouvez et souhaitez aider, vous pouvez faire un don sur son site officiel."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Soutenir l’Ukraine par la fondation</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Le soutien est facultatif et n’est jamais nécessaire pour utiliser cette extension. Ce lien ouvre un site externe. Les dons passent par la fondation, pas par l’extension."
+  },
+  "html_privacy_and_costs": {
+    "message": "Confidentialité et coûts"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Votre clé API est chiffrée sur cet appareil et n’est pas synchronisée. Elle reste disponible après les redémarrages normaux de Chrome sans mot de passe de déverrouillage. Une personne ayant accès au profil du navigateur pourrait malgré tout la récupérer."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Avant la première requête Google, les paramètres expliquent le partage des données et vous demandent de choisir <1>Accepter et se connecter à Google</1>. Ensuite, le texte sélectionné n’est envoyé directement à Google que lorsque vous demandez une traduction. Les vérifications de modèles envoient votre clé, sans texte sélectionné. L’extension n’a ni analyse d’usage, ni publicité, ni historique des traductions."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Consultez les détails dans les <1>Paramètres</1> à tout moment. Choisissez <2>Retirer le consentement au partage</2> pour arrêter les nouvelles requêtes en conservant clé chiffrée et préférences, ou <3>Supprimer la clé enregistrée</3> pour effacer la clé et le cache des modèles. Les données déjà envoyées ne peuvent pas être rappelées."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Les traductions sont générées par une IA et peuvent être erronées. Vérifiez les formulations importantes avant de vous y fier."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Lire les détails sur la confidentialité</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator est un projet indépendant et gratuit. Des frais d’API Google peuvent s’appliquer. Dans chaque pays, utilisez une clé API Gemini liée à un projet dont la <1>facturation est active</1> et désactivez le <2>partage facultatif avec Google des journaux de requêtes et jeux de données de cette extension</2>. Les conditions payantes de Google excluent alors l’usage des requêtes et réponses pour améliorer les produits ; le traitement pour la sécurité et les obligations légales reste applicable. Lisez <3>les informations de Google sur les prix et l’utilisation des données</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Cette extension est destinée aux personnes de 18 ans ou plus, à des fins professionnelles ou commerciales, dans les <1>régions prises en charge par Google</1>. Son utilisation implique le respect de ces conditions, des <2>Conditions des API Google</2> et des <3>Conditions supplémentaires de l’API Gemini</3>. Ne l’utilisez pas si vous ne pouvez pas les respecter. Il n’y a ni case d’éligibilité ni vérification d’identité. L’extension ne vérifie pas vos réglages de facturation ou de partage."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Modifications non enregistrées."
+  },
+  "runtime_settings_conflict": {
+    "message": "Les paramètres ont changé dans une autre page. Vos modifications sont conservées ici. Rechargez les paramètres enregistrés pour abandonner vos modifications et utiliser les valeurs enregistrées."
+  },
+  "runtime_preferences_current": {
+    "message": "Les préférences sont à jour."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Impossible d’ouvrir la clé enregistrée. Rouvrez les paramètres ou supprimez-la puis saisissez-la à nouveau."
+  },
+  "runtime_key_conflict": {
+    "message": "La clé API a changé dans une autre page. Rechargez les paramètres enregistrés avant d’enregistrer une clé."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Votre clé est enregistrée chiffrée. Acceptez le partage des données avant la connexion à Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Acceptez le partage des données ci-dessus avant d’ajouter votre clé API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini a refusé cette clé enregistrée. Remplacez-la ou choisissez « Actualiser les modèles » pour la vérifier à nouveau."
+  },
+  "runtime_paste_key": {
+    "message": "Collez une clé API pour connecter Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Clé API enregistrée. Gemini l’a acceptée lors de la dernière vérification de la liste des modèles."
+  },
+  "runtime_key_saved_check": {
+    "message": "Clé API enregistrée chiffrée sur cet appareil. Actualisez les modèles pour la vérifier auprès de Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Réessayer le retrait"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Retirer le consentement au partage"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Votre retrait n’est pas confirmé. Réessayez pour enregistrer votre choix."
+  },
+  "runtime_agreement_saved": {
+    "message": "Partage des données accepté pour ce profil Chrome. Vous pouvez retirer votre consentement à tout moment."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Aucune connexion à Google sans votre accord. Votre clé enregistrée est conservée si vous retirez votre consentement."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini a refusé la clé enregistrée. Remplacez-la ci-dessous."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Votre clé est enregistrée chiffrée sur cet appareil."
+  },
+  "runtime_setup_create_key": {
+    "message": "Créez votre propre clé dans Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Langue sélectionnée. Terminez la configuration pour enregistrer vos choix."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Choisissez une langue cible ci-dessous."
+  },
+  "runtime_finish_setup": {
+    "message": "Terminer la configuration"
+  },
+  "runtime_save_preferences": {
+    "message": "Enregistrer les préférences"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Ajoutez une clé API, vérifiez la liste des modèles et enregistrez votre choix de modèle."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Résolvez le conflit de paramètres avant de traduire."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Consultez et acceptez le partage des données avant la connexion à Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Terminez l’enregistrement de la clé API avant de vérifier la configuration."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Configuration à vérifier : Gemini a refusé la clé API enregistrée."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Clé enregistrée. Choisissez une langue cible, puis terminez la configuration."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Choisissez un modèle disponible et enregistrez les préférences."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Modèle sélectionné. Enregistrez les préférences pour l’utiliser."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "La clé et la langue sont prêtes. Terminez la configuration pour enregistrer vos choix, puis essayez une traduction. L’accès aux modèles et le quota peuvent encore changer."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Vous pouvez essayer une traduction. Le modèle enregistré figure dans la liste vérifiée ; l’accès et le quota peuvent encore changer."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Clé enregistrée. Actualisez les modèles pour vérifier la clé et le modèle choisi."
+  },
+  "runtime_show_key": {
+    "message": "Afficher"
+  },
+  "runtime_hide_key": {
+    "message": "Masquer"
+  },
+  "runtime_choose_target_language": {
+    "message": "Choisir une langue cible"
+  },
+  "runtime_background_no_response": {
+    "message": "Le processus d’arrière-plan de l’extension ne répond pas. Rechargez l’extension et réessayez."
+  },
+  "runtime_refresh_models": {
+    "message": "Actualiser les modèles"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Acceptez le partage des données avant de charger les modèles."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Terminez l’enregistrement de la clé API avant d’actualiser les modèles."
+  },
+  "runtime_refreshing": {
+    "message": "Actualisation..."
+  },
+  "runtime_loading": {
+    "message": "Chargement..."
+  },
+  "runtime_models_checking": {
+    "message": "Vérification des modèles compatibles auprès de Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Chargement des modèles compatibles..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Impossible de charger les modèles compatibles."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini n’a renvoyé aucun modèle compatible."
+  },
+  "runtime_model_not_available": {
+    "message": "Le modèle sélectionné ne figure pas dans la liste compatible. Choisissez un autre modèle."
+  },
+  "runtime_record_key": {
+    "message": "Enregistrer une touche"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Enregistrement annulé."
+  },
+  "runtime_unknown_key": {
+    "message": "Cette touche"
+  },
+  "runtime_press_key": {
+    "message": "Appuyez sur une touche..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Appuyez sur une touche prise en charge qui ne saisit pas de caractère. Échap permet d’annuler."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Actualisez les modèles pour vérifier la clé API enregistrée."
+  },
+  "runtime_models_add_key": {
+    "message": "Ajoutez une clé API pour charger les modèles compatibles."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "L’extension n’a pas pu charger son état enregistré."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini a refusé la clé API enregistrée. Remplacez-la ou actualisez les modèles pour la vérifier à nouveau."
+  },
+  "runtime_settings_reopen": {
+    "message": "Impossible de charger les paramètres. Rouvrez-les pour réessayer."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Impossible de charger les paramètres. Rechargez les paramètres enregistrés pour réessayer. L’enregistrement est désactivé pour protéger vos choix enregistrés."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Impossible de charger l’état de la configuration."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Saisissez une clé API complète sans espaces."
+  },
+  "runtime_key_use_remove": {
+    "message": "Utilisez « Supprimer la clé enregistrée » pour effacer votre clé."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Acceptez le partage des données ci-dessus avant d’enregistrer une clé API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Enregistrement chiffré de la clé API..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Impossible de lire ou d’enregistrer la clé API. Votre saisie est conservée. Utilisez « Enregistrer les préférences » pour réessayer."
+  },
+  "runtime_connecting_google": {
+    "message": "Connexion à Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Arrêt des connexions à Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Impossible d’enregistrer votre consentement au partage. Réessayez."
+  },
+  "runtime_key_removing": {
+    "message": "Suppression de la clé enregistrée..."
+  },
+  "runtime_key_removed": {
+    "message": "Clé enregistrée supprimée. Vous pouvez en ajouter une autre après avoir accepté le partage des données."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Impossible de supprimer la clé enregistrée. Réessayez."
+  },
+  "runtime_saving": {
+    "message": "Enregistrement..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Choisissez une langue et un modèle valides."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Choisissez une touche prise en charge ou « Désactivé »."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Choisissez un modèle dans la liste compatible actuelle."
+  },
+  "runtime_preferences_saving": {
+    "message": "Enregistrement des préférences..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Préférences enregistrées."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Préférences enregistrées. Ajoutez votre clé API pour terminer la configuration."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Impossible de lire ou d’enregistrer les préférences. Vos modifications sont conservées. Réessayez."
+  },
+  "runtime_key_will_save": {
+    "message": "La clé API sera enregistrée automatiquement."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Terminez la saisie de la clé API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Terminez l’enregistrement de la clé API pour charger les modèles compatibles."
+  },
+  "runtime_recommended_selected": {
+    "message": "Modèle recommandé sélectionné. Enregistrez votre choix pour l’utiliser."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "La touche de déclenchement sera désactivée après l’enregistrement."
+  },
+  "runtime_connection_changed": {
+    "message": "Paramètres de connexion modifiés. Vérification des paramètres enregistrés..."
+  },
+  "runtime_models_changed": {
+    "message": "Liste des modèles modifiée. Vérification des modèles compatibles..."
+  },
+  "runtime_no_translation": {
+    "message": "Aucune traduction pour le moment."
+  },
+  "runtime_start_setup": {
+    "message": "Commencer la configuration"
+  },
+  "runtime_settings": {
+    "message": "Paramètres"
+  },
+  "runtime_key_rejected": {
+    "message": "Clé refusée"
+  },
+  "runtime_setup_required": {
+    "message": "Configuration nécessaire"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Ajoutez une clé API dans les paramètres pour commencer à traduire."
+  },
+  "runtime_add_key": {
+    "message": "Ajouter une clé API"
+  },
+  "runtime_finish_model_language": {
+    "message": "La clé est enregistrée. Ouvrez les paramètres pour vérifier le modèle et terminer le choix de la langue."
+  },
+  "runtime_check_setup": {
+    "message": "Vérifier la configuration"
+  },
+  "runtime_translating": {
+    "message": "Traduction en cours"
+  },
+  "runtime_error": {
+    "message": "Erreur"
+  },
+  "runtime_ready": {
+    "message": "Prêt"
+  },
+  "runtime_status_load_failed": {
+    "message": "Impossible de charger l’état de l’extension. Rechargez l’extension puis actualisez la page."
+  },
+  "runtime_copied": {
+    "message": "Copié."
+  },
+  "runtime_copy_blocked": {
+    "message": "La copie a été bloquée. Sélectionnez le texte du résultat et copiez-le."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Impossible d’ouvrir les paramètres. Réessayez."
+  },
+  "runtime_translating_progress": {
+    "message": "Traduction en cours..."
+  },
+  "runtime_translation_started": {
+    "message": "Traduction démarrée."
+  },
+  "runtime_translation_complete": {
+    "message": "Traduction terminée."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Traduction terminée. Utilisez le texte du résultat ou les commandes de la carte."
+  },
+  "runtime_translation": {
+    "message": "Traduction"
+  },
+  "runtime_target_language": {
+    "message": "Langue cible"
+  },
+  "runtime_card_target_language": {
+    "message": "Langue cible de cette carte"
+  },
+  "runtime_close_card": {
+    "message": "Fermer la carte de traduction"
+  },
+  "runtime_translated_text": {
+    "message": "Texte traduit"
+  },
+  "runtime_retry": {
+    "message": "Réessayer"
+  },
+  "runtime_copy": {
+    "message": "Copier"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Impossible d’ouvrir les paramètres. Utilisez la barre d’outils de l’extension."
+  },
+  "runtime_copy_failed": {
+    "message": "Échec de la copie. Sélectionnez le texte du résultat et copiez-le."
+  },
+  "runtime_context_menu": {
+    "message": "Traduire le texte sélectionné"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Absent de la liste actuelle)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Pas encore vérifié)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Utilisation de la liste des modèles en cache du $value1$. L’actualisation directe a échoué. Réessayez plus tard.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Utilisation de la liste des modèles en cache. L’actualisation directe a échoué. Réessayez plus tard."
+  },
+  "runtime_models_cache_at": {
+    "message": "Utilisation de la liste des modèles en cache du $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Utilisation de la liste des modèles en cache."
+  },
+  "runtime_models_updated_at": {
+    "message": "Liste des modèles mise à jour au $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Liste des modèles mise à jour."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ n’est pas pris en charge. Appuyez sur une autre touche ou sur Échap pour annuler.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ sera utilisé après l’enregistrement.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Jusqu’à $value1$ par onglet et $value2$ au total",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ secondes",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Appuyez sur Tab pour utiliser cette carte ou sur Échap pour la fermer.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Échec de la traduction. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Actualiser les pages ouvertes"
+  },
+  "refresh_message": {
+    "message": "Votre clé API est enregistrée. Après la configuration, actualisez les pages qui étaient déjà ouvertes. Sélectionnez ensuite du texte et appuyez sur Control pour traduire."
+  },
+  "refresh_continue": {
+    "message": "Continuer la configuration"
+  },
+  "refresh_faq_question": {
+    "message": "Pourquoi dois-je actualiser les pages ouvertes ?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Actualisez les pages ouvertes</1> après la configuration, avant de traduire. Chrome doit charger l’extension sur les pages ouvertes avant son installation ou son rechargement. Les nouvelles pages sont automatiquement prêtes."
+  },
+  "ui_locale": {
+    "message": "fr",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

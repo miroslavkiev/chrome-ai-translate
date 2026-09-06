@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Çok kolay çeviri: metni seçip Control tuşuna basın. Gemini ile istediğiniz dile çevirin.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Bir metin seçip yeniden deneyin."
+  },
+  "error_unsupported_selection": {
+    "message": "Bu metin seçimi desteklenmiyor."
+  },
+  "error_selection_too_large": {
+    "message": "Seçim 10.000 karakterden uzun. Daha az metin seçip yeniden deneyin."
+  },
+  "error_missing_api_key": {
+    "message": "Ayarlar'da Gemini API anahtarınızı ekleyin."
+  },
+  "error_agreement_required": {
+    "message": "Google'a bağlanmadan önce Ayarlar'da veri paylaşımını inceleyip kabul edin."
+  },
+  "error_credential_conflict": {
+    "message": "Kayıtlı anahtar başka bir sayfada değişti. Yeniden denemeden önce kayıtlı ayarları yeniden yükleyin."
+  },
+  "error_credential_storage_error": {
+    "message": "Kayıtlı anahtar açılamıyor. Ayarlar'ı yeniden açın veya anahtarı silip tekrar girin."
+  },
+  "error_missing_target_language": {
+    "message": "Kurulumu tamamlamak için Ayarlar'da hedef dilinizi seçin."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini API anahtarını reddetti. Ayarlar'da kontrol edin."
+  },
+  "error_invalid_model": {
+    "message": "Bu model çeviri için kullanılamaz. Ayarlar'da başka bir model veya önerilen Flash-Lite modelini seçin."
+  },
+  "error_busy": {
+    "message": "Çok fazla etkin çeviri var. Biri bittiğinde yeniden deneyin."
+  },
+  "error_duplicate_request": {
+    "message": "Bu seçim zaten çevriliyor."
+  },
+  "error_rate_limited": {
+    "message": "İstek sınırına ulaşıldı. Biraz sonra yeniden deneyin."
+  },
+  "error_timeout": {
+    "message": "Çeviri çok uzun sürdü. Yeniden deneyebilirsiniz."
+  },
+  "error_offline": {
+    "message": "Çevrimdışı görünüyorsunuz. Bağlantınızı kontrol edip yeniden deneyin."
+  },
+  "error_network_error": {
+    "message": "Gemini'ye ulaşılamadı. Bağlantınızı kontrol edip yeniden deneyin."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini kotasına ulaşıldı. Hesabınızı kontrol edip daha sonra deneyin."
+  },
+  "error_service_error": {
+    "message": "Gemini çeviriyi tamamlayamadı. Daha sonra deneyin."
+  },
+  "error_invalid_response": {
+    "message": "Gemini okunamayan bir yanıt döndürdü. Yeniden deneyebilirsiniz."
+  },
+  "error_output_too_large": {
+    "message": "Çeviri çıktı sınırını aştı. Daha az metin seçip yeniden deneyin."
+  },
+  "error_content_blocked": {
+    "message": "Gemini bu metni engelledi. Başka bir seçim deneyin."
+  },
+  "error_unsupported_page": {
+    "message": "Bu sayfada çeviri kullanılamıyor."
+  },
+  "error_frame_unavailable": {
+    "message": "Seçilen çerçeve artık kullanılamıyor."
+  },
+  "error_cancelled": {
+    "message": "Çeviri iptal edildi."
+  },
+  "key_Off": {
+    "message": "Kapalı"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ saniye sonra yeniden deneyin.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator Ayarları"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Hızlı ve odaklı çeviri için özel ayarlar."
+  },
+  "html_help_and_information": {
+    "message": "Yardım ve bilgi"
+  },
+  "html_api_key_guide": {
+    "message": "API anahtarı kılavuzu"
+  },
+  "html_about": {
+    "message": "Hakkında"
+  },
+  "html_privacy": {
+    "message": "Gizlilik"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translator kurulumu"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Ayarlar'daki bu adımları izleyin. Çeviri için kendi Google API anahtarınız gerekir."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Kendi API anahtarınızı edinin.</1> <2>Google AI Studio</2>'yu açın, oturum açıp anahtar oluşturun. Aşağıdaki veri paylaşımını inceleyip anahtarınızı yapıştırın. Yardım için <3>adım adım kılavuzu okuyun</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Hedef dilinizi ve modeli seçin.</1> Çeviri dilini seçin. Model listenizde varsa Gemini Flash-Lite'ı öneririz."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Kaydedip çevirmeye başlayın.</1> Sayfanın altındaki Kurulumu tamamla'yı kullanın. Ardından bir web sayfasında metin seçip Control tuşuna basın veya sağ tık menüsünde Seçili Metni Çevir'i seçin."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Kendi Gemini API anahtarınızı bağlayıp uyumlu bir model seçin."
+  },
+  "html_loading_setup_state": {
+    "message": "Kurulum durumu yükleniyor..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Google'a bağlanmadan önce"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google, kullanılabilir modelleri kontrol etmek için API anahtarınızı alır. Çeviri istediğinizde yerel dosyalardaki metinler dahil seçili metni ve hedef dili de alır. Yapay zeka çevirileri hatalı olabilir."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Anahtarınız bu Chrome profilinde şifreli kaydedilir ve yeniden başlatmalardan sonra otomatik açılır. Ek parola gerekmez. Tarayıcı profilinize tam erişimi olan biri anahtarı yine de kurtarabilir. <1>Gizlilik ayrıntılarını okuyun</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Her ülkede zorunludur:</1> <2>etkin faturalandırması</2> olan bir projeden Gemini API anahtarı kullanın. <3>Bu eklentinin istek günlüklerinin ve veri kümelerinin Google ile paylaşılmasını</3> sağlayan isteğe bağlı seçenekleri kapalı tutun. Bu ayarlarda Google'ın ücretli koşulları, istemlerin ve yanıtların ürün geliştirme amacıyla kullanımını dışlar; güvenlik ve yasal işlemler devam eder. Eklenti ücretsizdir, ancak Google API ücretleri uygulanabilir."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Kullanım koşulları.</1> Gemini'yi bu eklentiyle kullanarak yukarıdaki gerekliliklere ve <2>Google'ın koşullarına</2> uymayı kabul edersiniz. Kullanım, <3>desteklenen bölgelerde</3> mesleki veya ticari amaçlarla 18 yaş ve üzeri kişiler içindir. Eklenti faturalandırma veya paylaşım ayarlarınızı doğrulamaz."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Kabul et ve Google'a bağlan"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Veri paylaşımı onayını geri çek"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Bağlanmadan önce veri paylaşımı ayrıntılarını inceleyin."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Bu gereklilikler neden var? Sık sorulan soruları okuyun</1>."
+  },
+  "html_api_key": {
+    "message": "API anahtarı"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Onaydan sonra anahtarınızı yapıştırın; şifreli kaydedilir ve modeller otomatik yüklenir."
+  },
+  "html_show": {
+    "message": "Göster"
+  },
+  "html_remove_saved_key": {
+    "message": "Kayıtlı anahtarı sil"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Yalnızca medya ve özel amaçlı olduğu bilinen modeller gizlenir."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Gemini Flash-Lite ailesini öneririz. Bu sürümdeki seçimimiz (Eylül 2026) Gemini 3.5 Flash-Lite'tır. Listeden başka bir model seçebilirsiniz. Bazı modeller bu eklentiyle çalışmayabilir. Biri başarısız olursa başka bir model veya önerileni seçin."
+  },
+  "html_refresh_models": {
+    "message": "Modelleri yenile"
+  },
+  "html_use_recommended_model": {
+    "message": "Önerilen modeli kullan"
+  },
+  "html_translation": {
+    "message": "Çeviri"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Dili ve isteğe bağlı klavye tetikleyicisini ayarlayın."
+  },
+  "html_default_language": {
+    "message": "Varsayılan dil"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Sonuç kartı bu varsayılanı değiştirmeden başka bir dil kullanabilir."
+  },
+  "html_keyboard_trigger": {
+    "message": "Klavye tetikleyicisi"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Tek tuşlar, siteler veya erişilebilirlik araçlarıyla çakışabilir. Yalnızca bağlam menüsünü kullanmak için Kapalı'yı seçin."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Tuşu kaydet"
+  },
+  "html_off": {
+    "message": "Kapalı"
+  },
+  "html_behavior": {
+    "message": "Davranış"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Sabit korumalar çevirileri hızlı tutar ve API kotasını korur."
+  },
+  "html_parallel_requests": {
+    "message": "Paralel istekler"
+  },
+  "html_request_timeout": {
+    "message": "İstek zaman aşımı"
+  },
+  "html_page_access": {
+    "message": "Sayfa erişimi"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Yerel dosyalar için Eklentiyi Yönet'te Dosya URL'lerine erişime izin ver seçeneğini açın"
+  },
+  "html_help_and_recovery": {
+    "message": "Yardım ve kurtarma"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Model kullanılamıyorsa modelleri yenileyin, listeden birini seçip tercihleri kaydedin. Liste yüklenmiyorsa anahtar ve bağlantıyı kontrol edip Modelleri yenile'yi deneyin."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome ayar sayfaları ve Chrome Web Store çeviriye izin vermez. Yerel dosyalar için Eklentiyi Yönet'te Dosya URL'lerine erişime izin ver'i açın. Eklenti güncellendikten veya yeniden yüklendikten sonra açık web sayfalarını yenileyin. Yeniden yükleme bir çeviriyi kesebilir."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Çeviri çevrimdışı değildir. Yukarıda onay verdikten sonra anahtarınız model kontrolleri için doğrudan Google'a gönderilir. Yerel dosyalardan seçilenler dahil metinler, hedef dille birlikte yalnızca çeviri istediğinizde gönderilir. Kayıtlı anahtar bu Chrome profilinde şifrelidir. Dil, model ve tetikleyici tercihi Chrome üzerinden eşitlenebilir. Eklenti yalnızca geçerli tarayıcı oturumunun son sonucunu tutar ve çeviri geçmişi saklamaz."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Veri paylaşımını yukarıdan inceleyip onayınızı istediğiniz zaman geri çekebilirsiniz. Yeniden onay verene kadar model kontrolleri ve çeviriler durur. Kayıtlı anahtarı sil'i seçmezseniz anahtarınız saklanır."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Dil, model ve tetikleyici değişiklikleri burada kaydedilir."
+  },
+  "html_reload_saved_settings": {
+    "message": "Kayıtlı ayarları yeniden yükle"
+  },
+  "html_save_preferences": {
+    "message": "Tercihleri Kaydet"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini çevirisi"
+  },
+  "html_setup_required": {
+    "message": "Kurulum gerekiyor"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "AI Translator'a hoş geldiniz"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Seçili metni bildiğiniz bir dile çevirin. Başlamak için şu iki şeyi ayarlayın:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Gemini API anahtarınız.</1> Google AI Studio'dan kendi anahtarınızı edinin. Kılavuzumuz nasıl yapılacağını gösterir."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Hedef diliniz.</1> Okumak istediğiniz dili seçin."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API anahtarı nasıl alınır?"
+  },
+  "html_extension_status": {
+    "message": "Eklenti durumu"
+  },
+  "html_active_translations": {
+    "message": "Etkin çeviriler"
+  },
+  "html_latest_this_session": {
+    "message": "Bu oturumdaki son sonuç"
+  },
+  "html_no_translation_yet": {
+    "message": "Henüz çeviri yok."
+  },
+  "html_copy": {
+    "message": "Kopyala"
+  },
+  "html_settings": {
+    "message": "Ayarlar"
+  },
+  "html_key_guide": {
+    "message": "Anahtar kılavuzu"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translator'a başlayın"
+  },
+  "html_extension_pages": {
+    "message": "Eklenti sayfaları"
+  },
+  "html_faq": {
+    "message": "Sık sorulan sorular"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Kendi Google API anahtarınızı edinin, dil seçin ve ilk seçiminizi çevirin."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. API anahtarınızı edinin"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API anahtarı, eklentinin Google hesabınız üzerinden Gemini'yi kullanmasını sağlar. Parola gibi gizli tutun."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Bu eklenti, <1>Google'ın desteklediği ülke ve bölgelerde</1> iş veya ticari kullanım için 18 yaş ve üzeri kişilere yöneliktir. Her ülkede API anahtarınız etkin faturalandırmalı bir Gemini projesine ait olmalıdır. Eklentinin istek günlükleri ve veri kümelerinin Google ile isteğe bağlı paylaşımını kapalı tutun."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Eklentiyi kullanarak bu koşullara, <1>Google API Koşullarına</1> ve <2>Gemini API Ek Koşullarına</2> uymayı kabul edersiniz. Bu koşulları karşılayamıyorsanız kullanmayın. Eklenti bunları doğrulamaz veya kimlik belgesi istemez."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio'yu aç"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Google hesabınıza giriş yapın. İstenirse Google'ın koşullarını kabul edin."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Anahtar oluşturun veya seçin"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API Anahtarları sayfasında <1>API anahtarı oluştur</1>'u seçip proje seçmek veya oluşturmak için Google'ın adımlarını izleyin. Proje, API kullanımınızı ve faturalandırmayı gruplar. AI Studio'da yeniyseniz Google zaten varsayılan proje ve anahtar oluşturmuş olabilir."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Mevcut projeniz görünmüyorsa <1>Kontrol Paneli > Projeler > Projeleri içe aktar</1>'ı açın. Projeyi içe aktarıp API Anahtarları'na dönün."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Anahtarı kullanmadan önce <1>Google'ın faturalandırma kılavuzuyla</1> projenin faturalandırmasının etkin olduğunu kontrol edin. Ücretli Gemini uygulama aboneliği, API proje faturalandırmasının yerine geçmez. Eklentinin günlük ve veri kümelerinin Google ile isteğe bağlı paylaşımını kapalı tutun; <2>Google'ın günlük paylaşımı politikasını</2> okuyun. Özel proje günlükleri paylaşmadan ayrıdır."
+  },
+  "html_copy_your_key": {
+    "message": "Anahtarınızı kopyalayın"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Anahtarı AI Studio'dan kopyalayın. Eklentinin Ayarlar'ına dönüp veri paylaşımı ayrıntılarını okuyun. <1>Kabul et ve Google'a bağlan</1>'ı seçip anahtarı <2>API anahtarı</2> alanına yapıştırın. Otomatik şifrelenip kaydedilir ve model listeniz yüklenir. Devam etmeden önce sonucu bekleyin."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator Ayarları: boş API anahtarı alanı ve Flash-Lite önerisinin üzerinde veri paylaşımı bildirimi ve onay düğmesi."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Örnek İngilizcedir. AI Translator'da önce veri paylaşımını kabul edin, sonra kendi anahtarınızı yapıştırın. Şifreli anahtar kaydedildikten sonra model listesi kontrol edilir."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google bu ekranları değiştirebilir. Güncel adımlar veya anahtar hataları için <1>Google'ın API anahtarı kılavuzunu</1> okuyun. Eski anahtar çalışmıyorsa AI Studio'dan yeni anahtar kullanın."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Çeviri ayarlarınızı seçin"
+  },
+  "html_choose_a_model": {
+    "message": "Model seçin"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Gemini Flash-Lite ailesini öneririz. Eylül 2026'daki bu sürüm için seçimimiz <1>Gemini 3.5 Flash-Lite</1>. Model listenizde varsa kullanın."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Listeden başka bir model seçebilirsiniz. Bazı modeller bu eklentiyle çalışmayabilir. Model başarısız olursa başka birini veya önerilen modeli kullanın."
+  },
+  "html_choose_your_target_language": {
+    "message": "Hedef dilinizi seçin"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "<1>Varsayılan dil</1>'den okumak istediğiniz dili seçin. Seçenekler <2>Google'ın belgelenmiş Gemini dillerini</2> izler. Çeviri kalitesi dile ve metne göre değişebilir."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Hedef dil seçimi ve klavye tetikleyici kontrolleriyle AI Translator Çeviri ayarları."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Örnek İngilizcedir. Çeviri dilinizi seçip kurulumu tamamlayın."
+  },
+  "html_finish_setup": {
+    "message": "Kurulumu tamamla"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control tetikleyicisini koruyun, başka tuş kaydedin veya yalnızca sağ tık menüsü için <1>Kapalı</1>'yı seçin. Ayarlar'ın altında <2>Kurulumu tamamla</2>'yı seçin. Daha sonra <3>Tercihleri Kaydet</3> ile değiştirebilirsiniz."
+  },
+  "html_open_settings": {
+    "message": "Ayarlar'ı aç"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. İlk seçiminizi çevirin"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Normal bir web sayfasını açıp kısa bir metin seçin. Sağ tıklayıp <1>Seçili Metni Çevir</1>'i seçin veya seçtiğiniz tuşa basıp bırakın. Sonuç seçimin yanında görünür."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Eklenti yeni kurulduysa veya yeniden yüklendiyse önce web sayfasını yenileyin. Chrome ayar sayfaları, Chrome Web Store ve yerleşik PDF görüntüleyici çeviriye izin vermez."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Araç çubuğu penceresi son sonucu gösterir. Kurulum tamamlanınca standart görünümü açar. API anahtarını kaldırırsanız karşılama kılavuzu yeniden görünür."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Sık sorulan sorular: anahtarlar, ücretler ve gizlilik"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Neden kendi API anahtarıma ihtiyacım var?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Eklenti, kendi anahtarınızla doğrudan Google projenize istek gönderecek şekilde tasarlanmıştır. Bu bir tasarım tercihidir, Chrome kuralı değildir. Anahtar isteklere izin verir ve bunları kullanım ve faturalandırmayla ilişkilendirir. Ekran görüntülerinde veya herkese açık mesajlarda asla paylaşmayın. <1>Google'ın API anahtarı kılavuzuna</1> bakın."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Etkin faturalandırma neden öneri değil, zorunluluk?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome'un <1>Sınırlı Kullanım kurallarının 3. ve 5. maddeleri</1>, veri kullanımını eklentinin amacı ve ilgili işlemlerle sınırlar. Gemini'nin bazı ücretsiz kullanımları daha geniş eğitime ve insan incelemesine izin verir. Ücretli koşullar ürün geliştirme kullanımını dışlar, ancak güvenlik ve hukuk için sınırlı saklamaya ve AB dışında işlemeye izin verir."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Bu çelişkiyi gidermek için geliştirici dünya çapında etkin proje faturalandırması şart koşar. Tavsiye, ücretsiz kullanıma yine izin verirdi. Google'ın bölgesel kuralı, Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki uygulamalar için Ücretli Hizmetler gerektirir. <1>Gemini koşulları: Kullanım Kısıtlamaları, Ücretsiz Hizmetler ve Ücretli Hizmetler</1>'e bakın."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Google ile isteğe bağlı paylaşım neden kapalı kalmalı?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Günlük veya veri kümesi paylaşımı etkin faturalandırmada bile eğitime ve insan incelemesine izin verebilir. Eklenti verilerini veri kümesi paylaşımı veya geri bildirim yoluyla göndermeyin. Kendi projeniz için özel günlük tutmaya bu kural izin verir. <1>Google'ın günlük politikası: Paylaşılabilecek veriler ve Verilerinizi nasıl kullanıyoruz</1>'a bakın."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Ücretli API erişimi gerekiyorsa eklenti ücretsiz mi?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Evet. Eklenti ücretsizdir, ancak Google API ücretleri uygulanabilir. Ücretli Gemini uygulama aboneliği API proje faturalandırmasının yerine geçmez. <1>Faturalandırma kontrolüne</1> ve <2>Google API fiyatlarına</2> bakın. Eklenti faturalandırma veya paylaşım ayarlarını doğrulamaz."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Neden Kabul et ve Google'a bağlan'ı seçmeliyim?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome'un <1>Açıklama Gerekliliklerinin 1. ve 2. maddeleri</1> açık veri kullanımı bilgisi ve bilgilendirilmiş onay ister. Düğmemiz, Google API isteğinden önce bu seçimi yapmanızı sağlar. Kimliğinizi veya faturalandırmayı doğrulamaz, başkalarının özel bilgilerini paylaşma izni vermez."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Google'a tam olarak ne gider?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Model kontrolleri anahtarınızı gönderir ve kullanılabilir modelleri sorar. Çeviri; seçili metni, hedef dili, modeli ve çeviri talimatlarını gönderir. Yerel dosyadan seçilen metin de dahildir. Eklenti tüm sayfayı, sayfa adresini veya tarama geçmişini eklemez. Google IP adresi gibi bağlantı bilgilerini de alır. Geliştirici bu isteklerin hiçbirini almaz. Yalnızca paylaşmaya yetkili olduğunuz metni gönderin."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Anahtarım nasıl kaydedilip otomatik açılır?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API anahtarınız şifreli kaydedilir. Anahtar ve şifreleme anahtarı, yeniden başlatma sonrası otomatik kullanım için bu Chrome profilinde kalır ve eşitlenmez. Profile erişimi olan biri API anahtarını yine kurtarabilir. Bu, işletim sistemi anahtar zinciri veya parola korumalı kasa değildir. Dil, model ve tetikleyici eşitlenebilir. Oturumda yalnızca son sonuç kalır; analiz veya çeviri geçmişi yoktur."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Güncelleme eski anahtarı şifreleyip kontrol ettikten sonra düz metin kopyalarını siler. Başarısız olursa eski kopya kalır ve istekler engellenir. Ayarlar hatayı açıklar. Eski anahtarın taşınması onayı atlamaz."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Onayımı geri çekebilir veya anahtarımı silebilir miyim?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>Ayarlar</1>'daki <2>Veri paylaşımı onayını geri çek</2>, anahtar ve tercihleri tutarak yeni istekleri engeller ve etkinleri yerel olarak iptal eder. <3>Kayıtlı anahtarı sil</3>, anahtarı, şifreleme anahtarını ve model önbelleğini siler. Hiçbiri gönderilmiş verileri geri almaz veya gönderilen isteğin ücretsiz olmasını garanti etmez. Google'da da devre dışı bırakmak için AI Studio'da anahtarı iptal edin."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Onayınız normal yeniden başlatma ve güncellemeler boyunca saklanır. Bildirim değişirse, inceleyip yeniden kabul edene kadar istekler bekler."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Neden yetişkinler ve iş veya ticari kullanım için?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google, desteklenen bölgelerde mesleki veya ticari kullanım ve en az 18 yaş ister. <1>Gemini koşulları: Yaş Gereklilikleri ve Kullanım Kısıtlamaları</1>'na ve <2>kullanılabilir bölgelere</2> bakın. Eklentide ayrı uygunluk kutusu veya kimlik kontrolü yoktur."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Bu bildirimin yanında neden gizlilik politikası var?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Bildirim bağlantı öncesi seçimi açıklar. Politika tüm veri, saklama ve silme ayrıntılarını verir. Chrome'un <1>Gizlilik Politikası kuralları</1>, kullanıcı verisi işleyen eklentiler için bunu gerektirir. <2>Gizlilik politikamızı</2> okuyun. Bildirimler, Google'ın eklentiyi onayladığı anlamına gelmez."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Yapay zeka çevirileri hatalı olabilir. Önemli ifadeleri kullanmadan önce kontrol edin."
+  },
+  "html_about_ai_translator": {
+    "message": "AI Translator Hakkında"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Çok kolay çeviri: metni seçip Control tuşuna basın."
+  },
+  "html_made_for_people": {
+    "message": "İnsanlar için yapıldı"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "AI Translator'ı insanların diller arasında okumasına, öğrenmesine ve iletişim kurmasına yardım etmek için oluşturdum. Dünyanın her yerindeki insanlara yararlı olmasını umuyorum."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Eklenti, seçtiğiniz metni kendi Google Gemini API anahtarınızla çevirir. Ne göndereceğinizi ve hangi dilde okuyacağınızı siz seçersiniz."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Seçimi çevirmek için Control tuşuna basıp bırakın. Control varsayılandır ve Ayarlar'dan değiştirilebilir. Sayfanın sağ tık menüsünü de kullanabilirsiniz."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Yalnızca Mac'te elle test edildi. Windows ve Linux'ta elle test edilmedi."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Kaynak kodu ve proje kılavuzunu görüntüle</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Yardım al veya sorun bildir</1>. Bildirimler herkese açıktır. API anahtarı, özel metin veya kişisel bilgi eklemeyin."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Çalışmamı desteklemek isterseniz"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Lütfen Rus saldırganlığına karşı kendini savunan ülkem Ukrayna'yı destekleyin."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Sternenko Topluluk Vakfı'na güveniyorum. İmkânınız varsa ve yardım etmek isterseniz resmi sitesinden bağış yapabilirsiniz."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Vakıf üzerinden Ukrayna'yı destekle</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Destek isteğe bağlıdır ve eklentiyi kullanmak için asla gerekli değildir. Bağlantı harici bir site açar. Bağışlar eklenti değil, vakıf üzerinden yapılır."
+  },
+  "html_privacy_and_costs": {
+    "message": "Gizlilik ve ücretler"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API anahtarınız bu cihazda şifrelenir ve eşitlenmez. Normal Chrome yeniden başlatmalarından sonra açma parolası olmadan kullanılabilir. Tarayıcı profiline erişimi olan biri yine de kurtarabilir."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "İlk Google isteğinden önce Ayarlar veri paylaşımını açıklar ve <1>Kabul et ve Google'a bağlan</1>'ı seçmenizi ister. Sonrasında seçili metin doğrudan Google'a yalnızca çeviri istediğinizde gönderilir. Model kontrolleri anahtarı gönderir, seçili metni göndermez. Eklentide analiz, reklam veya çeviri geçmişi yoktur."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Ayrıntıları istediğiniz zaman <1>Ayarlar</1>'dan inceleyin. Şifreli anahtar ve tercihleri tutarak yeni istekleri durdurmak için <2>Veri paylaşımı onayını geri çek</2>'i; anahtar ve model önbelleğini silmek için <3>Kayıtlı anahtarı sil</3>'i seçin. Gönderilmiş veriler geri alınamaz."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Çeviriler yapay zekayla üretilir ve hatalı olabilir. Önemli ifadeleri kullanmadan önce kontrol edin."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Gizlilik ayrıntılarını okuyun</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator ücretsiz, bağımsız bir projedir. Google API ücretleri uygulanabilir. Her ülkede <1>etkin faturalandırmalı</1> projeden Gemini API anahtarı kullanın ve isteğe bağlı <2>eklenti istek günlükleri ve veri kümelerinin Google ile paylaşımını</2> kapalı tutun. Bu ayarlarda Google'ın ücretli koşulları istem ve yanıtların ürün geliştirmede kullanımını dışlar; güvenlik ve yasal işlemler devam eder. <3>Google'ın fiyat ve veri kullanımı notlarını</3> okuyun."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Eklenti, <1>Google'ın desteklediği bölgelerde</1> iş veya ticari kullanım için 18 yaş ve üzeri kişilere yöneliktir. Kullanarak bu koşullara, <2>Google API Koşullarına</2> ve <3>Gemini API Ek Koşullarına</3> uymayı kabul edersiniz. Karşılayamıyorsanız kullanmayın. Uygunluk kutusu veya kimlik kontrolü yoktur. Eklenti faturalandırma veya paylaşım ayarlarınızı doğrulamaz."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Kaydedilmemiş değişiklikler."
+  },
+  "runtime_settings_conflict": {
+    "message": "Ayarlar başka bir sayfada değişti. Düzenlemeleriniz burada tutuluyor. Değişiklikleri atıp kayıtlı değerleri kullanmak için kayıtlı ayarları yeniden yükleyin."
+  },
+  "runtime_preferences_current": {
+    "message": "Tercihler güncel."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Kayıtlı anahtar açılamıyor. Ayarlar'ı yeniden açın veya silip yeniden girin."
+  },
+  "runtime_key_conflict": {
+    "message": "API anahtarı başka sayfada değişti. Anahtar kaydetmeden önce kayıtlı ayarları yeniden yükleyin."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Anahtarınız şifreli kaydedildi. Google'a bağlanmadan önce veri paylaşımını kabul edin."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "API anahtarınızı eklemeden önce yukarıda veri paylaşımını kabul edin."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini kayıtlı anahtarı reddetti. Değiştirin veya yeniden kontrol için Modelleri yenile'yi kullanın."
+  },
+  "runtime_paste_key": {
+    "message": "Gemini'ye bağlanmak için API anahtarı yapıştırın."
+  },
+  "runtime_key_checked": {
+    "message": "API anahtarı kaydedildi. Gemini son model listesi kontrolünde kabul etti."
+  },
+  "runtime_key_saved_check": {
+    "message": "API anahtarı bu cihazda şifreli kaydedildi. Gemini'de kontrol için modelleri yenileyin."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Geri çekmeyi yeniden dene"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Veri paylaşımı onayını geri çek"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Geri çekmeniz doğrulanmadı. Seçimi kaydetmek için geri çekmeyi yeniden deneyin."
+  },
+  "runtime_agreement_saved": {
+    "message": "Bu Chrome profili için veri paylaşımı kabul edildi. İstediğiniz zaman geri çekebilirsiniz."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Onay verene kadar Google'a bağlanılmaz. Onayı geri çekerseniz anahtarınız saklanır."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini kayıtlı anahtarı reddetti. Aşağıdan değiştirin."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Anahtarınız bu cihazda şifreli kaydedildi."
+  },
+  "runtime_setup_create_key": {
+    "message": "Google AI Studio'da kendi anahtarınızı oluşturun."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Dil seçildi. Seçimlerinizi kaydetmek için kurulumu tamamlayın."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Aşağıdan hedef dil seçin."
+  },
+  "runtime_finish_setup": {
+    "message": "Kurulumu tamamla"
+  },
+  "runtime_save_preferences": {
+    "message": "Tercihleri Kaydet"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "API anahtarı ekleyin, model listesini kontrol edin ve model seçimini kaydedin."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Çevirmeden önce ayar çakışmasını çözün."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Google'a bağlanmadan önce veri paylaşımını inceleyip kabul edin."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Kurulumu kontrol etmeden önce API anahtarını kaydetmeyi bitirin."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Kurulum ilgi gerektiriyor: Gemini kayıtlı API anahtarını reddetti."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Anahtar kaydedildi. Hedef dil seçip kurulumu tamamlayın."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Kullanılabilir bir model seçip tercihleri kaydedin."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model seçildi. Kullanmak için tercihleri kaydedin."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Anahtar ve dil hazır. Seçimleri kaydetmek için kurulumu tamamlayıp çeviri deneyin. Model erişimi ve kota yine de değişebilir."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Çeviri denemeye hazır. Kayıtlı model kontrol edilen listede; istek erişimi ve kota yine de değişebilir."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Anahtar kaydedildi. Anahtar ve seçili modeli kontrol için modelleri yenileyin."
+  },
+  "runtime_show_key": {
+    "message": "Göster"
+  },
+  "runtime_hide_key": {
+    "message": "Gizle"
+  },
+  "runtime_choose_target_language": {
+    "message": "Hedef dil seçin"
+  },
+  "runtime_background_no_response": {
+    "message": "Eklenti arka planı yanıt vermedi. Eklentiyi yeniden yükleyip tekrar deneyin."
+  },
+  "runtime_refresh_models": {
+    "message": "Modelleri yenile"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Modelleri yüklemeden önce veri paylaşımını kabul edin."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Modelleri yenilemeden önce API anahtarını kaydetmeyi bitirin."
+  },
+  "runtime_refreshing": {
+    "message": "Yenileniyor..."
+  },
+  "runtime_loading": {
+    "message": "Yükleniyor..."
+  },
+  "runtime_models_checking": {
+    "message": "Gemini'de uyumlu modeller kontrol ediliyor..."
+  },
+  "runtime_models_loading": {
+    "message": "Uyumlu modeller yükleniyor..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Uyumlu modeller yüklenemedi."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini uyumlu model döndürmedi."
+  },
+  "runtime_model_not_available": {
+    "message": "Seçili model uyumlu listede değil. Başka model seçin."
+  },
+  "runtime_record_key": {
+    "message": "Tuşu kaydet"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Kayıt iptal edildi."
+  },
+  "runtime_unknown_key": {
+    "message": "Bu tuş"
+  },
+  "runtime_press_key": {
+    "message": "Bir tuşa basın..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Desteklenen tek bir yazdırılamayan tuşa basın. İptal için Escape'e basın."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Kayıtlı API anahtarını kontrol etmek için modelleri yenileyin."
+  },
+  "runtime_models_add_key": {
+    "message": "Uyumlu modelleri yüklemek için API anahtarı ekleyin."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Eklenti kayıtlı durumunu yükleyemedi."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini kayıtlı API anahtarını reddetti. Değiştirin veya yeniden kontrol için modelleri yenileyin."
+  },
+  "runtime_settings_reopen": {
+    "message": "Ayarlar yüklenemedi. Tekrar denemek için Ayarlar'ı yeniden açın."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Ayarlar yüklenemedi. Yeniden denemek için kayıtlı ayarları yeniden yükleyin. Kayıtlı seçimlerinizi korumak için kaydetme kapalıdır."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Kurulum durumu yüklenemedi."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Boşluksuz, tam bir API anahtarı girin."
+  },
+  "runtime_key_use_remove": {
+    "message": "Kayıtlı anahtarınızı silmek için Kayıtlı anahtarı sil'i kullanın."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API anahtarı kaydetmeden önce yukarıda veri paylaşımını kabul edin."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API anahtarı şifreli kaydediliyor..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API anahtarı okunamadı veya kaydedilemedi. Girdiğiniz değer tutuluyor. Yeniden denemek için Tercihleri Kaydet'i kullanın."
+  },
+  "runtime_connecting_google": {
+    "message": "Google'a bağlanılıyor..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google bağlantıları durduruluyor..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Veri paylaşımı onayınız kaydedilemedi. Yeniden deneyin."
+  },
+  "runtime_key_removing": {
+    "message": "Kayıtlı anahtar siliniyor..."
+  },
+  "runtime_key_removed": {
+    "message": "Kayıtlı anahtar silindi. Veri paylaşımını kabul ettikten sonra yeni anahtar ekleyebilirsiniz."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Kayıtlı anahtar silinemedi. Yeniden deneyin."
+  },
+  "runtime_saving": {
+    "message": "Kaydediliyor..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Geçerli bir dil ve model seçin."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Desteklenen tetikleyici tuş veya Kapalı'yı seçin."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Geçerli uyumlu listeden model seçin."
+  },
+  "runtime_preferences_saving": {
+    "message": "Tercihler kaydediliyor..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Tercihler kaydedildi."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Tercihler kaydedildi. Kurulumu bitirmek için API anahtarınızı ekleyin."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Tercihler okunamadı veya kaydedilemedi. Düzenlemeleriniz tutuluyor. Yeniden deneyin."
+  },
+  "runtime_key_will_save": {
+    "message": "API anahtarı otomatik kaydedilecek."
+  },
+  "runtime_key_finish_entry": {
+    "message": "API anahtarını girmeyi bitirin."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Uyumlu modelleri yüklemek için API anahtarını kaydetmeyi bitirin."
+  },
+  "runtime_recommended_selected": {
+    "message": "Önerilen model seçildi. Kullanmak için seçiminizi kaydedin."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Kaydettikten sonra klavye tetikleyicisi Kapalı olacak."
+  },
+  "runtime_connection_changed": {
+    "message": "Bağlantı ayarları değişti. Kayıtlı ayarlar kontrol ediliyor..."
+  },
+  "runtime_models_changed": {
+    "message": "Model listesi değişti. Uyumlu modeller kontrol ediliyor..."
+  },
+  "runtime_no_translation": {
+    "message": "Henüz çeviri yok."
+  },
+  "runtime_start_setup": {
+    "message": "Kurulumu başlat"
+  },
+  "runtime_settings": {
+    "message": "Ayarlar"
+  },
+  "runtime_key_rejected": {
+    "message": "Anahtar reddedildi"
+  },
+  "runtime_setup_required": {
+    "message": "Kurulum gerekiyor"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Çevirmeye başlamak için Ayarlar'da API anahtarı ekleyin."
+  },
+  "runtime_add_key": {
+    "message": "API anahtarı ekle"
+  },
+  "runtime_finish_model_language": {
+    "message": "Anahtar kaydedildi. Modeli kontrol edip dil seçimini tamamlamak için Ayarlar'ı açın."
+  },
+  "runtime_check_setup": {
+    "message": "Kurulumu kontrol et"
+  },
+  "runtime_translating": {
+    "message": "Çevriliyor"
+  },
+  "runtime_error": {
+    "message": "Hata"
+  },
+  "runtime_ready": {
+    "message": "Hazır"
+  },
+  "runtime_status_load_failed": {
+    "message": "Eklenti durumu yüklenemedi. Eklentiyi yeniden yükleyip sayfayı yenileyin."
+  },
+  "runtime_copied": {
+    "message": "Kopyalandı."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopyalama engellendi. Sonuç metnini seçip kopyalayın."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Ayarlar açılamadı. Yeniden deneyin."
+  },
+  "runtime_translating_progress": {
+    "message": "Çevriliyor..."
+  },
+  "runtime_translation_started": {
+    "message": "Çeviri başladı."
+  },
+  "runtime_translation_complete": {
+    "message": "Çeviri tamamlandı."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Çeviri tamamlandı. Sonuç metnini veya kart kontrollerini kullanın."
+  },
+  "runtime_translation": {
+    "message": "Çeviri"
+  },
+  "runtime_target_language": {
+    "message": "Hedef dil"
+  },
+  "runtime_card_target_language": {
+    "message": "Bu kartın hedef dili"
+  },
+  "runtime_close_card": {
+    "message": "Çeviri kartını kapat"
+  },
+  "runtime_translated_text": {
+    "message": "Çevrilmiş metin"
+  },
+  "runtime_retry": {
+    "message": "Yeniden dene"
+  },
+  "runtime_copy": {
+    "message": "Kopyala"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Ayarlar açılamadı. Eklenti araç çubuğunu kullanın."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopyalama başarısız. Sonuç metnini seçip kopyalayın."
+  },
+  "runtime_context_menu": {
+    "message": "Seçili Metni Çevir"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Geçerli listede değil)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Henüz kontrol edilmedi)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "$value1$ tarihli önbellekteki model listesi kullanılıyor. Canlı yenileme başarısız. Daha sonra deneyin.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Önbellekteki model listesi kullanılıyor. Canlı yenileme başarısız. Daha sonra deneyin."
+  },
+  "runtime_models_cache_at": {
+    "message": "$value1$ tarihli önbellekteki model listesi kullanılıyor.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Önbellekteki model listesi kullanılıyor."
+  },
+  "runtime_models_updated_at": {
+    "message": "Model listesi $value1$ kaynağından güncellendi.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Model listesi güncellendi."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ desteklenmiyor. Başka tuşa veya iptal için Escape'e basın.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Kaydettikten sonra $value1$ kullanılacak.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Sekme başına en fazla $value1$, toplam $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ saniye",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Kartı kullanmak için Tab veya kapatmak için Escape'e basın.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Çeviri başarısız. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Açık sayfaları yenileyin"
+  },
+  "refresh_message": {
+    "message": "API anahtarınız kaydedildi. Kurulumu bitirdikten sonra zaten açık olan sayfaları yenileyin. Ardından metin seçip çevirmek için Control tuşuna basın."
+  },
+  "refresh_continue": {
+    "message": "Kuruluma devam et"
+  },
+  "refresh_faq_question": {
+    "message": "Açık sayfaları neden yenilemeliyim?"
+  },
+  "refresh_faq_answer": {
+    "message": "Kurulumu bitirdikten sonra, çeviriyi denemeden önce <1>açık sayfaları yenileyin</1>. Chrome, eklentiyi yüklemeden veya yeniden yüklemeden önce açık olan sayfalarda eklentiyi yüklemelidir. Yeni açılan sayfalar otomatik olarak hazırdır."
+  },
+  "ui_locale": {
+    "message": "tr",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

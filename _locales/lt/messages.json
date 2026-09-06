@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Verskite lengvai: pažymėkite tekstą ir paspauskite Control. Su Gemini verskite į pasirinktą kalbą.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Pažymėkite tekstą ir bandykite dar kartą."
+  },
+  "error_unsupported_selection": {
+    "message": "Šis teksto pažymėjimas nepalaikomas."
+  },
+  "error_selection_too_large": {
+    "message": "Pažymėta daugiau nei 10 000 ženklų. Pažymėkite mažiau teksto ir bandykite dar kartą."
+  },
+  "error_missing_api_key": {
+    "message": "Nustatymuose pridėkite savo Gemini API raktą."
+  },
+  "error_agreement_required": {
+    "message": "Prieš jungdamiesi prie Google, nustatymuose perskaitykite ir patvirtinkite dalijimąsi duomenimis."
+  },
+  "error_credential_conflict": {
+    "message": "Išsaugotas raktas pasikeitė kitame puslapyje. Prieš bandydami dar kartą iš naujo įkelkite išsaugotus nustatymus."
+  },
+  "error_credential_storage_error": {
+    "message": "Nepavyksta atverti išsaugoto rakto. Iš naujo atverkite nustatymus arba pašalinkite raktą ir įveskite jį iš naujo."
+  },
+  "error_missing_target_language": {
+    "message": "Norėdami baigti sąranką, nustatymuose pasirinkite vertimo kalbą."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini atmetė API raktą. Patikrinkite jį nustatymuose."
+  },
+  "error_invalid_model": {
+    "message": "Šis modelis netinka vertimui. Nustatymuose pasirinkite kitą arba rekomenduojamą Flash-Lite modelį."
+  },
+  "error_busy": {
+    "message": "Vyksta per daug vertimų. Bandykite dar kartą, kai vienas baigsis."
+  },
+  "error_duplicate_request": {
+    "message": "Šis pažymėtas tekstas jau verčiamas."
+  },
+  "error_rate_limited": {
+    "message": "Pasiekta užklausų riba. Netrukus bandykite dar kartą."
+  },
+  "error_timeout": {
+    "message": "Vertimas užtruko per ilgai. Galite bandyti dar kartą."
+  },
+  "error_offline": {
+    "message": "Panašu, kad nėra interneto ryšio. Patikrinkite ryšį ir bandykite dar kartą."
+  },
+  "error_network_error": {
+    "message": "Nepavyko pasiekti Gemini. Patikrinkite ryšį ir bandykite dar kartą."
+  },
+  "error_quota_exceeded": {
+    "message": "Pasiekta Gemini kvota. Patikrinkite paskyrą ir bandykite vėliau."
+  },
+  "error_service_error": {
+    "message": "Gemini nepavyko užbaigti vertimo. Bandykite vėliau."
+  },
+  "error_invalid_response": {
+    "message": "Gemini pateikė neskaitomą atsakymą. Galite bandyti dar kartą."
+  },
+  "error_output_too_large": {
+    "message": "Vertimas viršijo išvesties ribą. Pažymėkite mažiau teksto ir bandykite dar kartą."
+  },
+  "error_content_blocked": {
+    "message": "Gemini užblokavo šį tekstą. Bandykite kitą teksto dalį."
+  },
+  "error_unsupported_page": {
+    "message": "Šiame puslapyje versti negalima."
+  },
+  "error_frame_unavailable": {
+    "message": "Pasirinktas rėmelis nebepasiekiamas."
+  },
+  "error_cancelled": {
+    "message": "Vertimas atšauktas."
+  },
+  "key_Off": {
+    "message": "Išjungta"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Didžiosios raidės"
+  },
+  "key_Insert": {
+    "message": "Įterpti"
+  },
+  "key_Pause": {
+    "message": "Pauzė"
+  },
+  "key_ScrollLock": {
+    "message": "Slinkties užraktas"
+  },
+  "error_retry_delay": {
+    "message": " Bandykite dar kartą po $seconds$ sek.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator nustatymai"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Privatūs nustatymai greitam ir tikslingam vertimui."
+  },
+  "html_help_and_information": {
+    "message": "Pagalba ir informacija"
+  },
+  "html_api_key_guide": {
+    "message": "API rakto vadovas"
+  },
+  "html_about": {
+    "message": "Apie"
+  },
+  "html_privacy": {
+    "message": "Privatumas"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Nustatykite AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Atlikite šiuos veiksmus nustatymuose. Vertimui reikia jūsų Google API rakto."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Gaukite savo API raktą.</1> Atverkite <2>Google AI Studio</2>, prisijunkite ir sukurkite raktą. Toliau perskaitykite apie dalijimąsi duomenimis ir įklijuokite raktą. Pagalbą rasite <3>nuosekliame vadove</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Pasirinkite vertimo kalbą ir modelį.</1> Pasirinkite kalbą vertimams. Rekomenduojame Gemini Flash-Lite, jei jis yra jūsų modelių sąraše."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Išsaugokite ir pradėkite versti.</1> Puslapio apačioje pasirinkite „Baigti sąranką“. Tada pažymėkite tekstą tinklalapyje ir paspauskite Control arba dešiniojo pelės mygtuko meniu pasirinkite „Versti pažymėtą tekstą“."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Prijunkite savo Gemini API raktą ir pasirinkite suderinamą modelį."
+  },
+  "html_loading_setup_state": {
+    "message": "Įkeliama sąrankos būsena..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Prieš jungiantis prie Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google gauna API raktą galimiems modeliams tikrinti. Kai prašote vertimo, Google taip pat gauna pažymėtą tekstą ir vertimo kalbą, įskaitant tekstą iš vietinių failų. DI vertimai gali būti klaidingi."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Raktas išsaugomas užšifruotas šiame Chrome profilyje ir automatiškai atveriamas po paleidimo iš naujo. Papildomo slaptažodžio nereikia. Asmuo, turintis visišką prieigą prie naršyklės profilio, vis tiek gali jį atkurti. <1>Skaitykite privatumo informaciją</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Privaloma visose šalyse:</1> naudokite Gemini API raktą iš projekto su <2>aktyviu atsiskaitymu</2>. Išjunkite pasirenkamą <3>šio plėtinio užklausų žurnalų ir duomenų rinkinių bendrinimą su Google</3>. Su šiais nustatymais Google mokamų paslaugų sąlygos neleidžia naudoti įvesties ir atsakymų produktams tobulinti; saugumo ir teisinis tvarkymas išlieka. Plėtinys nemokamas, tačiau gali būti taikomi Google API mokesčiai."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Naudojimo sąlygos.</1> Naudodami Gemini šiame plėtinyje sutinkate laikytis nurodytų reikalavimų ir <2>Google sąlygų</2>. Naudojimas skirtas asmenims nuo 18 metų profesiniais ar verslo tikslais <3>palaikomuose regionuose</3>. Plėtinys netikrina atsiskaitymo ar bendrinimo nustatymų."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Sutinku ir jungiuosi prie Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Atšaukti sutikimą dalytis duomenimis"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Prieš prisijungdami perskaitykite dalijimosi duomenimis informaciją."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Kodėl reikia šių reikalavimų? Skaitykite DUK</1>."
+  },
+  "html_api_key": {
+    "message": "API raktas"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Sutikę įklijuokite raktą. Jis bus išsaugotas užšifruotas, o modeliai įkelti automatiškai."
+  },
+  "html_show": {
+    "message": "Rodyti"
+  },
+  "html_remove_saved_key": {
+    "message": "Pašalinti išsaugotą raktą"
+  },
+  "html_model": {
+    "message": "Modelis"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Žinomi tik medijai ar specialioms užduotims skirti modeliai paslėpti."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Rekomenduojame Gemini Flash-Lite šeimą. Šiai versijai (2026 m. rugsėjis) pasirinkome Gemini 3.5 Flash-Lite. Galite pasirinkti kitą sąrašo modelį. Kai kurie gali neveikti su šiuo plėtiniu. Jei modelis neveikia, pasirinkite kitą arba rekomenduojamą."
+  },
+  "html_refresh_models": {
+    "message": "Atnaujinti modelius"
+  },
+  "html_use_recommended_model": {
+    "message": "Naudoti rekomenduojamą modelį"
+  },
+  "html_translation": {
+    "message": "Vertimas"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Pasirinkite kalbą ir, jei norite, paleidimo klavišą."
+  },
+  "html_default_language": {
+    "message": "Numatytoji kalba"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Rezultato kortelė gali naudoti kitą kalbą nekeisdama šios numatytosios kalbos."
+  },
+  "html_keyboard_trigger": {
+    "message": "Paleidimo klavišas"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Atskiri klavišai gali konfliktuoti su svetainėmis ar prieinamumo priemonėmis. Pasirinkite „Išjungta“, jei norite naudoti tik kontekstinį meniu."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Įrašyti klavišą"
+  },
+  "html_off": {
+    "message": "Išjungta"
+  },
+  "html_behavior": {
+    "message": "Veikimas"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Fiksuotos apsaugos priemonės užtikrina spartų vertimą ir saugo API kvotą."
+  },
+  "html_parallel_requests": {
+    "message": "Lygiagrečios užklausos"
+  },
+  "html_request_timeout": {
+    "message": "Užklausos laiko riba"
+  },
+  "html_page_access": {
+    "message": "Prieiga prie puslapių"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Vietiniams failams plėtinio valdymo lange įjunkite prieigą prie failų URL."
+  },
+  "html_help_and_recovery": {
+    "message": "Pagalba ir atkūrimas"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Jei modelis nepasiekiamas, atnaujinkite modelius, pasirinkite vieną iš sąrašo ir išsaugokite nustatymus. Jei sąrašas neįkeliamas, patikrinkite raktą ir ryšį, tada pasirinkite „Atnaujinti modelius“."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome nustatymų puslapiai ir Chrome Web Store neleidžia versti. Vietiniams failams plėtinio valdymo lange įjunkite prieigą prie failų URL. Po plėtinio atnaujinimo ar pakartotinio įkėlimo atnaujinkite atvertus tinklalapius. Pakartotinis įkėlimas gali nutraukti vertimą."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Vertimui reikia interneto. Sutikus aukščiau, raktas siunčiamas tiesiai Google modeliams tikrinti. Pažymėtas tekstas, taip pat iš vietinių failų, siunčiamas su vertimo kalba tik paprašius vertimo. Išsaugotas raktas užšifruotas šiame Chrome profilyje. Kalba, modelis ir klavišas gali būti sinchronizuojami per Chrome. Plėtinys saugo tik paskutinį naršyklės seanso rezultatą, be vertimų istorijos."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Galite peržiūrėti dalijimąsi duomenimis aukščiau ir bet kada atšaukti sutikimą. Modelių tikrinimas ir vertimai sustos iki naujo sutikimo. Raktas išliks, jei nepasirinksite „Pašalinti išsaugotą raktą“."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Čia išsaugomi kalbos, modelio ir klavišo pakeitimai."
+  },
+  "html_reload_saved_settings": {
+    "message": "Iš naujo įkelti išsaugotus nustatymus"
+  },
+  "html_save_preferences": {
+    "message": "Išsaugoti nustatymus"
+  },
+  "html_gemini_translation": {
+    "message": "Vertimas su Gemini"
+  },
+  "html_setup_required": {
+    "message": "Reikia sąrankos"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Sveiki atvykę į AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Verskite pažymėtą tekstą į suprantamą kalbą. Pirmiausia nustatykite šiuos du dalykus:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Jūsų Gemini API raktas.</1> Gaukite savo raktą Google AI Studio. Vadove paaiškinta, kaip."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Vertimo kalba.</1> Pasirinkite kalbą, kuria norite skaityti."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Kaip gauti API raktą"
+  },
+  "html_extension_status": {
+    "message": "Plėtinio būsena"
+  },
+  "html_active_translations": {
+    "message": "Vykstantys vertimai"
+  },
+  "html_latest_this_session": {
+    "message": "Paskutinis seanso rezultatas"
+  },
+  "html_no_translation_yet": {
+    "message": "Vertimų dar nėra."
+  },
+  "html_copy": {
+    "message": "Kopijuoti"
+  },
+  "html_settings": {
+    "message": "Nustatymai"
+  },
+  "html_key_guide": {
+    "message": "Rakto vadovas"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Darbo su AI Translator pradžia"
+  },
+  "html_extension_pages": {
+    "message": "Plėtinio puslapiai"
+  },
+  "html_faq": {
+    "message": "DUK"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Gaukite savo Google API raktą, pasirinkite kalbą ir išverskite pirmą tekstą."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Gaukite API raktą"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API raktas leidžia plėtiniui naudoti Gemini per jūsų Google paskyrą. Saugokite jį kaip slaptažodį."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Plėtinys skirtas asmenims nuo 18 metų profesiniam ar verslo naudojimui <1>Google palaikomose šalyse ir regionuose</1>. Visose šalyse API raktas turi priklausyti Gemini projektui su aktyviu atsiskaitymu. Išjunkite pasirenkamą plėtinio užklausų žurnalų ir duomenų rinkinių bendrinimą su Google."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Naudodami plėtinį sutinkate laikytis šių sąlygų, <1>Google API sąlygų</1> ir <2>papildomų Gemini API sąlygų</2>. Nenaudokite jo, jei negalite jų laikytis. Plėtinys netikrina šių aplinkybių ir neprašo tapatybės dokumentų."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Atverti Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Prisijunkite prie Google paskyros. Jei prašoma, sutikite su Google sąlygomis."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Sukurti arba pasirinkti raktą"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API raktų puslapyje pasirinkite <1>Sukurti API raktą</1> ir pagal Google nurodymus pasirinkite arba sukurkite projektą. Projektas apima API naudojimą ir galimą atsiskaitymą. Jei AI Studio naudojate pirmą kartą, Google jau galėjo sukurti numatytąjį projektą ir raktą."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Jei esamo projekto nėra, atverkite <1>Valdymo skydas > Projektai > Importuoti projektus</1>. Importuokite projektą ir grįžkite prie API raktų."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Prieš naudodami raktą pagal <1>Google atsiskaitymo vadovą</1> patikrinkite, ar projekte aktyvus atsiskaitymas. Mokama Gemini programėlės prenumerata nepakeičia API projekto atsiskaitymo. Išjunkite pasirenkamą plėtinio žurnalų ir duomenų rinkinių bendrinimą su Google; skaitykite <2>Google žurnalų bendrinimo taisykles</2>. Privatūs projekto žurnalai nėra tas pats kaip bendrinimas."
+  },
+  "html_copy_your_key": {
+    "message": "Kopijuoti raktą"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Nukopijuokite raktą iš AI Studio. Grįžkite į plėtinio nustatymus ir perskaitykite duomenų bendrinimo informaciją. Pasirinkite <1>Sutinku ir jungiuosi prie Google</1>, tada įklijuokite raktą į lauką <2>API raktas</2>. Jis automatiškai užšifruojamas ir išsaugomas, tada įkeliamas modelių sąrašas. Prieš tęsdami palaukite rezultato."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator nustatymai su duomenų bendrinimo pranešimu ir sutikimo mygtuku virš tuščio API rakto lauko bei Flash-Lite rekomendacijos."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Pavyzdys anglų kalba. AI Translator: pirmiausia sutikite dalytis duomenimis, tada įklijuokite savo raktą. Modelių sąrašas tikrinamas išsaugojus užšifruotą raktą."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google gali keisti šiuos ekranus. Naujausius veiksmus ir pagalbą dėl rakto klaidų rasite <1>Google API rakto vadove</1>. Naudokite naują AI Studio raktą, jei senasis nebeveikia."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Pasirinkite vertimo nustatymus"
+  },
+  "html_choose_a_model": {
+    "message": "Pasirinkti modelį"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Rekomenduojame Gemini Flash-Lite šeimą. Šiai 2026 m. rugsėjo versijai pasirinkome <1>Gemini 3.5 Flash-Lite</1>. Naudokite jį, jei jis yra modelių sąraše."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Galite pasirinkti kitą sąrašo modelį. Kai kurie gali neveikti su plėtiniu. Jei modelis neveikia, pasirinkite kitą arba rekomenduojamą."
+  },
+  "html_choose_your_target_language": {
+    "message": "Pasirinkite vertimo kalbą"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Kalbą, kuria norite skaityti, pasirinkite lauke <1>Numatytoji kalba</1>. Pasirinkimai atitinka <2>Google dokumentuotas Gemini kalbas</2>. Vertimo kokybė gali skirtis pagal kalbą ir tekstą."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator vertimo nustatymai su vertimo kalbos pasirinkimu ir paleidimo klavišo valdikliais."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Pavyzdys anglų kalba. Pasirinkite vertimo kalbą ir baikite sąranką."
+  },
+  "html_finish_setup": {
+    "message": "Baigti sąranką"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Palikite Control, įrašykite kitą klavišą arba pasirinkite <1>Išjungta</1>, kad naudotumėte tik dešiniojo pelės mygtuko meniu. Nustatymų apačioje pasirinkite <2>Baigti sąranką</2>. Vėliau pasirinkimus galėsite pakeisti mygtuku <3>Išsaugoti nustatymus</3>."
+  },
+  "html_open_settings": {
+    "message": "Atverti nustatymus"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Išverskite pirmą pažymėtą tekstą"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Atverkite įprastą tinklalapį ir pažymėkite trumpą tekstą. Dešiniuoju mygtuku pasirinkite <1>Versti pažymėtą tekstą</1> arba paspauskite ir atleiskite pasirinktą klavišą. Rezultatas pasirodys šalia pažymėtos vietos."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Jei plėtinys ką tik įdiegtas ar įkeltas iš naujo, pirmiausia atnaujinkite tinklalapį. Chrome nustatymai, Chrome Web Store ir įtaisyta PDF peržiūros priemonė neleidžia versti."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Įrankių juostos langas rodo paskutinį rezultatą. Baigus sąranką atveriamas įprastas vaizdas. Pašalinus API raktą, vėl pasirodo pradžios vadovas."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "DUK: raktai, išlaidos ir privatumas"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Kodėl reikia savo API rakto?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Plėtinys siunčia užklausas tiesiai į jūsų Google projektą su jūsų raktu. Tai projektavimo sprendimas, ne Chrome taisyklė. Raktas leidžia užklausas ir susieja jas su naudojimu bei atsiskaitymu. Niekada jo neskelbkite ekrano kopijose ar viešose žinutėse. Žr. <1>Google API rakto vadovą</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Kodėl aktyvus atsiskaitymas privalomas, o ne tik rekomenduojamas?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome <1>Limited Use taisyklių 3 ir 5 punktai</1> riboja duomenų naudojimą iki plėtinio paskirties ir susijusių veiksmų. Kai kurie nemokami Gemini naudojimo būdai leidžia platesnį mokymą ir žmonių peržiūrą. Mokamos sąlygos draudžia produktų tobulinimą, bet leidžia ribotą saugojimą saugumo ir teisiniais tikslais bei tvarkymą už ES ribų."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Šiam prieštaravimui spręsti kūrėjas reikalauja aktyvaus projekto atsiskaitymo visame pasaulyje. Rekomendacija vis tiek leistų nemokamą naudojimą. Google regioninė taisyklė reikalauja mokamų paslaugų programėlėms, siūlomoms EEE, Jungtinėje Karalystėje ir Šveicarijoje. Žr. <1>Gemini sąlygas: naudojimo apribojimai, nemokamos ir mokamos paslaugos</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Kodėl pasirenkamas bendrinimas su Google turi būti išjungtas?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Žurnalų ar duomenų rinkinių bendrinimas gali leisti mokymą ir žmonių peržiūrą net esant aktyviam atsiskaitymui. Neteikite plėtinio duomenų per duomenų rinkinių bendrinimą ar atsiliepimus. Privatūs jūsų projekto žurnalai leidžiami. Žr. <1>Google žurnalų taisykles: bendrinami duomenys ir jų naudojimas</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Ar plėtinys nemokamas, jei reikia mokamos API prieigos?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Taip. Plėtinys nemokamas, bet gali būti Google API mokesčių. Mokama Gemini programėlės prenumerata nepakeičia API projekto atsiskaitymo. Žr. <1>kaip patikrinti atsiskaitymą</1> ir <2>Google API kainas</2>. Plėtinys netikrina atsiskaitymo ar bendrinimo nustatymų."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Kodėl reikia pasirinkti „Sutinku ir jungiuosi prie Google“?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome <1>informacijos atskleidimo reikalavimų 1 ir 2 punktai</1> reikalauja aiškios informacijos apie duomenis ir informuoto sutikimo. Mygtukas leidžia pasirinkti prieš pirmą Google API užklausą. Jis netikrina tapatybės ar atsiskaitymo ir nesuteikia leidimo bendrinti kitų žmonių privačios informacijos."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Kas tiksliai siunčiama Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Modelių tikrinimas siunčia raktą ir prašo galimų modelių. Vertimas siunčia pažymėtą tekstą, vertimo kalbą, modelį ir vertimo nurodymus, įskaitant vietinių failų tekstą. Plėtinys neprideda viso puslapio, jo adreso ar naršymo istorijos. Google gauna ir ryšio informaciją, pavyzdžiui, IP adresą. Kūrėjas negauna šių užklausų. Siųskite tik tekstą, kurį galite bendrinti."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Kaip raktas išsaugomas ir automatiškai atveriamas?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API raktas išsaugomas užšifruotas. Jis ir šifravimo raktas lieka šiame Chrome profilyje automatiniam naudojimui po paleidimo iš naujo. Jie nesinchronizuojami. Profilį pasiekiantis žmogus vis tiek gali atkurti API raktą. Tai nėra sistemos raktinė ar slaptažodžiu saugomas seifas. Kalba, modelis ir klavišas gali sinchronizuotis. Tik paskutinis rezultatas išlieka seanso metu; nėra analitikos ar vertimų istorijos."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Atnaujinimas užšifruoja ir patikrina seną išsaugotą raktą prieš ištrinant neužšifruotas kopijas. Jei tai nepavyksta, sena kopija išlieka, o užklausos tebėra blokuojamos. Nustatymai paaiškina klaidą. Seno rakto perkėlimas neapeina sutikimo."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Ar galiu atšaukti sutikimą arba pašalinti raktą?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>Nustatymuose</1> <2>Atšaukti sutikimą dalytis duomenimis</2> blokuoja naujas užklausas ir vietoje atšaukia aktyvias, išsaugant raktą bei nustatymus. <3>Pašalinti išsaugotą raktą</3> ištrina raktą, šifravimo raktą ir modelių podėlį. Nei vienas veiksmas neatšaukia jau išsiųstų duomenų ir negarantuoja, kad išsiųsta užklausa taps nemokama. Atšaukite raktą AI Studio, kad išjungtumėte jį ir Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Sutikimas išlieka po įprastų paleidimų iš naujo ir atnaujinimų. Jei pranešimas pasikeičia, užklausos laukia, kol jį perskaitysite ir vėl sutiksite."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Kodėl tik suaugusiesiems ir profesiniam ar verslo naudojimui?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google reikalauja bent 18 metų amžiaus ir profesinio ar verslo naudojimo palaikomuose regionuose. Žr. <1>Gemini sąlygas: amžiaus reikalavimai ir naudojimo apribojimai</1> bei <2>galimus regionus</2>. Plėtinys neturi atskiro tinkamumo langelio ar tapatybės patikros."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Kodėl reikia privatumo politikos be šio pranešimo?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Pranešimas paaiškina pasirinkimą prieš prisijungimą. Politika pateikia išsamią informaciją apie duomenis, saugojimą ir pašalinimą. Chrome <1>privatumo politikos taisyklės</1> to reikalauja iš plėtinių, tvarkančių naudotojų duomenis. Skaitykite <2>mūsų privatumo politiką</2>. Šie pranešimai nereiškia, kad Google patvirtino plėtinį."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "DI vertimai gali būti klaidingi. Patikrinkite svarbias formuluotes prieš jomis pasikliaudami."
+  },
+  "html_about_ai_translator": {
+    "message": "Apie AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Verskite lengvai: pažymėkite tekstą ir paspauskite Control."
+  },
+  "html_made_for_people": {
+    "message": "Sukurta žmonėms"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Sukūriau AI Translator, kad padėčiau žmonėms skaityti, mokytis ir bendrauti tarp kalbų. Tikiuosi, kad jis naudingas žmonėms visame pasaulyje."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Plėtinys verčia pažymėtą tekstą su jūsų Google Gemini API raktu. Jūs pasirenkate, ką siųsti ir kuria kalba skaityti."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Pažymėtam tekstui versti paspauskite ir atleiskite Control. Tai numatytasis klavišas, kurį galite pakeisti nustatymuose. Galite naudoti ir puslapio dešiniojo pelės mygtuko meniu."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Rankiniu būdu išbandyta tik Mac. Windows ir Linux rankiniu būdu nebandyti."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Peržiūrėti pirminį kodą ir projekto vadovą</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Gauti pagalbos arba pranešti apie problemą</1>. Pranešimai vieši. Neįtraukite API raktų, privataus teksto ar asmeninių duomenų."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Jei norite paremti mano darbą"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Paremkite mano šalį Ukrainą, besiginančią nuo Rusijos agresijos."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Pasitikiu Sternenko Community Foundation. Jei galite ir norite padėti, galite aukoti oficialioje fondo svetainėje."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Paremti Ukrainą per fondą</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Parama neprivaloma ir jos niekada nereikia plėtiniui naudoti. Nuoroda atveria išorinę svetainę. Aukos perduodamos per fondą, ne plėtinį."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privatumas ir išlaidos"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API raktas užšifruotas šiame įrenginyje ir nesinchronizuojamas. Jis išlieka pasiekiamas po įprastų Chrome paleidimų iš naujo be atrakinimo slaptažodžio. Profilį pasiekiantis žmogus vis tiek gali jį atkurti."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Prieš pirmą Google užklausą nustatymai paaiškina duomenų bendrinimą ir prašo pasirinkti <1>Sutinku ir jungiuosi prie Google</1>. Tada pažymėtas tekstas siunčiamas tiesiai Google tik paprašius vertimo. Modelių tikrinimas siunčia raktą, bet ne pažymėtą tekstą. Plėtinys neturi analitikos, reklamos ar vertimų istorijos."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Informaciją bet kada skaitykite <1>Nustatymuose</1>. <2>Atšaukti sutikimą dalytis duomenimis</2> sustabdo naujas užklausas ir išsaugo užšifruotą raktą bei nustatymus. <3>Pašalinti išsaugotą raktą</3> ištrina raktą ir modelių podėlį. Išsiųstų duomenų atšaukti negalima."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Vertimus kuria DI, todėl jie gali būti klaidingi. Prieš pasikliaudami patikrinkite svarbias formuluotes."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Skaitykite privatumo informaciją</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator yra nemokamas nepriklausomas projektas. Gali būti taikomi Google API mokesčiai. Visose šalyse naudokite Gemini API raktą iš projekto su <1>aktyviu atsiskaitymu</1> ir išjunkite pasirenkamą <2>plėtinio užklausų žurnalų bei duomenų rinkinių bendrinimą su Google</2>. Mokamos sąlygos tuomet draudžia naudoti įvestį ir atsakymus produktų tobulinimui; saugumo ir teisinis tvarkymas išlieka. Skaitykite <3>Google kainų ir duomenų naudojimo informaciją</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Plėtinys skirtas asmenims nuo 18 metų profesiniam ar verslo naudojimui <1>Google palaikomuose regionuose</1>. Naudodami sutinkate laikytis sąlygų, <2>Google API sąlygų</2> ir <3>papildomų Gemini API sąlygų</3>. Nenaudokite, jei negalite jų laikytis. Nėra tinkamumo langelio ar tapatybės patikros. Plėtinys netikrina atsiskaitymo ar bendrinimo."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Neišsaugoti pakeitimai."
+  },
+  "runtime_settings_conflict": {
+    "message": "Nustatymai pasikeitė kitame puslapyje. Jūsų pakeitimai lieka čia. Iš naujo įkelkite išsaugotus nustatymus, kad atmestumėte pakeitimus ir naudotumėte išsaugotas reikšmes."
+  },
+  "runtime_preferences_current": {
+    "message": "Nustatymai atnaujinti."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Nepavyksta atverti išsaugoto rakto. Iš naujo atverkite nustatymus arba pašalinkite ir iš naujo įveskite raktą."
+  },
+  "runtime_key_conflict": {
+    "message": "API raktas pasikeitė kitame puslapyje. Prieš išsaugodami raktą iš naujo įkelkite išsaugotus nustatymus."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Raktas išsaugotas užšifruotas. Prieš prisijungdami prie Google sutikite dalytis duomenimis."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Prieš pridėdami API raktą aukščiau sutikite dalytis duomenimis."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini atmetė išsaugotą raktą. Pakeiskite jį arba patikrinkite dar kartą pasirinkę „Atnaujinti modelius“."
+  },
+  "runtime_paste_key": {
+    "message": "Įklijuokite API raktą prisijungti prie Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "API raktas išsaugotas. Gemini jį priėmė per paskutinį modelių sąrašo tikrinimą."
+  },
+  "runtime_key_saved_check": {
+    "message": "API raktas išsaugotas užšifruotas įrenginyje. Atnaujinkite modelius, kad patikrintumėte jį su Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Bandyti atšaukti dar kartą"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Atšaukti sutikimą dalytis duomenimis"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Atšaukimas nepatvirtintas. Bandykite dar kartą išsaugoti pasirinkimą."
+  },
+  "runtime_agreement_saved": {
+    "message": "Duomenų bendrinimas patvirtintas šiam Chrome profiliui. Sutikimą galite atšaukti bet kada."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Be sutikimo prie Google nesijungiama. Atšaukus sutikimą raktas išlieka."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini atmetė išsaugotą raktą. Pakeiskite jį toliau."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Raktas išsaugotas užšifruotas šiame įrenginyje."
+  },
+  "runtime_setup_create_key": {
+    "message": "Sukurkite savo raktą Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Kalba pasirinkta. Baikite sąranką ir išsaugokite pasirinkimus."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Toliau pasirinkite vertimo kalbą."
+  },
+  "runtime_finish_setup": {
+    "message": "Baigti sąranką"
+  },
+  "runtime_save_preferences": {
+    "message": "Išsaugoti nustatymus"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Pridėkite API raktą, patikrinkite modelių sąrašą ir išsaugokite modelio pasirinkimą."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Prieš versdami išspręskite nustatymų konfliktą."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Perskaitykite ir patvirtinkite duomenų bendrinimą prieš jungdamiesi prie Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Baikite išsaugoti API raktą prieš tikrindami sąranką."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Reikia patikrinti sąranką: Gemini atmetė išsaugotą API raktą."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Raktas išsaugotas. Pasirinkite vertimo kalbą ir baikite sąranką."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Pasirinkite pasiekiamą modelį ir išsaugokite nustatymus."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Modelis pasirinktas. Išsaugokite nustatymus, kad jį naudotumėte."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Raktas ir kalba paruošti. Baikite sąranką, išsaugokite pasirinkimus ir pabandykite versti. Modelių prieiga ir kvota dar gali keistis."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Galima bandyti versti. Išsaugotas modelis yra patikrintame sąraše, tačiau prieiga ir kvota dar gali keistis."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Raktas išsaugotas. Atnaujinkite modelius ir patikrinkite raktą bei pasirinktą modelį."
+  },
+  "runtime_show_key": {
+    "message": "Rodyti"
+  },
+  "runtime_hide_key": {
+    "message": "Slėpti"
+  },
+  "runtime_choose_target_language": {
+    "message": "Pasirinkite vertimo kalbą"
+  },
+  "runtime_background_no_response": {
+    "message": "Plėtinio foninis procesas neatsakė. Iš naujo įkelkite plėtinį ir bandykite dar kartą."
+  },
+  "runtime_refresh_models": {
+    "message": "Atnaujinti modelius"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Prieš įkeldami modelius sutikite dalytis duomenimis."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Baikite išsaugoti API raktą prieš atnaujindami modelius."
+  },
+  "runtime_refreshing": {
+    "message": "Atnaujinama..."
+  },
+  "runtime_loading": {
+    "message": "Įkeliama..."
+  },
+  "runtime_models_checking": {
+    "message": "Tikrinami suderinami Gemini modeliai..."
+  },
+  "runtime_models_loading": {
+    "message": "Įkeliami suderinami modeliai..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Nepavyko įkelti suderinamų modelių."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini nepateikė suderinamų modelių."
+  },
+  "runtime_model_not_available": {
+    "message": "Pasirinkto modelio nėra suderinamame sąraše. Pasirinkite kitą."
+  },
+  "runtime_record_key": {
+    "message": "Įrašyti klavišą"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Klavišo įrašymas atšauktas."
+  },
+  "runtime_unknown_key": {
+    "message": "Šis klavišas"
+  },
+  "runtime_press_key": {
+    "message": "Paspauskite klavišą..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Paspauskite palaikomą klavišą, kuris neįveda ženklo. Norėdami atšaukti, paspauskite Escape."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Atnaujinkite modelius, kad patikrintumėte išsaugotą API raktą."
+  },
+  "runtime_models_add_key": {
+    "message": "Pridėkite API raktą suderinamiems modeliams įkelti."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Plėtiniui nepavyko įkelti išsaugotos būsenos."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini atmetė išsaugotą API raktą. Pakeiskite jį arba atnaujinkite modelius ir patikrinkite dar kartą."
+  },
+  "runtime_settings_reopen": {
+    "message": "Nepavyko įkelti nustatymų. Atverkite juos iš naujo ir bandykite dar kartą."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Nepavyko įkelti nustatymų. Iš naujo įkelkite išsaugotus nustatymus ir bandykite dar kartą. Saugojimas išjungtas jūsų pasirinkimams apsaugoti."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Nepavyko įkelti sąrankos būsenos."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Įveskite visą API raktą be tarpų."
+  },
+  "runtime_key_use_remove": {
+    "message": "Norėdami ištrinti raktą pasirinkite „Pašalinti išsaugotą raktą“."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Prieš išsaugodami API raktą aukščiau sutikite dalytis duomenimis."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API raktas saugomas užšifruotas..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Nepavyko perskaityti ar išsaugoti API rakto. Įvestis išliko. Bandykite dar kartą pasirinkę „Išsaugoti nustatymus“."
+  },
+  "runtime_connecting_google": {
+    "message": "Jungiamasi prie Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Stabdomi ryšiai su Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Nepavyko išsaugoti duomenų sutikimo. Bandykite dar kartą."
+  },
+  "runtime_key_removing": {
+    "message": "Šalinamas išsaugotas raktas..."
+  },
+  "runtime_key_removed": {
+    "message": "Išsaugotas raktas pašalintas. Sutikę dalytis duomenimis galėsite pridėti naują."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Nepavyko pašalinti išsaugoto rakto. Bandykite dar kartą."
+  },
+  "runtime_saving": {
+    "message": "Saugoma..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Pasirinkite tinkamą kalbą ir modelį."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Pasirinkite palaikomą paleidimo klavišą arba „Išjungta“."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Pasirinkite modelį iš dabartinio suderinamo sąrašo."
+  },
+  "runtime_preferences_saving": {
+    "message": "Saugomi nustatymai..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Nustatymai išsaugoti."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Nustatymai išsaugoti. Pridėkite API raktą ir baikite sąranką."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Nepavyko perskaityti ar išsaugoti nustatymų. Pakeitimai išliko. Bandykite dar kartą."
+  },
+  "runtime_key_will_save": {
+    "message": "API raktas bus išsaugotas automatiškai."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Baikite įvesti API raktą."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Baikite išsaugoti API raktą suderinamiems modeliams įkelti."
+  },
+  "runtime_recommended_selected": {
+    "message": "Rekomenduojamas modelis pasirinktas. Išsaugokite pasirinkimą, kad jį naudotumėte."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Išsaugojus paleidimo klavišas bus išjungtas."
+  },
+  "runtime_connection_changed": {
+    "message": "Ryšio nustatymai pasikeitė. Tikrinami išsaugoti nustatymai..."
+  },
+  "runtime_models_changed": {
+    "message": "Modelių sąrašas pasikeitė. Tikrinami suderinami modeliai..."
+  },
+  "runtime_no_translation": {
+    "message": "Vertimų dar nėra."
+  },
+  "runtime_start_setup": {
+    "message": "Pradėti sąranką"
+  },
+  "runtime_settings": {
+    "message": "Nustatymai"
+  },
+  "runtime_key_rejected": {
+    "message": "Raktas atmestas"
+  },
+  "runtime_setup_required": {
+    "message": "Reikia sąrankos"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Nustatymuose pridėkite API raktą ir pradėkite versti."
+  },
+  "runtime_add_key": {
+    "message": "Pridėti API raktą"
+  },
+  "runtime_finish_model_language": {
+    "message": "Raktas išsaugotas. Atverkite nustatymus modeliui patikrinti ir kalbos pasirinkimui baigti."
+  },
+  "runtime_check_setup": {
+    "message": "Patikrinti sąranką"
+  },
+  "runtime_translating": {
+    "message": "Verčiama"
+  },
+  "runtime_error": {
+    "message": "Klaida"
+  },
+  "runtime_ready": {
+    "message": "Paruošta"
+  },
+  "runtime_status_load_failed": {
+    "message": "Nepavyko įkelti plėtinio būsenos. Iš naujo įkelkite plėtinį ir atnaujinkite puslapį."
+  },
+  "runtime_copied": {
+    "message": "Nukopijuota."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopijavimas užblokuotas. Pažymėkite rezultato tekstą ir nukopijuokite."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Nepavyko atverti nustatymų. Bandykite dar kartą."
+  },
+  "runtime_translating_progress": {
+    "message": "Verčiama..."
+  },
+  "runtime_translation_started": {
+    "message": "Vertimas pradėtas."
+  },
+  "runtime_translation_complete": {
+    "message": "Vertimas baigtas."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Vertimas baigtas. Naudokite rezultato tekstą arba kortelės valdiklius."
+  },
+  "runtime_translation": {
+    "message": "Vertimas"
+  },
+  "runtime_target_language": {
+    "message": "Vertimo kalba"
+  },
+  "runtime_card_target_language": {
+    "message": "Šios kortelės vertimo kalba"
+  },
+  "runtime_close_card": {
+    "message": "Uždaryti vertimo kortelę"
+  },
+  "runtime_translated_text": {
+    "message": "Išverstas tekstas"
+  },
+  "runtime_retry": {
+    "message": "Bandyti dar kartą"
+  },
+  "runtime_copy": {
+    "message": "Kopijuoti"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Nepavyko atverti nustatymų. Naudokite plėtinio įrankių juostą."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopijuoti nepavyko. Pažymėkite rezultato tekstą ir nukopijuokite."
+  },
+  "runtime_context_menu": {
+    "message": "Versti pažymėtą tekstą"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Nėra dabartiniame sąraše)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Dar nepatikrinta)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Naudojamas podėlio modelių sąrašas nuo $value1$. Tiesioginis atnaujinimas nepavyko. Bandykite vėliau.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Naudojamas podėlio modelių sąrašas. Tiesioginis atnaujinimas nepavyko. Bandykite vėliau."
+  },
+  "runtime_models_cache_at": {
+    "message": "Naudojamas podėlio modelių sąrašas nuo $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Naudojamas podėlio modelių sąrašas."
+  },
+  "runtime_models_updated_at": {
+    "message": "Modelių sąrašas atnaujintas: $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Modelių sąrašas atnaujintas."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ nepalaikomas. Paspauskite kitą klavišą arba Escape, kad atšauktumėte.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Išsaugojus bus naudojamas $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Iki $value1$ viename skirtuke ir $value2$ iš viso",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ sek.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Paspauskite Tab kortelei naudoti arba Escape jai uždaryti.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Vertimas nepavyko. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Atnaujinkite atvertus puslapius"
+  },
+  "refresh_message": {
+    "message": "API raktas išsaugotas. Baigę sąranką atnaujinkite jau atvertus puslapius. Tada pažymėkite tekstą ir paspauskite Control, kad išverstumėte."
+  },
+  "refresh_continue": {
+    "message": "Tęsti sąranką"
+  },
+  "refresh_faq_question": {
+    "message": "Kodėl reikia atnaujinti atvertus puslapius?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Atnaujinkite atvertus puslapius</1> baigę sąranką, prieš bandydami versti. Chrome turi įkelti plėtinį į puslapius, kurie buvo atverti prieš įdiegimą ar įkėlimą iš naujo. Nauji puslapiai paruošiami automatiškai."
+  },
+  "ui_locale": {
+    "message": "lt",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

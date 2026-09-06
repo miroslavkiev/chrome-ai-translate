@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Tafsiri rahisi sana: chagua maandishi na ubonyeze Control. Tafsiri kwa lugha unayotaka kwa Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Chagua maandishi na ujaribu tena."
+  },
+  "error_unsupported_selection": {
+    "message": "Uchaguzi huu wa maandishi hautumiki."
+  },
+  "error_selection_too_large": {
+    "message": "Maandishi yaliyochaguliwa yana zaidi ya herufi 10,000. Chagua machache na ujaribu tena."
+  },
+  "error_missing_api_key": {
+    "message": "Ongeza ufunguo wako wa Gemini API kwenye Mipangilio."
+  },
+  "error_agreement_required": {
+    "message": "Kabla ya kuunganisha Google, soma na ukubali kushiriki data kwenye Mipangilio."
+  },
+  "error_credential_conflict": {
+    "message": "Ufunguo uliohifadhiwa umebadilika kwenye ukurasa mwingine. Pakia upya mipangilio iliyohifadhiwa kabla ya kujaribu tena."
+  },
+  "error_credential_storage_error": {
+    "message": "Ufunguo uliohifadhiwa hauwezi kufunguliwa. Fungua Mipangilio tena au uondoe ufunguo na uuweke upya."
+  },
+  "error_missing_target_language": {
+    "message": "Chagua lugha lengwa kwenye Mipangilio ili kumaliza usanidi."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini imekataa ufunguo wa API. Uangalie kwenye Mipangilio."
+  },
+  "error_invalid_model": {
+    "message": "Muundo huu hauwezi kutumika kutafsiri. Chagua mwingine au Flash-Lite inayopendekezwa kwenye Mipangilio."
+  },
+  "error_busy": {
+    "message": "Tafsiri nyingi sana zinaendelea. Jaribu baada ya moja kumalizika."
+  },
+  "error_duplicate_request": {
+    "message": "Maandishi haya tayari yanatafsiriwa."
+  },
+  "error_rate_limited": {
+    "message": "Kikomo cha maombi kimefikiwa. Jaribu tena hivi karibuni."
+  },
+  "error_timeout": {
+    "message": "Tafsiri imechukua muda mrefu sana. Unaweza kujaribu tena."
+  },
+  "error_offline": {
+    "message": "Inaonekana huna intaneti. Angalia muunganisho na ujaribu tena."
+  },
+  "error_network_error": {
+    "message": "Gemini haikuweza kufikiwa. Angalia muunganisho na ujaribu tena."
+  },
+  "error_quota_exceeded": {
+    "message": "Kiwango cha matumizi ya Gemini kimefikiwa. Angalia akaunti yako na ujaribu baadaye."
+  },
+  "error_service_error": {
+    "message": "Gemini haikuweza kumaliza tafsiri. Jaribu baadaye."
+  },
+  "error_invalid_response": {
+    "message": "Gemini imerudisha jibu lisilosomeka. Unaweza kujaribu tena."
+  },
+  "error_output_too_large": {
+    "message": "Tafsiri imezidi kikomo cha matokeo. Chagua maandishi machache na ujaribu tena."
+  },
+  "error_content_blocked": {
+    "message": "Gemini imezuia maandishi haya. Jaribu kuchagua mengine."
+  },
+  "error_unsupported_page": {
+    "message": "Tafsiri haipatikani kwenye ukurasa huu."
+  },
+  "error_frame_unavailable": {
+    "message": "Fremu iliyochaguliwa haipatikani tena."
+  },
+  "error_cancelled": {
+    "message": "Tafsiri imeghairiwa."
+  },
+  "key_Off": {
+    "message": "Imezimwa"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Jaribu tena baada ya sekunde $seconds$.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Mipangilio ya AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Mipangilio binafsi ya tafsiri ya haraka na makini."
+  },
+  "html_help_and_information": {
+    "message": "Msaada na taarifa"
+  },
+  "html_api_key_guide": {
+    "message": "Mwongozo wa ufunguo wa API"
+  },
+  "html_about": {
+    "message": "Kuhusu"
+  },
+  "html_privacy": {
+    "message": "Faragha"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Sanidi AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Fuata hatua hizi kwenye Mipangilio. Unahitaji ufunguo wako wa Google API kutafsiri."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Pata ufunguo wako wa API.</1> Fungua <2>Google AI Studio</2>, ingia na utengeneze ufunguo. Soma kuhusu kushiriki data hapa chini, kisha ubandike ufunguo. Kwa msaada, <3>soma mwongozo wa hatua kwa hatua</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Chagua lugha lengwa na muundo.</1> Chagua lugha ya tafsiri zako. Tunapendekeza Gemini Flash-Lite ikiwa inapatikana kwenye orodha yako."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Hifadhi na uanze kutafsiri.</1> Tumia Maliza usanidi chini ya ukurasa. Kisha chagua maandishi kwenye ukurasa wa wavuti na ubonyeze Control, au uchague Tafsiri Maandishi Yaliyochaguliwa kwenye menyu ya kubofya kulia."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Unganisha ufunguo wako wa Gemini API na uchague muundo unaoendana."
+  },
+  "html_loading_setup_state": {
+    "message": "Inapakia hali ya usanidi..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Kabla ya kuunganisha Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google hupokea ufunguo wa API kuangalia miundo inayopatikana. Ukiomba tafsiri, Google pia hupokea maandishi yaliyochaguliwa na lugha lengwa, yakiwemo ya faili za kifaa. Tafsiri za AI zinaweza kuwa na makosa."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Ufunguo wako unahifadhiwa ukiwa umesimbwa katika wasifu huu wa Chrome na hufunguka moja kwa moja baada ya kuanzisha upya. Huhitaji nenosiri la ziada. Mtu mwenye ufikiaji kamili wa wasifu wa kivinjari bado anaweza kuupata. <1>Soma maelezo ya faragha</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Ni lazima katika kila nchi:</1> tumia ufunguo wa Gemini API wa mradi wenye <2>utozaji ulio hai</2>. Acha <3>ushiriki wa hiari wa kumbukumbu za maombi na seti za data za kiendelezi hiki na Google</3> ukiwa umezimwa. Kwa mipangilio hii, masharti ya kulipia ya Google hayaruhusu maombi na majibu kutumika kuboresha bidhaa; uchakataji wa usalama na sheria unaendelea. Kiendelezi ni bure, lakini ada za Google API zinaweza kutumika."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Masharti ya matumizi.</1> Kwa kutumia Gemini kupitia kiendelezi hiki, unakubali mahitaji hapo juu na <2>masharti ya Google</2>. Matumizi ni ya watu wenye miaka 18 au zaidi kwa shughuli za kitaalamu au biashara katika <3>maeneo yanayotumika</3>. Kiendelezi hakihakiki mipangilio yako ya utozaji au kushiriki."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Kubali na uunganishe Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Ondoa idhini ya kushiriki data"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Soma maelezo ya kushiriki data kabla ya kuunganisha."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Kwa nini mahitaji haya yanahitajika? Soma maswali ya kawaida</1>."
+  },
+  "html_api_key": {
+    "message": "Ufunguo wa API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Baada ya kukubali, bandika ufunguo ili uhifadhiwe umesimbwa na miundo ipakiwe moja kwa moja."
+  },
+  "html_show": {
+    "message": "Onyesha"
+  },
+  "html_remove_saved_key": {
+    "message": "Ondoa ufunguo uliohifadhiwa"
+  },
+  "html_model": {
+    "message": "Muundo"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Miundo inayojulikana ya media pekee na ya madhumuni maalumu imefichwa."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Tunapendekeza familia ya Gemini Flash-Lite. Kwa toleo hili la Septemba 2026 tumechagua Gemini 3.5 Flash-Lite. Unaweza kuchagua muundo mwingine kwenye orodha. Baadhi ya miundo huenda isifanye kazi na kiendelezi. Ikishindwa, chagua mwingine au unaopendekezwa."
+  },
+  "html_refresh_models": {
+    "message": "Onyesha upya miundo"
+  },
+  "html_use_recommended_model": {
+    "message": "Tumia muundo unaopendekezwa"
+  },
+  "html_translation": {
+    "message": "Tafsiri"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Weka lugha na kitufe cha hiari cha kuanzisha."
+  },
+  "html_default_language": {
+    "message": "Lugha chaguomsingi"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Kadi ya matokeo inaweza kutumia lugha nyingine bila kubadilisha hii chaguomsingi."
+  },
+  "html_keyboard_trigger": {
+    "message": "Kitufe cha kuanzisha"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Vitufe kimoja kimoja vinaweza kugongana na tovuti au zana za ufikivu. Chagua Imezimwa ili utumie menyu ya muktadha pekee."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Rekodi kitufe"
+  },
+  "html_off": {
+    "message": "Imezimwa"
+  },
+  "html_behavior": {
+    "message": "Tabia"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Kinga zisizobadilika hudumisha kasi ya tafsiri na kulinda kiwango cha matumizi ya API."
+  },
+  "html_parallel_requests": {
+    "message": "Maombi ya wakati mmoja"
+  },
+  "html_request_timeout": {
+    "message": "Muda wa mwisho wa ombi"
+  },
+  "html_page_access": {
+    "message": "Ufikiaji wa kurasa"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Kwa faili za kifaa, washa Ruhusu ufikiaji wa URL za faili kwenye usimamizi wa kiendelezi"
+  },
+  "html_help_and_recovery": {
+    "message": "Msaada na urejeshaji"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Muundo usipopatikana, onyesha upya miundo, chagua mmoja na uhifadhi mapendeleo. Orodha isipakike, angalia ufunguo na muunganisho kisha ujaribu Onyesha upya miundo."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Kurasa za mipangilio ya Chrome na Chrome Web Store haziruhusu tafsiri. Kwa faili za kifaa, ruhusu ufikiaji wa URL za faili kwenye usimamizi wa kiendelezi. Baada ya kusasisha au kupakia upya kiendelezi, onyesha upya kurasa zilizo wazi. Kupakia upya kunaweza kukatiza tafsiri."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Tafsiri inahitaji intaneti. Baada ya kukubali hapo juu, ufunguo hutumwa moja kwa moja kwa Google kwa ukaguzi wa miundo. Maandishi yaliyochaguliwa, yakiwemo ya faili za kifaa, hutumwa na lugha lengwa tu ukiomba tafsiri. Ufunguo uliohifadhiwa umesimbwa katika wasifu huu wa Chrome. Lugha, muundo na kitufe vinaweza kusawazishwa kupitia Chrome. Kiendelezi huhifadhi matokeo ya mwisho tu ya kipindi hiki cha kivinjari na hakina historia ya tafsiri."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Unaweza kusoma kushiriki data hapo juu na kuondoa idhini wakati wowote. Ukaguzi wa miundo na tafsiri husimama hadi ukubali tena. Ufunguo huhifadhiwa isipokuwa uchague Ondoa ufunguo uliohifadhiwa."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Mabadiliko ya lugha, muundo na kitufe yanahifadhiwa hapa."
+  },
+  "html_reload_saved_settings": {
+    "message": "Pakia upya mipangilio iliyohifadhiwa"
+  },
+  "html_save_preferences": {
+    "message": "Hifadhi mapendeleo"
+  },
+  "html_gemini_translation": {
+    "message": "Tafsiri ya Gemini"
+  },
+  "html_setup_required": {
+    "message": "Usanidi unahitajika"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Karibu AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Tafsiri maandishi uliyochagua katika lugha unayoijua. Sanidi mambo haya mawili kuanza:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Ufunguo wako wa Gemini API.</1> Pata ufunguo wako kutoka Google AI Studio. Mwongozo wetu unaonyesha jinsi."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Lugha yako lengwa.</1> Chagua lugha unayotaka kusoma."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Jinsi ya kupata ufunguo wa API"
+  },
+  "html_extension_status": {
+    "message": "Hali ya kiendelezi"
+  },
+  "html_active_translations": {
+    "message": "Tafsiri zinazoendelea"
+  },
+  "html_latest_this_session": {
+    "message": "Ya mwisho katika kipindi hiki"
+  },
+  "html_no_translation_yet": {
+    "message": "Bado hakuna tafsiri."
+  },
+  "html_copy": {
+    "message": "Nakili"
+  },
+  "html_settings": {
+    "message": "Mipangilio"
+  },
+  "html_key_guide": {
+    "message": "Mwongozo wa ufunguo"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Anza kutumia AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Kurasa za kiendelezi"
+  },
+  "html_faq": {
+    "message": "Maswali ya kawaida"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Pata ufunguo wako wa Google API, chagua lugha na utafsiri uteuzi wako wa kwanza."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Pata ufunguo wako wa API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Ufunguo wa API huruhusu kiendelezi kutumia Gemini kupitia akaunti yako ya Google. Uweke siri kama nenosiri."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Kiendelezi hiki ni cha watu wenye miaka 18 au zaidi kwa kazi au biashara katika <1>nchi na maeneo yanayokubaliwa na Google</1>. Katika kila nchi, ufunguo lazima uwe wa mradi wa Gemini wenye utozaji ulio hai. Zima ushiriki wa hiari wa kumbukumbu za maombi na seti za data za kiendelezi na Google."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Kwa kutumia kiendelezi, unakubali masharti haya, <1>Masharti ya Google API</1> na <2>Masharti ya Ziada ya Gemini API</2>. Usikitumie ikiwa huwezi kuyatimiza. Kiendelezi hakihakiki ukweli huu wala kuomba vitambulisho."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Fungua Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Ingia kwenye akaunti yako ya Google. Kubali masharti ya Google ukiombwa."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Unda au uchague ufunguo"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Kwenye ukurasa wa Funguo za API, chagua <1>Unda ufunguo wa API</1> na ufuate hatua za Google kuchagua au kuunda mradi. Mradi hukusanya matumizi ya API na utozaji. Ikiwa wewe ni mpya AI Studio, Google huenda tayari imeunda mradi na ufunguo chaguomsingi."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Mradi wako usipoonekana, fungua <1>Dashibodi > Miradi > Ingiza miradi</1>. Ingiza mradi, kisha urudi kwenye Funguo za API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Kabla ya kutumia ufunguo, fuata <1>mwongozo wa utozaji wa Google</1> kuhakikisha mradi una utozaji ulio hai. Usajili wa kulipia wa programu ya Gemini hauchukui nafasi ya utozaji wa mradi wa API. Zima ushiriki wa hiari wa kumbukumbu na seti za data na Google; soma <2>sera ya Google ya kushiriki kumbukumbu</2>. Kuweka kumbukumbu binafsi za mradi ni tofauti na kuzishiriki."
+  },
+  "html_copy_your_key": {
+    "message": "Nakili ufunguo wako"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Nakili ufunguo kutoka AI Studio. Rudi kwenye Mipangilio ya kiendelezi na usome kuhusu kushiriki data. Chagua <1>Kubali na uunganishe Google</1>, kisha ubandike kwenye sehemu ya <2>Ufunguo wa API</2>. Unasimbwa na kuhifadhiwa moja kwa moja, na orodha ya miundo inapakiwa. Subiri matokeo kabla ya kuendelea."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Mipangilio ya AI Translator ikionyesha taarifa ya kushiriki data na kitufe cha kukubali juu ya sehemu tupu ya ufunguo wa API na pendekezo la Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Mfano umeonyeshwa kwa Kiingereza. Katika AI Translator, kubali kwanza kushiriki data, kisha ubandike ufunguo wako. Orodha ya miundo hukaguliwa baada ya kuhifadhi ufunguo uliosimbwa."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google inaweza kubadilisha skrini hizi. Kwa hatua za sasa au makosa ya ufunguo, soma <1>mwongozo wa Google wa funguo za API</1>. Tumia ufunguo mpya wa AI Studio ikiwa wa zamani haufanyi kazi tena."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Chagua mipangilio ya tafsiri"
+  },
+  "html_choose_a_model": {
+    "message": "Chagua muundo"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Tunapendekeza familia ya Gemini Flash-Lite. Kwa toleo hili la Septemba 2026 tumechagua <1>Gemini 3.5 Flash-Lite</1>. Utumie ukipatikana kwenye orodha yako."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Unaweza kuchagua muundo mwingine kwenye orodha. Baadhi huenda zisifanye kazi na kiendelezi. Muundo ukishindwa, chagua mwingine au unaopendekezwa."
+  },
+  "html_choose_your_target_language": {
+    "message": "Chagua lugha yako lengwa"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Chagua lugha unayotaka kusoma katika <1>Lugha chaguomsingi</1>. Chaguo hufuata <2>lugha za Gemini zilizoandikwa na Google</2>. Ubora wa tafsiri unaweza kutofautiana kwa lugha na maandishi."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Mipangilio ya tafsiri ya AI Translator yenye uchaguzi wa lugha lengwa na vidhibiti vya kitufe cha kuanzisha."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Mfano umeonyeshwa kwa Kiingereza. Chagua lugha ya tafsiri zako, kisha umalize usanidi."
+  },
+  "html_finish_setup": {
+    "message": "Maliza usanidi"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Bakiza Control kama kitufe cha kuanzisha, rekodi kingine, au chagua <1>Imezimwa</1> kwa menyu ya kubofya kulia pekee. Chagua <2>Maliza usanidi</2> chini ya Mipangilio. Unaweza kubadilisha baadaye kupitia <3>Hifadhi mapendeleo</3>."
+  },
+  "html_open_settings": {
+    "message": "Fungua Mipangilio"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Tafsiri uteuzi wako wa kwanza"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Fungua ukurasa wa kawaida na uchague maandishi mafupi. Bofya kulia na uchague <1>Tafsiri Maandishi Yaliyochaguliwa</1>, au bonyeza na uachie kitufe ulichochagua. Matokeo yanaonekana kando ya uchaguzi."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Ikiwa kiendelezi kimesakinishwa au kupakiwa upya sasa hivi, onyesha upya ukurasa kwanza. Mipangilio ya Chrome, Chrome Web Store na kitazama PDF kilichojengewa ndani haviruhusu tafsiri."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Dirisha la upau wa zana linaonyesha matokeo ya mwisho. Usanidi ukikamilika, linafungua mwonekano wa kawaida. Ukiondoa ufunguo wa API, mwongozo wa kukaribisha unaonekana tena."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Maswali ya kawaida: funguo, gharama na faragha"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Kwa nini ninahitaji ufunguo wangu wa API?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Kiendelezi kimeundwa kutuma maombi moja kwa moja kwenye mradi wako wa Google kwa ufunguo wako. Hili ni chaguo la muundo, si sheria ya Chrome. Ufunguo huruhusu maombi na kuyaunganisha na matumizi na utozaji. Usishiriki kwenye picha za skrini au ujumbe wa umma. Angalia <1>mwongozo wa Google wa funguo za API</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Kwa nini utozaji ulio hai ni sharti badala ya pendekezo tu?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Sheria za Matumizi Yaliyowekewa Mipaka za Chrome, vipengele 3 na 5</1>, huzuia matumizi ya data nje ya kusudi la kiendelezi na shughuli zinazohusiana. Baadhi ya matumizi ya bure ya Gemini huruhusu mafunzo mapana na ukaguzi wa watu. Masharti ya kulipia hayaruhusu kuboresha bidhaa, lakini huruhusu uhifadhi mdogo kwa usalama na sheria na uchakataji nje ya EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Kutatua mgongano huu, msanidi anahitaji utozaji wa mradi ulio hai duniani kote. Pendekezo lingeendelea kuruhusu matumizi ya bure. Sheria ya kikanda ya Google inahitaji huduma za kulipia kwa programu katika Eneo la Kiuchumi la Ulaya, Uingereza na Uswisi. Angalia <1>masharti ya Gemini: vikwazo vya matumizi, huduma za bure na za kulipia</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Kwa nini ushiriki wa hiari na Google lazima ubaki umezimwa?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Kushiriki kumbukumbu au seti za data kunaweza kuruhusu mafunzo na ukaguzi wa watu hata kama utozaji uko hai. Usichangie data za kiendelezi kupitia seti za data au maoni. Kuweka kumbukumbu binafsi kwa mradi wako kunaruhusiwa na sheria hii. Angalia <1>sera ya kumbukumbu ya Google: data zinazoweza kushirikiwa na jinsi zinavyotumika</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Kiendelezi ni bure ikiwa ninahitaji API ya kulipia?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Ndiyo. Kiendelezi ni bure, lakini ada za Google API zinaweza kutumika. Usajili wa kulipia wa programu ya Gemini hauchukui nafasi ya utozaji wa mradi wa API. Angalia <1>jinsi ya kuangalia utozaji</1> na <2>bei za Google API</2>. Kiendelezi hakihakiki utozaji au mipangilio ya kushiriki."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Kwa nini lazima nichague Kubali na uunganishe Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Mahitaji ya Uwazi ya Chrome, vipengele 1 na 2</1>, yanataka maelezo wazi ya matumizi ya data na idhini yenye taarifa. Kitufe chetu kinakupa chaguo hilo kabla ya ombi lolote la Google API. Hakikagui utambulisho au utozaji, wala hakitoi ruhusa ya kushiriki taarifa binafsi za watu wengine."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Ni nini hasa kinachotumwa kwa Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Ukaguzi wa miundo hutuma ufunguo na kuomba miundo inayopatikana. Tafsiri hutuma maandishi yaliyochaguliwa, lugha lengwa, muundo na maagizo ya tafsiri, yakiwemo maandishi ya faili za kifaa. Kiendelezi hakiongezi ukurasa mzima, anwani ya ukurasa au historia ya kuvinjari. Google pia hupokea taarifa za muunganisho kama anwani ya IP. Msanidi hapokei maombi haya. Tuma tu maandishi unayoruhusiwa kushiriki."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Ufunguo wangu huhifadhiwa na kufunguliwa vipi moja kwa moja?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Ufunguo wa API huhifadhiwa umesimbwa. Ufunguo na ufunguo wake wa usimbaji hubaki katika wasifu huu wa Chrome kwa matumizi ya moja kwa moja baada ya kuwasha upya. Hazisawazishwi. Mtu mwenye ufikiaji wa wasifu bado anaweza kupata ufunguo wa API. Huu si uhifadhi wa funguo wa mfumo au sanduku lenye nenosiri. Lugha, muundo na kitufe vinaweza kusawazishwa. Matokeo ya mwisho tu hubaki kwa kipindi; hakuna uchanganuzi au historia ya tafsiri."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Sasisho husimba na kuangalia ufunguo wa zamani kabla ya kufuta nakala zisizosimbwa. Ikishindikana, nakala ya zamani hubaki na maombi huzuiwa. Mipangilio hueleza kosa. Kuhamisha ufunguo wa zamani hakuepuki idhini."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Ninaweza kuondoa idhini yangu au ufunguo?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "Katika <1>Mipangilio</1>, <2>Ondoa idhini ya kushiriki data</2> huzuia maombi mapya na kughairi yanayoendelea kwenye kifaa, huku ikihifadhi ufunguo na mapendeleo. <3>Ondoa ufunguo uliohifadhiwa</3> hufuta ufunguo, ufunguo wa usimbaji na akiba ya miundo. Hakuna kitendo kinachorejesha data iliyotumwa au kuhakikisha ombi lililotumwa linakuwa bure. Batilisha ufunguo kwenye AI Studio ili uzime pia kwa Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Idhini yako hubaki baada ya kuwasha upya na masasisho ya kawaida. Taarifa ikibadilika, maombi husubiri uisome na ukubali tena."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Kwa nini hii ni ya watu wazima kwa kazi au biashara?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google inahitaji umri wa miaka 18 au zaidi na matumizi ya kitaalamu au biashara katika maeneo yanayokubaliwa. Angalia <1>masharti ya Gemini: mahitaji ya umri na vikwazo vya matumizi</1> na <2>maeneo yanayopatikana</2>. Kiendelezi hakina kisanduku tofauti cha ustahiki au ukaguzi wa utambulisho."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Kwa nini kuna sera ya faragha pamoja na taarifa hii?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Taarifa hueleza chaguo kabla ya kuunganisha. Sera hutoa maelezo kamili ya data, uhifadhi na ufutaji. <1>Sheria za Sera ya Faragha za Chrome</1> zinahitaji hii kwa viendelezi vinavyoshughulikia data za watumiaji. Soma <2>sera yetu ya faragha</2>. Taarifa hizi hazimaanishi Google imeidhinisha kiendelezi."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Tafsiri za AI zinaweza kuwa na makosa. Kagua maneno muhimu kabla ya kuyategemea."
+  },
+  "html_about_ai_translator": {
+    "message": "Kuhusu AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Tafsiri rahisi sana: chagua maandishi na ubonyeze Control."
+  },
+  "html_made_for_people": {
+    "message": "Imetengenezwa kwa watu"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Nilitengeneza AI Translator kusaidia watu kusoma, kujifunza na kuwasiliana katika lugha tofauti. Natumaini itawasaidia watu duniani kote."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Kiendelezi hutafsiri maandishi unayochagua kwa ufunguo wako wa Google Gemini API. Unachagua cha kutuma na lugha ya kusoma."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Bonyeza na uachie Control kutafsiri uchaguzi. Control ndiyo chaguomsingi na inaweza kubadilishwa kwenye Mipangilio. Unaweza kutumia pia menyu ya kubofya kulia."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Imejaribiwa kwa mkono kwenye Mac pekee. Windows na Linux hazijajaribiwa kwa mkono."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Angalia msimbo chanzo na mwongozo wa mradi</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Pata msaada au ripoti tatizo</1>. Ripoti ni za umma. Usiweke funguo za API, maandishi binafsi au taarifa za kibinafsi."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Ikiwa ungependa kusaidia kazi yangu"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Tafadhali saidia nchi yangu, Ukraine, inapojilinda dhidi ya uvamizi wa Urusi."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Ninaamini Wakfu wa Jumuiya ya Sternenko. Ukiweza na ukitaka kusaidia, unaweza kuchangia kupitia tovuti yake rasmi."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Saidia Ukraine kupitia wakfu</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Msaada ni wa hiari na hauhitajiki kutumia kiendelezi. Kiungo hufungua tovuti ya nje. Michango hupitia wakfu, si kiendelezi."
+  },
+  "html_privacy_and_costs": {
+    "message": "Faragha na gharama"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Ufunguo wa API umesimbwa kwenye kifaa hiki na hausawazishwi. Hubaki unapatikana baada ya kuwasha Chrome upya bila nenosiri la kufungua. Mtu mwenye ufikiaji wa wasifu wa kivinjari bado anaweza kuupata."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Kabla ya ombi la kwanza la Google, Mipangilio hueleza kushiriki data na kuomba uchague <1>Kubali na uunganishe Google</1>. Baadaye maandishi hutumwa moja kwa moja Google tu ukiomba tafsiri. Ukaguzi wa miundo hutuma ufunguo, si maandishi yaliyochaguliwa. Kiendelezi hakina uchanganuzi, matangazo au historia ya tafsiri."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Soma maelezo kwenye <1>Mipangilio</1> wakati wowote. Chagua <2>Ondoa idhini ya kushiriki data</2> kusimamisha maombi mapya na kubakiza ufunguo uliosimbwa na mapendeleo, au <3>Ondoa ufunguo uliohifadhiwa</3> kufuta ufunguo na akiba ya miundo. Data zilizotumwa haziwezi kurejeshwa."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Tafsiri zinatengenezwa na AI na zinaweza kuwa na makosa. Kagua maneno muhimu kabla ya kuyategemea."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Soma maelezo ya faragha</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator ni mradi huru na wa bure. Ada za Google API zinaweza kutumika. Katika kila nchi, tumia ufunguo wa Gemini API wa mradi wenye <1>utozaji ulio hai</1> na uzime <2>ushiriki wa hiari wa kumbukumbu za maombi na seti za data za kiendelezi na Google</2>. Kwa mipangilio hii, masharti ya kulipia ya Google hayaruhusu maombi na majibu kuboresha bidhaa; uchakataji wa usalama na sheria unaendelea. Soma <3>bei za Google na maelezo ya matumizi ya data</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Kiendelezi ni cha watu wenye miaka 18 au zaidi kwa kazi au biashara katika <1>maeneo yanayokubaliwa na Google</1>. Kwa kukitumia, unakubali masharti haya, <2>Masharti ya Google API</2> na <3>Masharti ya Ziada ya Gemini API</3>. Usikitumie usipoweza kuyatimiza. Hakuna kisanduku cha ustahiki au ukaguzi wa utambulisho. Kiendelezi hakihakiki utozaji au kushiriki."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Mabadiliko hayajahifadhiwa."
+  },
+  "runtime_settings_conflict": {
+    "message": "Mipangilio imebadilika kwenye ukurasa mwingine. Mabadiliko yako yapo hapa. Pakia upya mipangilio iliyohifadhiwa kuacha mabadiliko yako na kutumia thamani zilizohifadhiwa."
+  },
+  "runtime_preferences_current": {
+    "message": "Mapendeleo yamesasishwa."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Ufunguo uliohifadhiwa hauwezi kufunguliwa. Fungua Mipangilio tena au uondoe na kuuweka upya."
+  },
+  "runtime_key_conflict": {
+    "message": "Ufunguo wa API umebadilika kwenye ukurasa mwingine. Pakia upya mipangilio iliyohifadhiwa kabla ya kuhifadhi ufunguo."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Ufunguo wako umehifadhiwa umesimbwa. Kubali kushiriki data kabla ya kuunganisha Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Kubali kushiriki data hapo juu kabla ya kuongeza ufunguo wa API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini imekataa ufunguo uliohifadhiwa. Badilisha au tumia Onyesha upya miundo kuuangalia tena."
+  },
+  "runtime_paste_key": {
+    "message": "Bandika ufunguo wa API kuunganisha Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Ufunguo wa API umehifadhiwa. Gemini iliukubali kwenye ukaguzi wa mwisho wa orodha ya miundo."
+  },
+  "runtime_key_saved_check": {
+    "message": "Ufunguo wa API umehifadhiwa umesimbwa kwenye kifaa hiki. Onyesha upya miundo kuuangalia na Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Jaribu kuondoa idhini tena"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Ondoa idhini ya kushiriki data"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Kuondoa idhini hakujathibitishwa. Jaribu tena ili uhifadhi uchaguzi wako."
+  },
+  "runtime_agreement_saved": {
+    "message": "Kushiriki data kumekubaliwa kwa wasifu huu wa Chrome. Unaweza kuondoa idhini wakati wowote."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Hakuna kuunganisha Google hadi ukubali. Ufunguo wako hubaki ukiondoa idhini."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini imekataa ufunguo uliohifadhiwa. Ubadilishe hapa chini."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Ufunguo wako umehifadhiwa umesimbwa kwenye kifaa hiki."
+  },
+  "runtime_setup_create_key": {
+    "message": "Tengeneza ufunguo wako kwenye Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Lugha imechaguliwa. Maliza usanidi kuhifadhi uchaguzi wako."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Chagua lugha lengwa hapa chini."
+  },
+  "runtime_finish_setup": {
+    "message": "Maliza usanidi"
+  },
+  "runtime_save_preferences": {
+    "message": "Hifadhi mapendeleo"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Ongeza ufunguo wa API, angalia orodha ya miundo na uhifadhi muundo uliouchagua."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Tatua mgongano wa mipangilio kabla ya kutafsiri."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Soma na ukubali kushiriki data kabla ya kuunganisha Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Maliza kuhifadhi ufunguo wa API kabla ya kuangalia usanidi."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Usanidi unahitaji kuangaliwa: Gemini imekataa ufunguo wa API uliohifadhiwa."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Ufunguo umehifadhiwa. Chagua lugha lengwa kisha umalize usanidi."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Chagua muundo unaopatikana na uhifadhi mapendeleo."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Muundo umechaguliwa. Hifadhi mapendeleo kuutumia."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Ufunguo na lugha viko tayari. Maliza usanidi kuhifadhi uchaguzi wako, kisha ujaribu tafsiri. Ufikiaji wa miundo na kiwango cha matumizi bado vinaweza kubadilika."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Tayari kujaribu tafsiri. Muundo uliohifadhiwa uko kwenye orodha iliyokaguliwa; ufikiaji wa maombi na kiwango cha matumizi bado vinaweza kubadilika."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Ufunguo umehifadhiwa. Onyesha upya miundo kuangalia ufunguo na muundo uliochaguliwa."
+  },
+  "runtime_show_key": {
+    "message": "Onyesha"
+  },
+  "runtime_hide_key": {
+    "message": "Ficha"
+  },
+  "runtime_choose_target_language": {
+    "message": "Chagua lugha lengwa"
+  },
+  "runtime_background_no_response": {
+    "message": "Sehemu ya nyuma ya kiendelezi haikujibu. Pakia upya kiendelezi na ujaribu tena."
+  },
+  "runtime_refresh_models": {
+    "message": "Onyesha upya miundo"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Kubali kushiriki data kabla ya kupakia miundo."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Maliza kuhifadhi ufunguo wa API kabla ya kuonyesha upya miundo."
+  },
+  "runtime_refreshing": {
+    "message": "Inaonyesha upya..."
+  },
+  "runtime_loading": {
+    "message": "Inapakia..."
+  },
+  "runtime_models_checking": {
+    "message": "Inakagua Gemini kwa miundo inayoendana..."
+  },
+  "runtime_models_loading": {
+    "message": "Inapakia miundo inayoendana..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Miundo inayoendana haikuweza kupakiwa."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini haikurudisha miundo inayoendana."
+  },
+  "runtime_model_not_available": {
+    "message": "Muundo uliochaguliwa hauko kwenye orodha inayoendana. Chagua mwingine."
+  },
+  "runtime_record_key": {
+    "message": "Rekodi kitufe"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Kurekodi kumeghairiwa."
+  },
+  "runtime_unknown_key": {
+    "message": "Kitufe hicho"
+  },
+  "runtime_press_key": {
+    "message": "Bonyeza kitufe..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Bonyeza kitufe kimoja kinachokubaliwa kisichoandika herufi. Bonyeza Escape kughairi."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Onyesha upya miundo kuangalia ufunguo wa API uliohifadhiwa."
+  },
+  "runtime_models_add_key": {
+    "message": "Ongeza ufunguo wa API kupakia miundo inayoendana."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Kiendelezi hakikuweza kupakia hali iliyohifadhiwa."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini imekataa ufunguo wa API uliohifadhiwa. Badilisha au onyesha upya miundo kuuangalia tena."
+  },
+  "runtime_settings_reopen": {
+    "message": "Mipangilio haikuweza kupakiwa. Ifungue tena kujaribu."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Mipangilio haikuweza kupakiwa. Pakia upya mipangilio iliyohifadhiwa kujaribu tena. Kuhifadhi kumezimwa kulinda uchaguzi wako."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Hali ya usanidi haikuweza kupakiwa."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Weka ufunguo kamili wa API bila nafasi."
+  },
+  "runtime_key_use_remove": {
+    "message": "Tumia Ondoa ufunguo uliohifadhiwa kufuta ufunguo wako."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Kubali kushiriki data hapo juu kabla ya kuhifadhi ufunguo wa API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Inahifadhi ufunguo wa API uliosimbwa..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Ufunguo wa API haukuweza kusomwa au kuhifadhiwa. Ulichoingiza kimebaki. Tumia Hifadhi mapendeleo kujaribu tena."
+  },
+  "runtime_connecting_google": {
+    "message": "Inaunganisha Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Inasimamisha miunganisho ya Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Idhini yako ya data haikuweza kuhifadhiwa. Jaribu tena."
+  },
+  "runtime_key_removing": {
+    "message": "Inaondoa ufunguo uliohifadhiwa..."
+  },
+  "runtime_key_removed": {
+    "message": "Ufunguo uliohifadhiwa umeondolewa. Unaweza kuongeza mpya baada ya kukubali kushiriki data."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Ufunguo uliohifadhiwa haukuondolewa. Jaribu tena."
+  },
+  "runtime_saving": {
+    "message": "Inahifadhi..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Chagua lugha na muundo halali."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Chagua kitufe kinachokubaliwa au Imezimwa."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Chagua muundo kutoka orodha ya sasa inayoendana."
+  },
+  "runtime_preferences_saving": {
+    "message": "Inahifadhi mapendeleo..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Mapendeleo yamehifadhiwa."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Mapendeleo yamehifadhiwa. Ongeza ufunguo wa API kumaliza usanidi."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Mapendeleo hayakuweza kusomwa au kuhifadhiwa. Mabadiliko yako yapo. Jaribu tena."
+  },
+  "runtime_key_will_save": {
+    "message": "Ufunguo wa API utahifadhiwa moja kwa moja."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Maliza kuingiza ufunguo wa API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Maliza kuhifadhi ufunguo wa API ili kupakia miundo inayoendana."
+  },
+  "runtime_recommended_selected": {
+    "message": "Muundo unaopendekezwa umechaguliwa. Hifadhi uchaguzi wako ili kuutumia."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Kitufe cha kuanzisha kitazimwa baada ya kuhifadhi."
+  },
+  "runtime_connection_changed": {
+    "message": "Mipangilio ya muunganisho imebadilika. Inakagua mipangilio iliyohifadhiwa..."
+  },
+  "runtime_models_changed": {
+    "message": "Orodha ya miundo imebadilika. Inakagua miundo inayoendana..."
+  },
+  "runtime_no_translation": {
+    "message": "Bado hakuna tafsiri."
+  },
+  "runtime_start_setup": {
+    "message": "Anza usanidi"
+  },
+  "runtime_settings": {
+    "message": "Mipangilio"
+  },
+  "runtime_key_rejected": {
+    "message": "Ufunguo umekataliwa"
+  },
+  "runtime_setup_required": {
+    "message": "Usanidi unahitajika"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Ongeza ufunguo wa API kwenye Mipangilio kuanza kutafsiri."
+  },
+  "runtime_add_key": {
+    "message": "Ongeza ufunguo wa API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Ufunguo umehifadhiwa. Fungua Mipangilio kuangalia muundo na kumaliza uchaguzi wa lugha."
+  },
+  "runtime_check_setup": {
+    "message": "Angalia usanidi"
+  },
+  "runtime_translating": {
+    "message": "Inatafsiri"
+  },
+  "runtime_error": {
+    "message": "Hitilafu"
+  },
+  "runtime_ready": {
+    "message": "Tayari"
+  },
+  "runtime_status_load_failed": {
+    "message": "Hali ya kiendelezi haikuweza kupakiwa. Pakia upya kiendelezi, kisha uonyeshe upya ukurasa."
+  },
+  "runtime_copied": {
+    "message": "Imenakiliwa."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kunakili kumezuiwa. Chagua maandishi ya matokeo na uyanakili."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Mipangilio haikuweza kufunguliwa. Jaribu tena."
+  },
+  "runtime_translating_progress": {
+    "message": "Inatafsiri..."
+  },
+  "runtime_translation_started": {
+    "message": "Tafsiri imeanza."
+  },
+  "runtime_translation_complete": {
+    "message": "Tafsiri imekamilika."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Tafsiri imekamilika. Tumia maandishi ya matokeo au vidhibiti vya kadi."
+  },
+  "runtime_translation": {
+    "message": "Tafsiri"
+  },
+  "runtime_target_language": {
+    "message": "Lugha lengwa"
+  },
+  "runtime_card_target_language": {
+    "message": "Lugha lengwa ya kadi hii"
+  },
+  "runtime_close_card": {
+    "message": "Funga kadi ya tafsiri"
+  },
+  "runtime_translated_text": {
+    "message": "Maandishi yaliyotafsiriwa"
+  },
+  "runtime_retry": {
+    "message": "Jaribu tena"
+  },
+  "runtime_copy": {
+    "message": "Nakili"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Mipangilio haikuweza kufunguliwa. Tumia upau wa zana wa kiendelezi."
+  },
+  "runtime_copy_failed": {
+    "message": "Kunakili kumeshindwa. Chagua maandishi ya matokeo na uyanakili."
+  },
+  "runtime_context_menu": {
+    "message": "Tafsiri Maandishi Yaliyochaguliwa"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Haiko kwenye orodha ya sasa)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Bado haijakaguliwa)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Inatumia orodha ya miundo iliyohifadhiwa ya $value1$. Kuonyesha upya mtandaoni kumeshindwa. Jaribu baadaye.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Inatumia orodha ya miundo iliyohifadhiwa. Kuonyesha upya mtandaoni kumeshindwa. Jaribu baadaye."
+  },
+  "runtime_models_cache_at": {
+    "message": "Inatumia orodha ya miundo iliyohifadhiwa ya $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Inatumia orodha ya miundo iliyohifadhiwa."
+  },
+  "runtime_models_updated_at": {
+    "message": "Orodha ya miundo imesasishwa kutoka $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Orodha ya miundo imesasishwa."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ haitumiki. Bonyeza kitufe kingine au Escape kughairi.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ itatumika baada ya kuhifadhi.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Hadi $value1$ kwa kichupo na $value2$ kwa jumla",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "Sekunde $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Bonyeza Tab kutumia kadi hii au Escape kuifunga.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Tafsiri imeshindwa. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Onyesha upya kurasa zilizo wazi"
+  },
+  "refresh_message": {
+    "message": "Ufunguo wako wa API umehifadhiwa. Baada ya kumaliza usanidi, onyesha upya kurasa zilizokuwa tayari wazi. Kisha chagua maandishi na ubonyeze Control kutafsiri."
+  },
+  "refresh_continue": {
+    "message": "Endelea na usanidi"
+  },
+  "refresh_faq_question": {
+    "message": "Kwa nini lazima nionyeshe upya kurasa zilizo wazi?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Onyesha upya kurasa zilizo wazi</1> baada ya kumaliza usanidi, kabla ya kujaribu kutafsiri. Chrome inahitaji kupakia kiendelezi kwenye kurasa zilizofunguliwa kabla ya kukisakinisha au kukipakia upya. Kurasa mpya huwa tayari moja kwa moja."
+  },
+  "ui_locale": {
+    "message": "sw",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Tulkojiet pavisam vienkārši: atlasiet tekstu un nospiediet Control. Tulkojiet izvēlētajā valodā ar Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Atlasiet tekstu un mēģiniet vēlreiz."
+  },
+  "error_unsupported_selection": {
+    "message": "Šī teksta atlase netiek atbalstīta."
+  },
+  "error_selection_too_large": {
+    "message": "Atlasītajā tekstā ir vairāk nekā 10 000 rakstzīmju. Atlasiet mazāk teksta un mēģiniet vēlreiz."
+  },
+  "error_missing_api_key": {
+    "message": "Iestatījumos pievienojiet savu Gemini API atslēgu."
+  },
+  "error_agreement_required": {
+    "message": "Pirms savienojuma ar Google pārskatiet datu kopīgošanu iestatījumos un piekrītiet tai."
+  },
+  "error_credential_conflict": {
+    "message": "Saglabātā atslēga ir mainīta citā lapā. Pirms mēģināt vēlreiz, pārlādējiet saglabātos iestatījumus."
+  },
+  "error_credential_storage_error": {
+    "message": "Saglabāto atslēgu nevar atvērt. Mēģiniet vēlreiz atvērt iestatījumus vai noņemiet atslēgu un ievadiet to no jauna."
+  },
+  "error_missing_target_language": {
+    "message": "Lai pabeigtu iestatīšanu, iestatījumos izvēlieties mērķvalodu."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini noraidīja API atslēgu. Pārbaudiet to iestatījumos."
+  },
+  "error_invalid_model": {
+    "message": "Šo modeli nevar izmantot tulkošanai. Iestatījumos izvēlieties citu modeli vai ieteikto Flash-Lite modeli."
+  },
+  "error_busy": {
+    "message": "Vienlaikus notiek pārāk daudz tulkojumu. Mēģiniet vēlreiz, kad kāds no tiem būs pabeigts."
+  },
+  "error_duplicate_request": {
+    "message": "Šis atlasītais teksts jau tiek tulkots."
+  },
+  "error_rate_limited": {
+    "message": "Ir sasniegts pieprasījumu ierobežojums. Pēc brīža mēģiniet vēlreiz."
+  },
+  "error_timeout": {
+    "message": "Tulkošana aizņēma pārāk ilgu laiku. Varat mēģināt vēlreiz."
+  },
+  "error_offline": {
+    "message": "Šķiet, ka nav interneta savienojuma. Pārbaudiet savienojumu un mēģiniet vēlreiz."
+  },
+  "error_network_error": {
+    "message": "Neizdevās izveidot savienojumu ar Gemini. Pārbaudiet savienojumu un mēģiniet vēlreiz."
+  },
+  "error_quota_exceeded": {
+    "message": "Ir sasniegta Gemini kvota. Pārbaudiet savu kontu un mēģiniet vēlāk."
+  },
+  "error_service_error": {
+    "message": "Gemini nevarēja pabeigt tulkojumu. Mēģiniet vēlāk."
+  },
+  "error_invalid_response": {
+    "message": "Gemini atgrieza nenolasāmu atbildi. Varat mēģināt vēlreiz."
+  },
+  "error_output_too_large": {
+    "message": "Tulkojums pārsniedza izvades ierobežojumu. Atlasiet mazāk teksta un mēģiniet vēlreiz."
+  },
+  "error_content_blocked": {
+    "message": "Gemini bloķēja šo tekstu. Mēģiniet atlasīt citu tekstu."
+  },
+  "error_unsupported_page": {
+    "message": "Šajā lapā tulkošana nav pieejama."
+  },
+  "error_frame_unavailable": {
+    "message": "Atlasītais ietvars vairs nav pieejams."
+  },
+  "error_cancelled": {
+    "message": "Tulkošana ir atcelta."
+  },
+  "key_Off": {
+    "message": "Izslēgts"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Lielo burtu slēdzis"
+  },
+  "key_Insert": {
+    "message": "Ievietošanas taustiņš"
+  },
+  "key_Pause": {
+    "message": "Pauze"
+  },
+  "key_ScrollLock": {
+    "message": "Ritināšanas slēdzis"
+  },
+  "error_retry_delay": {
+    "message": " Mēģiniet vēlreiz pēc $seconds$ sekundēm.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator iestatījumi"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Privāti iestatījumi ātrai un mērķtiecīgai tulkošanai."
+  },
+  "html_help_and_information": {
+    "message": "Palīdzība un informācija"
+  },
+  "html_api_key_guide": {
+    "message": "API atslēgas ceļvedis"
+  },
+  "html_about": {
+    "message": "Par paplašinājumu"
+  },
+  "html_privacy": {
+    "message": "Privātums"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Iestatiet AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Veiciet šīs darbības šeit, iestatījumos. Tulkošanai ir vajadzīga jūsu Google API atslēga."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Iegūstiet savu API atslēgu.</1> Atveriet <2>Google AI Studio</2>, pierakstieties un izveidojiet atslēgu. Pārskatiet tālāk aprakstīto datu kopīgošanu un ielīmējiet atslēgu. Palīdzībai <3>lasiet detalizēto ceļvedi</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Izvēlieties mērķvalodu un modeli.</1> Izvēlieties valodu, kurā vēlaties saņemt tulkojumus. Iesakām Gemini Flash-Lite, ja tas ir pieejams jūsu modeļu sarakstā."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Saglabājiet un sāciet tulkot.</1> Šīs lapas apakšā izvēlieties Pabeigt iestatīšanu. Pēc tam tīmekļa lapā atlasiet tekstu un nospiediet Control vai labā klikšķa izvēlnē izvēlieties Tulkot atlasīto tekstu."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Pievienojiet savu Gemini API atslēgu un izvēlieties saderīgu modeli."
+  },
+  "html_loading_setup_state": {
+    "message": "Ielādē iestatīšanas stāvokli..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Pirms savienojuma ar Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google saņem jūsu API atslēgu, lai pārbaudītu pieejamos modeļus. Kad pieprasāt tulkojumu, Google saņem arī atlasīto tekstu un mērķvalodu, tostarp tekstu no vietējiem failiem. Mākslīgā intelekta tulkojumi var būt kļūdaini."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Jūsu atslēga tiek saglabāta šifrēta šajā Chrome profilā un pēc restartēšanas tiek atvērta automātiski. Papildu parole nav vajadzīga. Persona ar pilnu piekļuvi pārlūka profilam tomēr var atgūt atslēgu. <1>Lasiet informāciju par privātumu</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Prasība visās valstīs:</1> izmantojiet Gemini API atslēgu no projekta ar <2>aktīviem norēķiniem</2>. Neieslēdziet neobligāto <3>šī paplašinājuma pieprasījumu žurnālu un datu kopu kopīgošanu ar Google</3>. Ar šiem iestatījumiem Google maksas pakalpojumu noteikumi izslēdz uzvedņu un atbilžu izmantošanu produktu uzlabošanai; apstrāde drošības un juridiskām vajadzībām joprojām ir spēkā. Paplašinājums ir bezmaksas, bet var tikt piemērota maksa par Google API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Lietošanas nosacījumi.</1> Izmantojot Gemini ar šo paplašinājumu, jūs apņematies ievērot iepriekš minētās prasības un <2>Google noteikumus</2>. Tas paredzēts personām no 18 gadu vecuma profesionāliem vai uzņēmējdarbības nolūkiem <3>atbalstītajos reģionos</3>. Paplašinājums nepārbauda jūsu norēķinu vai kopīgošanas iestatījumus."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Piekrītu, savienot ar Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Atsaukt piekrišanu datu kopīgošanai"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Pirms savienojuma pārskatiet informāciju par datu kopīgošanu."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Kāpēc šīs prasības ir vajadzīgas? Lasiet bieži uzdotos jautājumus</1>."
+  },
+  "html_api_key": {
+    "message": "API atslēga"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Pēc piekrišanas ielīmējiet atslēgu, lai to saglabātu šifrētu un automātiski ielādētu modeļus."
+  },
+  "html_show": {
+    "message": "Rādīt"
+  },
+  "html_remove_saved_key": {
+    "message": "Noņemt saglabāto atslēgu"
+  },
+  "html_model": {
+    "message": "Modelis"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Zināmie modeļi, kas paredzēti tikai multividei vai īpašiem uzdevumiem, ir paslēpti."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Iesakām Gemini Flash-Lite saimi. Šīs versijas izlaišanas laikā (2026. gada septembrī) mūsu izvēle ir Gemini 3.5 Flash-Lite. Varat brīvi izvēlēties citu sarakstā esošu modeli. Daži modeļi var nedarboties ar šo paplašinājumu. Ja kāds nedarbojas, izvēlieties citu vai ieteikto modeli."
+  },
+  "html_refresh_models": {
+    "message": "Atsvaidzināt modeļus"
+  },
+  "html_use_recommended_model": {
+    "message": "Izmantot ieteikto modeli"
+  },
+  "html_translation": {
+    "message": "Tulkošana"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Iestatiet valodu un izvēles tastatūras aktivizēšanas taustiņu."
+  },
+  "html_default_language": {
+    "message": "Noklusējuma valoda"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Rezultāta kartītē var izmantot citu valodu, nemainot šo noklusējumu."
+  },
+  "html_keyboard_trigger": {
+    "message": "Aktivizēšanas taustiņš"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Atsevišķi taustiņi var konfliktēt ar vietnēm vai piekļūstamības rīkiem. Izvēlieties Izslēgts, lai izmantotu tikai kontekstizvēlni."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Reģistrēt taustiņu"
+  },
+  "html_off": {
+    "message": "Izslēgts"
+  },
+  "html_behavior": {
+    "message": "Darbība"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Nemainīgi aizsardzības ierobežojumi nodrošina atsaucīgu tulkošanu un aizsargā API kvotu."
+  },
+  "html_parallel_requests": {
+    "message": "Vienlaicīgi pieprasījumi"
+  },
+  "html_request_timeout": {
+    "message": "Pieprasījuma taimauts"
+  },
+  "html_page_access": {
+    "message": "Piekļuve lapām"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Vietējiem failiem ieslēdziet Atļaut piekļuvi failu URL sadaļā Pārvaldīt paplašinājumu"
+  },
+  "html_help_and_recovery": {
+    "message": "Palīdzība un atkopšana"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Ja modelis nav pieejams, atsvaidziniet modeļus, izvēlieties modeli no saraksta un saglabājiet preferences. Ja sarakstu nevar ielādēt, pārbaudiet atslēgu un savienojumu, pēc tam mēģiniet Atsvaidzināt modeļus."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome iestatījumu lapās un Chrome interneta veikalā tulkošana nav atļauta. Vietējiem failiem ieslēdziet Atļaut piekļuvi failu URL sadaļā Pārvaldīt paplašinājumu. Pēc paplašinājuma atjaunināšanas vai pārlādēšanas atsvaidziniet atvērtās tīmekļa lapas. Pārlādēšana var pārtraukt tulkojumu."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Tulkošana nedarbojas bezsaistē. Pēc iepriekš norādītās piekrišanas jūsu atslēga tiek nosūtīta tieši Google modeļu pārbaudēm. Atlasītais teksts, tostarp teksts no vietējiem failiem, kopā ar mērķvalodu tiek nosūtīts tikai tad, kad pieprasāt tulkojumu. Saglabātā atslēga šajā Chrome profilā ir šifrēta. Valodas, modeļa un taustiņa preferences var sinhronizēt ar Chrome. Paplašinājums patur tikai pēdējo rezultātu šai pārlūka sesijai un nesaglabā tulkojumu vēsturi."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Varat pārskatīt iepriekš aprakstīto datu kopīgošanu un jebkurā laikā atsaukt piekrišanu. Tas aptur modeļu pārbaudes un tulkošanu līdz atkārtotai piekrišanai. Saglabātā atslēga tiek paturēta, ja vien neizvēlaties Noņemt saglabāto atslēgu."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Valodas, modeļa un taustiņa izmaiņas tiek saglabātas šeit."
+  },
+  "html_reload_saved_settings": {
+    "message": "Pārlādēt saglabātos iestatījumus"
+  },
+  "html_save_preferences": {
+    "message": "Saglabāt preferences"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini tulkošana"
+  },
+  "html_setup_required": {
+    "message": "Jāveic iestatīšana"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Laipni lūdzam AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Tulkojiet atlasīto tekstu sev saprotamā valodā. Lai sāktu, iestatiet šīs divas lietas:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Jūsu Gemini API atslēga.</1> Iegūstiet savu atslēgu Google AI Studio. Mūsu ceļvedis parāda, kā to izdarīt."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Jūsu mērķvaloda.</1> Izvēlieties valodu, kurā vēlaties lasīt."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Kā iegūt API atslēgu"
+  },
+  "html_extension_status": {
+    "message": "Paplašinājuma statuss"
+  },
+  "html_active_translations": {
+    "message": "Aktīvie tulkojumi"
+  },
+  "html_latest_this_session": {
+    "message": "Pēdējais šajā sesijā"
+  },
+  "html_no_translation_yet": {
+    "message": "Vēl nav tulkojuma."
+  },
+  "html_copy": {
+    "message": "Kopēt"
+  },
+  "html_settings": {
+    "message": "Iestatījumi"
+  },
+  "html_key_guide": {
+    "message": "Atslēgas ceļvedis"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Darba sākšana ar AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Paplašinājuma lapas"
+  },
+  "html_faq": {
+    "message": "Bieži uzdotie jautājumi"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Iegūstiet savu Google API atslēgu, izvēlieties valodu un iztulkojiet pirmo atlasīto tekstu."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Iegūstiet API atslēgu"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API atslēga ļauj šim paplašinājumam izmantot Gemini ar jūsu Google kontu. Glabājiet to privāti kā paroli."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Šis paplašinājums ir paredzēts personām no 18 gadu vecuma darba vai uzņēmējdarbības vajadzībām <1>Google atbalstītajās valstīs un reģionos</1>. Visās valstīs jūsu API atslēgai jāpieder Gemini projektam ar aktīviem norēķiniem. Neieslēdziet neobligāto šī paplašinājuma pieprasījumu žurnālu un datu kopu kopīgošanu ar Google."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Izmantojot šo paplašinājumu, jūs apņematies ievērot šos nosacījumus, <1>Google API noteikumus</1> un <2>Gemini API papildu noteikumus</2>. Nelietojiet to, ja nevarat izpildīt šos nosacījumus. Paplašinājums šos faktus nepārbauda un neprasa personu apliecinošus dokumentus."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Atvērt Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Pierakstieties savā Google kontā. Ja tiek prasīts, piekrītiet Google noteikumiem."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Izveidojiet vai izvēlieties atslēgu"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Lapā API Keys izvēlieties <1>Create API key</1> un izpildiet Google norādījumus, lai izvēlētos vai izveidotu projektu. Projekts apkopo jūsu API lietojumu un norēķinus. Ja esat jauns AI Studio lietotājs, Google, iespējams, jau ir izveidojis noklusējuma projektu un atslēgu."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Ja esošais projekts nav redzams, atveriet <1>Dashboard > Projects > Import projects</1>. Importējiet projektu un atgriezieties lapā API Keys."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Pirms atslēgas lietošanas sekojiet <1>Google norēķinu ceļvedim</1>, lai pārbaudītu, vai tās projektam ir aktīvi norēķini. Maksas Gemini lietotnes abonements neaizstāj API projekta norēķinus. Neieslēdziet neobligāto šī paplašinājuma pieprasījumu žurnālu un datu kopu kopīgošanu ar Google; lasiet <2>Google žurnālu kopīgošanas politiku</2>. Privāta projekta žurnālu glabāšana ir atsevišķa no kopīgošanas."
+  },
+  "html_copy_your_key": {
+    "message": "Kopējiet atslēgu"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopējiet atslēgu no AI Studio. Atgriezieties šī paplašinājuma iestatījumos un izlasiet informāciju par datu kopīgošanu. Izvēlieties <1>Piekrītu, savienot ar Google</1> un ielīmējiet atslēgu laukā <2>API atslēga</2>. Tā tiek automātiski šifrēta un saglabāta, un tiek ielādēts modeļu saraksts. Pirms turpināt, sagaidiet rezultātu."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator iestatījumi ar datu kopīgošanas paziņojumu un piekrišanas pogu virs tukša API atslēgas lauka, kā arī Flash-Lite modeļa ieteikumu."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Piemērs angļu valodā. AI Translator vispirms piekrītiet datu kopīgošanai, tad ielīmējiet savu atslēgu. Modeļu saraksts tiek pārbaudīts pēc šifrētās atslēgas saglabāšanas."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google var mainīt šos ekrānus. Jaunākās darbības vai palīdzību ar atslēgas kļūdām skatiet <1>Google API atslēgas ceļvedī</1>. Ja vecāka atslēga vairs nedarbojas, izmantojiet jaunu atslēgu no AI Studio."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Izvēlieties tulkošanas iestatījumus"
+  },
+  "html_choose_a_model": {
+    "message": "Izvēlieties modeli"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Iesakām Gemini Flash-Lite saimi. Šai versijai, kas izlaista 2026. gada septembrī, mūsu izvēle ir <1>Gemini 3.5 Flash-Lite</1>. Izmantojiet to, ja tas ir pieejams jūsu modeļu sarakstā."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Varat izvēlēties citu sarakstā esošu modeli. Daži modeļi var nedarboties ar šo paplašinājumu. Ja modelis nedarbojas, izvēlieties citu vai izmantojiet ieteikto modeli."
+  },
+  "html_choose_your_target_language": {
+    "message": "Izvēlieties mērķvalodu"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Sadaļā <1>Noklusējuma valoda</1> izvēlieties valodu, kurā vēlaties lasīt. Izvēles atbilst <2>Google dokumentētajām Gemini valodām</2>. Tulkojuma kvalitāte var atšķirties atkarībā no valodas un teksta."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator tulkošanas iestatījumi ar mērķvalodas izvēli un aktivizēšanas taustiņa vadīklām."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Piemērs angļu valodā. Izvēlieties tulkojumu valodu un pabeidziet iestatīšanu."
+  },
+  "html_finish_setup": {
+    "message": "Pabeigt iestatīšanu"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Paturiet aktivizēšanu ar Control taustiņu, reģistrējiet citu taustiņu vai izvēlieties <1>Izslēgts</1>, lai izmantotu tikai labā klikšķa izvēlni. Iestatījumu apakšā izvēlieties <2>Pabeigt iestatīšanu</2>. Vēlāk varat mainīt šīs izvēles ar <3>Saglabāt preferences</3>."
+  },
+  "html_open_settings": {
+    "message": "Atvērt iestatījumus"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Iztulkojiet pirmo atlasīto tekstu"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Atveriet parastu tīmekļa lapu un atlasiet īsu tekstu. Noklikšķiniet ar labo pogu un izvēlieties <1>Tulkot atlasīto tekstu</1> vai nospiediet un atlaidiet izvēlēto taustiņu. Rezultāts parādās blakus atlasītajam tekstam."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Ja paplašinājums tikko instalēts vai pārlādēts, vispirms atsvaidziniet tīmekļa lapu. Chrome iestatījumu lapās, Chrome interneta veikalā un iebūvētajā PDF skatītājā tulkošana nav atļauta."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Rīkjoslas uznirstošajā logā redzams pēdējais rezultāts. Kad iestatīšana ir pabeigta, tas atver standarta skatu. Ja noņemat API atslēgu, atkal parādās sākuma ceļvedis."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Bieži uzdotie jautājumi: atslēgas, izmaksas un privātums"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Kāpēc man vajadzīga sava API atslēga?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Šis paplašinājums ir veidots tā, lai nosūtītu pieprasījumus tieši jūsu Google projektam ar jūsu atslēgu. Tā ir izstrādes izvēle, nevis Chrome prasība. Atslēga atļauj pieprasījumus un sasaista tos ar jūsu lietojumu un norēķiniem. Nekad nerādiet to ekrānuzņēmumos vai publiskos ziņojumos. Skatiet <1>Google API atslēgas ceļvedi</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Kāpēc aktīvi norēķini ir obligāti, nevis tikai ieteicami?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome <1>ierobežotas izmantošanas noteikumu 3. un 5. punkts</1> atļauj datu izmantošanu tikai paplašinājuma mērķim un saistītajām darbībām. Dažos Gemini bezmaksas lietošanas gadījumos ir atļauta plašāka apmācība un cilvēku veikta pārskatīšana. Maksas pakalpojumu noteikumi izslēdz izmantošanu produktu uzlabošanai, taču atļauj ierobežotu glabāšanu drošības un juridiskām vajadzībām un apstrādi ārpus ES."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Lai novērstu šo neatbilstību, izstrādātājs visā pasaulē pieprasa aktīvus projekta norēķinus. Ieteikums joprojām pieļautu bezmaksas lietošanu. Google reģionālais noteikums pieprasa maksas pakalpojumus lietotnēm, kas tiek piedāvātas Eiropas Ekonomikas zonā, Apvienotajā Karalistē un Šveicē. Skatiet <1>Gemini noteikumus: lietošanas ierobežojumi, bezmaksas pakalpojumi un maksas pakalpojumi</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Kāpēc neobligātajai kopīgošanai ar Google jāpaliek izslēgtai?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Žurnālu vai datu kopu kopīgošana var atļaut apmācību un cilvēku veiktu pārskatīšanu arī ar aktīviem norēķiniem. Neiesniedziet šī paplašinājuma datus ar datu kopu kopīgošanu vai atsauksmēm. Saskaņā ar šo noteikumu privāta žurnālu glabāšana savam projektam ir atļauta. Skatiet <1>Google žurnālu politiku: kādus datus var kopīgot un kā mēs izmantojam jūsu datus</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Vai paplašinājums ir bezmaksas, ja man vajadzīga maksas API piekļuve?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Jā. Paplašinājums ir bezmaksas, bet var tikt piemērota maksa par Google API. Maksas Gemini lietotnes abonements neaizstāj API projekta norēķinus. Skatiet, <1>kā pārbaudīt norēķinus</1>, un <2>Google API cenas</2>. Paplašinājums nepārbauda norēķinu vai kopīgošanas iestatījumus."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Kāpēc man jāizvēlas Piekrītu, savienot ar Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome <1>informācijas atklāšanas prasību 1. un 2. punkts</1> pieprasa skaidru informāciju par datu izmantošanu un informētu piekrišanu. Mūsu poga ļauj izdarīt šo izvēli pirms jebkura Google API pieprasījuma. Tā nepārbauda identitāti vai norēķinus un nedod atļauju kopīgot citu cilvēku privāto informāciju."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Kas tieši tiek nosūtīts Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Modeļu pārbaudes nosūta jūsu atslēgu un pieprasa pieejamos modeļus. Tulkošana nosūta atlasīto tekstu, mērķvalodu, modeli un tulkošanas norādījumus. Tas ietver atlasītu tekstu no vietējiem failiem. Paplašinājums nepievieno visu lapu, lapas adresi vai pārlūkošanas vēsturi. Google saņem arī savienojuma informāciju, piemēram, jūsu IP adresi. Izstrādātājs nesaņem nevienu no šiem pieprasījumiem. Sūtiet tikai tādu tekstu, ko drīkstat kopīgot."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Kā mana atslēga tiek saglabāta un automātiski atvērta?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Jūsu API atslēga tiek saglabāta šifrēta. Tā un tās šifrēšanas atslēga paliek šajā Chrome profilā, lai pēc restartēšanas to izmantotu automātiski. Tās netiek sinhronizētas. Persona ar piekļuvi profilam tomēr var atgūt API atslēgu. Tā nav operētājsistēmas atslēgu glabātava vai ar paroli aizsargāts seifs. Valodas, modeļa un taustiņa izvēles var sinhronizēt. Tikai pēdējais rezultāts paliek pārlūka sesijai; nav analītikas vai tulkojumu vēstures."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Atjaunināšana šifrē un pārbauda iepriekš saglabāto atslēgu pirms tās nešifrēto kopiju dzēšanas. Ja tas neizdodas, vecā kopija paliek saglabāta un pieprasījumi paliek bloķēti. Iestatījumos ir izskaidrota kļūda. Vecās atslēgas pārvietošana neatceļ piekrišanas prasību."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Vai varu atsaukt piekrišanu vai noņemt atslēgu?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>Iestatījumos</1> ar <2>Atsaukt piekrišanu datu kopīgošanai</2> tiek bloķēti jauni pieprasījumi un lokāli atcelti aktīvie, paturot jūsu atslēgu un preferences. <3>Noņemt saglabāto atslēgu</3> dzēš saglabāto atslēgu, tās šifrēšanas atslēgu un modeļu kešatmiņu. Neviena darbība neatsauc jau nosūtītus datus un negarantē, ka nosūtīts pieprasījums kļūst bezmaksas. Atsauciet atslēgu AI Studio, lai to atspējotu arī Google pusē."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Jūsu piekrišana paliek saglabāta pēc parastas restartēšanas un atjaunināšanas. Ja paziņojums mainās, pieprasījumi gaida, līdz to pārskatāt un piekrītat vēlreiz."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Kāpēc tas ir paredzēts pieaugušajiem un darba vai uzņēmējdarbības vajadzībām?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google pieprasa, lai lietotāji būtu vismaz 18 gadus veci un lietotu pakalpojumu profesionāliem vai uzņēmējdarbības nolūkiem atbalstītajos reģionos. Skatiet <1>Gemini noteikumus: vecuma prasības un lietošanas ierobežojumi</1> un <2>pieejamos reģionus</2>. Šim paplašinājumam nav atsevišķas atbilstības izvēles rūtiņas vai identitātes pārbaudes."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Kāpēc papildus šim paziņojumam ir privātuma politika?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Paziņojums izskaidro izvēli pirms savienojuma. Politikā ir pilna informācija par datiem, glabāšanu un noņemšanu. Chrome <1>privātuma politikas noteikumi</1> to pieprasa paplašinājumiem, kas apstrādā lietotāju datus. Lasiet <2>mūsu privātuma politiku</2>. Šie paziņojumi nenozīmē, ka Google ir apstiprinājis paplašinājumu."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Mākslīgā intelekta tulkojumi var būt kļūdaini. Pirms paļaušanās uz tiem pārbaudiet svarīgos formulējumus."
+  },
+  "html_about_ai_translator": {
+    "message": "Par AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Tulkojiet pavisam vienkārši: atlasiet tekstu un nospiediet Control."
+  },
+  "html_made_for_people": {
+    "message": "Radīts cilvēkiem"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Es izveidoju AI Translator, lai palīdzētu cilvēkiem lasīt, mācīties un sazināties dažādās valodās. Ceru, ka tas noderēs cilvēkiem visā pasaulē."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Paplašinājums tulko jūsu atlasīto tekstu ar jūsu Google Gemini API atslēgu. Jūs izvēlaties, ko nosūtīt un kurā valodā lasīt."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Nospiediet un atlaidiet Control, lai tulkotu atlasīto tekstu. Control ir noklusējuma taustiņš, un to var mainīt iestatījumos. Varat izmantot arī lapas labā klikšķa izvēlni."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Manuāli pārbaudīts tikai Mac datorā. Windows un Linux nav manuāli pārbaudīti."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Skatīt pirmkodu un projekta ceļvedi</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Saņemt palīdzību vai ziņot par problēmu</1>. Problēmu ziņojumi ir publiski. Neiekļaujiet API atslēgas, privātu tekstu vai personas datus."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Ja vēlaties atbalstīt manu darbu"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Lūdzu, atbalstiet manu valsti, Ukrainu, tās aizsardzībā pret Krievijas agresiju."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Es uzticos Sternenko Community Foundation. Ja varat un vēlaties palīdzēt, varat ziedot tā oficiālajā vietnē."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Atbalstīt Ukrainu ar fonda starpniecību</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Atbalsts ir brīvprātīgs un nekad nav vajadzīgs šī paplašinājuma lietošanai. Šī saite atver ārēju vietni. Ziedojumus apstrādā fonds, nevis paplašinājums."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privātums un izmaksas"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Jūsu API atslēga šajā ierīcē ir šifrēta un netiek sinhronizēta. Tā paliek pieejama pēc parastas Chrome restartēšanas bez atbloķēšanas paroles. Persona ar piekļuvi pārlūka profilam tomēr var to atgūt."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Pirms pirmā Google pieprasījuma iestatījumos tiek izskaidrota datu kopīgošana un lūgts izvēlēties <1>Piekrītu, savienot ar Google</1>. Pēc tam atlasītais teksts tiek nosūtīts tieši Google tikai tad, kad pieprasāt tulkojumu. Modeļu pārbaudes nosūta atslēgu, bet nesūta atlasīto tekstu. Paplašinājumā nav analītikas, reklāmu vai tulkojumu vēstures."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Jebkurā laikā pārskatiet informāciju <1>Iestatījumos</1>. Izvēlieties <2>Atsaukt piekrišanu datu kopīgošanai</2>, lai apturētu jaunus pieprasījumus, paturot šifrēto atslēgu un preferences, vai <3>Noņemt saglabāto atslēgu</3>, lai dzēstu atslēgu un modeļu kešatmiņu. Jau nosūtītus datus nevar atsaukt."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Tulkojumus ģenerē mākslīgais intelekts, un tie var būt kļūdaini. Pirms paļaušanās uz tiem pārbaudiet svarīgos formulējumus."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Lasiet informāciju par privātumu</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator ir bezmaksas neatkarīgs projekts. Var tikt piemērota maksa par Google API. Visās valstīs izmantojiet Gemini API atslēgu no projekta ar <1>aktīviem norēķiniem</1> un neieslēdziet neobligāto <2>šī paplašinājuma pieprasījumu žurnālu un datu kopu kopīgošanu ar Google</2>. Ar šiem iestatījumiem Google maksas pakalpojumu noteikumi izslēdz uzvedņu un atbilžu izmantošanu produktu uzlabošanai; apstrāde drošības un juridiskām vajadzībām joprojām ir spēkā. Lasiet <3>Google piezīmes par cenām un datu izmantošanu</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Šis paplašinājums ir paredzēts personām no 18 gadu vecuma darba vai uzņēmējdarbības vajadzībām <1>Google atbalstītajos reģionos</1>. Izmantojot paplašinājumu, jūs apņematies ievērot šos nosacījumus, <2>Google API noteikumus</2> un <3>Gemini API papildu noteikumus</3>. Nelietojiet to, ja nevarat tos izpildīt. Netiek izmantota atbilstības izvēles rūtiņa vai identitātes pārbaude. Paplašinājums nepārbauda norēķinu vai kopīgošanas iestatījumus."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Nesaglabātas izmaiņas."
+  },
+  "runtime_settings_conflict": {
+    "message": "Iestatījumi ir mainīti citā lapā. Jūsu labojumi šeit ir paturēti. Pārlādējiet saglabātos iestatījumus, lai atmestu labojumus un izmantotu saglabātās vērtības."
+  },
+  "runtime_preferences_current": {
+    "message": "Preferences ir aktuālas."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Saglabāto atslēgu nevar atvērt. Mēģiniet vēlreiz atvērt iestatījumus vai noņemiet atslēgu un ievadiet to no jauna."
+  },
+  "runtime_key_conflict": {
+    "message": "API atslēga ir mainīta citā lapā. Pirms atslēgas saglabāšanas pārlādējiet saglabātos iestatījumus."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Jūsu atslēga ir saglabāta šifrēta. Pirms savienojuma ar Google piekrītiet datu kopīgošanai."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Pirms API atslēgas pievienošanas iepriekš piekrītiet datu kopīgošanai."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini noraidīja šo saglabāto atslēgu. Aizstājiet to vai izmantojiet Atsvaidzināt modeļus, lai to pārbaudītu vēlreiz."
+  },
+  "runtime_paste_key": {
+    "message": "Ielīmējiet API atslēgu, lai savienotu Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "API atslēga ir saglabāta. Gemini to pieņēma pēdējā modeļu saraksta pārbaudē."
+  },
+  "runtime_key_saved_check": {
+    "message": "API atslēga šajā ierīcē ir saglabāta šifrēta. Atsvaidziniet modeļus, lai to pārbaudītu ar Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Vēlreiz atsaukt piekrišanu"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Atsaukt piekrišanu datu kopīgošanai"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Piekrišanas atsaukšana nav apstiprināta. Mēģiniet to atsaukt vēlreiz, lai saglabātu izvēli."
+  },
+  "runtime_agreement_saved": {
+    "message": "Šim Chrome profilam ir dota piekrišana datu kopīgošanai. Varat to atsaukt jebkurā laikā."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Savienojums ar Google netiek veidots līdz jūsu piekrišanai. Ja atsaucat piekrišanu, saglabātā atslēga tiek paturēta."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini noraidīja saglabāto atslēgu. Aizstājiet to tālāk."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Jūsu atslēga šajā ierīcē ir saglabāta šifrēta."
+  },
+  "runtime_setup_create_key": {
+    "message": "Izveidojiet savu atslēgu Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Valoda ir izvēlēta. Pabeidziet iestatīšanu, lai saglabātu izvēles."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Tālāk izvēlieties mērķvalodu."
+  },
+  "runtime_finish_setup": {
+    "message": "Pabeigt iestatīšanu"
+  },
+  "runtime_save_preferences": {
+    "message": "Saglabāt preferences"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Pievienojiet API atslēgu, pārbaudiet modeļu sarakstu un saglabājiet modeļa izvēli."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Pirms tulkošanas atrisiniet iestatījumu konfliktu."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Pirms savienojuma ar Google pārskatiet datu kopīgošanu un piekrītiet tai."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Pirms iestatīšanas pārbaudes pabeidziet API atslēgas saglabāšanu."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Jāpievērš uzmanība iestatīšanai: Gemini noraidīja saglabāto API atslēgu."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Atslēga ir saglabāta. Izvēlieties mērķvalodu un pabeidziet iestatīšanu."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Izvēlieties pieejamu modeli un saglabājiet preferences."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Modelis ir izvēlēts. Saglabājiet preferences, lai to izmantotu."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Atslēga un valoda ir gatavas. Pabeidziet iestatīšanu, lai saglabātu izvēles, un izmēģiniet tulkošanu. Piekļuve modelim un kvota joprojām var mainīties."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Varat izmēģināt tulkošanu. Saglabātais modelis ir pārbaudītajā modeļu sarakstā; piekļuve pieprasījumiem un kvota joprojām var mainīties."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Atslēga ir saglabāta. Atsvaidziniet modeļus, lai pārbaudītu atslēgu un izvēlēto modeli."
+  },
+  "runtime_show_key": {
+    "message": "Rādīt"
+  },
+  "runtime_hide_key": {
+    "message": "Slēpt"
+  },
+  "runtime_choose_target_language": {
+    "message": "Izvēlieties mērķvalodu"
+  },
+  "runtime_background_no_response": {
+    "message": "Paplašinājuma fona process neatbildēja. Pārlādējiet paplašinājumu un mēģiniet vēlreiz."
+  },
+  "runtime_refresh_models": {
+    "message": "Atsvaidzināt modeļus"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Pirms modeļu ielādes piekrītiet datu kopīgošanai."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Pirms modeļu atsvaidzināšanas pabeidziet API atslēgas saglabāšanu."
+  },
+  "runtime_refreshing": {
+    "message": "Atsvaidzina..."
+  },
+  "runtime_loading": {
+    "message": "Ielādē..."
+  },
+  "runtime_models_checking": {
+    "message": "Pārbauda saderīgus modeļus Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Ielādē saderīgus modeļus..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Neizdevās ielādēt saderīgus modeļus."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini neatgrieza nevienu saderīgu modeli."
+  },
+  "runtime_model_not_available": {
+    "message": "Izvēlētais modelis nav saderīgo modeļu sarakstā. Izvēlieties citu modeli."
+  },
+  "runtime_record_key": {
+    "message": "Reģistrēt taustiņu"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Taustiņa reģistrēšana ir atcelta."
+  },
+  "runtime_unknown_key": {
+    "message": "Šis taustiņš"
+  },
+  "runtime_press_key": {
+    "message": "Nospiediet taustiņu..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Nospiediet vienu atbalstītu taustiņu, kas neievada rakstzīmi. Lai atceltu, nospiediet Escape."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Atsvaidziniet modeļus, lai pārbaudītu saglabāto API atslēgu."
+  },
+  "runtime_models_add_key": {
+    "message": "Pievienojiet API atslēgu, lai ielādētu saderīgus modeļus."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Paplašinājums nevarēja ielādēt saglabāto stāvokli."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini noraidīja saglabāto API atslēgu. Aizstājiet to vai atsvaidziniet modeļus, lai pārbaudītu vēlreiz."
+  },
+  "runtime_settings_reopen": {
+    "message": "Neizdevās ielādēt iestatījumus. Atveriet iestatījumus vēlreiz, lai mēģinātu no jauna."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Neizdevās ielādēt iestatījumus. Pārlādējiet saglabātos iestatījumus, lai mēģinātu vēlreiz. Saglabāšana ir atspējota, lai aizsargātu saglabātās izvēles."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Neizdevās ielādēt iestatīšanas stāvokli."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Ievadiet pilnu API atslēgu bez atstarpēm."
+  },
+  "runtime_key_use_remove": {
+    "message": "Izmantojiet Noņemt saglabāto atslēgu, lai dzēstu saglabāto atslēgu."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Pirms API atslēgas saglabāšanas iepriekš piekrītiet datu kopīgošanai."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Saglabā šifrētu API atslēgu..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Neizdevās nolasīt vai saglabāt API atslēgu. Ievadītā vērtība ir paturēta. Izmantojiet Saglabāt preferences, lai mēģinātu vēlreiz."
+  },
+  "runtime_connecting_google": {
+    "message": "Veido savienojumu ar Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Pārtrauc savienojumus ar Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Neizdevās saglabāt piekrišanu datu kopīgošanai. Mēģiniet vēlreiz."
+  },
+  "runtime_key_removing": {
+    "message": "Noņem saglabāto atslēgu..."
+  },
+  "runtime_key_removed": {
+    "message": "Saglabātā atslēga ir noņemta. Pēc piekrišanas datu kopīgošanai varat pievienot jaunu atslēgu."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Neizdevās noņemt saglabāto atslēgu. Mēģiniet vēlreiz."
+  },
+  "runtime_saving": {
+    "message": "Saglabā..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Izvēlieties derīgu valodu un modeli."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Izvēlieties atbalstītu aktivizēšanas taustiņu vai Izslēgts."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Izvēlieties modeli no pašreizējā saderīgo modeļu saraksta."
+  },
+  "runtime_preferences_saving": {
+    "message": "Saglabā preferences..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Preferences ir saglabātas."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Preferences ir saglabātas. Pievienojiet API atslēgu, lai pabeigtu iestatīšanu."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Neizdevās nolasīt vai saglabāt preferences. Jūsu labojumi ir paturēti. Mēģiniet vēlreiz."
+  },
+  "runtime_key_will_save": {
+    "message": "API atslēga tiks saglabāta automātiski."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Pabeidziet API atslēgas ievadīšanu."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Pabeidziet API atslēgas saglabāšanu, lai ielādētu saderīgus modeļus."
+  },
+  "runtime_recommended_selected": {
+    "message": "Ieteiktais modelis ir izvēlēts. Saglabājiet izvēli, lai to izmantotu."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Pēc saglabāšanas aktivizēšanas taustiņš būs izslēgts."
+  },
+  "runtime_connection_changed": {
+    "message": "Savienojuma iestatījumi ir mainīti. Pārbauda saglabātos iestatījumus..."
+  },
+  "runtime_models_changed": {
+    "message": "Modeļu saraksts ir mainīts. Pārbauda saderīgus modeļus..."
+  },
+  "runtime_no_translation": {
+    "message": "Vēl nav tulkojuma."
+  },
+  "runtime_start_setup": {
+    "message": "Sākt iestatīšanu"
+  },
+  "runtime_settings": {
+    "message": "Iestatījumi"
+  },
+  "runtime_key_rejected": {
+    "message": "Atslēga noraidīta"
+  },
+  "runtime_setup_required": {
+    "message": "Jāveic iestatīšana"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Lai sāktu tulkot, iestatījumos pievienojiet API atslēgu."
+  },
+  "runtime_add_key": {
+    "message": "Pievienot API atslēgu"
+  },
+  "runtime_finish_model_language": {
+    "message": "Atslēga ir saglabāta. Atveriet iestatījumus, lai pārbaudītu modeli un pabeigtu valodas izvēli."
+  },
+  "runtime_check_setup": {
+    "message": "Pārbaudīt iestatīšanu"
+  },
+  "runtime_translating": {
+    "message": "Tulko"
+  },
+  "runtime_error": {
+    "message": "Kļūda"
+  },
+  "runtime_ready": {
+    "message": "Gatavs"
+  },
+  "runtime_status_load_failed": {
+    "message": "Neizdevās ielādēt paplašinājuma statusu. Pārlādējiet paplašinājumu un atsvaidziniet lapu."
+  },
+  "runtime_copied": {
+    "message": "Nokopēts."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopēšana ir bloķēta. Atlasiet rezultāta tekstu un kopējiet to."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Neizdevās atvērt iestatījumus. Mēģiniet vēlreiz."
+  },
+  "runtime_translating_progress": {
+    "message": "Tulko..."
+  },
+  "runtime_translation_started": {
+    "message": "Tulkošana ir sākta."
+  },
+  "runtime_translation_complete": {
+    "message": "Tulkošana ir pabeigta."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Tulkošana ir pabeigta. Izmantojiet rezultāta tekstu vai kartītes vadīklas."
+  },
+  "runtime_translation": {
+    "message": "Tulkošana"
+  },
+  "runtime_target_language": {
+    "message": "Mērķvaloda"
+  },
+  "runtime_card_target_language": {
+    "message": "Šīs kartītes mērķvaloda"
+  },
+  "runtime_close_card": {
+    "message": "Aizvērt tulkojuma kartīti"
+  },
+  "runtime_translated_text": {
+    "message": "Iztulkotais teksts"
+  },
+  "runtime_retry": {
+    "message": "Mēģināt vēlreiz"
+  },
+  "runtime_copy": {
+    "message": "Kopēt"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Neizdevās atvērt iestatījumus. Izmantojiet paplašinājuma rīkjoslu."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopēšana neizdevās. Atlasiet rezultāta tekstu un kopējiet to."
+  },
+  "runtime_context_menu": {
+    "message": "Tulkot atlasīto tekstu"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (nav pašreizējā sarakstā)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (vēl nav pārbaudīts)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Izmanto kešatmiņā esošo modeļu sarakstu no $value1$. Tiešsaistes atsvaidzināšana neizdevās. Mēģiniet vēlāk.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Izmanto kešatmiņā esošo modeļu sarakstu. Tiešsaistes atsvaidzināšana neizdevās. Mēģiniet vēlāk."
+  },
+  "runtime_models_cache_at": {
+    "message": "Izmanto kešatmiņā esošo modeļu sarakstu no $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Izmanto kešatmiņā esošo modeļu sarakstu."
+  },
+  "runtime_models_updated_at": {
+    "message": "Modeļu saraksts atjaunināts no $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Modeļu saraksts ir atjaunināts."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ netiek atbalstīts. Nospiediet citu taustiņu vai Escape, lai atceltu.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Pēc saglabāšanas tiks izmantots $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Līdz $value1$ vienā cilnē un $value2$ kopā",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ sekundes",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Nospiediet Tab, lai izmantotu šo kartīti, vai Escape, lai to aizvērtu.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Tulkošana neizdevās. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Atsvaidziniet atvērtās lapas"
+  },
+  "refresh_message": {
+    "message": "Jūsu API atslēga ir saglabāta. Pēc iestatīšanas pabeigšanas atsvaidziniet lapas, kas jau bija atvērtas. Pēc tam atlasiet tekstu un nospiediet Control, lai tulkotu."
+  },
+  "refresh_continue": {
+    "message": "Turpināt iestatīšanu"
+  },
+  "refresh_faq_question": {
+    "message": "Kāpēc jāatsvaidzina atvērtās lapas?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Atsvaidziniet atvērtās lapas</1> pēc iestatīšanas pabeigšanas un pirms mēģināt tulkot. Chrome jāielādē paplašinājums lapās, kas bija atvērtas pirms tā instalēšanas vai pārlādēšanas. Tikko atvērtās lapas ir gatavas automātiski."
+  },
+  "ui_locale": {
+    "message": "lv",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

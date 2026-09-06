@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Preprosto prevajanje: označite besedilo in pritisnite Control. Prevajajte v izbrani jezik z Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Označite nekaj besedila in poskusite znova."
+  },
+  "error_unsupported_selection": {
+    "message": "Ta izbor besedila ni podprt."
+  },
+  "error_selection_too_large": {
+    "message": "Izbor je daljši od 10.000 znakov. Označite manj besedila in poskusite znova."
+  },
+  "error_missing_api_key": {
+    "message": "Dodajte svoj ključ API za Gemini v nastavitvah."
+  },
+  "error_agreement_required": {
+    "message": "Pred povezavo z Google v nastavitvah preglejte in potrdite soglasje za deljenje podatkov."
+  },
+  "error_credential_conflict": {
+    "message": "Shranjeni ključ se je spremenil na drugi strani. Pred ponovnim poskusom znova naložite shranjene nastavitve."
+  },
+  "error_credential_storage_error": {
+    "message": "Shranjenega ključa ni mogoče odpreti. Znova odprite nastavitve ali ga odstranite in vnesite znova."
+  },
+  "error_missing_target_language": {
+    "message": "Za dokončanje nastavitve v nastavitvah izberite ciljni jezik."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini je zavrnil ključ API. Preverite ga v nastavitvah."
+  },
+  "error_invalid_model": {
+    "message": "Ta model ni primeren za prevajanje. V nastavitvah izberite drug model ali priporočeni model Flash-Lite."
+  },
+  "error_busy": {
+    "message": "Hkrati poteka preveč prevodov. Poskusite znova, ko se eden konča."
+  },
+  "error_duplicate_request": {
+    "message": "Ta izbor se že prevaja."
+  },
+  "error_rate_limited": {
+    "message": "Dosežena je omejitev zahtev. Kmalu poskusite znova."
+  },
+  "error_timeout": {
+    "message": "Prevajanje je trajalo predolgo. Lahko poskusite znova."
+  },
+  "error_offline": {
+    "message": "Videti je, da niste povezani v splet. Preverite povezavo in poskusite znova."
+  },
+  "error_network_error": {
+    "message": "Povezava z Gemini ni uspela. Preverite povezavo in poskusite znova."
+  },
+  "error_quota_exceeded": {
+    "message": "Dosežena je kvota Gemini. Preverite račun in poskusite pozneje."
+  },
+  "error_service_error": {
+    "message": "Gemini ni mogel dokončati prevoda. Poskusite pozneje."
+  },
+  "error_invalid_response": {
+    "message": "Gemini je vrnil neberljiv odgovor. Lahko poskusite znova."
+  },
+  "error_output_too_large": {
+    "message": "Prevod je presegel omejitev izhoda. Označite manj besedila in poskusite znova."
+  },
+  "error_content_blocked": {
+    "message": "Gemini je blokiral to besedilo. Poskusite drug izbor."
+  },
+  "error_unsupported_page": {
+    "message": "Prevajanje na tej strani ni na voljo."
+  },
+  "error_frame_unavailable": {
+    "message": "Izbrani okvir ni več na voljo."
+  },
+  "error_cancelled": {
+    "message": "Prevajanje je preklicano."
+  },
+  "key_Off": {
+    "message": "Izklopljeno"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Poskusite znova čez $seconds$ sekund.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Nastavitve AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Zasebne nastavitve za hitro in osredotočeno prevajanje."
+  },
+  "html_help_and_information": {
+    "message": "Pomoč in informacije"
+  },
+  "html_api_key_guide": {
+    "message": "Vodnik za ključ API"
+  },
+  "html_about": {
+    "message": "O razširitvi"
+  },
+  "html_privacy": {
+    "message": "Zasebnost"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Nastavite AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Sledite tem korakom v nastavitvah. Za prevajanje potrebujete svoj ključ API za Google."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Pridobite svoj ključ API.</1> Odprite <2>Google AI Studio</2>, prijavite se in ustvarite ključ. Spodaj preglejte deljenje podatkov in nato prilepite ključ. Za pomoč <3>preberite vodnik po korakih</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Izberite ciljni jezik in model.</1> Izberite jezik prevodov. Priporočamo Gemini Flash-Lite, če je na voljo na vašem seznamu modelov."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Shranite in začnite prevajati.</1> Na dnu te strani izberite Dokončaj nastavitev. Nato na spletni strani označite besedilo in pritisnite Control ali v meniju ob desnem kliku izberite Prevedi izbrano besedilo."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Povežite svoj ključ API za Gemini in izberite združljiv model."
+  },
+  "html_loading_setup_state": {
+    "message": "Nalaganje stanja nastavitve..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Pred povezavo z Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google prejme vaš ključ API za preverjanje modelov, ki so na voljo. Ko zahtevate prevod, Google prejme tudi izbrano besedilo in ciljni jezik, vključno z besedilom iz lokalnih datotek. Prevodi z umetno inteligenco so lahko napačni."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Ključ je v tem profilu Chrome shranjen šifrirano in se po ponovnem zagonu odpre samodejno. Dodatno geslo ni potrebno. Nekdo s polnim dostopom do profila brskalnika ga lahko vseeno pridobi. <1>Preberite podrobnosti o zasebnosti</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Obvezno v vseh državah:</1> uporabljajte ključ API za Gemini iz projekta z <2>aktivnim obračunavanjem</2>. Izbirno <3>deljenje dnevnikov zahtev in podatkovnih zbirk te razširitve z Google</3> mora biti izklopljeno. Pri teh nastavitvah Googlovi plačljivi pogoji izključujejo uporabo pozivov in odgovorov za izboljšavo izdelkov; obdelava zaradi varnosti in zakonskih obveznosti še vedno velja. Razširitev je brezplačna, vendar lahko Google zaračuna uporabo API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Pogoji uporabe.</1> Z uporabo Gemini prek te razširitve se strinjate, da boste upoštevali zgornje zahteve in <2>Googlove pogoje</2>. Uporaba je namenjena osebam, starim vsaj 18 let, za poklicne ali poslovne namene v <3>podprtih regijah</3>. Razširitev ne preverja nastavitev obračunavanja ali deljenja."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Strinjam se in se želim povezati z Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Umakni soglasje za podatke"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Pred povezavo preglejte podrobnosti deljenja podatkov."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Zakaj so te zahteve potrebne? Preberite pogosta vprašanja</1>."
+  },
+  "html_api_key": {
+    "message": "Ključ API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Po soglasju prilepite ključ, da se shrani šifrirano in se modeli samodejno naložijo."
+  },
+  "html_show": {
+    "message": "Pokaži"
+  },
+  "html_remove_saved_key": {
+    "message": "Odstrani shranjeni ključ"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Znani modeli samo za medije in posebne namene so skriti."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Priporočamo družino Gemini Flash-Lite. Ob tej izdaji (september 2026) smo izbrali Gemini 3.5 Flash-Lite. Lahko izberete drug model s seznama. Nekateri modeli morda ne delujejo s to razširitvijo. Če model odpove, izberite drugega ali priporočenega."
+  },
+  "html_refresh_models": {
+    "message": "Osveži modele"
+  },
+  "html_use_recommended_model": {
+    "message": "Uporabi priporočeni model"
+  },
+  "html_translation": {
+    "message": "Prevajanje"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Nastavite jezik in izbirno sprožilno tipko."
+  },
+  "html_default_language": {
+    "message": "Privzeti jezik"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Kartica rezultata lahko uporablja drug jezik, ne da bi spremenila to privzeto vrednost."
+  },
+  "html_keyboard_trigger": {
+    "message": "Sprožilna tipka"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Posamezne tipke so lahko v sporu s spletnimi mesti ali orodji za dostopnost. Izberite Izklopljeno, če želite uporabljati samo priročni meni."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Zabeleži tipko"
+  },
+  "html_off": {
+    "message": "Izklopljeno"
+  },
+  "html_behavior": {
+    "message": "Delovanje"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Stalne omejitve ohranjajo odzivnost prevodov in varujejo kvoto API."
+  },
+  "html_parallel_requests": {
+    "message": "Sočasne zahteve"
+  },
+  "html_request_timeout": {
+    "message": "Časovna omejitev zahteve"
+  },
+  "html_page_access": {
+    "message": "Dostop do strani"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Za lokalne datoteke v razdelku Upravljanje razširitve omogočite Dovoli dostop do URL-jev datotek"
+  },
+  "html_help_and_recovery": {
+    "message": "Pomoč in obnovitev"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Če model ni na voljo, osvežite modele, izberite enega s seznama in shranite nastavitve. Če se seznam ne naloži, preverite ključ in povezavo ter nato poskusite Osveži modele."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Strani z nastavitvami Chrome in Spletna trgovina Chrome ne dovoljujejo prevajanja. Za lokalne datoteke v razdelku Upravljanje razširitve omogočite Dovoli dostop do URL-jev datotek. Po posodobitvi ali ponovnem nalaganju razširitve osvežite odprte spletne strani. Ponovno nalaganje lahko prekine prevod."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Prevajanje ne deluje brez povezave. Po zgornjem soglasju se ključ pošlje neposredno Google za preverjanje modelov. Izbrano besedilo, tudi iz lokalnih datotek, se pošlje s ciljnim jezikom samo, ko zahtevate prevod. Shranjeni ključ je šifriran v tem profilu Chrome. Izbrani jezik, model in tipka se lahko sinhronizirajo prek Chrome. Razširitev hrani le zadnji rezultat te seje brskalnika in ne hrani zgodovine prevodov."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Zgoraj lahko kadar koli pregledate deljenje podatkov in umaknete soglasje. S tem ustavite preverjanje modelov in prevode, dokler se znova ne strinjate. Shranjeni ključ ostane, razen če izberete Odstrani shranjeni ključ."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Tukaj se shranijo spremembe jezika, modela in tipke."
+  },
+  "html_reload_saved_settings": {
+    "message": "Znova naloži shranjene nastavitve"
+  },
+  "html_save_preferences": {
+    "message": "Shrani nastavitve"
+  },
+  "html_gemini_translation": {
+    "message": "Prevajanje z Gemini"
+  },
+  "html_setup_required": {
+    "message": "Potrebna je nastavitev"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Dobrodošli v AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Prevedite izbrano besedilo v jezik, ki ga poznate. Za začetek nastavite ti dve stvari:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Vaš ključ API za Gemini.</1> Pridobite svoj ključ v Google AI Studio. Naš vodnik pojasni postopek."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Vaš ciljni jezik.</1> Izberite jezik, v katerem želite brati."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Kako pridobiti ključ API"
+  },
+  "html_extension_status": {
+    "message": "Stanje razširitve"
+  },
+  "html_active_translations": {
+    "message": "Aktivni prevodi"
+  },
+  "html_latest_this_session": {
+    "message": "Zadnji v tej seji"
+  },
+  "html_no_translation_yet": {
+    "message": "Prevodov še ni."
+  },
+  "html_copy": {
+    "message": "Kopiraj"
+  },
+  "html_settings": {
+    "message": "Nastavitve"
+  },
+  "html_key_guide": {
+    "message": "Vodnik za ključ"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Začnite uporabljati AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Strani razširitve"
+  },
+  "html_faq": {
+    "message": "Pogosta vprašanja"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Pridobite svoj ključ API za Google, izberite jezik in prevedite prvi izbor."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Pridobite ključ API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Ključ API omogoča tej razširitvi uporabo Gemini prek vašega računa Google. Varujte ga kot geslo."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Ta razširitev je namenjena osebam, starim vsaj 18 let, za delo ali poslovno uporabo v <1>Googlovih podprtih državah in regijah</1>. V vseh državah mora ključ API pripadati projektu Gemini z aktivnim obračunavanjem. Izbirno deljenje dnevnikov zahtev in podatkovnih zbirk te razširitve z Google mora biti izklopljeno."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Z uporabo te razširitve se strinjate, da boste upoštevali te pogoje, <1>Pogoje za Google API</1> in <2>Dodatne pogoje za Gemini API</2>. Ne uporabljajte je, če teh pogojev ne morete izpolniti. Razširitev teh dejstev ne preverja in ne zahteva osebnih dokumentov."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Odprite Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Prijavite se v račun Google. Če ste pozvani, sprejmite Googlove pogoje."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Ustvarite ali izberite ključ"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Na strani API Keys izberite <1>Create API key</1> in sledite Googlovim korakom za izbiro ali ustvarjanje projekta. Projekt združuje uporabo API in morebitno obračunavanje. Če ste novi v AI Studio, je Google morda že ustvaril privzeti projekt in ključ."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Če vaš obstoječi projekt manjka, odprite <1>Dashboard > Projects > Import projects</1>. Uvozite projekt in se vrnite na API Keys."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Pred uporabo ključa sledite <1>Googlovemu vodniku za obračunavanje</1> in preverite, ali ima projekt aktivno obračunavanje. Plačljiva naročnina na aplikacijo Gemini ne nadomesti obračunavanja projekta API. Izbirno deljenje dnevnikov zahtev in podatkovnih zbirk te razširitve z Google mora biti izklopljeno; preberite <2>Googlov pravilnik o deljenju dnevnikov</2>. Zasebno beleženje v projektu je ločeno od deljenja."
+  },
+  "html_copy_your_key": {
+    "message": "Kopirajte ključ"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopirajte ključ iz AI Studio. Vrnite se v nastavitve razširitve in preberite podrobnosti deljenja podatkov. Izberite <1>Strinjam se in se želim povezati z Google</1>, nato prilepite ključ v polje <2>Ključ API</2>. Ključ se samodejno šifrira in shrani, nato pa se naloži seznam modelov. Pred nadaljevanjem počakajte na rezultat."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Nastavitve AI Translator z obvestilom o deljenju podatkov in gumbom za soglasje nad praznim poljem za ključ API ter priporočilom modela Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Primer je prikazan v angleščini. V AI Translator najprej podajte soglasje za deljenje podatkov, nato prilepite svoj ključ. Seznam modelov se preveri po shranitvi šifriranega ključa."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google lahko spremeni te zaslone. Za trenutne korake ali napake ključa preberite <1>Googlov vodnik za ključ API</1>. Če starejši ključ ne deluje več, uporabite nov ključ iz AI Studio."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Izberite nastavitve prevajanja"
+  },
+  "html_choose_a_model": {
+    "message": "Izberite model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Priporočamo družino Gemini Flash-Lite. Za to izdajo septembra 2026 smo izbrali <1>Gemini 3.5 Flash-Lite</1>. Uporabite ga, če je na voljo na vašem seznamu modelov."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Lahko izberete drug model s seznama. Nekateri modeli morda ne delujejo s to razširitvijo. Če model odpove, izberite drugega ali uporabite priporočenega."
+  },
+  "html_choose_your_target_language": {
+    "message": "Izberite svoj ciljni jezik"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "V polju <1>Privzeti jezik</1> izberite jezik, v katerem želite brati. Izbire sledijo <2>Googlovim dokumentiranim jezikom Gemini</2>. Kakovost prevoda se lahko razlikuje glede na jezik in besedilo."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Nastavitve prevajanja AI Translator z izbiro ciljnega jezika in upravljanjem sprožilne tipke."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Primer je prikazan v angleščini. Izberite jezik za prevode in nato dokončajte nastavitev."
+  },
+  "html_finish_setup": {
+    "message": "Dokončaj nastavitev"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Ohranite sprožilno tipko Control, zabeležite drugo tipko ali izberite <1>Izklopljeno</1>, da uporabljate samo meni ob desnem kliku. Na dnu nastavitev izberite <2>Dokončaj nastavitev</2>. Te izbire lahko pozneje spremenite z <3>Shrani nastavitve</3>."
+  },
+  "html_open_settings": {
+    "message": "Odpri nastavitve"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Prevedite prvi izbor"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Odprite običajno spletno stran in označite krajše besedilo. Kliknite z desno tipko in izberite <1>Prevedi izbrano besedilo</1> ali pritisnite in spustite izbrano tipko. Rezultat se prikaže ob izboru."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Če je bila razširitev pravkar nameščena ali znova naložena, najprej osvežite spletno stran. Strani z nastavitvami Chrome, Spletna trgovina Chrome in vgrajeni pregledovalnik PDF ne dovoljujejo prevajanja."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Pojavno okno v orodni vrstici prikazuje zadnji rezultat. Po dokončani nastavitvi odpre standardni pogled. Če odstranite ključ API, se pozdravni vodnik spet prikaže."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Pogosta vprašanja: ključi, stroški in zasebnost"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Zakaj potrebujem svoj ključ API?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Ta razširitev pošilja zahteve neposredno v vaš projekt Google z vašim ključem. To je oblikovalska odločitev, ne pravilo Chrome. Ključ omogoča zahteve in jih poveže z vašo uporabo ter obračunavanjem. Nikoli ga ne delite na posnetkih zaslona ali v javnih sporočilih. Glejte <1>Googlov vodnik za ključ API</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Zakaj je aktivno obračunavanje obvezno in ne le priporočeno?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Pravila Chrome o omejeni uporabi, točki 3 in 5</1>, omejujejo uporabo podatkov na namen razširitve in povezano delovanje. Nekatera neplačljiva uporaba Gemini dovoljuje širše učenje modelov in človeški pregled. Plačljivi pogoji izključujejo uporabo za izboljšavo izdelkov, vendar dovoljujejo omejeno hrambo zaradi varnosti in zakonskih obveznosti ter obdelavo zunaj EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Za rešitev tega nasprotja razvijalec zahteva aktivno obračunavanje projekta po vsem svetu. Priporočilo bi še vedno dovoljevalo neplačljivo uporabo. Googlovo regionalno pravilo zahteva plačljive storitve za aplikacije, ki so na voljo v Evropskem gospodarskem prostoru, Združenem kraljestvu in Švici. Glejte <1>pogoje Gemini: Omejitve uporabe, Neplačljive storitve in Plačljive storitve</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Zakaj mora izbirno deljenje z Google ostati izklopljeno?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Deljenje dnevnikov ali podatkovnih zbirk lahko omogoči učenje modelov in človeški pregled tudi pri aktivnem obračunavanju. Podatkov te razširitve ne prispevajte prek deljenja podatkovnih zbirk ali povratnih informacij. Zasebno beleženje za vaš projekt je po tem pravilu dovoljeno. Glejte <1>Googlov pravilnik o beleženju: Podatki, ki jih je mogoče deliti, in Kako uporabljamo vaše podatke</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Ali je razširitev brezplačna, če potrebujem plačljiv dostop API?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Da. Razširitev je brezplačna, vendar lahko Google zaračuna uporabo API. Plačljiva naročnina na aplikacijo Gemini ne nadomesti obračunavanja projekta API. Glejte <1>kako preveriti obračunavanje</1> in <2>Googlove cene API</2>. Razširitev ne preverja nastavitev obračunavanja ali deljenja."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Zakaj moram izbrati Strinjam se in se želim povezati z Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Zahteve Chrome glede razkritja, točki 1 in 2</1>, zahtevajo jasne podatke o uporabi podatkov in informirano soglasje. Naš gumb omogoča to odločitev pred katero koli zahtevo Google API. Ne preverja vaše identitete ali obračunavanja in ne daje dovoljenja za deljenje zasebnih podatkov drugih ljudi."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Kaj natančno se pošlje Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Preverjanje modelov pošlje ključ in zahteva modele, ki so na voljo. Prevajanje pošlje izbrano besedilo, ciljni jezik, model in navodila za prevod. To vključuje izbrano besedilo lokalnih datotek. Razširitev ne doda celotne strani, naslova strani ali zgodovine brskanja. Google prejme tudi podatke o povezavi, kot je vaš naslov IP. Razvijalec ne prejme nobene od teh zahtev. Pošiljajte le besedilo, ki ga smete deliti."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Kako se ključ shrani in samodejno odpre?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Ključ API je shranjen šifrirano. Ključ in njegov šifrirni ključ ostaneta v tem profilu Chrome za samodejno uporabo po ponovnem zagonu. Ne sinhronizirata se. Nekdo z dostopom do profila lahko ključ API vseeno pridobi. To ni sistemska shramba ključev ali trezor, zaščiten z geslom. Izbire jezika, modela in tipke se lahko sinhronizirajo. Za sejo brskalnika ostane le zadnji rezultat; ni analitike ali zgodovine prevodov."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Nadgradnja šifrira in preveri starejši shranjeni ključ, preden izbriše njegove nešifrirane kopije. Če to ne uspe, stara kopija ostane shranjena in zahteve ostanejo blokirane. Nastavitve pojasnijo napako. Prenos starega ključa ne obide soglasja."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Ali lahko umaknem soglasje ali odstranim ključ?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "V <1>Nastavitvah</1> možnost <2>Umakni soglasje za podatke</2> blokira nove zahteve in lokalno prekliče aktivne, pri tem pa ohrani ključ in nastavitve. Možnost <3>Odstrani shranjeni ključ</3> izbriše shranjeni ključ, njegov šifrirni ključ in predpomnilnik modelov. Nobena možnost ne odpokliče že poslanih podatkov ali zagotovi, da poslana zahteva postane brezplačna. Prekličite ključ v AI Studio, da ga onemogočite tudi pri Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Soglasje ostane shranjeno pri običajnih ponovnih zagonih in posodobitvah. Če se obvestilo spremeni, zahteve počakajo, dokler ga ne pregledate in se znova strinjate."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Zakaj je to namenjeno odraslim za delo ali poslovno uporabo?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google zahteva, da so uporabniki stari vsaj 18 let in storitev uporabljajo za poklicne ali poslovne namene v podprtih regijah. Glejte <1>pogoje Gemini: Starostne zahteve in Omejitve uporabe</1> ter <2>razpoložljive regije</2>. Ta razširitev nima ločenega potrditvenega polja za upravičenost ali preverjanja identitete."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Zakaj je poleg tega obvestila potreben še pravilnik o zasebnosti?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Obvestilo pojasni odločitev pred povezavo. Pravilnik vsebuje vse podrobnosti o podatkih, hrambi in odstranitvi. <1>Pravila Chrome o pravilniku o zasebnosti</1> to zahtevajo za razširitve, ki obdelujejo uporabniške podatke. Preberite <2>naš pravilnik o zasebnosti</2>. Ta obvestila ne pomenijo, da je Google odobril razširitev."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Prevodi z umetno inteligenco so lahko napačni. Preden se nanje zanesete, preverite pomembno besedilo."
+  },
+  "html_about_ai_translator": {
+    "message": "O AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Preprosto prevajanje: označite besedilo in pritisnite Control."
+  },
+  "html_made_for_people": {
+    "message": "Ustvarjeno za ljudi"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "AI Translator sem ustvaril, da ljudem pomaga brati, se učiti in povezovati prek jezikov. Upam, da bo koristen ljudem po vsem svetu."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Razširitev prevaja izbrano besedilo z vašim ključem API za Google Gemini. Vi izberete, kaj poslati in v katerem jeziku brati."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Pritisnite in spustite Control, da prevedete izbor. Control je privzeta tipka in jo lahko spremenite v nastavitvah. Uporabite lahko tudi meni strani ob desnem kliku."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Ročno preizkušeno samo na Macu. Windows in Linux nista bila ročno preizkušena."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Oglejte si izvorno kodo in vodnik projekta</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Poiščite pomoč ali prijavite težavo</1>. Prijave so javne. Ne vključujte ključev API, zasebnega besedila ali osebnih podatkov."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Če želite podpreti moje delo"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Podprite mojo državo Ukrajino, ki se brani pred rusko agresijo."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Zaupam fundaciji Sternenko Community Foundation. Če lahko in želite pomagati, lahko donirate prek njenega uradnega spletnega mesta."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Podprite Ukrajino prek fundacije</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Podpora je prostovoljna in nikoli ni potrebna za uporabo te razširitve. Ta povezava odpre zunanje spletno mesto. Donacije potekajo prek fundacije, ne prek razširitve."
+  },
+  "html_privacy_and_costs": {
+    "message": "Zasebnost in stroški"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Ključ API je šifriran v tej napravi in se ne sinhronizira. Ostane na voljo po običajnih ponovnih zagonih Chrome brez gesla za odklepanje. Nekdo z dostopom do profila brskalnika ga lahko vseeno pridobi."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Pred prvo zahtevo Google nastavitve pojasnijo deljenje podatkov in vas prosijo, da izberete <1>Strinjam se in se želim povezati z Google</1>. Nato se izbrano besedilo pošlje neposredno Google le, ko zahtevate prevod. Preverjanje modelov pošlje ključ, ne pa izbranega besedila. Razširitev nima analitike, oglaševanja ali zgodovine prevodov."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Podrobnosti lahko kadar koli pregledate v <1>Nastavitvah</1>. Izberite <2>Umakni soglasje za podatke</2>, da ustavite nove zahteve in ohranite šifrirani ključ ter nastavitve, ali <3>Odstrani shranjeni ključ</3>, da izbrišete ključ in predpomnilnik modelov. Že poslanih podatkov ni mogoče odpoklicati."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Prevode ustvarja umetna inteligenca in so lahko napačni. Preden se nanje zanesete, preverite pomembno besedilo."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Preberite podrobnosti o zasebnosti</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator je brezplačen in neodvisen projekt. Google lahko zaračuna uporabo API. V vseh državah uporabljajte ključ API za Gemini iz projekta z <1>aktivnim obračunavanjem</1> in izklopite izbirno <2>deljenje dnevnikov zahtev in podatkovnih zbirk te razširitve z Google</2>. Pri teh nastavitvah Googlovi plačljivi pogoji izključujejo uporabo pozivov in odgovorov za izboljšavo izdelkov; obdelava zaradi varnosti in zakonskih obveznosti še vedno velja. Preberite <3>Googlove opombe o cenah in uporabi podatkov</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Ta razširitev je namenjena osebam, starim vsaj 18 let, za delo ali poslovno uporabo v <1>Googlovih podprtih regijah</1>. Z uporabo razširitve se strinjate, da boste upoštevali te pogoje, <2>Pogoje za Google API</2> in <3>Dodatne pogoje za Gemini API</3>. Ne uporabljajte je, če jih ne morete izpolniti. Ni potrditvenega polja za upravičenost ali preverjanja identitete. Razširitev ne preverja nastavitev obračunavanja ali deljenja."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Neshranjene spremembe."
+  },
+  "runtime_settings_conflict": {
+    "message": "Nastavitve so se spremenile na drugi strani. Vaše spremembe so ohranjene tukaj. Znova naložite shranjene nastavitve, da zavržete svoje spremembe in uporabite shranjene vrednosti."
+  },
+  "runtime_preferences_current": {
+    "message": "Nastavitve so posodobljene."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Shranjenega ključa ni mogoče odpreti. Znova odprite nastavitve ali ga odstranite in vnesite znova."
+  },
+  "runtime_key_conflict": {
+    "message": "Ključ API se je spremenil na drugi strani. Pred shranjevanjem ključa znova naložite shranjene nastavitve."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Ključ je shranjen šifrirano. Pred povezavo z Google podajte soglasje za deljenje podatkov."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Pred dodajanjem ključa API zgoraj podajte soglasje za deljenje podatkov."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini je zavrnil ta shranjeni ključ. Zamenjajte ga ali izberite Osveži modele za ponovno preverjanje."
+  },
+  "runtime_paste_key": {
+    "message": "Prilepite ključ API za povezavo z Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Ključ API je shranjen. Gemini ga je sprejel pri zadnjem preverjanju seznama modelov."
+  },
+  "runtime_key_saved_check": {
+    "message": "Ključ API je v tej napravi shranjen šifrirano. Osvežite modele, da ga preverite pri Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Znova poskusi umakniti soglasje"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Umakni soglasje za podatke"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Umik soglasja ni potrjen. Poskusite znova, da shranite svojo izbiro."
+  },
+  "runtime_agreement_saved": {
+    "message": "Soglasje za deljenje podatkov je podano za ta profil Chrome. Kadar koli ga lahko umaknete."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Brez soglasja ni povezave z Google. Če soglasje umaknete, shranjeni ključ ostane."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini je zavrnil shranjeni ključ. Zamenjajte ga spodaj."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Ključ je v tej napravi shranjen šifrirano."
+  },
+  "runtime_setup_create_key": {
+    "message": "Ustvarite svoj ključ v Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Jezik je izbran. Dokončajte nastavitev, da shranite izbire."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Spodaj izberite ciljni jezik."
+  },
+  "runtime_finish_setup": {
+    "message": "Dokončaj nastavitev"
+  },
+  "runtime_save_preferences": {
+    "message": "Shrani nastavitve"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Dodajte ključ API, preverite seznam modelov in shranite izbrani model."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Pred prevajanjem razrešite spor nastavitev."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Pred povezavo z Google preglejte deljenje podatkov in podajte soglasje."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Pred preverjanjem nastavitve dokončajte shranjevanje ključa API."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Nastavitev zahteva pozornost: Gemini je zavrnil shranjeni ključ API."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Ključ je shranjen. Izberite ciljni jezik in dokončajte nastavitev."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Izberite razpoložljiv model in shranite nastavitve."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model je izbran. Shranite nastavitve, da ga uporabite."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Ključ in jezik sta pripravljena. Dokončajte nastavitev, da shranite izbire, nato poskusite prevod. Dostop do modela in kvota se lahko še spremenita."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Pripravljeno za poskus prevoda. Shranjeni model je na preverjenem seznamu modelov; dostop za zahteve in kvota se lahko še spremenita."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Ključ je shranjen. Osvežite modele, da preverite ključ in izbrani model."
+  },
+  "runtime_show_key": {
+    "message": "Pokaži"
+  },
+  "runtime_hide_key": {
+    "message": "Skrij"
+  },
+  "runtime_choose_target_language": {
+    "message": "Izberite ciljni jezik"
+  },
+  "runtime_background_no_response": {
+    "message": "Ozadje razširitve se ni odzvalo. Znova naložite razširitev in poskusite znova."
+  },
+  "runtime_refresh_models": {
+    "message": "Osveži modele"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Pred nalaganjem modelov podajte soglasje za deljenje podatkov."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Pred osvežitvijo modelov dokončajte shranjevanje ključa API."
+  },
+  "runtime_refreshing": {
+    "message": "Osveževanje..."
+  },
+  "runtime_loading": {
+    "message": "Nalaganje..."
+  },
+  "runtime_models_checking": {
+    "message": "Preverjanje združljivih modelov pri Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Nalaganje združljivih modelov..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Združljivih modelov ni bilo mogoče naložiti."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini ni vrnil združljivih modelov."
+  },
+  "runtime_model_not_available": {
+    "message": "Izbranega modela ni na seznamu združljivih modelov. Izberite drug model."
+  },
+  "runtime_record_key": {
+    "message": "Zabeleži tipko"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Beleženje je preklicano."
+  },
+  "runtime_unknown_key": {
+    "message": "Ta tipka"
+  },
+  "runtime_press_key": {
+    "message": "Pritisnite tipko..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Pritisnite eno podprto tipko, ki ne vnaša znakov. Za preklic pritisnite Escape."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Osvežite modele, da preverite shranjeni ključ API."
+  },
+  "runtime_models_add_key": {
+    "message": "Dodajte ključ API za nalaganje združljivih modelov."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Razširitev ni mogla naložiti shranjenega stanja."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini je zavrnil shranjeni ključ API. Zamenjajte ga ali osvežite modele za ponovno preverjanje."
+  },
+  "runtime_settings_reopen": {
+    "message": "Nastavitev ni bilo mogoče naložiti. Za ponovni poskus znova odprite nastavitve."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Nastavitev ni bilo mogoče naložiti. Za ponovni poskus znova naložite shranjene nastavitve. Shranjevanje je onemogočeno za zaščito vaših shranjenih izbir."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Stanja nastavitve ni bilo mogoče naložiti."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Vnesite celoten ključ API brez presledkov."
+  },
+  "runtime_key_use_remove": {
+    "message": "Za izbris shranjenega ključa uporabite Odstrani shranjeni ključ."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Pred shranjevanjem ključa API zgoraj podajte soglasje za deljenje podatkov."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Šifriranje in shranjevanje ključa API..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Ključa API ni bilo mogoče prebrati ali shraniti. Vnos je ohranjen. Za ponovni poskus uporabite Shrani nastavitve."
+  },
+  "runtime_connecting_google": {
+    "message": "Povezovanje z Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Ustavljanje povezav z Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Soglasja za podatke ni bilo mogoče shraniti. Poskusite znova."
+  },
+  "runtime_key_removing": {
+    "message": "Odstranjevanje shranjenega ključa..."
+  },
+  "runtime_key_removed": {
+    "message": "Shranjeni ključ je odstranjen. Po soglasju za deljenje podatkov lahko dodate nov ključ."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Shranjenega ključa ni bilo mogoče odstraniti. Poskusite znova."
+  },
+  "runtime_saving": {
+    "message": "Shranjevanje..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Izberite veljaven jezik in model."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Izberite podprto sprožilno tipko ali Izklopljeno."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Izberite model s trenutnega seznama združljivih modelov."
+  },
+  "runtime_preferences_saving": {
+    "message": "Shranjevanje nastavitev..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Nastavitve so shranjene."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Nastavitve so shranjene. Dodajte ključ API za dokončanje nastavitve."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Nastavitev ni bilo mogoče prebrati ali shraniti. Vaše spremembe so ohranjene. Poskusite znova."
+  },
+  "runtime_key_will_save": {
+    "message": "Ključ API se bo samodejno shranil."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Dokončajte vnos ključa API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Dokončajte shranjevanje ključa API za nalaganje združljivih modelov."
+  },
+  "runtime_recommended_selected": {
+    "message": "Priporočeni model je izbran. Shranite izbiro, da ga uporabite."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Po shranjevanju bo sprožilna tipka izklopljena."
+  },
+  "runtime_connection_changed": {
+    "message": "Nastavitve povezave so se spremenile. Preverjanje shranjenih nastavitev..."
+  },
+  "runtime_models_changed": {
+    "message": "Seznam modelov se je spremenil. Preverjanje združljivih modelov..."
+  },
+  "runtime_no_translation": {
+    "message": "Prevodov še ni."
+  },
+  "runtime_start_setup": {
+    "message": "Začni nastavitev"
+  },
+  "runtime_settings": {
+    "message": "Nastavitve"
+  },
+  "runtime_key_rejected": {
+    "message": "Ključ je zavrnjen"
+  },
+  "runtime_setup_required": {
+    "message": "Potrebna je nastavitev"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Dodajte ključ API v nastavitvah, da začnete prevajati."
+  },
+  "runtime_add_key": {
+    "message": "Dodaj ključ API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Ključ je shranjen. Odprite nastavitve, da preverite model in dokončate izbiro jezika."
+  },
+  "runtime_check_setup": {
+    "message": "Preveri nastavitev"
+  },
+  "runtime_translating": {
+    "message": "Prevajanje poteka"
+  },
+  "runtime_error": {
+    "message": "Napaka"
+  },
+  "runtime_ready": {
+    "message": "Pripravljeno"
+  },
+  "runtime_status_load_failed": {
+    "message": "Stanja razširitve ni bilo mogoče naložiti. Znova naložite razširitev in nato osvežite stran."
+  },
+  "runtime_copied": {
+    "message": "Kopirano."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopiranje je blokirano. Označite besedilo rezultata in ga kopirajte."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Nastavitev ni bilo mogoče odpreti. Poskusite znova."
+  },
+  "runtime_translating_progress": {
+    "message": "Prevajanje..."
+  },
+  "runtime_translation_started": {
+    "message": "Prevajanje se je začelo."
+  },
+  "runtime_translation_complete": {
+    "message": "Prevajanje je končano."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Prevajanje je končano. Uporabite besedilo rezultata ali gumbe kartice."
+  },
+  "runtime_translation": {
+    "message": "Prevajanje"
+  },
+  "runtime_target_language": {
+    "message": "Ciljni jezik"
+  },
+  "runtime_card_target_language": {
+    "message": "Ciljni jezik te kartice"
+  },
+  "runtime_close_card": {
+    "message": "Zapri kartico prevoda"
+  },
+  "runtime_translated_text": {
+    "message": "Prevedeno besedilo"
+  },
+  "runtime_retry": {
+    "message": "Poskusi znova"
+  },
+  "runtime_copy": {
+    "message": "Kopiraj"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Nastavitev ni bilo mogoče odpreti. Uporabite orodno vrstico razširitve."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopiranje ni uspelo. Označite besedilo rezultata in ga kopirajte."
+  },
+  "runtime_context_menu": {
+    "message": "Prevedi izbrano besedilo"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Ni na trenutnem seznamu)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Še ni preverjeno)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Uporablja se predpomnjeni seznam modelov z dne $value1$. Sprotna osvežitev ni uspela. Poskusite pozneje.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Uporablja se predpomnjeni seznam modelov. Sprotna osvežitev ni uspela. Poskusite pozneje."
+  },
+  "runtime_models_cache_at": {
+    "message": "Uporablja se predpomnjeni seznam modelov z dne $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Uporablja se predpomnjeni seznam modelov."
+  },
+  "runtime_models_updated_at": {
+    "message": "Seznam modelov je posodobljen z dne $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Seznam modelov je posodobljen."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ ni podprto. Pritisnite drugo tipko ali Escape za preklic.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Po shranjevanju se bo uporabljala tipka $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Do $value1$ na zavihek in skupno $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ sekund",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Pritisnite Tab za uporabo kartice ali Escape, da jo zaprete.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Prevajanje ni uspelo. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Osvežite odprte strani"
+  },
+  "refresh_message": {
+    "message": "Ključ API je shranjen. Ko dokončate nastavitev, osvežite strani, ki so bile že odprte. Nato označite besedilo in pritisnite Control za prevod."
+  },
+  "refresh_continue": {
+    "message": "Nadaljuj nastavitev"
+  },
+  "refresh_faq_question": {
+    "message": "Zakaj moram osvežiti odprte strani?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Osvežite odprte strani</1> po dokončani nastavitvi, preden poskusite prevajati. Chrome mora naložiti razširitev na straneh, ki so bile odprte pred njeno namestitvijo ali ponovnim nalaganjem. Na novo odprte strani so samodejno pripravljene."
+  },
+  "ui_locale": {
+    "message": "sl",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

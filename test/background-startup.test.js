@@ -5,6 +5,7 @@ import { loadBackground } from "./helpers/background-module.js";
 test("background starts when Chrome has no contextMenus.onShown event", async () => {
   const listeners = { connect: [], message: [] };
   let installed;
+  let startup;
   let menu;
   const area = {
     get: async () => ({}),
@@ -23,6 +24,7 @@ test("background starts when Chrome has no contextMenus.onShown event", async ()
       lastError: null,
       onConnect: { addListener: (listener) => listeners.connect.push(listener) },
       onInstalled: { addListener: (listener) => { installed = listener; } },
+      onStartup: { addListener: (listener) => { startup = listener; } },
       onMessage: { addListener: (listener) => listeners.message.push(listener) },
     },
     storage: {
@@ -46,6 +48,10 @@ test("background starts when Chrome has no contextMenus.onShown event", async ()
     assert.equal(listeners.message.length, 1);
     installed();
     assert.deepEqual(menu.documentUrlPatterns, ["http://*/*", "https://*/*", "file://*/*"]);
+    assert.equal(menu.title, "Translate Selected Text");
+    chrome.i18n = { getMessage: () => "Ausgewählten Text übersetzen" };
+    startup();
+    assert.equal(menu.title, "Ausgewählten Text übersetzen", "Browser startup refreshes the menu language");
   } finally {
     delete globalThis.chrome;
   }

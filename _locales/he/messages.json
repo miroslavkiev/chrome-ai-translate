@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "תרגום פשוט במיוחד: בחרו טקסט ולחצו Control. תרגמו לשפה שבחרתם בעזרת Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "בחרו טקסט ונסו שוב."
+  },
+  "error_unsupported_selection": {
+    "message": "בחירת הטקסט הזו אינה נתמכת."
+  },
+  "error_selection_too_large": {
+    "message": "הבחירה ארוכה מ-10,000 תווים. בחרו פחות טקסט ונסו שוב."
+  },
+  "error_missing_api_key": {
+    "message": "הוסיפו מפתח Gemini API בהגדרות."
+  },
+  "error_agreement_required": {
+    "message": "לפני החיבור ל-Google, עיינו בשיתוף הנתונים ואשרו אותו בהגדרות."
+  },
+  "error_credential_conflict": {
+    "message": "המפתח השמור השתנה בדף אחר. טענו מחדש את ההגדרות השמורות לפני ניסיון נוסף."
+  },
+  "error_credential_storage_error": {
+    "message": "אי אפשר לפתוח את המפתח השמור. פתחו שוב את ההגדרות, או הסירו אותו והזינו אותו מחדש."
+  },
+  "error_missing_target_language": {
+    "message": "בחרו שפת יעד בהגדרות כדי לסיים את ההגדרה."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini דחה את מפתח ה-API. בדקו אותו בהגדרות."
+  },
+  "error_invalid_model": {
+    "message": "אי אפשר להשתמש במודל הזה לתרגום. בחרו מודל אחר או את מודל Flash-Lite המומלץ בהגדרות."
+  },
+  "error_busy": {
+    "message": "יותר מדי תרגומים פעילים. נסו שוב כשאחד מהם יסתיים."
+  },
+  "error_duplicate_request": {
+    "message": "הבחירה הזו כבר בתרגום."
+  },
+  "error_rate_limited": {
+    "message": "הגעתם למגבלת הבקשות. נסו שוב בעוד זמן קצר."
+  },
+  "error_timeout": {
+    "message": "התרגום נמשך זמן רב מדי. אפשר לנסות שוב."
+  },
+  "error_offline": {
+    "message": "נראה שאין חיבור לאינטרנט. בדקו את החיבור ונסו שוב."
+  },
+  "error_network_error": {
+    "message": "אי אפשר ליצור קשר עם Gemini. בדקו את החיבור ונסו שוב."
+  },
+  "error_quota_exceeded": {
+    "message": "הגעתם למכסת Gemini. בדקו את החשבון ונסו מאוחר יותר."
+  },
+  "error_service_error": {
+    "message": "Gemini לא הצליח לסיים את התרגום. נסו מאוחר יותר."
+  },
+  "error_invalid_response": {
+    "message": "Gemini החזיר תשובה שאינה קריאה. אפשר לנסות שוב."
+  },
+  "error_output_too_large": {
+    "message": "התרגום חרג ממגבלת הפלט. בחרו פחות טקסט ונסו שוב."
+  },
+  "error_content_blocked": {
+    "message": "Gemini חסם את הטקסט. נסו בחירה אחרת."
+  },
+  "error_unsupported_page": {
+    "message": "התרגום אינו זמין בדף הזה."
+  },
+  "error_frame_unavailable": {
+    "message": "המסגרת שנבחרה אינה זמינה עוד."
+  },
+  "error_cancelled": {
+    "message": "התרגום בוטל."
+  },
+  "key_Off": {
+    "message": "כבוי"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " נסו שוב בעוד $seconds$ שניות.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "הגדרות AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "הגדרות פרטיות לתרגום מהיר וממוקד."
+  },
+  "html_help_and_information": {
+    "message": "עזרה ומידע"
+  },
+  "html_api_key_guide": {
+    "message": "מדריך למפתח API"
+  },
+  "html_about": {
+    "message": "מידע על התוסף"
+  },
+  "html_privacy": {
+    "message": "פרטיות"
+  },
+  "html_set_up_ai_translator": {
+    "message": "הגדרת AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "פעלו לפי השלבים האלה בהגדרות. לתרגום דרוש מפתח Google API משלכם."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>קבלו מפתח API משלכם.</1> פתחו את <2>Google AI Studio</2>, היכנסו וצרו מפתח. עיינו בשיתוף הנתונים למטה ואז הדביקו את המפתח. לעזרה, <3>קראו את המדריך המפורט</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>בחרו שפת יעד ומודל.</1> בחרו את שפת התרגומים. אנו ממליצים על Gemini Flash-Lite כשהוא זמין ברשימת המודלים שלכם."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>שמרו והתחילו לתרגם.</1> בחרו בסיום ההגדרה בתחתית הדף. אחר כך בחרו טקסט בדף אינטרנט ולחצו Control, או בחרו בתרגום הטקסט הנבחר בתפריט הלחיצה הימנית."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "חברו מפתח Gemini API משלכם ובחרו מודל תואם."
+  },
+  "html_loading_setup_state": {
+    "message": "מצב ההגדרה נטען..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "לפני החיבור ל-Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google מקבל את מפתח ה-API כדי לבדוק אילו מודלים זמינים. כשמבקשים תרגום, Google מקבל גם את הטקסט הנבחר ושפת היעד, כולל טקסט מקבצים מקומיים. תרגומי בינה מלאכותית עלולים להיות שגויים."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "המפתח נשמר מוצפן בפרופיל Chrome הזה ונפתח אוטומטית אחרי הפעלה מחדש. אין צורך בסיסמה נוספת. אדם בעל גישה מלאה לפרופיל הדפדפן עדיין עשוי לשחזר אותו. <1>קראו את פרטי הפרטיות</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>חובה בכל מדינה:</1> השתמשו במפתח Gemini API מפרויקט עם <2>חיוב פעיל</2>. השאירו כבוי את <3>השיתוף האופציונלי של יומני הבקשות ומערכי הנתונים של התוסף עם Google</3>. בהגדרות אלה, התנאים בתשלום של Google שוללים שימוש בהנחיות ובתשובות לשיפור מוצרים; עיבוד לצורכי אבטחה וחוק עדיין חל. התוסף חינמי, אך ייתכנו חיובי Google API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>תנאי שימוש.</1> בשימוש ב-Gemini דרך התוסף אתם מסכימים לדרישות לעיל ול<2>תנאי Google</2>. השימוש מיועד לבני 18 ומעלה לצרכים מקצועיים או עסקיים ב<3>אזורים נתמכים</3>. התוסף אינו מאמת את הגדרות החיוב או השיתוף שלכם."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "אישור וחיבור ל-Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "ביטול ההסכמה לשיתוף נתונים"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "עיינו בפרטי שיתוף הנתונים לפני החיבור."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>למה הדרישות האלה נחוצות? קראו את השאלות הנפוצות</1>."
+  },
+  "html_api_key": {
+    "message": "מפתח API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "לאחר האישור הדביקו מפתח כדי לשמור אותו מוצפן ולטעון מודלים אוטומטית."
+  },
+  "html_show": {
+    "message": "הצגה"
+  },
+  "html_remove_saved_key": {
+    "message": "הסרת המפתח השמור"
+  },
+  "html_model": {
+    "message": "מודל"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "מודלים מוכרים שמיועדים למדיה בלבד או למטרות מיוחדות מוסתרים."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "אנו ממליצים על משפחת Gemini Flash-Lite. בגרסה זו, בספטמבר 2026, בחרנו ב-Gemini 3.5 Flash-Lite. אפשר לבחור מודל אחר מהרשימה. ייתכן שחלק מהמודלים לא יעבדו עם התוסף. אם מודל נכשל, בחרו אחר או במודל המומלץ."
+  },
+  "html_refresh_models": {
+    "message": "רענון מודלים"
+  },
+  "html_use_recommended_model": {
+    "message": "שימוש במודל המומלץ"
+  },
+  "html_translation": {
+    "message": "תרגום"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "הגדירו את השפה ואת מקש ההפעלה האופציונלי."
+  },
+  "html_default_language": {
+    "message": "שפת ברירת מחדל"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "כרטיס תוצאה יכול להשתמש בשפה אחרת בלי לשנות את ברירת המחדל הזו."
+  },
+  "html_keyboard_trigger": {
+    "message": "מקש הפעלה"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "מקשים בודדים עלולים להתנגש עם אתרים או כלי נגישות. בחרו כבוי כדי להשתמש רק בתפריט ההקשר."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "קליטת מקש"
+  },
+  "html_off": {
+    "message": "כבוי"
+  },
+  "html_behavior": {
+    "message": "התנהגות"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "אמצעי הגנה קבועים שומרים על תרגומים מהירים ומגינים על מכסת ה-API."
+  },
+  "html_parallel_requests": {
+    "message": "בקשות במקביל"
+  },
+  "html_request_timeout": {
+    "message": "זמן קצוב לבקשה"
+  },
+  "html_page_access": {
+    "message": "גישה לדפים"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "לקבצים מקומיים, הפעילו מתן גישה לכתובות URL של קבצים בניהול התוסף"
+  },
+  "html_help_and_recovery": {
+    "message": "עזרה ושחזור"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "אם מודל אינו זמין, רעננו מודלים, בחרו מודל מהרשימה ושמרו העדפות. אם הרשימה אינה נטענת, בדקו את המפתח והחיבור ואז נסו רענון מודלים."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "דפי ההגדרות של Chrome ו-Chrome Web Store אינם מאפשרים תרגום. לקבצים מקומיים, אפשרו גישה לכתובות URL של קבצים בניהול התוסף. אחרי עדכון או טעינה מחדש של התוסף, רעננו דפים פתוחים. טעינה מחדש עלולה להפסיק תרגום."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "התרגום דורש אינטרנט. אחרי ההסכמה לעיל, המפתח נשלח ישירות ל-Google לבדיקת מודלים. טקסט נבחר, כולל מקבצים מקומיים, נשלח עם שפת היעד רק כשאתם מבקשים תרגום. המפתח השמור מוצפן בפרופיל Chrome הזה. השפה, המודל ומקש ההפעלה יכולים להסתנכרן דרך Chrome. התוסף שומר רק את התוצאה האחרונה להפעלת הדפדפן הנוכחית, ללא היסטוריית תרגומים."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "אפשר לעיין בשיתוף הנתונים לעיל ולבטל הסכמה בכל עת. בדיקות מודלים ותרגומים ייעצרו עד להסכמה מחודשת. המפתח נשאר שמור אלא אם תבחרו בהסרת המפתח השמור."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "שינויי שפה, מודל ומקש הפעלה נשמרים כאן."
+  },
+  "html_reload_saved_settings": {
+    "message": "טעינה מחדש של הגדרות שמורות"
+  },
+  "html_save_preferences": {
+    "message": "שמירת העדפות"
+  },
+  "html_gemini_translation": {
+    "message": "תרגום Gemini"
+  },
+  "html_setup_required": {
+    "message": "נדרשת הגדרה"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "ברוכים הבאים ל-AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "תרגמו טקסט נבחר לשפה שאתם מכירים. הגדירו שני דברים כדי להתחיל:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>מפתח Gemini API שלכם.</1> קבלו מפתח משלכם מ-Google AI Studio. המדריך שלנו מסביר איך."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>שפת היעד שלכם.</1> בחרו את השפה שבה תרצו לקרוא."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "איך מקבלים מפתח API"
+  },
+  "html_extension_status": {
+    "message": "מצב התוסף"
+  },
+  "html_active_translations": {
+    "message": "תרגומים פעילים"
+  },
+  "html_latest_this_session": {
+    "message": "האחרון בהפעלה הזו"
+  },
+  "html_no_translation_yet": {
+    "message": "עדיין אין תרגום."
+  },
+  "html_copy": {
+    "message": "העתקה"
+  },
+  "html_settings": {
+    "message": "הגדרות"
+  },
+  "html_key_guide": {
+    "message": "מדריך למפתח"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "תחילת העבודה עם AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "דפי התוסף"
+  },
+  "html_faq": {
+    "message": "שאלות נפוצות"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "קבלו מפתח Google API משלכם, בחרו שפה ותרגמו את הבחירה הראשונה שלכם."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. קבלו מפתח API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "מפתח API מאפשר לתוסף להשתמש ב-Gemini דרך חשבון Google שלכם. שמרו עליו בסוד כמו סיסמה."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "התוסף מיועד לבני 18 ומעלה לעבודה או לעסקים ב<1>מדינות ובאזורים הנתמכים ב-Google</1>. בכל מדינה, המפתח חייב להשתייך לפרויקט Gemini עם חיוב פעיל. השאירו כבוי שיתוף אופציונלי של יומני הבקשות ומערכי הנתונים של התוסף עם Google."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "בשימוש בתוסף אתם מסכימים לתנאים האלה, ל<1>תנאי Google API</1> ול<2>תנאים הנוספים של Gemini API</2>. אל תשתמשו בו אם אינכם יכולים לעמוד בהם. התוסף אינו מאמת עובדות אלה ואינו מבקש מסמכי זיהוי."
+  },
+  "html_open_google_ai_studio": {
+    "message": "פתיחת Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "היכנסו לחשבון Google. קבלו את תנאי Google אם תתבקשו."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "יצירת מפתח או בחירת מפתח"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "בדף מפתחות API בחרו ב<1>יצירת מפתח API</1> ופעלו לפי שלבי Google לבחירת פרויקט או יצירתו. הפרויקט מרכז את השימוש ב-API ואת החיוב. אם אתם חדשים ב-AI Studio, ייתכן ש-Google כבר יצר פרויקט ומפתח כברירת מחדל."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "אם הפרויקט הקיים חסר, פתחו <1>לוח בקרה > פרויקטים > ייבוא פרויקטים</1>. ייבאו את הפרויקט וחזרו למפתחות API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "לפני השימוש במפתח, פעלו לפי <1>מדריך החיוב של Google</1> כדי לבדוק שלפרויקט יש חיוב פעיל. מינוי בתשלום לאפליקציית Gemini אינו תחליף לחיוב פרויקט API. כבו שיתוף אופציונלי של יומני התוסף ומערכי הנתונים עם Google; קראו את <2>מדיניות שיתוף היומנים של Google</2>. רישום פרטי של הפרויקט נפרד משיתוף."
+  },
+  "html_copy_your_key": {
+    "message": "העתקת המפתח"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "העתיקו את המפתח מ-AI Studio. חזרו להגדרות התוסף וקראו את פרטי השיתוף. בחרו ב<1>אישור וחיבור ל-Google</1>, ואז הדביקו את המפתח בשדה <2>מפתח API</2>. הוא יוצפן ויישמר אוטומטית ורשימת המודלים תיטען. המתינו לתוצאה לפני שתמשיכו."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "הגדרות AI Translator המציגות הודעת שיתוף נתונים וכפתור אישור מעל שדה מפתח API ריק והמלצת מודל Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "הדוגמה מוצגת באנגלית. ב-AI Translator, הסכימו קודם לשיתוף נתונים ואז הדביקו מפתח משלכם. רשימת המודלים נבדקת לאחר שמירת המפתח המוצפן."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google עשוי לשנות את המסכים. לשלבים עדכניים או שגיאות מפתח, קראו את <1>מדריך מפתחות ה-API של Google</1>. השתמשו במפתח חדש מ-AI Studio אם הישן הפסיק לעבוד."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. בחרו הגדרות תרגום"
+  },
+  "html_choose_a_model": {
+    "message": "בחירת מודל"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "אנו ממליצים על משפחת Gemini Flash-Lite. לגרסה הזו בספטמבר 2026 בחרנו ב-<1>Gemini 3.5 Flash-Lite</1>. השתמשו בו כשיהיה זמין ברשימה שלכם."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "אפשר לבחור מודל אחר מהרשימה. חלק מהמודלים עשויים לא לעבוד עם התוסף. אם מודל נכשל, בחרו אחר או במומלץ."
+  },
+  "html_choose_your_target_language": {
+    "message": "בחרו שפת יעד"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "בחרו את השפה שבה תרצו לקרוא ב<1>שפת ברירת מחדל</1>. האפשרויות תואמות ל<2>שפות Gemini המתועדות ב-Google</2>. איכות התרגום יכולה להשתנות לפי השפה והטקסט."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "הגדרות תרגום AI Translator עם בחירת שפת יעד ופקדי מקש ההפעלה."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "הדוגמה מוצגת באנגלית. בחרו שפת תרגום וסיימו את ההגדרה."
+  },
+  "html_finish_setup": {
+    "message": "סיום ההגדרה"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "השאירו את Control כמקש הפעלה, קלטו מקש אחר או בחרו <1>כבוי</1> כדי להשתמש רק בתפריט לחיצה ימנית. בחרו ב<2>סיום ההגדרה</2> בתחתית ההגדרות. בהמשך אפשר לשנות באמצעות <3>שמירת העדפות</3>."
+  },
+  "html_open_settings": {
+    "message": "פתיחת הגדרות"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. תרגמו את הבחירה הראשונה"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "פתחו דף אינטרנט רגיל ובחרו טקסט קצר. לחצו לחיצה ימנית ובחרו <1>תרגום הטקסט הנבחר</1>, או לחצו ושחררו את המקש שבחרתם. התוצאה תופיע ליד הבחירה."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "אם התוסף הותקן או נטען מחדש כעת, רעננו קודם את הדף. דפי הגדרות Chrome, ‏Chrome Web Store ומציג ה-PDF המובנה אינם מאפשרים תרגום."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "החלונית בסרגל הכלים מציגה את התוצאה האחרונה. אחרי סיום ההגדרה היא פותחת את התצוגה הרגילה. הסרת מפתח ה-API תחזיר את מדריך הפתיחה."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "שאלות נפוצות: מפתחות, עלויות ופרטיות"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "למה צריך מפתח API משלי?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "התוסף מתוכנן לשלוח בקשות ישירות לפרויקט Google שלכם עם המפתח שלכם. זו בחירת תכנון ולא כלל של Chrome. המפתח מאפשר בקשות ומקשר אותן לשימוש ולחיוב. לעולם אל תשתפו אותו בצילומי מסך או בהודעות ציבוריות. ראו <1>מדריך מפתחות ה-API של Google</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "למה חיוב פעיל הוא חובה ולא רק המלצה?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>כללי השימוש המוגבל של Chrome, סעיפים 3 ו-5</1>, מגבילים שימוש בנתונים למטרת התוסף ולפעולות קשורות. שימושים מסוימים ב-Gemini ללא תשלום מאפשרים אימון רחב יותר ובדיקה אנושית. התנאים בתשלום שוללים שיפור מוצרים, אך מאפשרים שמירה מוגבלת לאבטחה ולחוק ועיבוד מחוץ לאיחוד האירופי."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "כדי לטפל בסתירה, המפתח דורש חיוב פעיל בפרויקט בכל העולם. המלצה עדיין הייתה מאפשרת שימוש ללא תשלום. הכלל האזורי של Google דורש שירותים בתשלום לאפליקציות המוצעות באזור הכלכלי האירופי, בבריטניה ובשווייץ. ראו <1>תנאי Gemini: מגבלות שימוש, שירותים ללא תשלום ושירותים בתשלום</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "למה השיתוף האופציונלי עם Google חייב להישאר כבוי?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "שיתוף יומנים או מערכי נתונים יכול לאפשר אימון ובדיקה אנושית גם עם חיוב פעיל. אל תתרמו את נתוני התוסף בשיתוף מערכי נתונים או במשוב. רישום פרטי עבור הפרויקט שלכם מותר לפי כלל זה. ראו <1>מדיניות היומנים של Google: נתונים שאפשר לשתף ואופן השימוש בהם</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "האם התוסף חינמי אם נדרשת גישת API בתשלום?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "כן. התוסף חינמי, אך ייתכנו חיובי Google API. מינוי בתשלום לאפליקציית Gemini אינו מחליף חיוב של פרויקט API. ראו <1>איך לבדוק חיוב</1> ו<2>מחירי Google API</2>. התוסף אינו מאמת חיוב או הגדרות שיתוף."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "למה צריך לבחור באישור וחיבור ל-Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>דרישות הגילוי של Chrome, סעיפים 1 ו-2</1>, דורשות מידע ברור על שימוש בנתונים והסכמה מדעת. הכפתור שלנו מאפשר לבחור לפני כל בקשת Google API. הוא אינו בודק זהות או חיוב ואינו נותן רשות לשתף מידע פרטי של אחרים."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "מה בדיוק נשלח ל-Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "בדיקות מודלים שולחות את המפתח ומבקשות מודלים זמינים. התרגום שולח טקסט נבחר, שפת יעד, מודל והנחיות תרגום, כולל טקסט מקובץ מקומי. התוסף אינו מוסיף את כל הדף, כתובתו או היסטוריית הגלישה. Google מקבל גם פרטי חיבור כמו כתובת IP. המפתח אינו מקבל את הבקשות האלה. שלחו רק טקסט שמותר לכם לשתף."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "איך המפתח שלי נשמר ונפתח אוטומטית?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "מפתח ה-API נשמר מוצפן. הוא ומפתח ההצפנה נשארים בפרופיל Chrome הזה לשימוש אוטומטי אחרי הפעלה מחדש ואינם מסתנכרנים. אדם עם גישה לפרופיל עדיין עשוי לשחזר את מפתח ה-API. זה אינו צרור מפתחות של המערכת או כספת עם סיסמה. שפה, מודל ומקש יכולים להסתנכרן. רק התוצאה האחרונה נשארת להפעלת הדפדפן; אין ניתוח שימוש או היסטוריית תרגומים."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "עדכון מצפין ובודק מפתח ישן לפני מחיקת העותקים הלא מוצפנים שלו. אם הפעולה נכשלת, העותק הישן נשמר והבקשות נשארות חסומות. ההגדרות מסבירות את השגיאה. העברת מפתח ישן אינה עוקפת הסכמה."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "אפשר לבטל הסכמה או להסיר מפתח?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "ב<1>הגדרות</1>, <2>ביטול ההסכמה לשיתוף נתונים</2> חוסם בקשות חדשות ומבטל פעילות מקומית, תוך שמירת המפתח וההעדפות. <3>הסרת המפתח השמור</3> מוחקת את המפתח, מפתח ההצפנה ומטמון המודלים. אף פעולה אינה מחזירה נתונים שכבר נשלחו או מבטיחה שבקשה שנשלחה תהיה חינמית. בטלו את המפתח ב-AI Studio כדי להשביתו גם אצל Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "ההסכמה נשמרת אחרי הפעלות מחדש ועדכונים רגילים. אם ההודעה משתנה, הבקשות ממתינות עד שתעיינו בה ותסכימו שוב."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "למה זה מיועד למבוגרים ולעבודה או לעסקים?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google דורש גיל 18 לפחות ושימוש מקצועי או עסקי באזורים נתמכים. ראו <1>תנאי Gemini: דרישות גיל ומגבלות שימוש</1> ו<2>אזורים זמינים</2>. לתוסף אין תיבת זכאות נפרדת או בדיקת זהות."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "למה צריך גם מדיניות פרטיות וגם הודעה?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "ההודעה מסבירה את הבחירה לפני החיבור. המדיניות נותנת פרטי נתונים, אחסון ומחיקה מלאים. <1>כללי מדיניות הפרטיות של Chrome</1> דורשים זאת מתוספים המטפלים בנתוני משתמשים. קראו את <2>מדיניות הפרטיות שלנו</2>. ההודעות אינן מעידות על אישור התוסף בידי Google."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "תרגומי AI עלולים להיות שגויים. בדקו ניסוח חשוב לפני הסתמכות עליו."
+  },
+  "html_about_ai_translator": {
+    "message": "אודות AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "תרגום פשוט במיוחד: בחרו טקסט ולחצו Control."
+  },
+  "html_made_for_people": {
+    "message": "נוצר למען אנשים"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "יצרתי את AI Translator כדי לעזור לאנשים לקרוא, ללמוד ולהתחבר בין שפות. אני מקווה שהוא שימושי לאנשים ברחבי העולם."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "התוסף מתרגם את הטקסט שבחרתם עם מפתח Google Gemini API שלכם. אתם בוחרים מה לשלוח ובאיזו שפה לקרוא."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "לחצו ושחררו Control לתרגום הבחירה. Control הוא מקש ברירת המחדל ואפשר לשנותו בהגדרות. אפשר גם להשתמש בתפריט הלחיצה הימנית בדף."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "נבדק ידנית ב-Mac בלבד. Windows ו-Linux לא נבדקו ידנית."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>הצגת קוד המקור ומדריך הפרויקט</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>קבלת עזרה או דיווח על בעיה</1>. הדיווחים ציבוריים. אל תכללו מפתחות API, טקסט פרטי או פרטים אישיים."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "אם תרצו לתמוך בעבודה שלי"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "אנא תמכו במדינה שלי, אוקראינה, כשהיא מגינה על עצמה מפני התוקפנות הרוסית."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "אני נותן אמון בקרן קהילת סטרננקו. אם אתם יכולים ורוצים לעזור, אפשר לתרום דרך האתר הרשמי שלה."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>תמיכה באוקראינה דרך הקרן</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "התמיכה היא רשות ואינה נדרשת לשימוש בתוסף. הקישור פותח אתר חיצוני. התרומות עוברות דרך הקרן, לא דרך התוסף."
+  },
+  "html_privacy_and_costs": {
+    "message": "פרטיות ועלויות"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "מפתח ה-API מוצפן במכשיר הזה ואינו מסתנכרן. הוא נשאר זמין אחרי הפעלות Chrome רגילות ללא סיסמת פתיחה. אדם עם גישה לפרופיל הדפדפן עדיין עשוי לשחזר אותו."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "לפני בקשת Google הראשונה, ההגדרות מסבירות את השיתוף ומבקשות לבחור ב<1>אישור וחיבור ל-Google</1>. לאחר מכן טקסט נבחר נשלח ישירות ל-Google רק כשמבקשים תרגום. בדיקות מודלים שולחות את המפתח ללא טקסט נבחר. לתוסף אין ניתוח שימוש, פרסומות או היסטוריית תרגומים."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "עיינו בפרטים ב<1>הגדרות</1> בכל עת. בחרו <2>ביטול ההסכמה לשיתוף נתונים</2> להפסקת בקשות חדשות תוך שמירת המפתח המוצפן וההעדפות, או <3>הסרת המפתח השמור</3> למחיקת המפתח ומטמון המודלים. אי אפשר להחזיר נתונים שנשלחו."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "התרגומים נוצרים בבינה מלאכותית ועלולים להיות שגויים. בדקו ניסוח חשוב לפני הסתמכות עליו."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>קראו את פרטי הפרטיות</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator הוא פרויקט עצמאי וחינמי. ייתכנו חיובי Google API. בכל מדינה השתמשו במפתח Gemini API מפרויקט עם <1>חיוב פעיל</1> וכבו <2>שיתוף אופציונלי של יומני הבקשות ומערכי הנתונים של התוסף עם Google</2>. כך התנאים בתשלום של Google שוללים שימוש בהנחיות ובתשובות לשיפור מוצרים; עיבוד לאבטחה ולחוק עדיין חל. קראו <3>מחירי Google והערות שימוש בנתונים</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "התוסף מיועד לבני 18 ומעלה לעבודה או לעסקים ב<1>אזורים נתמכים ב-Google</1>. בשימוש בו אתם מסכימים לתנאים אלה, ל<2>תנאי Google API</2> ול<3>תנאים הנוספים של Gemini API</3>. אל תשתמשו בו אם אינכם יכולים לעמוד בהם. אין תיבת זכאות או בדיקת זהות. התוסף אינו מאמת חיוב או שיתוף."
+  },
+  "runtime_unsaved_changes": {
+    "message": "שינויים שלא נשמרו."
+  },
+  "runtime_settings_conflict": {
+    "message": "ההגדרות השתנו בדף אחר. העריכות שלכם נשמרות כאן. טענו מחדש הגדרות שמורות כדי לוותר על העריכות ולהשתמש בערכים השמורים."
+  },
+  "runtime_preferences_current": {
+    "message": "ההעדפות מעודכנות."
+  },
+  "runtime_key_cannot_open": {
+    "message": "אי אפשר לפתוח את המפתח השמור. פתחו שוב הגדרות או הסירו אותו והזינו מחדש."
+  },
+  "runtime_key_conflict": {
+    "message": "מפתח ה-API השתנה בדף אחר. טענו מחדש הגדרות שמורות לפני שמירת מפתח."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "המפתח נשמר מוצפן. אשרו שיתוף נתונים לפני חיבור ל-Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "אשרו שיתוף נתונים לעיל לפני הוספת מפתח API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini דחה את המפתח השמור. החליפו אותו או בחרו רענון מודלים לבדיקה נוספת."
+  },
+  "runtime_paste_key": {
+    "message": "הדביקו מפתח API כדי לחבר את Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "מפתח API נשמר. Gemini קיבל אותו בבדיקה האחרונה של רשימת המודלים."
+  },
+  "runtime_key_saved_check": {
+    "message": "מפתח API נשמר מוצפן במכשיר הזה. רעננו מודלים כדי לבדוק אותו ב-Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "ניסיון נוסף לביטול הסכמה"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "ביטול ההסכמה לשיתוף נתונים"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "ביטול ההסכמה לא אושר. נסו שוב כדי לשמור את הבחירה."
+  },
+  "runtime_agreement_saved": {
+    "message": "שיתוף הנתונים אושר לפרופיל Chrome הזה. אפשר לבטל בכל עת."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "לא יהיה חיבור ל-Google עד שתסכימו. המפתח נשמר אם תבטלו הסכמה."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini דחה את המפתח השמור. החליפו אותו למטה."
+  },
+  "runtime_setup_key_saved": {
+    "message": "המפתח נשמר מוצפן במכשיר הזה."
+  },
+  "runtime_setup_create_key": {
+    "message": "צרו מפתח משלכם ב-Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "שפה נבחרה. סיימו את ההגדרה כדי לשמור בחירות."
+  },
+  "runtime_setup_choose_language": {
+    "message": "בחרו שפת יעד למטה."
+  },
+  "runtime_finish_setup": {
+    "message": "סיום ההגדרה"
+  },
+  "runtime_save_preferences": {
+    "message": "שמירת העדפות"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "הוסיפו מפתח API, בדקו רשימת מודלים ושמרו את בחירת המודל."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "פתרו את הסתירה בהגדרות לפני תרגום."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "עיינו בשיתוף הנתונים והסכימו לפני החיבור ל-Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "סיימו לשמור את מפתח ה-API לפני בדיקת ההגדרה."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "ההגדרה דורשת טיפול: Gemini דחה את מפתח ה-API השמור."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "מפתח נשמר. בחרו שפת יעד וסיימו את ההגדרה."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "בחרו מודל זמין ושמרו העדפות."
+  },
+  "runtime_setup_model_selected": {
+    "message": "מודל נבחר. שמרו העדפות כדי להשתמש בו."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "המפתח והשפה מוכנים. סיימו את ההגדרה לשמירת הבחירות ואז נסו לתרגם. הגישה למודל והמכסה עדיין עשויות להשתנות."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "מוכן לניסיון תרגום. המודל השמור ברשימה שנבדקה; גישת הבקשות והמכסה עדיין עשויות להשתנות."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "מפתח נשמר. רעננו מודלים כדי לבדוק את המפתח והמודל הנבחר."
+  },
+  "runtime_show_key": {
+    "message": "הצגה"
+  },
+  "runtime_hide_key": {
+    "message": "הסתרה"
+  },
+  "runtime_choose_target_language": {
+    "message": "בחרו שפת יעד"
+  },
+  "runtime_background_no_response": {
+    "message": "תהליך הרקע של התוסף לא הגיב. טענו מחדש את התוסף ונסו שוב."
+  },
+  "runtime_refresh_models": {
+    "message": "רענון מודלים"
+  },
+  "runtime_models_need_agreement": {
+    "message": "הסכימו לשיתוף נתונים לפני טעינת מודלים."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "סיימו לשמור את מפתח ה-API לפני רענון מודלים."
+  },
+  "runtime_refreshing": {
+    "message": "מתרענן..."
+  },
+  "runtime_loading": {
+    "message": "נטען..."
+  },
+  "runtime_models_checking": {
+    "message": "בדיקת מודלים תואמים ב-Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "טעינת מודלים תואמים..."
+  },
+  "runtime_models_load_failed": {
+    "message": "אי אפשר לטעון מודלים תואמים."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini לא החזיר מודלים תואמים."
+  },
+  "runtime_model_not_available": {
+    "message": "המודל הנבחר אינו ברשימה התואמת. בחרו מודל אחר."
+  },
+  "runtime_record_key": {
+    "message": "קליטת מקש"
+  },
+  "runtime_recording_cancelled": {
+    "message": "קליטת המקש בוטלה."
+  },
+  "runtime_unknown_key": {
+    "message": "המקש הזה"
+  },
+  "runtime_press_key": {
+    "message": "לחצו על מקש..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "לחצו על מקש נתמך אחד שאינו מקליד תווים. לחצו Escape לביטול."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "רעננו מודלים כדי לבדוק את מפתח ה-API השמור."
+  },
+  "runtime_models_add_key": {
+    "message": "הוסיפו מפתח API לטעינת מודלים תואמים."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "התוסף לא הצליח לטעון את המצב השמור."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini דחה את מפתח ה-API השמור. החליפו אותו או רעננו מודלים לבדיקה נוספת."
+  },
+  "runtime_settings_reopen": {
+    "message": "ההגדרות לא נטענו. פתחו אותן שוב כדי לנסות מחדש."
+  },
+  "runtime_settings_load_failed": {
+    "message": "ההגדרות לא נטענו. טענו מחדש הגדרות שמורות לניסיון נוסף. השמירה מושבתת כדי להגן על הבחירות השמורות."
+  },
+  "runtime_setup_load_failed": {
+    "message": "מצב ההגדרה לא נטען."
+  },
+  "runtime_key_no_spaces": {
+    "message": "הזינו מפתח API מלא ללא רווחים."
+  },
+  "runtime_key_use_remove": {
+    "message": "השתמשו בהסרת המפתח השמור כדי למחוק את המפתח."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "הסכימו לשיתוף הנתונים לעיל לפני שמירת מפתח API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "שמירת מפתח API מוצפן..."
+  },
+  "runtime_key_save_failed": {
+    "message": "אי אפשר לקרוא או לשמור מפתח API. הקלט נשמר. השתמשו בשמירת העדפות לניסיון נוסף."
+  },
+  "runtime_connecting_google": {
+    "message": "חיבור ל-Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "עצירת חיבורים ל-Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "לא ניתן לשמור את הסכמת הנתונים. נסו שוב."
+  },
+  "runtime_key_removing": {
+    "message": "הסרת המפתח השמור..."
+  },
+  "runtime_key_removed": {
+    "message": "המפתח השמור הוסר. אפשר להוסיף חדש אחרי אישור שיתוף הנתונים."
+  },
+  "runtime_key_remove_failed": {
+    "message": "אי אפשר להסיר את המפתח השמור. נסו שוב."
+  },
+  "runtime_saving": {
+    "message": "נשמר..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "בחרו שפה ומודל תקינים."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "בחרו מקש הפעלה נתמך או כבוי."
+  },
+  "runtime_choose_listed_model": {
+    "message": "בחרו מודל מהרשימה התואמת הנוכחית."
+  },
+  "runtime_preferences_saving": {
+    "message": "שמירת העדפות..."
+  },
+  "runtime_preferences_saved": {
+    "message": "ההעדפות נשמרו."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "ההעדפות נשמרו. הוסיפו מפתח API לסיום ההגדרה."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "אי אפשר לקרוא או לשמור העדפות. העריכות נשמרות. נסו שוב."
+  },
+  "runtime_key_will_save": {
+    "message": "מפתח ה-API יישמר אוטומטית."
+  },
+  "runtime_key_finish_entry": {
+    "message": "סיימו להזין מפתח API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "סיימו לשמור את מפתח ה-API לטעינת מודלים תואמים."
+  },
+  "runtime_recommended_selected": {
+    "message": "נבחר המודל המומלץ. שמרו את הבחירה כדי להשתמש בו."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "מקש ההפעלה יהיה כבוי אחרי השמירה."
+  },
+  "runtime_connection_changed": {
+    "message": "הגדרות החיבור השתנו. בדיקת ההגדרות השמורות..."
+  },
+  "runtime_models_changed": {
+    "message": "רשימת המודלים השתנתה. בדיקת מודלים תואמים..."
+  },
+  "runtime_no_translation": {
+    "message": "עדיין אין תרגום."
+  },
+  "runtime_start_setup": {
+    "message": "תחילת ההגדרה"
+  },
+  "runtime_settings": {
+    "message": "הגדרות"
+  },
+  "runtime_key_rejected": {
+    "message": "המפתח נדחה"
+  },
+  "runtime_setup_required": {
+    "message": "נדרשת הגדרה"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "הוסיפו מפתח API בהגדרות כדי להתחיל לתרגם."
+  },
+  "runtime_add_key": {
+    "message": "הוספת מפתח API"
+  },
+  "runtime_finish_model_language": {
+    "message": "המפתח נשמר. פתחו הגדרות לבדיקת המודל ולסיום בחירת השפה."
+  },
+  "runtime_check_setup": {
+    "message": "בדיקת הגדרה"
+  },
+  "runtime_translating": {
+    "message": "בתרגום"
+  },
+  "runtime_error": {
+    "message": "שגיאה"
+  },
+  "runtime_ready": {
+    "message": "מוכן"
+  },
+  "runtime_status_load_failed": {
+    "message": "מצב התוסף לא נטען. טענו מחדש את התוסף ואז רעננו את הדף."
+  },
+  "runtime_copied": {
+    "message": "הועתק."
+  },
+  "runtime_copy_blocked": {
+    "message": "ההעתקה נחסמה. בחרו את טקסט התוצאה והעתיקו אותו."
+  },
+  "runtime_settings_open_failed": {
+    "message": "אי אפשר לפתוח הגדרות. נסו שוב."
+  },
+  "runtime_translating_progress": {
+    "message": "מתרגם..."
+  },
+  "runtime_translation_started": {
+    "message": "התרגום התחיל."
+  },
+  "runtime_translation_complete": {
+    "message": "התרגום הסתיים."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "התרגום הסתיים. השתמשו בטקסט התוצאה או בפקדי הכרטיס."
+  },
+  "runtime_translation": {
+    "message": "תרגום"
+  },
+  "runtime_target_language": {
+    "message": "שפת יעד"
+  },
+  "runtime_card_target_language": {
+    "message": "שפת היעד לכרטיס הזה"
+  },
+  "runtime_close_card": {
+    "message": "סגירת כרטיס התרגום"
+  },
+  "runtime_translated_text": {
+    "message": "טקסט מתורגם"
+  },
+  "runtime_retry": {
+    "message": "ניסיון נוסף"
+  },
+  "runtime_copy": {
+    "message": "העתקה"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "אי אפשר לפתוח הגדרות. השתמשו בסרגל הכלים של התוסף."
+  },
+  "runtime_copy_failed": {
+    "message": "ההעתקה נכשלה. בחרו את טקסט התוצאה והעתיקו אותו."
+  },
+  "runtime_context_menu": {
+    "message": "תרגום הטקסט הנבחר"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (לא ברשימה הנוכחית)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (טרם נבדק)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "שימוש ברשימת מודלים שמורה מ-$value1$. הרענון החי נכשל. נסו מאוחר יותר.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "שימוש ברשימת מודלים שמורה. הרענון החי נכשל. נסו מאוחר יותר."
+  },
+  "runtime_models_cache_at": {
+    "message": "שימוש ברשימת מודלים שמורה מ-$value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "שימוש ברשימת מודלים שמורה."
+  },
+  "runtime_models_updated_at": {
+    "message": "רשימת המודלים עודכנה מ-$value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "רשימת המודלים עודכנה."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ אינו נתמך. לחצו על מקש אחר או Escape לביטול.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ ישמש אחרי השמירה.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "עד $value1$ לכרטיסייה ו-$value2$ בסך הכול",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ שניות",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ לחצו Tab לשימוש בכרטיס או Escape לסגירתו.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "התרגום נכשל. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "רעננו דפים פתוחים"
+  },
+  "refresh_message": {
+    "message": "מפתח ה-API נשמר. אחרי סיום ההגדרה, רעננו את הדפים שכבר היו פתוחים. אחר כך בחרו טקסט ולחצו Control לתרגום."
+  },
+  "refresh_continue": {
+    "message": "המשך ההגדרה"
+  },
+  "refresh_faq_question": {
+    "message": "למה צריך לרענן דפים פתוחים?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>רעננו דפים פתוחים</1> אחרי סיום ההגדרה ולפני ניסיון לתרגם. Chrome צריך לטעון את התוסף בדפים שנפתחו לפני ההתקנה או הטעינה מחדש שלו. דפים חדשים מוכנים אוטומטית."
+  },
+  "ui_locale": {
+    "message": "he",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

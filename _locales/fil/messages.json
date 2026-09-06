@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Madaling magsalin: pumili ng teksto at pindutin ang Control. Gamitin ang Gemini sa wikang gusto mo.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Pumili ng teksto at subukang muli."
+  },
+  "error_unsupported_selection": {
+    "message": "Hindi sinusuportahan ang ganitong pagpili ng teksto."
+  },
+  "error_selection_too_large": {
+    "message": "Lampas 10,000 character ang napiling teksto. Bawasan ito at subukang muli."
+  },
+  "error_missing_api_key": {
+    "message": "Idagdag ang iyong Gemini API key sa Mga setting."
+  },
+  "error_agreement_required": {
+    "message": "Basahin at sang-ayunan ang pagbabahagi ng datos sa Mga setting bago kumonekta sa Google."
+  },
+  "error_credential_conflict": {
+    "message": "Nabago sa ibang pahina ang naka-save na key. I-load muli ang naka-save na mga setting bago subukan ulit."
+  },
+  "error_credential_storage_error": {
+    "message": "Hindi mabuksan ang naka-save na key. Buksan muli ang Mga setting, o alisin ang key at ilagay ulit."
+  },
+  "error_missing_target_language": {
+    "message": "Piliin ang target na wika sa Mga setting upang matapos ang pag-setup."
+  },
+  "error_invalid_api_key": {
+    "message": "Tinanggihan ng Gemini ang API key. Tingnan ito sa Mga setting."
+  },
+  "error_invalid_model": {
+    "message": "Hindi magagamit ang modelong ito sa pagsasalin. Pumili ng ibang modelo o ang inirerekomendang Flash-Lite sa Mga setting."
+  },
+  "error_busy": {
+    "message": "Masyadong maraming aktibong pagsasalin. Subukang muli kapag may natapos na."
+  },
+  "error_duplicate_request": {
+    "message": "Isinasalin na ang napiling tekstong ito."
+  },
+  "error_rate_limited": {
+    "message": "Naabot ang limitasyon ng mga kahilingan. Subukang muli mamaya."
+  },
+  "error_timeout": {
+    "message": "Masyadong matagal ang pagsasalin. Maaari mong subukan ulit."
+  },
+  "error_offline": {
+    "message": "Mukhang offline ka. Suriin ang koneksyon at subukang muli."
+  },
+  "error_network_error": {
+    "message": "Hindi makonekta sa Gemini. Suriin ang koneksyon at subukang muli."
+  },
+  "error_quota_exceeded": {
+    "message": "Naabot ang quota ng Gemini. Suriin ang account at subukang muli mamaya."
+  },
+  "error_service_error": {
+    "message": "Hindi matapos ng Gemini ang pagsasalin. Subukang muli mamaya."
+  },
+  "error_invalid_response": {
+    "message": "Hindi mabasa ang tugon ng Gemini. Maaari mong subukan ulit."
+  },
+  "error_output_too_large": {
+    "message": "Lumampas ang salin sa limitasyon ng output. Bawasan ang teksto at subukang muli."
+  },
+  "error_content_blocked": {
+    "message": "Hinarang ng Gemini ang tekstong ito. Subukan ang ibang teksto."
+  },
+  "error_unsupported_page": {
+    "message": "Hindi puwedeng magsalin sa pahinang ito."
+  },
+  "error_frame_unavailable": {
+    "message": "Hindi na magagamit ang napiling frame."
+  },
+  "error_cancelled": {
+    "message": "Kinansela ang pagsasalin."
+  },
+  "key_Off": {
+    "message": "Naka-off"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Subukang muli pagkalipas ng $seconds$ segundo.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Mga setting ng AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Mga personal na setting para sa mabilis at nakatuong pagsasalin."
+  },
+  "html_help_and_information": {
+    "message": "Tulong at impormasyon"
+  },
+  "html_api_key_guide": {
+    "message": "Gabay sa API key"
+  },
+  "html_about": {
+    "message": "Tungkol dito"
+  },
+  "html_privacy": {
+    "message": "Pribasiya"
+  },
+  "html_set_up_ai_translator": {
+    "message": "I-set up ang AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Sundin ang mga hakbang sa Mga setting. Kailangan mo ng sariling Google API key upang magsalin."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Kumuha ng sariling API key.</1> Buksan ang <2>Google AI Studio</2>, mag-sign in at gumawa ng key. Basahin ang pagbabahagi ng datos sa ibaba, saka i-paste ang key. <3>Basahin ang sunod-sunod na gabay</3> para sa tulong."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Piliin ang target na wika at modelo.</1> Piliin ang wika ng mga salin. Inirerekomenda namin ang Gemini Flash-Lite kung nasa listahan ng modelo."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>I-save at magsimulang magsalin.</1> Piliin ang Tapusin ang pag-setup sa ibaba. Pagkatapos, pumili ng teksto sa web page at pindutin ang Control, o piliin ang Isalin ang Napiling Teksto sa right-click menu."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Ikonekta ang sariling Gemini API key at pumili ng katugmang modelo."
+  },
+  "html_loading_setup_state": {
+    "message": "Nilo-load ang katayuan ng pag-setup..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Bago kumonekta sa Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Tinatanggap ng Google ang API key upang suriin ang mga magagamit na modelo. Kapag humiling ka ng salin, tatanggapin din nito ang napiling teksto at target na wika, pati teksto mula sa lokal na file. Maaaring mali ang mga salin ng AI."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Naka-encrypt ang key sa Chrome profile na ito at awtomatikong nabubuksan matapos mag-restart. Walang dagdag na password. Maaari pa ring mabawi ito ng taong may buong access sa browser profile. <1>Basahin ang detalye ng pribasiya</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Kailangan sa lahat ng bansa:</1> gumamit ng Gemini API key mula sa proyektong may <2>aktibong pagsingil</2>. I-off ang opsyonal na <3>pagbabahagi sa Google ng mga log ng kahilingan at dataset ng extension na ito</3>. Sa mga setting na ito, hindi pinapayagan ng bayad na mga tuntunin ng Google ang paggamit ng prompt at tugon para sa pagpapahusay ng produkto; naaangkop pa rin ang pagproseso para sa kaligtasan at batas. Libre ang extension ngunit maaaring may bayad ang Google API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Mga kondisyon sa paggamit.</1> Sa paggamit ng Gemini sa extension na ito, sumasang-ayon kang sundin ang mga kailangan sa itaas at ang <2>mga tuntunin ng Google</2>. Para ito sa edad 18 pataas, para sa propesyonal o pangnegosyong layunin, sa <3>mga suportadong rehiyon</3>. Hindi sinusuri ng extension ang iyong mga setting ng pagsingil o pagbabahagi."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Sumang-ayon at kumonekta sa Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Bawiin ang pahintulot sa datos"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Basahin ang detalye ng pagbabahagi ng datos bago kumonekta."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Bakit kailangan ang mga ito? Basahin ang Mga karaniwang tanong</1>."
+  },
+  "html_api_key": {
+    "message": "API key"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Pagkasang-ayon, i-paste ang key upang i-save nang naka-encrypt at awtomatikong i-load ang mga modelo."
+  },
+  "html_show": {
+    "message": "Ipakita"
+  },
+  "html_remove_saved_key": {
+    "message": "Alisin ang naka-save na key"
+  },
+  "html_model": {
+    "message": "Modelo"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Nakatago ang mga kilalang modelong para lamang sa media o espesyal na gamit."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Inirerekomenda namin ang Gemini Flash-Lite. Sa release na ito (Setyembre 2026), pinili namin ang Gemini 3.5 Flash-Lite. Maaari kang pumili ng ibang modelong nakalista. Maaaring hindi gumana ang ilan sa extension na ito. Kung pumalya, pumili ng iba o ng inirerekomenda."
+  },
+  "html_refresh_models": {
+    "message": "I-refresh ang mga modelo"
+  },
+  "html_use_recommended_model": {
+    "message": "Gamitin ang inirerekomendang modelo"
+  },
+  "html_translation": {
+    "message": "Pagsasalin"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Itakda ang wika at opsyonal na keyboard trigger."
+  },
+  "html_default_language": {
+    "message": "Default na wika"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Maaaring gumamit ng ibang wika ang result card nang hindi binabago ang default."
+  },
+  "html_keyboard_trigger": {
+    "message": "Keyboard trigger"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Maaaring sumalungat ang iisang key sa mga website o accessibility tool. Piliin ang Naka-off upang gamitin lang ang context menu."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Itala ang key"
+  },
+  "html_off": {
+    "message": "Naka-off"
+  },
+  "html_behavior": {
+    "message": "Pagkilos"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Pinananatiling mabilis ng mga nakatakdang proteksyon ang pagsasalin at pinoprotektahan ang API quota."
+  },
+  "html_parallel_requests": {
+    "message": "Sabay-sabay na kahilingan"
+  },
+  "html_request_timeout": {
+    "message": "Takdang oras ng kahilingan"
+  },
+  "html_page_access": {
+    "message": "Access sa pahina"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Para sa lokal na file, payagan ang access sa mga file URL sa Pamahalaan ang Extension"
+  },
+  "html_help_and_recovery": {
+    "message": "Tulong at pag-ayos"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Kung hindi magagamit ang modelo, i-refresh ang listahan, pumili ng modelo at i-save ang mga kagustuhan. Kung hindi ma-load ang listahan, suriin ang key at koneksyon, saka subukan ang I-refresh ang mga modelo."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Hindi pinapayagan ang pagsasalin sa mga setting page ng Chrome at sa Chrome Web Store. Para sa lokal na file, payagan ang mga file URL sa Pamahalaan ang Extension. Pagkatapos ng update o reload ng extension, i-refresh ang mga bukas na web page. Maaaring maantala ang pagsasalin kapag nag-reload."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Kailangan ng internet para magsalin. Pagkasang-ayon sa itaas, direktang ipinapadala sa Google ang key para suriin ang mga modelo. Ang napiling teksto, pati mula sa lokal na file, at target na wika ay ipinapadala lamang kapag humiling ka ng salin. Naka-encrypt ang key sa Chrome profile. Maaaring mag-sync ang wika, modelo at trigger sa Chrome. Pinapanatili lamang ang pinakabagong resulta sa browser session, walang kasaysayan ng pagsasalin."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Maaari mong suriin ang pagbabahagi ng datos sa itaas at bawiin ang pahintulot anumang oras. Hihinto ang pag-check ng modelo at pagsasalin hanggang sumang-ayon ka ulit. Mananatili ang key maliban kung piliin mong alisin ito."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Dito sine-save ang mga pagbabago sa wika, modelo at trigger."
+  },
+  "html_reload_saved_settings": {
+    "message": "I-load muli ang naka-save na setting"
+  },
+  "html_save_preferences": {
+    "message": "I-save ang mga kagustuhan"
+  },
+  "html_gemini_translation": {
+    "message": "Pagsasalin ng Gemini"
+  },
+  "html_setup_required": {
+    "message": "Kailangan ng pag-setup"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Maligayang pagdating sa AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Isalin ang napiling teksto sa wikang alam mo. Ihanda ang dalawang ito upang magsimula:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Iyong Gemini API key.</1> Kumuha ng sariling key sa Google AI Studio. Ipinapakita ng gabay kung paano."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Iyong target na wika.</1> Piliin ang wikang gusto mong basahin."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Paano kumuha ng API key"
+  },
+  "html_extension_status": {
+    "message": "Katayuan ng extension"
+  },
+  "html_active_translations": {
+    "message": "Aktibong pagsasalin"
+  },
+  "html_latest_this_session": {
+    "message": "Pinakabago sa session na ito"
+  },
+  "html_no_translation_yet": {
+    "message": "Wala pang salin."
+  },
+  "html_copy": {
+    "message": "Kopyahin"
+  },
+  "html_settings": {
+    "message": "Mga setting"
+  },
+  "html_key_guide": {
+    "message": "Gabay sa key"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Magsimula sa AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Mga pahina ng extension"
+  },
+  "html_faq": {
+    "message": "Mga karaniwang tanong"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Kumuha ng sariling Google API key, pumili ng wika at isalin ang unang teksto."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Kunin ang API key"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Pinapayagan ng API key ang extension na gumamit ng Gemini sa Google account mo. Ilihim ito tulad ng password."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Para ito sa edad 18 pataas, sa trabaho o negosyo, sa <1>mga bansa at rehiyong suportado ng Google</1>. Sa lahat ng bansa, dapat galing ang API key sa Gemini project na may aktibong pagsingil. I-off ang opsyonal na pagbabahagi sa Google ng mga log ng kahilingan at dataset ng extension."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Sa paggamit ng extension, sang-ayon kang sundin ang mga kondisyong ito, <1>Mga Tuntunin ng Google API</1> at <2>Mga Dagdag na Tuntunin ng Gemini API</2>. Huwag gamitin kung hindi mo matutupad ang mga ito. Hindi ito sinusuri ng extension at hindi humihingi ng dokumento ng pagkakakilanlan."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Buksan ang Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Mag-sign in sa Google account. Tanggapin ang mga tuntunin ng Google kung hihingin."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Gumawa o pumili ng key"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Sa pahina ng API Keys, piliin ang <1>Gumawa ng API key</1> at sundin ang Google para pumili o gumawa ng proyekto. Pinagsasama ng proyekto ang API usage at pagsingil. Kung bago ka sa AI Studio, maaaring nakagawa na ang Google ng default na proyekto at key."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Kung wala ang dati mong proyekto, buksan ang <1>Dashboard > Projects > Import projects</1>. I-import ang proyekto, saka bumalik sa API Keys."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Bago gamitin ang key, sundin ang <1>gabay sa pagsingil ng Google</1> upang tiyaking aktibo ang pagsingil ng proyekto. Hindi kapalit ng API project billing ang bayad na subscription sa Gemini app. I-off ang opsyonal na pagbabahagi ng mga log at dataset ng extension sa Google; basahin ang <2>patakaran sa pagbabahagi ng log ng Google</2>. Iba ang pribadong pag-log ng proyekto sa pagbabahagi."
+  },
+  "html_copy_your_key": {
+    "message": "Kopyahin ang key"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopyahin ang key sa AI Studio. Bumalik sa Mga setting at basahin ang detalye ng pagbabahagi ng datos. Piliin ang <1>Sumang-ayon at kumonekta sa Google</1>, saka i-paste sa <2>API key</2>. Awtomatiko itong ine-encrypt at sine-save, at nilo-load ang listahan ng modelo. Hintayin ang resulta bago magpatuloy."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Mga setting ng AI Translator na may abiso sa pagbabahagi ng datos at buton ng pagsang-ayon sa ibabaw ng bakanteng API key, kasama ang rekomendasyong Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Nasa Ingles ang halimbawa. Sa AI Translator: sumang-ayon muna sa pagbabahagi ng datos, saka i-paste ang sariling key. Sine-check ang listahan ng modelo pagkatapos ma-save ang naka-encrypt na key."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Maaaring baguhin ng Google ang mga screen na ito. Para sa pinakabagong hakbang o error sa key, basahin ang <1>gabay sa API key ng Google</1>. Kumuha ng bagong key sa AI Studio kung hindi na gumagana ang luma."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Piliin ang mga setting ng pagsasalin"
+  },
+  "html_choose_a_model": {
+    "message": "Pumili ng modelo"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Inirerekomenda namin ang Gemini Flash-Lite. Para sa release noong Setyembre 2026, pinili namin ang <1>Gemini 3.5 Flash-Lite</1>. Gamitin ito kung nasa listahan ng modelo."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Maaari kang pumili ng ibang modelong nakalista. Maaaring hindi gumana ang ilan. Kung pumalya, pumili ng ibang modelo o gamitin ang inirerekomenda."
+  },
+  "html_choose_your_target_language": {
+    "message": "Piliin ang target na wika"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Piliin ang wikang gusto mong basahin sa <1>Default na wika</1>. Batay ang pagpipilian sa <2>mga wikang Gemini na dokumentado ng Google</2>. Maaaring mag-iba ang kalidad ayon sa wika at teksto."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Mga setting ng pagsasalin sa AI Translator na may pagpili ng target na wika at keyboard trigger."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Nasa Ingles ang halimbawa. Piliin ang wika ng salin, saka tapusin ang pag-setup."
+  },
+  "html_finish_setup": {
+    "message": "Tapusin ang pag-setup"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Panatilihin ang Control, magtala ng ibang key, o piliin ang <1>Naka-off</1> upang gamitin lang ang right-click menu. Piliin ang <2>Tapusin ang pag-setup</2> sa ibaba ng Mga setting. Maaari itong baguhin sa <3>I-save ang mga kagustuhan</3>."
+  },
+  "html_open_settings": {
+    "message": "Buksan ang Mga setting"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Isalin ang unang teksto"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Magbukas ng karaniwang web page at pumili ng maikling teksto. Mag-right-click at piliin ang <1>Isalin ang Napiling Teksto</1>, o pindutin at bitawan ang napiling key. Lalabas ang resulta sa tabi ng teksto."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Kung bagong install o reload ang extension, i-refresh muna ang web page. Hindi pinapayagan ang pagsasalin sa mga setting page ng Chrome, Chrome Web Store at built-in na PDF viewer."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Ipinapakita ng toolbar popup ang pinakabagong resulta. Matapos ang setup, karaniwang view na ang bubukas. Kapag inalis ang API key, babalik ang gabay sa pagsisimula."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Mga karaniwang tanong: key, gastos at pribasiya"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Bakit kailangan ko ng sariling API key?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Dinisenyo ang extension para direktang ipadala ang mga kahilingan sa Google project gamit ang sarili mong key. Pinili ito sa disenyo, hindi tuntunin ng Chrome. Pinapahintulutan ng key ang mga kahilingan at inuugnay ang mga ito sa paggamit at pagsingil mo. Huwag ibahagi sa screenshot o pampublikong mensahe. Tingnan ang <1>gabay sa API key ng Google</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Bakit kailangan ang aktibong pagsingil, hindi lang inirerekomenda?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Nililimitahan ng <1>mga tuntunin sa Limitadong Paggamit ng Chrome, bilang 3 at 5</1>, ang paggamit ng datos sa layunin ng extension at kaugnay na gawain. May libreng paggamit ng Gemini na pumapayag sa mas malawak na pagsasanay at pagsusuri ng tao. Hindi pinapayagan ng bayad na tuntunin ang pagpapahusay ng produkto, ngunit pinapayagan ang limitadong pag-iingat para sa kaligtasan at batas, at pagproseso sa labas ng EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Upang ayusin ang salungatang ito, kailangan ng developer ang aktibong pagsingil ng proyekto sa buong mundo. Kung rekomendasyon lang, papayagan pa rin ang libreng paggamit. Kailangan din ng sariling rehiyonal na tuntunin ng Google ang Bayad na Serbisyo para sa mga app sa European Economic Area, UK at Switzerland. Tingnan ang <1>mga tuntunin ng Gemini: Mga Restriksyon sa Paggamit, Libreng Serbisyo at Bayad na Serbisyo</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Bakit dapat naka-off ang opsyonal na pagbabahagi sa Google?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Ang pagbabahagi ng log o dataset ay maaaring magpahintulot sa pagsasanay at pagsusuri ng tao kahit aktibo ang pagsingil. Huwag ibigay ang datos ng extension sa dataset sharing o feedback. Pinapayagan ng tuntuning ito ang pribadong pag-log sa sarili mong proyekto. Tingnan ang <1>patakaran sa log ng Google: Datos na maaaring ibahagi at Paano ginagamit ang iyong datos</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Libre ba ang extension kung kailangan ng bayad na API?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Oo. Libre ang extension ngunit maaaring may bayad ang Google API. Hindi pinapalitan ng bayad na subscription sa Gemini app ang API project billing. Tingnan ang <1>paano suriin ang pagsingil</1> at <2>mga presyo ng Google API</2>. Hindi sinusuri ng extension ang mga setting ng pagsingil o pagbabahagi."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Bakit kailangang piliin ang Sumang-ayon at kumonekta sa Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Hinihingi ng <1>Mga Kailangan sa Paglalahad ng Chrome, bilang 1 at 2</1>, ang malinaw na detalye sa paggamit ng datos at pahintulot na may sapat na kaalaman. Maaari kang pumili gamit ang buton bago ang anumang Google API request. Hindi nito sinusuri ang pagkakakilanlan o pagsingil, at hindi nagbibigay ng pahintulot na ibahagi ang pribadong impormasyon ng iba."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Ano mismo ang ipinapadala sa Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Ang pag-check ng modelo ay nagpapadala ng key at humihingi ng magagamit na modelo. Ang pagsasalin ay nagpapadala ng napiling teksto, target na wika, modelo at tagubilin sa pagsasalin, pati lokal na teksto. Hindi idinadagdag ang buong pahina, address o kasaysayan ng pag-browse. Tumatanggap din ang Google ng detalye ng koneksyon tulad ng IP address. Walang natatanggap na ganitong kahilingan ang developer. Ipadala lamang ang tekstong maaari mong ibahagi."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Paano sine-save at awtomatikong binubuksan ang key?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Naka-encrypt ang API key. Ito at ang encryption key ay nananatili sa Chrome profile upang awtomatikong magamit matapos mag-restart. Hindi sila sini-sync. Maaari pa ring mabawi ang API key ng taong may access sa profile. Hindi ito OS keychain o vault na may password. Maaaring mag-sync ang wika, modelo at trigger. Pinakabagong resulta lamang ang nananatili sa browser session; walang analytics o kasaysayan ng pagsasalin."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Ine-encrypt at sine-check ng upgrade ang lumang key bago burahin ang plain-text na mga kopya. Kung pumalya, nananatili ang lumang kopya at naka-block pa rin ang mga kahilingan. Ipinaliliwanag ang error sa Mga setting. Hindi nilalaktawan ng paglipat ng lumang key ang pahintulot."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Maaari ko bang bawiin ang pahintulot o alisin ang key?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "Sa <1>Mga setting</1>, hinaharang ng <2>Bawiin ang pahintulot sa datos</2> ang bagong kahilingan at lokal na kinakansela ang aktibo, habang pinapanatili ang key at mga kagustuhan. Binubura ng <3>Alisin ang naka-save na key</3> ang key, encryption key at model cache. Hindi nito mababawi ang naipadalang datos o magagarantiya na libre ang naipadalang kahilingan. Bawiin ang key sa AI Studio upang i-disable rin ito sa Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Nananatili ang pahintulot sa karaniwang restart at update. Kung magbago ang abiso, maghihintay ang mga kahilingan hanggang basahin at sang-ayunan mo ulit."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Bakit para sa matatanda at trabaho o negosyo ito?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Kailangan ng Google na hindi bababa sa 18 ang edad, para sa propesyonal o negosyong gamit sa suportadong rehiyon. Tingnan ang <1>mga tuntunin ng Gemini: Edad at Mga Restriksyon sa Paggamit</1> at <2>magagamit na mga rehiyon</2>. Walang hiwalay na eligibility checkbox o pag-check ng pagkakakilanlan ang extension."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Bakit may patakaran sa pribasiya bukod sa abisong ito?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Ipinaliliwanag ng abiso ang pagpili bago kumonekta. Nagbibigay ang patakaran ng buong detalye sa datos, pag-iimbak at pag-alis. Kailangan ito ng <1>mga tuntunin sa Patakaran sa Pribasiya ng Chrome</1> para sa mga extension na humahawak ng datos ng gumagamit. Basahin ang <2>aming patakaran sa pribasiya</2>. Hindi ibig sabihin ng mga abiso na inaprubahan ng Google ang extension."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Maaaring mali ang salin ng AI. Suriin ang mahalagang pananalita bago umasa rito."
+  },
+  "html_about_ai_translator": {
+    "message": "Tungkol sa AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Napakadaling magsalin: pumili ng teksto at pindutin ang Control."
+  },
+  "html_made_for_people": {
+    "message": "Ginawa para sa mga tao"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Ginawa ko ang AI Translator upang tulungan ang mga tao na magbasa, matuto at mag-ugnayan sa iba't ibang wika. Sana ay makatulong ito sa mga tao sa buong mundo."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Isinasalin ng extension ang napiling teksto gamit ang sariling Google Gemini API key. Ikaw ang pipili kung ano ang ipapadala at anong wika ang babasahin."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Pindutin at bitawan ang Control upang isalin ang napiling teksto. Default ang Control at maaari itong baguhin sa Mga setting. Maaari ring gamitin ang right-click menu."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Manwal na nasubukan sa Mac lamang. Hindi pa manwal na nasubukan sa Windows at Linux."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Tingnan ang source code at gabay sa proyekto</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Humingi ng tulong o mag-ulat ng problema</1>. Pampubliko ang mga ulat. Huwag isama ang API key, pribadong teksto o personal na detalye."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Kung nais mong suportahan ang aking gawa"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Suportahan sana ang aking bansang Ukraine habang ipinagtatanggol nito ang sarili laban sa pananalakay ng Russia."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Nagtitiwala ako sa Sternenko Community Foundation. Kung kaya at nais mong tumulong, maaari kang mag-donate sa opisyal na website nito."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Suportahan ang Ukraine sa pamamagitan ng pundasyon</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Opsyonal ang suporta at hindi kailangan upang gamitin ang extension. Magbubukas ng ibang website ang link. Sa pundasyon dumadaan ang donasyon, hindi sa extension."
+  },
+  "html_privacy_and_costs": {
+    "message": "Pribasiya at gastos"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Naka-encrypt ang API key sa device na ito at hindi sini-sync. Mananatili itong magagamit sa karaniwang restart ng Chrome nang walang unlock password. Maaari pa ring mabawi ng taong may access sa browser profile."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Bago ang unang kahilingan sa Google, ipinapaliwanag ng Mga setting ang pagbabahagi ng datos at hinihiling ang <1>Sumang-ayon at kumonekta sa Google</1>. Pagkatapos, direktang ipinapadala ang teksto sa Google kapag humiling ka lang ng salin. Key lang ang ipinapadala sa pag-check ng modelo, hindi ang napiling teksto. Walang analytics, patalastas o kasaysayan ng pagsasalin."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Basahin ang detalye sa <1>Mga setting</1> anumang oras. Piliin ang <2>Bawiin ang pahintulot sa datos</2> upang itigil ang bagong kahilingan habang iniingatan ang naka-encrypt na key at mga kagustuhan, o <3>Alisin ang naka-save na key</3> upang burahin ang key at model cache. Hindi na mababawi ang naipadalang datos."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "AI ang gumagawa ng mga salin at maaaring magkamali. Suriin ang mahalagang pananalita bago umasa rito."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Basahin ang detalye ng pribasiya</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "Libre at hiwalay na proyekto ang AI Translator. Maaaring may bayad ang Google API. Sa lahat ng bansa, gumamit ng key mula sa proyektong may <1>aktibong pagsingil</1> at i-off ang opsyonal na <2>pagbabahagi ng mga log at dataset ng extension sa Google</2>. Sa mga setting na ito, hindi pinapayagan ng bayad na tuntunin ng Google ang paggamit ng prompt at tugon para sa pagpapahusay ng produkto; naaangkop pa rin ang pagproseso para sa kaligtasan at batas. Basahin ang <3>presyo at paliwanag sa paggamit ng datos ng Google</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Para ito sa edad 18 pataas, para sa trabaho o negosyo sa <1>mga rehiyong suportado ng Google</1>. Sa paggamit nito, sumasang-ayon ka sa mga kondisyong ito, <2>Mga Tuntunin ng Google API</2> at <3>Mga Dagdag na Tuntunin ng Gemini API</3>. Huwag gamitin kung hindi kayang sundin. Walang eligibility checkbox o identity check. Hindi sinusuri ng extension ang mga setting sa pagsingil o pagbabahagi."
+  },
+  "runtime_unsaved_changes": {
+    "message": "May mga pagbabagong hindi pa naka-save."
+  },
+  "runtime_settings_conflict": {
+    "message": "Nabago ang mga setting sa ibang pahina. Nananatili rito ang mga edit mo. I-load muli ang naka-save na setting upang alisin ang mga edit at gamitin ang naka-save na halaga."
+  },
+  "runtime_preferences_current": {
+    "message": "Napapanahon ang mga kagustuhan."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Hindi mabuksan ang naka-save na key. Buksan muli ang Mga setting, o alisin ito at ilagay ulit."
+  },
+  "runtime_key_conflict": {
+    "message": "Nabago ang API key sa ibang pahina. I-load muli ang naka-save na setting bago mag-save ng key."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Naka-save nang naka-encrypt ang key. Sumang-ayon sa pagbabahagi ng datos bago kumonekta sa Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Sumang-ayon muna sa pagbabahagi ng datos sa itaas bago idagdag ang API key."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Tinanggihan ng Gemini ang key na ito. Palitan ito o gamitin ang I-refresh ang mga modelo upang suriin ulit."
+  },
+  "runtime_paste_key": {
+    "message": "I-paste ang API key upang kumonekta sa Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Naka-save ang API key. Tinanggap ito ng Gemini sa huling pag-check ng listahan ng modelo."
+  },
+  "runtime_key_saved_check": {
+    "message": "Naka-save nang naka-encrypt ang API key sa device. I-refresh ang mga modelo upang suriin ito sa Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Subukang bawiin muli"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Bawiin ang pahintulot sa datos"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Hindi pa kumpirmado ang pagbawi. Subukang bawiin muli upang ma-save ang pagpili."
+  },
+  "runtime_agreement_saved": {
+    "message": "Pinahintulutan ang pagbabahagi ng datos para sa Chrome profile na ito. Maaari mong bawiin anumang oras."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Walang koneksyon sa Google hangga't hindi ka sumasang-ayon. Mananatili ang key kung bawiin mo ang pahintulot."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Tinanggihan ng Gemini ang naka-save na key. Palitan ito sa ibaba."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Naka-save nang naka-encrypt ang key sa device na ito."
+  },
+  "runtime_setup_create_key": {
+    "message": "Gumawa ng sariling key sa Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Napili na ang wika. Tapusin ang pag-setup upang i-save ang pagpili."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Piliin ang target na wika sa ibaba."
+  },
+  "runtime_finish_setup": {
+    "message": "Tapusin ang pag-setup"
+  },
+  "runtime_save_preferences": {
+    "message": "I-save ang mga kagustuhan"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Magdagdag ng API key, suriin ang listahan ng modelo at i-save ang napiling modelo."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Ayusin ang salungatan sa mga setting bago magsalin."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Basahin at sang-ayunan ang pagbabahagi ng datos bago kumonekta sa Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Tapusin ang pag-save ng API key bago suriin ang setup."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Kailangang ayusin ang setup: tinanggihan ng Gemini ang naka-save na API key."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Naka-save ang key. Pumili ng target na wika at tapusin ang pag-setup."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Pumili ng magagamit na modelo at i-save ang mga kagustuhan."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Napili na ang modelo. I-save ang mga kagustuhan upang magamit ito."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Handa ang key at wika. Tapusin ang pag-setup upang i-save ang pagpili, saka subukang magsalin. Maaari pa ring magbago ang access at quota ng modelo."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Handa nang sumubok ng salin. Nasa nasuring listahan ang naka-save na modelo; maaaring magbago ang access at quota."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Naka-save ang key. I-refresh ang mga modelo upang suriin ang key at napiling modelo."
+  },
+  "runtime_show_key": {
+    "message": "Ipakita"
+  },
+  "runtime_hide_key": {
+    "message": "Itago"
+  },
+  "runtime_choose_target_language": {
+    "message": "Pumili ng target na wika"
+  },
+  "runtime_background_no_response": {
+    "message": "Hindi tumugon ang background ng extension. I-reload ang extension at subukang muli."
+  },
+  "runtime_refresh_models": {
+    "message": "I-refresh ang mga modelo"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Sumang-ayon sa pagbabahagi ng datos bago i-load ang mga modelo."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Tapusin ang pag-save ng API key bago i-refresh ang mga modelo."
+  },
+  "runtime_refreshing": {
+    "message": "Nire-refresh..."
+  },
+  "runtime_loading": {
+    "message": "Nilo-load..."
+  },
+  "runtime_models_checking": {
+    "message": "Sinusuri sa Gemini ang mga katugmang modelo..."
+  },
+  "runtime_models_loading": {
+    "message": "Nilo-load ang mga katugmang modelo..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Hindi ma-load ang mga katugmang modelo."
+  },
+  "runtime_models_empty": {
+    "message": "Walang ibinalik na katugmang modelo ang Gemini."
+  },
+  "runtime_model_not_available": {
+    "message": "Wala sa katugmang listahan ang napiling modelo. Pumili ng iba."
+  },
+  "runtime_record_key": {
+    "message": "Itala ang key"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Kinansela ang pagtatala."
+  },
+  "runtime_unknown_key": {
+    "message": "Ang key na iyon"
+  },
+  "runtime_press_key": {
+    "message": "Pindutin ang isang key..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Pindutin ang isang suportadong key na hindi naglalagay ng character. Pindutin ang Escape upang kanselahin."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "I-refresh ang mga modelo upang suriin ang naka-save na API key."
+  },
+  "runtime_models_add_key": {
+    "message": "Magdagdag ng API key upang i-load ang mga katugmang modelo."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Hindi ma-load ng extension ang naka-save na katayuan."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Tinanggihan ng Gemini ang naka-save na API key. Palitan ito o i-refresh ang mga modelo upang suriin ulit."
+  },
+  "runtime_settings_reopen": {
+    "message": "Hindi ma-load ang Mga setting. Buksan muli upang subukan ulit."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Hindi ma-load ang mga setting. I-load muli ang naka-save na setting. Naka-disable ang pag-save upang maprotektahan ang dati mong pagpili."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Hindi ma-load ang katayuan ng setup."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Ilagay ang buong API key na walang espasyo."
+  },
+  "runtime_key_use_remove": {
+    "message": "Gamitin ang Alisin ang naka-save na key upang burahin ito."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Sumang-ayon sa pagbabahagi ng datos sa itaas bago i-save ang API key."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Sine-save nang naka-encrypt ang API key..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Hindi mabasa o ma-save ang API key. Nananatili ang inilagay mo. Gamitin ang I-save ang mga kagustuhan upang subukan ulit."
+  },
+  "runtime_connecting_google": {
+    "message": "Kumokonekta sa Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Itinitigil ang mga koneksyon sa Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Hindi ma-save ang pahintulot sa datos. Subukang muli."
+  },
+  "runtime_key_removing": {
+    "message": "Inaalis ang naka-save na key..."
+  },
+  "runtime_key_removed": {
+    "message": "Inalis ang naka-save na key. Maaari kang magdagdag ng bago matapos sumang-ayon sa pagbabahagi ng datos."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Hindi maalis ang naka-save na key. Subukang muli."
+  },
+  "runtime_saving": {
+    "message": "Sine-save..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Pumili ng wastong wika at modelo."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Pumili ng suportadong trigger key o Naka-off."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Pumili ng modelo mula sa kasalukuyang katugmang listahan."
+  },
+  "runtime_preferences_saving": {
+    "message": "Sine-save ang mga kagustuhan..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Naka-save ang mga kagustuhan."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Naka-save ang mga kagustuhan. Idagdag ang API key upang tapusin ang pag-setup."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Hindi mabasa o ma-save ang mga kagustuhan. Nananatili ang mga edit. Subukang muli."
+  },
+  "runtime_key_will_save": {
+    "message": "Awtomatikong mase-save ang API key."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Tapusin ang paglalagay ng API key."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Tapusin ang pag-save ng API key upang i-load ang mga katugmang modelo."
+  },
+  "runtime_recommended_selected": {
+    "message": "Napili ang inirerekomendang modelo. I-save ang pagpili upang gamitin ito."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Magiging Naka-off ang keyboard trigger pagkatapos mag-save."
+  },
+  "runtime_connection_changed": {
+    "message": "Nabago ang mga setting ng koneksyon. Sinusuri ang naka-save na setting..."
+  },
+  "runtime_models_changed": {
+    "message": "Nabago ang listahan ng modelo. Sinusuri ang mga katugmang modelo..."
+  },
+  "runtime_no_translation": {
+    "message": "Wala pang salin."
+  },
+  "runtime_start_setup": {
+    "message": "Simulan ang pag-setup"
+  },
+  "runtime_settings": {
+    "message": "Mga setting"
+  },
+  "runtime_key_rejected": {
+    "message": "Tinanggihan ang key"
+  },
+  "runtime_setup_required": {
+    "message": "Kailangan ng pag-setup"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Magdagdag ng API key sa Mga setting upang magsimulang magsalin."
+  },
+  "runtime_add_key": {
+    "message": "Magdagdag ng API key"
+  },
+  "runtime_finish_model_language": {
+    "message": "Naka-save ang key. Buksan ang Mga setting upang suriin ang modelo at tapusin ang pagpili ng wika."
+  },
+  "runtime_check_setup": {
+    "message": "Suriin ang setup"
+  },
+  "runtime_translating": {
+    "message": "Isinasalin"
+  },
+  "runtime_error": {
+    "message": "Error"
+  },
+  "runtime_ready": {
+    "message": "Handa"
+  },
+  "runtime_status_load_failed": {
+    "message": "Hindi ma-load ang katayuan ng extension. I-reload ang extension, saka i-refresh ang pahina."
+  },
+  "runtime_copied": {
+    "message": "Nakopya."
+  },
+  "runtime_copy_blocked": {
+    "message": "Hinarang ang pagkopya. Piliin ang teksto ng resulta at kopyahin."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Hindi mabuksan ang Mga setting. Subukang muli."
+  },
+  "runtime_translating_progress": {
+    "message": "Isinasalin..."
+  },
+  "runtime_translation_started": {
+    "message": "Nagsimula ang pagsasalin."
+  },
+  "runtime_translation_complete": {
+    "message": "Tapos na ang pagsasalin."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Tapos na ang pagsasalin. Gamitin ang teksto ng resulta o mga kontrol ng card."
+  },
+  "runtime_translation": {
+    "message": "Pagsasalin"
+  },
+  "runtime_target_language": {
+    "message": "Target na wika"
+  },
+  "runtime_card_target_language": {
+    "message": "Target na wika ng card na ito"
+  },
+  "runtime_close_card": {
+    "message": "Isara ang translation card"
+  },
+  "runtime_translated_text": {
+    "message": "Isinaling teksto"
+  },
+  "runtime_retry": {
+    "message": "Subukang muli"
+  },
+  "runtime_copy": {
+    "message": "Kopyahin"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Hindi mabuksan ang Mga setting. Gamitin ang toolbar ng extension."
+  },
+  "runtime_copy_failed": {
+    "message": "Pumalya ang pagkopya. Piliin ang teksto ng resulta at kopyahin."
+  },
+  "runtime_context_menu": {
+    "message": "Isalin ang Napiling Teksto"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Wala sa kasalukuyang listahan)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Hindi pa nasusuri)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Ginagamit ang naka-cache na listahan mula $value1$. Pumalya ang live refresh. Subukang muli mamaya.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Ginagamit ang naka-cache na listahan ng modelo. Pumalya ang live refresh. Subukang muli mamaya."
+  },
+  "runtime_models_cache_at": {
+    "message": "Ginagamit ang naka-cache na listahan mula $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Ginagamit ang naka-cache na listahan ng modelo."
+  },
+  "runtime_models_updated_at": {
+    "message": "Na-update ang listahan ng modelo mula $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Na-update ang listahan ng modelo."
+  },
+  "runtime_key_not_supported": {
+    "message": "Hindi suportado ang $value1$. Pindutin ang ibang key o Escape upang kanselahin.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Gagamitin ang $value1$ pagkatapos mag-save.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Hanggang $value1$ bawat tab at $value2$ sa kabuuan",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ segundo",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Pindutin ang Tab upang gamitin ang card o Escape upang isara.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Pumalya ang pagsasalin. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "I-refresh ang mga bukas na pahina"
+  },
+  "refresh_message": {
+    "message": "Naka-save ang iyong API key. Matapos ang pag-setup, i-refresh ang mga pahinang bukas na noon. Pagkatapos, pumili ng teksto at pindutin ang Control upang magsalin."
+  },
+  "refresh_continue": {
+    "message": "Ipagpatuloy ang pag-setup"
+  },
+  "refresh_faq_question": {
+    "message": "Bakit kailangang i-refresh ang mga bukas na pahina?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>I-refresh ang mga bukas na pahina</1> matapos ang pag-setup, bago sumubok ng salin. Kailangang i-load ng Chrome ang extension sa mga pahinang bukas bago ito na-install o na-reload. Awtomatikong handa ang mga bagong bukas na pahina."
+  },
+  "ui_locale": {
+    "message": "fil",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

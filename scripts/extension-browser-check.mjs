@@ -3,11 +3,12 @@ import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { DEFAULTS, DATA_SHARING_VERSION, LANGUAGES, RECOMMENDED_MODEL } from "../shared.js";
+import { DEFAULTS, DATA_SHARING_VERSION, LANGUAGES, RECOMMENDED_MODEL, preferredTargetLanguage } from "../shared.js";
 import { waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || "playwright");
-const extension = process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist", import.meta.url));
+const extension = process.argv.includes("--source") ? fileURLToPath(new URL("..", import.meta.url))
+  : process.env.EXTENSION_PATH || fileURLToPath(new URL("../dist", import.meta.url));
 const temporary = await mkdtemp(path.join(os.tmpdir(), "ai-translator-pages-"));
 // Only the temporary browser profile contains these fake credentials and replies.
 let context;
@@ -63,7 +64,7 @@ try {
   assert.equal(await first.locator("#apiKey").isDisabled(), true);
   assert.equal(await worker.evaluate(() => probe.calls), 0, "No Google request before the agreement");
   assert.equal(await first.locator("#setupGuide").isVisible(), true);
-  assert.equal(await first.locator("#targetLanguage").inputValue(), "");
+  assert.equal(await first.locator("#targetLanguage").inputValue(), preferredTargetLanguage(await first.evaluate(() => chrome.i18n.getAcceptLanguages())));
   assert.equal(await first.locator("#targetLanguage option").count(), LANGUAGES.length + 1);
   assert.equal(await first.locator("#aiModel").inputValue(), RECOMMENDED_MODEL);
   assert.equal(await first.getByText(/demo key/i).count(), 0);
@@ -76,14 +77,17 @@ try {
   await first.locator("#agreeDataSharing").click();
   await first.locator("#apiKey").fill("browser-ui-fake-key");
   await first.locator("#apiKey").blur();
-  await textIs(first, "setupStatus", "Choose a target language");
+  await first.locator("#refreshPagesDialog[open]").waitFor();
+  assert.equal(await first.locator("#refreshPagesHeading").evaluate((el) => getComputedStyle(el).fontWeight), "700");
+  await first.locator("#refreshPagesDismiss").click();
+  await textIs(first, "setupStatus", "Finish setup");
   assert.equal(await worker.evaluate(async () => Object.hasOwn(await chrome.storage.local.get(null), "geminiApiKey")), false);
   assert.equal(await worker.evaluate(async () => Object.hasOwn(await chrome.storage.sync.get(null), "geminiApiKey")), false);
   await textIs(popup, "openSettings", "Finish setup");
   assert.equal(await popup.locator("#welcome").isVisible(), false);
   await first.reload();
-  await textIs(first, "setupStatus", "Choose a target language");
-  assert.equal(await first.locator("#targetLanguage").inputValue(), "");
+  await textIs(first, "setupStatus", "Finish setup");
+  assert.equal(await first.locator("#targetLanguage").inputValue(), preferredTargetLanguage(await first.evaluate(() => chrome.i18n.getAcceptLanguages())));
   await first.locator("#targetLanguage").selectOption("en");
   await first.locator("#saveButton").click();
   await textIs(first, "setupStatus", "Ready");
@@ -141,7 +145,7 @@ try {
     await textIs(popup, "latestResult", `Sample ${language.code}`);
     assert.equal(await popup.locator("#latestResult").getAttribute("lang"), language.code);
     const metadata = await popup.locator("#latestMeta").textContent();
-    assert(metadata.startsWith(language.name) && metadata.includes("2026"));
+    assert(metadata.startsWith(new Intl.DisplayNames(["en"], { type: "language" }).of(language.code)) && metadata.includes("2026"));
   }
   await popup.evaluate(() => Object.defineProperty(navigator, "clipboard", { configurable: true,
     value: { writeText: async (text) => { globalThis.copiedText = text; } } }));

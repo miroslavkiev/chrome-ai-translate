@@ -3,7 +3,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { RECOMMENDED_MODEL, stableTextHash } from "../shared.js";
+import { RECOMMENDED_MODEL, preferredTargetLanguage, stableTextHash } from "../shared.js";
 import { setTestApiKey, waitForRuntimeState } from "./browser-runtime-state.mjs";
 
 // Capture real extension UI using only a disposable profile and offline example data.
@@ -41,7 +41,7 @@ try {
   await waitForRuntimeState(settings, undefined, { allowStartup: true });
   await settings.locator("#setupGuide").waitFor({ state: "visible" });
   assert.equal(await settings.locator("#apiKey").inputValue(), "");
-  assert.equal(await settings.locator("#targetLanguage").inputValue(), "");
+  assert.equal(await settings.locator("#targetLanguage").inputValue(), preferredTargetLanguage(await settings.evaluate(() => chrome.i18n.getAcceptLanguages())));
   await settings.locator("section[aria-labelledby='api-heading']").evaluate((element) => {
     window.scrollTo(0, element.getBoundingClientRect().top + scrollY - 24);
   });

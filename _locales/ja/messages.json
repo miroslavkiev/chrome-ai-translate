@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "テキストを選択して Control を押すだけ。Gemini で好きな言語に簡単翻訳。",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "テキストを選択して、もう一度お試しください。"
+  },
+  "error_unsupported_selection": {
+    "message": "このテキスト選択には対応していません。"
+  },
+  "error_selection_too_large": {
+    "message": "選択したテキストが10,000文字を超えています。短くしてお試しください。"
+  },
+  "error_missing_api_key": {
+    "message": "設定で Gemini API キーを追加してください。"
+  },
+  "error_agreement_required": {
+    "message": "Google に接続する前に、設定でデータ共有の説明を読み、同意してください。"
+  },
+  "error_credential_conflict": {
+    "message": "保存済みのキーが別のページで変更されました。保存済みの設定を再読み込みしてください。"
+  },
+  "error_credential_storage_error": {
+    "message": "保存済みのキーを開けません。設定を開き直すか、キーを削除して再入力してください。"
+  },
+  "error_missing_target_language": {
+    "message": "設定で翻訳先の言語を選択して、設定を完了してください。"
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini が API キーを拒否しました。設定で確認してください。"
+  },
+  "error_invalid_model": {
+    "message": "このモデルは翻訳に使用できません。設定で別のモデルか推奨の Flash-Lite モデルを選択してください。"
+  },
+  "error_busy": {
+    "message": "同時に実行中の翻訳が多すぎます。完了を待ってお試しください。"
+  },
+  "error_duplicate_request": {
+    "message": "この選択範囲は既に翻訳中です。"
+  },
+  "error_rate_limited": {
+    "message": "リクエスト数の上限に達しました。少し待ってお試しください。"
+  },
+  "error_timeout": {
+    "message": "翻訳に時間がかかりすぎました。再試行できます。"
+  },
+  "error_offline": {
+    "message": "オフラインのようです。接続を確認してお試しください。"
+  },
+  "error_network_error": {
+    "message": "Gemini に接続できません。接続を確認してお試しください。"
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini の利用上限に達しました。アカウントを確認し、後でお試しください。"
+  },
+  "error_service_error": {
+    "message": "Gemini は翻訳を完了できませんでした。後でお試しください。"
+  },
+  "error_invalid_response": {
+    "message": "Gemini から読み取れない応答が返されました。再試行できます。"
+  },
+  "error_output_too_large": {
+    "message": "翻訳結果が出力上限を超えました。選択するテキストを短くしてお試しください。"
+  },
+  "error_content_blocked": {
+    "message": "Gemini がこのテキストをブロックしました。別のテキストをお試しください。"
+  },
+  "error_unsupported_page": {
+    "message": "このページでは翻訳できません。"
+  },
+  "error_frame_unavailable": {
+    "message": "選択したフレームは利用できなくなりました。"
+  },
+  "error_cancelled": {
+    "message": "翻訳をキャンセルしました。"
+  },
+  "key_Off": {
+    "message": "オフ"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ 秒後にお試しください。",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator の設定"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "すばやく集中して翻訳するための個人設定。"
+  },
+  "html_help_and_information": {
+    "message": "ヘルプと情報"
+  },
+  "html_api_key_guide": {
+    "message": "API キーのガイド"
+  },
+  "html_about": {
+    "message": "この拡張機能について"
+  },
+  "html_privacy": {
+    "message": "プライバシー"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translator を設定する"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "この設定ページの手順に従ってください。翻訳には自分の Google API キーが必要です。"
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>自分の API キーを取得します。</1><2>Google AI Studio</2> にログインしてキーを作成します。以下のデータ共有の説明を読み、キーを貼り付けます。詳しくは<3>手順ガイド</3>をご覧ください。"
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>翻訳先の言語とモデルを選択します。</1>翻訳結果を読みたい言語を選びます。モデル一覧にあれば Gemini Flash-Lite を推奨します。"
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>保存して翻訳を始めます。</1>ページ下部の「設定を完了」を押します。ウェブページでテキストを選択して Control を押すか、右クリックメニューの「選択したテキストを翻訳」を選びます。"
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "自分の Gemini API キーを接続し、対応するモデルを選択します。"
+  },
+  "html_loading_setup_state": {
+    "message": "設定状態を読み込み中..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Google に接続する前に"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "利用可能なモデルを確認するため、Google に API キーが送信されます。翻訳を依頼すると、選択したテキストと翻訳先の言語も送信されます。ローカルファイル内のテキストも含まれます。AI 翻訳には誤りがあり得ます。"
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "キーはこの Chrome プロファイルに暗号化して保存され、再起動後に自動的に開きます。追加のパスワードは不要です。ただし、プロファイルに完全にアクセスできる人はキーを復元できる場合があります。<1>プライバシーの詳細</1>をご覧ください。"
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>すべての国で必須:</1><2>課金が有効</2>なプロジェクトの Gemini API キーを使用してください。この拡張機能の<3>リクエストログやデータセットを Google と任意に共有する設定</3>はオフにしてください。この設定では、Google の有料サービス規約により、プロンプトと応答は製品改善に使用されません。安全上および法的な処理は引き続き適用されます。拡張機能は無料ですが、Google API の料金が発生する場合があります。"
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>利用条件。</1>この拡張機能で Gemini を使うと、上記の条件と<2>Google の規約</2>に従うことに同意したものとします。<3>対応地域</3>にいる18歳以上の方が、専門的または業務上の目的で利用できます。拡張機能は課金や共有の設定を確認しません。"
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "同意して Google に接続"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "データ共有への同意を撤回"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "接続する前にデータ共有の詳細を確認してください。"
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>なぜこれらの条件が必要なのですか? よくある質問を見る</1>。"
+  },
+  "html_api_key": {
+    "message": "API キー"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "同意後にキーを貼り付けると、暗号化して保存し、モデルを自動的に読み込みます。"
+  },
+  "html_show": {
+    "message": "表示"
+  },
+  "html_remove_saved_key": {
+    "message": "保存済みのキーを削除"
+  },
+  "html_model": {
+    "message": "モデル"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "メディア専用や特殊用途と判明しているモデルは表示しません。"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Gemini Flash-Lite シリーズを推奨します。このリリース時点（2026年9月）の推奨は Gemini 3.5 Flash-Lite です。一覧の別のモデルも選択できます。一部のモデルは動作しない場合があります。その場合は別のモデルか推奨モデルを選んでください。"
+  },
+  "html_refresh_models": {
+    "message": "モデルを更新"
+  },
+  "html_use_recommended_model": {
+    "message": "推奨モデルを使用"
+  },
+  "html_translation": {
+    "message": "翻訳"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "言語と任意のキーボード操作を設定します。"
+  },
+  "html_default_language": {
+    "message": "既定の言語"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "結果カードでは、この既定値を変えずに別の言語を使用できます。"
+  },
+  "html_keyboard_trigger": {
+    "message": "翻訳用のキー"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "単独のキーはウェブサイトや支援ツールと競合する場合があります。「オフ」を選ぶと右クリックメニューだけを使用します。"
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "キーを登録"
+  },
+  "html_off": {
+    "message": "オフ"
+  },
+  "html_behavior": {
+    "message": "動作"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "固定の保護設定で応答性を保ち、API の利用枠を守ります。"
+  },
+  "html_parallel_requests": {
+    "message": "同時リクエスト数"
+  },
+  "html_request_timeout": {
+    "message": "リクエストの制限時間"
+  },
+  "html_page_access": {
+    "message": "ページへのアクセス"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "ローカルファイルでは、拡張機能の管理で「ファイルの URL へのアクセスを許可する」を有効にしてください"
+  },
+  "html_help_and_recovery": {
+    "message": "ヘルプと復旧"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "モデルを使用できない場合は一覧を更新し、別のモデルを選んで設定を保存してください。一覧を読み込めない場合はキーと接続を確認し、「モデルを更新」をお試しください。"
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome の設定ページと Chrome ウェブストアでは翻訳できません。ローカルファイルでは、拡張機能の管理でファイル URL へのアクセスを許可してください。拡張機能の更新や再読み込み後は、開いているウェブページを更新してください。再読み込みにより翻訳が中断する場合があります。"
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "翻訳にはインターネット接続が必要です。上記に同意すると、モデル確認のためキーを Google に直接送信します。ローカルファイルを含む選択テキストと翻訳先の言語は、翻訳を依頼した場合だけ送信します。キーは Chrome プロファイルに暗号化して保存します。言語、モデル、キー操作の設定は Chrome で同期される場合があります。最新の結果だけをブラウザのセッション中保持し、翻訳履歴は保存しません。"
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "上記でデータ共有を確認し、いつでも同意を撤回できます。再び同意するまでモデル確認と翻訳を停止します。「保存済みのキーを削除」を選ばない限り、キーは保持されます。"
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "言語、モデル、キー操作の変更はここで保存します。"
+  },
+  "html_reload_saved_settings": {
+    "message": "保存済みの設定を再読み込み"
+  },
+  "html_save_preferences": {
+    "message": "設定を保存"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini による翻訳"
+  },
+  "html_setup_required": {
+    "message": "設定が必要です"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "AI Translator へようこそ"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "選択したテキストを読める言語に翻訳します。まず次の2つを設定してください。"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>自分の Gemini API キー。</1>Google AI Studio で取得します。ガイドで手順を説明しています。"
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>翻訳先の言語。</1>読みたい言語を選択します。"
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API キーの取得方法"
+  },
+  "html_extension_status": {
+    "message": "拡張機能の状態"
+  },
+  "html_active_translations": {
+    "message": "実行中の翻訳"
+  },
+  "html_latest_this_session": {
+    "message": "このセッションの最新結果"
+  },
+  "html_no_translation_yet": {
+    "message": "翻訳結果はまだありません。"
+  },
+  "html_copy": {
+    "message": "コピー"
+  },
+  "html_settings": {
+    "message": "設定"
+  },
+  "html_key_guide": {
+    "message": "キーのガイド"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translator を使い始める"
+  },
+  "html_extension_pages": {
+    "message": "拡張機能のページ"
+  },
+  "html_faq": {
+    "message": "よくある質問"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "自分の Google API キーを取得し、言語を選択して、最初のテキストを翻訳しましょう。"
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. API キーを取得する"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API キーを使うと、自分の Google アカウントで Gemini を利用できます。パスワードと同じように秘密にしてください。"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "この拡張機能は、<1>Google の対応する国と地域</1>にいる18歳以上の方が仕事や業務で使うためのものです。すべての国で、キーが属する Gemini プロジェクトの課金を有効にする必要があります。この拡張機能のリクエストログやデータセットを Google と任意に共有する設定はオフにしてください。"
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "この拡張機能を使うと、これらの条件、<1>Google API 利用規約</1>、<2>Gemini API 追加利用規約</2>に従うことに同意したものとします。条件を満たせない場合は使用しないでください。拡張機能はこれらの事実を確認せず、身分証明書も求めません。"
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio を開く"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Google アカウントにログインします。求められた場合は Google の規約に同意します。"
+  },
+  "html_create_or_choose_a_key": {
+    "message": "キーを作成または選択する"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API キーのページで<1>「API キーを作成」</1>を選び、Google の手順に従ってプロジェクトを作成または選択します。プロジェクトは API の使用と課金をまとめます。初めて AI Studio を使う場合、既定のプロジェクトとキーが作成済みの場合もあります。"
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "既存のプロジェクトが表示されない場合は、<1>ダッシュボード > プロジェクト > プロジェクトをインポート</1>を開きます。インポートしてから API キーに戻ります。"
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "使用する前に<1>Google の課金ガイド</1>でプロジェクトの課金が有効か確認します。有料の Gemini アプリ契約は API プロジェクトの課金の代わりにはなりません。この拡張機能のログやデータセットを Google と任意に共有する設定をオフにし、<2>Google のログ共有ポリシー</2>をお読みください。プロジェクト内の非公開ログは共有とは別です。"
+  },
+  "html_copy_your_key": {
+    "message": "キーをコピーする"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "AI Studio からキーをコピーします。拡張機能の設定に戻り、データ共有の説明を読みます。<1>「同意して Google に接続」</1>を選び、<2>「API キー」</2>欄に貼り付けます。暗号化して自動保存し、モデル一覧を読み込みます。結果が出るまで待ってください。"
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "空の API キー欄の上にデータ共有の説明と同意ボタンがあり、Flash-Lite の推奨が表示された AI Translator の設定画面。"
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "英語での表示例。AI Translator でデータ共有に同意してから、自分のキーを貼り付けます。暗号化したキーの保存後にモデル一覧を確認します。"
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google の画面は変わる場合があります。最新の手順やキーのエラーは<1>Google の API キーガイド</1>をご覧ください。古いキーが使えなくなった場合は AI Studio で新しいキーを取得してください。"
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. 翻訳の設定を選択する"
+  },
+  "html_choose_a_model": {
+    "message": "モデルを選択する"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Gemini Flash-Lite シリーズを推奨します。2026年9月のこのリリースでは<1>Gemini 3.5 Flash-Lite</1>を推奨します。モデル一覧にあれば使用してください。"
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "一覧の別のモデルも選択できます。一部は動作しない場合があります。失敗した場合は別のモデルか推奨モデルを選んでください。"
+  },
+  "html_choose_your_target_language": {
+    "message": "翻訳先の言語を選択する"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "<1>「既定の言語」</1>で読みたい言語を選択します。選択肢は<2>Google が公開している Gemini の対応言語</2>に基づきます。翻訳品質は言語やテキストによって異なります。"
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "翻訳先の言語の選択と翻訳用キーの操作欄がある AI Translator の翻訳設定。"
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "英語での表示例。翻訳先の言語を選んでから設定を完了します。"
+  },
+  "html_finish_setup": {
+    "message": "設定を完了"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control を使い続けるか別のキーを登録します。右クリックメニューだけを使う場合は<1>「オフ」</1>を選びます。設定の下部で<2>「設定を完了」</2>を選びます。後で<3>「設定を保存」</3>から変更できます。"
+  },
+  "html_open_settings": {
+    "message": "設定を開く"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. 最初のテキストを翻訳する"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "通常のウェブページを開いて短いテキストを選択します。右クリックで<1>「選択したテキストを翻訳」</1>を選ぶか、登録したキーを押して離します。結果は選択範囲の横に表示されます。"
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "拡張機能をインストールまたは再読み込みした直後は、まずウェブページを更新してください。Chrome の設定ページ、Chrome ウェブストア、内蔵 PDF ビューアでは翻訳できません。"
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "ツールバーのポップアップに最新の結果を表示します。設定が完了すると通常の画面になります。API キーを削除すると、初回ガイドが再び表示されます。"
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "よくある質問: キー、料金、プライバシー"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "なぜ自分の API キーが必要ですか?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "自分のキーを使って、自分の Google プロジェクトに直接リクエストを送る設計だからです。これは Chrome の規則ではなく、設計上の選択です。キーはリクエストを許可し、利用状況と課金に結び付けます。画面写真や公開メッセージで絶対に共有しないでください。<1>Google の API キーガイド</1>をご覧ください。"
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "なぜ課金の有効化は推奨ではなく必須なのですか?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome の<1>限定的な使用の規則、第3項と第5項</1>は、データの用途を拡張機能の目的と関連処理に限定します。Gemini の一部の無料利用では、より広い学習や人による確認が認められます。有料サービスの規約では製品改善のための利用を除外しますが、安全上や法的な目的での限定的な保持と EU 外での処理は認められます。"
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "この不一致を解消するため、開発者はすべての国でプロジェクトの課金有効化を必須としています。推奨だけでは無料利用が引き続き可能になります。Google 自身の地域規則でも、欧州経済領域、英国、スイスで提供するアプリには有料サービスを求めています。<1>Gemini 規約の利用制限、無料サービス、有料サービス</1>をご覧ください。"
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "なぜ Google との任意の共有をオフにするのですか?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "ログやデータセットを共有すると、課金が有効でも学習や人による確認が認められる場合があります。データセット共有やフィードバックを通じてこの拡張機能のデータを提供しないでください。自分のプロジェクト内での非公開ログは、この規則で許可されています。<1>Google のログポリシー: 共有できるデータとデータの使用方法</1>をご覧ください。"
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "有料 API が必要でも、拡張機能は無料ですか?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "はい。拡張機能は無料ですが、Google API の料金が発生する場合があります。有料の Gemini アプリ契約は API プロジェクトの課金の代わりにはなりません。<1>課金の確認方法</1>と<2>Google API の料金</2>をご覧ください。拡張機能は課金や共有設定を確認しません。"
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "なぜ「同意して Google に接続」を選ぶ必要がありますか?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome の<1>開示要件、第1項と第2項</1>は、明確なデータ利用の説明と、説明を理解したうえでの同意を求めています。このボタンで、Google API に送信する前に選択できます。本人確認や課金確認を行うものではなく、他人の個人情報を共有する許可にもなりません。"
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Google には具体的に何が送られますか?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "モデル確認ではキーを送り、利用可能なモデルを問い合わせます。翻訳では選択テキスト、翻訳先の言語、モデル、翻訳の指示を送ります。ローカルファイルの選択テキストも含みます。ページ全体、ページのアドレス、閲覧履歴は追加しません。Google は IP アドレスなどの接続情報も受け取ります。開発者はこれらのリクエストを受け取りません。共有してよいテキストだけを送ってください。"
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "キーはどのように保存され、自動的に開くのですか?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API キーは暗号化して保存します。再起動後に自動利用するため、API キーと暗号化キーはこの Chrome プロファイル内に残り、同期しません。プロファイルにアクセスできる人は復元できる場合があります。OS のキーチェーンやパスワード付き保管庫ではありません。言語、モデル、キー操作は同期される場合があります。最新の結果だけをセッション中保持し、解析や翻訳履歴はありません。"
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "更新時は、古い保存済みキーを暗号化して確認した後、平文のコピーを削除します。失敗した場合は古いコピーを残し、リクエストをブロックしたままにします。設定にエラーを表示します。古いキーを移行しても、同意を省略することはありません。"
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "同意を撤回したりキーを削除したりできますか?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>設定</1>の<2>「データ共有への同意を撤回」</2>は、新規リクエストを止め、実行中の処理を端末側でキャンセルし、キーと設定は保持します。<3>「保存済みのキーを削除」</3>はキー、暗号化キー、モデルのキャッシュを削除します。どちらも送信済みデータを取り戻せず、送信済みリクエストが無料になる保証もありません。Google 側でも無効にするには AI Studio でキーを取り消してください。"
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "同意は通常の再起動や更新後も保存されます。説明が変わった場合は、内容を確認して再び同意するまでリクエストを停止します。"
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "なぜ成人の仕事や業務での利用に限るのですか?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google は、対応地域で専門的または業務上の目的で使う18歳以上の利用者を対象としています。<1>Gemini 規約の年齢要件と利用制限</1>、<2>利用可能な地域</2>をご覧ください。この拡張機能には別の利用資格チェックボックスや本人確認はありません。"
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "この説明に加えてプライバシーポリシーがあるのはなぜですか?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "この説明は、接続前の選択について案内します。ポリシーはデータ、保存、削除の詳細を説明します。Chrome の<1>プライバシーポリシー規則</1>は、利用者データを扱う拡張機能にこれを求めています。<2>当拡張機能のプライバシーポリシー</2>をご覧ください。これらの説明は Google による承認を意味しません。"
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI 翻訳には誤りがあり得ます。重要な表現は、使用する前に確認してください。"
+  },
+  "html_about_ai_translator": {
+    "message": "AI Translator について"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "テキストを選択して Control を押すだけの簡単翻訳。"
+  },
+  "html_made_for_people": {
+    "message": "人々のために"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "言語の違いを越えて読み、学び、つながる手助けをしたいと思い、AI Translator を作りました。世界中の人々の役に立てば幸いです。"
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "この拡張機能は自分の Google Gemini API キーで選択したテキストを翻訳します。送る内容と読む言語は自分で選びます。"
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Control を押して離すと選択範囲を翻訳します。既定の Control は設定で変更できます。ページの右クリックメニューも使用できます。"
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "手動での動作確認は Mac のみです。Windows と Linux では手動確認していません。"
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>ソースコードとプロジェクトガイドを見る</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>ヘルプを求める、問題を報告する</1>。報告は公開されます。API キー、非公開テキスト、個人情報を含めないでください。"
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "開発を応援してくださる方へ"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "ロシアの侵略から国を守る私の祖国ウクライナを支援してください。"
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "私は Sternenko Community Foundation を信頼しています。支援する余裕とお気持ちがあれば、公式サイトから寄付できます。"
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>財団を通じてウクライナを支援する</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "支援は任意で、拡張機能の利用に必要ありません。このリンクは外部サイトを開きます。寄付は拡張機能ではなく財団を通じて行います。"
+  },
+  "html_privacy_and_costs": {
+    "message": "プライバシーと料金"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API キーはこの端末で暗号化され、同期しません。通常の Chrome 再起動後も、解除パスワードなしで利用できます。ブラウザプロファイルにアクセスできる人は復元できる場合があります。"
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "最初の Google リクエストの前に、設定でデータ共有を説明し、<1>「同意して Google に接続」</1>を選んでいただきます。その後、選択テキストは翻訳を依頼したときだけ Google に直接送信します。モデル確認ではキーを送りますが、選択テキストは送りません。解析、広告、翻訳履歴はありません。"
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "いつでも<1>設定</1>で詳細を確認できます。<2>「データ共有への同意を撤回」</2>で暗号化したキーと設定を保ったまま新規リクエストを止めるか、<3>「保存済みのキーを削除」</3>でキーとモデルのキャッシュを削除できます。送信済みデータは取り戻せません。"
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "翻訳は AI により生成され、誤る場合があります。重要な表現は使用前に確認してください。"
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>プライバシーの詳細を読む</1>。"
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator は無料の独立したプロジェクトです。Google API の料金が発生する場合があります。すべての国で、<1>課金が有効</1>なプロジェクトの Gemini API キーを使用し、<2>この拡張機能のリクエストログとデータセットを Google と任意に共有する設定</2>をオフにしてください。この設定では、Google の有料サービス規約により、プロンプトや応答を製品改善に使いません。安全上や法的な処理は引き続き適用されます。<3>Google の料金とデータ利用の説明</3>をご覧ください。"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "この拡張機能は<1>Google の対応地域</1>にいる18歳以上の方の仕事や業務用です。利用すると、これらの条件、<2>Google API 利用規約</2>、<3>Gemini API 追加利用規約</3>に従うことに同意したものとします。条件を満たせない場合は使用しないでください。利用資格のチェックボックスや本人確認はありません。課金や共有設定も確認しません。"
+  },
+  "runtime_unsaved_changes": {
+    "message": "未保存の変更があります。"
+  },
+  "runtime_settings_conflict": {
+    "message": "別のページで設定が変更されました。ここでの編集は保持しています。編集を破棄して保存済みの値を使うには、保存済みの設定を再読み込みしてください。"
+  },
+  "runtime_preferences_current": {
+    "message": "設定は最新です。"
+  },
+  "runtime_key_cannot_open": {
+    "message": "保存済みのキーを開けません。設定を開き直すか、キーを削除して再入力してください。"
+  },
+  "runtime_key_conflict": {
+    "message": "別のページで API キーが変更されました。キーを保存する前に保存済みの設定を再読み込みしてください。"
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "キーは暗号化して保存されています。Google に接続する前にデータ共有に同意してください。"
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "API キーを追加する前に、上記のデータ共有に同意してください。"
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini が保存済みのキーを拒否しました。別のキーにするか「モデルを更新」で再確認してください。"
+  },
+  "runtime_paste_key": {
+    "message": "Gemini に接続する API キーを貼り付けてください。"
+  },
+  "runtime_key_checked": {
+    "message": "API キーを保存しました。前回のモデル一覧確認で Gemini に受け入れられました。"
+  },
+  "runtime_key_saved_check": {
+    "message": "API キーをこの端末に暗号化して保存しました。モデルを更新して Gemini で確認してください。"
+  },
+  "runtime_retry_withdrawal": {
+    "message": "同意の撤回を再試行"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "データ共有への同意を撤回"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "撤回は確認できていません。再試行して選択を保存してください。"
+  },
+  "runtime_agreement_saved": {
+    "message": "この Chrome プロファイルでデータ共有に同意しました。いつでも撤回できます。"
+  },
+  "runtime_agreement_not_saved": {
+    "message": "同意するまで Google に接続しません。撤回しても保存済みのキーは保持されます。"
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini が保存済みのキーを拒否しました。下で別のキーにしてください。"
+  },
+  "runtime_setup_key_saved": {
+    "message": "キーはこの端末に暗号化して保存されています。"
+  },
+  "runtime_setup_create_key": {
+    "message": "Google AI Studio で自分のキーを作成してください。"
+  },
+  "runtime_setup_language_selected": {
+    "message": "言語を選択しました。設定を完了して選択を保存してください。"
+  },
+  "runtime_setup_choose_language": {
+    "message": "下で翻訳先の言語を選択してください。"
+  },
+  "runtime_finish_setup": {
+    "message": "設定を完了"
+  },
+  "runtime_save_preferences": {
+    "message": "設定を保存"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "API キーを追加し、モデル一覧を確認して、選択したモデルを保存してください。"
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "翻訳する前に設定の競合を解消してください。"
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Google に接続する前にデータ共有を確認し、同意してください。"
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "設定を確認する前に API キーの保存を完了してください。"
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "設定の確認が必要です: Gemini が保存済み API キーを拒否しました。"
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "キーを保存しました。翻訳先の言語を選び、設定を完了してください。"
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "利用可能なモデルを選び、設定を保存してください。"
+  },
+  "runtime_setup_model_selected": {
+    "message": "モデルを選択しました。使用するには設定を保存してください。"
+  },
+  "runtime_setup_ready_finish": {
+    "message": "キーと言語の準備ができました。設定を完了して選択を保存し、翻訳をお試しください。モデルの利用権限や利用枠は変わる場合があります。"
+  },
+  "runtime_setup_ready_translate": {
+    "message": "翻訳を試せる状態です。保存済みモデルは確認した一覧にありますが、利用権限や利用枠は変わる場合があります。"
+  },
+  "runtime_setup_refresh_models": {
+    "message": "キーを保存しました。モデルを更新してキーと選択モデルを確認してください。"
+  },
+  "runtime_show_key": {
+    "message": "表示"
+  },
+  "runtime_hide_key": {
+    "message": "非表示"
+  },
+  "runtime_choose_target_language": {
+    "message": "翻訳先の言語を選択"
+  },
+  "runtime_background_no_response": {
+    "message": "拡張機能のバックグラウンドが応答しません。拡張機能を再読み込みしてお試しください。"
+  },
+  "runtime_refresh_models": {
+    "message": "モデルを更新"
+  },
+  "runtime_models_need_agreement": {
+    "message": "モデルを読み込む前にデータ共有に同意してください。"
+  },
+  "runtime_models_finish_key_save": {
+    "message": "モデルを更新する前に API キーの保存を完了してください。"
+  },
+  "runtime_refreshing": {
+    "message": "更新中..."
+  },
+  "runtime_loading": {
+    "message": "読み込み中..."
+  },
+  "runtime_models_checking": {
+    "message": "Gemini の対応モデルを確認中..."
+  },
+  "runtime_models_loading": {
+    "message": "対応モデルを読み込み中..."
+  },
+  "runtime_models_load_failed": {
+    "message": "対応モデルを読み込めませんでした。"
+  },
+  "runtime_models_empty": {
+    "message": "Gemini から対応モデルが返されませんでした。"
+  },
+  "runtime_model_not_available": {
+    "message": "選択したモデルは対応一覧にありません。別のモデルを選択してください。"
+  },
+  "runtime_record_key": {
+    "message": "キーを登録"
+  },
+  "runtime_recording_cancelled": {
+    "message": "キーの登録をキャンセルしました。"
+  },
+  "runtime_unknown_key": {
+    "message": "そのキー"
+  },
+  "runtime_press_key": {
+    "message": "キーを押してください..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "対応する文字入力以外のキーを1つ押してください。Escape でキャンセルできます。"
+  },
+  "runtime_refresh_saved_key": {
+    "message": "モデルを更新して保存済み API キーを確認してください。"
+  },
+  "runtime_models_add_key": {
+    "message": "対応モデルを読み込むには API キーを追加してください。"
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "保存済みの状態を読み込めませんでした。"
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini が保存済み API キーを拒否しました。別のキーにするか、モデルを更新して再確認してください。"
+  },
+  "runtime_settings_reopen": {
+    "message": "設定を読み込めませんでした。設定を開き直してください。"
+  },
+  "runtime_settings_load_failed": {
+    "message": "設定を読み込めませんでした。保存済みの設定を再読み込みしてください。保存済みの選択を守るため、保存は無効です。"
+  },
+  "runtime_setup_load_failed": {
+    "message": "設定状態を読み込めませんでした。"
+  },
+  "runtime_key_no_spaces": {
+    "message": "空白を含まない完全な API キーを入力してください。"
+  },
+  "runtime_key_use_remove": {
+    "message": "保存済みのキーを消すには「保存済みのキーを削除」を使ってください。"
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API キーを保存する前に、上記のデータ共有に同意してください。"
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API キーを暗号化して保存中..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API キーを読み取るか保存することができませんでした。入力内容は保持しています。「設定を保存」で再試行してください。"
+  },
+  "runtime_connecting_google": {
+    "message": "Google に接続中..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google への接続を停止中..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "データ共有への同意を保存できませんでした。もう一度お試しください。"
+  },
+  "runtime_key_removing": {
+    "message": "保存済みのキーを削除中..."
+  },
+  "runtime_key_removed": {
+    "message": "保存済みのキーを削除しました。データ共有に同意すると新しいキーを追加できます。"
+  },
+  "runtime_key_remove_failed": {
+    "message": "保存済みのキーを削除できませんでした。もう一度お試しください。"
+  },
+  "runtime_saving": {
+    "message": "保存中..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "有効な言語とモデルを選択してください。"
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "対応する翻訳用キーか「オフ」を選択してください。"
+  },
+  "runtime_choose_listed_model": {
+    "message": "現在の対応一覧からモデルを選択してください。"
+  },
+  "runtime_preferences_saving": {
+    "message": "設定を保存中..."
+  },
+  "runtime_preferences_saved": {
+    "message": "設定を保存しました。"
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "設定を保存しました。API キーを追加して設定を完了してください。"
+  },
+  "runtime_preferences_save_failed": {
+    "message": "設定を読み取るか保存することができませんでした。編集内容は保持しています。もう一度お試しください。"
+  },
+  "runtime_key_will_save": {
+    "message": "API キーは自動保存されます。"
+  },
+  "runtime_key_finish_entry": {
+    "message": "API キーの入力を完了してください。"
+  },
+  "runtime_key_finish_save_models": {
+    "message": "対応モデルを読み込むには API キーの保存を完了してください。"
+  },
+  "runtime_recommended_selected": {
+    "message": "推奨モデルを選択しました。使用するには選択を保存してください。"
+  },
+  "runtime_trigger_will_disable": {
+    "message": "保存後、翻訳用キーはオフになります。"
+  },
+  "runtime_connection_changed": {
+    "message": "接続設定が変更されました。保存済みの設定を確認中..."
+  },
+  "runtime_models_changed": {
+    "message": "モデル一覧が変更されました。対応モデルを確認中..."
+  },
+  "runtime_no_translation": {
+    "message": "翻訳結果はまだありません。"
+  },
+  "runtime_start_setup": {
+    "message": "設定を開始"
+  },
+  "runtime_settings": {
+    "message": "設定"
+  },
+  "runtime_key_rejected": {
+    "message": "キーが拒否されました"
+  },
+  "runtime_setup_required": {
+    "message": "設定が必要です"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "翻訳を始めるには設定で API キーを追加してください。"
+  },
+  "runtime_add_key": {
+    "message": "API キーを追加"
+  },
+  "runtime_finish_model_language": {
+    "message": "キーを保存しました。設定でモデルを確認し、言語の選択を完了してください。"
+  },
+  "runtime_check_setup": {
+    "message": "設定を確認"
+  },
+  "runtime_translating": {
+    "message": "翻訳中"
+  },
+  "runtime_error": {
+    "message": "エラー"
+  },
+  "runtime_ready": {
+    "message": "準備完了"
+  },
+  "runtime_status_load_failed": {
+    "message": "拡張機能の状態を読み込めませんでした。拡張機能を再読み込みしてからページを更新してください。"
+  },
+  "runtime_copied": {
+    "message": "コピーしました。"
+  },
+  "runtime_copy_blocked": {
+    "message": "コピーがブロックされました。結果のテキストを選択してコピーしてください。"
+  },
+  "runtime_settings_open_failed": {
+    "message": "設定を開けませんでした。もう一度お試しください。"
+  },
+  "runtime_translating_progress": {
+    "message": "翻訳中..."
+  },
+  "runtime_translation_started": {
+    "message": "翻訳を開始しました。"
+  },
+  "runtime_translation_complete": {
+    "message": "翻訳が完了しました。"
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "翻訳が完了しました。結果のテキストやカードの操作を利用できます。"
+  },
+  "runtime_translation": {
+    "message": "翻訳"
+  },
+  "runtime_target_language": {
+    "message": "翻訳先の言語"
+  },
+  "runtime_card_target_language": {
+    "message": "このカードの翻訳先の言語"
+  },
+  "runtime_close_card": {
+    "message": "翻訳カードを閉じる"
+  },
+  "runtime_translated_text": {
+    "message": "翻訳したテキスト"
+  },
+  "runtime_retry": {
+    "message": "再試行"
+  },
+  "runtime_copy": {
+    "message": "コピー"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "設定を開けませんでした。拡張機能のツールバーを使ってください。"
+  },
+  "runtime_copy_failed": {
+    "message": "コピーできませんでした。結果のテキストを選択してコピーしてください。"
+  },
+  "runtime_context_menu": {
+    "message": "選択したテキストを翻訳"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$（現在の一覧にありません）",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$（未確認）",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "$value1$ の保存済みモデル一覧を使用しています。最新情報の取得に失敗しました。後でお試しください。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "保存済みモデル一覧を使用しています。最新情報の取得に失敗しました。後でお試しください。"
+  },
+  "runtime_models_cache_at": {
+    "message": "$value1$ の保存済みモデル一覧を使用しています。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "保存済みモデル一覧を使用しています。"
+  },
+  "runtime_models_updated_at": {
+    "message": "モデル一覧を $value1$ に更新しました。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "モデル一覧を更新しました。"
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ は対応していません。別のキーを押すか、Escape でキャンセルしてください。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "保存後に $value1$ を使用します。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "タブごとに最大 $value1$ 件、全体で $value2$ 件",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ 秒",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Tab でカードを操作するか、Escape で閉じます。",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "翻訳に失敗しました。$value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "開いているページを更新"
+  },
+  "refresh_message": {
+    "message": "API キーを保存しました。設定が終わったら、既に開いているページを更新してください。その後、テキストを選択して Control を押すと翻訳できます。"
+  },
+  "refresh_continue": {
+    "message": "設定を続ける"
+  },
+  "refresh_faq_question": {
+    "message": "なぜ開いているページを更新する必要がありますか?"
+  },
+  "refresh_faq_answer": {
+    "message": "設定が終わったら、翻訳する前に<1>開いているページを更新</1>してください。インストールや再読み込みの前から開いていたページでは、Chrome が拡張機能を読み込む必要があります。新しく開いたページは自動的に準備が整います。"
+  },
+  "ui_locale": {
+    "message": "ja",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

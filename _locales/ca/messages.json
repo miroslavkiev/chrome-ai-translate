@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Tradueix fàcilment: selecciona text i prem Control. Tradueix a l’idioma que triïs amb Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Selecciona text i torna-ho a provar."
+  },
+  "error_unsupported_selection": {
+    "message": "Aquesta selecció de text no és compatible."
+  },
+  "error_selection_too_large": {
+    "message": "La selecció supera els 10.000 caràcters. Selecciona menys text i torna-ho a provar."
+  },
+  "error_missing_api_key": {
+    "message": "Afegeix la teva clau d’API de Gemini a Configuració."
+  },
+  "error_agreement_required": {
+    "message": "Revisa i accepta la compartició de dades a Configuració abans de connectar-te a Google."
+  },
+  "error_credential_conflict": {
+    "message": "La clau desada ha canviat en una altra pàgina. Torna a carregar la configuració desada abans de reintentar-ho."
+  },
+  "error_credential_storage_error": {
+    "message": "No es pot obrir la clau desada. Torna a obrir Configuració o elimina la clau i introdueix-la de nou."
+  },
+  "error_missing_target_language": {
+    "message": "Tria la llengua de destinació a Configuració per acabar la configuració inicial."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini ha rebutjat la clau d’API. Revisa-la a Configuració."
+  },
+  "error_invalid_model": {
+    "message": "Aquest model no pot traduir. Tria un altre model o el Flash-Lite recomanat a Configuració."
+  },
+  "error_busy": {
+    "message": "Hi ha massa traduccions en curs. Torna-ho a provar quan n’acabi una."
+  },
+  "error_duplicate_request": {
+    "message": "Aquesta selecció ja s’està traduint."
+  },
+  "error_rate_limited": {
+    "message": "S’ha arribat al límit de sol·licituds. Torna-ho a provar aviat."
+  },
+  "error_timeout": {
+    "message": "La traducció ha trigat massa. Pots tornar-ho a provar."
+  },
+  "error_offline": {
+    "message": "Sembla que no tens connexió. Comprova-la i torna-ho a provar."
+  },
+  "error_network_error": {
+    "message": "No s’ha pogut contactar amb Gemini. Comprova la connexió i torna-ho a provar."
+  },
+  "error_quota_exceeded": {
+    "message": "S’ha arribat a la quota de Gemini. Revisa el compte i torna-ho a provar més tard."
+  },
+  "error_service_error": {
+    "message": "Gemini no ha pogut acabar la traducció. Torna-ho a provar més tard."
+  },
+  "error_invalid_response": {
+    "message": "Gemini ha retornat una resposta il·legible. Pots tornar-ho a provar."
+  },
+  "error_output_too_large": {
+    "message": "La traducció supera el límit de sortida. Selecciona menys text i torna-ho a provar."
+  },
+  "error_content_blocked": {
+    "message": "Gemini ha blocat aquest text. Prova una altra selecció."
+  },
+  "error_unsupported_page": {
+    "message": "La traducció no està disponible en aquesta pàgina."
+  },
+  "error_frame_unavailable": {
+    "message": "El marc seleccionat ja no està disponible."
+  },
+  "error_cancelled": {
+    "message": "S’ha cancel·lat la traducció."
+  },
+  "key_Off": {
+    "message": "Desactivat"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Bloq Maj"
+  },
+  "key_Insert": {
+    "message": "Inserir"
+  },
+  "key_Pause": {
+    "message": "Pausa"
+  },
+  "key_ScrollLock": {
+    "message": "Bloq Despl"
+  },
+  "error_retry_delay": {
+    "message": " Torna-ho a provar d’aquí a $seconds$ segons.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Configuració d’AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Configuració privada per traduir ràpidament i amb precisió."
+  },
+  "html_help_and_information": {
+    "message": "Ajuda i informació"
+  },
+  "html_api_key_guide": {
+    "message": "Guia de la clau d’API"
+  },
+  "html_about": {
+    "message": "Quant a"
+  },
+  "html_privacy": {
+    "message": "Privadesa"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Configura AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Segueix aquests passos a Configuració. Necessites una clau d’API de Google pròpia per traduir."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Obtén la teva clau d’API.</1> Obre <2>Google AI Studio</2>, inicia la sessió i crea una clau. Revisa la compartició de dades més avall i enganxa la clau. Consulta la <3>guia pas a pas</3> si necessites ajuda."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Tria la llengua de destinació i el model.</1> Tria la llengua de les traduccions. Recomanem Gemini Flash-Lite si és disponible a la llista de models."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Desa i comença a traduir.</1> Tria «Finalitza la configuració» al peu de la pàgina. Després, selecciona text en una pàgina web i prem Control, o tria «Tradueix el text seleccionat» al menú del botó dret."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Connecta la teva clau d’API de Gemini i tria un model compatible."
+  },
+  "html_loading_setup_state": {
+    "message": "S’està carregant l’estat de configuració..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Abans de connectar-te a Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google rep la clau d’API per comprovar els models disponibles. Quan demanes una traducció, també rep el text seleccionat i la llengua de destinació, inclòs el text de fitxers locals. Les traduccions d’IA poden ser incorrectes."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "La clau es desa xifrada en aquest perfil de Chrome i s’obre automàticament després de reiniciar. No cal cap contrasenya addicional. Algú amb accés complet al perfil del navegador encara podria recuperar-la. <1>Llegeix els detalls de privadesa</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Obligatori a tots els països:</1> fes servir una clau d’API de Gemini d’un projecte amb <2>facturació activa</2>. Mantén desactivada la <3>compartició opcional amb Google dels registres de sol·licituds i conjunts de dades d’aquesta extensió</3>. Amb aquests ajustos, les condicions de pagament de Google exclouen l’ús d’entrades i respostes per millorar productes; el tractament per seguretat i motius legals continua permès. L’extensió és gratuïta, però pot haver-hi càrrecs de l’API de Google."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Condicions d’ús.</1> En fer servir Gemini amb aquesta extensió, acceptes els requisits anteriors i les <2>condicions de Google</2>. L’ús és per a persones de 18 anys o més, amb finalitats professionals o empresarials, a <3>regions compatibles</3>. L’extensió no verifica els ajustos de facturació ni de compartició."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Accepta i connecta amb Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Retira el consentiment de dades"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Llegeix els detalls de la compartició de dades abans de connectar-te."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Per què calen aquests requisits? Llegeix les preguntes freqüents</1>."
+  },
+  "html_api_key": {
+    "message": "Clau d’API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Després d’acceptar, enganxa una clau per desar-la xifrada i carregar els models automàticament."
+  },
+  "html_show": {
+    "message": "Mostra"
+  },
+  "html_remove_saved_key": {
+    "message": "Elimina la clau desada"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "S’amaguen els models coneguts només per a mitjans o usos especials."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Recomanem la família Gemini Flash-Lite. Per a aquesta versió (setembre de 2026), triem Gemini 3.5 Flash-Lite. Pots triar un altre model de la llista. Alguns poden no funcionar amb l’extensió. Si un falla, tria’n un altre o el recomanat."
+  },
+  "html_refresh_models": {
+    "message": "Actualitza els models"
+  },
+  "html_use_recommended_model": {
+    "message": "Fes servir el model recomanat"
+  },
+  "html_translation": {
+    "message": "Traducció"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Defineix la llengua i, si vols, la tecla d’activació."
+  },
+  "html_default_language": {
+    "message": "Llengua predeterminada"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Una targeta de resultat pot fer servir una altra llengua sense canviar aquest valor."
+  },
+  "html_keyboard_trigger": {
+    "message": "Tecla d’activació"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Les tecles individuals poden entrar en conflicte amb llocs web o eines d’accessibilitat. Tria «Desactivat» per fer servir només el menú contextual."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Registra una tecla"
+  },
+  "html_off": {
+    "message": "Desactivat"
+  },
+  "html_behavior": {
+    "message": "Funcionament"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Les proteccions fixes mantenen les traduccions àgils i protegeixen la quota de l’API."
+  },
+  "html_parallel_requests": {
+    "message": "Sol·licituds paral·leles"
+  },
+  "html_request_timeout": {
+    "message": "Temps màxim per sol·licitud"
+  },
+  "html_page_access": {
+    "message": "Accés a pàgines"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Per a fitxers locals, activa «Permet l’accés als URL de fitxer» a «Gestiona l’extensió»."
+  },
+  "html_help_and_recovery": {
+    "message": "Ajuda i recuperació"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Si un model no és disponible, actualitza els models, tria’n un de la llista i desa les preferències. Si la llista no es carrega, comprova la clau i la connexió i tria «Actualitza els models»."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Les pàgines de configuració de Chrome i Chrome Web Store no permeten traduir. Per a fitxers locals, activa «Permet l’accés als URL de fitxer» a «Gestiona l’extensió». Després d’actualitzar o recarregar l’extensió, actualitza les pàgines obertes. Recarregar pot interrompre una traducció."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "La traducció requereix connexió. Després d’acceptar més amunt, la clau s’envia directament a Google per comprovar models. El text seleccionat, també el de fitxers locals, s’envia amb la llengua de destinació només quan demanes una traducció. La clau és xifrada en aquest perfil de Chrome. La llengua, el model i la tecla es poden sincronitzar amb Chrome. L’extensió conserva només l’últim resultat de la sessió, sense historial de traduccions."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Pots revisar la compartició de dades més amunt i retirar el consentiment quan vulguis. Això atura les consultes de models i les traduccions fins que acceptis de nou. La clau es conserva llevat que triïs «Elimina la clau desada»."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Aquí es desen els canvis de llengua, model i tecla."
+  },
+  "html_reload_saved_settings": {
+    "message": "Recarrega la configuració desada"
+  },
+  "html_save_preferences": {
+    "message": "Desa les preferències"
+  },
+  "html_gemini_translation": {
+    "message": "Traducció amb Gemini"
+  },
+  "html_setup_required": {
+    "message": "Cal configurar"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Et donem la benvinguda a AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Tradueix el text seleccionat a una llengua que coneguis. Configura aquestes dues coses per començar:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>La teva clau d’API de Gemini.</1> Obtén la teva clau a Google AI Studio. La guia t’explica com."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>La llengua de destinació.</1> Tria la llengua en què vols llegir."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Com obtenir una clau d’API"
+  },
+  "html_extension_status": {
+    "message": "Estat de l’extensió"
+  },
+  "html_active_translations": {
+    "message": "Traduccions en curs"
+  },
+  "html_latest_this_session": {
+    "message": "Últim resultat de la sessió"
+  },
+  "html_no_translation_yet": {
+    "message": "Encara no hi ha cap traducció."
+  },
+  "html_copy": {
+    "message": "Copia"
+  },
+  "html_settings": {
+    "message": "Configuració"
+  },
+  "html_key_guide": {
+    "message": "Guia de la clau"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Primers passos amb AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Pàgines de l’extensió"
+  },
+  "html_faq": {
+    "message": "Preguntes freqüents"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Obtén la teva clau d’API de Google, tria una llengua i tradueix la primera selecció."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Obtén la clau d’API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Una clau d’API permet a l’extensió fer servir Gemini amb el teu compte de Google. Mantén-la privada, com una contrasenya."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "L’extensió és per a persones de 18 anys o més, per a ús professional o empresarial, als <1>països i regions admesos per Google</1>. A tots els països, la clau d’API ha de pertànyer a un projecte Gemini amb facturació activa. Desactiva la compartició opcional amb Google dels registres de sol·licituds i conjunts de dades de l’extensió."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "En fer servir l’extensió, acceptes aquestes condicions, les <1>Condicions de les API de Google</1> i les <2>Condicions addicionals de l’API de Gemini</2>. No la facis servir si no les pots complir. L’extensió no verifica aquestes dades ni demana documents d’identitat."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Obre Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Inicia la sessió al compte de Google. Accepta les condicions de Google si es demana."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Crea o tria una clau"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "A la pàgina de claus d’API, tria <1>Crea una clau d’API</1> i segueix els passos de Google per triar o crear un projecte. El projecte agrupa l’ús de l’API i la possible facturació. Si acabes de començar amb AI Studio, Google pot haver creat un projecte i una clau predeterminats."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Si falta el projecte existent, obre <1>Tauler > Projectes > Importa projectes</1>. Importa’l i torna a les claus d’API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Abans de fer servir la clau, segueix la <1>guia de facturació de Google</1> per comprovar que el projecte té facturació activa. Una subscripció de pagament a l’aplicació Gemini no substitueix la facturació del projecte API. Desactiva la compartició opcional amb Google dels registres i conjunts de dades de l’extensió; llegeix la <2>política de Google sobre compartició de registres</2>. Els registres privats del projecte són diferents de compartir-los."
+  },
+  "html_copy_your_key": {
+    "message": "Copia la clau"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Copia la clau d’AI Studio. Torna a Configuració de l’extensió i llegeix els detalls de la compartició de dades. Tria <1>Accepta i connecta amb Google</1> i enganxa la clau al camp <2>Clau d’API</2>. Es xifra i desa automàticament i es carrega la llista de models. Espera el resultat abans de continuar."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Configuració d’AI Translator amb l’avís de compartició de dades i el botó d’acceptació damunt d’un camp de clau d’API buit i la recomanació de Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Exemple en anglès. A AI Translator: accepta primer la compartició de dades i enganxa la teva clau. La llista de models es comprova després de desar la clau xifrada."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google pot canviar aquestes pantalles. Per als passos actuals o errors de clau, llegeix la <1>guia de claus d’API de Google</1>. Fes servir una clau nova d’AI Studio si una d’antiga deixa de funcionar."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Tria els ajustos de traducció"
+  },
+  "html_choose_a_model": {
+    "message": "Tria un model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Recomanem la família Gemini Flash-Lite. Per a aquesta versió de setembre de 2026, triem <1>Gemini 3.5 Flash-Lite</1>. Fes-lo servir si és disponible a la llista de models."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Pots triar un altre model de la llista. Alguns poden no funcionar amb l’extensió. Si un falla, tria’n un altre o el model recomanat."
+  },
+  "html_choose_your_target_language": {
+    "message": "Tria la llengua de destinació"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Tria la llengua en què vols llegir a <1>Llengua predeterminada</1>. Les opcions segueixen les <2>llengües de Gemini documentades per Google</2>. La qualitat pot variar segons la llengua i el text."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Configuració de traducció d’AI Translator amb la selecció de llengua de destinació i els controls de la tecla d’activació."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Exemple en anglès. Tria la llengua de les traduccions i finalitza la configuració."
+  },
+  "html_finish_setup": {
+    "message": "Finalitza la configuració"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Mantén Control com a tecla d’activació, registra’n una altra o tria <1>Desactivat</1> per fer servir només el menú del botó dret. Tria <2>Finalitza la configuració</2> al peu de Configuració. Pots canviar-ho després amb <3>Desa les preferències</3>."
+  },
+  "html_open_settings": {
+    "message": "Obre Configuració"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Tradueix la primera selecció"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Obre una pàgina web normal i selecciona un text curt. Fes clic amb el botó dret i tria <1>Tradueix el text seleccionat</1>, o prem i deixa anar la tecla triada. El resultat apareix al costat de la selecció."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Si acabes d’instal·lar o recarregar l’extensió, actualitza primer la pàgina. La configuració de Chrome, Chrome Web Store i el lector de PDF integrat no permeten traduir."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "La finestra de la barra d’eines mostra l’últim resultat. Després de configurar, obre la vista habitual. Si elimines la clau d’API, torna a aparèixer la guia inicial."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Preguntes freqüents: claus, costos i privadesa"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Per què necessito la meva clau d’API?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "L’extensió envia sol·licituds directament al projecte de Google amb la teva clau. És una decisió de disseny, no una norma de Chrome. La clau permet les sol·licituds i les vincula a l’ús i la facturació. No la comparteixis mai en captures ni missatges públics. Consulta la <1>guia de claus d’API de Google</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Per què s’exigeix facturació activa i no només es recomana?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Les <1>normes Limited Use de Chrome, punts 3 i 5</1>, limiten l’ús de dades a la finalitat de l’extensió i operacions relacionades. Alguns usos gratuïts de Gemini permeten entrenament més ampli i revisió humana. Les condicions de pagament exclouen la millora de productes, però permeten conservació limitada per seguretat i motius legals i tractament fora de la UE."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Per resoldre el conflicte, el desenvolupador exigeix facturació activa del projecte a tot el món. Una recomanació permetria encara l’ús gratuït. La norma regional de Google exigeix serveis de pagament per a aplicacions ofertes a l’Espai Econòmic Europeu, el Regne Unit i Suïssa. Consulta les <1>condicions de Gemini: restriccions d’ús, serveis gratuïts i de pagament</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Per què cal desactivar la compartició opcional amb Google?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Compartir registres o conjunts de dades pot permetre entrenament i revisió humana fins i tot amb facturació activa. No aportis dades de l’extensió mitjançant conjunts de dades compartits o comentaris. Aquesta norma permet registres privats del teu projecte. Consulta la <1>política de registres de Google: dades que es poden compartir i com s’usen les dades</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "L’extensió és gratuïta si cal accés de pagament a l’API?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Sí. L’extensió és gratuïta, però pot haver-hi càrrecs de l’API de Google. Una subscripció de pagament a Gemini no substitueix la facturació del projecte API. Consulta <1>com comprovar la facturació</1> i els <2>preus de les API de Google</2>. L’extensió no verifica els ajustos de facturació o compartició."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Per què he de triar «Accepta i connecta amb Google»?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Els <1>requisits d’informació de Chrome, punts 1 i 2</1>, exigeixen informació clara sobre l’ús de dades i consentiment informat. El botó et permet decidir abans de qualsevol sol·licitud a l’API de Google. No verifica identitat ni facturació, ni autoritza compartir informació privada d’altres persones."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Què s’envia exactament a Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Les consultes de models envien la clau i demanen els models disponibles. La traducció envia text seleccionat, llengua de destinació, model i instruccions de traducció, inclòs text de fitxers locals. L’extensió no afegeix la pàgina sencera, l’adreça ni l’historial de navegació. Google també rep dades de connexió, com l’adreça IP. El desenvolupador no rep cap d’aquestes sol·licituds. Envia només text que puguis compartir."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Com es desa i obre automàticament la clau?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "La clau d’API es desa xifrada. La clau i la seva clau de xifratge romanen al perfil de Chrome per a ús automàtic després de reiniciar. No se sincronitzen. Algú amb accés al perfil encara pot recuperar la clau d’API. No és un clauer del sistema ni una caixa protegida amb contrasenya. La llengua, el model i la tecla es poden sincronitzar. Només es conserva l’últim resultat de la sessió; no hi ha analítica ni historial de traduccions."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Una actualització xifra i comprova una clau antiga desada abans d’esborrar-ne les còpies sense xifrar. Si falla, la còpia antiga es conserva i les sol·licituds continuen blocades. Configuració explica l’error. Moure una clau antiga no evita el consentiment."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Puc retirar el consentiment o eliminar la clau?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "A <1>Configuració</1>, <2>Retira el consentiment de dades</2> bloca noves sol·licituds i cancel·la localment les actives, conservant clau i preferències. <3>Elimina la clau desada</3> esborra la clau, la seva clau de xifratge i la memòria cau de models. Cap acció recupera dades enviades ni garanteix que una sol·licitud enviada esdevingui gratuïta. Revoca la clau a AI Studio per desactivar-la també a Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "El consentiment es conserva després de reinicis i actualitzacions normals. Si l’avís canvia, les sol·licituds esperen fins que el revisis i acceptis de nou."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Per què només adults i ús professional o empresarial?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google exigeix tenir almenys 18 anys i fer ús professional o empresarial a regions compatibles. Consulta les <1>condicions de Gemini: requisits d’edat i restriccions d’ús</1> i les <2>regions disponibles</2>. L’extensió no té cap casella d’elegibilitat separada ni comprovació d’identitat."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Per què hi ha una política de privadesa a més de l’avís?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "L’avís explica la decisió abans de connectar-te. La política detalla les dades, l’emmagatzematge i l’eliminació. Les <1>normes de privadesa de Chrome</1> l’exigeixen a les extensions que tracten dades d’usuaris. Llegeix <2>la nostra política de privadesa</2>. Aquests avisos no volen dir que Google hagi aprovat l’extensió."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Les traduccions d’IA poden ser incorrectes. Revisa les expressions importants abans de confiar-hi."
+  },
+  "html_about_ai_translator": {
+    "message": "Quant a AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Tradueix fàcilment: selecciona text i prem Control."
+  },
+  "html_made_for_people": {
+    "message": "Creat per a les persones"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "He creat AI Translator per ajudar les persones a llegir, aprendre i comunicar-se entre llengües. Espero que sigui útil arreu del món."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "L’extensió tradueix el text seleccionat amb la teva clau d’API de Google Gemini. Tu tries què enviar i en quina llengua llegir."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Prem i deixa anar Control per traduir la selecció. Control és la tecla predeterminada i es pot canviar a Configuració. També pots fer servir el menú del botó dret de la pàgina."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Provat manualment només al Mac. Windows i Linux no s’han provat manualment."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Mostra el codi font i la guia del projecte</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Obtén ajuda o informa d’un problema</1>. Els informes són públics. No hi incloguis claus d’API, text privat ni dades personals."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Si vols donar suport a la meva feina"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Dona suport al meu país, Ucraïna, mentre es defensa de l’agressió russa."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Confio en la Sternenko Community Foundation. Si pots i vols ajudar, pots donar a través del seu lloc web oficial."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Dona suport a Ucraïna a través de la fundació</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "El suport és opcional i mai no cal per fer servir l’extensió. L’enllaç obre un lloc extern. Les donacions passen per la fundació, no per l’extensió."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privadesa i costos"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "La clau d’API es xifra en aquest dispositiu i no se sincronitza. Continua disponible després de reinicis normals de Chrome, sense contrasenya de desbloqueig. Algú amb accés al perfil del navegador encara podria recuperar-la."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Abans de la primera sol·licitud a Google, Configuració explica la compartició de dades i et demana triar <1>Accepta i connecta amb Google</1>. Després, el text seleccionat només s’envia directament a Google quan demanes una traducció. Les consultes de models envien la clau, sense text seleccionat. L’extensió no té analítica, publicitat ni historial de traduccions."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Consulta els detalls a <1>Configuració</1> quan vulguis. Tria <2>Retira el consentiment de dades</2> per aturar noves sol·licituds conservant clau xifrada i preferències, o <3>Elimina la clau desada</3> per esborrar la clau i la memòria cau de models. No es poden recuperar les dades enviades."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Les traduccions les genera una IA i poden ser incorrectes. Revisa les expressions importants abans de confiar-hi."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Llegeix els detalls de privadesa</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator és un projecte gratuït i independent. Pot haver-hi càrrecs de l’API de Google. A tots els països, fes servir una clau d’API de Gemini d’un projecte amb <1>facturació activa</1> i desactiva la <2>compartició opcional amb Google dels registres de sol·licituds i conjunts de dades de l’extensió</2>. Així les condicions de pagament exclouen l’ús d’entrades i respostes per millorar productes; es permet el tractament per seguretat i motius legals. Llegeix les <3>notes de Google sobre preus i ús de dades</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "L’extensió és per a persones de 18 anys o més, per a ús professional o empresarial, a les <1>regions admeses per Google</1>. En usar-la, acceptes aquestes condicions, les <2>Condicions de les API de Google</2> i les <3>Condicions addicionals de l’API de Gemini</3>. No la facis servir si no les pots complir. No hi ha casella d’elegibilitat ni comprovació d’identitat. L’extensió no verifica facturació ni compartició."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Canvis sense desar."
+  },
+  "runtime_settings_conflict": {
+    "message": "La configuració ha canviat en una altra pàgina. Els teus canvis es conserven aquí. Recarrega la configuració desada per descartar-los i fer servir els valors desats."
+  },
+  "runtime_preferences_current": {
+    "message": "Les preferències estan al dia."
+  },
+  "runtime_key_cannot_open": {
+    "message": "No es pot obrir la clau desada. Torna a obrir Configuració o elimina-la i introdueix-la de nou."
+  },
+  "runtime_key_conflict": {
+    "message": "La clau d’API ha canviat en una altra pàgina. Recarrega la configuració desada abans de desar una clau."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "La clau està desada xifrada. Accepta la compartició de dades abans de connectar-te a Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Accepta la compartició de dades més amunt abans d’afegir la clau d’API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini ha rebutjat aquesta clau desada. Substitueix-la o fes servir «Actualitza els models» per comprovar-la de nou."
+  },
+  "runtime_paste_key": {
+    "message": "Enganxa una clau d’API per connectar Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Clau d’API desada. Gemini l’ha acceptada en l’última comprovació de models."
+  },
+  "runtime_key_saved_check": {
+    "message": "Clau d’API desada xifrada en aquest dispositiu. Actualitza els models per comprovar-la amb Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Torna a provar la retirada"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Retira el consentiment de dades"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "La retirada no està confirmada. Torna-ho a provar per desar la decisió."
+  },
+  "runtime_agreement_saved": {
+    "message": "Compartició de dades acceptada per a aquest perfil de Chrome. Pots retirar el consentiment quan vulguis."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "No hi ha connexió amb Google fins que acceptis. La clau es conserva si retires el consentiment."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini ha rebutjat la clau desada. Substitueix-la més avall."
+  },
+  "runtime_setup_key_saved": {
+    "message": "La clau està desada xifrada en aquest dispositiu."
+  },
+  "runtime_setup_create_key": {
+    "message": "Crea la teva clau a Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Llengua seleccionada. Finalitza la configuració per desar les opcions."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Tria una llengua de destinació més avall."
+  },
+  "runtime_finish_setup": {
+    "message": "Finalitza la configuració"
+  },
+  "runtime_save_preferences": {
+    "message": "Desa les preferències"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Afegeix una clau d’API, revisa la llista de models i desa el model triat."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Resol el conflicte de configuració abans de traduir."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Revisa i accepta la compartició de dades abans de connectar-te a Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Acaba de desar la clau d’API abans de comprovar la configuració."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Revisa la configuració: Gemini ha rebutjat la clau d’API desada."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Clau desada. Tria una llengua de destinació i finalitza la configuració."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Tria un model disponible i desa les preferències."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model seleccionat. Desa les preferències per fer-lo servir."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "La clau i la llengua estan a punt. Finalitza la configuració per desar les opcions i prova una traducció. L’accés als models i la quota encara poden canviar."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Tot a punt per provar una traducció. El model desat és a la llista comprovada; l’accés i la quota encara poden canviar."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Clau desada. Actualitza els models per comprovar la clau i el model triat."
+  },
+  "runtime_show_key": {
+    "message": "Mostra"
+  },
+  "runtime_hide_key": {
+    "message": "Amaga"
+  },
+  "runtime_choose_target_language": {
+    "message": "Tria una llengua de destinació"
+  },
+  "runtime_background_no_response": {
+    "message": "El procés en segon pla de l’extensió no ha respost. Recarrega l’extensió i torna-ho a provar."
+  },
+  "runtime_refresh_models": {
+    "message": "Actualitza els models"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Accepta la compartició de dades abans de carregar els models."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Acaba de desar la clau d’API abans d’actualitzar els models."
+  },
+  "runtime_refreshing": {
+    "message": "S’estan actualitzant..."
+  },
+  "runtime_loading": {
+    "message": "S’està carregant..."
+  },
+  "runtime_models_checking": {
+    "message": "S’estan comprovant models compatibles a Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "S’estan carregant models compatibles..."
+  },
+  "runtime_models_load_failed": {
+    "message": "No s’han pogut carregar els models compatibles."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini no ha retornat models compatibles."
+  },
+  "runtime_model_not_available": {
+    "message": "El model seleccionat no és a la llista compatible. Tria un altre model."
+  },
+  "runtime_record_key": {
+    "message": "Registra una tecla"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Registre cancel·lat."
+  },
+  "runtime_unknown_key": {
+    "message": "Aquesta tecla"
+  },
+  "runtime_press_key": {
+    "message": "Prem una tecla..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Prem una tecla compatible que no escrigui caràcters. Prem Escape per cancel·lar."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Actualitza els models per comprovar la clau d’API desada."
+  },
+  "runtime_models_add_key": {
+    "message": "Afegeix una clau d’API per carregar models compatibles."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "L’extensió no ha pogut carregar l’estat desat."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini ha rebutjat la clau d’API desada. Substitueix-la o actualitza els models per comprovar-la de nou."
+  },
+  "runtime_settings_reopen": {
+    "message": "No s’ha pogut carregar la configuració. Obre-la de nou per tornar-ho a provar."
+  },
+  "runtime_settings_load_failed": {
+    "message": "No s’ha pogut carregar la configuració. Recarrega la configuració desada per tornar-ho a provar. El desament està desactivat per protegir les opcions desades."
+  },
+  "runtime_setup_load_failed": {
+    "message": "No s’ha pogut carregar l’estat de configuració."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Introdueix una clau d’API completa sense espais."
+  },
+  "runtime_key_use_remove": {
+    "message": "Fes servir «Elimina la clau desada» per esborrar la clau."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Accepta la compartició de dades més amunt abans de desar una clau d’API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "S’està desant la clau d’API xifrada..."
+  },
+  "runtime_key_save_failed": {
+    "message": "No s’ha pogut llegir o desar la clau d’API. L’entrada es conserva. Fes servir «Desa les preferències» per tornar-ho a provar."
+  },
+  "runtime_connecting_google": {
+    "message": "S’està connectant amb Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "S’estan aturant les connexions amb Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "No s’ha pogut desar el consentiment de dades. Torna-ho a provar."
+  },
+  "runtime_key_removing": {
+    "message": "S’està eliminant la clau desada..."
+  },
+  "runtime_key_removed": {
+    "message": "Clau desada eliminada. Pots afegir-ne una altra després d’acceptar la compartició de dades."
+  },
+  "runtime_key_remove_failed": {
+    "message": "No s’ha pogut eliminar la clau desada. Torna-ho a provar."
+  },
+  "runtime_saving": {
+    "message": "S’està desant..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Tria una llengua i un model vàlids."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Tria una tecla compatible o «Desactivat»."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Tria un model de la llista compatible actual."
+  },
+  "runtime_preferences_saving": {
+    "message": "S’estan desant les preferències..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Preferències desades."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Preferències desades. Afegeix la clau d’API per finalitzar la configuració."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "No s’han pogut llegir o desar les preferències. Els canvis es conserven. Torna-ho a provar."
+  },
+  "runtime_key_will_save": {
+    "message": "La clau d’API es desarà automàticament."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Acaba d’introduir la clau d’API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Acaba de desar la clau d’API per carregar els models compatibles."
+  },
+  "runtime_recommended_selected": {
+    "message": "Model recomanat seleccionat. Desa l’opció per fer-lo servir."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "La tecla d’activació quedarà desactivada quan desis."
+  },
+  "runtime_connection_changed": {
+    "message": "Els ajustos de connexió han canviat. S’està comprovant la configuració desada..."
+  },
+  "runtime_models_changed": {
+    "message": "La llista de models ha canviat. S’estan comprovant els models compatibles..."
+  },
+  "runtime_no_translation": {
+    "message": "Encara no hi ha cap traducció."
+  },
+  "runtime_start_setup": {
+    "message": "Inicia la configuració"
+  },
+  "runtime_settings": {
+    "message": "Configuració"
+  },
+  "runtime_key_rejected": {
+    "message": "Clau rebutjada"
+  },
+  "runtime_setup_required": {
+    "message": "Cal configurar"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Afegeix una clau d’API a Configuració per començar a traduir."
+  },
+  "runtime_add_key": {
+    "message": "Afegeix una clau d’API"
+  },
+  "runtime_finish_model_language": {
+    "message": "La clau està desada. Obre Configuració per comprovar el model i acabar de triar la llengua."
+  },
+  "runtime_check_setup": {
+    "message": "Comprova la configuració"
+  },
+  "runtime_translating": {
+    "message": "S’està traduint"
+  },
+  "runtime_error": {
+    "message": "Error"
+  },
+  "runtime_ready": {
+    "message": "A punt"
+  },
+  "runtime_status_load_failed": {
+    "message": "No s’ha pogut carregar l’estat de l’extensió. Recarrega-la i actualitza la pàgina."
+  },
+  "runtime_copied": {
+    "message": "Copiat."
+  },
+  "runtime_copy_blocked": {
+    "message": "S’ha blocat la còpia. Selecciona el text del resultat i copia’l."
+  },
+  "runtime_settings_open_failed": {
+    "message": "No s’ha pogut obrir Configuració. Torna-ho a provar."
+  },
+  "runtime_translating_progress": {
+    "message": "S’està traduint..."
+  },
+  "runtime_translation_started": {
+    "message": "Traducció iniciada."
+  },
+  "runtime_translation_complete": {
+    "message": "Traducció acabada."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Traducció acabada. Fes servir el text del resultat o els controls de la targeta."
+  },
+  "runtime_translation": {
+    "message": "Traducció"
+  },
+  "runtime_target_language": {
+    "message": "Llengua de destinació"
+  },
+  "runtime_card_target_language": {
+    "message": "Llengua de destinació d’aquesta targeta"
+  },
+  "runtime_close_card": {
+    "message": "Tanca la targeta de traducció"
+  },
+  "runtime_translated_text": {
+    "message": "Text traduït"
+  },
+  "runtime_retry": {
+    "message": "Torna-ho a provar"
+  },
+  "runtime_copy": {
+    "message": "Copia"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "No s’ha pogut obrir Configuració. Fes servir la barra d’eines de l’extensió."
+  },
+  "runtime_copy_failed": {
+    "message": "No s’ha pogut copiar. Selecciona el text del resultat i copia’l."
+  },
+  "runtime_context_menu": {
+    "message": "Tradueix el text seleccionat"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (No és a la llista actual)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Encara no comprovat)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "S’utilitza la llista de models en memòria cau de $value1$. L’actualització en directe ha fallat. Torna-ho a provar més tard.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "S’utilitza la llista de models en memòria cau. L’actualització en directe ha fallat. Torna-ho a provar més tard."
+  },
+  "runtime_models_cache_at": {
+    "message": "S’utilitza la llista de models en memòria cau de $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "S’utilitza la llista de models en memòria cau."
+  },
+  "runtime_models_updated_at": {
+    "message": "Llista de models actualitzada a $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Llista de models actualitzada."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ no és compatible. Prem una altra tecla o Escape per cancel·lar.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Es farà servir $value1$ quan desis.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Fins a $value1$ per pestanya i $value2$ en total",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ segons",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Prem Tab per fer servir la targeta o Escape per tancar-la.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "La traducció ha fallat. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Actualitza les pàgines obertes"
+  },
+  "refresh_message": {
+    "message": "La clau d’API està desada. Després de configurar, actualitza les pàgines que ja estaven obertes. Selecciona text i prem Control per traduir."
+  },
+  "refresh_continue": {
+    "message": "Continua la configuració"
+  },
+  "refresh_faq_question": {
+    "message": "Per què he d’actualitzar les pàgines obertes?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Actualitza les pàgines obertes</1> després de configurar, abans de traduir. Chrome ha de carregar l’extensió a les pàgines obertes abans d’instal·lar-la o recarregar-la. Les pàgines noves estan a punt automàticament."
+  },
+  "ui_locale": {
+    "message": "ca",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

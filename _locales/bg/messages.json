@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Много лесен превод: маркирайте текст и натиснете Control. Превеждайте на избрания език с Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Маркирайте текст и опитайте отново."
+  },
+  "error_unsupported_selection": {
+    "message": "Това маркиране на текст не се поддържа."
+  },
+  "error_selection_too_large": {
+    "message": "Избраният текст е над 10 000 знака. Маркирайте по-малко и опитайте отново."
+  },
+  "error_missing_api_key": {
+    "message": "Добавете своя ключ за Gemini API в Настройки."
+  },
+  "error_agreement_required": {
+    "message": "Прегледайте и приемете споделянето на данни в Настройки, преди да се свържете с Google."
+  },
+  "error_credential_conflict": {
+    "message": "Запазеният ключ е променен на друга страница. Заредете отново запазените настройки, преди да опитате пак."
+  },
+  "error_credential_storage_error": {
+    "message": "Запазеният ключ не може да се отвори. Отворете Настройки отново или го изтрийте и въведете пак."
+  },
+  "error_missing_target_language": {
+    "message": "Изберете целевия език в Настройки, за да завършите настройването."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini отхвърли ключа за API. Проверете го в Настройки."
+  },
+  "error_invalid_model": {
+    "message": "Този модел не може да се използва за превод. Изберете друг или препоръчания Flash-Lite в Настройки."
+  },
+  "error_busy": {
+    "message": "Има твърде много активни преводи. Опитайте след завършването на един от тях."
+  },
+  "error_duplicate_request": {
+    "message": "Този текст вече се превежда."
+  },
+  "error_rate_limited": {
+    "message": "Достигнат е лимитът за заявки. Опитайте след малко."
+  },
+  "error_timeout": {
+    "message": "Преводът отне твърде дълго. Можете да опитате отново."
+  },
+  "error_offline": {
+    "message": "Изглежда няма интернет. Проверете връзката и опитайте отново."
+  },
+  "error_network_error": {
+    "message": "Неуспешна връзка с Gemini. Проверете връзката и опитайте отново."
+  },
+  "error_quota_exceeded": {
+    "message": "Квотата за Gemini е достигната. Проверете профила си и опитайте по-късно."
+  },
+  "error_service_error": {
+    "message": "Gemini не успя да завърши превода. Опитайте по-късно."
+  },
+  "error_invalid_response": {
+    "message": "Gemini върна нечетим отговор. Можете да опитате отново."
+  },
+  "error_output_too_large": {
+    "message": "Преводът надвиши лимита за изход. Изберете по-малко текст и опитайте отново."
+  },
+  "error_content_blocked": {
+    "message": "Gemini блокира този текст. Опитайте с друг избор."
+  },
+  "error_unsupported_page": {
+    "message": "Преводът не е достъпен на тази страница."
+  },
+  "error_frame_unavailable": {
+    "message": "Избраната рамка вече не е достъпна."
+  },
+  "error_cancelled": {
+    "message": "Преводът е отменен."
+  },
+  "key_Off": {
+    "message": "Изключено"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Опитайте отново след $seconds$ секунди.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Настройки на AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Лични настройки за бърз и целенасочен превод."
+  },
+  "html_help_and_information": {
+    "message": "Помощ и информация"
+  },
+  "html_api_key_guide": {
+    "message": "Ръководство за ключа за API"
+  },
+  "html_about": {
+    "message": "Относно"
+  },
+  "html_privacy": {
+    "message": "Поверителност"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Настройване на AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Следвайте тези стъпки в Настройки. За превод е нужен собствен ключ за Google API."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Вземете собствен ключ за API.</1> Отворете <2>Google AI Studio</2>, влезте и създайте ключ. Прегледайте споделянето на данни по-долу, след което поставете ключа. За помощ <3>прочетете ръководството стъпка по стъпка</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Изберете целеви език и модел.</1> Изберете езика за преводите. Препоръчваме Gemini Flash-Lite, когато е наличен в списъка ви."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Запазете и започнете да превеждате.</1> Използвайте „Завършване на настройването“ долу на страницата. След това маркирайте текст в уебстраница и натиснете Control или изберете „Превод на маркирания текст“ от менюто с десен бутон."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Свържете собствен ключ за Gemini API и изберете съвместим модел."
+  },
+  "html_loading_setup_state": {
+    "message": "Зареждане на състоянието на настройването..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Преди да се свържете с Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google получава ключа за API, за да провери достъпните модели. Когато поискате превод, Google получава и маркирания текст и целевия език, включително текст от локални файлове. Преводите с ИИ могат да са грешни."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Ключът се запазва шифрован в този профил на Chrome и се отваря автоматично след рестарт. Не е нужна допълнителна парола. Човек с пълен достъп до профила на браузъра все пак може да го възстанови. <1>Прочетете подробностите за поверителността</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Задължително във всяка държава:</1> използвайте ключ за Gemini API от проект с <2>активно таксуване</2>. Дръжте изключено незадължителното <3>споделяне с Google на дневниците на заявки и наборите от данни на разширението</3>. При тези настройки платените условия на Google изключват използване на заявките и отговорите за подобряване на продукти; обработката за сигурност и законови цели остава. Разширението е безплатно, но Google API може да има такси."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Условия за употреба.</1> Използвайки Gemini чрез това разширение, приемате изискванията по-горе и <2>условията на Google</2>. Употребата е за лица на 18 или повече години за професионални или бизнес цели в <3>поддържани региони</3>. Разширението не проверява настройките за таксуване или споделяне."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Приемам и се свързвам с Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Оттегляне на съгласието за данни"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Прегледайте подробностите за споделянето на данни преди свързване."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Защо са нужни тези изисквания? Прочетете често задаваните въпроси</1>."
+  },
+  "html_api_key": {
+    "message": "Ключ за API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "След съгласие поставете ключ, за да се запази шифрован и моделите да се заредят автоматично."
+  },
+  "html_show": {
+    "message": "Показване"
+  },
+  "html_remove_saved_key": {
+    "message": "Изтриване на запазения ключ"
+  },
+  "html_model": {
+    "message": "Модел"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Известните модели само за медии и за специални цели са скрити."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Препоръчваме семейството Gemini Flash-Lite. За тази версия през септември 2026 г. избрахме Gemini 3.5 Flash-Lite. Можете да изберете друг модел от списъка. Някои модели може да не работят с разширението. При грешка изберете друг или препоръчания модел."
+  },
+  "html_refresh_models": {
+    "message": "Обновяване на моделите"
+  },
+  "html_use_recommended_model": {
+    "message": "Използване на препоръчания модел"
+  },
+  "html_translation": {
+    "message": "Превод"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Задайте езика и незадължителния клавиш за стартиране."
+  },
+  "html_default_language": {
+    "message": "Език по подразбиране"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Карта с резултат може да използва друг език без промяна на този по подразбиране."
+  },
+  "html_keyboard_trigger": {
+    "message": "Клавиш за стартиране"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Отделни клавиши могат да са в конфликт със сайтове или инструменти за достъпност. Изберете „Изключено“, за да използвате само контекстното меню."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Запис на клавиш"
+  },
+  "html_off": {
+    "message": "Изключено"
+  },
+  "html_behavior": {
+    "message": "Поведение"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Фиксирани защити поддържат бързи преводите и пазят квотата за API."
+  },
+  "html_parallel_requests": {
+    "message": "Едновременни заявки"
+  },
+  "html_request_timeout": {
+    "message": "Време за изчакване на заявка"
+  },
+  "html_page_access": {
+    "message": "Достъп до страници"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "За локални файлове включете „Разрешаване на достъп до URL адреси на файлове“ в управлението на разширението"
+  },
+  "html_help_and_recovery": {
+    "message": "Помощ и възстановяване"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Ако модел е недостъпен, обновете моделите, изберете от списъка и запазете предпочитанията. Ако списъкът не се зарежда, проверете ключа и връзката и опитайте „Обновяване на моделите“."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Страниците с настройки на Chrome и Chrome Web Store не позволяват превод. За локални файлове разрешете достъп до URL адреси на файлове в управлението на разширението. След обновяване или презареждане на разширението обновете отворените страници. Презареждането може да прекъсне превод."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Преводът не работи без интернет. След съгласието по-горе ключът се изпраща директно до Google за проверка на модели. Маркираният текст, включително от локални файлове, се изпраща с целевия език само когато поискате превод. Запазеният ключ е шифрован в този профил на Chrome. Езикът, моделът и клавишът може да се синхронизират чрез Chrome. Разширението пази само последния резултат за текущата сесия и няма история на преводите."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Можете да прегледате споделянето по-горе и да оттеглите съгласието си по всяко време. Проверки на модели и преводи спират до ново съгласие. Ключът остава запазен, освен ако не изберете „Изтриване на запазения ключ“."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Промените на езика, модела и клавиша се запазват тук."
+  },
+  "html_reload_saved_settings": {
+    "message": "Презареждане на запазените настройки"
+  },
+  "html_save_preferences": {
+    "message": "Запазване на предпочитанията"
+  },
+  "html_gemini_translation": {
+    "message": "Превод с Gemini"
+  },
+  "html_setup_required": {
+    "message": "Нужно е настройване"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Добре дошли в AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Превеждайте маркирания текст на познат език. Настройте тези две неща, за да започнете:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Вашият ключ за Gemini API.</1> Вземете собствен ключ от Google AI Studio. Ръководството показва как."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Вашият целеви език.</1> Изберете езика, на който искате да четете."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Как да получите ключ за API"
+  },
+  "html_extension_status": {
+    "message": "Състояние на разширението"
+  },
+  "html_active_translations": {
+    "message": "Активни преводи"
+  },
+  "html_latest_this_session": {
+    "message": "Последно в тази сесия"
+  },
+  "html_no_translation_yet": {
+    "message": "Все още няма превод."
+  },
+  "html_copy": {
+    "message": "Копиране"
+  },
+  "html_settings": {
+    "message": "Настройки"
+  },
+  "html_key_guide": {
+    "message": "Ръководство за ключа"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Начало с AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Страници на разширението"
+  },
+  "html_faq": {
+    "message": "Често задавани въпроси"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Вземете собствен ключ за Google API, изберете език и преведете първия маркиран текст."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Вземете ключ за API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Ключът за API позволява на разширението да използва Gemini чрез профила ви в Google. Пазете го в тайна като парола."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Разширението е за хора на 18 или повече години за работа или бизнес в <1>държавите и регионите, поддържани от Google</1>. Във всяка държава ключът трябва да е от проект Gemini с активно таксуване. Дръжте изключено допълнителното споделяне с Google на дневници и набори от данни на разширението."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Използвайки разширението, приемате тези условия, <1>Условията на Google API</1> и <2>Допълнителните условия на Gemini API</2>. Не го използвайте, ако не можете да ги спазите. Разширението не проверява тези факти и не иска документи за самоличност."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Отваряне на Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Влезте в профила си в Google. Приемете условията на Google, ако бъдат поискани."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Създайте или изберете ключ"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "На страницата с ключове за API изберете <1>Създаване на ключ за API</1> и следвайте стъпките на Google, за да изберете или създадете проект. Проектът групира употребата на API и таксуването. Ако сте нови в AI Studio, Google може вече да е създал проект и ключ по подразбиране."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Ако съществуващият проект липсва, отворете <1>Табло > Проекти > Импортиране на проекти</1>. Импортирайте проекта и се върнете към ключовете за API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Преди употреба следвайте <1>ръководството за таксуване на Google</1>, за да проверите активното таксуване на проекта. Платен абонамент за приложението Gemini не заменя таксуването на API проект. Дръжте изключено споделянето на дневници и набори от данни на разширението с Google; прочетете <2>политиката на Google за споделяне на дневници</2>. Личните дневници на проекта са отделни от споделянето."
+  },
+  "html_copy_your_key": {
+    "message": "Копирайте ключа"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Копирайте ключа от AI Studio. Върнете се в Настройки на разширението и прочетете подробностите за споделяне. Изберете <1>Приемам и се свързвам с Google</1>, след което поставете ключа в полето <2>Ключ за API</2>. Той се шифрова и запазва автоматично и се зарежда списъкът с модели. Изчакайте резултата, преди да продължите."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Настройки на AI Translator с известие за споделяне на данни и бутон за съгласие над празно поле за ключ за API и препоръката Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Примерът е на английски. В AI Translator първо приемете споделянето на данни, после поставете ключа. Списъкът с модели се проверява след запазването на шифрования ключ."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google може да променя тези екрани. За актуални стъпки или грешки прочетете <1>ръководството на Google за ключове за API</1>. Използвайте нов ключ от AI Studio, ако старият вече не работи."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Изберете настройките за превод"
+  },
+  "html_choose_a_model": {
+    "message": "Изберете модел"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Препоръчваме семейството Gemini Flash-Lite. За тази версия през септември 2026 г. избрахме <1>Gemini 3.5 Flash-Lite</1>. Използвайте го, когато е наличен в списъка с модели."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Можете да изберете друг модел от списъка. Някои модели може да не работят с разширението. При неуспех изберете друг или препоръчания модел."
+  },
+  "html_choose_your_target_language": {
+    "message": "Изберете целевия език"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Изберете езика за четене от <1>Език по подразбиране</1>. Опциите следват <2>документираните от Google езици на Gemini</2>. Качеството на превода може да зависи от езика и текста."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Настройки за превод на AI Translator с избор на целеви език и клавиш за стартиране."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Примерът е на английски. Изберете езика за преводите и завършете настройването."
+  },
+  "html_finish_setup": {
+    "message": "Завършване на настройването"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Запазете Control за стартиране, запишете друг клавиш или изберете <1>Изключено</1>, за да използвате само менюто с десен бутон. Изберете <2>Завършване на настройването</2> долу в Настройки. По-късно можете да променяте избора със <3>Запазване на предпочитанията</3>."
+  },
+  "html_open_settings": {
+    "message": "Отваряне на Настройки"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Преведете първия маркиран текст"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Отворете обикновена уебстраница и маркирайте кратък текст. С десен бутон изберете <1>Превод на маркирания текст</1> или натиснете и отпуснете избрания клавиш. Резултатът се показва до маркираното."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Ако разширението е току-що инсталирано или презаредено, първо обновете страницата. Страниците за настройки на Chrome, Chrome Web Store и вграденият PDF преглед не позволяват превод."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Изскачащият прозорец показва последния резултат. След настройване се отваря стандартният изглед. Ако изтриете ключа за API, началното ръководство се появява отново."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Чести въпроси: ключове, разходи и поверителност"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Защо ми е нужен собствен ключ за API?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Разширението е проектирано да праща заявки директно до вашия проект в Google със собствения ви ключ. Това е избор на дизайна, а не правило на Chrome. Ключът позволява заявки и ги свързва с употребата и таксуването. Никога не го споделяйте в екранни снимки или публични съобщения. Вижте <1>ръководството на Google за ключове за API</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Защо активното таксуване е задължително, а не само препоръчано?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Правилата на Chrome за ограничена употреба, точки 3 и 5</1>, ограничават употребата на данни до целта на разширението и свързаните операции. Някои безплатни употреби на Gemini позволяват по-широко обучение и преглед от хора. Платените условия изключват подобряване на продукти, но позволяват ограничено съхранение за сигурност и законови цели и обработка извън ЕС."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "За да реши този конфликт, разработчикът изисква активно таксуване на проекта навсякъде по света. Препоръка би позволила безплатната употреба. Регионалното правило на Google изисква платени услуги за приложения в Европейското икономическо пространство, Великобритания и Швейцария. Вижте <1>условията на Gemini: ограничения за употреба, безплатни и платени услуги</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Защо допълнителното споделяне с Google трябва да остане изключено?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Споделянето на дневници или набори от данни може да позволи обучение и преглед от хора дори с активно таксуване. Не предоставяйте данните на разширението чрез споделяне на набори или обратна връзка. Лично водене на дневници за вашия проект е разрешено от това правило. Вижте <1>политиката на Google за дневници: данни за споделяне и употребата им</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Безплатно ли е разширението, ако е нужен платен API достъп?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Да. Разширението е безплатно, но Google API може да има такси. Платен абонамент за Gemini не заменя таксуването на API проект. Вижте <1>как да проверите таксуването</1> и <2>цените на Google API</2>. Разширението не проверява таксуването или настройките за споделяне."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Защо трябва да избера „Приемам и се свързвам с Google“?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Изискванията на Chrome за разкриване на информация, точки 1 и 2</1>, изискват ясни данни за употребата и информирано съгласие. Бутонът дава този избор преди всяка заявка до Google API. Не проверява самоличността или таксуването и не дава разрешение да споделяте чужда лична информация."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Какво точно се изпраща до Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Проверките на модели изпращат ключа и питат за достъпните модели. Преводът изпраща маркирания текст, целевия език, модела и инструкциите за превод, включително маркиран локален текст. Разширението не добавя цялата страница, адреса или историята на сърфиране. Google получава и данни за връзката като IP адрес. Разработчикът не получава тези заявки. Изпращайте само текст, който можете да споделяте."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Как се запазва и отваря автоматично ключът ми?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Ключът за API се запазва шифрован. Той и ключът за шифроване остават в този профил на Chrome за автоматична употреба след рестарт. Не се синхронизират. Човек с достъп до профила все пак може да възстанови ключа за API. Това не е системен ключодържател или сейф с парола. Език, модел и клавиш могат да се синхронизират. Само последният резултат остава за сесията; няма анализи или история на преводите."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Обновяването шифрова и проверява стар ключ, преди да изтрие нешифрованите му копия. При неуспех старото копие остава, а заявките са блокирани. Настройки обяснява грешката. Преместването на стар ключ не заобикаля съгласието."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Мога ли да оттегля съгласието или да изтрия ключа?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "В <1>Настройки</1> <2>Оттегляне на съгласието за данни</2> блокира нови заявки и отменя активните локално, като пази ключа и предпочитанията. <3>Изтриване на запазения ключ</3> изтрива ключа, ключа за шифроване и кеша с модели. Нито едното връща изпратени данни или гарантира, че изпратена заявка става безплатна. Отменете ключа в AI Studio, за да го изключите и в Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Съгласието се запазва при нормални рестартирания и обновявания. Ако известието се промени, заявките чакат да го прегледате и приемете отново."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Защо е за възрастни и за работа или бизнес?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google изисква поне 18 години и професионална или бизнес употреба в поддържани региони. Вижте <1>условията на Gemini: възрастови изисквания и ограничения</1> и <2>достъпните региони</2>. Няма отделно поле за допустимост или проверка на самоличност в разширението."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Защо има политика за поверителност освен това известие?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Известието обяснява избора преди свързване. Политиката дава пълни данни за обработка, съхранение и изтриване. <1>Правилата на Chrome за поверителност</1> го изискват за разширения с потребителски данни. Прочетете <2>нашата политика за поверителност</2>. Известията не означават одобрение на разширението от Google."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Преводите с ИИ може да са грешни. Проверете важните формулировки, преди да разчитате на тях."
+  },
+  "html_about_ai_translator": {
+    "message": "Относно AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Много лесен превод: маркирайте текст и натиснете Control."
+  },
+  "html_made_for_people": {
+    "message": "Създадено за хората"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Създадох AI Translator, за да помага на хората да четат, учат и общуват между езиците. Надявам се да е полезен на хора по света."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Разширението превежда маркирания текст чрез собствения ви ключ за Google Gemini API. Вие избирате какво да изпратите и на кой език да четете."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Натиснете и отпуснете Control, за да преведете избраното. Control е клавишът по подразбиране и се променя в Настройки. Можете да използвате и менюто с десен бутон."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Ръчно тествано само на Mac. Windows и Linux не са тествани ръчно."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Вижте изходния код и ръководството на проекта</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Получете помощ или съобщете за проблем</1>. Сигналите са публични. Не включвайте ключове за API, лични текстове или данни."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Ако искате да подкрепите работата ми"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Моля, подкрепете моята страна, Украйна, която се защитава от руската агресия."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Доверявам се на Фондацията на общността на Стерненко. Ако можете и желаете да помогнете, дарете чрез официалния ѝ сайт."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Подкрепете Украйна чрез фондацията</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Подкрепата е доброволна и никога не е нужна за употреба на разширението. Връзката отваря външен сайт. Даренията минават през фондацията, не през разширението."
+  },
+  "html_privacy_and_costs": {
+    "message": "Поверителност и разходи"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Ключът за API е шифрован на това устройство и не се синхронизира. Остава достъпен след нормални рестартирания на Chrome без парола за отключване. Човек с достъп до профила на браузъра все пак може да го възстанови."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Преди първата заявка до Google Настройки обяснява споделянето и иска <1>Приемам и се свързвам с Google</1>. След това текст се изпраща директно до Google само при поискана от вас преводна заявка. Проверките на модели изпращат ключа, но не маркиран текст. Няма анализи, реклами или история на преводите."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Преглеждайте подробностите в <1>Настройки</1> по всяко време. Изберете <2>Оттегляне на съгласието за данни</2>, за да спрете новите заявки, запазвайки шифрования ключ и предпочитанията, или <3>Изтриване на запазения ключ</3>, за да изтриете ключа и кеша с модели. Вече изпратените данни не могат да се върнат."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Преводите се създават от ИИ и може да са грешни. Проверявайте важните формулировки преди употреба."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Прочетете подробностите за поверителността</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator е безплатен независим проект. Google API може да има такси. Във всяка държава използвайте ключ за Gemini API от проект с <1>активно таксуване</1> и изключено допълнително <2>споделяне с Google на дневниците и наборите от данни на разширението</2>. При тези настройки платените условия изключват употреба на заявки и отговори за подобряване на продукти; обработката за сигурност и законови цели остава. Прочетете <3>цените на Google и бележките за данни</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Разширението е за лица на 18 или повече години за работа или бизнес в <1>регионите, поддържани от Google</1>. С употребата приемате тези условия, <2>Условията на Google API</2> и <3>Допълнителните условия на Gemini API</3>. Не го използвайте, ако не можете да ги спазите. Няма поле за допустимост или проверка на самоличност. Разширението не проверява таксуването или споделянето."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Незапазени промени."
+  },
+  "runtime_settings_conflict": {
+    "message": "Настройките са променени на друга страница. Промените ви се пазят тук. Заредете запазените настройки, за да отхвърлите промените и да използвате запазените стойности."
+  },
+  "runtime_preferences_current": {
+    "message": "Предпочитанията са актуални."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Запазеният ключ не може да се отвори. Отворете Настройки отново или го изтрийте и въведете пак."
+  },
+  "runtime_key_conflict": {
+    "message": "Ключът за API е променен на друга страница. Заредете запазените настройки, преди да запазвате ключ."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Ключът ви е запазен шифрован. Приемете споделянето преди свързване с Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Приемете споделянето по-горе, преди да добавите ключ за API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini отхвърли запазения ключ. Заменете го или използвайте „Обновяване на моделите“ за нова проверка."
+  },
+  "runtime_paste_key": {
+    "message": "Поставете ключ за API, за да свържете Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Ключът за API е запазен. Gemini го прие при последната проверка на списъка с модели."
+  },
+  "runtime_key_saved_check": {
+    "message": "Ключът за API е запазен шифрован на устройството. Обновете моделите, за да го проверите с Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Повторно оттегляне"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Оттегляне на съгласието за данни"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Оттеглянето не е потвърдено. Повторете го, за да запазите избора."
+  },
+  "runtime_agreement_saved": {
+    "message": "Споделянето на данни е прието за този профил на Chrome. Можете да го оттеглите по всяко време."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Няма връзка с Google, докато не приемете. Ключът остава запазен при оттегляне."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini отхвърли запазения ключ. Заменете го по-долу."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Ключът е запазен шифрован на устройството."
+  },
+  "runtime_setup_create_key": {
+    "message": "Създайте собствен ключ в Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Езикът е избран. Завършете настройването, за да запазите избора."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Изберете целеви език по-долу."
+  },
+  "runtime_finish_setup": {
+    "message": "Завършване на настройването"
+  },
+  "runtime_save_preferences": {
+    "message": "Запазване на предпочитанията"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Добавете ключ за API, проверете списъка и запазете избора на модел."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Решете конфликта в настройките, преди да превеждате."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Прегледайте споделянето и приемете, преди да се свържете с Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Завършете запазването на ключа за API, преди да проверявате настройването."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Настройването изисква внимание: Gemini отхвърли запазения ключ за API."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Ключът е запазен. Изберете целеви език и завършете настройването."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Изберете наличен модел и запазете предпочитанията."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Моделът е избран. Запазете предпочитанията, за да го използвате."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Ключът и езикът са готови. Завършете настройването, за да запазите избора, и опитайте превод. Достъпът до модели и квотата все пак може да се променят."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Готово за пробен превод. Запазеният модел е в проверения списък; достъпът до заявки и квотата все пак може да се променят."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Ключът е запазен. Обновете моделите, за да проверите ключа и избрания модел."
+  },
+  "runtime_show_key": {
+    "message": "Показване"
+  },
+  "runtime_hide_key": {
+    "message": "Скриване"
+  },
+  "runtime_choose_target_language": {
+    "message": "Изберете целеви език"
+  },
+  "runtime_background_no_response": {
+    "message": "Фоновата част на разширението не отговори. Презаредете разширението и опитайте отново."
+  },
+  "runtime_refresh_models": {
+    "message": "Обновяване на моделите"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Приемете споделянето, преди да зареждате модели."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Завършете запазването на ключа за API, преди да обновявате модели."
+  },
+  "runtime_refreshing": {
+    "message": "Обновяване..."
+  },
+  "runtime_loading": {
+    "message": "Зареждане..."
+  },
+  "runtime_models_checking": {
+    "message": "Проверка за съвместими модели в Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Зареждане на съвместими модели..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Съвместимите модели не могат да се заредят."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini не върна съвместими модели."
+  },
+  "runtime_model_not_available": {
+    "message": "Избраният модел не е в съвместимия списък. Изберете друг."
+  },
+  "runtime_record_key": {
+    "message": "Запис на клавиш"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Записът е отменен."
+  },
+  "runtime_unknown_key": {
+    "message": "Този клавиш"
+  },
+  "runtime_press_key": {
+    "message": "Натиснете клавиш..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Натиснете един поддържан непечатащ клавиш. Натиснете Escape за отказ."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Обновете моделите, за да проверите запазения ключ за API."
+  },
+  "runtime_models_add_key": {
+    "message": "Добавете ключ за API, за да заредите съвместими модели."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Разширението не успя да зареди запазеното си състояние."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini отхвърли запазения ключ за API. Заменете го или обновете моделите за нова проверка."
+  },
+  "runtime_settings_reopen": {
+    "message": "Настройките не се заредиха. Отворете ги отново, за да опитате пак."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Настройките не се заредиха. Презаредете запазените настройки за нов опит. Запазването е изключено, за да защити избора ви."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Състоянието на настройването не се зареди."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Въведете пълен ключ за API без интервали."
+  },
+  "runtime_key_use_remove": {
+    "message": "Използвайте „Изтриване на запазения ключ“, за да изтриете ключа."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Приемете споделянето по-горе, преди да запазите ключ за API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Запазване на ключа за API шифрован..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Ключът за API не може да се прочете или запази. Въведеното се пази. Използвайте „Запазване на предпочитанията“ за нов опит."
+  },
+  "runtime_connecting_google": {
+    "message": "Свързване с Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Спиране на връзките с Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Съгласието за данни не се запази. Опитайте отново."
+  },
+  "runtime_key_removing": {
+    "message": "Изтриване на запазения ключ..."
+  },
+  "runtime_key_removed": {
+    "message": "Запазеният ключ е изтрит. Можете да добавите нов след приемане на споделянето."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Запазеният ключ не се изтри. Опитайте отново."
+  },
+  "runtime_saving": {
+    "message": "Запазване..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Изберете валиден език и модел."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Изберете поддържан клавиш или „Изключено“."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Изберете модел от текущия съвместим списък."
+  },
+  "runtime_preferences_saving": {
+    "message": "Запазване на предпочитанията..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Предпочитанията са запазени."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Предпочитанията са запазени. Добавете ключа за API, за да завършите настройването."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Предпочитанията не могат да се прочетат или запазят. Промените ви се пазят. Опитайте отново."
+  },
+  "runtime_key_will_save": {
+    "message": "Ключът за API ще се запази автоматично."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Завършете въвеждането на ключа за API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Завършете запазването на ключа за API, за да заредите съвместими модели."
+  },
+  "runtime_recommended_selected": {
+    "message": "Препоръчаният модел е избран. Запазете избора, за да го използвате."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Клавишът за стартиране ще бъде изключен след запазване."
+  },
+  "runtime_connection_changed": {
+    "message": "Настройките на връзката са променени. Проверка на запазените настройки..."
+  },
+  "runtime_models_changed": {
+    "message": "Списъкът с модели се промени. Проверка на съвместими модели..."
+  },
+  "runtime_no_translation": {
+    "message": "Все още няма превод."
+  },
+  "runtime_start_setup": {
+    "message": "Начало на настройването"
+  },
+  "runtime_settings": {
+    "message": "Настройки"
+  },
+  "runtime_key_rejected": {
+    "message": "Ключът е отхвърлен"
+  },
+  "runtime_setup_required": {
+    "message": "Нужно е настройване"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Добавете ключ за API в Настройки, за да започнете превод."
+  },
+  "runtime_add_key": {
+    "message": "Добавяне на ключ за API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Ключът е запазен. Отворете Настройки, за да проверите модела и завършите избора на език."
+  },
+  "runtime_check_setup": {
+    "message": "Проверка на настройването"
+  },
+  "runtime_translating": {
+    "message": "Превежда се"
+  },
+  "runtime_error": {
+    "message": "Грешка"
+  },
+  "runtime_ready": {
+    "message": "Готово"
+  },
+  "runtime_status_load_failed": {
+    "message": "Състоянието на разширението не се зареди. Презаредете разширението, после обновете страницата."
+  },
+  "runtime_copied": {
+    "message": "Копирано."
+  },
+  "runtime_copy_blocked": {
+    "message": "Копирането е блокирано. Маркирайте текста на резултата и го копирайте."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Настройки не се отвориха. Опитайте отново."
+  },
+  "runtime_translating_progress": {
+    "message": "Превеждане..."
+  },
+  "runtime_translation_started": {
+    "message": "Преводът започна."
+  },
+  "runtime_translation_complete": {
+    "message": "Преводът завърши."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Преводът завърши. Използвайте текста или контролите на картата."
+  },
+  "runtime_translation": {
+    "message": "Превод"
+  },
+  "runtime_target_language": {
+    "message": "Целеви език"
+  },
+  "runtime_card_target_language": {
+    "message": "Целеви език за тази карта"
+  },
+  "runtime_close_card": {
+    "message": "Затваряне на картата за превод"
+  },
+  "runtime_translated_text": {
+    "message": "Преведен текст"
+  },
+  "runtime_retry": {
+    "message": "Повторен опит"
+  },
+  "runtime_copy": {
+    "message": "Копиране"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Настройки не се отвориха. Използвайте лентата с инструменти на разширението."
+  },
+  "runtime_copy_failed": {
+    "message": "Копирането е неуспешно. Маркирайте текста на резултата и го копирайте."
+  },
+  "runtime_context_menu": {
+    "message": "Превод на маркирания текст"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Не е в текущия списък)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Още не е проверен)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Използва се кеширан списък с модели от $value1$. Обновяването е неуспешно. Опитайте по-късно.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Използва се кеширан списък с модели. Обновяването е неуспешно. Опитайте по-късно."
+  },
+  "runtime_models_cache_at": {
+    "message": "Използва се кеширан списък с модели от $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Използва се кеширан списък с модели."
+  },
+  "runtime_models_updated_at": {
+    "message": "Списъкът с модели е обновен от $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Списъкът с модели е обновен."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ не се поддържа. Натиснете друг клавиш или Escape за отказ.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ ще се използва след запазване.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "До $value1$ на раздел и общо $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ секунди",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Натиснете Tab, за да използвате картата, или Escape, за да я затворите.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Преводът е неуспешен. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Обновете отворените страници"
+  },
+  "refresh_message": {
+    "message": "Ключът за API е запазен. След настройването обновете страниците, които вече са били отворени. После маркирайте текст и натиснете Control за превод."
+  },
+  "refresh_continue": {
+    "message": "Продължаване на настройването"
+  },
+  "refresh_faq_question": {
+    "message": "Защо трябва да обновя отворените страници?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Обновете отворените страници</1> след настройването, преди да опитате превод. Chrome трябва да зареди разширението в страниците, отворени преди инсталирането или презареждането му. Новите страници са готови автоматично."
+  },
+  "ui_locale": {
+    "message": "bg",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

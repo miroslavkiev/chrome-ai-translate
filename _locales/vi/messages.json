@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Dịch thật dễ: chọn văn bản rồi nhấn Control. Dùng Gemini để dịch sang ngôn ngữ bạn chọn.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Hãy chọn một đoạn văn bản rồi thử lại."
+  },
+  "error_unsupported_selection": {
+    "message": "Không hỗ trợ kiểu chọn văn bản này."
+  },
+  "error_selection_too_large": {
+    "message": "Đoạn đã chọn dài hơn 10.000 ký tự. Hãy chọn ít hơn rồi thử lại."
+  },
+  "error_missing_api_key": {
+    "message": "Thêm khóa API Gemini trong Cài đặt."
+  },
+  "error_agreement_required": {
+    "message": "Đọc và đồng ý chia sẻ dữ liệu trong Cài đặt trước khi kết nối Google."
+  },
+  "error_credential_conflict": {
+    "message": "Khóa đã lưu bị thay đổi ở trang khác. Hãy tải lại cài đặt đã lưu trước khi thử lại."
+  },
+  "error_credential_storage_error": {
+    "message": "Không mở được khóa đã lưu. Hãy mở lại Cài đặt, hoặc xóa khóa rồi nhập lại."
+  },
+  "error_missing_target_language": {
+    "message": "Chọn ngôn ngữ đích trong Cài đặt để hoàn tất thiết lập."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini từ chối khóa API. Hãy kiểm tra trong Cài đặt."
+  },
+  "error_invalid_model": {
+    "message": "Không thể dùng mô hình này để dịch. Chọn mô hình khác hoặc Flash-Lite được đề xuất trong Cài đặt."
+  },
+  "error_busy": {
+    "message": "Có quá nhiều bản dịch đang chạy. Hãy chờ một bản dịch hoàn tất rồi thử lại."
+  },
+  "error_duplicate_request": {
+    "message": "Đang dịch đoạn đã chọn này."
+  },
+  "error_rate_limited": {
+    "message": "Đã đạt giới hạn yêu cầu. Hãy thử lại sau ít phút."
+  },
+  "error_timeout": {
+    "message": "Dịch mất quá nhiều thời gian. Bạn có thể thử lại."
+  },
+  "error_offline": {
+    "message": "Có vẻ bạn đang ngoại tuyến. Kiểm tra kết nối rồi thử lại."
+  },
+  "error_network_error": {
+    "message": "Không kết nối được Gemini. Kiểm tra kết nối rồi thử lại."
+  },
+  "error_quota_exceeded": {
+    "message": "Đã hết hạn mức Gemini. Kiểm tra tài khoản và thử lại sau."
+  },
+  "error_service_error": {
+    "message": "Gemini không thể hoàn tất bản dịch. Hãy thử lại sau."
+  },
+  "error_invalid_response": {
+    "message": "Gemini trả về phản hồi không đọc được. Bạn có thể thử lại."
+  },
+  "error_output_too_large": {
+    "message": "Bản dịch vượt giới hạn đầu ra. Hãy chọn ít văn bản hơn rồi thử lại."
+  },
+  "error_content_blocked": {
+    "message": "Gemini đã chặn văn bản này. Hãy thử đoạn khác."
+  },
+  "error_unsupported_page": {
+    "message": "Không thể dịch trên trang này."
+  },
+  "error_frame_unavailable": {
+    "message": "Khung đã chọn không còn khả dụng."
+  },
+  "error_cancelled": {
+    "message": "Đã hủy dịch."
+  },
+  "key_Off": {
+    "message": "Tắt"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Thử lại sau $seconds$ giây.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Cài đặt AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Cài đặt riêng để dịch nhanh và tập trung."
+  },
+  "html_help_and_information": {
+    "message": "Trợ giúp và thông tin"
+  },
+  "html_api_key_guide": {
+    "message": "Hướng dẫn khóa API"
+  },
+  "html_about": {
+    "message": "Giới thiệu"
+  },
+  "html_privacy": {
+    "message": "Quyền riêng tư"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Thiết lập AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Làm theo các bước tại trang Cài đặt này. Bạn cần khóa API Google riêng để dịch."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Lấy khóa API riêng.</1> Mở <2>Google AI Studio</2>, đăng nhập và tạo khóa. Đọc phần chia sẻ dữ liệu bên dưới rồi dán khóa. <3>Đọc hướng dẫn từng bước</3> nếu cần trợ giúp."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Chọn ngôn ngữ đích và mô hình.</1> Chọn ngôn ngữ bạn muốn đọc bản dịch. Chúng tôi đề xuất Gemini Flash-Lite nếu có trong danh sách mô hình."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Lưu và bắt đầu dịch.</1> Chọn Hoàn tất thiết lập ở cuối trang. Sau đó chọn văn bản trên trang web và nhấn Control, hoặc chọn Dịch văn bản đã chọn trong trình đơn chuột phải."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Kết nối khóa API Gemini riêng và chọn mô hình tương thích."
+  },
+  "html_loading_setup_state": {
+    "message": "Đang tải trạng thái thiết lập..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Trước khi kết nối Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google nhận khóa API để kiểm tra mô hình khả dụng. Khi bạn yêu cầu dịch, Google cũng nhận văn bản đã chọn và ngôn ngữ đích, kể cả văn bản từ tệp cục bộ. Bản dịch AI có thể sai."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Khóa được mã hóa và lưu trong hồ sơ Chrome này, rồi tự mở sau khi khởi động lại. Không cần mật khẩu bổ sung. Người có toàn quyền truy cập hồ sơ trình duyệt vẫn có thể khôi phục khóa. <1>Đọc chi tiết về quyền riêng tư</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Bắt buộc ở mọi quốc gia:</1> dùng khóa API Gemini thuộc dự án có <2>thanh toán đang hoạt động</2>. Tắt tùy chọn <3>chia sẻ nhật ký yêu cầu và tập dữ liệu của tiện ích này với Google</3>. Với các cài đặt này, điều khoản trả phí của Google loại trừ việc dùng lời nhắc và phản hồi để cải thiện sản phẩm; xử lý vì an toàn và pháp lý vẫn áp dụng. Tiện ích miễn phí nhưng có thể phát sinh phí API Google."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Điều kiện sử dụng.</1> Khi dùng Gemini qua tiện ích, bạn đồng ý tuân thủ các yêu cầu trên và <2>điều khoản Google</2>. Chỉ dành cho người từ 18 tuổi, sử dụng chuyên môn hoặc kinh doanh tại <3>khu vực được hỗ trợ</3>. Tiện ích không xác minh cài đặt thanh toán hay chia sẻ của bạn."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Đồng ý và kết nối Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Rút lại đồng ý chia sẻ dữ liệu"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Đọc chi tiết chia sẻ dữ liệu trước khi kết nối."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Tại sao cần các yêu cầu này? Đọc Câu hỏi thường gặp</1>."
+  },
+  "html_api_key": {
+    "message": "Khóa API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Sau khi đồng ý, dán khóa để lưu được mã hóa và tự động tải mô hình."
+  },
+  "html_show": {
+    "message": "Hiện"
+  },
+  "html_remove_saved_key": {
+    "message": "Xóa khóa đã lưu"
+  },
+  "html_model": {
+    "message": "Mô hình"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Ẩn các mô hình được biết là chỉ dành cho nội dung đa phương tiện hoặc mục đích đặc biệt."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Chúng tôi đề xuất dòng Gemini Flash-Lite. Tại bản phát hành này (tháng 9 năm 2026), lựa chọn là Gemini 3.5 Flash-Lite. Bạn có thể chọn mô hình khác trong danh sách. Một số mô hình có thể không hoạt động với tiện ích. Nếu lỗi, hãy chọn mô hình khác hoặc mô hình được đề xuất."
+  },
+  "html_refresh_models": {
+    "message": "Làm mới mô hình"
+  },
+  "html_use_recommended_model": {
+    "message": "Dùng mô hình đề xuất"
+  },
+  "html_translation": {
+    "message": "Dịch"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Đặt ngôn ngữ và phím kích hoạt tùy chọn."
+  },
+  "html_default_language": {
+    "message": "Ngôn ngữ mặc định"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Thẻ kết quả có thể dùng ngôn ngữ khác mà không đổi mặc định này."
+  },
+  "html_keyboard_trigger": {
+    "message": "Phím kích hoạt"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Phím đơn có thể xung đột với trang web hoặc công cụ hỗ trợ tiếp cận. Chọn Tắt để chỉ dùng trình đơn chuột phải."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Ghi nhận phím"
+  },
+  "html_off": {
+    "message": "Tắt"
+  },
+  "html_behavior": {
+    "message": "Hoạt động"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Biện pháp bảo vệ cố định giúp dịch nhanh và bảo vệ hạn mức API."
+  },
+  "html_parallel_requests": {
+    "message": "Yêu cầu đồng thời"
+  },
+  "html_request_timeout": {
+    "message": "Thời gian chờ yêu cầu"
+  },
+  "html_page_access": {
+    "message": "Truy cập trang"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Với tệp cục bộ, bật Cho phép truy cập URL tệp trong Quản lý tiện ích"
+  },
+  "html_help_and_recovery": {
+    "message": "Trợ giúp và khôi phục"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Nếu mô hình không khả dụng, làm mới danh sách, chọn một mô hình rồi lưu tùy chọn. Nếu không tải được danh sách, kiểm tra khóa và kết nối rồi thử Làm mới mô hình."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Trang cài đặt Chrome và Chrome Web Store không cho phép dịch. Với tệp cục bộ, cho phép truy cập URL tệp trong Quản lý tiện ích. Sau khi cập nhật hoặc tải lại tiện ích, hãy làm mới các trang web đang mở. Tải lại có thể ngắt bản dịch."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Dịch cần kết nối mạng. Sau khi bạn đồng ý ở trên, khóa được gửi thẳng tới Google để kiểm tra mô hình. Văn bản đã chọn, kể cả từ tệp cục bộ, chỉ được gửi cùng ngôn ngữ đích khi bạn yêu cầu dịch. Khóa được mã hóa trong hồ sơ Chrome này. Ngôn ngữ, mô hình và phím có thể đồng bộ qua Chrome. Tiện ích chỉ giữ kết quả mới nhất trong phiên trình duyệt, không lưu lịch sử dịch."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Bạn có thể xem phần chia sẻ dữ liệu ở trên và rút lại đồng ý bất cứ lúc nào. Việc này dừng kiểm tra mô hình và dịch cho đến khi bạn đồng ý lại. Khóa vẫn được giữ trừ khi bạn chọn Xóa khóa đã lưu."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Lưu thay đổi ngôn ngữ, mô hình và phím tại đây."
+  },
+  "html_reload_saved_settings": {
+    "message": "Tải lại cài đặt đã lưu"
+  },
+  "html_save_preferences": {
+    "message": "Lưu tùy chọn"
+  },
+  "html_gemini_translation": {
+    "message": "Dịch bằng Gemini"
+  },
+  "html_setup_required": {
+    "message": "Cần thiết lập"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Chào mừng đến với AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Dịch văn bản đã chọn sang ngôn ngữ bạn hiểu. Hãy thiết lập hai mục để bắt đầu:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Khóa API Gemini của bạn.</1> Lấy khóa riêng từ Google AI Studio. Hướng dẫn sẽ chỉ cách thực hiện."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Ngôn ngữ đích của bạn.</1> Chọn ngôn ngữ bạn muốn đọc."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Cách lấy khóa API"
+  },
+  "html_extension_status": {
+    "message": "Trạng thái tiện ích"
+  },
+  "html_active_translations": {
+    "message": "Bản dịch đang chạy"
+  },
+  "html_latest_this_session": {
+    "message": "Mới nhất trong phiên này"
+  },
+  "html_no_translation_yet": {
+    "message": "Chưa có bản dịch."
+  },
+  "html_copy": {
+    "message": "Sao chép"
+  },
+  "html_settings": {
+    "message": "Cài đặt"
+  },
+  "html_key_guide": {
+    "message": "Hướng dẫn khóa"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Bắt đầu với AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Các trang của tiện ích"
+  },
+  "html_faq": {
+    "message": "Câu hỏi thường gặp"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Lấy khóa API Google riêng, chọn ngôn ngữ và dịch đoạn văn bản đầu tiên."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Lấy khóa API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Khóa API cho phép tiện ích dùng Gemini qua tài khoản Google của bạn. Giữ bí mật như mật khẩu."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Tiện ích dành cho người từ 18 tuổi, sử dụng cho công việc hoặc kinh doanh tại <1>quốc gia và khu vực Google hỗ trợ</1>. Ở mọi quốc gia, khóa phải thuộc dự án Gemini có thanh toán đang hoạt động. Tắt chia sẻ tùy chọn nhật ký yêu cầu và tập dữ liệu của tiện ích với Google."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Dùng tiện ích nghĩa là bạn đồng ý tuân thủ các điều kiện này, <1>Điều khoản API Google</1> và <2>Điều khoản bổ sung API Gemini</2>. Không dùng nếu bạn không đáp ứng được. Tiện ích không xác minh các thông tin này hay yêu cầu giấy tờ tùy thân."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Mở Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Đăng nhập tài khoản Google. Chấp nhận điều khoản Google nếu được yêu cầu."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Tạo hoặc chọn khóa"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Trên trang Khóa API, chọn <1>Tạo khóa API</1> rồi làm theo hướng dẫn Google để chọn hoặc tạo dự án. Dự án tập hợp việc dùng API và thanh toán. Nếu mới dùng AI Studio, Google có thể đã tạo dự án và khóa mặc định."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Nếu không thấy dự án hiện có, mở <1>Trang tổng quan > Dự án > Nhập dự án</1>. Nhập dự án rồi quay lại Khóa API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Trước khi dùng khóa, làm theo <1>hướng dẫn thanh toán Google</1> để kiểm tra dự án có thanh toán đang hoạt động. Gói ứng dụng Gemini trả phí không thay thế thanh toán dự án API. Tắt chia sẻ tùy chọn nhật ký và tập dữ liệu của tiện ích với Google; đọc <2>chính sách chia sẻ nhật ký Google</2>. Ghi nhật ký riêng trong dự án khác với chia sẻ."
+  },
+  "html_copy_your_key": {
+    "message": "Sao chép khóa"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Sao chép khóa từ AI Studio, trở về Cài đặt tiện ích và đọc chi tiết chia sẻ dữ liệu. Chọn <1>Đồng ý và kết nối Google</1> rồi dán vào ô <2>Khóa API</2>. Khóa tự được mã hóa, lưu và danh sách mô hình được tải. Hãy chờ kết quả trước khi tiếp tục."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Cài đặt AI Translator với thông báo chia sẻ dữ liệu và nút Đồng ý bên trên ô khóa API trống, cùng đề xuất mô hình Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Ví dụ hiển thị bằng tiếng Anh. Trong AI Translator: đồng ý chia sẻ dữ liệu trước, rồi dán khóa riêng. Danh sách mô hình được kiểm tra sau khi lưu khóa mã hóa."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google có thể thay đổi các màn hình này. Xem <1>hướng dẫn khóa API Google</1> để biết bước mới nhất hoặc lỗi khóa. Dùng khóa mới từ AI Studio nếu khóa cũ không còn hoạt động."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Chọn cài đặt dịch"
+  },
+  "html_choose_a_model": {
+    "message": "Chọn mô hình"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Chúng tôi đề xuất dòng Gemini Flash-Lite. Trong bản phát hành tháng 9 năm 2026, lựa chọn là <1>Gemini 3.5 Flash-Lite</1>. Hãy dùng nếu có trong danh sách mô hình."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Bạn có thể chọn mô hình khác trong danh sách. Một số mô hình có thể không hoạt động với tiện ích. Nếu lỗi, chọn mô hình khác hoặc mô hình đề xuất."
+  },
+  "html_choose_your_target_language": {
+    "message": "Chọn ngôn ngữ đích"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Chọn ngôn ngữ muốn đọc trong <1>Ngôn ngữ mặc định</1>. Các lựa chọn theo <2>ngôn ngữ Gemini được Google công bố</2>. Chất lượng dịch có thể khác nhau theo ngôn ngữ và văn bản."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Cài đặt Dịch của AI Translator với chọn ngôn ngữ đích và điều khiển phím kích hoạt."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Ví dụ hiển thị bằng tiếng Anh. Chọn ngôn ngữ bản dịch rồi hoàn tất thiết lập."
+  },
+  "html_finish_setup": {
+    "message": "Hoàn tất thiết lập"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Giữ phím Control, ghi nhận phím khác hoặc chọn <1>Tắt</1> để chỉ dùng trình đơn chuột phải. Chọn <2>Hoàn tất thiết lập</2> ở cuối Cài đặt. Bạn có thể thay đổi sau bằng <3>Lưu tùy chọn</3>."
+  },
+  "html_open_settings": {
+    "message": "Mở Cài đặt"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Dịch đoạn đầu tiên"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Mở trang web thông thường và chọn một đoạn ngắn. Nhấp chuột phải, chọn <1>Dịch văn bản đã chọn</1>, hoặc nhấn rồi thả phím đã chọn. Kết quả xuất hiện cạnh vùng chọn."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Nếu vừa cài hoặc tải lại tiện ích, hãy làm mới trang web trước. Trang cài đặt Chrome, Chrome Web Store và trình xem PDF tích hợp không cho phép dịch."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Cửa sổ bật lên trên thanh công cụ hiển thị kết quả mới nhất. Khi thiết lập xong, giao diện thông thường xuất hiện. Nếu xóa khóa API, hướng dẫn chào mừng sẽ hiện lại."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Câu hỏi thường gặp: khóa, chi phí và quyền riêng tư"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Tại sao tôi cần khóa API riêng?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Tiện ích được thiết kế để gửi yêu cầu thẳng đến dự án Google bằng khóa của bạn. Đây là lựa chọn thiết kế, không phải quy định Chrome. Khóa cho phép yêu cầu và liên kết chúng với mức sử dụng, thanh toán của bạn. Không chia sẻ trong ảnh chụp hay tin nhắn công khai. Xem <1>hướng dẫn khóa API Google</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Tại sao bắt buộc có thanh toán hoạt động thay vì chỉ đề xuất?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Quy tắc Sử dụng hạn chế của Chrome, mục 3 và 5</1>, giới hạn việc dùng dữ liệu cho mục đích của tiện ích và hoạt động liên quan. Một số hình thức dùng Gemini miễn phí cho phép huấn luyện và người xem xét rộng hơn. Điều khoản trả phí loại trừ dùng để cải thiện sản phẩm, nhưng cho phép lưu giữ hạn chế vì an toàn, pháp lý và xử lý ngoài EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Để giải quyết xung đột này, nhà phát triển yêu cầu thanh toán dự án hoạt động trên toàn thế giới. Chỉ đề xuất vẫn sẽ cho phép dùng miễn phí. Quy tắc khu vực của Google cũng yêu cầu Dịch vụ trả phí cho ứng dụng cung cấp tại Khu vực Kinh tế Châu Âu, Anh và Thụy Sĩ. Xem <1>điều khoản Gemini: Hạn chế sử dụng, Dịch vụ miễn phí và Dịch vụ trả phí</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Tại sao phải tắt chia sẻ tùy chọn với Google?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Chia sẻ nhật ký hoặc tập dữ liệu có thể cho phép huấn luyện và người xem xét ngay cả khi thanh toán hoạt động. Không đóng góp dữ liệu tiện ích qua chia sẻ tập dữ liệu hay phản hồi. Quy tắc này cho phép ghi nhật ký riêng trong dự án của bạn. Xem <1>chính sách nhật ký Google: Dữ liệu có thể chia sẻ và Cách dùng dữ liệu của bạn</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Tiện ích có miễn phí nếu tôi cần API trả phí không?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Có. Tiện ích miễn phí nhưng có thể phát sinh phí API Google. Gói ứng dụng Gemini trả phí không thay thế thanh toán dự án API. Xem <1>cách kiểm tra thanh toán</1> và <2>giá API Google</2>. Tiện ích không xác minh cài đặt thanh toán hay chia sẻ."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Tại sao cần chọn Đồng ý và kết nối Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Yêu cầu công bố của Chrome, mục 1 và 2</1>, yêu cầu mô tả rõ cách dùng dữ liệu và sự đồng ý sau khi được cung cấp thông tin. Nút này cho bạn chọn trước mọi yêu cầu API Google. Nó không kiểm tra danh tính, thanh toán hay cho phép chia sẻ thông tin riêng tư của người khác."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Chính xác những gì được gửi đến Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Kiểm tra mô hình gửi khóa và hỏi các mô hình khả dụng. Dịch gửi văn bản đã chọn, ngôn ngữ đích, mô hình và chỉ dẫn dịch, kể cả văn bản tệp cục bộ. Tiện ích không thêm toàn bộ trang, địa chỉ trang hay lịch sử duyệt web. Google cũng nhận chi tiết kết nối như địa chỉ IP. Nhà phát triển không nhận các yêu cầu này. Chỉ gửi văn bản bạn được phép chia sẻ."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Khóa được lưu và tự mở như thế nào?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Khóa API được lưu có mã hóa. Nó và khóa mã hóa ở lại hồ sơ Chrome này để tự dùng sau khi khởi động lại; chúng không đồng bộ. Người có quyền truy cập hồ sơ vẫn có thể khôi phục khóa. Đây không phải chuỗi khóa hệ điều hành hay kho bảo vệ bằng mật khẩu. Ngôn ngữ, mô hình và phím có thể đồng bộ. Chỉ giữ kết quả mới nhất trong phiên trình duyệt; không phân tích hay lưu lịch sử dịch."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Bản nâng cấp mã hóa và kiểm tra khóa cũ trước khi xóa bản sao văn bản thuần. Nếu lỗi, bản cũ vẫn được giữ và các yêu cầu vẫn bị chặn. Cài đặt giải thích lỗi. Di chuyển khóa cũ không bỏ qua bước đồng ý."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Tôi có thể rút lại đồng ý hoặc xóa khóa không?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "Trong <1>Cài đặt</1>, <2>Rút lại đồng ý chia sẻ dữ liệu</2> chặn yêu cầu mới và hủy cục bộ các yêu cầu đang chạy, giữ khóa và tùy chọn. <3>Xóa khóa đã lưu</3> xóa khóa, khóa mã hóa và bộ nhớ đệm mô hình. Cả hai không thu hồi dữ liệu đã gửi hoặc bảo đảm yêu cầu đã gửi sẽ miễn phí. Thu hồi khóa trong AI Studio để vô hiệu hóa ở Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Sự đồng ý được giữ qua các lần khởi động lại và cập nhật thông thường. Nếu thông báo đổi, yêu cầu sẽ chờ đến khi bạn đọc và đồng ý lại."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Tại sao chỉ dành cho người lớn và công việc hoặc kinh doanh?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google yêu cầu người dùng từ 18 tuổi, dùng cho chuyên môn hoặc kinh doanh ở khu vực được hỗ trợ. Xem <1>điều khoản Gemini: Yêu cầu tuổi và Hạn chế sử dụng</1> cùng <2>khu vực khả dụng</2>. Tiện ích không có ô xác nhận điều kiện riêng hay kiểm tra danh tính."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Tại sao có chính sách quyền riêng tư bên cạnh thông báo này?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Thông báo giải thích lựa chọn trước khi kết nối. Chính sách cung cấp đầy đủ chi tiết về dữ liệu, lưu trữ và xóa. <1>Quy tắc chính sách quyền riêng tư Chrome</1> yêu cầu điều này với tiện ích xử lý dữ liệu người dùng. Đọc <2>chính sách quyền riêng tư của chúng tôi</2>. Các thông báo này không có nghĩa Google đã duyệt tiện ích."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Bản dịch AI có thể sai. Kiểm tra cách diễn đạt quan trọng trước khi tin dùng."
+  },
+  "html_about_ai_translator": {
+    "message": "Giới thiệu AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Dịch thật dễ: chọn văn bản rồi nhấn Control."
+  },
+  "html_made_for_people": {
+    "message": "Được tạo ra vì mọi người"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Tôi tạo AI Translator để giúp mọi người đọc, học và kết nối qua nhiều ngôn ngữ. Tôi hy vọng nó hữu ích cho mọi người trên thế giới."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Tiện ích dịch văn bản đã chọn bằng khóa API Google Gemini riêng của bạn. Bạn quyết định gửi gì và đọc bằng ngôn ngữ nào."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Nhấn rồi thả Control để dịch vùng chọn. Control là phím mặc định và có thể đổi trong Cài đặt. Bạn cũng có thể dùng trình đơn chuột phải của trang."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Chỉ được kiểm thử thủ công trên Mac. Chưa kiểm thử thủ công trên Windows và Linux."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Xem mã nguồn và hướng dẫn dự án</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Nhận trợ giúp hoặc báo lỗi</1>. Báo cáo được công khai. Không đưa khóa API, văn bản riêng tư hay thông tin cá nhân vào."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Nếu bạn muốn ủng hộ công việc của tôi"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Xin ủng hộ đất nước tôi, Ukraine, khi đang tự vệ trước sự xâm lược của Nga."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Tôi tin tưởng Sternenko Community Foundation. Nếu có khả năng và muốn giúp, bạn có thể quyên góp qua trang web chính thức của quỹ."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Ủng hộ Ukraine qua quỹ</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Ủng hộ là tùy chọn và không bắt buộc để dùng tiện ích. Liên kết này mở trang web bên ngoài. Quyên góp qua quỹ, không qua tiện ích."
+  },
+  "html_privacy_and_costs": {
+    "message": "Quyền riêng tư và chi phí"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Khóa API được mã hóa trên thiết bị này, không đồng bộ. Khóa vẫn dùng được sau khi khởi động lại Chrome bình thường, không cần mật khẩu mở khóa. Người có quyền truy cập hồ sơ trình duyệt vẫn có thể khôi phục khóa."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Trước yêu cầu Google đầu tiên, Cài đặt giải thích chia sẻ dữ liệu và yêu cầu chọn <1>Đồng ý và kết nối Google</1>. Sau đó, văn bản chỉ được gửi thẳng tới Google khi bạn yêu cầu dịch. Kiểm tra mô hình gửi khóa nhưng không gửi văn bản đã chọn. Tiện ích không có phân tích, quảng cáo hay lịch sử dịch."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Xem chi tiết trong <1>Cài đặt</1> bất cứ lúc nào. Chọn <2>Rút lại đồng ý chia sẻ dữ liệu</2> để dừng yêu cầu mới nhưng giữ khóa mã hóa và tùy chọn, hoặc <3>Xóa khóa đã lưu</3> để xóa khóa và bộ nhớ đệm mô hình. Không thể thu hồi dữ liệu đã gửi."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Bản dịch do AI tạo và có thể sai. Kiểm tra cách diễn đạt quan trọng trước khi tin dùng."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Đọc chi tiết về quyền riêng tư</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator là dự án miễn phí, độc lập. Có thể phát sinh phí API Google. Ở mọi quốc gia, dùng khóa API Gemini thuộc dự án có <1>thanh toán đang hoạt động</1> và tắt <2>chia sẻ tùy chọn nhật ký yêu cầu và tập dữ liệu của tiện ích với Google</2>. Với cài đặt này, điều khoản trả phí của Google loại trừ dùng lời nhắc và phản hồi để cải thiện sản phẩm; xử lý an toàn và pháp lý vẫn áp dụng. Đọc <3>giá và ghi chú sử dụng dữ liệu Google</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Tiện ích dành cho người từ 18 tuổi, dùng cho công việc hoặc kinh doanh ở <1>khu vực Google hỗ trợ</1>. Sử dụng nghĩa là đồng ý tuân thủ các điều kiện này, <2>Điều khoản API Google</2> và <3>Điều khoản bổ sung API Gemini</3>. Không dùng nếu không đáp ứng được. Không có ô xác nhận điều kiện hay kiểm tra danh tính. Tiện ích không xác minh thanh toán hoặc cài đặt chia sẻ."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Có thay đổi chưa lưu."
+  },
+  "runtime_settings_conflict": {
+    "message": "Cài đặt thay đổi ở trang khác. Chỉnh sửa của bạn được giữ tại đây. Tải lại cài đặt đã lưu để bỏ chỉnh sửa và dùng giá trị đã lưu."
+  },
+  "runtime_preferences_current": {
+    "message": "Tùy chọn đã cập nhật."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Không mở được khóa đã lưu. Mở lại Cài đặt, hoặc xóa rồi nhập lại khóa."
+  },
+  "runtime_key_conflict": {
+    "message": "Khóa API thay đổi ở trang khác. Tải lại cài đặt đã lưu trước khi lưu khóa."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Khóa đã được lưu có mã hóa. Đồng ý chia sẻ dữ liệu trước khi kết nối Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Đồng ý chia sẻ dữ liệu ở trên trước khi thêm khóa API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini từ chối khóa đã lưu. Thay khóa hoặc dùng Làm mới mô hình để kiểm tra lại."
+  },
+  "runtime_paste_key": {
+    "message": "Dán khóa API để kết nối Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Đã lưu khóa API. Gemini chấp nhận khóa ở lần kiểm tra danh sách mô hình gần nhất."
+  },
+  "runtime_key_saved_check": {
+    "message": "Khóa API đã lưu có mã hóa trên thiết bị. Làm mới mô hình để kiểm tra với Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Thử rút lại lần nữa"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Rút lại đồng ý chia sẻ dữ liệu"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Chưa xác nhận việc rút lại. Hãy thử rút lại lần nữa để lưu lựa chọn."
+  },
+  "runtime_agreement_saved": {
+    "message": "Đã đồng ý chia sẻ dữ liệu cho hồ sơ Chrome này. Bạn có thể rút lại bất cứ lúc nào."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Không kết nối Google cho đến khi bạn đồng ý. Khóa đã lưu vẫn được giữ nếu bạn rút lại."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini từ chối khóa đã lưu. Thay khóa bên dưới."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Khóa đã lưu có mã hóa trên thiết bị này."
+  },
+  "runtime_setup_create_key": {
+    "message": "Tạo khóa riêng trong Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Đã chọn ngôn ngữ. Hoàn tất thiết lập để lưu lựa chọn."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Chọn ngôn ngữ đích bên dưới."
+  },
+  "runtime_finish_setup": {
+    "message": "Hoàn tất thiết lập"
+  },
+  "runtime_save_preferences": {
+    "message": "Lưu tùy chọn"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Thêm khóa API, kiểm tra danh sách mô hình rồi lưu lựa chọn mô hình."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Giải quyết xung đột cài đặt trước khi dịch."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Đọc và đồng ý chia sẻ dữ liệu trước khi kết nối Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Hoàn tất lưu khóa API trước khi kiểm tra thiết lập."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Cần kiểm tra thiết lập: Gemini từ chối khóa API đã lưu."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Đã lưu khóa. Chọn ngôn ngữ đích rồi hoàn tất thiết lập."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Chọn mô hình khả dụng rồi lưu tùy chọn."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Đã chọn mô hình. Lưu tùy chọn để sử dụng."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Khóa và ngôn ngữ đã sẵn sàng. Hoàn tất thiết lập để lưu lựa chọn rồi thử dịch. Quyền truy cập mô hình và hạn mức vẫn có thể đổi."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Sẵn sàng thử dịch. Mô hình đã lưu nằm trong danh sách đã kiểm tra; quyền gửi yêu cầu và hạn mức vẫn có thể đổi."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Đã lưu khóa. Làm mới mô hình để kiểm tra khóa và mô hình đã chọn."
+  },
+  "runtime_show_key": {
+    "message": "Hiện"
+  },
+  "runtime_hide_key": {
+    "message": "Ẩn"
+  },
+  "runtime_choose_target_language": {
+    "message": "Chọn ngôn ngữ đích"
+  },
+  "runtime_background_no_response": {
+    "message": "Tiến trình nền của tiện ích không phản hồi. Tải lại tiện ích rồi thử lại."
+  },
+  "runtime_refresh_models": {
+    "message": "Làm mới mô hình"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Đồng ý chia sẻ dữ liệu trước khi tải mô hình."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Hoàn tất lưu khóa API trước khi làm mới mô hình."
+  },
+  "runtime_refreshing": {
+    "message": "Đang làm mới..."
+  },
+  "runtime_loading": {
+    "message": "Đang tải..."
+  },
+  "runtime_models_checking": {
+    "message": "Đang kiểm tra mô hình tương thích với Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Đang tải mô hình tương thích..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Không tải được mô hình tương thích."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini không trả về mô hình tương thích nào."
+  },
+  "runtime_model_not_available": {
+    "message": "Mô hình đã chọn không có trong danh sách tương thích. Hãy chọn mô hình khác."
+  },
+  "runtime_record_key": {
+    "message": "Ghi nhận phím"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Đã hủy ghi nhận."
+  },
+  "runtime_unknown_key": {
+    "message": "Phím đó"
+  },
+  "runtime_press_key": {
+    "message": "Nhấn một phím..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Nhấn một phím không nhập ký tự được hỗ trợ. Nhấn Escape để hủy."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Làm mới mô hình để kiểm tra khóa API đã lưu."
+  },
+  "runtime_models_add_key": {
+    "message": "Thêm khóa API để tải mô hình tương thích."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Tiện ích không tải được trạng thái đã lưu."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini từ chối khóa API đã lưu. Thay khóa hoặc làm mới mô hình để kiểm tra lại."
+  },
+  "runtime_settings_reopen": {
+    "message": "Không tải được Cài đặt. Mở lại Cài đặt để thử lại."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Không tải được cài đặt. Tải lại cài đặt đã lưu để thử lại. Chức năng lưu bị tắt để bảo vệ lựa chọn đã lưu."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Không tải được trạng thái thiết lập."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Nhập khóa API đầy đủ, không có dấu cách."
+  },
+  "runtime_key_use_remove": {
+    "message": "Dùng Xóa khóa đã lưu để xóa khóa."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Đồng ý chia sẻ dữ liệu ở trên trước khi lưu khóa API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Đang lưu khóa API có mã hóa..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Không đọc hoặc lưu được khóa API. Nội dung đã nhập được giữ. Dùng Lưu tùy chọn để thử lại."
+  },
+  "runtime_connecting_google": {
+    "message": "Đang kết nối Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Đang dừng kết nối Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Không lưu được đồng ý chia sẻ dữ liệu. Hãy thử lại."
+  },
+  "runtime_key_removing": {
+    "message": "Đang xóa khóa đã lưu..."
+  },
+  "runtime_key_removed": {
+    "message": "Đã xóa khóa đã lưu. Bạn có thể thêm khóa mới sau khi đồng ý chia sẻ dữ liệu."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Không xóa được khóa đã lưu. Hãy thử lại."
+  },
+  "runtime_saving": {
+    "message": "Đang lưu..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Chọn ngôn ngữ và mô hình hợp lệ."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Chọn phím kích hoạt được hỗ trợ hoặc Tắt."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Chọn mô hình từ danh sách tương thích hiện tại."
+  },
+  "runtime_preferences_saving": {
+    "message": "Đang lưu tùy chọn..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Đã lưu tùy chọn."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Đã lưu tùy chọn. Thêm khóa API để hoàn tất thiết lập."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Không đọc hoặc lưu được tùy chọn. Chỉnh sửa được giữ. Hãy thử lại."
+  },
+  "runtime_key_will_save": {
+    "message": "Khóa API sẽ tự lưu."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Hoàn tất nhập khóa API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Hoàn tất lưu khóa API để tải mô hình tương thích."
+  },
+  "runtime_recommended_selected": {
+    "message": "Đã chọn mô hình đề xuất. Lưu lựa chọn để sử dụng."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Phím kích hoạt sẽ Tắt sau khi lưu."
+  },
+  "runtime_connection_changed": {
+    "message": "Cài đặt kết nối thay đổi. Đang kiểm tra cài đặt đã lưu..."
+  },
+  "runtime_models_changed": {
+    "message": "Danh sách mô hình thay đổi. Đang kiểm tra mô hình tương thích..."
+  },
+  "runtime_no_translation": {
+    "message": "Chưa có bản dịch."
+  },
+  "runtime_start_setup": {
+    "message": "Bắt đầu thiết lập"
+  },
+  "runtime_settings": {
+    "message": "Cài đặt"
+  },
+  "runtime_key_rejected": {
+    "message": "Khóa bị từ chối"
+  },
+  "runtime_setup_required": {
+    "message": "Cần thiết lập"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Thêm khóa API trong Cài đặt để bắt đầu dịch."
+  },
+  "runtime_add_key": {
+    "message": "Thêm khóa API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Đã lưu khóa. Mở Cài đặt để kiểm tra mô hình và hoàn tất chọn ngôn ngữ."
+  },
+  "runtime_check_setup": {
+    "message": "Kiểm tra thiết lập"
+  },
+  "runtime_translating": {
+    "message": "Đang dịch"
+  },
+  "runtime_error": {
+    "message": "Lỗi"
+  },
+  "runtime_ready": {
+    "message": "Sẵn sàng"
+  },
+  "runtime_status_load_failed": {
+    "message": "Không tải được trạng thái tiện ích. Tải lại tiện ích rồi làm mới trang."
+  },
+  "runtime_copied": {
+    "message": "Đã sao chép."
+  },
+  "runtime_copy_blocked": {
+    "message": "Sao chép bị chặn. Chọn văn bản kết quả rồi sao chép."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Không mở được Cài đặt. Hãy thử lại."
+  },
+  "runtime_translating_progress": {
+    "message": "Đang dịch..."
+  },
+  "runtime_translation_started": {
+    "message": "Đã bắt đầu dịch."
+  },
+  "runtime_translation_complete": {
+    "message": "Dịch hoàn tất."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Dịch hoàn tất. Dùng văn bản kết quả hoặc các nút trên thẻ."
+  },
+  "runtime_translation": {
+    "message": "Dịch"
+  },
+  "runtime_target_language": {
+    "message": "Ngôn ngữ đích"
+  },
+  "runtime_card_target_language": {
+    "message": "Ngôn ngữ đích của thẻ này"
+  },
+  "runtime_close_card": {
+    "message": "Đóng thẻ dịch"
+  },
+  "runtime_translated_text": {
+    "message": "Văn bản đã dịch"
+  },
+  "runtime_retry": {
+    "message": "Thử lại"
+  },
+  "runtime_copy": {
+    "message": "Sao chép"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Không mở được Cài đặt. Dùng thanh công cụ của tiện ích."
+  },
+  "runtime_copy_failed": {
+    "message": "Sao chép thất bại. Chọn văn bản kết quả rồi sao chép."
+  },
+  "runtime_context_menu": {
+    "message": "Dịch văn bản đã chọn"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Không có trong danh sách hiện tại)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Chưa kiểm tra)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Đang dùng danh sách mô hình lưu đệm từ $value1$. Làm mới trực tiếp thất bại. Hãy thử lại sau.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Đang dùng danh sách mô hình lưu đệm. Làm mới trực tiếp thất bại. Hãy thử lại sau."
+  },
+  "runtime_models_cache_at": {
+    "message": "Đang dùng danh sách mô hình lưu đệm từ $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Đang dùng danh sách mô hình lưu đệm."
+  },
+  "runtime_models_updated_at": {
+    "message": "Đã cập nhật danh sách mô hình từ $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Đã cập nhật danh sách mô hình."
+  },
+  "runtime_key_not_supported": {
+    "message": "Không hỗ trợ $value1$. Nhấn phím khác hoặc Escape để hủy.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Sẽ dùng $value1$ sau khi lưu.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Tối đa $value1$ mỗi thẻ và tổng cộng $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ giây",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Nhấn Tab để dùng thẻ này hoặc Escape để đóng.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Dịch thất bại. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Làm mới các trang đang mở"
+  },
+  "refresh_message": {
+    "message": "Khóa API đã được lưu. Sau khi hoàn tất thiết lập, hãy làm mới các trang đã mở trước đó. Sau đó chọn văn bản và nhấn Control để dịch."
+  },
+  "refresh_continue": {
+    "message": "Tiếp tục thiết lập"
+  },
+  "refresh_faq_question": {
+    "message": "Tại sao cần làm mới các trang đang mở?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Làm mới các trang đang mở</1> sau khi hoàn tất thiết lập, trước khi thử dịch. Chrome cần tải tiện ích trên những trang đã mở trước khi bạn cài hoặc tải lại tiện ích. Các trang mới mở sẽ tự sẵn sàng."
+  },
+  "ui_locale": {
+    "message": "vi",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

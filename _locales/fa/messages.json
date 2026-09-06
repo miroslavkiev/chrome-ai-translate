@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "ترجمه بسیار آسان: متن را انتخاب کنید و Control را بزنید. با Gemini به زبان دلخواه ترجمه کنید.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "متنی را انتخاب کنید و دوباره امتحان کنید."
+  },
+  "error_unsupported_selection": {
+    "message": "این انتخاب متن پشتیبانی نمی‌شود."
+  },
+  "error_selection_too_large": {
+    "message": "متن انتخابی بیش از ۱۰٬۰۰۰ نویسه دارد. متن کمتری انتخاب کنید و دوباره امتحان کنید."
+  },
+  "error_missing_api_key": {
+    "message": "کلید Gemini API خود را در تنظیمات اضافه کنید."
+  },
+  "error_agreement_required": {
+    "message": "پیش از اتصال به Google، اشتراک‌گذاری داده را در تنظیمات بخوانید و بپذیرید."
+  },
+  "error_credential_conflict": {
+    "message": "کلید ذخیره‌شده در صفحه دیگری تغییر کرده است. پیش از تلاش دوباره، تنظیمات ذخیره‌شده را بازخوانی کنید."
+  },
+  "error_credential_storage_error": {
+    "message": "کلید ذخیره‌شده باز نمی‌شود. تنظیمات را دوباره باز کنید یا کلید را حذف و دوباره وارد کنید."
+  },
+  "error_missing_target_language": {
+    "message": "برای تکمیل راه‌اندازی، زبان مقصد را در تنظیمات انتخاب کنید."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini کلید API را رد کرد. آن را در تنظیمات بررسی کنید."
+  },
+  "error_invalid_model": {
+    "message": "این مدل برای ترجمه قابل استفاده نیست. در تنظیمات مدل دیگری یا مدل پیشنهادی Flash-Lite را انتخاب کنید."
+  },
+  "error_busy": {
+    "message": "ترجمه‌های فعال بیش از حد هستند. پس از پایان یکی دوباره امتحان کنید."
+  },
+  "error_duplicate_request": {
+    "message": "این انتخاب هم‌اکنون در حال ترجمه است."
+  },
+  "error_rate_limited": {
+    "message": "به محدودیت درخواست رسیدید. کمی بعد دوباره امتحان کنید."
+  },
+  "error_timeout": {
+    "message": "ترجمه بیش از حد طول کشید. می‌توانید دوباره امتحان کنید."
+  },
+  "error_offline": {
+    "message": "ظاهراً به اینترنت وصل نیستید. اتصال را بررسی و دوباره تلاش کنید."
+  },
+  "error_network_error": {
+    "message": "دسترسی به Gemini ممکن نشد. اتصال را بررسی و دوباره تلاش کنید."
+  },
+  "error_quota_exceeded": {
+    "message": "سهمیه Gemini به پایان رسید. حسابتان را بررسی و بعداً تلاش کنید."
+  },
+  "error_service_error": {
+    "message": "Gemini نتوانست ترجمه را کامل کند. بعداً امتحان کنید."
+  },
+  "error_invalid_response": {
+    "message": "Gemini پاسخی ناخوانا فرستاد. می‌توانید دوباره تلاش کنید."
+  },
+  "error_output_too_large": {
+    "message": "ترجمه از محدودیت خروجی گذشت. متن کمتری انتخاب کنید و دوباره تلاش کنید."
+  },
+  "error_content_blocked": {
+    "message": "Gemini این متن را مسدود کرد. انتخاب دیگری را امتحان کنید."
+  },
+  "error_unsupported_page": {
+    "message": "ترجمه در این صفحه در دسترس نیست."
+  },
+  "error_frame_unavailable": {
+    "message": "قاب انتخاب‌شده دیگر در دسترس نیست."
+  },
+  "error_cancelled": {
+    "message": "ترجمه لغو شد."
+  },
+  "key_Off": {
+    "message": "خاموش"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ ثانیه دیگر دوباره تلاش کنید.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "تنظیمات AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "تنظیمات خصوصی برای ترجمه سریع و متمرکز."
+  },
+  "html_help_and_information": {
+    "message": "راهنما و اطلاعات"
+  },
+  "html_api_key_guide": {
+    "message": "راهنمای کلید API"
+  },
+  "html_about": {
+    "message": "درباره"
+  },
+  "html_privacy": {
+    "message": "حریم خصوصی"
+  },
+  "html_set_up_ai_translator": {
+    "message": "راه‌اندازی AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "این مراحل را در تنظیمات دنبال کنید. برای ترجمه به کلید Google API خودتان نیاز دارید."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>کلید API خود را بگیرید.</1> <2>Google AI Studio</2> را باز کنید، وارد شوید و کلید بسازید. اشتراک‌گذاری داده را در پایین بخوانید و سپس کلید را بچسبانید. برای کمک <3>راهنمای گام‌به‌گام را بخوانید</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>زبان مقصد و مدل را انتخاب کنید.</1> زبان ترجمه را انتخاب کنید. اگر Gemini Flash-Lite در فهرست شما موجود است، آن را پیشنهاد می‌کنیم."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>ذخیره کنید و ترجمه را آغاز کنید.</1> در پایین صفحه تکمیل راه‌اندازی را بزنید. سپس در یک صفحه وب متن انتخاب کنید و Control را بزنید یا از منوی راست‌کلیک ترجمه متن انتخابی را انتخاب کنید."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "کلید Gemini API خود را متصل کنید و یک مدل سازگار انتخاب کنید."
+  },
+  "html_loading_setup_state": {
+    "message": "در حال بارگیری وضعیت راه‌اندازی..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "پیش از اتصال به Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google کلید API را برای بررسی مدل‌های موجود دریافت می‌کند. هنگام درخواست ترجمه، متن انتخابی و زبان مقصد، از جمله متن فایل‌های محلی را نیز دریافت می‌کند. ترجمه‌های هوش مصنوعی ممکن است اشتباه باشند."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "کلید شما به‌صورت رمزگذاری‌شده در این نمایه Chrome ذخیره می‌شود و پس از راه‌اندازی مجدد خودکار باز می‌شود. گذرواژه اضافی لازم نیست. فردی با دسترسی کامل به نمایه مرورگر همچنان ممکن است آن را بازیابی کند. <1>جزئیات حریم خصوصی را بخوانید</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>در همه کشورها الزامی است:</1> از کلید Gemini API پروژه‌ای با <2>صورتحساب فعال</2> استفاده کنید. <3>اشتراک‌گذاری اختیاری گزارش درخواست‌ها و مجموعه‌داده‌های این افزونه با Google</3> را خاموش نگه دارید. با این تنظیمات، شرایط پولی Google استفاده از درخواست‌ها و پاسخ‌ها برای بهبود محصولات را کنار می‌گذارد؛ پردازش امنیتی و قانونی همچنان برقرار است. افزونه رایگان است، اما ممکن است Google API هزینه داشته باشد."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>شرایط استفاده.</1> با استفاده از Gemini از طریق این افزونه، الزامات بالا و <2>شرایط Google</2> را می‌پذیرید. استفاده برای افراد ۱۸ ساله و بالاتر با هدف حرفه‌ای یا تجاری در <3>مناطق پشتیبانی‌شده</3> است. افزونه تنظیمات صورتحساب یا اشتراک‌گذاری شما را تأیید نمی‌کند."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "پذیرش و اتصال به Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "پس‌گرفتن رضایت اشتراک‌گذاری داده"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "پیش از اتصال، جزئیات اشتراک‌گذاری داده را بخوانید."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>چرا این الزامات لازم هستند؟ پرسش‌های متداول را بخوانید</1>."
+  },
+  "html_api_key": {
+    "message": "کلید API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "پس از پذیرش، کلید را بچسبانید تا رمزگذاری و ذخیره شود و مدل‌ها خودکار بارگیری شوند."
+  },
+  "html_show": {
+    "message": "نمایش"
+  },
+  "html_remove_saved_key": {
+    "message": "حذف کلید ذخیره‌شده"
+  },
+  "html_model": {
+    "message": "مدل"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "مدل‌های شناخته‌شده ویژه رسانه و کاربردهای خاص پنهان هستند."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "خانواده Gemini Flash-Lite را پیشنهاد می‌کنیم. برای این نسخه در سپتامبر ۲۰۲۶، Gemini 3.5 Flash-Lite را انتخاب کرده‌ایم. می‌توانید مدل دیگری از فهرست انتخاب کنید. بعضی مدل‌ها ممکن است با افزونه کار نکنند. اگر مدلی شکست خورد، مدل دیگری یا مدل پیشنهادی را انتخاب کنید."
+  },
+  "html_refresh_models": {
+    "message": "تازه‌سازی مدل‌ها"
+  },
+  "html_use_recommended_model": {
+    "message": "استفاده از مدل پیشنهادی"
+  },
+  "html_translation": {
+    "message": "ترجمه"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "زبان و کلید میان‌بر اختیاری را تنظیم کنید."
+  },
+  "html_default_language": {
+    "message": "زبان پیش‌فرض"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "کارت نتیجه می‌تواند بدون تغییر این پیش‌فرض از زبان دیگری استفاده کند."
+  },
+  "html_keyboard_trigger": {
+    "message": "کلید اجرای ترجمه"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "کلیدهای تکی ممکن است با وب‌سایت‌ها یا ابزارهای دسترس‌پذیری تداخل داشته باشند. برای استفاده فقط از منوی زمینه، خاموش را انتخاب کنید."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "ثبت کلید"
+  },
+  "html_off": {
+    "message": "خاموش"
+  },
+  "html_behavior": {
+    "message": "رفتار"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "محافظت‌های ثابت سرعت ترجمه را حفظ می‌کنند و از سهمیه API محافظت می‌کنند."
+  },
+  "html_parallel_requests": {
+    "message": "درخواست‌های هم‌زمان"
+  },
+  "html_request_timeout": {
+    "message": "مهلت درخواست"
+  },
+  "html_page_access": {
+    "message": "دسترسی به صفحه"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "برای فایل‌های محلی، اجازه دسترسی به نشانی فایل‌ها را در مدیریت افزونه فعال کنید"
+  },
+  "html_help_and_recovery": {
+    "message": "راهنما و بازیابی"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "اگر مدلی در دسترس نیست، مدل‌ها را تازه‌سازی کنید، یکی را انتخاب و تنظیمات را ذخیره کنید. اگر فهرست بارگیری نمی‌شود، کلید و اتصال را بررسی و سپس تازه‌سازی مدل‌ها را امتحان کنید."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "صفحات تنظیمات Chrome و Chrome Web Store اجازه ترجمه نمی‌دهند. برای فایل‌های محلی، اجازه دسترسی به نشانی فایل‌ها را در مدیریت افزونه فعال کنید. پس از به‌روزرسانی یا بارگیری مجدد افزونه، صفحات باز را تازه‌سازی کنید. بارگیری مجدد ممکن است ترجمه را قطع کند."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "ترجمه آفلاین نیست. پس از پذیرش بالا، کلید برای بررسی مدل‌ها مستقیم به Google فرستاده می‌شود. متن انتخابی، از جمله فایل‌های محلی، فقط هنگام درخواست ترجمه همراه با زبان مقصد فرستاده می‌شود. کلید ذخیره‌شده در این نمایه Chrome رمزگذاری شده است. زبان، مدل و کلید اجرا می‌توانند از طریق Chrome همگام شوند. افزونه فقط آخرین نتیجه نشست مرورگر را نگه می‌دارد و تاریخچه ترجمه ندارد."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "می‌توانید جزئیات اشتراک‌گذاری را بالا ببینید و هر زمان رضایتتان را پس بگیرید. بررسی مدل و ترجمه تا پذیرش دوباره متوقف می‌شوند. کلید ذخیره می‌ماند مگر حذف کلید ذخیره‌شده را انتخاب کنید."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "تغییرات زبان، مدل و کلید اجرا اینجا ذخیره می‌شوند."
+  },
+  "html_reload_saved_settings": {
+    "message": "بازخوانی تنظیمات ذخیره‌شده"
+  },
+  "html_save_preferences": {
+    "message": "ذخیره تنظیمات"
+  },
+  "html_gemini_translation": {
+    "message": "ترجمه Gemini"
+  },
+  "html_setup_required": {
+    "message": "راه‌اندازی لازم است"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "به AI Translator خوش آمدید"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "متن انتخابی را به زبانی که می‌دانید ترجمه کنید. برای شروع این دو مورد را تنظیم کنید:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>کلید Gemini API شما.</1> کلید خود را از Google AI Studio بگیرید. راهنمای ما روش را نشان می‌دهد."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>زبان مقصد شما.</1> زبانی را که می‌خواهید بخوانید انتخاب کنید."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "روش گرفتن کلید API"
+  },
+  "html_extension_status": {
+    "message": "وضعیت افزونه"
+  },
+  "html_active_translations": {
+    "message": "ترجمه‌های فعال"
+  },
+  "html_latest_this_session": {
+    "message": "آخرین نتیجه این نشست"
+  },
+  "html_no_translation_yet": {
+    "message": "هنوز ترجمه‌ای نیست."
+  },
+  "html_copy": {
+    "message": "کپی"
+  },
+  "html_settings": {
+    "message": "تنظیمات"
+  },
+  "html_key_guide": {
+    "message": "راهنمای کلید"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "شروع کار با AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "صفحات افزونه"
+  },
+  "html_faq": {
+    "message": "پرسش‌های متداول"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "کلید Google API خود را بگیرید، زبان انتخاب کنید و اولین انتخابتان را ترجمه کنید."
+  },
+  "html_1_get_your_api_key": {
+    "message": "۱. کلید API خود را بگیرید"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "کلید API به افزونه اجازه می‌دهد از طریق حساب Google شما از Gemini استفاده کند. آن را مانند گذرواژه خصوصی نگه دارید."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "این افزونه برای افراد ۱۸ ساله و بالاتر، برای کار یا تجارت در <1>کشورها و مناطق مورد پشتیبانی Google</1> است. در هر کشور، کلید باید متعلق به پروژه Gemini با صورتحساب فعال باشد. اشتراک‌گذاری اختیاری گزارش درخواست‌ها و مجموعه‌داده‌های افزونه با Google را خاموش نگه دارید."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "با استفاده از افزونه، این شرایط، <1>شرایط Google API</1> و <2>شرایط اضافی Gemini API</2> را می‌پذیرید. اگر نمی‌توانید آن‌ها را رعایت کنید از افزونه استفاده نکنید. افزونه این موارد را بررسی نمی‌کند و مدرک هویتی نمی‌خواهد."
+  },
+  "html_open_google_ai_studio": {
+    "message": "باز کردن Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "وارد حساب Google شوید. اگر خواسته شد، شرایط Google را بپذیرید."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "ساخت یا انتخاب کلید"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "در صفحه کلیدهای API، <1>ساخت کلید API</1> را انتخاب و مراحل Google را برای انتخاب یا ساخت پروژه دنبال کنید. پروژه استفاده از API و صورتحساب را گروه‌بندی می‌کند. اگر در AI Studio تازه‌کار هستید، شاید Google از قبل پروژه و کلید پیش‌فرض ساخته باشد."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "اگر پروژه موجود شما نمایش داده نمی‌شود، <1>داشبورد > پروژه‌ها > وارد کردن پروژه‌ها</1> را باز کنید. پروژه را وارد کنید و به کلیدهای API برگردید."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "پیش از استفاده از کلید، با <1>راهنمای صورتحساب Google</1> فعال بودن صورتحساب پروژه را بررسی کنید. اشتراک پولی برنامه Gemini جایگزین صورتحساب پروژه API نیست. اشتراک‌گذاری اختیاری گزارش‌ها و مجموعه‌داده‌های افزونه با Google را خاموش نگه دارید؛ <2>سیاست اشتراک‌گذاری گزارش Google</2> را بخوانید. ثبت خصوصی گزارش پروژه جدا از اشتراک‌گذاری است."
+  },
+  "html_copy_your_key": {
+    "message": "کلیدتان را کپی کنید"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "کلید را از AI Studio کپی کنید. به تنظیمات افزونه برگردید و جزئیات اشتراک‌گذاری را بخوانید. <1>پذیرش و اتصال به Google</1> را انتخاب و کلید را در فیلد <2>کلید API</2> بچسبانید. خودکار رمزگذاری و ذخیره می‌شود و فهرست مدل‌ها بارگیری می‌شود. پیش از ادامه منتظر نتیجه بمانید."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "تنظیمات AI Translator با اعلان اشتراک‌گذاری داده و دکمه پذیرش بالای فیلد خالی کلید API و پیشنهاد مدل Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "نمونه به انگلیسی است. در AI Translator ابتدا اشتراک‌گذاری داده را بپذیرید، سپس کلید خود را بچسبانید. پس از ذخیره کلید رمزگذاری‌شده، فهرست مدل‌ها بررسی می‌شود."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google می‌تواند این صفحه‌ها را تغییر دهد. برای مراحل فعلی یا خطاهای کلید، <1>راهنمای کلید API Google</1> را بخوانید. اگر کلید قدیمی کار نمی‌کند، کلید جدیدی از AI Studio بگیرید."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "۲. تنظیمات ترجمه را انتخاب کنید"
+  },
+  "html_choose_a_model": {
+    "message": "انتخاب مدل"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "خانواده Gemini Flash-Lite را پیشنهاد می‌کنیم. برای این نسخه در سپتامبر ۲۰۲۶، <1>Gemini 3.5 Flash-Lite</1> را انتخاب کرده‌ایم. اگر در فهرست شما هست از آن استفاده کنید."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "می‌توانید مدل دیگری انتخاب کنید. بعضی مدل‌ها ممکن است با افزونه کار نکنند. در صورت شکست، مدل دیگری یا مدل پیشنهادی را انتخاب کنید."
+  },
+  "html_choose_your_target_language": {
+    "message": "زبان مقصدتان را انتخاب کنید"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "زبانی را که می‌خواهید بخوانید از <1>زبان پیش‌فرض</1> انتخاب کنید. گزینه‌ها از <2>زبان‌های Gemini مستندشده توسط Google</2> پیروی می‌کنند. کیفیت ترجمه بسته به زبان و متن فرق می‌کند."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "تنظیمات ترجمه AI Translator با انتخاب زبان مقصد و کنترل‌های کلید اجرا."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "نمونه به انگلیسی است. زبان ترجمه را انتخاب و راه‌اندازی را تکمیل کنید."
+  },
+  "html_finish_setup": {
+    "message": "تکمیل راه‌اندازی"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control را نگه دارید، کلید دیگری ثبت کنید یا برای استفاده فقط از منوی راست‌کلیک <1>خاموش</1> را انتخاب کنید. در پایین تنظیمات <2>تکمیل راه‌اندازی</2> را بزنید. بعداً با <3>ذخیره تنظیمات</3> می‌توانید انتخاب‌ها را تغییر دهید."
+  },
+  "html_open_settings": {
+    "message": "باز کردن تنظیمات"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "۳. اولین انتخابتان را ترجمه کنید"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "صفحه وب عادی باز کنید و متن کوتاهی انتخاب کنید. راست‌کلیک کرده و <1>ترجمه متن انتخابی</1> را انتخاب کنید، یا کلید انتخابی را فشار دهید و رها کنید. نتیجه کنار انتخاب نمایش داده می‌شود."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "اگر افزونه تازه نصب یا دوباره بارگیری شده، ابتدا صفحه را تازه‌سازی کنید. تنظیمات Chrome، ‏Chrome Web Store و نمایشگر داخلی PDF اجازه ترجمه نمی‌دهند."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "پنجره نوار ابزار آخرین نتیجه را نشان می‌دهد. پس از پایان راه‌اندازی، نمای عادی باز می‌شود. حذف کلید API راهنمای خوش‌آمد را دوباره نشان می‌دهد."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "پرسش‌های متداول: کلیدها، هزینه و حریم خصوصی"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "چرا به کلید API خودم نیاز دارم؟"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "افزونه برای فرستادن درخواست‌ها مستقیم به پروژه Google شما با کلید خودتان طراحی شده است. این انتخاب طراحی است، نه قانون Chrome. کلید درخواست‌ها را مجاز و به استفاده و صورتحساب شما مرتبط می‌کند. هرگز آن را در تصویر صفحه یا پیام عمومی منتشر نکنید. <1>راهنمای کلید API Google</1> را ببینید."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "چرا صورتحساب فعال الزامی است و فقط پیشنهاد نیست؟"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>قوانین استفاده محدود Chrome، بندهای ۳ و ۵</1>، استفاده از داده را به هدف افزونه و عملیات مرتبط محدود می‌کنند. برخی کاربردهای رایگان Gemini آموزش گسترده‌تر و بررسی انسانی را مجاز می‌کنند. شرایط پولی بهبود محصول را مستثنی می‌کند، اما نگهداری محدود امنیتی و قانونی و پردازش خارج از اتحادیه اروپا مجاز است."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "برای حل این تعارض، توسعه‌دهنده صورتحساب فعال پروژه را در سراسر جهان الزامی کرده است. پیشنهاد همچنان استفاده رایگان را مجاز می‌گذاشت. قانون منطقه‌ای Google برای برنامه‌های عرضه‌شده در منطقه اقتصادی اروپا، بریتانیا و سوئیس خدمات پولی می‌خواهد. <1>شرایط Gemini: محدودیت استفاده، خدمات رایگان و خدمات پولی</1> را ببینید."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "چرا اشتراک‌گذاری اختیاری با Google باید خاموش بماند؟"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "اشتراک گزارش‌ها یا مجموعه‌داده‌ها حتی با صورتحساب فعال ممکن است آموزش و بررسی انسانی را مجاز کند. داده افزونه را از طریق اشتراک مجموعه‌داده یا بازخورد ارائه نکنید. ثبت خصوصی گزارش برای پروژه خودتان طبق این قانون مجاز است. <1>سیاست گزارش Google: داده قابل اشتراک و روش استفاده از داده</1> را ببینید."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "اگر دسترسی پولی API لازم است، افزونه رایگان است؟"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "بله. افزونه رایگان است، اما ممکن است Google API هزینه داشته باشد. اشتراک پولی برنامه Gemini جای صورتحساب پروژه API را نمی‌گیرد. <1>روش بررسی صورتحساب</1> و <2>قیمت‌های Google API</2> را ببینید. افزونه صورتحساب یا تنظیمات اشتراک‌گذاری را تأیید نمی‌کند."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "چرا باید پذیرش و اتصال به Google را انتخاب کنم؟"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>الزامات اطلاع‌رسانی Chrome، بندهای ۱ و ۲</1>، اطلاعات روشن درباره استفاده از داده و رضایت آگاهانه می‌خواهند. دکمه ما این انتخاب را پیش از هر درخواست Google API فراهم می‌کند. هویت یا صورتحساب را بررسی نمی‌کند و اجازه اشتراک اطلاعات خصوصی دیگران را نمی‌دهد."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "دقیقاً چه چیزی به Google می‌رود؟"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "بررسی مدل‌ها کلید را می‌فرستد و مدل‌های موجود را درخواست می‌کند. ترجمه متن انتخابی، زبان مقصد، مدل و دستور ترجمه را می‌فرستد؛ متن فایل محلی هم شامل می‌شود. افزونه کل صفحه، نشانی صفحه یا سابقه مرور را اضافه نمی‌کند. Google جزئیات اتصال مانند IP را هم دریافت می‌کند. توسعه‌دهنده این درخواست‌ها را نمی‌گیرد. فقط متنی را بفرستید که اجازه اشتراک آن را دارید."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "کلید چطور ذخیره و خودکار باز می‌شود؟"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "کلید API رمزگذاری‌شده ذخیره می‌شود. آن و کلید رمزگذاری در این نمایه Chrome می‌مانند تا بعد از راه‌اندازی مجدد خودکار استفاده شوند. همگام‌سازی نمی‌شوند. فرد دارای دسترسی به نمایه همچنان ممکن است کلید API را بازیابی کند. این جاکلیدی سیستم یا خزانه دارای گذرواژه نیست. زبان، مدل و کلید اجرا می‌توانند همگام شوند. فقط آخرین نتیجه برای نشست می‌ماند؛ تحلیل آماری یا تاریخچه ترجمه وجود ندارد."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "به‌روزرسانی کلید قدیمی را رمزگذاری و بررسی می‌کند، سپس نسخه‌های بدون رمز آن را حذف می‌کند. اگر شکست بخورد، نسخه قدیمی می‌ماند و درخواست‌ها مسدود می‌مانند. تنظیمات خطا را توضیح می‌دهد. انتقال کلید قدیمی رضایت را دور نمی‌زند."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "می‌توانم رضایتم را پس بگیرم یا کلید را حذف کنم؟"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "در <1>تنظیمات</1>، <2>پس‌گرفتن رضایت اشتراک‌گذاری داده</2> درخواست‌های جدید را مسدود و فعال‌ها را محلی لغو می‌کند و کلید و تنظیمات را نگه می‌دارد. <3>حذف کلید ذخیره‌شده</3> کلید، کلید رمزگذاری و حافظه مدل‌ها را حذف می‌کند. هیچ‌کدام داده فرستاده‌شده را پس نمی‌گیرد یا رایگان شدن درخواست ارسال‌شده را تضمین نمی‌کند. کلید را در AI Studio باطل کنید تا در Google هم غیرفعال شود."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "رضایت شما بعد از راه‌اندازی مجدد و به‌روزرسانی عادی حفظ می‌شود. اگر اعلان تغییر کند، درخواست‌ها تا مطالعه و پذیرش دوباره منتظر می‌مانند."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "چرا این برای بزرگسالان و کار یا تجارت است؟"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google حداقل سن ۱۸ سال و استفاده حرفه‌ای یا تجاری در مناطق پشتیبانی‌شده را می‌خواهد. <1>شرایط Gemini: الزامات سن و محدودیت استفاده</1> و <2>مناطق در دسترس</2> را ببینید. افزونه کادر جداگانه احراز شرایط یا بررسی هویت ندارد."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "چرا علاوه بر این اعلان سیاست حریم خصوصی وجود دارد؟"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "اعلان انتخاب را پیش از اتصال توضیح می‌دهد. سیاست، جزئیات کامل داده، نگهداری و حذف را ارائه می‌کند. <1>قوانین حریم خصوصی Chrome</1> این را برای افزونه‌های پردازش‌کننده داده کاربر الزامی می‌کنند. <2>سیاست حریم خصوصی ما</2> را بخوانید. این اعلان‌ها به معنای تأیید افزونه توسط Google نیستند."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "ترجمه‌های هوش مصنوعی ممکن است اشتباه باشند. عبارت‌های مهم را پیش از اتکا بررسی کنید."
+  },
+  "html_about_ai_translator": {
+    "message": "درباره AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "ترجمه بسیار آسان: متن را انتخاب کنید و Control را بزنید."
+  },
+  "html_made_for_people": {
+    "message": "ساخته‌شده برای مردم"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "AI Translator را ساختم تا به مردم برای خواندن، یادگیری و ارتباط میان زبان‌ها کمک کنم. امیدوارم برای مردم سراسر جهان مفید باشد."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "افزونه متن انتخابی را با کلید Google Gemini API خودتان ترجمه می‌کند. شما انتخاب می‌کنید چه بفرستید و به چه زبانی بخوانید."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "برای ترجمه انتخاب، Control را فشار دهید و رها کنید. Control کلید پیش‌فرض است و در تنظیمات تغییر می‌کند. می‌توانید از منوی راست‌کلیک صفحه هم استفاده کنید."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "فقط روی Mac دستی آزمایش شده است. Windows و Linux دستی آزمایش نشده‌اند."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>دیدن کد منبع و راهنمای پروژه</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>دریافت کمک یا گزارش مشکل</1>. گزارش‌ها عمومی هستند. کلید API، متن خصوصی یا اطلاعات شخصی درج نکنید."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "اگر مایلید از کار من حمایت کنید"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "لطفاً از کشور من، اوکراین، در دفاع از خود در برابر تجاوز روسیه حمایت کنید."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "به بنیاد جامعه استرننکو اعتماد دارم. اگر توانایی و تمایل کمک دارید، از سایت رسمی آن کمک مالی کنید."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>حمایت از اوکراین از طریق بنیاد</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "حمایت اختیاری است و هرگز برای استفاده از افزونه لازم نیست. لینک سایت خارجی را باز می‌کند. کمک‌ها از طریق بنیاد انجام می‌شوند، نه افزونه."
+  },
+  "html_privacy_and_costs": {
+    "message": "حریم خصوصی و هزینه‌ها"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "کلید API روی این دستگاه رمزگذاری می‌شود و همگام نمی‌شود. پس از راه‌اندازی مجدد عادی Chrome بدون گذرواژه بازگشایی قابل استفاده است. فردی با دسترسی به نمایه مرورگر همچنان ممکن است آن را بازیابی کند."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "پیش از اولین درخواست Google، تنظیمات اشتراک‌گذاری را توضیح می‌دهد و <1>پذیرش و اتصال به Google</1> را می‌خواهد. سپس متن انتخابی فقط هنگام درخواست ترجمه مستقیم به Google می‌رود. بررسی مدل‌ها کلید را می‌فرستد، نه متن انتخابی. افزونه تحلیل آماری، تبلیغ یا تاریخچه ترجمه ندارد."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "هر زمان جزئیات را در <1>تنظیمات</1> ببینید. برای توقف درخواست‌های جدید با حفظ کلید رمزگذاری‌شده و تنظیمات، <2>پس‌گرفتن رضایت اشتراک‌گذاری داده</2> را انتخاب کنید؛ برای حذف کلید و حافظه مدل‌ها <3>حذف کلید ذخیره‌شده</3> را بزنید. داده‌های ارسال‌شده قابل پس‌گرفتن نیستند."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "ترجمه‌ها توسط هوش مصنوعی ساخته می‌شوند و ممکن است اشتباه باشند. عبارت‌های مهم را پیش از اتکا بررسی کنید."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>جزئیات حریم خصوصی را بخوانید</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator پروژه‌ای رایگان و مستقل است. ممکن است Google API هزینه داشته باشد. در همه کشورها از کلید Gemini API پروژه با <1>صورتحساب فعال</1> استفاده کنید و <2>اشتراک‌گذاری اختیاری گزارش درخواست‌ها و مجموعه‌داده‌های افزونه با Google</2> را خاموش نگه دارید. با این تنظیمات، شرایط پولی Google استفاده از درخواست و پاسخ برای بهبود محصولات را مستثنی می‌کند؛ پردازش امنیتی و قانونی ادامه دارد. <3>قیمت‌ها و یادداشت‌های استفاده از داده Google</3> را بخوانید."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "افزونه برای افراد ۱۸ ساله و بالاتر، برای کار یا تجارت در <1>مناطق پشتیبانی‌شده Google</1> است. با استفاده، این شرایط، <2>شرایط Google API</2> و <3>شرایط اضافی Gemini API</3> را می‌پذیرید. اگر نمی‌توانید رعایت کنید، استفاده نکنید. کادر احراز شرایط یا بررسی هویت ندارد. افزونه صورتحساب یا اشتراک‌گذاری را بررسی نمی‌کند."
+  },
+  "runtime_unsaved_changes": {
+    "message": "تغییرات ذخیره‌نشده."
+  },
+  "runtime_settings_conflict": {
+    "message": "تنظیمات در صفحه دیگری تغییر کرد. ویرایش‌های شما اینجا حفظ می‌شوند. تنظیمات ذخیره‌شده را بازخوانی کنید تا ویرایش‌ها کنار گذاشته شوند و مقدارهای ذخیره‌شده استفاده شوند."
+  },
+  "runtime_preferences_current": {
+    "message": "تنظیمات به‌روز هستند."
+  },
+  "runtime_key_cannot_open": {
+    "message": "کلید ذخیره‌شده باز نمی‌شود. تنظیمات را دوباره باز کنید یا کلید را حذف و دوباره وارد کنید."
+  },
+  "runtime_key_conflict": {
+    "message": "کلید API در صفحه دیگری تغییر کرد. پیش از ذخیره کلید، تنظیمات ذخیره‌شده را بازخوانی کنید."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "کلید شما رمزگذاری‌شده ذخیره شده است. پیش از اتصال به Google اشتراک‌گذاری داده را بپذیرید."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "پیش از افزودن کلید API، اشتراک‌گذاری داده را در بالا بپذیرید."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini کلید ذخیره‌شده را رد کرد. آن را عوض کنید یا با تازه‌سازی مدل‌ها دوباره بررسی کنید."
+  },
+  "runtime_paste_key": {
+    "message": "برای اتصال Gemini کلید API را بچسبانید."
+  },
+  "runtime_key_checked": {
+    "message": "کلید API ذخیره شد. Gemini آن را در آخرین بررسی فهرست مدل‌ها پذیرفت."
+  },
+  "runtime_key_saved_check": {
+    "message": "کلید API روی این دستگاه رمزگذاری‌شده ذخیره شد. برای بررسی با Gemini مدل‌ها را تازه‌سازی کنید."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "تلاش دوباره برای پس‌گرفتن"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "پس‌گرفتن رضایت اشتراک‌گذاری داده"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "پس‌گرفتن رضایت تأیید نشده است. برای ذخیره انتخاب دوباره تلاش کنید."
+  },
+  "runtime_agreement_saved": {
+    "message": "اشتراک‌گذاری داده برای این نمایه Chrome پذیرفته شد. هر زمان می‌توانید رضایت را پس بگیرید."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "تا پذیرش شما اتصالی به Google برقرار نمی‌شود. با پس‌گرفتن رضایت، کلید ذخیره‌شده می‌ماند."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini کلید ذخیره‌شده را رد کرد. آن را در پایین عوض کنید."
+  },
+  "runtime_setup_key_saved": {
+    "message": "کلید شما روی این دستگاه رمزگذاری‌شده ذخیره شد."
+  },
+  "runtime_setup_create_key": {
+    "message": "کلید خود را در Google AI Studio بسازید."
+  },
+  "runtime_setup_language_selected": {
+    "message": "زبان انتخاب شد. راه‌اندازی را برای ذخیره انتخاب‌ها تکمیل کنید."
+  },
+  "runtime_setup_choose_language": {
+    "message": "زبان مقصد را در پایین انتخاب کنید."
+  },
+  "runtime_finish_setup": {
+    "message": "تکمیل راه‌اندازی"
+  },
+  "runtime_save_preferences": {
+    "message": "ذخیره تنظیمات"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "کلید API اضافه کنید، فهرست مدل‌ها را بررسی و انتخاب مدل را ذخیره کنید."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "پیش از ترجمه، تعارض تنظیمات را حل کنید."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "پیش از اتصال به Google، اشتراک‌گذاری را بخوانید و بپذیرید."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "پیش از بررسی راه‌اندازی، ذخیره کلید API را تمام کنید."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "راه‌اندازی نیاز به توجه دارد: Gemini کلید API ذخیره‌شده را رد کرد."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "کلید ذخیره شد. زبان مقصد را انتخاب و راه‌اندازی را تکمیل کنید."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "یک مدل موجود انتخاب کنید و تنظیمات را ذخیره کنید."
+  },
+  "runtime_setup_model_selected": {
+    "message": "مدل انتخاب شد. برای استفاده تنظیمات را ذخیره کنید."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "کلید و زبان آماده‌اند. برای ذخیره انتخاب‌ها راه‌اندازی را تمام و سپس ترجمه را امتحان کنید. دسترسی مدل و سهمیه همچنان ممکن است تغییر کنند."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "آماده امتحان ترجمه. مدل ذخیره‌شده در فهرست بررسی‌شده است؛ دسترسی درخواست و سهمیه همچنان ممکن است تغییر کنند."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "کلید ذخیره شد. مدل‌ها را برای بررسی کلید و مدل انتخابی تازه‌سازی کنید."
+  },
+  "runtime_show_key": {
+    "message": "نمایش"
+  },
+  "runtime_hide_key": {
+    "message": "پنهان کردن"
+  },
+  "runtime_choose_target_language": {
+    "message": "زبان مقصدی انتخاب کنید"
+  },
+  "runtime_background_no_response": {
+    "message": "بخش پس‌زمینه افزونه پاسخ نداد. افزونه را دوباره بارگیری کنید و دوباره تلاش کنید."
+  },
+  "runtime_refresh_models": {
+    "message": "تازه‌سازی مدل‌ها"
+  },
+  "runtime_models_need_agreement": {
+    "message": "پیش از بارگیری مدل‌ها اشتراک‌گذاری داده را بپذیرید."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "پیش از تازه‌سازی مدل‌ها ذخیره کلید API را تمام کنید."
+  },
+  "runtime_refreshing": {
+    "message": "در حال تازه‌سازی..."
+  },
+  "runtime_loading": {
+    "message": "در حال بارگیری..."
+  },
+  "runtime_models_checking": {
+    "message": "بررسی مدل‌های سازگار در Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "بارگیری مدل‌های سازگار..."
+  },
+  "runtime_models_load_failed": {
+    "message": "مدل‌های سازگار بارگیری نشدند."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini مدل سازگاری برنگرداند."
+  },
+  "runtime_model_not_available": {
+    "message": "مدل انتخابی در فهرست سازگار نیست. مدل دیگری انتخاب کنید."
+  },
+  "runtime_record_key": {
+    "message": "ثبت کلید"
+  },
+  "runtime_recording_cancelled": {
+    "message": "ثبت لغو شد."
+  },
+  "runtime_unknown_key": {
+    "message": "این کلید"
+  },
+  "runtime_press_key": {
+    "message": "کلیدی بزنید..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "یک کلید پشتیبانی‌شده که نویسه نمی‌نویسد فشار دهید. برای لغو Escape را بزنید."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "برای بررسی کلید API ذخیره‌شده مدل‌ها را تازه‌سازی کنید."
+  },
+  "runtime_models_add_key": {
+    "message": "برای بارگیری مدل‌های سازگار کلید API اضافه کنید."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "افزونه نتوانست وضعیت ذخیره‌شده را بارگیری کند."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini کلید API ذخیره‌شده را رد کرد. عوضش کنید یا مدل‌ها را برای بررسی دوباره تازه‌سازی کنید."
+  },
+  "runtime_settings_reopen": {
+    "message": "تنظیمات بارگیری نشد. برای تلاش دوباره آن را باز کنید."
+  },
+  "runtime_settings_load_failed": {
+    "message": "تنظیمات بارگیری نشد. تنظیمات ذخیره‌شده را دوباره بارگیری کنید. ذخیره برای محافظت از انتخاب‌های شما غیرفعال است."
+  },
+  "runtime_setup_load_failed": {
+    "message": "وضعیت راه‌اندازی بارگیری نشد."
+  },
+  "runtime_key_no_spaces": {
+    "message": "یک کلید API کامل بدون فاصله وارد کنید."
+  },
+  "runtime_key_use_remove": {
+    "message": "برای حذف کلید از حذف کلید ذخیره‌شده استفاده کنید."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "پیش از ذخیره کلید API، اشتراک‌گذاری داده را در بالا بپذیرید."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "ذخیره کلید API رمزگذاری‌شده..."
+  },
+  "runtime_key_save_failed": {
+    "message": "کلید API خوانده یا ذخیره نشد. ورودی حفظ شده است. برای تلاش دوباره ذخیره تنظیمات را بزنید."
+  },
+  "runtime_connecting_google": {
+    "message": "اتصال به Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "توقف اتصال‌ها به Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "رضایت داده ذخیره نشد. دوباره تلاش کنید."
+  },
+  "runtime_key_removing": {
+    "message": "حذف کلید ذخیره‌شده..."
+  },
+  "runtime_key_removed": {
+    "message": "کلید ذخیره‌شده حذف شد. پس از پذیرش اشتراک‌گذاری می‌توانید کلید جدید اضافه کنید."
+  },
+  "runtime_key_remove_failed": {
+    "message": "کلید ذخیره‌شده حذف نشد. دوباره تلاش کنید."
+  },
+  "runtime_saving": {
+    "message": "در حال ذخیره..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "زبان و مدل معتبر انتخاب کنید."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "کلید اجرای پشتیبانی‌شده یا خاموش را انتخاب کنید."
+  },
+  "runtime_choose_listed_model": {
+    "message": "مدلی از فهرست سازگار فعلی انتخاب کنید."
+  },
+  "runtime_preferences_saving": {
+    "message": "ذخیره تنظیمات..."
+  },
+  "runtime_preferences_saved": {
+    "message": "تنظیمات ذخیره شد."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "تنظیمات ذخیره شد. برای تکمیل راه‌اندازی کلید API اضافه کنید."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "تنظیمات خوانده یا ذخیره نشد. ویرایش‌ها باقی هستند. دوباره تلاش کنید."
+  },
+  "runtime_key_will_save": {
+    "message": "کلید API خودکار ذخیره می‌شود."
+  },
+  "runtime_key_finish_entry": {
+    "message": "وارد کردن کلید API را تمام کنید."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "ذخیره کلید API را برای بارگیری مدل‌های سازگار تمام کنید."
+  },
+  "runtime_recommended_selected": {
+    "message": "مدل پیشنهادی انتخاب شد. برای استفاده، انتخابتان را ذخیره کنید."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "پس از ذخیره، کلید اجرا خاموش خواهد بود."
+  },
+  "runtime_connection_changed": {
+    "message": "تنظیمات اتصال تغییر کرد. بررسی تنظیمات ذخیره‌شده..."
+  },
+  "runtime_models_changed": {
+    "message": "فهرست مدل‌ها تغییر کرد. بررسی مدل‌های سازگار..."
+  },
+  "runtime_no_translation": {
+    "message": "هنوز ترجمه‌ای نیست."
+  },
+  "runtime_start_setup": {
+    "message": "شروع راه‌اندازی"
+  },
+  "runtime_settings": {
+    "message": "تنظیمات"
+  },
+  "runtime_key_rejected": {
+    "message": "کلید رد شد"
+  },
+  "runtime_setup_required": {
+    "message": "راه‌اندازی لازم است"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "برای شروع ترجمه، کلید API را در تنظیمات اضافه کنید."
+  },
+  "runtime_add_key": {
+    "message": "افزودن کلید API"
+  },
+  "runtime_finish_model_language": {
+    "message": "کلید ذخیره شد. تنظیمات را باز کنید تا مدل را بررسی و انتخاب زبان را کامل کنید."
+  },
+  "runtime_check_setup": {
+    "message": "بررسی راه‌اندازی"
+  },
+  "runtime_translating": {
+    "message": "در حال ترجمه"
+  },
+  "runtime_error": {
+    "message": "خطا"
+  },
+  "runtime_ready": {
+    "message": "آماده"
+  },
+  "runtime_status_load_failed": {
+    "message": "وضعیت افزونه بارگیری نشد. افزونه را دوباره بارگیری و سپس صفحه را تازه‌سازی کنید."
+  },
+  "runtime_copied": {
+    "message": "کپی شد."
+  },
+  "runtime_copy_blocked": {
+    "message": "کپی مسدود شد. متن نتیجه را انتخاب و کپی کنید."
+  },
+  "runtime_settings_open_failed": {
+    "message": "تنظیمات باز نشد. دوباره تلاش کنید."
+  },
+  "runtime_translating_progress": {
+    "message": "در حال ترجمه..."
+  },
+  "runtime_translation_started": {
+    "message": "ترجمه شروع شد."
+  },
+  "runtime_translation_complete": {
+    "message": "ترجمه کامل شد."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "ترجمه کامل شد. از متن نتیجه یا کنترل‌های کارت استفاده کنید."
+  },
+  "runtime_translation": {
+    "message": "ترجمه"
+  },
+  "runtime_target_language": {
+    "message": "زبان مقصد"
+  },
+  "runtime_card_target_language": {
+    "message": "زبان مقصد این کارت"
+  },
+  "runtime_close_card": {
+    "message": "بستن کارت ترجمه"
+  },
+  "runtime_translated_text": {
+    "message": "متن ترجمه‌شده"
+  },
+  "runtime_retry": {
+    "message": "تلاش دوباره"
+  },
+  "runtime_copy": {
+    "message": "کپی"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "تنظیمات باز نشد. از نوار ابزار افزونه استفاده کنید."
+  },
+  "runtime_copy_failed": {
+    "message": "کپی شکست خورد. متن نتیجه را انتخاب و کپی کنید."
+  },
+  "runtime_context_menu": {
+    "message": "ترجمه متن انتخابی"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (در فهرست فعلی نیست)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (هنوز بررسی نشده)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "استفاده از فهرست مدل ذخیره‌شده از $value1$. تازه‌سازی زنده شکست خورد. بعداً تلاش کنید.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "استفاده از فهرست مدل ذخیره‌شده. تازه‌سازی زنده شکست خورد. بعداً تلاش کنید."
+  },
+  "runtime_models_cache_at": {
+    "message": "استفاده از فهرست مدل ذخیره‌شده از $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "استفاده از فهرست مدل ذخیره‌شده."
+  },
+  "runtime_models_updated_at": {
+    "message": "فهرست مدل‌ها از $value1$ به‌روز شد.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "فهرست مدل‌ها به‌روز شد."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ پشتیبانی نمی‌شود. کلید دیگری یا Escape برای لغو بزنید.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "پس از ذخیره $value1$ استفاده خواهد شد.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "حداکثر $value1$ در هر زبانه و $value2$ در مجموع",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ ثانیه",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ برای استفاده از کارت Tab و برای بستن Escape را بزنید.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "ترجمه شکست خورد. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "صفحات باز را تازه‌سازی کنید"
+  },
+  "refresh_message": {
+    "message": "کلید API ذخیره شد. پس از تکمیل راه‌اندازی، صفحاتی را که از قبل باز بودند تازه‌سازی کنید. سپس متن را انتخاب و برای ترجمه Control را بزنید."
+  },
+  "refresh_continue": {
+    "message": "ادامه راه‌اندازی"
+  },
+  "refresh_faq_question": {
+    "message": "چرا باید صفحات باز را تازه‌سازی کنم؟"
+  },
+  "refresh_faq_answer": {
+    "message": "پس از تکمیل راه‌اندازی و پیش از امتحان ترجمه، <1>صفحات باز را تازه‌سازی کنید</1>. Chrome باید افزونه را در صفحاتی بارگیری کند که پیش از نصب یا بارگیری مجدد افزونه باز بودند. صفحات تازه بازشده خودکار آماده‌اند."
+  },
+  "ui_locale": {
+    "message": "fa",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

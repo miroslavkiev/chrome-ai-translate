@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Egyszerű fordítás: jelölje ki a szöveget, és nyomja meg a Control billentyűt. Fordítson a választott nyelvre a Geminivel.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Jelöljön ki szöveget, és próbálja újra."
+  },
+  "error_unsupported_selection": {
+    "message": "Ez a szövegkijelölés nem támogatott."
+  },
+  "error_selection_too_large": {
+    "message": "A kijelölés hosszabb 10 000 karakternél. Jelöljön ki kevesebb szöveget, és próbálja újra."
+  },
+  "error_missing_api_key": {
+    "message": "Adja hozzá Gemini API-kulcsát a Beállításokban."
+  },
+  "error_agreement_required": {
+    "message": "A Google-höz kapcsolódás előtt olvassa el és fogadja el az adatmegosztást a Beállításokban."
+  },
+  "error_credential_conflict": {
+    "message": "A mentett kulcs másik oldalon megváltozott. Újabb próbálkozás előtt töltse újra a mentett beállításokat."
+  },
+  "error_credential_storage_error": {
+    "message": "A mentett kulcs nem nyitható meg. Nyissa meg újra a Beállításokat, vagy törölje a kulcsot és adja meg újra."
+  },
+  "error_missing_target_language": {
+    "message": "A beállítás befejezéséhez válasszon célnyelvet a Beállításokban."
+  },
+  "error_invalid_api_key": {
+    "message": "A Gemini elutasította az API-kulcsot. Ellenőrizze a Beállításokban."
+  },
+  "error_invalid_model": {
+    "message": "Ez a modell nem használható fordításra. Válasszon másik modellt vagy az ajánlott Flash-Lite modellt a Beállításokban."
+  },
+  "error_busy": {
+    "message": "Túl sok fordítás fut. Próbálja újra, ha az egyik befejeződött."
+  },
+  "error_duplicate_request": {
+    "message": "Ennek a kijelölésnek a fordítása már folyamatban van."
+  },
+  "error_rate_limited": {
+    "message": "Elérte a kérési korlátot. Próbálja újra rövidesen."
+  },
+  "error_timeout": {
+    "message": "A fordítás túl sokáig tartott. Újra próbálkozhat."
+  },
+  "error_offline": {
+    "message": "Úgy tűnik, nincs internetkapcsolat. Ellenőrizze a kapcsolatot, és próbálja újra."
+  },
+  "error_network_error": {
+    "message": "A Gemini nem érhető el. Ellenőrizze a kapcsolatot, és próbálja újra."
+  },
+  "error_quota_exceeded": {
+    "message": "Elérte a Gemini-kvótát. Ellenőrizze fiókját, és próbálja később."
+  },
+  "error_service_error": {
+    "message": "A Gemini nem tudta befejezni a fordítást. Próbálja később."
+  },
+  "error_invalid_response": {
+    "message": "A Gemini olvashatatlan választ küldött. Újra próbálkozhat."
+  },
+  "error_output_too_large": {
+    "message": "A fordítás túllépte a kimeneti korlátot. Jelöljön ki kevesebb szöveget, és próbálja újra."
+  },
+  "error_content_blocked": {
+    "message": "A Gemini blokkolta ezt a szöveget. Próbáljon másik kijelölést."
+  },
+  "error_unsupported_page": {
+    "message": "Ezen az oldalon nem érhető el fordítás."
+  },
+  "error_frame_unavailable": {
+    "message": "A kijelölt keret már nem érhető el."
+  },
+  "error_cancelled": {
+    "message": "A fordítás megszakítva."
+  },
+  "key_Off": {
+    "message": "Kikapcsolva"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Próbálja újra $seconds$ másodperc múlva.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Az AI Translator beállításai"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Személyes beállítások gyors, célzott fordításhoz."
+  },
+  "html_help_and_information": {
+    "message": "Súgó és információ"
+  },
+  "html_api_key_guide": {
+    "message": "API-kulcs útmutató"
+  },
+  "html_about": {
+    "message": "Névjegy"
+  },
+  "html_privacy": {
+    "message": "Adatvédelem"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Az AI Translator beállítása"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Kövesse ezeket a lépéseket a Beállításokban. A fordításhoz saját Google API-kulcsra van szüksége."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Szerezzen saját API-kulcsot.</1> Nyissa meg a <2>Google AI Studio</2> oldalát, jelentkezzen be, és hozzon létre kulcsot. Olvassa el alább az adatmegosztást, majd illessze be a kulcsot. Segítségért <3>olvassa el a részletes útmutatót</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Válasszon célnyelvet és modellt.</1> Válassza ki a fordítás nyelvét. A Gemini Flash-Lite modellt ajánljuk, ha elérhető a listájában."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Mentse el, és kezdjen fordítani.</1> Válassza a Beállítás befejezése lehetőséget az oldal alján. Jelöljön ki szöveget egy weboldalon, és nyomja meg a Control billentyűt, vagy válassza a Kijelölt szöveg fordítása lehetőséget a jobb gombos menüben."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Csatlakoztassa saját Gemini API-kulcsát, és válasszon kompatibilis modellt."
+  },
+  "html_loading_setup_state": {
+    "message": "Beállítási állapot betöltése..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "A Google-höz kapcsolódás előtt"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "A Google megkapja az API-kulcsot az elérhető modellek ellenőrzéséhez. Fordítás kérésekor megkapja a kijelölt szöveget és a célnyelvet is, a helyi fájlok szövegét is beleértve. Az AI-fordítások hibásak lehetnek."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "A kulcs titkosítva tárolódik ebben a Chrome-profilban, és újraindítás után automatikusan megnyílik. Külön jelszó nem kell. A böngészőprofilhoz teljes hozzáféréssel rendelkező személy mégis visszanyerheti. <1>Olvassa el az adatvédelmi részleteket</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Minden országban kötelező:</1> <2>aktív számlázású</2> projekt Gemini API-kulcsát használja. Tartsa kikapcsolva a <3>bővítmény kérésnaplóinak és adatkészleteinek opcionális megosztását a Google-lel</3>. Ezekkel a beállításokkal a Google fizetős feltételei kizárják a kérések és válaszok termékfejlesztési használatát; a biztonsági és jogi feldolgozás továbbra is érvényes. A bővítmény ingyenes, de Google API-díjak felmerülhetnek."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Használati feltételek.</1> A Gemini bővítményen keresztüli használatával elfogadja a fenti követelményeket és a <2>Google feltételeit</2>. A használat legalább 18 éveseknek, szakmai vagy üzleti célra engedélyezett a <3>támogatott régiókban</3>. A bővítmény nem ellenőrzi a számlázási vagy megosztási beállításokat."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Elfogadás és kapcsolódás a Google-höz"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Adatmegosztási hozzájárulás visszavonása"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Kapcsolódás előtt olvassa el az adatmegosztás részleteit."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Miért szükségesek ezek a követelmények? Olvassa el a gyakori kérdéseket</1>."
+  },
+  "html_api_key": {
+    "message": "API-kulcs"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Elfogadás után illesszen be kulcsot: titkosítva mentjük, és a modellek automatikusan betöltődnek."
+  },
+  "html_show": {
+    "message": "Megjelenítés"
+  },
+  "html_remove_saved_key": {
+    "message": "Mentett kulcs törlése"
+  },
+  "html_model": {
+    "message": "Modell"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Az ismerten csak médiához és különleges célokhoz használható modellek rejtve vannak."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "A Gemini Flash-Lite családot ajánljuk. Ehhez a 2026. szeptemberi kiadáshoz a Gemini 3.5 Flash-Lite modellt választottuk. Választhat másikat a listáról. Egyes modellek nem működhetnek a bővítménnyel. Hiba esetén válasszon másik vagy ajánlott modellt."
+  },
+  "html_refresh_models": {
+    "message": "Modellek frissítése"
+  },
+  "html_use_recommended_model": {
+    "message": "Ajánlott modell használata"
+  },
+  "html_translation": {
+    "message": "Fordítás"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Állítsa be a nyelvet és az opcionális indítóbillentyűt."
+  },
+  "html_default_language": {
+    "message": "Alapértelmezett nyelv"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Egy eredménykártya más nyelvet is használhat az alapértelmezés módosítása nélkül."
+  },
+  "html_keyboard_trigger": {
+    "message": "Indítóbillentyű"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Az egyetlen billentyűből álló gyorsbillentyűk ütközhetnek webhelyekkel vagy akadálymentesítő eszközökkel. Válassza a Kikapcsolva lehetőséget, ha csak a helyi menüt használja."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Billentyű rögzítése"
+  },
+  "html_off": {
+    "message": "Kikapcsolva"
+  },
+  "html_behavior": {
+    "message": "Működés"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Rögzített védelmi korlátok biztosítják a gyors fordítást és óvják az API-kvótát."
+  },
+  "html_parallel_requests": {
+    "message": "Párhuzamos kérések"
+  },
+  "html_request_timeout": {
+    "message": "Kérés időkorlátja"
+  },
+  "html_page_access": {
+    "message": "Oldalelérés"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Helyi fájlokhoz engedélyezze a fájl-URL-ek elérését a bővítmény kezelésében"
+  },
+  "html_help_and_recovery": {
+    "message": "Súgó és helyreállítás"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Ha egy modell nem érhető el, frissítse a modelleket, válasszon egyet, és mentse a beállításokat. Ha a lista nem töltődik be, ellenőrizze a kulcsot és a kapcsolatot, majd válassza a Modellek frissítése lehetőséget."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "A Chrome beállítási oldalai és a Chrome Web Store nem engedélyeznek fordítást. Helyi fájlokhoz engedélyezze a fájl-URL-ek elérését a bővítmény kezelésében. Frissítés vagy újratöltés után frissítse a nyitott weboldalakat. Az újratöltés megszakíthatja a fordítást."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "A fordításhoz internet kell. A fenti elfogadás után a kulcs közvetlenül a Google-höz kerül modellellenőrzésre. A kijelölt szöveg, a helyi fájloké is, csak fordításkéréskor kerül elküldésre a célnyelvvel. A mentett kulcs ebben a Chrome-profilban titkosított. A nyelv, modell és billentyű szinkronizálható a Chrome-mal. A bővítmény csak az aktuális munkamenet utolsó eredményét tárolja, fordítási előzményeket nem."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Fent megtekintheti az adatmegosztást, és bármikor visszavonhatja hozzájárulását. A modellellenőrzés és fordítás újabb elfogadásig leáll. A kulcs megmarad, amíg nem választja a Mentett kulcs törlése lehetőséget."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Itt menthetők a nyelv, modell és indítóbillentyű változásai."
+  },
+  "html_reload_saved_settings": {
+    "message": "Mentett beállítások újratöltése"
+  },
+  "html_save_preferences": {
+    "message": "Beállítások mentése"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini-fordítás"
+  },
+  "html_setup_required": {
+    "message": "Beállítás szükséges"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Üdvözli az AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Fordítsa a kijelölt szöveget ismert nyelvre. Az induláshoz ezt a két dolgot állítsa be:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Saját Gemini API-kulcs.</1> Szerezzen kulcsot a Google AI Studio szolgáltatásban. Útmutatónk bemutatja a lépéseket."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Célnyelv.</1> Válassza ki, melyik nyelven szeretne olvasni."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API-kulcs beszerzése"
+  },
+  "html_extension_status": {
+    "message": "Bővítmény állapota"
+  },
+  "html_active_translations": {
+    "message": "Aktív fordítások"
+  },
+  "html_latest_this_session": {
+    "message": "Legutóbbi ebben a munkamenetben"
+  },
+  "html_no_translation_yet": {
+    "message": "Még nincs fordítás."
+  },
+  "html_copy": {
+    "message": "Másolás"
+  },
+  "html_settings": {
+    "message": "Beállítások"
+  },
+  "html_key_guide": {
+    "message": "Kulcsútmutató"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Első lépések az AI Translatorral"
+  },
+  "html_extension_pages": {
+    "message": "Bővítményoldalak"
+  },
+  "html_faq": {
+    "message": "Gyakori kérdések"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Szerezzen saját Google API-kulcsot, válasszon nyelvet, és fordítsa le első kijelölését."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Szerezzen API-kulcsot"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Az API-kulccsal a bővítmény a Google-fiókján keresztül használhatja a Geminit. Tartsa titokban, mint egy jelszót."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "A bővítmény legalább 18 éveseknek, munka vagy üzleti használatra készült a <1>Google által támogatott országokban és régiókban</1>. A kulcsnak minden országban aktív számlázású Gemini-projekthez kell tartoznia. A kérésnaplók és adatkészletek opcionális Google-megosztását tartsa kikapcsolva."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "A használattal elfogadja ezeket a feltételeket, a <1>Google API feltételeit</1> és a <2>Gemini API kiegészítő feltételeit</2>. Ne használja, ha nem tudja teljesíteni őket. A bővítmény ezt nem ellenőrzi, és nem kér személyazonosító dokumentumokat."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio megnyitása"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Jelentkezzen be Google-fiókjába. Fogadja el a Google feltételeit, ha erre kérik."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Kulcs létrehozása vagy kiválasztása"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Az API-kulcsok oldalon válassza az <1>API-kulcs létrehozása</1> lehetőséget, és kövesse a Google lépéseit a projekt kiválasztásához vagy létrehozásához. A projekt összefogja az API-használatot és számlázást. Ha új az AI Studióban, lehet, hogy a Google már létrehozott alapértelmezett projektet és kulcsot."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Ha meglévő projektje hiányzik, nyissa meg az <1>Irányítópult > Projektek > Projektek importálása</1> pontot. Importálja a projektet, majd térjen vissza az API-kulcsokhoz."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Használat előtt a <1>Google számlázási útmutatója</1> alapján ellenőrizze a projekt aktív számlázását. A fizetős Gemini-alkalmazás előfizetése nem helyettesíti az API-projekt számlázását. Tartsa kikapcsolva a naplók és adatkészletek opcionális megosztását; olvassa el a <2>Google naplómegosztási szabályzatát</2>. A projekt saját naplózása különbözik a megosztástól."
+  },
+  "html_copy_your_key": {
+    "message": "Kulcs másolása"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Másolja ki a kulcsot az AI Studióból. Térjen vissza a bővítmény Beállításaiba, és olvassa el az adatmegosztást. Válassza az <1>Elfogadás és kapcsolódás a Google-höz</1> lehetőséget, majd illessze a kulcsot az <2>API-kulcs</2> mezőbe. Automatikusan titkosítva mentődik, és betöltődik a modelllista. Várja meg az eredményt a folytatás előtt."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator beállítások adatmegosztási értesítéssel és elfogadógombbal az üres API-kulcsmező és a Flash-Lite-ajánlás felett."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "A példa angol nyelvű. Az AI Translatorban előbb fogadja el az adatmegosztást, majd illessze be saját kulcsát. A modelllista a titkosított kulcs mentése után ellenőrződik."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "A Google megváltoztathatja ezeket a képernyőket. A friss lépésekért vagy kulcshibákhoz olvassa el a <1>Google API-kulcs útmutatóját</1>. Ha régi kulcsa nem működik, használjon újat az AI Studióból."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Válassza ki a fordítási beállításokat"
+  },
+  "html_choose_a_model": {
+    "message": "Modell választása"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "A Gemini Flash-Lite családot ajánljuk. Ehhez a 2026. szeptemberi kiadáshoz a <1>Gemini 3.5 Flash-Lite</1> modellt választottuk. Használja, ha elérhető a listájában."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Választhat másik modellt a listából. Egyes modellek nem működhetnek a bővítménnyel. Hiba esetén válasszon másikat vagy az ajánlottat."
+  },
+  "html_choose_your_target_language": {
+    "message": "Válassza ki a célnyelvet"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Az <1>Alapértelmezett nyelv</1> alatt válassza ki, melyik nyelven szeretne olvasni. A választék a <2>Google által dokumentált Gemini-nyelveket</2> követi. A fordítás minősége nyelv és szöveg szerint változhat."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator fordítási beállítások célnyelvválasztással és indítóbillentyű-vezérlőkkel."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "A példa angol nyelvű. Válassza ki a fordítás nyelvét, majd fejezze be a beállítást."
+  },
+  "html_finish_setup": {
+    "message": "Beállítás befejezése"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Tartsa meg a Control billentyűt, rögzítsen másikat, vagy válassza a <1>Kikapcsolva</1> állapotot csak a jobb gombos menühöz. A Beállítások alján válassza a <2>Beállítás befejezése</2> gombot. Később a <3>Beállítások mentése</3> gombbal módosíthatja választását."
+  },
+  "html_open_settings": {
+    "message": "Beállítások megnyitása"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Fordítsa le első kijelölését"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Nyisson meg egy normál weboldalt, és jelöljön ki rövid szöveget. Jobb kattintással válassza a <1>Kijelölt szöveg fordítása</1> lehetőséget, vagy nyomja meg és engedje fel a kiválasztott billentyűt. Az eredmény a kijelölés mellett jelenik meg."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Ha a bővítményt most telepítette vagy töltötte újra, előbb frissítse a weboldalt. A Chrome-beállítások, a Chrome Web Store és a beépített PDF-megjelenítő nem engednek fordítást."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Az eszköztár felugró ablaka a legutóbbi eredményt mutatja. Beállítás után a szokásos nézet nyílik meg. A kulcs törlésekor ismét megjelenik a kezdőútmutató."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Gyakori kérdések: kulcsok, költségek és adatvédelem"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Miért kell saját API-kulcs?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "A bővítmény saját kulcsával közvetlenül az Ön Google-projektjébe küldi a kéréseket. Ez tervezési döntés, nem Chrome-szabály. A kulcs engedélyezi a kéréseket, és a használathoz, számlázáshoz köti őket. Soha ne ossza meg képernyőképen vagy nyilvános üzenetben. Lásd a <1>Google API-kulcs útmutatóját</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Miért kötelező az aktív számlázás, és nem csak ajánlott?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "A <1>Chrome korlátozott használati szabályainak 3. és 5. pontja</1> az adatfelhasználást a bővítmény céljára és kapcsolódó műveletekre korlátozza. Néhány ingyenes Gemini-használat szélesebb tanítást és emberi ellenőrzést enged. A fizetős feltételek kizárják a termékfejlesztést, de korlátozott biztonsági és jogi tárolást, valamint EU-n kívüli feldolgozást megengednek."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Az ellentmondás kezelésére a fejlesztő világszerte aktív projektszámlázást ír elő. Az ajánlás továbbra is engedné az ingyenes használatot. A Google regionális szabálya fizetős szolgáltatást ír elő az Európai Gazdasági Térségben, az Egyesült Királyságban és Svájcban kínált alkalmazásokhoz. Lásd a <1>Gemini feltételeit: használati korlátozások, ingyenes és fizetős szolgáltatások</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Miért kell kikapcsolva maradnia az opcionális Google-megosztásnak?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Naplók és adatkészletek megosztása aktív számlázás mellett is engedhet tanítást és emberi ellenőrzést. Ne adja át a bővítmény adatait adatkészlet-megosztással vagy visszajelzéssel. Saját projekt privát naplózását ez a szabály megengedi. Lásd a <1>Google naplózási szabályzatát: megosztható adatok és felhasználásuk</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Ingyenes a bővítmény, ha fizetős API-hozzáférés kell?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Igen. A bővítmény ingyenes, de Google API-díjak felmerülhetnek. A fizetős Gemini-alkalmazás előfizetése nem helyettesíti a projekt API-számlázását. Lásd a <1>számlázás ellenőrzését</1> és a <2>Google API árait</2>. A bővítmény nem ellenőrzi a számlázást vagy megosztást."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Miért kell az Elfogadás és kapcsolódás a Google-höz gomb?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "A <1>Chrome tájékoztatási követelményeinek 1. és 2. pontja</1> világos adatfelhasználási tájékoztatást és tájékozott hozzájárulást kér. Gombunkkal bármely Google API-kérés előtt dönthet. Nem ellenőrzi a személyazonosságot vagy számlázást, és nem ad engedélyt mások magánadatainak megosztására."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Pontosan mi kerül a Google-höz?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "A modellellenőrzések a kulcsot küldik, és elérhető modelleket kérnek. A fordítás a kijelölt szöveget, célnyelvet, modellt és fordítási utasításokat küldi, a helyi fájlok kijelölt szövegét is. A bővítmény nem adja hozzá a teljes oldalt, címet vagy böngészési előzményeket. A Google kapcsolati adatokat, például IP-címet is kap. A fejlesztő nem kapja meg e kéréseket. Csak megosztható szöveget küldjön."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Hogyan tárolódik és nyílik meg automatikusan a kulcs?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Az API-kulcs titkosítva mentődik. A titkosítókulccsal együtt ebben a Chrome-profilban marad az újraindítás utáni automatikus használathoz. Nem szinkronizálódnak. A profilhoz hozzáférő személy mégis visszanyerheti az API-kulcsot. Ez nem rendszerkulcstartó vagy jelszavas széf. A nyelv, modell és billentyű szinkronizálható. Csak az utolsó eredmény marad a munkamenetre; nincs analitika vagy fordítási előzmény."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Frissítéskor a régi kulcs titkosítása és ellenőrzése megelőzi a titkosítatlan másolatok törlését. Hiba esetén a régi másolat megmarad, a kérések blokkolva maradnak. A Beállítások magyarázzák a hibát. A régi kulcs áthelyezése nem kerüli meg a hozzájárulást."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Visszavonhatom a hozzájárulást vagy törölhetem a kulcsot?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "A <1>Beállításokban</1> az <2>Adatmegosztási hozzájárulás visszavonása</2> blokkolja az új kéréseket és helyben megszakítja az aktívakat, megtartva a kulcsot és beállításokat. A <3>Mentett kulcs törlése</3> törli a kulcsot, titkosítókulcsát és a modellgyorsítótárat. Egyik sem vonja vissza az elküldött adatokat, és nem garantálja az elküldött kérés ingyenességét. Vonja vissza a kulcsot az AI Studióban, hogy a Google-nél is letiltsa."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "A hozzájárulás rendes újraindítás és frissítés során megmarad. Ha az értesítés változik, a kérések az újabb elolvasásig és elfogadásig várnak."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Miért felnőtteknek és munka vagy üzleti célra készült?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "A Google legalább 18 éves kort és szakmai vagy üzleti használatot ír elő a támogatott régiókban. Lásd a <1>Gemini feltételeit: korhatár és használati korlátozások</1>, valamint az <2>elérhető régiókat</2>. Nincs külön jogosultsági jelölőnégyzet vagy személyazonosság-ellenőrzés."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Miért kell adatvédelmi szabályzat is az értesítés mellett?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Az értesítés kapcsolódás előtt magyarázza a választást. A szabályzat teljes adat-, tárolási és törlési részleteket ad. A <1>Chrome adatvédelmi szabályai</1> ezt előírják a felhasználói adatokat kezelő bővítményeknek. Olvassa el <2>adatvédelmi szabályzatunkat</2>. Az értesítések nem jelentik a Google jóváhagyását."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Az AI-fordítások hibásak lehetnek. Fontos megfogalmazást ellenőrizzen, mielőtt rá hagyatkozik."
+  },
+  "html_about_ai_translator": {
+    "message": "Az AI Translator névjegye"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Egyszerű fordítás: jelölje ki a szöveget, és nyomja meg a Control billentyűt."
+  },
+  "html_made_for_people": {
+    "message": "Embereknek készült"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Az AI Translatort azért készítettem, hogy segítsek az embereknek olvasni, tanulni és nyelveken át kapcsolódni. Remélem, világszerte hasznos lesz."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "A bővítmény saját Google Gemini API-kulcsával fordítja le a kijelölt szöveget. Ön dönti el, mit küld és milyen nyelven olvas."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "A kijelölés fordításához nyomja meg és engedje fel a Control billentyűt. Ez az alapértelmezett, és a Beállításokban módosítható. Az oldal jobb gombos menüje is használható."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Kézzel csak Macen tesztelve. Windows és Linux rendszeren nem történt kézi teszt."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Forráskód és projektútmutató megtekintése</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Segítségkérés vagy hibajelentés</1>. A bejelentések nyilvánosak. Ne adjon meg API-kulcsot, magánszöveget vagy személyes adatot."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Ha támogatná a munkámat"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Kérem, támogassa hazámat, Ukrajnát, amely az orosz agresszió ellen védekezik."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Megbízom a Sternenko Közösségi Alapítványban. Ha tud és szeretne segíteni, adományozhat a hivatalos weboldalán."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Ukrajna támogatása az alapítványon keresztül</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "A támogatás önkéntes, a bővítmény használatához sosem szükséges. A hivatkozás külső weboldalt nyit. Az adományok az alapítványon keresztül mennek, nem a bővítményen."
+  },
+  "html_privacy_and_costs": {
+    "message": "Adatvédelem és költségek"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Az API-kulcs ezen az eszközön titkosított, és nem szinkronizálódik. Rendes Chrome-újraindítás után feloldó jelszó nélkül elérhető marad. A böngészőprofilhoz hozzáférő személy mégis visszanyerheti."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Az első Google-kérés előtt a Beállítások elmagyarázzák az adatmegosztást, és kérik az <1>Elfogadás és kapcsolódás a Google-höz</1> választást. Ezután a kijelölt szöveg csak kért fordításkor megy közvetlenül a Google-höz. A modellellenőrzés kulcsot küld, de kijelölt szöveget nem. Nincs analitika, reklám vagy fordítási előzmény."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Bármikor nézze meg a részleteket a <1>Beállításokban</1>. Az új kérések leállításához és a titkosított kulcs megtartásához válassza az <2>Adatmegosztási hozzájárulás visszavonása</2>, a kulcs és modellgyorsítótár törléséhez a <3>Mentett kulcs törlése</3> lehetőséget. Az elküldött adatok nem vonhatók vissza."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "A fordításokat AI készíti, és hibásak lehetnek. Ellenőrizze a fontos megfogalmazást, mielőtt használja."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Olvassa el az adatvédelmi részleteket</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "Az AI Translator ingyenes, független projekt. Google API-díjak felmerülhetnek. Minden országban <1>aktív számlázású</1> projekt Gemini API-kulcsát használja, és tartsa kikapcsolva a <2>bővítmény kérésnaplóinak és adatkészleteinek opcionális Google-megosztását</2>. E beállításokkal a Google fizetős feltételei kizárják a kérések és válaszok termékfejlesztési használatát; a biztonsági és jogi feldolgozás marad. Olvassa el a <3>Google árait és adatfelhasználási tájékoztatóját</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "A bővítmény legalább 18 éveseknek, munkára vagy üzleti célra készült a <1>Google által támogatott régiókban</1>. A használattal elfogadja e feltételeket, a <2>Google API feltételeit</2> és a <3>Gemini API kiegészítő feltételeit</3>. Ne használja, ha nem teljesítheti őket. Nincs jogosultsági jelölőnégyzet vagy személyazonosítás. A bővítmény nem ellenőrzi a számlázást vagy megosztást."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Nem mentett módosítások."
+  },
+  "runtime_settings_conflict": {
+    "message": "A beállítások másik oldalon változtak. Szerkesztései itt megmaradnak. A mentett beállítások újratöltésével elvetheti szerkesztéseit és használhatja a mentett értékeket."
+  },
+  "runtime_preferences_current": {
+    "message": "A beállítások naprakészek."
+  },
+  "runtime_key_cannot_open": {
+    "message": "A mentett kulcs nem nyitható meg. Nyissa meg újra a Beállításokat, vagy törölje és adja meg újra."
+  },
+  "runtime_key_conflict": {
+    "message": "Az API-kulcs másik oldalon változott. Kulcsmentés előtt töltse újra a mentett beállításokat."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Kulcsa titkosítva mentve. Fogadja el az adatmegosztást a Google-höz kapcsolódás előtt."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Az API-kulcs hozzáadása előtt fogadja el fent az adatmegosztást."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "A Gemini elutasította a mentett kulcsot. Cserélje le, vagy a Modellek frissítése gombbal ellenőrizze újra."
+  },
+  "runtime_paste_key": {
+    "message": "Illesszen be API-kulcsot a Gemini kapcsolásához."
+  },
+  "runtime_key_checked": {
+    "message": "API-kulcs mentve. A Gemini elfogadta a legutóbbi modelllista-ellenőrzéskor."
+  },
+  "runtime_key_saved_check": {
+    "message": "Az API-kulcs titkosítva mentve ezen az eszközön. Frissítse a modelleket a Gemini-ellenőrzéshez."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Visszavonás újrapróbálása"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Adatmegosztási hozzájárulás visszavonása"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "A visszavonás nincs megerősítve. Próbálja újra a választás mentéséhez."
+  },
+  "runtime_agreement_saved": {
+    "message": "Adatmegosztás elfogadva ehhez a Chrome-profilhoz. Bármikor visszavonhatja."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Elfogadásig nincs kapcsolat a Google-lel. Visszavonáskor a mentett kulcs megmarad."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "A Gemini elutasította a mentett kulcsot. Cserélje le alább."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Kulcsa titkosítva mentve ezen az eszközön."
+  },
+  "runtime_setup_create_key": {
+    "message": "Hozzon létre saját kulcsot a Google AI Studióban."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Nyelv kiválasztva. Fejezze be a beállítást választásai mentéséhez."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Válasszon alább célnyelvet."
+  },
+  "runtime_finish_setup": {
+    "message": "Beállítás befejezése"
+  },
+  "runtime_save_preferences": {
+    "message": "Beállítások mentése"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Adjon meg API-kulcsot, ellenőrizze a modelllistát, és mentse a modellválasztást."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Fordítás előtt oldja fel a beállításütközést."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Olvassa el és fogadja el az adatmegosztást a Google-höz kapcsolódás előtt."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "A beállítás ellenőrzése előtt fejezze be az API-kulcs mentését."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "A beállítás figyelmet igényel: a Gemini elutasította a mentett API-kulcsot."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Kulcs mentve. Válasszon célnyelvet, majd fejezze be a beállítást."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Válasszon elérhető modellt, és mentse a beállításokat."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Modell kiválasztva. Használatához mentse a beállításokat."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Kulcs és nyelv kész. Fejezze be a beállítást a mentéshez, majd próbáljon fordítani. A modellelérés és kvóta még változhat."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Készen áll a fordítás próbájára. A mentett modell az ellenőrzött listán van; a kérési hozzáférés és kvóta még változhat."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Kulcs mentve. Frissítse a modelleket a kulcs és modell ellenőrzéséhez."
+  },
+  "runtime_show_key": {
+    "message": "Megjelenítés"
+  },
+  "runtime_hide_key": {
+    "message": "Elrejtés"
+  },
+  "runtime_choose_target_language": {
+    "message": "Válasszon célnyelvet"
+  },
+  "runtime_background_no_response": {
+    "message": "A bővítmény háttérfolyamata nem válaszolt. Töltse újra a bővítményt, és próbálja újra."
+  },
+  "runtime_refresh_models": {
+    "message": "Modellek frissítése"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Modelleket csak az adatmegosztás elfogadása után tölthet be."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Modellfrissítés előtt fejezze be az API-kulcs mentését."
+  },
+  "runtime_refreshing": {
+    "message": "Frissítés..."
+  },
+  "runtime_loading": {
+    "message": "Betöltés..."
+  },
+  "runtime_models_checking": {
+    "message": "Kompatibilis Gemini-modellek ellenőrzése..."
+  },
+  "runtime_models_loading": {
+    "message": "Kompatibilis modellek betöltése..."
+  },
+  "runtime_models_load_failed": {
+    "message": "A kompatibilis modellek nem tölthetők be."
+  },
+  "runtime_models_empty": {
+    "message": "A Gemini nem adott kompatibilis modellt."
+  },
+  "runtime_model_not_available": {
+    "message": "A kiválasztott modell nincs a kompatibilis listán. Válasszon másikat."
+  },
+  "runtime_record_key": {
+    "message": "Billentyű rögzítése"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Rögzítés megszakítva."
+  },
+  "runtime_unknown_key": {
+    "message": "Ez a billentyű"
+  },
+  "runtime_press_key": {
+    "message": "Nyomjon meg egy billentyűt..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Nyomjon meg egy támogatott, nem karaktert beíró billentyűt. Az Escape megszakítja."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Frissítse a modelleket a mentett API-kulcs ellenőrzéséhez."
+  },
+  "runtime_models_add_key": {
+    "message": "Kompatibilis modellek betöltéséhez adjon hozzá API-kulcsot."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "A bővítmény nem tudta betölteni a mentett állapotot."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "A Gemini elutasította a mentett API-kulcsot. Cserélje le vagy frissítse a modelleket új ellenőrzéshez."
+  },
+  "runtime_settings_reopen": {
+    "message": "A beállítások nem tölthetők be. Nyissa meg őket újra az újabb próbához."
+  },
+  "runtime_settings_load_failed": {
+    "message": "A beállítások nem tölthetők be. Töltse újra a mentett beállításokat az újabb próbához. A mentés tiltott a mentett választások védelmében."
+  },
+  "runtime_setup_load_failed": {
+    "message": "A beállítási állapot nem tölthető be."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Adjon meg teljes API-kulcsot szóközök nélkül."
+  },
+  "runtime_key_use_remove": {
+    "message": "A kulcs törléséhez használja a Mentett kulcs törlése lehetőséget."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API-kulcs mentése előtt fogadja el fent az adatmegosztást."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API-kulcs titkosított mentése..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Az API-kulcs nem olvasható vagy menthető. A bevitt érték megmarad. A Beállítások mentése gombbal próbálja újra."
+  },
+  "runtime_connecting_google": {
+    "message": "Kapcsolódás a Google-höz..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google-kapcsolatok leállítása..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Az adathozzájárulás nem menthető. Próbálja újra."
+  },
+  "runtime_key_removing": {
+    "message": "Mentett kulcs törlése..."
+  },
+  "runtime_key_removed": {
+    "message": "Mentett kulcs törölve. Adatmegosztás elfogadása után adhat hozzá újat."
+  },
+  "runtime_key_remove_failed": {
+    "message": "A mentett kulcs nem törölhető. Próbálja újra."
+  },
+  "runtime_saving": {
+    "message": "Mentés..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Válasszon érvényes nyelvet és modellt."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Válasszon támogatott indítóbillentyűt vagy a Kikapcsolva lehetőséget."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Válasszon modellt a jelenlegi kompatibilis listából."
+  },
+  "runtime_preferences_saving": {
+    "message": "Beállítások mentése..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Beállítások mentve."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Beállítások mentve. Adja meg API-kulcsát a beállítás befejezéséhez."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "A beállítások nem olvashatók vagy menthetők. Szerkesztései megmaradnak. Próbálja újra."
+  },
+  "runtime_key_will_save": {
+    "message": "Az API-kulcs automatikusan mentődik."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Fejezze be az API-kulcs megadását."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Kompatibilis modellek betöltéséhez fejezze be az API-kulcs mentését."
+  },
+  "runtime_recommended_selected": {
+    "message": "Ajánlott modell kiválasztva. Mentse választását a használathoz."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Mentés után az indítóbillentyű kikapcsol."
+  },
+  "runtime_connection_changed": {
+    "message": "A kapcsolati beállítások változtak. Mentett beállítások ellenőrzése..."
+  },
+  "runtime_models_changed": {
+    "message": "A modelllista változott. Kompatibilis modellek ellenőrzése..."
+  },
+  "runtime_no_translation": {
+    "message": "Még nincs fordítás."
+  },
+  "runtime_start_setup": {
+    "message": "Beállítás indítása"
+  },
+  "runtime_settings": {
+    "message": "Beállítások"
+  },
+  "runtime_key_rejected": {
+    "message": "Kulcs elutasítva"
+  },
+  "runtime_setup_required": {
+    "message": "Beállítás szükséges"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Adjon meg API-kulcsot a Beállításokban a fordítás megkezdéséhez."
+  },
+  "runtime_add_key": {
+    "message": "API-kulcs hozzáadása"
+  },
+  "runtime_finish_model_language": {
+    "message": "Kulcs mentve. Nyissa meg a Beállításokat a modell ellenőrzéséhez és a nyelvválasztás befejezéséhez."
+  },
+  "runtime_check_setup": {
+    "message": "Beállítás ellenőrzése"
+  },
+  "runtime_translating": {
+    "message": "Fordítás folyamatban"
+  },
+  "runtime_error": {
+    "message": "Hiba"
+  },
+  "runtime_ready": {
+    "message": "Kész"
+  },
+  "runtime_status_load_failed": {
+    "message": "A bővítmény állapota nem tölthető be. Töltse újra a bővítményt, majd frissítse az oldalt."
+  },
+  "runtime_copied": {
+    "message": "Másolva."
+  },
+  "runtime_copy_blocked": {
+    "message": "A másolás blokkolva. Jelölje ki és másolja az eredmény szövegét."
+  },
+  "runtime_settings_open_failed": {
+    "message": "A Beállítások nem nyithatók meg. Próbálja újra."
+  },
+  "runtime_translating_progress": {
+    "message": "Fordítás..."
+  },
+  "runtime_translation_started": {
+    "message": "Fordítás elindult."
+  },
+  "runtime_translation_complete": {
+    "message": "Fordítás kész."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Fordítás kész. Használja az eredmény szövegét vagy a kártya vezérlőit."
+  },
+  "runtime_translation": {
+    "message": "Fordítás"
+  },
+  "runtime_target_language": {
+    "message": "Célnyelv"
+  },
+  "runtime_card_target_language": {
+    "message": "A kártya célnyelve"
+  },
+  "runtime_close_card": {
+    "message": "Fordításkártya bezárása"
+  },
+  "runtime_translated_text": {
+    "message": "Lefordított szöveg"
+  },
+  "runtime_retry": {
+    "message": "Újra"
+  },
+  "runtime_copy": {
+    "message": "Másolás"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "A Beállítások nem nyithatók meg. Használja a bővítmény eszköztárát."
+  },
+  "runtime_copy_failed": {
+    "message": "A másolás nem sikerült. Jelölje ki és másolja az eredmény szövegét."
+  },
+  "runtime_context_menu": {
+    "message": "Kijelölt szöveg fordítása"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Nincs a jelenlegi listán)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Még nem ellenőrzött)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "A(z) $value1$ időpontbeli gyorsítótárazott modelllista használata. Az élő frissítés nem sikerült. Próbálja később.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Gyorsítótárazott modelllista használata. Az élő frissítés nem sikerült. Próbálja később."
+  },
+  "runtime_models_cache_at": {
+    "message": "A(z) $value1$ időpontbeli gyorsítótárazott modelllista használata.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Gyorsítótárazott modelllista használata."
+  },
+  "runtime_models_updated_at": {
+    "message": "Modelllista frissítve innen: $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Modelllista frissítve."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ nem támogatott. Nyomjon másik billentyűt vagy Escape-et a megszakításhoz.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Mentés után $value1$ lesz használatban.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Legfeljebb $value1$ laponként és $value2$ összesen",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ másodperc",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ A Tab használja a kártyát, az Escape bezárja.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "A fordítás nem sikerült. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Frissítse a nyitott oldalakat"
+  },
+  "refresh_message": {
+    "message": "Az API-kulcs mentve. A beállítás befejezése után frissítse a már nyitott oldalakat. Ezután jelöljön ki szöveget, és nyomja meg a Control billentyűt a fordításhoz."
+  },
+  "refresh_continue": {
+    "message": "Beállítás folytatása"
+  },
+  "refresh_faq_question": {
+    "message": "Miért kell frissíteni a nyitott oldalakat?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Frissítse a nyitott oldalakat</1> a beállítás befejezése után, mielőtt fordítana. A Chrome-nak be kell töltenie a bővítményt a telepítés vagy újratöltés előtt nyitott oldalakon. Az újonnan nyitott oldalak automatikusan készen állnak."
+  },
+  "ui_locale": {
+    "message": "hu",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

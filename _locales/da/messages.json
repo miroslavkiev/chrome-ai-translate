@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Nem oversættelse: Markér tekst, og tryk på Control. Oversæt til dit valgte sprog med Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Markér noget tekst, og prøv igen."
+  },
+  "error_unsupported_selection": {
+    "message": "Denne tekstmarkering understøttes ikke."
+  },
+  "error_selection_too_large": {
+    "message": "Markeringen er over 10.000 tegn. Markér mindre tekst, og prøv igen."
+  },
+  "error_missing_api_key": {
+    "message": "Tilføj din Gemini-API-nøgle i Indstillinger."
+  },
+  "error_agreement_required": {
+    "message": "Læs og acceptér datadeling i Indstillinger, før du opretter forbindelse til Google."
+  },
+  "error_credential_conflict": {
+    "message": "Den gemte nøgle er ændret på en anden side. Genindlæs de gemte indstillinger, før du prøver igen."
+  },
+  "error_credential_storage_error": {
+    "message": "Den gemte nøgle kan ikke åbnes. Åbn Indstillinger igen, eller fjern nøglen og indtast den igen."
+  },
+  "error_missing_target_language": {
+    "message": "Vælg målsprog i Indstillinger for at afslutte opsætningen."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini afviste API-nøglen. Kontrollér den i Indstillinger."
+  },
+  "error_invalid_model": {
+    "message": "Denne model kan ikke oversætte. Vælg en anden model eller den anbefalede Flash-Lite-model i Indstillinger."
+  },
+  "error_busy": {
+    "message": "For mange oversættelser kører. Prøv igen, når en er færdig."
+  },
+  "error_duplicate_request": {
+    "message": "Denne markering bliver allerede oversat."
+  },
+  "error_rate_limited": {
+    "message": "Grænsen for anmodninger er nået. Prøv igen om lidt."
+  },
+  "error_timeout": {
+    "message": "Oversættelsen tog for lang tid. Du kan prøve igen."
+  },
+  "error_offline": {
+    "message": "Du ser ud til at være offline. Kontrollér forbindelsen, og prøv igen."
+  },
+  "error_network_error": {
+    "message": "Gemini kunne ikke kontaktes. Kontrollér forbindelsen, og prøv igen."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini-kvoten er nået. Kontrollér din konto, og prøv senere."
+  },
+  "error_service_error": {
+    "message": "Gemini kunne ikke færdiggøre oversættelsen. Prøv senere."
+  },
+  "error_invalid_response": {
+    "message": "Gemini gav et ulæseligt svar. Du kan prøve igen."
+  },
+  "error_output_too_large": {
+    "message": "Oversættelsen overskred grænsen for output. Markér mindre tekst, og prøv igen."
+  },
+  "error_content_blocked": {
+    "message": "Gemini blokerede denne tekst. Prøv en anden markering."
+  },
+  "error_unsupported_page": {
+    "message": "Oversættelse er ikke tilgængelig på denne side."
+  },
+  "error_frame_unavailable": {
+    "message": "Den valgte ramme er ikke længere tilgængelig."
+  },
+  "error_cancelled": {
+    "message": "Oversættelsen blev annulleret."
+  },
+  "key_Off": {
+    "message": "Fra"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Prøv igen om $seconds$ sekunder.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator-indstillinger"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Private indstillinger til hurtig, målrettet oversættelse."
+  },
+  "html_help_and_information": {
+    "message": "Hjælp og information"
+  },
+  "html_api_key_guide": {
+    "message": "Guide til API-nøgle"
+  },
+  "html_about": {
+    "message": "Om"
+  },
+  "html_privacy": {
+    "message": "Privatliv"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Opsæt AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Følg disse trin i Indstillinger. Du skal bruge din egen Google-API-nøgle for at oversætte."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Få din egen API-nøgle.</1> Åbn <2>Google AI Studio</2>, log ind, og opret en nøgle. Læs om datadeling nedenfor, og indsæt derefter nøglen. Få hjælp i <3>trin-for-trin-guiden</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Vælg målsprog og model.</1> Vælg sproget til oversættelserne. Vi anbefaler Gemini Flash-Lite, når den er på din modelliste."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Gem, og begynd at oversætte.</1> Vælg «Afslut opsætning» nederst på siden. Markér derefter tekst på en webside, og tryk på Control, eller vælg «Oversæt markeret tekst» i højrekliksmenuen."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Forbind din egen Gemini-API-nøgle, og vælg en kompatibel model."
+  },
+  "html_loading_setup_state": {
+    "message": "Indlæser opsætningsstatus..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Før du opretter forbindelse til Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google modtager din API-nøgle for at kontrollere tilgængelige modeller. Når du beder om en oversættelse, modtager Google også den markerede tekst og målsproget, herunder tekst fra lokale filer. AI-oversættelser kan være forkerte."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Din nøgle gemmes krypteret i denne Chrome-profil og åbnes automatisk efter genstart. Der kræves ikke en ekstra adgangskode. En person med fuld adgang til browserprofilen kan muligvis stadig gendanne den. <1>Læs detaljerne om privatliv</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Påkrævet i alle lande:</1> Brug en Gemini-API-nøgle fra et projekt med <2>aktiv fakturering</2>. Slå valgfri <3>deling af denne udvidelses anmodningslogfiler og datasæt med Google</3> fra. Med disse indstillinger udelukker Googles betalingsvilkår brug af input og svar til produktforbedring; behandling til sikkerhed og juridiske formål gælder stadig. Udvidelsen er gratis, men Google kan opkræve API-gebyrer."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Brugsvilkår.</1> Når du bruger Gemini via udvidelsen, accepterer du kravene ovenfor og <2>Googles vilkår</2>. Brug er for personer fra 18 år til professionelle eller erhvervsmæssige formål i <3>understøttede regioner</3>. Udvidelsen kontrollerer ikke dine fakturerings- eller delingsindstillinger."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Acceptér, og forbind til Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Træk datasamtykke tilbage"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Læs detaljerne om datadeling, før du opretter forbindelse."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Hvorfor disse krav? Læs de ofte stillede spørgsmål</1>."
+  },
+  "html_api_key": {
+    "message": "API-nøgle"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Efter accept kan du indsætte en nøgle, som gemmes krypteret, og modellerne indlæses automatisk."
+  },
+  "html_show": {
+    "message": "Vis"
+  },
+  "html_remove_saved_key": {
+    "message": "Fjern gemt nøgle"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Kendte modeller kun til medier eller særlige formål skjules."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Vi anbefaler Gemini Flash-Lite-familien. Til denne version (september 2026) vælger vi Gemini 3.5 Flash-Lite. Du kan vælge en anden model på listen. Nogle modeller virker muligvis ikke med udvidelsen. Hvis en fejler, så vælg en anden eller den anbefalede."
+  },
+  "html_refresh_models": {
+    "message": "Opdatér modeller"
+  },
+  "html_use_recommended_model": {
+    "message": "Brug anbefalet model"
+  },
+  "html_translation": {
+    "message": "Oversættelse"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Vælg sprog og eventuelt en aktiveringstast."
+  },
+  "html_default_language": {
+    "message": "Standardsprog"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Et resultatkort kan bruge et andet sprog uden at ændre denne standard."
+  },
+  "html_keyboard_trigger": {
+    "message": "Aktiveringstast"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Enkelte taster kan være i konflikt med websteder eller tilgængelighedsværktøjer. Vælg «Fra» for kun at bruge genvejsmenuen."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Registrér tast"
+  },
+  "html_off": {
+    "message": "Fra"
+  },
+  "html_behavior": {
+    "message": "Adfærd"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Faste beskyttelser holder oversættelser hurtige og beskytter API-kvoten."
+  },
+  "html_parallel_requests": {
+    "message": "Parallelle anmodninger"
+  },
+  "html_request_timeout": {
+    "message": "Tidsgrænse pr. anmodning"
+  },
+  "html_page_access": {
+    "message": "Sideadgang"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "For lokale filer: Aktivér «Tillad adgang til filwebadresser» i «Administrer udvidelse»."
+  },
+  "html_help_and_recovery": {
+    "message": "Hjælp og gendannelse"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Hvis en model ikke er tilgængelig, så opdatér modellerne, vælg en på listen, og gem indstillingerne. Hvis listen ikke indlæses, så kontrollér nøgle og forbindelse, og vælg «Opdatér modeller»."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome-indstillinger og Chrome Web Store tillader ikke oversættelse. For lokale filer: Aktivér «Tillad adgang til filwebadresser» i «Administrer udvidelse». Opdatér åbne websider efter opdatering eller genindlæsning af udvidelsen. Genindlæsning kan afbryde en oversættelse."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Oversættelse virker ikke offline. Efter din accept ovenfor sendes nøglen direkte til Google for at kontrollere modeller. Markeret tekst, også fra lokale filer, sendes kun sammen med målsproget, når du beder om en oversættelse. Nøglen gemmes krypteret i denne Chrome-profil. Sprog, model og tast kan synkroniseres via Chrome. Udvidelsen gemmer kun det seneste resultat i browsersessionen og ingen oversættelseshistorik."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Du kan læse om datadeling ovenfor og når som helst trække samtykket tilbage. Det stopper modelkontrol og oversættelser, indtil du accepterer igen. Nøglen bevares, medmindre du vælger «Fjern gemt nøgle»."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Ændringer af sprog, model og tast gemmes her."
+  },
+  "html_reload_saved_settings": {
+    "message": "Genindlæs gemte indstillinger"
+  },
+  "html_save_preferences": {
+    "message": "Gem indstillinger"
+  },
+  "html_gemini_translation": {
+    "message": "Oversættelse med Gemini"
+  },
+  "html_setup_required": {
+    "message": "Opsætning påkrævet"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Velkommen til AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Oversæt markeret tekst til et sprog, du kender. Opsæt disse to ting først:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Din Gemini-API-nøgle.</1> Få din egen nøgle i Google AI Studio. Guiden viser hvordan."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Dit målsprog.</1> Vælg det sprog, du vil læse på."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Sådan får du en API-nøgle"
+  },
+  "html_extension_status": {
+    "message": "Udvidelsesstatus"
+  },
+  "html_active_translations": {
+    "message": "Aktive oversættelser"
+  },
+  "html_latest_this_session": {
+    "message": "Seneste resultat i sessionen"
+  },
+  "html_no_translation_yet": {
+    "message": "Ingen oversættelse endnu."
+  },
+  "html_copy": {
+    "message": "Kopiér"
+  },
+  "html_settings": {
+    "message": "Indstillinger"
+  },
+  "html_key_guide": {
+    "message": "Nøgleguide"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Kom i gang med AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Udvidelsens sider"
+  },
+  "html_faq": {
+    "message": "Ofte stillede spørgsmål"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Få din egen Google-API-nøgle, vælg et sprog, og oversæt din første markering."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Få din API-nøgle"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "En API-nøgle lader udvidelsen bruge Gemini via din Google-konto. Hold den privat som en adgangskode."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Udvidelsen er til personer fra 18 år, til professionel eller erhvervsmæssig brug i <1>lande og regioner, Google understøtter</1>. I alle lande skal API-nøglen tilhøre et Gemini-projekt med aktiv fakturering. Slå valgfri deling af udvidelsens anmodningslogfiler og datasæt med Google fra."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Ved at bruge udvidelsen accepterer du disse betingelser, <1>Googles API-vilkår</1> og <2>de supplerende Gemini-API-vilkår</2>. Brug den ikke, hvis du ikke kan overholde dem. Udvidelsen kontrollerer ikke dette og kræver ikke identitetspapirer."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Åbn Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Log ind på din Google-konto. Acceptér Googles vilkår, hvis du bliver bedt om det."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Opret eller vælg en nøgle"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "På siden API-nøgler vælger du <1>Opret API-nøgle</1> og følger Googles trin for at vælge eller oprette et projekt. Et projekt samler API-brug og eventuel fakturering. Hvis du er ny i AI Studio, har Google muligvis allerede oprettet et standardprojekt og en nøgle."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Mangler dit eksisterende projekt, så åbn <1>Dashboard > Projekter > Importér projekter</1>. Importér projektet, og gå tilbage til API-nøgler."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Før du bruger nøglen, så følg <1>Googles faktureringsguide</1> for at kontrollere, at projektets fakturering er aktiv. Et betalt Gemini-appabonnement erstatter ikke API-projektfakturering. Slå valgfri deling af udvidelsens logfiler og datasæt med Google fra; læs <2>Googles politik for logdeling</2>. Private projektlogfiler er noget andet end deling."
+  },
+  "html_copy_your_key": {
+    "message": "Kopiér nøglen"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopiér nøglen fra AI Studio. Gå tilbage til udvidelsens Indstillinger, og læs om datadeling. Vælg <1>Acceptér, og forbind til Google</1>, og indsæt nøglen i feltet <2>API-nøgle</2>. Den krypteres og gemmes automatisk, og modellisten indlæses. Vent på resultatet, før du fortsætter."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator-indstillinger med datadelingsbesked og acceptknap over et tomt API-nøglefelt og anbefalingen af Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Eksempel på engelsk. I AI Translator: Acceptér først datadeling, og indsæt din egen nøgle. Modellisten kontrolleres, efter nøglen er gemt krypteret."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google kan ændre disse skærmbilleder. Læs <1>Googles API-nøgleguide</1> for aktuelle trin eller nøglefejl. Brug en ny AI Studio-nøgle, hvis en gammel ikke længere virker."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Vælg dine oversættelsesindstillinger"
+  },
+  "html_choose_a_model": {
+    "message": "Vælg en model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Vi anbefaler Gemini Flash-Lite-familien. Til denne version fra september 2026 vælger vi <1>Gemini 3.5 Flash-Lite</1>. Brug den, når den er tilgængelig på din modelliste."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Du kan vælge en anden model på listen. Nogle virker muligvis ikke med udvidelsen. Hvis en model fejler, så vælg en anden eller den anbefalede."
+  },
+  "html_choose_your_target_language": {
+    "message": "Vælg dit målsprog"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Vælg det sprog, du vil læse på, under <1>Standardsprog</1>. Valgene følger <2>Googles dokumenterede Gemini-sprog</2>. Oversættelseskvaliteten kan variere med sprog og tekst."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator-oversættelsesindstillinger med valg af målsprog og knapper til aktiveringstasten."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Eksempel på engelsk. Vælg sproget til oversættelserne, og afslut opsætningen."
+  },
+  "html_finish_setup": {
+    "message": "Afslut opsætning"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Behold Control som aktiveringstast, registrér en anden tast, eller vælg <1>Fra</1> for kun at bruge højrekliksmenuen. Vælg <2>Afslut opsætning</2> nederst i Indstillinger. Du kan ændre valgene senere med <3>Gem indstillinger</3>."
+  },
+  "html_open_settings": {
+    "message": "Åbn Indstillinger"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Oversæt din første markering"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Åbn en almindelig webside, og markér en kort tekst. Højreklik, og vælg <1>Oversæt markeret tekst</1>, eller tryk og slip din valgte tast. Resultatet vises ved markeringen."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Opdatér først websiden, hvis udvidelsen lige er installeret eller genindlæst. Chrome-indstillinger, Chrome Web Store og den indbyggede PDF-læser tillader ikke oversættelse."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Værktøjslinjens popup viser det seneste resultat. Når opsætningen er færdig, åbnes standardvisningen. Hvis du fjerner API-nøglen, vises velkomstguiden igen."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Ofte stillede spørgsmål: nøgler, pris og privatliv"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Hvorfor skal jeg have min egen API-nøgle?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Udvidelsen sender anmodninger direkte til dit Google-projekt med din egen nøgle. Det er et designvalg, ikke en Chrome-regel. Nøglen tillader anmodninger og knytter dem til brug og fakturering. Del den aldrig i skærmbilleder eller offentlige beskeder. Se <1>Googles API-nøgleguide</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Hvorfor kræves aktiv fakturering i stedet for blot at anbefale det?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chromes <1>Limited Use-regler, punkt 3 og 5</1>, begrænser databrug til udvidelsens formål og relaterede handlinger. Nogle gratis Gemini-tjenester tillader bredere træning og menneskelig gennemgang. Betalingsvilkår udelukker produktforbedring, men tillader begrænset opbevaring til sikkerhed og juridiske formål samt behandling uden for EU."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "For at løse denne konflikt kræver udvikleren aktiv projektfakturering i hele verden. En anbefaling ville stadig tillade gratis brug. Googles regionale regel kræver betalingstjenester til apps udbudt i Det Europæiske Økonomiske Samarbejdsområde, Storbritannien og Schweiz. Se <1>Gemini-vilkår: brugsbegrænsninger, gratis tjenester og betalingstjenester</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Hvorfor skal valgfri deling med Google være slået fra?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Deling af logfiler eller datasæt kan tillade træning og menneskelig gennemgang selv med aktiv fakturering. Bidrag ikke med udvidelsens data via deling af datasæt eller feedback. Private logfiler til dit projekt er tilladt. Se <1>Googles logpolitik: data der kan deles, og hvordan dine data bruges</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Er udvidelsen gratis, når API-adgang skal være betalt?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Ja. Udvidelsen er gratis, men Google kan opkræve API-gebyrer. Et betalt Gemini-appabonnement erstatter ikke API-projektfakturering. Se <1>kontrol af fakturering</1> og <2>Googles API-priser</2>. Udvidelsen kontrollerer ikke fakturerings- eller delingsindstillinger."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Hvorfor skal jeg vælge «Acceptér, og forbind til Google»?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chromes <1>oplysningskrav, punkt 1 og 2</1>, kræver klare oplysninger om databrug og informeret samtykke. Knappen lader dig vælge før den første Google-API-anmodning. Den kontrollerer ikke identitet eller fakturering og giver ikke lov til at dele andres private oplysninger."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Hvad sendes præcist til Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Modelkontrol sender nøglen og spørger efter tilgængelige modeller. Oversættelse sender markeret tekst, målsprog, model og oversættelsesinstruktioner, også tekst fra lokale filer. Udvidelsen tilføjer ikke hele siden, sidens adresse eller browserhistorik. Google modtager også forbindelsesoplysninger som din IP-adresse. Udvikleren modtager ingen af anmodningerne. Send kun tekst, du må dele."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Hvordan gemmes og åbnes min nøgle automatisk?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API-nøglen gemmes krypteret. Den og krypteringsnøglen bliver i denne Chrome-profil til automatisk brug efter genstart. De synkroniseres ikke. En person med adgang til profilen kan muligvis gendanne API-nøglen. Dette er ikke en systemnøglering eller en adgangskodebeskyttet boks. Sprog, model og tast kan synkroniseres. Kun seneste resultat gemmes i sessionen; der er ingen brugsanalyse eller oversættelseshistorik."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "En opdatering krypterer og kontrollerer en ældre gemt nøgle, før kopier i klartekst slettes. Ved fejl bevares den gamle kopi, og anmodninger blokeres fortsat. Indstillinger forklarer fejlen. Flytning af en gammel nøgle omgår ikke samtykke."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Kan jeg trække samtykket tilbage eller fjerne min nøgle?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "I <1>Indstillinger</1> blokerer <2>Træk datasamtykke tilbage</2> nye anmodninger og annullerer aktive lokalt, mens nøgle og valg bevares. <3>Fjern gemt nøgle</3> sletter nøglen, krypteringsnøglen og modelcachen. Ingen af handlingerne tilbagekalder sendte data eller sikrer, at en sendt anmodning bliver gratis. Tilbagekald nøglen i AI Studio for også at deaktivere den hos Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Samtykket bevares ved normale genstarter og opdateringer. Ændres beskeden, venter anmodninger, indtil du læser og accepterer igen."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Hvorfor kun voksne og professionel eller erhvervsmæssig brug?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google kræver mindst 18 år og professionel eller erhvervsmæssig brug i understøttede regioner. Se <1>Gemini-vilkår: alderskrav og brugsbegrænsninger</1> og <2>tilgængelige regioner</2>. Udvidelsen har ingen særskilt boks om berettigelse eller identitetskontrol."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Hvorfor en privatlivspolitik ud over denne besked?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Beskeden forklarer valget før forbindelsen. Politikken giver alle detaljer om data, lagring og sletning. Chromes <1>regler om privatlivspolitikker</1> kræver det af udvidelser, der håndterer brugerdata. Læs <2>vores privatlivspolitik</2>. Beskederne betyder ikke, at Google har godkendt udvidelsen."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI-oversættelser kan være forkerte. Kontrollér vigtige formuleringer, før du stoler på dem."
+  },
+  "html_about_ai_translator": {
+    "message": "Om AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Nem oversættelse: Markér tekst, og tryk på Control."
+  },
+  "html_made_for_people": {
+    "message": "Lavet til mennesker"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Jeg skabte AI Translator for at hjælpe mennesker med at læse, lære og mødes på tværs af sprog. Jeg håber, den er nyttig for mennesker i hele verden."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Udvidelsen oversætter markeret tekst med din egen Google Gemini-API-nøgle. Du vælger, hvad der sendes, og hvilket sprog du læser på."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Tryk og slip Control for at oversætte markeringen. Control er standardtasten og kan ændres i Indstillinger. Du kan også bruge sidens højrekliksmenu."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Kun manuelt testet på Mac. Windows og Linux er ikke manuelt testet."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Se kildekode og projektguide</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Få hjælp eller rapportér et problem</1>. Rapporter er offentlige. Medtag ikke API-nøgler, privat tekst eller personlige oplysninger."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Hvis du vil støtte mit arbejde"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Støt mit land, Ukraine, mens det forsvarer sig mod russisk aggression."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Jeg har tillid til Sternenko Community Foundation. Hvis du kan og vil hjælpe, kan du donere via fondens officielle hjemmeside."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Støt Ukraine gennem fonden</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Støtte er valgfri og aldrig nødvendig for at bruge udvidelsen. Linket åbner en ekstern hjemmeside. Donationer går gennem fonden, ikke udvidelsen."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privatliv og pris"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API-nøglen krypteres på denne enhed og synkroniseres ikke. Den forbliver tilgængelig efter normale Chrome-genstarter uden adgangskode til oplåsning. En person med adgang til browserprofilen kan muligvis stadig gendanne den."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Før den første Google-anmodning forklarer Indstillinger datadeling og beder dig vælge <1>Acceptér, og forbind til Google</1>. Derefter sendes markeret tekst kun direkte til Google, når du beder om en oversættelse. Modelkontrol sender nøglen, men ingen markeret tekst. Udvidelsen har ingen brugsanalyse, reklamer eller oversættelseshistorik."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Læs altid detaljerne i <1>Indstillinger</1>. Vælg <2>Træk datasamtykke tilbage</2> for at stoppe nye anmodninger og beholde krypteret nøgle og valg, eller <3>Fjern gemt nøgle</3> for at slette nøgle og modelcache. Sendte data kan ikke tilbagekaldes."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Oversættelser laves af AI og kan være forkerte. Kontrollér vigtige formuleringer, før du stoler på dem."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Læs detaljerne om privatliv</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator er et gratis, uafhængigt projekt. Google kan opkræve API-gebyrer. Brug i alle lande en Gemini-API-nøgle fra et projekt med <1>aktiv fakturering</1>, og slå valgfri <2>deling af udvidelsens anmodningslogfiler og datasæt med Google</2> fra. Betalingsvilkårene udelukker da produktforbedring med input og svar; behandling til sikkerhed og juridiske formål gælder stadig. Læs <3>Googles oplysninger om priser og databrug</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Udvidelsen er for personer fra 18 år, til professionel eller erhvervsmæssig brug i <1>Googles understøttede regioner</1>. Ved brug accepterer du betingelserne, <2>Googles API-vilkår</2> og <3>de supplerende Gemini-API-vilkår</3>. Brug den ikke, hvis du ikke kan overholde dem. Der er ingen boks om berettigelse eller identitetskontrol. Udvidelsen kontrollerer ikke fakturering eller deling."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Ændringer er ikke gemt."
+  },
+  "runtime_settings_conflict": {
+    "message": "Indstillingerne er ændret på en anden side. Dine ændringer bevares her. Genindlæs gemte indstillinger for at kassere dine ændringer og bruge de gemte værdier."
+  },
+  "runtime_preferences_current": {
+    "message": "Indstillingerne er opdaterede."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Den gemte nøgle kan ikke åbnes. Åbn Indstillinger igen, eller fjern den og indtast den igen."
+  },
+  "runtime_key_conflict": {
+    "message": "API-nøglen er ændret på en anden side. Genindlæs gemte indstillinger, før du gemmer en nøgle."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Din nøgle er gemt krypteret. Acceptér datadeling, før du forbinder til Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Acceptér datadeling ovenfor, før du tilføjer API-nøglen."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini afviste denne gemte nøgle. Udskift den, eller brug «Opdatér modeller» til at kontrollere den igen."
+  },
+  "runtime_paste_key": {
+    "message": "Indsæt en API-nøgle for at forbinde Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "API-nøgle gemt. Gemini accepterede den ved seneste kontrol af modellisten."
+  },
+  "runtime_key_saved_check": {
+    "message": "API-nøgle gemt krypteret på denne enhed. Opdatér modeller for at kontrollere den hos Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Prøv tilbagetrækning igen"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Træk datasamtykke tilbage"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Tilbagetrækningen er ikke bekræftet. Prøv igen for at gemme valget."
+  },
+  "runtime_agreement_saved": {
+    "message": "Datadeling accepteret for denne Chrome-profil. Du kan altid trække samtykket tilbage."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Ingen forbindelse til Google uden accept. Den gemte nøgle bevares, hvis du trækker samtykket tilbage."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini afviste den gemte nøgle. Udskift den nedenfor."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Din nøgle er gemt krypteret på denne enhed."
+  },
+  "runtime_setup_create_key": {
+    "message": "Opret din egen nøgle i Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Sprog valgt. Afslut opsætning for at gemme valgene."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Vælg et målsprog nedenfor."
+  },
+  "runtime_finish_setup": {
+    "message": "Afslut opsætning"
+  },
+  "runtime_save_preferences": {
+    "message": "Gem indstillinger"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Tilføj en API-nøgle, kontrollér modellisten, og gem dit modelvalg."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Løs indstillingskonflikten, før du oversætter."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Læs og acceptér datadeling, før du forbinder til Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Gem API-nøglen færdig, før du kontrollerer opsætningen."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Opsætningen skal kontrolleres: Gemini afviste den gemte API-nøgle."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Nøgle gemt. Vælg målsprog, og afslut opsætning."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Vælg en tilgængelig model, og gem indstillingerne."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model valgt. Gem indstillingerne for at bruge den."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Nøgle og sprog er klar. Afslut opsætning for at gemme valgene, og prøv en oversættelse. Modeladgang og kvote kan stadig ændres."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Klar til at prøve en oversættelse. Den gemte model er på den kontrollerede liste; adgang og kvote kan stadig ændres."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Nøgle gemt. Opdatér modeller for at kontrollere nøglen og den valgte model."
+  },
+  "runtime_show_key": {
+    "message": "Vis"
+  },
+  "runtime_hide_key": {
+    "message": "Skjul"
+  },
+  "runtime_choose_target_language": {
+    "message": "Vælg et målsprog"
+  },
+  "runtime_background_no_response": {
+    "message": "Udvidelsens baggrundsproces svarede ikke. Genindlæs udvidelsen, og prøv igen."
+  },
+  "runtime_refresh_models": {
+    "message": "Opdatér modeller"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Acceptér datadeling, før du indlæser modeller."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Gem API-nøglen færdig, før du opdaterer modeller."
+  },
+  "runtime_refreshing": {
+    "message": "Opdaterer..."
+  },
+  "runtime_loading": {
+    "message": "Indlæser..."
+  },
+  "runtime_models_checking": {
+    "message": "Kontrollerer kompatible modeller hos Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Indlæser kompatible modeller..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Kompatible modeller kunne ikke indlæses."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini returnerede ingen kompatible modeller."
+  },
+  "runtime_model_not_available": {
+    "message": "Den valgte model er ikke på den kompatible liste. Vælg en anden model."
+  },
+  "runtime_record_key": {
+    "message": "Registrér tast"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Registrering annulleret."
+  },
+  "runtime_unknown_key": {
+    "message": "Den tast"
+  },
+  "runtime_press_key": {
+    "message": "Tryk på en tast..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Tryk på en understøttet tast, der ikke skriver tegn. Tryk på Escape for at annullere."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Opdatér modeller for at kontrollere den gemte API-nøgle."
+  },
+  "runtime_models_add_key": {
+    "message": "Tilføj en API-nøgle for at indlæse kompatible modeller."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Udvidelsen kunne ikke indlæse sin gemte status."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini afviste den gemte API-nøgle. Udskift den, eller opdatér modeller for at kontrollere den igen."
+  },
+  "runtime_settings_reopen": {
+    "message": "Indstillinger kunne ikke indlæses. Åbn dem igen for at prøve på ny."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Indstillinger kunne ikke indlæses. Genindlæs gemte indstillinger, og prøv igen. Lagring er deaktiveret for at beskytte dine gemte valg."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Opsætningsstatus kunne ikke indlæses."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Indtast en komplet API-nøgle uden mellemrum."
+  },
+  "runtime_key_use_remove": {
+    "message": "Brug «Fjern gemt nøgle» for at slette nøglen."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Acceptér datadeling ovenfor, før du gemmer en API-nøgle."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Gemmer API-nøglen krypteret..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API-nøglen kunne ikke læses eller gemmes. Din indtastning bevares. Brug «Gem indstillinger» for at prøve igen."
+  },
+  "runtime_connecting_google": {
+    "message": "Forbinder til Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Stopper forbindelser til Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Datasamtykket kunne ikke gemmes. Prøv igen."
+  },
+  "runtime_key_removing": {
+    "message": "Fjerner gemt nøgle..."
+  },
+  "runtime_key_removed": {
+    "message": "Gemt nøgle fjernet. Du kan tilføje en ny efter accept af datadeling."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Den gemte nøgle kunne ikke fjernes. Prøv igen."
+  },
+  "runtime_saving": {
+    "message": "Gemmer..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Vælg et gyldigt sprog og en gyldig model."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Vælg en understøttet aktiveringstast eller «Fra»."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Vælg en model på den aktuelle kompatible liste."
+  },
+  "runtime_preferences_saving": {
+    "message": "Gemmer indstillinger..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Indstillinger gemt."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Indstillinger gemt. Tilføj API-nøglen for at afslutte opsætningen."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Indstillinger kunne ikke læses eller gemmes. Dine ændringer bevares. Prøv igen."
+  },
+  "runtime_key_will_save": {
+    "message": "API-nøglen gemmes automatisk."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Indtast hele API-nøglen."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Gem API-nøglen færdig for at indlæse kompatible modeller."
+  },
+  "runtime_recommended_selected": {
+    "message": "Anbefalet model valgt. Gem valget for at bruge den."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Aktiveringstasten er slået fra, når du gemmer."
+  },
+  "runtime_connection_changed": {
+    "message": "Forbindelsesindstillinger ændret. Kontrollerer gemte indstillinger..."
+  },
+  "runtime_models_changed": {
+    "message": "Modellisten ændret. Kontrollerer kompatible modeller..."
+  },
+  "runtime_no_translation": {
+    "message": "Ingen oversættelse endnu."
+  },
+  "runtime_start_setup": {
+    "message": "Start opsætning"
+  },
+  "runtime_settings": {
+    "message": "Indstillinger"
+  },
+  "runtime_key_rejected": {
+    "message": "Nøgle afvist"
+  },
+  "runtime_setup_required": {
+    "message": "Opsætning påkrævet"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Tilføj en API-nøgle i Indstillinger for at begynde at oversætte."
+  },
+  "runtime_add_key": {
+    "message": "Tilføj API-nøgle"
+  },
+  "runtime_finish_model_language": {
+    "message": "Nøglen er gemt. Åbn Indstillinger for at kontrollere modellen og afslutte sprogvalget."
+  },
+  "runtime_check_setup": {
+    "message": "Kontrollér opsætning"
+  },
+  "runtime_translating": {
+    "message": "Oversætter"
+  },
+  "runtime_error": {
+    "message": "Fejl"
+  },
+  "runtime_ready": {
+    "message": "Klar"
+  },
+  "runtime_status_load_failed": {
+    "message": "Udvidelsesstatus kunne ikke indlæses. Genindlæs udvidelsen, og opdatér siden."
+  },
+  "runtime_copied": {
+    "message": "Kopieret."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopiering blev blokeret. Markér resultatteksten, og kopiér den."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Indstillinger kunne ikke åbnes. Prøv igen."
+  },
+  "runtime_translating_progress": {
+    "message": "Oversætter..."
+  },
+  "runtime_translation_started": {
+    "message": "Oversættelse startet."
+  },
+  "runtime_translation_complete": {
+    "message": "Oversættelse færdig."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Oversættelse færdig. Brug resultatteksten eller kortets knapper."
+  },
+  "runtime_translation": {
+    "message": "Oversættelse"
+  },
+  "runtime_target_language": {
+    "message": "Målsprog"
+  },
+  "runtime_card_target_language": {
+    "message": "Målsprog for dette kort"
+  },
+  "runtime_close_card": {
+    "message": "Luk oversættelseskort"
+  },
+  "runtime_translated_text": {
+    "message": "Oversat tekst"
+  },
+  "runtime_retry": {
+    "message": "Prøv igen"
+  },
+  "runtime_copy": {
+    "message": "Kopiér"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Indstillinger kunne ikke åbnes. Brug udvidelsens værktøjslinje."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopiering mislykkedes. Markér resultatteksten, og kopiér den."
+  },
+  "runtime_context_menu": {
+    "message": "Oversæt markeret tekst"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Ikke på den aktuelle liste)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Ikke kontrolleret endnu)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Bruger cachet modelliste fra $value1$. Live-opdatering mislykkedes. Prøv senere.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Bruger cachet modelliste. Live-opdatering mislykkedes. Prøv senere."
+  },
+  "runtime_models_cache_at": {
+    "message": "Bruger cachet modelliste fra $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Bruger cachet modelliste."
+  },
+  "runtime_models_updated_at": {
+    "message": "Modelliste opdateret fra $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Modelliste opdateret."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ understøttes ikke. Tryk på en anden tast eller Escape for at annullere.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ bruges, når du har gemt.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Op til $value1$ pr. fane og $value2$ i alt",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ sekunder",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Tryk på Tab for at bruge kortet eller Escape for at lukke det.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Oversættelse mislykkedes. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Opdatér åbne sider"
+  },
+  "refresh_message": {
+    "message": "Din API-nøgle er gemt. Opdatér de sider, der allerede var åbne, når opsætningen er færdig. Markér derefter tekst, og tryk på Control for at oversætte."
+  },
+  "refresh_continue": {
+    "message": "Fortsæt opsætning"
+  },
+  "refresh_faq_question": {
+    "message": "Hvorfor skal jeg opdatere åbne sider?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Opdatér åbne sider</1> efter opsætningen, før du oversætter. Chrome skal indlæse udvidelsen på sider, der var åbne før installation eller genindlæsning. Nye sider er automatisk klar."
+  },
+  "ui_locale": {
+    "message": "da",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

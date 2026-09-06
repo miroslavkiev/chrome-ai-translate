@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "AI Translator",
-  "version": "1.4.2",
-  "description": "Super easy translation: select text and press Control. Translate into your chosen language with Gemini.",
+  "name": "__MSG_extName__",
+  "version": "1.5.0",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
   "minimum_chrome_version": "140",
   "homepage_url": "https://github.com/miroslavkiev/chrome-ai-translate",
   "permissions": ["contextMenus", "storage"],
   "host_permissions": ["https://generativelanguage.googleapis.com/*"],
   "background": {
-    "service_worker": "background.js",
+    "service_worker": "dist/background.js",
     "type": "module"
   },
   "action": {

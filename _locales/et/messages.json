@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Tõlgi lihtsalt: vali tekst ja vajuta Control. Tõlgi Gemini abil soovitud keelde.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Vali tekst ja proovi uuesti."
+  },
+  "error_unsupported_selection": {
+    "message": "Seda tekstivalikut ei toetata."
+  },
+  "error_selection_too_large": {
+    "message": "Valikus on üle 10 000 märgi. Vali vähem teksti ja proovi uuesti."
+  },
+  "error_missing_api_key": {
+    "message": "Lisa seadetes oma Gemini API-võti."
+  },
+  "error_agreement_required": {
+    "message": "Enne Google'iga ühendamist loe seadetes andmete jagamise teavet ja nõustu sellega."
+  },
+  "error_credential_conflict": {
+    "message": "Salvestatud võti muutus teisel lehel. Enne uuesti proovimist laadi salvestatud seaded uuesti."
+  },
+  "error_credential_storage_error": {
+    "message": "Salvestatud võtit ei saa avada. Ava seaded uuesti või eemalda võti ja sisesta see uuesti."
+  },
+  "error_missing_target_language": {
+    "message": "Seadistuse lõpetamiseks vali seadetes sihtkeel."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini lükkas API-võtme tagasi. Kontrolli seda seadetes."
+  },
+  "error_invalid_model": {
+    "message": "Seda mudelit ei saa tõlkimiseks kasutada. Vali seadetes teine või soovitatud Flash-Lite'i mudel."
+  },
+  "error_busy": {
+    "message": "Korraga on töös liiga palju tõlkeid. Proovi uuesti, kui üks lõpeb."
+  },
+  "error_duplicate_request": {
+    "message": "Seda valikut juba tõlgitakse."
+  },
+  "error_rate_limited": {
+    "message": "Päringute piir on saavutatud. Proovi mõne aja pärast uuesti."
+  },
+  "error_timeout": {
+    "message": "Tõlkimine võttis liiga kaua. Võid uuesti proovida."
+  },
+  "error_offline": {
+    "message": "Paistad olevat võrguühenduseta. Kontrolli ühendust ja proovi uuesti."
+  },
+  "error_network_error": {
+    "message": "Geminiga ei saanud ühendust. Kontrolli ühendust ja proovi uuesti."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini kvoot on täis. Kontrolli kontot ja proovi hiljem."
+  },
+  "error_service_error": {
+    "message": "Gemini ei suutnud tõlget lõpetada. Proovi hiljem."
+  },
+  "error_invalid_response": {
+    "message": "Gemini tagastas loetamatu vastuse. Võid uuesti proovida."
+  },
+  "error_output_too_large": {
+    "message": "Tõlge ületas väljundi piiri. Vali vähem teksti ja proovi uuesti."
+  },
+  "error_content_blocked": {
+    "message": "Gemini blokeeris selle teksti. Proovi teist valikut."
+  },
+  "error_unsupported_page": {
+    "message": "Sellel lehel ei saa tõlkida."
+  },
+  "error_frame_unavailable": {
+    "message": "Valitud raam pole enam saadaval."
+  },
+  "error_cancelled": {
+    "message": "Tõlkimine tühistati."
+  },
+  "key_Off": {
+    "message": "Väljas"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Suurtähelukk"
+  },
+  "key_Insert": {
+    "message": "Lisa"
+  },
+  "key_Pause": {
+    "message": "Paus"
+  },
+  "key_ScrollLock": {
+    "message": "Kerimislukk"
+  },
+  "error_retry_delay": {
+    "message": " Proovi uuesti $seconds$ sekundi pärast.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translatori seaded"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Privaatsed seaded kiireks ja sihipäraseks tõlkimiseks."
+  },
+  "html_help_and_information": {
+    "message": "Abi ja teave"
+  },
+  "html_api_key_guide": {
+    "message": "API-võtme juhend"
+  },
+  "html_about": {
+    "message": "Teave"
+  },
+  "html_privacy": {
+    "message": "Privaatsus"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Seadista AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Järgi neid samme seadetes. Tõlkimiseks vajad oma Google'i API-võtit."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Hangi oma API-võti.</1> Ava <2>Google AI Studio</2>, logi sisse ja loo võti. Loe allpool andmete jagamise teavet, siis kleebi võti. Abi leiad <3>samm-sammulisest juhendist</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Vali sihtkeel ja mudel.</1> Vali tõlgete keel. Soovitame Gemini Flash-Lite'i, kui see on sinu mudelite loendis."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Salvesta ja alusta tõlkimist.</1> Vali lehe all «Lõpeta seadistamine». Seejärel vali veebilehel tekst ja vajuta Control või vali paremklõpsumenüüst «Tõlgi valitud tekst»."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Ühenda oma Gemini API-võti ja vali ühilduv mudel."
+  },
+  "html_loading_setup_state": {
+    "message": "Seadistuse oleku laadimine..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Enne Google'iga ühendamist"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google saab sinu API-võtme saadaolevate mudelite kontrollimiseks. Tõlke taotlemisel saab Google ka valitud teksti ja sihtkeele, sealhulgas kohalike failide teksti. Tehisintellekti tõlked võivad olla valed."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Võti salvestatakse sellesse Chrome'i profiili krüpteeritult ja avatakse pärast taaskäivitust automaatselt. Lisaparooli pole vaja. Keegi, kellel on täielik juurdepääs brauseriprofiilile, võib võtme siiski taastada. <1>Loe privaatsuse üksikasju</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Nõutav igas riigis:</1> kasuta Gemini API-võtit projektist, millel on <2>aktiivne arveldus</2>. Hoia välja lülitatuna valikuline <3>selle laienduse päringulogide ja andmekogumite jagamine Google'iga</3>. Nende seadetega välistavad Google'i tasuliste teenuste tingimused sisendite ja vastuste kasutamise toodete täiustamiseks; turvalisuse ja õiguslikel eesmärkidel töötlemine jääb lubatuks. Laiendus on tasuta, kuid Google'i API-tasud võivad rakenduda."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Kasutustingimused.</1> Gemini kasutamisel selle laienduse kaudu nõustud ülaltoodud nõuete ja <2>Google'i tingimustega</2>. Kasutamine on vähemalt 18-aastastele töö- või ärieesmärkidel <3>toetatud piirkondades</3>. Laiendus ei kontrolli arveldus- ega jagamisseadeid."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Nõustu ja ühenda Google'iga"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Võta andmenõusolek tagasi"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Enne ühendamist loe andmete jagamise üksikasju."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Miks neid nõudeid vaja on? Loe korduma kippuvaid küsimusi</1>."
+  },
+  "html_api_key": {
+    "message": "API-võti"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Pärast nõustumist kleebi võti. See salvestatakse krüpteeritult ja mudelid laaditakse automaatselt."
+  },
+  "html_show": {
+    "message": "Näita"
+  },
+  "html_remove_saved_key": {
+    "message": "Eemalda salvestatud võti"
+  },
+  "html_model": {
+    "message": "Mudel"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Teadaolevad ainult meedia või eriotstarbelised mudelid peidetakse."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Soovitame Gemini Flash-Lite'i perekonda. Selle versiooni puhul (september 2026) on meie valik Gemini 3.5 Flash-Lite. Võid valida mõne teise loetletud mudeli. Kõik mudelid ei pruugi laiendusega töötada. Tõrke korral vali teine või soovitatud mudel."
+  },
+  "html_refresh_models": {
+    "message": "Värskenda mudeleid"
+  },
+  "html_use_recommended_model": {
+    "message": "Kasuta soovitatud mudelit"
+  },
+  "html_translation": {
+    "message": "Tõlge"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Määra keel ja soovi korral käivitusklahv."
+  },
+  "html_default_language": {
+    "message": "Vaikekeel"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Tulemusekaart võib kasutada teist keelt ilma vaikekeelt muutmata."
+  },
+  "html_keyboard_trigger": {
+    "message": "Käivitusklahv"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Üksikud klahvid võivad veebisaitide või juurdepääsetavuse tööriistadega konflikti minna. Ainult kontekstimenüü kasutamiseks vali «Väljas»."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Salvesta klahv"
+  },
+  "html_off": {
+    "message": "Väljas"
+  },
+  "html_behavior": {
+    "message": "Toimimine"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Kindlad kaitsemeetmed hoiavad tõlked kiired ja kaitsevad API-kvooti."
+  },
+  "html_parallel_requests": {
+    "message": "Samaaegsed päringud"
+  },
+  "html_request_timeout": {
+    "message": "Päringu ajalimiit"
+  },
+  "html_page_access": {
+    "message": "Juurdepääs lehtedele"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Kohalike failide jaoks luba laienduse halduses juurdepääs failide URL-idele."
+  },
+  "html_help_and_recovery": {
+    "message": "Abi ja taastamine"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Kui mudel pole saadaval, värskenda mudeleid, vali loendist üks ja salvesta seaded. Kui loend ei laadi, kontrolli võtit ja ühendust ning vali «Värskenda mudeleid»."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome'i seadete lehed ja Chrome Web Store ei luba tõlkimist. Kohalike failide jaoks luba laienduse halduses juurdepääs failide URL-idele. Pärast laienduse värskendamist või uuesti laadimist värskenda avatud veebilehti. Uuesti laadimine võib tõlke katkestada."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Tõlkimine ei tööta võrguühenduseta. Pärast ülal nõustumist saadetakse võti otse Google'ile mudelite kontrollimiseks. Valitud tekst, ka kohalikest failidest, saadetakse koos sihtkeelega ainult tõlke taotlemisel. Võti on selles Chrome'i profiilis krüpteeritud. Keele, mudeli ja klahvi seaded võivad Chrome'i kaudu sünkroonida. Laiendus hoiab vaid selle brauseriseansi viimast tulemust ega säilita tõlkeajalugu."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Võid ülal andmete jagamise üle vaadata ja nõusoleku igal ajal tagasi võtta. See peatab mudelite kontrolli ja tõlked kuni uue nõusolekuni. Võti säilib, kui sa ei vali «Eemalda salvestatud võti»."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Keele, mudeli ja klahvi muudatused salvestatakse siin."
+  },
+  "html_reload_saved_settings": {
+    "message": "Laadi salvestatud seaded uuesti"
+  },
+  "html_save_preferences": {
+    "message": "Salvesta seaded"
+  },
+  "html_gemini_translation": {
+    "message": "Tõlkimine Geminiga"
+  },
+  "html_setup_required": {
+    "message": "Seadistamine vajalik"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Tere tulemast AI Translatorisse"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Tõlgi valitud tekst keelde, mida oskad. Alustamiseks seadista need kaks asja:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Sinu Gemini API-võti.</1> Hangi oma võti Google AI Studiost. Meie juhend näitab, kuidas."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Sinu sihtkeel.</1> Vali keel, milles soovid lugeda."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Kuidas saada API-võtit"
+  },
+  "html_extension_status": {
+    "message": "Laienduse olek"
+  },
+  "html_active_translations": {
+    "message": "Aktiivsed tõlked"
+  },
+  "html_latest_this_session": {
+    "message": "Seansi viimane tulemus"
+  },
+  "html_no_translation_yet": {
+    "message": "Tõlkeid veel pole."
+  },
+  "html_copy": {
+    "message": "Kopeeri"
+  },
+  "html_settings": {
+    "message": "Seaded"
+  },
+  "html_key_guide": {
+    "message": "Võtme juhend"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translatoriga alustamine"
+  },
+  "html_extension_pages": {
+    "message": "Laienduse lehed"
+  },
+  "html_faq": {
+    "message": "Korduma kippuvad küsimused"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Hangi oma Google'i API-võti, vali keel ja tõlgi esimene valik."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Hangi API-võti"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API-võti võimaldab laiendusel kasutada Geminit sinu Google'i konto kaudu. Hoia seda salajas nagu parooli."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Laiendus on vähemalt 18-aastastele töö- või ärikasutuseks <1>Google'i toetatud riikides ja piirkondades</1>. Igas riigis peab API-võti kuuluma aktiivse arveldusega Gemini projektile. Lülita välja laienduse päringulogide ja andmekogumite valikuline jagamine Google'iga."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Laiendust kasutades nõustud nende tingimuste, <1>Google'i API tingimuste</1> ja <2>Gemini API lisatingimustega</2>. Ära kasuta seda, kui sa ei saa tingimusi täita. Laiendus ei kontrolli neid asjaolusid ega küsi isikut tõendavaid dokumente."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Ava Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Logi Google'i kontole sisse. Nõustu Google'i tingimustega, kui seda küsitakse."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Loo või vali võti"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API-võtmete lehel vali <1>Loo API-võti</1> ning järgi Google'i samme projekti valimiseks või loomiseks. Projekt koondab API kasutuse ja võimaliku arvelduse. Kui oled AI Studios uus, võib Google olla juba loonud vaikeprojekti ja võtme."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Kui olemasolev projekt puudub, ava <1>Töölaud > Projektid > Impordi projektid</1>. Impordi projekt ja naase API-võtmete juurde."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Enne võtme kasutamist järgi <1>Google'i arveldusjuhendit</1> ja kontrolli aktiivset arveldust. Tasuline Gemini rakenduse tellimus ei asenda API-projekti arveldust. Lülita laienduse logide ja andmekogumite valikuline jagamine Google'iga välja; loe <2>Google'i logide jagamise eeskirja</2>. Privaatne projekti logimine erineb jagamisest."
+  },
+  "html_copy_your_key": {
+    "message": "Kopeeri võti"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopeeri võti AI Studiost. Naase laienduse seadetesse ja loe andmete jagamise üksikasju. Vali <1>Nõustu ja ühenda Google'iga</1>, seejärel kleebi võti väljale <2>API-võti</2>. See krüpteeritakse ja salvestatakse automaatselt ning mudeliloend laaditakse. Oota tulemust enne jätkamist."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translatori seaded, kus andmete jagamise teade ja nõustumisnupp asuvad tühja API-võtme välja ning Flash-Lite'i soovituse kohal."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Näide on inglise keeles. AI Translatoris: nõustu esmalt andmete jagamisega, siis kleebi oma võti. Mudelite loendit kontrollitakse pärast võtme krüpteeritult salvestamist."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google võib neid kuvasid muuta. Uusimaid samme ja võtmevigade abi vaata <1>Google'i API-võtme juhendist</1>. Kui vana võti ei tööta, kasuta AI Studiost uut."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Vali tõlkeseaded"
+  },
+  "html_choose_a_model": {
+    "message": "Vali mudel"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Soovitame Gemini Flash-Lite'i perekonda. Septembri 2026 versiooni valik on <1>Gemini 3.5 Flash-Lite</1>. Kasuta seda, kui see on sinu loendis."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Võid valida teise loetletud mudeli. Mõned ei pruugi laiendusega töötada. Kui mudel ebaõnnestub, vali teine või soovitatud mudel."
+  },
+  "html_choose_your_target_language": {
+    "message": "Vali sihtkeel"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Vali lugemise keel väljast <1>Vaikekeel</1>. Valikud järgivad <2>Google'i dokumenteeritud Gemini keeli</2>. Tõlkekvaliteet võib keele ja teksti järgi erineda."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translatori tõlkeseaded sihtkeele valiku ja käivitusklahvi juhtelementidega."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Näide on inglise keeles. Vali tõlkekeel ja lõpeta seadistamine."
+  },
+  "html_finish_setup": {
+    "message": "Lõpeta seadistamine"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Jäta käivitusklahviks Control, salvesta teine klahv või vali <1>Väljas</1>, et kasutada ainult paremklõpsumenüüd. Vali seadete all <2>Lõpeta seadistamine</2>. Hiljem saad valikuid muuta nupuga <3>Salvesta seaded</3>."
+  },
+  "html_open_settings": {
+    "message": "Ava seaded"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Tõlgi esimene valik"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Ava tavaline veebileht ja vali lühike tekst. Tee paremklõps ja vali <1>Tõlgi valitud tekst</1> või vajuta ning vabasta valitud klahv. Tulemus ilmub valiku kõrvale."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Kui laiendus just paigaldati või laaditi uuesti, värskenda esmalt veebilehte. Chrome'i seaded, Chrome Web Store ja sisseehitatud PDF-lugeja ei luba tõlkimist."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Tööriistariba hüpikaken näitab viimast tulemust. Pärast seadistamist avaneb tavavaade. API-võtme eemaldamisel ilmub tervitusjuhend uuesti."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Korduma kippuvad küsimused: võtmed, kulud ja privaatsus"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Miks vajan oma API-võtit?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Laiendus saadab päringud sinu võtmega otse sinu Google'i projektile. See on disainivalik, mitte Chrome'i reegel. Võti lubab päringud ja seob need kasutuse ning arveldusega. Ära jaga võtit ekraanipiltidel ega avalikes sõnumites. Vaata <1>Google'i API-võtme juhendit</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Miks on aktiivne arveldus nõutav, mitte ainult soovitatav?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome'i <1>Limited Use'i reeglite punktid 3 ja 5</1> piiravad andmekasutuse laienduse eesmärgi ja seotud toimingutega. Mõni Gemini tasuta kasutus lubab laiemat treenimist ja inimülevaatust. Tasulised tingimused välistavad tootearenduse, kuid lubavad piiratud säilitamist turbe- ja õiguslikel eesmärkidel ning töötlemist väljaspool EL-i."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Selle vastuolu lahendamiseks nõuab arendaja aktiivset projektiarveldust kogu maailmas. Soovitus lubaks endiselt tasuta kasutust. Google'i piirkonnareegel nõuab tasulisi teenuseid EMP-s, Ühendkuningriigis ja Šveitsis pakutavatele rakendustele. Vaata <1>Gemini tingimusi: kasutuspiirangud, tasuta ja tasulised teenused</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Miks peab valikuline Google'iga jagamine olema välja lülitatud?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Logide või andmekogumite jagamine võib lubada treenimist ja inimülevaatust ka aktiivse arvelduse korral. Ära panusta laienduse andmeid andmekogumite jagamise või tagasiside kaudu. Selle reegli järgi on projekti privaatsed logid lubatud. Vaata <1>Google'i logieeskirja: jagatavad andmed ja sinu andmete kasutamine</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Kas laiendus on tasuta, kui API-juurdepääs peab olema tasuline?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Jah. Laiendus on tasuta, kuid Google'i API-tasud võivad rakenduda. Tasuline Gemini rakenduse tellimus ei asenda API-projekti arveldust. Vaata <1>arvelduse kontrollimist</1> ja <2>Google'i API hindu</2>. Laiendus ei kontrolli arveldus- ega jagamisseadeid."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Miks pean valima «Nõustu ja ühenda Google'iga»?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome'i <1>avalikustamisnõuete punktid 1 ja 2</1> nõuavad selget andmekasutuse teavet ja teadlikku nõusolekut. Nupp võimaldab otsustada enne esimest Google'i API-päringut. See ei kontrolli isikut ega arveldust ega anna luba teiste eraandmete jagamiseks."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Mida täpselt Google'ile saadetakse?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Mudelikontroll saadab võtme ja küsib saadaolevaid mudeleid. Tõlkimine saadab valitud teksti, sihtkeele, mudeli ja tõlkejuhised, ka kohalike failide teksti. Laiendus ei lisa tervet lehte, lehe aadressi ega sirvimisajalugu. Google saab ka ühendusandmeid, näiteks IP-aadressi. Arendaja ei saa ühtegi neist päringutest. Saada ainult teksti, mida tohid jagada."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Kuidas võti salvestatakse ja automaatselt avatakse?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API-võti salvestatakse krüpteeritult. See ja krüpteerimisvõti jäävad Chrome'i profiili, et neid saaks pärast taaskäivitust automaatselt kasutada. Neid ei sünkroonita. Profiilile ligi pääsev inimene võib API-võtme siiski taastada. See pole süsteemi võtmehoidja ega parooliga kaitstud hoidla. Keele, mudeli ja klahvi valikud võivad sünkroonida. Ainult viimane tulemus säilib seansi jooksul; kasutusanalüütikat ega tõlkeajalugu pole."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Uuendus krüpteerib ja kontrollib vana salvestatud võtme enne avatekstikoopiate kustutamist. Ebaõnnestumisel jääb vana koopia alles ja päringud blokeerituks. Seaded selgitavad viga. Vana võtme liigutamine ei jäta nõusolekut vahele."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Kas saan nõusoleku tagasi võtta või võtme eemaldada?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>Seadetes</1> blokeerib <2>Võta andmenõusolek tagasi</2> uued päringud ja tühistab aktiivsed kohalikult, säilitades võtme ning eelistused. <3>Eemalda salvestatud võti</3> kustutab võtme, krüpteerimisvõtme ja mudelite vahemälu. Kumbki ei võta saadetud andmeid tagasi ega taga saadetud päringu tasuta muutumist. Tühista võti AI Studios, et see ka Google'is keelata."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Nõusolek säilib tavaliste taaskäivituste ja uuenduste järel. Kui teade muutub, ootavad päringud selle lugemist ja uut nõustumist."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Miks ainult täiskasvanutele ning töö- või ärikasutuseks?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google nõuab vähemalt 18-aastast vanust ja töö- või ärikasutust toetatud piirkondades. Vaata <1>Gemini tingimusi: vanusenõuded ja kasutuspiirangud</1> ning <2>saadaolevaid piirkondi</2>. Laiendusel pole eraldi sobivuse märkeruutu ega isikukontrolli."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Miks on lisaks teatele vaja privaatsuseeskirja?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Teade selgitab valikut enne ühendamist. Eeskiri annab täielikud andmete, salvestamise ja eemaldamise üksikasjad. Chrome'i <1>privaatsuseeskirja reeglid</1> nõuavad seda kasutajaandmeid töötlevatelt laiendustelt. Loe <2>meie privaatsuseeskirja</2>. Need teated ei tähenda Google'i heakskiitu laiendusele."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Tehisintellekti tõlked võivad olla valed. Kontrolli olulist sõnastust enne sellele tuginemist."
+  },
+  "html_about_ai_translator": {
+    "message": "Teave AI Translatori kohta"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Tõlgi lihtsalt: vali tekst ja vajuta Control."
+  },
+  "html_made_for_people": {
+    "message": "Loodud inimestele"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Lõin AI Translatori, et aidata inimestel lugeda, õppida ja keelteüleselt suhelda. Loodan, et sellest on kasu inimestele kogu maailmas."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Laiendus tõlgib valitud teksti sinu Google Gemini API-võtmega. Sina valid, mida saata ja mis keeles lugeda."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Valiku tõlkimiseks vajuta ja vabasta Control. Control on vaikeklahv, mida saab seadetes muuta. Võid kasutada ka lehe paremklõpsumenüüd."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Käsitsi testitud ainult Macis. Windowsit ja Linuxit pole käsitsi testitud."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Vaata lähtekoodi ja projekti juhendit</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Küsi abi või teata probleemist</1>. Teated on avalikud. Ära lisa API-võtmeid, privaatset teksti ega isikuandmeid."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Kui soovid minu tööd toetada"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Toeta minu kodumaad Ukrainat, kes kaitseb end Venemaa agressiooni eest."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Usaldan Sternenko Community Foundationit. Kui saad ja soovid aidata, võid annetada nende ametlikul veebisaidil."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Toeta Ukrainat fondi kaudu</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Toetamine on vabatahtlik ega ole laienduse kasutamiseks vajalik. Link avab välise veebisaidi. Annetused lähevad fondi, mitte laienduse kaudu."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privaatsus ja kulud"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API-võti on selles seadmes krüpteeritud ning seda ei sünkroonita. See jääb pärast tavalisi Chrome'i taaskäivitusi kättesaadavaks avamisparoolita. Brauseriprofiilile ligi pääsev inimene võib selle siiski taastada."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Enne esimest Google'i päringut selgitavad seaded andmete jagamist ja paluvad valida <1>Nõustu ja ühenda Google'iga</1>. Seejärel saadetakse valitud tekst otse Google'ile ainult tõlke küsimisel. Mudelikontrollid saadavad võtme, kuid mitte valitud teksti. Laiendusel pole analüütikat, reklaame ega tõlkeajalugu."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Vaata üksikasju alati <1>seadetes</1>. <2>Võta andmenõusolek tagasi</2> peatab uued päringud, säilitades krüpteeritud võtme ja eelistused. <3>Eemalda salvestatud võti</3> kustutab võtme ja mudelite vahemälu. Juba saadetud andmeid ei saa tagasi võtta."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Tõlked loob tehisintellekt ja need võivad olla valed. Kontrolli olulist sõnastust enne sellele tuginemist."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Loe privaatsuse üksikasju</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator on tasuta sõltumatu projekt. Google'i API-tasud võivad rakenduda. Kasuta igas riigis Gemini API-võtit projektist, millel on <1>aktiivne arveldus</1>, ning keela valikuline <2>laienduse päringulogide ja andmekogumite jagamine Google'iga</2>. Tasulised tingimused välistavad siis sisendite ja vastuste kasutamise tootearenduseks; turbe- ja õiguslik töötlemine jääb lubatuks. Loe <3>Google'i hinna- ja andmekasutusteavet</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Laiendus on vähemalt 18-aastastele töö- või ärikasutuseks <1>Google'i toetatud piirkondades</1>. Kasutades nõustud tingimuste, <2>Google'i API tingimuste</2> ja <3>Gemini API lisatingimustega</3>. Ära kasuta seda, kui sa ei saa tingimusi täita. Sobivuse märkeruutu ega isikukontrolli pole. Laiendus ei kontrolli arveldust ega jagamist."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Salvestamata muudatused."
+  },
+  "runtime_settings_conflict": {
+    "message": "Seaded muutusid teisel lehel. Sinu muudatused jäävad siia alles. Muudatustest loobumiseks ja salvestatud väärtuste kasutamiseks laadi salvestatud seaded uuesti."
+  },
+  "runtime_preferences_current": {
+    "message": "Seaded on ajakohased."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Salvestatud võtit ei saa avada. Ava seaded uuesti või eemalda võti ja sisesta uuesti."
+  },
+  "runtime_key_conflict": {
+    "message": "API-võti muutus teisel lehel. Laadi salvestatud seaded enne võtme salvestamist uuesti."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Võti on salvestatud krüpteeritult. Nõustu enne Google'iga ühendamist andmete jagamisega."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Enne API-võtme lisamist nõustu ülal andmete jagamisega."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini lükkas salvestatud võtme tagasi. Asenda see või vali kontrollimiseks «Värskenda mudeleid»."
+  },
+  "runtime_paste_key": {
+    "message": "Gemini ühendamiseks kleebi API-võti."
+  },
+  "runtime_key_checked": {
+    "message": "API-võti salvestatud. Gemini aktsepteeris seda viimase mudelikontrolli ajal."
+  },
+  "runtime_key_saved_check": {
+    "message": "API-võti on seadmesse krüpteeritult salvestatud. Värskenda mudeleid, et seda Geminiga kontrollida."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Proovi tagasivõtmist uuesti"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Võta andmenõusolek tagasi"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Tagasivõtmine pole kinnitatud. Valiku salvestamiseks proovi uuesti."
+  },
+  "runtime_agreement_saved": {
+    "message": "Andmete jagamine on selle Chrome'i profiili jaoks lubatud. Võid nõusoleku igal ajal tagasi võtta."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Google'iga ei ühenduta enne nõustumist. Nõusoleku tagasivõtmisel jääb võti alles."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini lükkas salvestatud võtme tagasi. Asenda see allpool."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Võti on selles seadmes krüpteeritult salvestatud."
+  },
+  "runtime_setup_create_key": {
+    "message": "Loo oma võti Google AI Studios."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Keel valitud. Valikute salvestamiseks lõpeta seadistamine."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Vali allpool sihtkeel."
+  },
+  "runtime_finish_setup": {
+    "message": "Lõpeta seadistamine"
+  },
+  "runtime_save_preferences": {
+    "message": "Salvesta seaded"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Lisa API-võti, kontrolli mudelite loendit ja salvesta mudelivalik."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Lahenda seadete vastuolu enne tõlkimist."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Loe andmete jagamise teavet ja nõustu enne Google'iga ühendamist."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Lõpeta API-võtme salvestamine enne seadistuse kontrollimist."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Seadistus vajab tähelepanu: Gemini lükkas salvestatud API-võtme tagasi."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Võti salvestatud. Vali sihtkeel ja lõpeta seadistamine."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Vali saadaolev mudel ja salvesta seaded."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Mudel valitud. Kasutamiseks salvesta seaded."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Võti ja keel on valmis. Lõpeta seadistamine, et valikud salvestada, ja proovi tõlkimist. Mudeli juurdepääs ja kvoot võivad siiski muutuda."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Valmis tõlkimist proovima. Salvestatud mudel on kontrollitud loendis; juurdepääs ja kvoot võivad siiski muutuda."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Võti salvestatud. Värskenda mudeleid, et kontrollida võtit ja valitud mudelit."
+  },
+  "runtime_show_key": {
+    "message": "Näita"
+  },
+  "runtime_hide_key": {
+    "message": "Peida"
+  },
+  "runtime_choose_target_language": {
+    "message": "Vali sihtkeel"
+  },
+  "runtime_background_no_response": {
+    "message": "Laienduse taustaprotsess ei vastanud. Laadi laiendus uuesti ja proovi veel."
+  },
+  "runtime_refresh_models": {
+    "message": "Värskenda mudeleid"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Enne mudelite laadimist nõustu andmete jagamisega."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Lõpeta API-võtme salvestamine enne mudelite värskendamist."
+  },
+  "runtime_refreshing": {
+    "message": "Värskendamine..."
+  },
+  "runtime_loading": {
+    "message": "Laadimine..."
+  },
+  "runtime_models_checking": {
+    "message": "Gemini ühilduvate mudelite kontrollimine..."
+  },
+  "runtime_models_loading": {
+    "message": "Ühilduvate mudelite laadimine..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Ühilduvaid mudeleid ei saanud laadida."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini ei tagastanud ühilduvaid mudeleid."
+  },
+  "runtime_model_not_available": {
+    "message": "Valitud mudel pole ühilduvas loendis. Vali teine mudel."
+  },
+  "runtime_record_key": {
+    "message": "Salvesta klahv"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Klahvi salvestamine tühistati."
+  },
+  "runtime_unknown_key": {
+    "message": "See klahv"
+  },
+  "runtime_press_key": {
+    "message": "Vajuta klahvi..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Vajuta toetatud klahvi, mis ei sisesta märki. Tühistamiseks vajuta Escape."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Salvestatud API-võtme kontrollimiseks värskenda mudeleid."
+  },
+  "runtime_models_add_key": {
+    "message": "Lisa API-võti ühilduvate mudelite laadimiseks."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Laiendus ei saanud salvestatud olekut laadida."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini lükkas salvestatud API-võtme tagasi. Asenda see või värskenda mudeleid uuesti kontrollimiseks."
+  },
+  "runtime_settings_reopen": {
+    "message": "Seadeid ei saanud laadida. Ava need uuesti ja proovi veel."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Seadeid ei saanud laadida. Laadi salvestatud seaded uuesti ja proovi veel. Salvestamine on keelatud sinu valikute kaitsmiseks."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Seadistuse olekut ei saanud laadida."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Sisesta täielik API-võti ilma tühikuteta."
+  },
+  "runtime_key_use_remove": {
+    "message": "Võtme kustutamiseks kasuta «Eemalda salvestatud võti»."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Enne API-võtme salvestamist nõustu ülal andmete jagamisega."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API-võtme krüpteeritult salvestamine..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API-võtit ei saanud lugeda või salvestada. Sinu sisestus säilib. Uuesti proovimiseks kasuta «Salvesta seaded»."
+  },
+  "runtime_connecting_google": {
+    "message": "Google'iga ühendamine..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google'i ühenduste peatamine..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Andmenõusolekut ei saanud salvestada. Proovi uuesti."
+  },
+  "runtime_key_removing": {
+    "message": "Salvestatud võtme eemaldamine..."
+  },
+  "runtime_key_removed": {
+    "message": "Salvestatud võti eemaldatud. Pärast andmete jagamisega nõustumist saad lisada uue."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Salvestatud võtit ei saanud eemaldada. Proovi uuesti."
+  },
+  "runtime_saving": {
+    "message": "Salvestamine..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Vali kehtiv keel ja mudel."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Vali toetatud käivitusklahv või «Väljas»."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Vali mudel praegusest ühilduvast loendist."
+  },
+  "runtime_preferences_saving": {
+    "message": "Seadete salvestamine..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Seaded salvestatud."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Seaded salvestatud. Seadistamise lõpetamiseks lisa API-võti."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Seadeid ei saanud lugeda või salvestada. Muudatused säilivad. Proovi uuesti."
+  },
+  "runtime_key_will_save": {
+    "message": "API-võti salvestatakse automaatselt."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Lõpeta API-võtme sisestamine."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Ühilduvate mudelite laadimiseks lõpeta API-võtme salvestamine."
+  },
+  "runtime_recommended_selected": {
+    "message": "Soovitatud mudel valitud. Kasutamiseks salvesta valik."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Pärast salvestamist on käivitusklahv välja lülitatud."
+  },
+  "runtime_connection_changed": {
+    "message": "Ühenduse seaded muutusid. Salvestatud seadete kontrollimine..."
+  },
+  "runtime_models_changed": {
+    "message": "Mudelite loend muutus. Ühilduvate mudelite kontrollimine..."
+  },
+  "runtime_no_translation": {
+    "message": "Tõlkeid veel pole."
+  },
+  "runtime_start_setup": {
+    "message": "Alusta seadistamist"
+  },
+  "runtime_settings": {
+    "message": "Seaded"
+  },
+  "runtime_key_rejected": {
+    "message": "Võti tagasi lükatud"
+  },
+  "runtime_setup_required": {
+    "message": "Seadistamine vajalik"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Tõlkimise alustamiseks lisa seadetes API-võti."
+  },
+  "runtime_add_key": {
+    "message": "Lisa API-võti"
+  },
+  "runtime_finish_model_language": {
+    "message": "Võti on salvestatud. Ava seaded mudeli kontrollimiseks ja keelevaliku lõpetamiseks."
+  },
+  "runtime_check_setup": {
+    "message": "Kontrolli seadistust"
+  },
+  "runtime_translating": {
+    "message": "Tõlkimine"
+  },
+  "runtime_error": {
+    "message": "Viga"
+  },
+  "runtime_ready": {
+    "message": "Valmis"
+  },
+  "runtime_status_load_failed": {
+    "message": "Laienduse olekut ei saanud laadida. Laadi laiendus uuesti ja värskenda lehte."
+  },
+  "runtime_copied": {
+    "message": "Kopeeritud."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopeerimine blokeeriti. Vali tulemuse tekst ja kopeeri see."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Seadeid ei saanud avada. Proovi uuesti."
+  },
+  "runtime_translating_progress": {
+    "message": "Tõlkimine..."
+  },
+  "runtime_translation_started": {
+    "message": "Tõlkimine algas."
+  },
+  "runtime_translation_complete": {
+    "message": "Tõlge valmis."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Tõlge valmis. Kasuta tulemuse teksti või kaardi juhtelemente."
+  },
+  "runtime_translation": {
+    "message": "Tõlge"
+  },
+  "runtime_target_language": {
+    "message": "Sihtkeel"
+  },
+  "runtime_card_target_language": {
+    "message": "Selle kaardi sihtkeel"
+  },
+  "runtime_close_card": {
+    "message": "Sulge tõlkekaart"
+  },
+  "runtime_translated_text": {
+    "message": "Tõlgitud tekst"
+  },
+  "runtime_retry": {
+    "message": "Proovi uuesti"
+  },
+  "runtime_copy": {
+    "message": "Kopeeri"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Seadeid ei saanud avada. Kasuta laienduse tööriistariba."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopeerimine ebaõnnestus. Vali tulemuse tekst ja kopeeri see."
+  },
+  "runtime_context_menu": {
+    "message": "Tõlgi valitud tekst"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Pole praeguses loendis)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Veel kontrollimata)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Kasutatakse vahemälu mudeliloendit ajast $value1$. Reaalajas värskendamine ebaõnnestus. Proovi hiljem.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Kasutatakse vahemälu mudeliloendit. Reaalajas värskendamine ebaõnnestus. Proovi hiljem."
+  },
+  "runtime_models_cache_at": {
+    "message": "Kasutatakse vahemälu mudeliloendit ajast $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Kasutatakse vahemälu mudeliloendit."
+  },
+  "runtime_models_updated_at": {
+    "message": "Mudelite loend värskendatud: $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Mudelite loend värskendatud."
+  },
+  "runtime_key_not_supported": {
+    "message": "Klahvi $value1$ ei toetata. Vajuta teist klahvi või tühistamiseks Escape.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Pärast salvestamist kasutatakse klahvi $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Kuni $value1$ vahekaardi kohta ja $value2$ kokku",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ sekundit",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Kaardi kasutamiseks vajuta Tab või sulgemiseks Escape.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Tõlkimine ebaõnnestus. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Värskenda avatud lehti"
+  },
+  "refresh_message": {
+    "message": "API-võti on salvestatud. Pärast seadistamist värskenda juba avatud lehti. Seejärel vali tekst ja vajuta tõlkimiseks Control."
+  },
+  "refresh_continue": {
+    "message": "Jätka seadistamist"
+  },
+  "refresh_faq_question": {
+    "message": "Miks pean avatud lehti värskendama?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Värskenda avatud lehti</1> pärast seadistamist, enne tõlkimist. Chrome peab laadima laienduse lehtedele, mis olid avatud enne paigaldamist või uuesti laadimist. Uued lehed on automaatselt valmis."
+  },
+  "ui_locale": {
+    "message": "et",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

@@ -1,4 +1,9 @@
 import {
+  t,
+  localizeDocument,
+  uiLocale,
+  languageDisplayName,
+  preferredTargetLanguage,
   DEFAULTS,
   LANGUAGES,
   LIMITS,
@@ -12,6 +17,8 @@ import {
   isValidModelId,
   normalizeApiKey,
 } from "./shared.js";
+
+localizeDocument();
 
 const elements = {
   form: document.getElementById("settingsForm"),
@@ -40,6 +47,7 @@ const elements = {
   setupLanguageStep: document.getElementById("setupLanguageStep"),
   parallelLimits: document.getElementById("parallelLimits"),
   timeoutLimit: document.getElementById("timeoutLimit"),
+  refreshPagesDialog: document.getElementById("refreshPagesDialog"),
 };
 
 let initialized = false;
@@ -115,13 +123,13 @@ function updateSaveButton() {
   elements.saveButton.disabled = !initialized || saving || savingKey || savingAgreement || (!dirty && !canFinish) || hasConflicts();
 }
 
-function markDirty(message = "Unsaved changes.") {
+function markDirty(message = t("runtime_unsaved_changes")) {
   dirty = preferencesAreDirty() || elements.apiKey.value.trim() !== storedApiKey;
   updateSaveButton();
   if (hasConflicts()) {
-    setSaveStatus("Settings changed in another page. Your edits are kept here. Reload saved settings to discard your edits and use the saved values.", "error");
+    setSaveStatus(t("runtime_settings_conflict"), "error");
   } else {
-    setSaveStatus(dirty ? message : "Preferences are up to date.");
+    setSaveStatus(dirty ? message : t("runtime_preferences_current"));
   }
   elements.reloadSettings.hidden = !hasConflicts();
   renderSetupStatus();
@@ -129,59 +137,59 @@ function markDirty(message = "Unsaved changes.") {
 
 function renderApiKeyStatus() {
   const status = damagedKey
-    ? "Saved key cannot be opened. Try reopening Settings, or remove it and enter it again."
+    ? t("runtime_key_cannot_open")
     : keyConflict
-    ? "The API key changed in another page. Reload saved settings before saving a key."
+    ? t("runtime_key_conflict")
     : !dataSharingAccepted
-      ? storedApiKey ? "Your key is saved encrypted. Agree to data sharing before connecting to Google." : "Agree to data sharing above before adding your API key."
+      ? storedApiKey ? t("runtime_saved_key_needs_agreement") : t("runtime_key_entry_needs_agreement")
     : apiKeyStatus === "rejected"
-      ? "Gemini rejected this saved key. Replace it or use Refresh models to check it again."
+      ? t("runtime_key_rejected_refresh")
       : !storedApiKey
-        ? "Paste an API key to connect Gemini."
+        ? t("runtime_paste_key")
         : apiKeyStatus === "checked"
-          ? "API key saved. Gemini accepted it at the last model-list check."
-          : "API key saved encrypted on this device. Refresh models to check it with Gemini.";
+          ? t("runtime_key_checked")
+          : t("runtime_key_saved_check");
   setTextStatus(elements.apiKeyStatus, status, damagedKey || keyConflict || apiKeyStatus === "rejected" ? "error" : "");
 }
 
 function renderAgreement() {
   elements.agreeDataSharing.hidden = dataSharingAccepted || withdrawalFailed;
   elements.withdrawDataSharing.hidden = !dataSharingAccepted && !withdrawalFailed;
-  elements.withdrawDataSharing.textContent = withdrawalFailed ? "Retry withdrawal" : "Withdraw data agreement";
+  elements.withdrawDataSharing.textContent = withdrawalFailed ? t("runtime_retry_withdrawal") : t("runtime_withdraw_agreement");
   if (withdrawalFailed) {
-    setTextStatus(elements.agreementStatus, "Your withdrawal is not confirmed. Retry withdrawal to save your choice.", "error");
+    setTextStatus(elements.agreementStatus, t("runtime_withdrawal_unconfirmed"), "error");
     return;
   }
   setTextStatus(elements.agreementStatus, dataSharingAccepted
-    ? "Data sharing agreed for this Chrome profile. You can withdraw at any time."
-    : "No connection to Google until you agree. Your saved key is kept if you withdraw.");
+    ? t("runtime_agreement_saved")
+    : t("runtime_agreement_not_saved"));
 }
 
 function renderSetupStatus() {
   if (initialized && (!dataSharingAccepted || !storedApiKey || !savedPreferences.targetLanguage)) setupGuideVisible = true;
   elements.setupGuide.hidden = !setupGuideVisible;
   elements.setupKeyStep.textContent = apiKeyStatus === "rejected"
-    ? "Gemini rejected the saved key. Replace it below."
-    : storedApiKey ? "Your key is saved encrypted on this device." : "Create your own key in Google AI Studio.";
+    ? t("runtime_setup_key_rejected")
+    : storedApiKey ? t("runtime_setup_key_saved") : t("runtime_setup_create_key");
   elements.setupLanguageStep.textContent = isSupportedLanguage(elements.targetLanguage.value)
-    ? "Language selected. Finish setup to save your choices."
-    : "Choose a target language below.";
-  if (!saving) elements.saveButton.textContent = setupGuideVisible ? "Finish setup" : "Save Preferences";
-  let message = "Add an API key, check the model list, and save your model choice.";
-  if (hasConflicts()) message = "Resolve the settings conflict before translating.";
-  else if (!dataSharingAccepted) message = "Review data sharing and agree before connecting to Google.";
-  else if (elements.apiKey.value.trim() !== storedApiKey) message = "Finish saving the API key before checking setup.";
-  else if (apiKeyStatus === "rejected") message = "Setup needs attention: Gemini rejected the saved API key.";
-  else if (storedApiKey && !isSupportedLanguage(elements.targetLanguage.value)) message = "Key saved. Choose a target language, then finish setup.";
+    ? t("runtime_setup_language_selected")
+    : t("runtime_setup_choose_language");
+  if (!saving) elements.saveButton.textContent = setupGuideVisible ? t("runtime_finish_setup") : t("runtime_save_preferences");
+  let message = t("runtime_setup_add_key_model");
+  if (hasConflicts()) message = t("runtime_setup_resolve_conflict");
+  else if (!dataSharingAccepted) message = t("runtime_setup_agreement_required");
+  else if (elements.apiKey.value.trim() !== storedApiKey) message = t("runtime_setup_finish_key_save");
+  else if (apiKeyStatus === "rejected") message = t("runtime_setup_key_needs_attention");
+  else if (storedApiKey && !isSupportedLanguage(elements.targetLanguage.value)) message = t("runtime_setup_saved_choose_language");
   else if (storedApiKey && catalogLoaded) {
     message = elements.aiModel.selectedOptions[0]?.dataset.unavailable
-      ? "Choose an available model and save preferences."
+      ? t("runtime_setup_choose_available_model")
       : elements.aiModel.value !== savedPreferences.aiModel
-        ? "Model selected. Save preferences to use it."
+        ? t("runtime_setup_model_selected")
         : setupGuideVisible
-          ? "Key and language are ready. Finish setup to save your choices, then try a translation. Model access and quota can still change."
-          : "Ready to try a translation. The saved model is in the checked model list; request access and quota can still change.";
-  } else if (storedApiKey) message = "Key saved. Refresh models to check the key and selected model.";
+          ? t("runtime_setup_ready_finish")
+          : t("runtime_setup_ready_translate");
+  } else if (storedApiKey) message = t("runtime_setup_refresh_models");
   elements.setupStatus.textContent = message;
   updateSaveButton();
 }
@@ -241,7 +249,7 @@ function setKeySaving(value) {
 
 function maskApiKey() {
   elements.apiKey.type = "password";
-  elements.revealKey.textContent = "Show";
+  elements.revealKey.textContent = t("runtime_show_key");
   elements.revealKey.setAttribute("aria-pressed", "false");
 }
 
@@ -249,13 +257,13 @@ function populateLanguages(selectedCode) {
   const fragment = document.createDocumentFragment();
   const placeholder = document.createElement("option");
   placeholder.value = "";
-  placeholder.textContent = "Choose a target language";
+  placeholder.textContent = t("runtime_choose_target_language");
   placeholder.disabled = true;
   fragment.append(placeholder);
   for (const language of LANGUAGES) {
     const option = document.createElement("option");
     option.value = language.code;
-    option.textContent = language.name;
+    option.textContent = languageDisplayName(language.code);
     fragment.append(option);
   }
   elements.targetLanguage.replaceChildren(fragment);
@@ -288,7 +296,7 @@ function renderModels(models, selectedModel) {
   if (isValidModelId(selectedModel) && !modelIds.has(selectedModel)) {
     const unavailable = document.createElement("option");
     unavailable.value = selectedModel;
-    unavailable.textContent = `${selectedModel} (${models.length ? "Not in current list" : "Not checked yet"})`;
+    unavailable.textContent = models.length ? t("runtime_model_unlisted", [selectedModel]) : t("runtime_model_unchecked", [selectedModel]);
     unavailable.dataset.unavailable = "true";
     fragment.append(unavailable);
   }
@@ -297,7 +305,7 @@ function renderModels(models, selectedModel) {
     option.value = model.id;
     option.textContent = model.displayName === model.id
       ? model.id
-      : `${model.displayName} (${model.id})`;
+      : t("runtime_model_label", [model.displayName, model.id]);
     if (model.description) option.title = model.description;
     fragment.append(option);
   }
@@ -314,7 +322,7 @@ function renderModels(models, selectedModel) {
 function formatCatalogTime(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "";
-  return new Intl.DateTimeFormat(undefined, {
+  return new Intl.DateTimeFormat(uiLocale(), {
     dateStyle: "medium",
     timeStyle: "short",
   }).format(date);
@@ -327,7 +335,7 @@ async function sendRuntimeMessage(message) {
       chrome.runtime.sendMessage(message),
       new Promise((_, reject) => {
         timer = setTimeout(() => {
-          reject(new Error("The extension background did not respond. Reload the extension and try again."));
+          reject(new Error(t("runtime_background_no_response")));
         }, LIMITS.requestTimeoutMs + 2_000);
       }),
     ]);
@@ -340,7 +348,7 @@ function invalidateModelLoad(message) {
   modelLoadSequence += 1;
   catalogLoaded = false;
   renderModels([], elements.aiModel.value || DEFAULTS.aiModel);
-  elements.refreshModels.textContent = "Refresh models";
+  elements.refreshModels.textContent = t("runtime_refresh_models");
   setTextStatus(elements.modelStatus, message);
   updateKeyControls();
   renderSetupStatus();
@@ -348,17 +356,17 @@ function invalidateModelLoad(message) {
 
 async function loadModels(forceRefresh) {
   if (!initialized || !dataSharingAccepted || keyConflict || !storedApiKey || elements.apiKey.value.trim() !== storedApiKey) {
-    setTextStatus(elements.modelStatus, !dataSharingAccepted ? "Agree to data sharing before loading models." : "Finish saving the API key before refreshing models.");
+    setTextStatus(elements.modelStatus, !dataSharingAccepted ? t("runtime_models_need_agreement") : t("runtime_models_finish_key_save"));
     return false;
   }
 
   elements.refreshModels.disabled = true;
   elements.recommendedModel.disabled = true;
-  elements.refreshModels.textContent = forceRefresh ? "Refreshing..." : "Loading...";
+  elements.refreshModels.textContent = forceRefresh ? t("runtime_refreshing") : t("runtime_loading");
   const sequence = ++modelLoadSequence;
   setTextStatus(elements.modelStatus, forceRefresh
-    ? "Checking Gemini for compatible models..."
-    : "Loading compatible models...");
+    ? t("runtime_models_checking")
+    : t("runtime_models_loading"));
 
   try {
     const response = await sendRuntimeMessage({
@@ -372,11 +380,11 @@ async function loadModels(forceRefresh) {
         catalogLoaded = false;
         renderApiKeyStatus();
       }
-      throw new Error(response?.error?.message || "Compatible models could not be loaded.");
+      throw new Error(response?.error?.message || t("runtime_models_load_failed"));
     }
 
     const models = normalizeModelOptions(response.models);
-    if (!models.length) throw new Error("Gemini returned no compatible models.");
+    if (!models.length) throw new Error(t("runtime_models_empty"));
     const selectedModel = elements.aiModel.value || DEFAULTS.aiModel;
     renderModels(models, selectedModel);
     catalogLoaded = true;
@@ -384,24 +392,25 @@ async function loadModels(forceRefresh) {
     renderApiKeyStatus();
 
     const fetchedAt = formatCatalogTime(response.fetchedAt);
-    const when = fetchedAt ? ` from ${fetchedAt}` : "";
     if (elements.aiModel.selectedOptions[0]?.dataset.unavailable) {
-      setTextStatus(elements.modelStatus, "The selected model is not in the compatible list. Choose another model.", "error");
+      setTextStatus(elements.modelStatus, t("runtime_model_not_available"), "error");
     } else if (response.source === "cache") {
-      const stale = response.stale ? " Live refresh failed. Try again later." : "";
-      setTextStatus(elements.modelStatus, `Using cached model list${when}.${stale}`);
+      const message = response.stale
+        ? fetchedAt ? t("runtime_models_cache_stale_at", [fetchedAt]) : t("runtime_models_cache_stale")
+        : fetchedAt ? t("runtime_models_cache_at", [fetchedAt]) : t("runtime_models_cache");
+      setTextStatus(elements.modelStatus, message);
     } else {
-      setTextStatus(elements.modelStatus, `Model list updated${when}.`, "success");
+      setTextStatus(elements.modelStatus, fetchedAt ? t("runtime_models_updated_at", [fetchedAt]) : t("runtime_models_updated"), "success");
     }
     return true;
   } catch (error) {
     if (sequence !== modelLoadSequence) return false;
-    const message = error instanceof Error ? error.message : "Compatible models could not be loaded.";
+    const message = error instanceof Error ? error.message : t("runtime_models_load_failed");
     setTextStatus(elements.modelStatus, message, "error");
     return false;
   } finally {
     if (sequence === modelLoadSequence) {
-      elements.refreshModels.textContent = "Refresh models";
+      elements.refreshModels.textContent = t("runtime_refresh_models");
       updateKeyControls();
       renderSetupStatus();
     }
@@ -411,7 +420,7 @@ async function loadModels(forceRefresh) {
 function stopKeyRecording(message = "") {
   recordingKey = false;
   elements.recordKey.classList.remove("recording");
-  elements.recordKey.textContent = "Record key";
+  elements.recordKey.textContent = t("runtime_record_key");
   elements.recordKey.setAttribute("aria-pressed", "false");
   if (message) setTextStatus(elements.keyStatus, message);
 }
@@ -419,31 +428,31 @@ function stopKeyRecording(message = "") {
 function recordKey(event) {
   if (!recordingKey || event.isComposing || event.repeat) return;
   if (event.key === "Tab") {
-    stopKeyRecording("Recording cancelled.");
+    stopKeyRecording(t("runtime_recording_cancelled"));
     return;
   }
   event.preventDefault();
   event.stopPropagation();
   if (event.key === "Escape") {
-    stopKeyRecording("Recording cancelled.");
+    stopKeyRecording(t("runtime_recording_cancelled"));
     return;
   }
   if (!SUPPORTED_TRIGGER_KEYS.includes(event.key)) {
-    setTextStatus(elements.keyStatus, `${event.key || "That key"} is not supported. Press another key or Escape to cancel.`, "error");
+    setTextStatus(elements.keyStatus, t("runtime_key_not_supported", [event.key || t("runtime_unknown_key")]), "error");
     return;
   }
   triggerKey = event.key;
   renderTriggerKey();
-  stopKeyRecording(`${formatTriggerKey(triggerKey)} will be used after you save.`);
+  stopKeyRecording(t("runtime_key_will_use", [formatTriggerKey(triggerKey)]));
   markDirty();
 }
 
 function startKeyRecording() {
   recordingKey = true;
   elements.recordKey.classList.add("recording");
-  elements.recordKey.textContent = "Press a key...";
+  elements.recordKey.textContent = t("runtime_press_key");
   elements.recordKey.setAttribute("aria-pressed", "true");
-  setTextStatus(elements.keyStatus, "Press one supported non-printable key. Press Escape to cancel.");
+  setTextStatus(elements.keyStatus, t("runtime_record_key_instruction"));
 }
 
 function mergePreferences(values) {
@@ -460,7 +469,7 @@ function mergePreferences(values) {
       } else if (name === "aiModel" && !Array.from(elements.aiModel.options).some((option) => option.value === value)) {
         const option = document.createElement("option");
         option.value = value;
-        option.textContent = `${value} (Not in current list)`;
+        option.textContent = t("runtime_model_unlisted", [value]);
         option.dataset.unavailable = "true";
         elements.aiModel.append(option);
         elements.aiModel.value = value;
@@ -483,7 +492,7 @@ function mergeApiKey(value) {
   }
   storedApiKey = nextKey;
   apiKeyStatus = nextKey ? "saved" : "missing";
-  invalidateModelLoad(nextKey ? "Refresh models to check the saved API key." : "Add an API key to load compatible models.");
+  invalidateModelLoad(nextKey ? t("runtime_refresh_saved_key") : t("runtime_models_add_key"));
   renderApiKeyStatus();
   updateKeyControls();
   markDirty();
@@ -491,7 +500,7 @@ function mergeApiKey(value) {
 
 function requireSettingsState(response) {
   if (response?.ok) return response;
-  const error = new Error(response?.error?.message || "The extension could not load its saved state.");
+  const error = new Error(response?.error?.message || t("runtime_saved_state_unavailable"));
   error.code = response?.error?.code;
   error.canRemoveKey = response?.canRemoveKey === true;
   throw error;
@@ -512,9 +521,9 @@ function mergeSettingsState(state, { applyApiKeyStatus = true, applyAgreement = 
       && elements.apiKey.value.trim() === storedApiKey && !hasConflicts()) setupGuideVisible = false;
   if (applyApiKeyStatus) apiKeyStatus = state.apiKeyStatus || (storedApiKey ? "saved" : "missing");
   if (agreementChanged || !dataSharingAccepted) {
-    invalidateModelLoad(dataSharingAccepted ? "Refresh models to check the saved API key." : "Agree to data sharing before loading models.");
+    invalidateModelLoad(dataSharingAccepted ? t("runtime_refresh_saved_key") : t("runtime_models_need_agreement"));
   }
-  if (apiKeyStatus === "rejected") invalidateModelLoad("Gemini rejected the saved API key. Replace it or refresh models to check it again.");
+  if (apiKeyStatus === "rejected") invalidateModelLoad(t("runtime_saved_key_rejected"));
   renderAgreement();
   renderApiKeyStatus();
   updateKeyControls();
@@ -534,13 +543,13 @@ async function readSettingsState() {
 function showSettingsFailure(error) {
   initialized = false;
   damagedKey = error?.canRemoveKey === true;
-  invalidateModelLoad("Settings could not be loaded. Reopen Settings to try again.");
+  invalidateModelLoad(t("runtime_settings_reopen"));
   updateKeyControls();
   renderApiKeyStatus();
-  setSaveStatus("Settings could not be loaded. Reload saved settings to try again. Saving is disabled to protect your saved choices.", "error");
+  setSaveStatus(t("runtime_settings_load_failed"), "error");
   elements.reloadSettings.hidden = false;
   elements.saveButton.disabled = true;
-  elements.setupStatus.textContent = "Setup state could not be loaded.";
+  elements.setupStatus.textContent = t("runtime_setup_load_failed");
 }
 
 async function refreshSettings({ preferences = false, models = false } = {}) {
@@ -569,32 +578,35 @@ async function saveApiKey({ refreshModels = true } = {}) {
   if (!initialized || savingKey || keyConflict) return { ok: false, changed: false };
   setKeySaving(true);
   let changed = false;
+  let firstKeySaved = false;
   try {
     if (!await readSettingsState()) return { ok: false, changed: false };
     if (keyConflict) return { ok: false, changed: false };
     const value = elements.apiKey.value.trim();
     const normalizedApiKey = normalizeApiKey(value);
     if (value && !normalizedApiKey) {
-      setTextStatus(elements.apiKeyStatus, "Enter a complete API key with no spaces.", "error");
+      setTextStatus(elements.apiKeyStatus, t("runtime_key_no_spaces"), "error");
       return { ok: false, changed: false };
     }
     if ((normalizedApiKey || "") !== storedApiKey) {
       if (!normalizedApiKey) {
-        setTextStatus(elements.apiKeyStatus, "Use Remove saved key to delete your saved key.");
+        setTextStatus(elements.apiKeyStatus, t("runtime_key_use_remove"));
         return { ok: false, changed: false };
       }
       if (!dataSharingAccepted) {
-        setTextStatus(elements.apiKeyStatus, "Agree to data sharing above before saving an API key.", "error");
+        setTextStatus(elements.apiKeyStatus, t("runtime_key_save_needs_agreement"), "error");
         return { ok: false, changed: false };
       }
-      setTextStatus(elements.apiKeyStatus, "Saving API key encrypted...");
+      setTextStatus(elements.apiKeyStatus, t("runtime_key_saving_encrypted"));
       settingsReadSequence += 1;
       const agreementVersion = agreementChangeVersion;
+      const isFirstKey = !storedApiKey && credentialRevision === null;
       const state = requireSettingsState(await sendRuntimeMessage({ action: "setApiKey", apiKey: normalizedApiKey, expectedRevision: credentialRevision }));
       mergeSettingsState(state, { applyAgreement: agreementVersion === agreementChangeVersion });
       elements.apiKey.value = normalizedApiKey;
       maskApiKey();
       changed = true;
+      firstKeySaved = isFirstKey;
     }
     renderApiKeyStatus();
   } catch (error) {
@@ -606,13 +618,14 @@ async function saveApiKey({ refreshModels = true } = {}) {
       markDirty();
       renderApiKeyStatus();
     } else {
-      setTextStatus(elements.apiKeyStatus, "API key could not be read or saved. Your entry is kept. Use Save Preferences to try again.", "error");
+      setTextStatus(elements.apiKeyStatus, t("runtime_key_save_failed"), "error");
     }
     return { ok: false, changed: false };
   } finally {
     setKeySaving(false);
     refreshAfterMutation();
   }
+  if (firstKeySaved) elements.refreshPagesDialog.showModal();
   if (dataSharingAccepted && storedApiKey && refreshModels && (changed || !catalogLoaded)) await loadModels(changed);
   return { ok: true, changed };
 }
@@ -623,7 +636,7 @@ async function changeDataSharing(accepted) {
   agreementChangeVersion += 1;
   if (!accepted) dataSharingAccepted = false;
   settingsReadSequence += 1;
-  invalidateModelLoad(accepted ? "Connecting to Google..." : "Stopping connections to Google...");
+  invalidateModelLoad(accepted ? t("runtime_connecting_google") : t("runtime_stopping_google"));
   updateKeyControls();
   updateSaveButton();
   try {
@@ -634,7 +647,7 @@ async function changeDataSharing(accepted) {
     if (!accepted) withdrawalFailed = true;
     await readSettingsState().catch(showSettingsFailure);
     if (withdrawalFailed) renderAgreement();
-    else setTextStatus(elements.agreementStatus, error?.message || "Your data agreement could not be saved. Try again.", "error");
+    else setTextStatus(elements.agreementStatus, error?.message || t("runtime_agreement_save_failed"), "error");
   } finally {
     savingAgreement = false;
     updateKeyControls();
@@ -650,7 +663,7 @@ async function removeApiKey() {
   const resettingDamagedKey = damagedKey;
   setKeySaving(true);
   settingsReadSequence += 1;
-  invalidateModelLoad("Removing saved key...");
+  invalidateModelLoad(t("runtime_key_removing"));
   try {
     const response = await sendRuntimeMessage(resettingDamagedKey
       ? { action: "resetDamagedKey" }
@@ -662,14 +675,14 @@ async function removeApiKey() {
     }
     elements.apiKey.value = storedApiKey;
     mergeSettingsState(state);
-    setTextStatus(elements.apiKeyStatus, "Saved key removed. You can add a new key after agreeing to data sharing.");
+    setTextStatus(elements.apiKeyStatus, t("runtime_key_removed"));
   } catch (error) {
     if (error?.code === "credential_conflict") {
       if (initialized) await readSettingsState().catch(showSettingsFailure);
       keyConflict = true;
       elements.reloadSettings.hidden = false;
     }
-    setTextStatus(elements.apiKeyStatus, error?.message || "The saved key could not be removed. Try again.", "error");
+    setTextStatus(elements.apiKeyStatus, error?.message || t("runtime_key_remove_failed"), "error");
   } finally {
     setKeySaving(false);
     refreshAfterMutation();
@@ -679,9 +692,9 @@ async function removeApiKey() {
 async function saveSettings(event) {
   event.preventDefault();
   if (!initialized || saving || savingKey || savingAgreement || hasConflicts()) return;
-  if (recordingKey) stopKeyRecording("Recording cancelled.");
+  if (recordingKey) stopKeyRecording(t("runtime_recording_cancelled"));
   setSaving(true);
-  elements.saveButton.textContent = "Saving...";
+  elements.saveButton.textContent = t("runtime_saving");
   try {
     const keyResult = await saveApiKey({ refreshModels: false });
     if (!keyResult.ok) {
@@ -693,32 +706,32 @@ async function saveSettings(event) {
     if (hasConflicts()) return;
     const values = currentPreferences();
     if (!isSupportedLanguage(values.targetLanguage) || !isValidModelId(values.aiModel)) {
-      setSaveStatus("Choose a valid language and model.", "error");
+      setSaveStatus(t("runtime_choose_valid_language_model"), "error");
       return;
     }
     if (!isSupportedTriggerKey(values.triggerKey)) {
-      setSaveStatus("Choose a supported trigger key or Off.", "error");
+      setSaveStatus(t("runtime_choose_valid_trigger"), "error");
       return;
     }
     if (catalogLoaded && elements.aiModel.selectedOptions[0]?.dataset.unavailable) {
-      setSaveStatus("Choose a model from the current compatible list.", "error");
+      setSaveStatus(t("runtime_choose_listed_model"), "error");
       elements.aiModel.focus();
       return;
     }
     const changes = Object.fromEntries(Object.entries(values)
       .filter(([name, value]) => value !== savedPreferences[name]));
     if (Object.keys(changes).length) {
-      setSaveStatus("Saving preferences...");
+      setSaveStatus(t("runtime_preferences_saving"));
       await chrome.storage.sync.set(changes);
       mergePreferences(changes);
     }
     if (storedApiKey && dataSharingAccepted) setupGuideVisible = false;
-    setSaveStatus(storedApiKey ? "Preferences saved." : "Preferences saved. Add your API key to finish setup.", "success");
+    setSaveStatus(storedApiKey ? t("runtime_preferences_saved") : t("runtime_preferences_saved_add_key"), "success");
     if (keyResult.changed && storedApiKey) await loadModels(true);
   } catch {
-    setSaveStatus("Preferences could not be read or saved. Your edits are kept. Try again.", "error");
+    setSaveStatus(t("runtime_preferences_save_failed"), "error");
   } finally {
-    elements.saveButton.textContent = "Save Preferences";
+    elements.saveButton.textContent = t("runtime_save_preferences");
     setSaving(false);
     updateSaveButton();
     renderSetupStatus();
@@ -740,12 +753,12 @@ function bindEvents() {
     } else {
       const value = elements.apiKey.value.trim();
       const message = !value
-        ? "Use Remove saved key to delete your saved key."
+        ? t("runtime_key_use_remove")
         : normalizeApiKey(value)
-          ? "The API key will save automatically."
-          : "Finish entering the API key.";
+          ? t("runtime_key_will_save")
+          : t("runtime_key_finish_entry");
       setTextStatus(elements.apiKeyStatus, message);
-      invalidateModelLoad("Finish saving the API key to load compatible models.");
+      invalidateModelLoad(t("runtime_key_finish_save_models"));
     }
     updateKeyControls();
     markDirty();
@@ -759,23 +772,23 @@ function bindEvents() {
   elements.revealKey.addEventListener("click", () => {
     const revealing = elements.apiKey.type === "password";
     elements.apiKey.type = revealing ? "text" : "password";
-    elements.revealKey.textContent = revealing ? "Hide" : "Show";
+    elements.revealKey.textContent = revealing ? t("runtime_hide_key") : t("runtime_show_key");
     elements.revealKey.setAttribute("aria-pressed", String(revealing));
   });
   elements.refreshModels.addEventListener("click", () => loadModels(true));
   elements.recommendedModel.addEventListener("click", () => {
     if (elements.recommendedModel.disabled) return;
     elements.aiModel.value = RECOMMENDED_MODEL;
-    markDirty("Recommended model selected. Save your choice to use it.");
+    markDirty(t("runtime_recommended_selected"));
   });
   elements.targetLanguage.addEventListener("change", () => markDirty());
   elements.aiModel.addEventListener("change", () => markDirty());
-  elements.recordKey.addEventListener("click", () => recordingKey ? stopKeyRecording("Recording cancelled.") : startKeyRecording());
+  elements.recordKey.addEventListener("click", () => recordingKey ? stopKeyRecording(t("runtime_recording_cancelled")) : startKeyRecording());
   elements.disableKey.addEventListener("click", () => {
     stopKeyRecording();
     triggerKey = null;
     renderTriggerKey();
-    setTextStatus(elements.keyStatus, "The keyboard trigger will be Off after you save.");
+    setTextStatus(elements.keyStatus, t("runtime_trigger_will_disable"));
     markDirty();
   });
   chrome.storage.onChanged.addListener((changes, area) => {
@@ -797,13 +810,13 @@ function bindEvents() {
         agreementChangeVersion += 1;
         dataSharingAccepted = false;
       }
-      invalidateModelLoad("Connection settings changed. Checking saved settings...");
+      invalidateModelLoad(t("runtime_connection_changed"));
       void refreshSettings({ models: true });
     }
     if (area === "local" && Object.hasOwn(changes, STORAGE_KEYS.modelCatalog)
         && !credentialChanged && dataSharingAccepted && storedApiKey && !keyConflict && !savingKey && !savingAgreement
         && elements.apiKey.value.trim() === storedApiKey) {
-      invalidateModelLoad("The model list changed. Checking compatible models...");
+      invalidateModelLoad(t("runtime_models_changed"));
       // A non-forced read uses the updated cache and does not write it again.
       void loadModels(false);
     }
@@ -814,7 +827,7 @@ function bindEvents() {
         if (!state?.ok || checkedKey !== storedApiKey || sequence !== modelLoadSequence) return;
         if (!dataSharingAccepted) return;
         apiKeyStatus = state.apiKeyStatus || (storedApiKey ? "saved" : "missing");
-        if (apiKeyStatus === "rejected") invalidateModelLoad("Gemini rejected the saved API key. Replace it or refresh models to check it again.");
+        if (apiKeyStatus === "rejected") invalidateModelLoad(t("runtime_saved_key_rejected"));
         renderApiKeyStatus();
         renderSetupStatus();
       }).catch(() => {});
@@ -822,7 +835,7 @@ function bindEvents() {
   });
   document.addEventListener("keydown", recordKey, true);
   window.addEventListener("blur", () => {
-    if (recordingKey) stopKeyRecording("Recording cancelled.");
+    if (recordingKey) stopKeyRecording(t("runtime_recording_cancelled"));
     maskApiKey();
   });
   window.addEventListener("focus", () => void refreshSettings({ preferences: true, models: true }));
@@ -832,11 +845,12 @@ async function initialize() {
   bindEvents();
   populateLanguages(DEFAULTS.targetLanguage);
   renderModels([], DEFAULTS.aiModel);
-  elements.parallelLimits.textContent = `Up to ${LIMITS.maxActivePerTab} per tab and ${LIMITS.maxActiveGlobal} in total`;
-  elements.timeoutLimit.textContent = `${LIMITS.requestTimeoutMs / 1_000} seconds`;
+  elements.parallelLimits.textContent = t("runtime_parallel_limits", [new Intl.NumberFormat(uiLocale()).format(LIMITS.maxActivePerTab), new Intl.NumberFormat(uiLocale()).format(LIMITS.maxActiveGlobal)]);
+  elements.timeoutLimit.textContent = t("runtime_timeout_seconds", [new Intl.NumberFormat(uiLocale()).format(LIMITS.requestTimeoutMs / 1_000)]);
   setSaving(true);
 
   try {
+    const preferredLanguages = await chrome.i18n?.getAcceptLanguages?.().catch(() => []) || [];
     let changeVersion = settingsChangeVersion;
     let runtimeState = requireSettingsState(await sendRuntimeMessage({ action: "getSettingsState" }));
     const syncData = await chrome.storage.sync.get([
@@ -873,7 +887,7 @@ async function initialize() {
     };
     setupGuideVisible = !dataSharingAccepted || !storedApiKey || !savedPreferences.targetLanguage;
 
-    populateLanguages(targetLanguage);
+    populateLanguages(targetLanguage === null ? preferredTargetLanguage(preferredLanguages) : targetLanguage);
     renderModels([], isValidModelId(aiModel) ? aiModel : DEFAULTS.aiModel);
     renderTriggerKey();
     initialized = true;
@@ -884,11 +898,11 @@ async function initialize() {
       await loadModels(false);
     } else {
       renderApiKeyStatus();
-      setTextStatus(elements.modelStatus, dataSharingAccepted ? "Add an API key to load compatible models." : "Agree to data sharing before loading models.");
+      setTextStatus(elements.modelStatus, dataSharingAccepted ? t("runtime_models_add_key") : t("runtime_models_need_agreement"));
     }
     setSaving(false);
     renderSetupStatus();
-    if (!dirty) setSaveStatus("Preferences are up to date.");
+    if (!dirty) setSaveStatus(t("runtime_preferences_current"));
   } catch (error) {
     startupChanges = null;
     setSaving(false);

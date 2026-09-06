@@ -14,8 +14,8 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .card { margin-bottom: 18px; padding: 24px; border-radius: 18px; }
 .card > :last-child, li > :last-child { margin-bottom: 0; }
 .card > .note, .card > .actions { margin-top: 16px; }
-.steps { margin: 0; padding-left: 24px; }
-.steps > li { padding-left: 4px; }
+.steps { margin: 0; padding-inline-start: 24px; }
+.steps > li { padding-inline-start: 4px; }
 .steps > li + li { margin-top: 24px; }
 .steps li::marker { color: var(--focus); font-weight: 700; }
 .button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }

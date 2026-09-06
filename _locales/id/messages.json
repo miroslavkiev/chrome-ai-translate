@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Terjemahkan dengan mudah: pilih teks dan tekan Control. Gunakan Gemini untuk menerjemahkan ke bahasa pilihan Anda.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Pilih teks lalu coba lagi."
+  },
+  "error_unsupported_selection": {
+    "message": "Pilihan teks ini tidak didukung."
+  },
+  "error_selection_too_large": {
+    "message": "Teks yang dipilih melebihi 10.000 karakter. Pilih lebih sedikit lalu coba lagi."
+  },
+  "error_missing_api_key": {
+    "message": "Tambahkan kunci API Gemini Anda di Pengaturan."
+  },
+  "error_agreement_required": {
+    "message": "Baca dan setujui berbagi data di Pengaturan sebelum terhubung ke Google."
+  },
+  "error_credential_conflict": {
+    "message": "Kunci tersimpan berubah di halaman lain. Muat ulang pengaturan tersimpan sebelum mencoba lagi."
+  },
+  "error_credential_storage_error": {
+    "message": "Kunci tersimpan tidak dapat dibuka. Buka ulang Pengaturan, atau hapus kunci lalu masukkan lagi."
+  },
+  "error_missing_target_language": {
+    "message": "Pilih bahasa tujuan di Pengaturan untuk menyelesaikan penyiapan."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini menolak kunci API. Periksa di Pengaturan."
+  },
+  "error_invalid_model": {
+    "message": "Model ini tidak dapat digunakan untuk menerjemahkan. Pilih model lain atau model Flash-Lite yang disarankan di Pengaturan."
+  },
+  "error_busy": {
+    "message": "Terlalu banyak terjemahan aktif. Coba lagi setelah salah satunya selesai."
+  },
+  "error_duplicate_request": {
+    "message": "Teks ini sedang diterjemahkan."
+  },
+  "error_rate_limited": {
+    "message": "Batas permintaan tercapai. Coba lagi sebentar lagi."
+  },
+  "error_timeout": {
+    "message": "Penerjemahan terlalu lama. Anda dapat mencoba lagi."
+  },
+  "error_offline": {
+    "message": "Anda tampaknya sedang offline. Periksa koneksi lalu coba lagi."
+  },
+  "error_network_error": {
+    "message": "Gemini tidak dapat dihubungi. Periksa koneksi lalu coba lagi."
+  },
+  "error_quota_exceeded": {
+    "message": "Kuota Gemini tercapai. Periksa akun Anda dan coba lagi nanti."
+  },
+  "error_service_error": {
+    "message": "Gemini tidak dapat menyelesaikan terjemahan. Coba lagi nanti."
+  },
+  "error_invalid_response": {
+    "message": "Gemini mengirim respons yang tidak terbaca. Anda dapat mencoba lagi."
+  },
+  "error_output_too_large": {
+    "message": "Terjemahan melebihi batas keluaran. Pilih lebih sedikit teks lalu coba lagi."
+  },
+  "error_content_blocked": {
+    "message": "Gemini memblokir teks ini. Coba teks lain."
+  },
+  "error_unsupported_page": {
+    "message": "Terjemahan tidak tersedia di halaman ini."
+  },
+  "error_frame_unavailable": {
+    "message": "Bingkai yang dipilih tidak tersedia lagi."
+  },
+  "error_cancelled": {
+    "message": "Terjemahan dibatalkan."
+  },
+  "key_Off": {
+    "message": "Nonaktif"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Coba lagi dalam $seconds$ detik.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "Pengaturan AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Pengaturan pribadi untuk terjemahan cepat dan terarah."
+  },
+  "html_help_and_information": {
+    "message": "Bantuan dan informasi"
+  },
+  "html_api_key_guide": {
+    "message": "Panduan kunci API"
+  },
+  "html_about": {
+    "message": "Tentang"
+  },
+  "html_privacy": {
+    "message": "Privasi"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Siapkan AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Ikuti langkah-langkah ini di Pengaturan. Anda memerlukan kunci API Google sendiri untuk menerjemahkan."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Dapatkan kunci API sendiri.</1> Buka <2>Google AI Studio</2>, masuk, lalu buat kunci. Baca penjelasan berbagi data di bawah, kemudian tempel kunci. <3>Baca panduan langkah demi langkah</3> untuk bantuan."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Pilih bahasa tujuan dan model.</1> Pilih bahasa hasil terjemahan. Kami menyarankan Gemini Flash-Lite jika tersedia dalam daftar model Anda."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Simpan dan mulai menerjemahkan.</1> Gunakan Selesaikan penyiapan di bagian bawah halaman. Lalu pilih teks di halaman web dan tekan Control, atau pilih Terjemahkan Teks Terpilih dari menu klik kanan."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Hubungkan kunci API Gemini Anda dan pilih model yang kompatibel."
+  },
+  "html_loading_setup_state": {
+    "message": "Memuat status penyiapan..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Sebelum terhubung ke Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google menerima kunci API Anda untuk memeriksa model yang tersedia. Saat Anda meminta terjemahan, Google juga menerima teks pilihan dan bahasa tujuan, termasuk teks dari berkas lokal. Terjemahan AI dapat salah."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Kunci disimpan terenkripsi di profil Chrome ini dan dibuka otomatis setelah mulai ulang. Tidak perlu kata sandi tambahan. Orang yang memiliki akses penuh ke profil browser masih mungkin memulihkannya. <1>Baca rincian privasi</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Wajib di semua negara:</1> gunakan kunci API Gemini dari proyek dengan <2>penagihan aktif</2>. Nonaktifkan <3>berbagi log permintaan dan kumpulan data ekstensi ini dengan Google</3> yang bersifat opsional. Dengan pengaturan ini, ketentuan berbayar Google melarang penggunaan perintah dan respons untuk peningkatan produk; pemrosesan keamanan dan hukum tetap berlaku. Ekstensi gratis, tetapi biaya API Google mungkin berlaku."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Syarat penggunaan.</1> Dengan memakai Gemini melalui ekstensi ini, Anda setuju mengikuti persyaratan di atas dan <2>ketentuan Google</2>. Penggunaan untuk orang berusia minimal 18 tahun, untuk tujuan profesional atau bisnis, di <3>wilayah yang didukung</3>. Ekstensi tidak memverifikasi pengaturan penagihan atau berbagi Anda."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Setuju dan hubungkan ke Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Tarik persetujuan berbagi data"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Baca rincian berbagi data sebelum terhubung."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Mengapa persyaratan ini diperlukan? Baca Tanya Jawab</1>."
+  },
+  "html_api_key": {
+    "message": "Kunci API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Setelah setuju, tempel kunci untuk menyimpannya terenkripsi dan memuat model secara otomatis."
+  },
+  "html_show": {
+    "message": "Tampilkan"
+  },
+  "html_remove_saved_key": {
+    "message": "Hapus kunci tersimpan"
+  },
+  "html_model": {
+    "message": "Model"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Model yang diketahui hanya untuk media atau tujuan khusus disembunyikan."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Kami menyarankan keluarga Gemini Flash-Lite. Pada rilis ini (September 2026), pilihan kami adalah Gemini 3.5 Flash-Lite. Anda bebas memilih model lain dalam daftar. Beberapa model mungkin tidak berfungsi dengan ekstensi ini. Jika gagal, pilih model lain atau yang disarankan."
+  },
+  "html_refresh_models": {
+    "message": "Segarkan model"
+  },
+  "html_use_recommended_model": {
+    "message": "Gunakan model yang disarankan"
+  },
+  "html_translation": {
+    "message": "Terjemahan"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Atur bahasa dan tombol pemicu opsional."
+  },
+  "html_default_language": {
+    "message": "Bahasa bawaan"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Kartu hasil dapat memakai bahasa lain tanpa mengubah bahasa bawaan ini."
+  },
+  "html_keyboard_trigger": {
+    "message": "Tombol pemicu"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Tombol tunggal dapat berbenturan dengan situs web atau alat aksesibilitas. Pilih Nonaktif untuk hanya memakai menu konteks."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Rekam tombol"
+  },
+  "html_off": {
+    "message": "Nonaktif"
+  },
+  "html_behavior": {
+    "message": "Perilaku"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Perlindungan tetap menjaga respons terjemahan dan melindungi kuota API."
+  },
+  "html_parallel_requests": {
+    "message": "Permintaan bersamaan"
+  },
+  "html_request_timeout": {
+    "message": "Batas waktu permintaan"
+  },
+  "html_page_access": {
+    "message": "Akses halaman"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Untuk berkas lokal, aktifkan Izinkan akses ke URL berkas di Kelola Ekstensi"
+  },
+  "html_help_and_recovery": {
+    "message": "Bantuan dan pemulihan"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Jika model tidak tersedia, segarkan model, pilih satu dari daftar, lalu simpan preferensi. Jika daftar tidak dapat dimuat, periksa kunci dan koneksi, lalu coba Segarkan model."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Halaman pengaturan Chrome dan Chrome Web Store tidak mengizinkan terjemahan. Untuk berkas lokal, izinkan akses ke URL berkas di Kelola Ekstensi. Setelah pembaruan atau pemuatan ulang ekstensi, segarkan halaman web yang terbuka. Memuat ulang dapat mengganggu terjemahan."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Terjemahan memerlukan internet. Setelah Anda setuju di atas, kunci dikirim langsung ke Google untuk memeriksa model. Teks pilihan, termasuk dari berkas lokal, dikirim bersama bahasa tujuan hanya saat Anda meminta terjemahan. Kunci tersimpan dienkripsi di profil Chrome ini. Bahasa, model, dan tombol dapat disinkronkan melalui Chrome. Ekstensi hanya menyimpan hasil terbaru selama sesi browser dan tidak menyimpan riwayat terjemahan."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Anda dapat meninjau berbagi data di atas dan menarik persetujuan kapan saja. Ini menghentikan pemeriksaan model dan terjemahan sampai Anda setuju lagi. Kunci tetap disimpan kecuali Anda memilih Hapus kunci tersimpan."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Perubahan bahasa, model, dan tombol disimpan di sini."
+  },
+  "html_reload_saved_settings": {
+    "message": "Muat ulang pengaturan tersimpan"
+  },
+  "html_save_preferences": {
+    "message": "Simpan Preferensi"
+  },
+  "html_gemini_translation": {
+    "message": "Terjemahan Gemini"
+  },
+  "html_setup_required": {
+    "message": "Perlu penyiapan"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Selamat datang di AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Terjemahkan teks pilihan ke bahasa yang Anda pahami. Siapkan dua hal ini untuk memulai:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Kunci API Gemini Anda.</1> Dapatkan kunci sendiri dari Google AI Studio. Panduan kami menjelaskan caranya."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Bahasa tujuan Anda.</1> Pilih bahasa yang ingin Anda baca."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "Cara mendapatkan kunci API"
+  },
+  "html_extension_status": {
+    "message": "Status ekstensi"
+  },
+  "html_active_translations": {
+    "message": "Terjemahan aktif"
+  },
+  "html_latest_this_session": {
+    "message": "Terbaru dalam sesi ini"
+  },
+  "html_no_translation_yet": {
+    "message": "Belum ada terjemahan."
+  },
+  "html_copy": {
+    "message": "Salin"
+  },
+  "html_settings": {
+    "message": "Pengaturan"
+  },
+  "html_key_guide": {
+    "message": "Panduan kunci"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "Mulai menggunakan AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "Halaman ekstensi"
+  },
+  "html_faq": {
+    "message": "Tanya Jawab"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Dapatkan kunci API Google sendiri, pilih bahasa, lalu terjemahkan teks pertama Anda."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Dapatkan kunci API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "Kunci API memungkinkan ekstensi ini memakai Gemini melalui akun Google Anda. Rahasiakan seperti kata sandi."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Ekstensi ini untuk orang berusia minimal 18 tahun, untuk pekerjaan atau bisnis, di <1>negara dan wilayah yang didukung Google</1>. Di semua negara, kunci API harus milik proyek Gemini dengan penagihan aktif. Nonaktifkan berbagi log permintaan dan kumpulan data ekstensi ini dengan Google yang bersifat opsional."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Dengan memakai ekstensi ini, Anda setuju mengikuti syarat tersebut, <1>Ketentuan API Google</1>, dan <2>Ketentuan Tambahan API Gemini</2>. Jangan gunakan jika Anda tidak dapat memenuhinya. Ekstensi tidak memverifikasi fakta ini atau meminta dokumen identitas."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Buka Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Masuk ke akun Google. Terima ketentuan Google jika diminta."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Buat atau pilih kunci"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Di halaman Kunci API, pilih <1>Buat kunci API</1>, lalu ikuti langkah Google untuk memilih atau membuat proyek. Proyek mengelompokkan penggunaan API dan penagihan. Jika baru memakai AI Studio, Google mungkin sudah membuat proyek dan kunci bawaan."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Jika proyek lama tidak terlihat, buka <1>Dasbor > Proyek > Impor proyek</1>. Impor proyek, lalu kembali ke Kunci API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Sebelum memakai kunci, ikuti <1>panduan penagihan Google</1> untuk memastikan proyek memiliki penagihan aktif. Langganan aplikasi Gemini berbayar tidak menggantikan penagihan proyek API. Nonaktifkan berbagi log permintaan dan kumpulan data ekstensi ini dengan Google yang bersifat opsional; baca <2>kebijakan berbagi log Google</2>. Pencatatan pribadi proyek berbeda dari berbagi."
+  },
+  "html_copy_your_key": {
+    "message": "Salin kunci"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Salin kunci dari AI Studio. Kembali ke Pengaturan ekstensi dan baca rincian berbagi data. Pilih <1>Setuju dan hubungkan ke Google</1>, lalu tempel kunci pada kolom <2>Kunci API</2>. Kunci dienkripsi dan disimpan otomatis, lalu daftar model dimuat. Tunggu hasilnya sebelum melanjutkan."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "Pengaturan AI Translator menampilkan pemberitahuan berbagi data dan tombol Setuju di atas kolom kunci API kosong serta rekomendasi model Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Contoh ditampilkan dalam bahasa Inggris. Di AI Translator: setujui berbagi data dahulu, lalu tempel kunci Anda. Daftar model diperiksa setelah kunci terenkripsi disimpan."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google dapat mengubah layar ini. Untuk langkah terbaru atau kesalahan kunci, baca <1>panduan kunci API Google</1>. Gunakan kunci baru dari AI Studio jika kunci lama tidak berfungsi lagi."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Pilih pengaturan terjemahan"
+  },
+  "html_choose_a_model": {
+    "message": "Pilih model"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Kami menyarankan keluarga Gemini Flash-Lite. Untuk rilis September 2026 ini, pilihan kami adalah <1>Gemini 3.5 Flash-Lite</1>. Gunakan jika tersedia dalam daftar model."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Anda dapat memilih model lain dalam daftar. Beberapa model mungkin tidak berfungsi dengan ekstensi ini. Jika gagal, pilih model lain atau gunakan yang disarankan."
+  },
+  "html_choose_your_target_language": {
+    "message": "Pilih bahasa tujuan"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Pilih bahasa yang ingin dibaca dari <1>Bahasa bawaan</1>. Pilihan mengikuti <2>bahasa Gemini yang didokumentasikan Google</2>. Kualitas terjemahan dapat berbeda menurut bahasa dan teks."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "Pengaturan Terjemahan AI Translator dengan pilihan bahasa tujuan dan kontrol tombol pemicu."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Contoh ditampilkan dalam bahasa Inggris. Pilih bahasa terjemahan, lalu selesaikan penyiapan."
+  },
+  "html_finish_setup": {
+    "message": "Selesaikan penyiapan"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Pertahankan tombol Control, rekam tombol lain, atau pilih <1>Nonaktif</1> untuk hanya memakai menu klik kanan. Pilih <2>Selesaikan penyiapan</2> di bawah Pengaturan. Anda dapat mengubah pilihan nanti melalui <3>Simpan Preferensi</3>."
+  },
+  "html_open_settings": {
+    "message": "Buka Pengaturan"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Terjemahkan teks pertama Anda"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Buka halaman web biasa dan pilih teks pendek. Klik kanan dan pilih <1>Terjemahkan Teks Terpilih</1>, atau tekan lalu lepaskan tombol pilihan Anda. Hasil muncul di sebelah teks."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Jika ekstensi baru dipasang atau dimuat ulang, segarkan halaman web dahulu. Halaman pengaturan Chrome, Chrome Web Store, dan penampil PDF bawaan tidak mengizinkan terjemahan."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Popup bilah alat menampilkan hasil terbaru. Setelah penyiapan selesai, tampilan standar dibuka. Jika Anda menghapus kunci API, panduan sambutan muncul kembali."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Tanya Jawab: kunci, biaya, dan privasi"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Mengapa saya perlu kunci API sendiri?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Ekstensi ini dirancang mengirim permintaan langsung ke proyek Google Anda memakai kunci sendiri. Ini pilihan desain, bukan aturan Chrome. Kunci mengizinkan permintaan dan mengaitkannya dengan penggunaan serta penagihan Anda. Jangan bagikan dalam tangkapan layar atau pesan publik. Lihat <1>panduan kunci API Google</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Mengapa penagihan aktif diwajibkan, bukan hanya disarankan?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "<1>Aturan Penggunaan Terbatas Chrome, poin 3 dan 5</1>, membatasi penggunaan data pada tujuan ekstensi dan operasi terkait. Sebagian penggunaan Gemini gratis memungkinkan pelatihan dan peninjauan manusia yang lebih luas. Ketentuan berbayar mengecualikan penggunaan untuk peningkatan produk, tetapi mengizinkan penyimpanan terbatas untuk keamanan dan hukum serta pemrosesan di luar UE."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Untuk mengatasi konflik ini, pengembang mewajibkan penagihan proyek aktif di seluruh dunia. Saran saja masih memungkinkan penggunaan gratis. Aturan wilayah Google juga mewajibkan Layanan Berbayar bagi aplikasi yang ditawarkan di Wilayah Ekonomi Eropa, Inggris, dan Swiss. Lihat <1>ketentuan Gemini: Pembatasan Penggunaan, Layanan Gratis, dan Layanan Berbayar</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Mengapa berbagi opsional dengan Google harus tetap nonaktif?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Berbagi log atau kumpulan data dapat mengizinkan pelatihan dan peninjauan manusia meskipun penagihan aktif. Jangan sumbangkan data ekstensi ini melalui berbagi kumpulan data atau masukan. Pencatatan pribadi untuk proyek Anda sendiri diizinkan oleh aturan ini. Lihat <1>kebijakan pencatatan Google: Data yang dapat dibagikan dan Cara kami memakai data Anda</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Apakah ekstensi gratis jika saya perlu akses API berbayar?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Ya. Ekstensi gratis, tetapi biaya API Google mungkin berlaku. Langganan aplikasi Gemini berbayar tidak menggantikan penagihan proyek API. Lihat <1>cara memeriksa penagihan</1> dan <2>harga API Google</2>. Ekstensi tidak memverifikasi pengaturan penagihan atau berbagi."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Mengapa harus memilih Setuju dan hubungkan ke Google?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "<1>Persyaratan Pengungkapan Chrome, poin 1 dan 2</1>, mewajibkan rincian penggunaan data yang jelas dan persetujuan berdasarkan informasi. Tombol kami memberi pilihan itu sebelum permintaan API Google pertama. Tombol ini tidak memeriksa identitas atau penagihan, atau mengizinkan berbagi informasi pribadi orang lain."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Apa tepatnya yang dikirim ke Google?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Pemeriksaan model mengirim kunci dan meminta model yang tersedia. Terjemahan mengirim teks pilihan, bahasa tujuan, model, dan instruksi terjemahan, termasuk teks berkas lokal. Ekstensi tidak menambahkan seluruh halaman, alamat halaman, atau riwayat penelusuran. Google juga menerima rincian koneksi seperti alamat IP. Pengembang tidak menerima permintaan ini. Hanya kirim teks yang boleh Anda bagikan."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Bagaimana kunci disimpan dan dibuka otomatis?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "Kunci API disimpan terenkripsi. Kunci API dan kunci enkripsinya tetap di profil Chrome ini untuk digunakan otomatis setelah mulai ulang. Keduanya tidak disinkronkan. Orang yang dapat mengakses profil mungkin masih dapat memulihkan kunci API. Ini bukan gantungan kunci sistem operasi atau brankas berkata sandi. Bahasa, model, dan tombol dapat disinkronkan. Hanya hasil terbaru disimpan selama sesi browser; tidak ada analitik atau riwayat terjemahan."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Pembaruan mengenkripsi dan memeriksa kunci lama sebelum menghapus salinan teks biasa. Jika gagal, salinan lama tetap disimpan dan permintaan tetap diblokir. Pengaturan menjelaskan kesalahan. Memindahkan kunci lama tidak melewati persetujuan."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Bisakah saya menarik persetujuan atau menghapus kunci?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "Di <1>Pengaturan</1>, <2>Tarik persetujuan berbagi data</2> memblokir permintaan baru dan membatalkan yang aktif secara lokal, sambil menyimpan kunci dan preferensi. <3>Hapus kunci tersimpan</3> menghapus kunci, kunci enkripsi, dan cache model. Keduanya tidak menarik kembali data yang terkirim atau menjamin permintaan terkirim menjadi gratis. Cabut kunci di AI Studio untuk menonaktifkannya juga di Google."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Persetujuan tetap disimpan setelah mulai ulang dan pembaruan biasa. Jika pemberitahuan berubah, permintaan menunggu sampai Anda membaca dan setuju kembali."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Mengapa ini untuk orang dewasa serta pekerjaan atau bisnis?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google mewajibkan pengguna minimal 18 tahun, dengan penggunaan profesional atau bisnis di wilayah yang didukung. Lihat <1>ketentuan Gemini: Persyaratan Usia dan Pembatasan Penggunaan</1> serta <2>wilayah yang tersedia</2>. Ekstensi ini tidak memiliki kotak persetujuan kelayakan terpisah atau pemeriksaan identitas."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Mengapa ada kebijakan privasi selain pemberitahuan ini?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Pemberitahuan menjelaskan pilihan sebelum Anda terhubung. Kebijakan memberikan rincian lengkap data, penyimpanan, dan penghapusan. <1>Aturan Kebijakan Privasi Chrome</1> mewajibkannya bagi ekstensi yang menangani data pengguna. Baca <2>kebijakan privasi kami</2>. Pemberitahuan ini tidak berarti Google telah menyetujui ekstensi."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Terjemahan AI dapat salah. Periksa kata-kata penting sebelum mengandalkannya."
+  },
+  "html_about_ai_translator": {
+    "message": "Tentang AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Terjemahan sangat mudah: pilih teks dan tekan Control."
+  },
+  "html_made_for_people": {
+    "message": "Dibuat untuk semua orang"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Saya membuat AI Translator untuk membantu orang membaca, belajar, dan terhubung lintas bahasa. Semoga bermanfaat bagi orang di seluruh dunia."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Ekstensi menerjemahkan teks pilihan memakai kunci API Google Gemini Anda sendiri. Anda memilih apa yang dikirim dan bahasa yang ingin dibaca."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Tekan dan lepaskan Control untuk menerjemahkan teks pilihan. Control adalah tombol bawaan dan dapat diubah di Pengaturan. Anda juga dapat memakai menu klik kanan halaman."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Hanya diuji secara manual di Mac. Windows dan Linux belum diuji secara manual."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Lihat kode sumber dan panduan proyek</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Dapatkan bantuan atau laporkan masalah</1>. Laporan bersifat publik. Jangan sertakan kunci API, teks pribadi, atau rincian pribadi."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Jika Anda ingin mendukung karya saya"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Mohon dukung negara saya, Ukraina, yang sedang mempertahankan diri dari agresi Rusia."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Saya percaya pada Sternenko Community Foundation. Jika Anda mampu dan ingin membantu, Anda dapat berdonasi melalui situs web resminya."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Dukung Ukraina melalui yayasan</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Dukungan bersifat opsional dan tidak diperlukan untuk memakai ekstensi. Tautan ini membuka situs web eksternal. Donasi melalui yayasan, bukan ekstensi."
+  },
+  "html_privacy_and_costs": {
+    "message": "Privasi dan biaya"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "Kunci API dienkripsi pada perangkat ini dan tidak disinkronkan. Kunci tetap tersedia setelah Chrome dimulai ulang secara normal, tanpa kata sandi pembuka. Orang dengan akses ke profil browser mungkin masih dapat memulihkannya."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Sebelum permintaan Google pertama, Pengaturan menjelaskan berbagi data dan meminta Anda memilih <1>Setuju dan hubungkan ke Google</1>. Setelahnya, teks pilihan dikirim langsung ke Google hanya saat Anda meminta terjemahan. Pemeriksaan model mengirim kunci, tetapi tidak mengirim teks pilihan. Tidak ada analitik, iklan, atau riwayat terjemahan."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Tinjau rincian di <1>Pengaturan</1> kapan saja. Pilih <2>Tarik persetujuan berbagi data</2> untuk menghentikan permintaan baru sambil mempertahankan kunci terenkripsi dan preferensi, atau <3>Hapus kunci tersimpan</3> untuk menghapus kunci dan cache model. Data yang sudah dikirim tidak dapat ditarik kembali."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Terjemahan dibuat oleh AI dan dapat salah. Periksa kata-kata penting sebelum mengandalkannya."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Baca rincian privasi</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator adalah proyek gratis dan independen. Biaya API Google mungkin berlaku. Di semua negara, gunakan kunci API Gemini dari proyek dengan <1>penagihan aktif</1> dan nonaktifkan <2>berbagi log permintaan dan kumpulan data ekstensi ini dengan Google</2> yang bersifat opsional. Dengan pengaturan ini, ketentuan berbayar Google melarang penggunaan perintah dan respons untuk peningkatan produk; pemrosesan keamanan dan hukum tetap berlaku. Baca <3>catatan harga dan penggunaan data Google</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Ekstensi ini untuk orang berusia minimal 18 tahun, untuk pekerjaan atau bisnis, di <1>wilayah yang didukung Google</1>. Dengan memakai ekstensi, Anda setuju mengikuti syarat ini, <2>Ketentuan API Google</2>, dan <3>Ketentuan Tambahan API Gemini</3>. Jangan gunakan jika tidak dapat memenuhinya. Tidak ada kotak kelayakan atau pemeriksaan identitas. Ekstensi tidak memverifikasi pengaturan penagihan atau berbagi Anda."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Ada perubahan yang belum disimpan."
+  },
+  "runtime_settings_conflict": {
+    "message": "Pengaturan berubah di halaman lain. Suntingan Anda tetap disimpan di sini. Muat ulang pengaturan tersimpan untuk membuang suntingan dan memakai nilai tersimpan."
+  },
+  "runtime_preferences_current": {
+    "message": "Preferensi sudah terbaru."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Kunci tersimpan tidak dapat dibuka. Buka ulang Pengaturan, atau hapus lalu masukkan lagi."
+  },
+  "runtime_key_conflict": {
+    "message": "Kunci API berubah di halaman lain. Muat ulang pengaturan tersimpan sebelum menyimpan kunci."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Kunci disimpan terenkripsi. Setujui berbagi data sebelum terhubung ke Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Setujui berbagi data di atas sebelum menambahkan kunci API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini menolak kunci tersimpan ini. Ganti atau gunakan Segarkan model untuk memeriksa lagi."
+  },
+  "runtime_paste_key": {
+    "message": "Tempel kunci API untuk menghubungkan Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "Kunci API disimpan. Gemini menerimanya pada pemeriksaan daftar model terakhir."
+  },
+  "runtime_key_saved_check": {
+    "message": "Kunci API disimpan terenkripsi pada perangkat ini. Segarkan model untuk memeriksanya dengan Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Coba tarik kembali"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Tarik persetujuan berbagi data"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Penarikan Anda belum dikonfirmasi. Coba tarik kembali untuk menyimpan pilihan."
+  },
+  "runtime_agreement_saved": {
+    "message": "Berbagi data disetujui untuk profil Chrome ini. Anda dapat menariknya kapan saja."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Tidak ada koneksi ke Google sampai Anda setuju. Kunci tetap disimpan jika Anda menarik persetujuan."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini menolak kunci tersimpan. Ganti di bawah."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Kunci disimpan terenkripsi pada perangkat ini."
+  },
+  "runtime_setup_create_key": {
+    "message": "Buat kunci sendiri di Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Bahasa dipilih. Selesaikan penyiapan untuk menyimpan pilihan."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Pilih bahasa tujuan di bawah."
+  },
+  "runtime_finish_setup": {
+    "message": "Selesaikan penyiapan"
+  },
+  "runtime_save_preferences": {
+    "message": "Simpan Preferensi"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Tambahkan kunci API, periksa daftar model, lalu simpan pilihan model."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Selesaikan konflik pengaturan sebelum menerjemahkan."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Baca dan setujui berbagi data sebelum terhubung ke Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Selesaikan penyimpanan kunci API sebelum memeriksa penyiapan."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Penyiapan perlu diperiksa: Gemini menolak kunci API tersimpan."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Kunci disimpan. Pilih bahasa tujuan, lalu selesaikan penyiapan."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Pilih model yang tersedia dan simpan preferensi."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Model dipilih. Simpan preferensi untuk menggunakannya."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Kunci dan bahasa siap. Selesaikan penyiapan untuk menyimpan pilihan, lalu coba terjemahan. Akses model dan kuota masih dapat berubah."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Siap mencoba terjemahan. Model tersimpan ada dalam daftar yang diperiksa; akses permintaan dan kuota masih dapat berubah."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Kunci disimpan. Segarkan model untuk memeriksa kunci dan model pilihan."
+  },
+  "runtime_show_key": {
+    "message": "Tampilkan"
+  },
+  "runtime_hide_key": {
+    "message": "Sembunyikan"
+  },
+  "runtime_choose_target_language": {
+    "message": "Pilih bahasa tujuan"
+  },
+  "runtime_background_no_response": {
+    "message": "Latar belakang ekstensi tidak merespons. Muat ulang ekstensi lalu coba lagi."
+  },
+  "runtime_refresh_models": {
+    "message": "Segarkan model"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Setujui berbagi data sebelum memuat model."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Selesaikan penyimpanan kunci API sebelum menyegarkan model."
+  },
+  "runtime_refreshing": {
+    "message": "Menyegarkan..."
+  },
+  "runtime_loading": {
+    "message": "Memuat..."
+  },
+  "runtime_models_checking": {
+    "message": "Memeriksa model yang kompatibel di Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "Memuat model yang kompatibel..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Model yang kompatibel tidak dapat dimuat."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini tidak mengembalikan model yang kompatibel."
+  },
+  "runtime_model_not_available": {
+    "message": "Model pilihan tidak ada dalam daftar yang kompatibel. Pilih model lain."
+  },
+  "runtime_record_key": {
+    "message": "Rekam tombol"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Perekaman dibatalkan."
+  },
+  "runtime_unknown_key": {
+    "message": "Tombol itu"
+  },
+  "runtime_press_key": {
+    "message": "Tekan sebuah tombol..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Tekan satu tombol non-karakter yang didukung. Tekan Escape untuk membatalkan."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Segarkan model untuk memeriksa kunci API tersimpan."
+  },
+  "runtime_models_add_key": {
+    "message": "Tambahkan kunci API untuk memuat model yang kompatibel."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Ekstensi tidak dapat memuat status tersimpannya."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini menolak kunci API tersimpan. Ganti atau segarkan model untuk memeriksanya lagi."
+  },
+  "runtime_settings_reopen": {
+    "message": "Pengaturan tidak dapat dimuat. Buka ulang Pengaturan untuk mencoba lagi."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Pengaturan tidak dapat dimuat. Muat ulang pengaturan tersimpan untuk mencoba lagi. Penyimpanan dinonaktifkan untuk melindungi pilihan tersimpan."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Status penyiapan tidak dapat dimuat."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Masukkan kunci API lengkap tanpa spasi."
+  },
+  "runtime_key_use_remove": {
+    "message": "Gunakan Hapus kunci tersimpan untuk menghapus kunci Anda."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Setujui berbagi data di atas sebelum menyimpan kunci API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Menyimpan kunci API terenkripsi..."
+  },
+  "runtime_key_save_failed": {
+    "message": "Kunci API tidak dapat dibaca atau disimpan. Isian Anda tetap ada. Gunakan Simpan Preferensi untuk mencoba lagi."
+  },
+  "runtime_connecting_google": {
+    "message": "Menghubungkan ke Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "Menghentikan koneksi ke Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Persetujuan berbagi data tidak dapat disimpan. Coba lagi."
+  },
+  "runtime_key_removing": {
+    "message": "Menghapus kunci tersimpan..."
+  },
+  "runtime_key_removed": {
+    "message": "Kunci tersimpan dihapus. Anda dapat menambahkan kunci baru setelah menyetujui berbagi data."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Kunci tersimpan tidak dapat dihapus. Coba lagi."
+  },
+  "runtime_saving": {
+    "message": "Menyimpan..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Pilih bahasa dan model yang valid."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Pilih tombol pemicu yang didukung atau Nonaktif."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Pilih model dari daftar kompatibel saat ini."
+  },
+  "runtime_preferences_saving": {
+    "message": "Menyimpan preferensi..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Preferensi disimpan."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Preferensi disimpan. Tambahkan kunci API untuk menyelesaikan penyiapan."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Preferensi tidak dapat dibaca atau disimpan. Suntingan tetap ada. Coba lagi."
+  },
+  "runtime_key_will_save": {
+    "message": "Kunci API akan disimpan otomatis."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Selesaikan pengisian kunci API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Selesaikan penyimpanan kunci API untuk memuat model yang kompatibel."
+  },
+  "runtime_recommended_selected": {
+    "message": "Model yang disarankan dipilih. Simpan pilihan untuk menggunakannya."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Tombol pemicu akan Nonaktif setelah disimpan."
+  },
+  "runtime_connection_changed": {
+    "message": "Pengaturan koneksi berubah. Memeriksa pengaturan tersimpan..."
+  },
+  "runtime_models_changed": {
+    "message": "Daftar model berubah. Memeriksa model yang kompatibel..."
+  },
+  "runtime_no_translation": {
+    "message": "Belum ada terjemahan."
+  },
+  "runtime_start_setup": {
+    "message": "Mulai penyiapan"
+  },
+  "runtime_settings": {
+    "message": "Pengaturan"
+  },
+  "runtime_key_rejected": {
+    "message": "Kunci ditolak"
+  },
+  "runtime_setup_required": {
+    "message": "Perlu penyiapan"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Tambahkan kunci API di Pengaturan untuk mulai menerjemahkan."
+  },
+  "runtime_add_key": {
+    "message": "Tambahkan kunci API"
+  },
+  "runtime_finish_model_language": {
+    "message": "Kunci disimpan. Buka Pengaturan untuk memeriksa model dan menyelesaikan pilihan bahasa."
+  },
+  "runtime_check_setup": {
+    "message": "Periksa penyiapan"
+  },
+  "runtime_translating": {
+    "message": "Menerjemahkan"
+  },
+  "runtime_error": {
+    "message": "Kesalahan"
+  },
+  "runtime_ready": {
+    "message": "Siap"
+  },
+  "runtime_status_load_failed": {
+    "message": "Status ekstensi tidak dapat dimuat. Muat ulang ekstensi, lalu segarkan halaman."
+  },
+  "runtime_copied": {
+    "message": "Disalin."
+  },
+  "runtime_copy_blocked": {
+    "message": "Penyalinan diblokir. Pilih teks hasil lalu salin."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Pengaturan tidak dapat dibuka. Coba lagi."
+  },
+  "runtime_translating_progress": {
+    "message": "Menerjemahkan..."
+  },
+  "runtime_translation_started": {
+    "message": "Terjemahan dimulai."
+  },
+  "runtime_translation_complete": {
+    "message": "Terjemahan selesai."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Terjemahan selesai. Gunakan teks hasil atau kontrol kartu."
+  },
+  "runtime_translation": {
+    "message": "Terjemahan"
+  },
+  "runtime_target_language": {
+    "message": "Bahasa tujuan"
+  },
+  "runtime_card_target_language": {
+    "message": "Bahasa tujuan untuk kartu ini"
+  },
+  "runtime_close_card": {
+    "message": "Tutup kartu terjemahan"
+  },
+  "runtime_translated_text": {
+    "message": "Teks terjemahan"
+  },
+  "runtime_retry": {
+    "message": "Coba lagi"
+  },
+  "runtime_copy": {
+    "message": "Salin"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Pengaturan tidak dapat dibuka. Gunakan bilah alat ekstensi."
+  },
+  "runtime_copy_failed": {
+    "message": "Penyalinan gagal. Pilih teks hasil lalu salin."
+  },
+  "runtime_context_menu": {
+    "message": "Terjemahkan Teks Terpilih"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Tidak dalam daftar saat ini)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Belum diperiksa)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Menggunakan daftar model tersimpan dari $value1$. Penyegaran langsung gagal. Coba lagi nanti.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Menggunakan daftar model tersimpan. Penyegaran langsung gagal. Coba lagi nanti."
+  },
+  "runtime_models_cache_at": {
+    "message": "Menggunakan daftar model tersimpan dari $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Menggunakan daftar model tersimpan."
+  },
+  "runtime_models_updated_at": {
+    "message": "Daftar model diperbarui dari $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Daftar model diperbarui."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ tidak didukung. Tekan tombol lain atau Escape untuk membatalkan.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "$value1$ akan digunakan setelah disimpan.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Hingga $value1$ per tab dan total $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ detik",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Tekan Tab untuk memakai kartu atau Escape untuk menutupnya.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Terjemahan gagal. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Segarkan halaman yang terbuka"
+  },
+  "refresh_message": {
+    "message": "Kunci API Anda disimpan. Setelah penyiapan selesai, segarkan halaman yang sudah terbuka. Lalu pilih teks dan tekan Control untuk menerjemahkan."
+  },
+  "refresh_continue": {
+    "message": "Lanjutkan penyiapan"
+  },
+  "refresh_faq_question": {
+    "message": "Mengapa saya perlu menyegarkan halaman yang terbuka?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Segarkan halaman yang terbuka</1> setelah menyelesaikan penyiapan, sebelum mencoba menerjemahkan. Chrome perlu memuat ekstensi pada halaman yang terbuka sebelum ekstensi dipasang atau dimuat ulang. Halaman yang baru dibuka siap secara otomatis."
+  },
+  "ui_locale": {
+    "message": "id",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

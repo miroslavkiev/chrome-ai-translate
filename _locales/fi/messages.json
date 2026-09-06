@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "Käännä helposti: valitse teksti ja paina Control. Käännä haluamallesi kielelle Geminillä.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "Valitse tekstiä ja yritä uudelleen."
+  },
+  "error_unsupported_selection": {
+    "message": "Tätä tekstivalintaa ei tueta."
+  },
+  "error_selection_too_large": {
+    "message": "Valinta on yli 10 000 merkkiä. Valitse vähemmän tekstiä ja yritä uudelleen."
+  },
+  "error_missing_api_key": {
+    "message": "Lisää Gemini-API-avaimesi asetuksiin."
+  },
+  "error_agreement_required": {
+    "message": "Lue ja hyväksy tietojen jakaminen asetuksissa ennen Google-yhteyttä."
+  },
+  "error_credential_conflict": {
+    "message": "Tallennettu avain muuttui toisella sivulla. Lataa tallennetut asetukset uudelleen ennen uutta yritystä."
+  },
+  "error_credential_storage_error": {
+    "message": "Tallennettua avainta ei voi avata. Avaa asetukset uudelleen tai poista avain ja syötä se uudelleen."
+  },
+  "error_missing_target_language": {
+    "message": "Valitse kohdekieli asetuksissa viimeistelläksesi käyttöönoton."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini hylkäsi API-avaimen. Tarkista se asetuksissa."
+  },
+  "error_invalid_model": {
+    "message": "Tämä malli ei sovellu kääntämiseen. Valitse asetuksista toinen malli tai suositeltu Flash-Lite-malli."
+  },
+  "error_busy": {
+    "message": "Liian monta käännöstä on käynnissä. Yritä uudelleen yhden valmistuttua."
+  },
+  "error_duplicate_request": {
+    "message": "Tätä valintaa käännetään jo."
+  },
+  "error_rate_limited": {
+    "message": "Pyyntöjen raja saavutettiin. Yritä pian uudelleen."
+  },
+  "error_timeout": {
+    "message": "Kääntäminen kesti liian kauan. Voit yrittää uudelleen."
+  },
+  "error_offline": {
+    "message": "Näytät olevan ilman verkkoyhteyttä. Tarkista yhteys ja yritä uudelleen."
+  },
+  "error_network_error": {
+    "message": "Geminiin ei saatu yhteyttä. Tarkista yhteys ja yritä uudelleen."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini-kiintiö täyttyi. Tarkista tilisi ja yritä myöhemmin."
+  },
+  "error_service_error": {
+    "message": "Gemini ei voinut viimeistellä käännöstä. Yritä myöhemmin."
+  },
+  "error_invalid_response": {
+    "message": "Gemini palautti lukukelvottoman vastauksen. Voit yrittää uudelleen."
+  },
+  "error_output_too_large": {
+    "message": "Käännös ylitti tulosteen rajan. Valitse vähemmän tekstiä ja yritä uudelleen."
+  },
+  "error_content_blocked": {
+    "message": "Gemini esti tämän tekstin. Kokeile toista valintaa."
+  },
+  "error_unsupported_page": {
+    "message": "Tällä sivulla ei voi kääntää."
+  },
+  "error_frame_unavailable": {
+    "message": "Valittu kehys ei ole enää käytettävissä."
+  },
+  "error_cancelled": {
+    "message": "Käännös peruttiin."
+  },
+  "key_Off": {
+    "message": "Pois"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Tauko"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " Yritä uudelleen $seconds$ sekunnin kuluttua.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translatorin asetukset"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "Yksityiset asetukset nopeaan ja kohdennettuun kääntämiseen."
+  },
+  "html_help_and_information": {
+    "message": "Ohjeet ja tiedot"
+  },
+  "html_api_key_guide": {
+    "message": "API-avainohje"
+  },
+  "html_about": {
+    "message": "Tietoja"
+  },
+  "html_privacy": {
+    "message": "Tietosuoja"
+  },
+  "html_set_up_ai_translator": {
+    "message": "Ota AI Translator käyttöön"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "Seuraa näitä vaiheita asetuksissa. Tarvitset oman Google-API-avaimen kääntämiseen."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>Hanki oma API-avain.</1> Avaa <2>Google AI Studio</2>, kirjaudu sisään ja luo avain. Lue tietojen jakamisesta alla ja liitä sitten avaimesi. Apua saat <3>vaiheittaisesta ohjeesta</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>Valitse kohdekieli ja malli.</1> Valitse käännösten kieli. Suosittelemme Gemini Flash-Litea, jos se on malliluettelossasi."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>Tallenna ja aloita kääntäminen.</1> Valitse sivun alalaidasta «Viimeistele käyttöönotto». Valitse sitten tekstiä verkkosivulta ja paina Control tai valitse hiiren oikean painikkeen valikosta «Käännä valittu teksti»."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "Yhdistä oma Gemini-API-avaimesi ja valitse yhteensopiva malli."
+  },
+  "html_loading_setup_state": {
+    "message": "Ladataan käyttöönoton tilaa..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Ennen Google-yhteyttä"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "Google saa API-avaimesi käytettävissä olevien mallien tarkistamiseen. Kun pyydät käännöstä, Google saa myös valitun tekstin ja kohdekielen, myös paikallisten tiedostojen tekstin. Tekoälykäännökset voivat olla virheellisiä."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "Avain tallennetaan salattuna tähän Chrome-profiiliin ja avataan automaattisesti uudelleenkäynnistysten jälkeen. Lisäsalasanaa ei tarvita. Henkilö, jolla on täydet käyttöoikeudet selainprofiiliin, voi silti palauttaa avaimen. <1>Lue tietosuojatiedot</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>Pakollista kaikissa maissa:</1> käytä Gemini-API-avainta projektista, jonka <2>laskutus on aktiivinen</2>. Poista käytöstä vapaaehtoinen <3>tämän laajennuksen pyyntölokien ja tietoaineistojen jakaminen Googlelle</3>. Näillä asetuksilla Googlen maksullisten palvelujen ehdot estävät syötteiden ja vastausten käytön tuotekehitykseen; turvallisuuteen ja lakiin liittyvä käsittely säilyy. Laajennus on ilmainen, mutta Googlen API-maksuja voi tulla."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>Käyttöehdot.</1> Käyttämällä Geminiä tämän laajennuksen kautta sitoudut yllä oleviin vaatimuksiin ja <2>Googlen ehtoihin</2>. Käyttö on tarkoitettu vähintään 18-vuotiaille ammatillisiin tai liiketoiminnallisiin tarkoituksiin <3>tuetuilla alueilla</3>. Laajennus ei tarkista laskutus- tai jakoasetuksiasi."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "Hyväksy ja yhdistä Googleen"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "Peru tietojen jakamissuostumus"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "Lue tietojen jakamisen tiedot ennen yhdistämistä."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>Miksi näitä vaatimuksia tarvitaan? Lue usein kysytyt kysymykset</1>."
+  },
+  "html_api_key": {
+    "message": "API-avain"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "Hyväksymisen jälkeen liitä avain. Se tallennetaan salattuna ja mallit ladataan automaattisesti."
+  },
+  "html_show": {
+    "message": "Näytä"
+  },
+  "html_remove_saved_key": {
+    "message": "Poista tallennettu avain"
+  },
+  "html_model": {
+    "message": "Malli"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "Tunnetut vain medialle tai erityistarkoituksiin tarkoitetut mallit piilotetaan."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Suosittelemme Gemini Flash-Lite -perhettä. Tässä versiossa (syyskuu 2026) valintamme on Gemini 3.5 Flash-Lite. Voit valita muun luetellun mallin. Jotkin mallit eivät ehkä toimi laajennuksessa. Jos malli epäonnistuu, valitse toinen tai suositeltu malli."
+  },
+  "html_refresh_models": {
+    "message": "Päivitä mallit"
+  },
+  "html_use_recommended_model": {
+    "message": "Käytä suositeltua mallia"
+  },
+  "html_translation": {
+    "message": "Käännös"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "Aseta kieli ja halutessasi käynnistysnäppäin."
+  },
+  "html_default_language": {
+    "message": "Oletuskieli"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "Tuloskortti voi käyttää toista kieltä muuttamatta tätä oletusta."
+  },
+  "html_keyboard_trigger": {
+    "message": "Käynnistysnäppäin"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "Yksittäiset näppäimet voivat häiritä sivustoja tai esteettömyystyökaluja. Valitse «Pois», jos haluat käyttää vain pikavalikkoa."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "Tallenna näppäin"
+  },
+  "html_off": {
+    "message": "Pois"
+  },
+  "html_behavior": {
+    "message": "Toiminta"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "Kiinteät suojaukset pitävät käännökset nopeina ja suojaavat API-kiintiötä."
+  },
+  "html_parallel_requests": {
+    "message": "Rinnakkaiset pyynnöt"
+  },
+  "html_request_timeout": {
+    "message": "Pyynnön aikaraja"
+  },
+  "html_page_access": {
+    "message": "Sivujen käyttöoikeus"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "Paikallisia tiedostoja varten salli tiedostojen URL-osoitteiden käyttö laajennuksen hallinnassa."
+  },
+  "html_help_and_recovery": {
+    "message": "Ohjeet ja palautus"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "Jos malli ei ole saatavilla, päivitä mallit, valitse yksi luettelosta ja tallenna asetukset. Jos luettelo ei lataudu, tarkista avain ja yhteys ja valitse «Päivitä mallit»."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chromen asetussivut ja Chrome Web Store eivät salli kääntämistä. Paikallisille tiedostoille on sallittava tiedostojen URL-osoitteiden käyttö laajennuksen hallinnassa. Päivitä avoimet verkkosivut laajennuksen päivityksen tai uudelleenlatauksen jälkeen. Uudelleenlataus voi keskeyttää käännöksen."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "Kääntäminen vaatii verkkoyhteyden. Hyväksymisen jälkeen avain lähetetään suoraan Googlelle mallien tarkistamista varten. Valittu teksti, myös paikallisista tiedostoista, lähetetään kohdekielen kanssa vain pyytäessäsi käännöstä. Tallennettu avain on salattu tässä Chrome-profiilissa. Kieli, malli ja näppäin voivat synkronoitua Chromen kautta. Laajennus säilyttää vain selainistunnon viimeisen tuloksen eikä käännöshistoriaa."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "Voit lukea tietojen jakamisesta yllä ja perua suostumuksen milloin tahansa. Mallitarkistukset ja käännökset pysähtyvät uuteen hyväksymiseen asti. Avain säilyy, ellet valitse «Poista tallennettu avain»."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "Kielen, mallin ja näppäimen muutokset tallennetaan täällä."
+  },
+  "html_reload_saved_settings": {
+    "message": "Lataa tallennetut asetukset uudelleen"
+  },
+  "html_save_preferences": {
+    "message": "Tallenna asetukset"
+  },
+  "html_gemini_translation": {
+    "message": "Käännös Geminillä"
+  },
+  "html_setup_required": {
+    "message": "Käyttöönotto tarvitaan"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "Tervetuloa AI Translatoriin"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "Käännä valittu teksti tuntemallesi kielelle. Määritä ensin nämä kaksi asiaa:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>Oma Gemini-API-avaimesi.</1> Hanki avain Google AI Studiosta. Ohjeemme kertoo miten."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>Kohdekielesi.</1> Valitse kieli, jolla haluat lukea."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API-avaimen hankkiminen"
+  },
+  "html_extension_status": {
+    "message": "Laajennuksen tila"
+  },
+  "html_active_translations": {
+    "message": "Aktiiviset käännökset"
+  },
+  "html_latest_this_session": {
+    "message": "Istunnon viimeisin tulos"
+  },
+  "html_no_translation_yet": {
+    "message": "Ei vielä käännöksiä."
+  },
+  "html_copy": {
+    "message": "Kopioi"
+  },
+  "html_settings": {
+    "message": "Asetukset"
+  },
+  "html_key_guide": {
+    "message": "Avainohje"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translatorin käytön aloitus"
+  },
+  "html_extension_pages": {
+    "message": "Laajennuksen sivut"
+  },
+  "html_faq": {
+    "message": "Usein kysytyt kysymykset"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "Hanki oma Google-API-avain, valitse kieli ja käännä ensimmäinen valintasi."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. Hanki API-avain"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API-avain sallii laajennuksen käyttää Geminiä Google-tilisi kautta. Pidä se salassa kuten salasana."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "Laajennus on tarkoitettu vähintään 18-vuotiaille ammatilliseen tai liiketoiminnalliseen käyttöön <1>Googlen tukemissa maissa ja alueilla</1>. Kaikissa maissa API-avaimen on kuuluttava Gemini-projektiin, jonka laskutus on aktiivinen. Poista laajennuksen pyyntölokien ja tietoaineistojen vapaaehtoinen jakaminen Googlelle käytöstä."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "Käyttämällä laajennusta hyväksyt nämä ehdot, <1>Googlen API-ehdot</1> ja <2>Gemini-API:n lisäehdot</2>. Älä käytä sitä, jos et voi noudattaa ehtoja. Laajennus ei tarkista näitä tietoja eikä pyydä henkilöllisyystodistuksia."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Avaa Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Kirjaudu Google-tilillesi. Hyväksy Googlen ehdot pyydettäessä."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "Luo tai valitse avain"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "Valitse API-avainten sivulta <1>Luo API-avain</1> ja valitse tai luo projekti Googlen ohjeiden mukaan. Projekti kokoaa API-käytön ja mahdollisen laskutuksen. Jos olet uusi AI Studiossa, Google on ehkä jo luonut oletusprojektin ja avaimen."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "Jos olemassa oleva projektisi puuttuu, avaa <1>Hallintapaneeli > Projektit > Tuo projekteja</1>. Tuo projekti ja palaa API-avaimiin."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "Tarkista ennen avaimen käyttöä <1>Googlen laskutusohjeesta</1>, että projektin laskutus on aktiivinen. Maksullinen Gemini-sovellustilaus ei korvaa API-projektin laskutusta. Poista laajennuksen lokien ja tietoaineistojen vapaaehtoinen jakaminen Googlelle käytöstä; lue <2>Googlen lokien jakamiskäytäntö</2>. Yksityinen projektin lokitus on eri asia kuin jakaminen."
+  },
+  "html_copy_your_key": {
+    "message": "Kopioi avain"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "Kopioi avain AI Studiosta. Palaa laajennuksen asetuksiin ja lue tietojen jakamisesta. Valitse <1>Hyväksy ja yhdistä Googleen</1> ja liitä avain <2>API-avain</2>-kenttään. Se salataan ja tallennetaan automaattisesti, ja malliluettelo latautuu. Odota tulosta ennen jatkamista."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translatorin asetukset, joissa tietojen jakamisilmoitus ja hyväksymispainike ovat tyhjän API-avainkentän ja Flash-Lite-suosituksen yläpuolella."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "Esimerkki englanniksi. AI Translatorissa: hyväksy ensin tietojen jakaminen ja liitä sitten oma avain. Malliluettelo tarkistetaan, kun avain on tallennettu salattuna."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google voi muuttaa näitä näkymiä. Ajantasaiset vaiheet ja apu avainvirheisiin löytyvät <1>Googlen API-avainohjeesta</1>. Käytä uutta AI Studio -avainta, jos vanha lakkaa toimimasta."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. Valitse käännösasetukset"
+  },
+  "html_choose_a_model": {
+    "message": "Valitse malli"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Suosittelemme Gemini Flash-Lite -perhettä. Syyskuun 2026 versiossa valintamme on <1>Gemini 3.5 Flash-Lite</1>. Käytä sitä, jos se on malliluettelossasi."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "Voit valita toisen luetellun mallin. Jotkin eivät ehkä toimi laajennuksessa. Jos malli epäonnistuu, valitse toinen tai suositeltu malli."
+  },
+  "html_choose_your_target_language": {
+    "message": "Valitse kohdekielesi"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "Valitse lukukieli kohdasta <1>Oletuskieli</1>. Vaihtoehdot perustuvat <2>Googlen dokumentoimiin Gemini-kieliin</2>. Käännöksen laatu voi vaihdella kielen ja tekstin mukaan."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translatorin käännösasetukset, joissa on kohdekielen valinta ja käynnistysnäppäimen säätimet."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "Esimerkki englanniksi. Valitse käännösten kieli ja viimeistele käyttöönotto."
+  },
+  "html_finish_setup": {
+    "message": "Viimeistele käyttöönotto"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Säilytä Control käynnistysnäppäimenä, tallenna toinen näppäin tai valitse <1>Pois</1> käyttääksesi vain hiiren oikean painikkeen valikkoa. Valitse asetusten alalaidasta <2>Viimeistele käyttöönotto</2>. Voit muuttaa valintoja myöhemmin painikkeella <3>Tallenna asetukset</3>."
+  },
+  "html_open_settings": {
+    "message": "Avaa asetukset"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. Käännä ensimmäinen valinta"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "Avaa tavallinen verkkosivu ja valitse lyhyt teksti. Napsauta hiiren oikealla ja valitse <1>Käännä valittu teksti</1> tai paina valitsemaasi näppäintä ja vapauta se. Tulos tulee valinnan viereen."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "Jos laajennus on juuri asennettu tai ladattu uudelleen, päivitä verkkosivu ensin. Chromen asetukset, Chrome Web Store ja sisäinen PDF-lukija eivät salli kääntämistä."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "Työkalupalkin ponnahdusikkuna näyttää viimeisen tuloksen. Käyttöönoton jälkeen se avaa tavallisen näkymän. Jos poistat API-avaimen, aloitusohje näkyy uudelleen."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "Usein kysyttyä: avaimet, kustannukset ja tietosuoja"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "Miksi tarvitsen oman API-avaimen?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "Laajennus lähettää pyynnöt suoraan Google-projektiisi omalla avaimellasi. Tämä on suunnitteluratkaisu, ei Chromen sääntö. Avain sallii pyynnöt ja liittää ne käyttöön ja laskutukseen. Älä jaa sitä kuvakaappauksissa tai julkisissa viesteissä. Katso <1>Googlen API-avainohje</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "Miksi aktiivista laskutusta vaaditaan eikä vain suositella?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chromen <1>Limited Use -sääntöjen kohdat 3 ja 5</1> rajaavat tietojen käytön laajennuksen tarkoitukseen ja siihen liittyviin toimintoihin. Osa Geminin maksuttomasta käytöstä sallii laajemman koulutuksen ja ihmisten tekemän tarkastelun. Maksulliset ehdot estävät tuotekehityksen mutta sallivat rajatun säilytyksen turvallisuus- ja oikeussyistä sekä käsittelyn EU:n ulkopuolella."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "Ristiriidan ratkaisemiseksi kehittäjä vaatii aktiivisen projektilaskutuksen kaikkialla maailmassa. Suositus sallisi edelleen maksuttoman käytön. Googlen aluesääntö edellyttää maksullisia palveluja ETA-alueella, Britanniassa ja Sveitsissä tarjottaville sovelluksille. Katso <1>Geminin ehdot: käyttörajoitukset, maksuttomat ja maksulliset palvelut</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Miksi vapaaehtoinen jakaminen Googlelle pitää poistaa käytöstä?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "Lokien tai tietoaineistojen jakaminen voi sallia koulutuksen ja ihmistarkastelun myös aktiivisella laskutuksella. Älä luovuta laajennuksen tietoja tietoaineistojen jakamisen tai palautteen kautta. Projektisi yksityiset lokit ovat sallittuja. Katso <1>Googlen lokikäytäntö: jaettavat tiedot ja tietojesi käyttö</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "Onko laajennus ilmainen, jos API:n käyttö on maksullista?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "Kyllä. Laajennus on ilmainen, mutta Googlen API-maksuja voi tulla. Maksullinen Gemini-sovellustilaus ei korvaa API-projektin laskutusta. Katso <1>laskutuksen tarkistaminen</1> ja <2>Googlen API-hinnat</2>. Laajennus ei tarkista laskutus- tai jakoasetuksia."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "Miksi minun pitää valita «Hyväksy ja yhdistä Googleen»?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chromen <1>tiedotusvaatimusten kohdat 1 ja 2</1> edellyttävät selkeitä tietoja tietojen käytöstä ja tietoista suostumusta. Painike sallii päätöksen ennen ensimmäistä Google-API-pyyntöä. Se ei tarkista henkilöllisyyttä tai laskutusta eikä anna lupaa muiden yksityisten tietojen jakamiseen."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Mitä Googlelle tarkalleen lähetetään?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "Mallitarkistus lähettää avaimen ja pyytää saatavilla olevat mallit. Käännös lähettää valitun tekstin, kohdekielen, mallin ja käännösohjeet, myös paikallisen tiedoston tekstin. Laajennus ei lisää koko sivua, sivun osoitetta tai selaushistoriaa. Google saa myös yhteystietoja, kuten IP-osoitteesi. Kehittäjä ei saa näitä pyyntöjä. Lähetä vain tekstiä, jota saat jakaa."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "Miten avain tallennetaan ja avataan automaattisesti?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API-avain tallennetaan salattuna. Se ja salausavain pysyvät tässä Chrome-profiilissa automaattista käyttöä varten uudelleenkäynnistyksen jälkeen. Niitä ei synkronoida. Profiiliin pääsevä henkilö voi silti palauttaa API-avaimen. Tämä ei ole käyttöjärjestelmän avainnippu tai salasanasuojattu holvi. Kieli, malli ja näppäin voivat synkronoitua. Vain viimeinen tulos säilyy istunnon ajan; käyttöanalytiikkaa tai käännöshistoriaa ei ole."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "Päivitys salaa ja tarkistaa vanhan tallennetun avaimen ennen selväkielisten kopioiden poistamista. Jos se epäonnistuu, vanha kopio säilyy ja pyynnöt pysyvät estettyinä. Asetukset selittävät virheen. Vanhan avaimen siirtäminen ei ohita suostumusta."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "Voinko perua suostumuksen tai poistaa avaimen?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>Asetuksissa</1> <2>Peru tietojen jakamissuostumus</2> estää uudet pyynnöt ja peruu aktiiviset paikallisesti säilyttäen avaimen ja asetukset. <3>Poista tallennettu avain</3> poistaa avaimen, salausavaimen ja mallivälimuistin. Kumpikaan ei peru jo lähetettyjä tietoja tai takaa lähetetyn pyynnön muuttumista maksuttomaksi. Peru avain AI Studiossa poistaaksesi sen käytöstä myös Googlella."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "Suostumus säilyy tavallisissa uudelleenkäynnistyksissä ja päivityksissä. Jos ilmoitus muuttuu, pyynnöt odottavat, että luet sen ja hyväksyt uudelleen."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "Miksi vain aikuisille ja ammatti- tai liiketoimintakäyttöön?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google edellyttää vähintään 18 vuoden ikää ja ammatillista tai liiketoiminnallista käyttöä tuetuilla alueilla. Katso <1>Geminin ehdot: ikävaatimukset ja käyttörajoitukset</1> sekä <2>käytettävissä olevat alueet</2>. Laajennuksessa ei ole erillistä kelpoisuusruutua tai henkilöllisyyden tarkistusta."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "Miksi tietosuojakäytäntö tämän ilmoituksen lisäksi?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "Ilmoitus selittää valinnan ennen yhdistämistä. Käytäntö antaa täydet tiedot käsittelystä, tallennuksesta ja poistamisesta. Chromen <1>tietosuojakäytäntösäännöt</1> vaativat tätä käyttäjätietoja käsitteleviltä laajennuksilta. Lue <2>tietosuojakäytäntömme</2>. Ilmoitukset eivät tarkoita Googlen hyväksyneen laajennusta."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "Tekoälykäännökset voivat olla virheellisiä. Tarkista tärkeä sanamuoto ennen siihen luottamista."
+  },
+  "html_about_ai_translator": {
+    "message": "Tietoja AI Translatorista"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "Käännä helposti: valitse teksti ja paina Control."
+  },
+  "html_made_for_people": {
+    "message": "Tehty ihmisiä varten"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "Loin AI Translatorin auttaakseni ihmisiä lukemaan, oppimaan ja tutustumaan yli kielirajojen. Toivon siitä olevan hyötyä kaikkialla maailmassa."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "Laajennus kääntää valitun tekstin omalla Google Gemini -API-avaimellasi. Päätät, mitä lähetät ja millä kielellä luet."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "Paina ja vapauta Control kääntääksesi valinnan. Control on oletusnäppäin, jota voi vaihtaa asetuksissa. Voit käyttää myös sivun hiiren oikean painikkeen valikkoa."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "Testattu käsin vain Macilla. Windowsia ja Linuxia ei ole testattu käsin."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>Näytä lähdekoodi ja projektiohje</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>Pyydä apua tai ilmoita ongelmasta</1>. Ilmoitukset ovat julkisia. Älä lisää API-avaimia, yksityistä tekstiä tai henkilötietoja."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "Jos haluat tukea työtäni"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "Tue kotimaatani Ukrainaa sen puolustautuessa Venäjän hyökkäystä vastaan."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "Luotan Sternenko Community Foundationiin. Jos voit ja haluat auttaa, voit lahjoittaa sen virallisella sivustolla."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>Tue Ukrainaa säätiön kautta</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "Tuki on vapaaehtoista eikä sitä tarvita laajennuksen käyttöön. Linkki avaa ulkoisen sivuston. Lahjoitukset kulkevat säätiön, eivät laajennuksen, kautta."
+  },
+  "html_privacy_and_costs": {
+    "message": "Tietosuoja ja kustannukset"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API-avain salataan tällä laitteella eikä sitä synkronoida. Se on käytettävissä tavallisten Chrome-uudelleenkäynnistysten jälkeen ilman avaussalasanaa. Selainprofiiliin pääsevä henkilö voi silti palauttaa sen."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "Ennen ensimmäistä Google-pyyntöä asetukset selittävät tietojen jakamisen ja pyytävät valitsemaan <1>Hyväksy ja yhdistä Googleen</1>. Sen jälkeen valittu teksti lähetetään suoraan Googlelle vain pyytäessäsi käännöstä. Mallitarkistus lähettää avaimen mutta ei valittua tekstiä. Laajennuksessa ei ole analytiikkaa, mainontaa tai käännöshistoriaa."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "Voit lukea tiedot <1>asetuksista</1> milloin tahansa. <2>Peru tietojen jakamissuostumus</2> pysäyttää uudet pyynnöt ja säilyttää salatun avaimen sekä asetukset. <3>Poista tallennettu avain</3> poistaa avaimen ja mallivälimuistin. Lähetettyjä tietoja ei voi perua."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "Tekoäly luo käännökset, ja ne voivat olla virheellisiä. Tarkista tärkeät sanamuodot ennen luottamista."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>Lue tietosuojatiedot</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator on ilmainen, riippumaton projekti. Googlen API-maksuja voi tulla. Käytä joka maassa Gemini-API-avainta projektista, jonka <1>laskutus on aktiivinen</1>, ja poista vapaaehtoinen <2>laajennuksen pyyntölokien ja tietoaineistojen jakaminen Googlelle</2> käytöstä. Maksulliset ehdot estävät silloin syötteiden ja vastausten käytön tuotekehitykseen; turvallisuus- ja lakikäsittely säilyy. Lue <3>Googlen hinnat ja tietojen käyttöohjeet</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "Laajennus on vähintään 18-vuotiaille ammatti- tai liiketoimintakäyttöön <1>Googlen tukemilla alueilla</1>. Käyttämällä sitä hyväksyt nämä ehdot, <2>Googlen API-ehdot</2> ja <3>Gemini-API:n lisäehdot</3>. Älä käytä laajennusta, jos et voi noudattaa niitä. Kelpoisuusruutua tai henkilöllisyystarkistusta ei ole. Laajennus ei tarkista laskutusta tai jakamista."
+  },
+  "runtime_unsaved_changes": {
+    "message": "Tallentamattomia muutoksia."
+  },
+  "runtime_settings_conflict": {
+    "message": "Asetukset muuttuivat toisella sivulla. Muutoksesi säilyvät täällä. Lataa tallennetut asetukset uudelleen hylätäksesi muutokset ja käyttääksesi tallennettuja arvoja."
+  },
+  "runtime_preferences_current": {
+    "message": "Asetukset ovat ajan tasalla."
+  },
+  "runtime_key_cannot_open": {
+    "message": "Tallennettua avainta ei voi avata. Avaa asetukset uudelleen tai poista avain ja syötä se uudelleen."
+  },
+  "runtime_key_conflict": {
+    "message": "API-avain muuttui toisella sivulla. Lataa tallennetut asetukset uudelleen ennen avaimen tallennusta."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "Avain on tallennettu salattuna. Hyväksy tietojen jakaminen ennen Google-yhteyttä."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "Hyväksy tietojen jakaminen yllä ennen API-avaimen lisäämistä."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini hylkäsi tallennetun avaimen. Vaihda se tai tarkista uudelleen valitsemalla «Päivitä mallit»."
+  },
+  "runtime_paste_key": {
+    "message": "Liitä API-avain Gemini-yhteyttä varten."
+  },
+  "runtime_key_checked": {
+    "message": "API-avain tallennettu. Gemini hyväksyi sen viimeisessä malliluettelon tarkistuksessa."
+  },
+  "runtime_key_saved_check": {
+    "message": "API-avain tallennettu salattuna laitteelle. Päivitä mallit tarkistaaksesi sen Geminillä."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "Yritä perumista uudelleen"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "Peru tietojen jakamissuostumus"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "Perumista ei vahvistettu. Yritä uudelleen tallentaaksesi valinnan."
+  },
+  "runtime_agreement_saved": {
+    "message": "Tietojen jakaminen hyväksytty tälle Chrome-profiilille. Voit perua suostumuksen milloin tahansa."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "Ei Google-yhteyttä ennen hyväksymistä. Tallennettu avain säilyy, jos perut suostumuksen."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini hylkäsi tallennetun avaimen. Vaihda se alla."
+  },
+  "runtime_setup_key_saved": {
+    "message": "Avain on tallennettu salattuna tälle laitteelle."
+  },
+  "runtime_setup_create_key": {
+    "message": "Luo oma avain Google AI Studiossa."
+  },
+  "runtime_setup_language_selected": {
+    "message": "Kieli valittu. Viimeistele käyttöönotto tallentaaksesi valinnat."
+  },
+  "runtime_setup_choose_language": {
+    "message": "Valitse kohdekieli alta."
+  },
+  "runtime_finish_setup": {
+    "message": "Viimeistele käyttöönotto"
+  },
+  "runtime_save_preferences": {
+    "message": "Tallenna asetukset"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "Lisää API-avain, tarkista malliluettelo ja tallenna mallivalinta."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "Ratkaise asetusten ristiriita ennen kääntämistä."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Lue ja hyväksy tietojen jakaminen ennen Google-yhteyttä."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "Viimeistele API-avaimen tallennus ennen käyttöönoton tarkistusta."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "Käyttöönotto vaatii huomiota: Gemini hylkäsi tallennetun API-avaimen."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "Avain tallennettu. Valitse kohdekieli ja viimeistele käyttöönotto."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "Valitse saatavilla oleva malli ja tallenna asetukset."
+  },
+  "runtime_setup_model_selected": {
+    "message": "Malli valittu. Tallenna asetukset käyttääksesi sitä."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "Avain ja kieli ovat valmiina. Viimeistele käyttöönotto tallentaaksesi valinnat ja kokeile käännöstä. Mallien käyttöoikeus ja kiintiö voivat silti muuttua."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "Valmis kokeilemaan käännöstä. Tallennettu malli on tarkistetussa luettelossa; käyttöoikeus ja kiintiö voivat silti muuttua."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "Avain tallennettu. Päivitä mallit tarkistaaksesi avaimen ja valitun mallin."
+  },
+  "runtime_show_key": {
+    "message": "Näytä"
+  },
+  "runtime_hide_key": {
+    "message": "Piilota"
+  },
+  "runtime_choose_target_language": {
+    "message": "Valitse kohdekieli"
+  },
+  "runtime_background_no_response": {
+    "message": "Laajennuksen taustaprosessi ei vastannut. Lataa laajennus uudelleen ja yritä taas."
+  },
+  "runtime_refresh_models": {
+    "message": "Päivitä mallit"
+  },
+  "runtime_models_need_agreement": {
+    "message": "Hyväksy tietojen jakaminen ennen mallien latausta."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "Viimeistele API-avaimen tallennus ennen mallien päivitystä."
+  },
+  "runtime_refreshing": {
+    "message": "Päivitetään..."
+  },
+  "runtime_loading": {
+    "message": "Ladataan..."
+  },
+  "runtime_models_checking": {
+    "message": "Tarkistetaan Geminin yhteensopivia malleja..."
+  },
+  "runtime_models_loading": {
+    "message": "Ladataan yhteensopivia malleja..."
+  },
+  "runtime_models_load_failed": {
+    "message": "Yhteensopivia malleja ei voitu ladata."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini ei palauttanut yhteensopivia malleja."
+  },
+  "runtime_model_not_available": {
+    "message": "Valittua mallia ei ole yhteensopivassa luettelossa. Valitse toinen malli."
+  },
+  "runtime_record_key": {
+    "message": "Tallenna näppäin"
+  },
+  "runtime_recording_cancelled": {
+    "message": "Näppäimen tallennus peruttiin."
+  },
+  "runtime_unknown_key": {
+    "message": "Tuo näppäin"
+  },
+  "runtime_press_key": {
+    "message": "Paina näppäintä..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "Paina tuettua näppäintä, joka ei kirjoita merkkejä. Peru painamalla Escape."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "Päivitä mallit tarkistaaksesi tallennetun API-avaimen."
+  },
+  "runtime_models_add_key": {
+    "message": "Lisää API-avain ladataksesi yhteensopivat mallit."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "Laajennus ei voinut ladata tallennettua tilaansa."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini hylkäsi tallennetun API-avaimen. Vaihda se tai tarkista uudelleen päivittämällä mallit."
+  },
+  "runtime_settings_reopen": {
+    "message": "Asetuksia ei voitu ladata. Avaa ne uudelleen ja yritä taas."
+  },
+  "runtime_settings_load_failed": {
+    "message": "Asetuksia ei voitu ladata. Lataa tallennetut asetukset uudelleen ja yritä taas. Tallennus on estetty tallennettujen valintojen suojaamiseksi."
+  },
+  "runtime_setup_load_failed": {
+    "message": "Käyttöönoton tilaa ei voitu ladata."
+  },
+  "runtime_key_no_spaces": {
+    "message": "Syötä täydellinen API-avain ilman välilyöntejä."
+  },
+  "runtime_key_use_remove": {
+    "message": "Poista avain valitsemalla «Poista tallennettu avain»."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "Hyväksy tietojen jakaminen yllä ennen API-avaimen tallennusta."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "Tallennetaan API-avain salattuna..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API-avainta ei voitu lukea tai tallentaa. Syötteesi säilyy. Yritä uudelleen painamalla «Tallenna asetukset»."
+  },
+  "runtime_connecting_google": {
+    "message": "Yhdistetään Googleen..."
+  },
+  "runtime_stopping_google": {
+    "message": "Pysäytetään Google-yhteydet..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "Tietojen jakamissuostumusta ei voitu tallentaa. Yritä uudelleen."
+  },
+  "runtime_key_removing": {
+    "message": "Poistetaan tallennettua avainta..."
+  },
+  "runtime_key_removed": {
+    "message": "Tallennettu avain poistettu. Voit lisätä uuden hyväksyttyäsi tietojen jakamisen."
+  },
+  "runtime_key_remove_failed": {
+    "message": "Tallennettua avainta ei voitu poistaa. Yritä uudelleen."
+  },
+  "runtime_saving": {
+    "message": "Tallennetaan..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "Valitse kelvollinen kieli ja malli."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "Valitse tuettu käynnistysnäppäin tai «Pois»."
+  },
+  "runtime_choose_listed_model": {
+    "message": "Valitse malli nykyisestä yhteensopivasta luettelosta."
+  },
+  "runtime_preferences_saving": {
+    "message": "Tallennetaan asetuksia..."
+  },
+  "runtime_preferences_saved": {
+    "message": "Asetukset tallennettu."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "Asetukset tallennettu. Lisää API-avain viimeistelläksesi käyttöönoton."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "Asetuksia ei voitu lukea tai tallentaa. Muutokset säilyvät. Yritä uudelleen."
+  },
+  "runtime_key_will_save": {
+    "message": "API-avain tallennetaan automaattisesti."
+  },
+  "runtime_key_finish_entry": {
+    "message": "Syötä API-avain loppuun."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "Viimeistele API-avaimen tallennus ladataksesi yhteensopivat mallit."
+  },
+  "runtime_recommended_selected": {
+    "message": "Suositeltu malli valittu. Tallenna valinta käyttääksesi sitä."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "Käynnistysnäppäin poistuu käytöstä tallennuksen jälkeen."
+  },
+  "runtime_connection_changed": {
+    "message": "Yhteysasetukset muuttuivat. Tarkistetaan tallennetut asetukset..."
+  },
+  "runtime_models_changed": {
+    "message": "Malliluettelo muuttui. Tarkistetaan yhteensopivat mallit..."
+  },
+  "runtime_no_translation": {
+    "message": "Ei vielä käännöksiä."
+  },
+  "runtime_start_setup": {
+    "message": "Aloita käyttöönotto"
+  },
+  "runtime_settings": {
+    "message": "Asetukset"
+  },
+  "runtime_key_rejected": {
+    "message": "Avain hylätty"
+  },
+  "runtime_setup_required": {
+    "message": "Käyttöönotto tarvitaan"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "Lisää API-avain asetuksiin aloittaaksesi kääntämisen."
+  },
+  "runtime_add_key": {
+    "message": "Lisää API-avain"
+  },
+  "runtime_finish_model_language": {
+    "message": "Avain on tallennettu. Avaa asetukset tarkistaaksesi mallin ja viimeistelläksesi kielivalinnan."
+  },
+  "runtime_check_setup": {
+    "message": "Tarkista käyttöönotto"
+  },
+  "runtime_translating": {
+    "message": "Käännetään"
+  },
+  "runtime_error": {
+    "message": "Virhe"
+  },
+  "runtime_ready": {
+    "message": "Valmis"
+  },
+  "runtime_status_load_failed": {
+    "message": "Laajennuksen tilaa ei voitu ladata. Lataa laajennus uudelleen ja päivitä sivu."
+  },
+  "runtime_copied": {
+    "message": "Kopioitu."
+  },
+  "runtime_copy_blocked": {
+    "message": "Kopiointi estettiin. Valitse tulosteksti ja kopioi se."
+  },
+  "runtime_settings_open_failed": {
+    "message": "Asetuksia ei voitu avata. Yritä uudelleen."
+  },
+  "runtime_translating_progress": {
+    "message": "Käännetään..."
+  },
+  "runtime_translation_started": {
+    "message": "Kääntäminen alkoi."
+  },
+  "runtime_translation_complete": {
+    "message": "Käännös valmis."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "Käännös valmis. Käytä tulostekstiä tai kortin säätimiä."
+  },
+  "runtime_translation": {
+    "message": "Käännös"
+  },
+  "runtime_target_language": {
+    "message": "Kohdekieli"
+  },
+  "runtime_card_target_language": {
+    "message": "Tämän kortin kohdekieli"
+  },
+  "runtime_close_card": {
+    "message": "Sulje käännöskortti"
+  },
+  "runtime_translated_text": {
+    "message": "Käännetty teksti"
+  },
+  "runtime_retry": {
+    "message": "Yritä uudelleen"
+  },
+  "runtime_copy": {
+    "message": "Kopioi"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "Asetuksia ei voitu avata. Käytä laajennuksen työkalupalkkia."
+  },
+  "runtime_copy_failed": {
+    "message": "Kopiointi epäonnistui. Valitse tulosteksti ja kopioi se."
+  },
+  "runtime_context_menu": {
+    "message": "Käännä valittu teksti"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (Ei nykyisessä luettelossa)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (Ei vielä tarkistettu)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "Käytetään välimuistin malliluetteloa ajalta $value1$. Verkkopäivitys epäonnistui. Yritä myöhemmin.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "Käytetään välimuistin malliluetteloa. Verkkopäivitys epäonnistui. Yritä myöhemmin."
+  },
+  "runtime_models_cache_at": {
+    "message": "Käytetään välimuistin malliluetteloa ajalta $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "Käytetään välimuistin malliluetteloa."
+  },
+  "runtime_models_updated_at": {
+    "message": "Malliluettelo päivitetty: $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "Malliluettelo päivitetty."
+  },
+  "runtime_key_not_supported": {
+    "message": "Näppäintä $value1$ ei tueta. Paina toista näppäintä tai peru painamalla Escape.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "Näppäintä $value1$ käytetään tallennuksen jälkeen.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "Enintään $value1$ välilehteä kohti ja $value2$ yhteensä",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ sekuntia",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ Käytä korttia painamalla Tab tai sulje se painamalla Escape.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "Käännös epäonnistui. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "Päivitä avoimet sivut"
+  },
+  "refresh_message": {
+    "message": "API-avaimesi on tallennettu. Päivitä jo avoinna olleet sivut käyttöönoton jälkeen. Valitse sitten teksti ja käännä painamalla Control."
+  },
+  "refresh_continue": {
+    "message": "Jatka käyttöönottoa"
+  },
+  "refresh_faq_question": {
+    "message": "Miksi avoimet sivut pitää päivittää?"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>Päivitä avoimet sivut</1> käyttöönoton jälkeen ennen kääntämistä. Chromen pitää ladata laajennus sivuille, jotka olivat auki ennen asennusta tai uudelleenlatausta. Uudet sivut ovat automaattisesti valmiita."
+  },
+  "ui_locale": {
+    "message": "fi",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

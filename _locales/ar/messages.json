@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "ترجمة سهلة جدا: حدد النص واضغط Control. ترجم إلى لغتك المختارة باستخدام Gemini.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "حدد نصا وحاول مرة أخرى."
+  },
+  "error_unsupported_selection": {
+    "message": "تحديد النص هذا غير مدعوم."
+  },
+  "error_selection_too_large": {
+    "message": "يتجاوز النص المحدد 10,000 حرف. حدد نصا أقصر وحاول مجددا."
+  },
+  "error_missing_api_key": {
+    "message": "أضف مفتاح Gemini API في الإعدادات."
+  },
+  "error_agreement_required": {
+    "message": "راجع مشاركة البيانات ووافق عليها في الإعدادات قبل الاتصال بـ Google."
+  },
+  "error_credential_conflict": {
+    "message": "تغير المفتاح المحفوظ في صفحة أخرى. أعد تحميل الإعدادات المحفوظة قبل المحاولة مجددا."
+  },
+  "error_credential_storage_error": {
+    "message": "تعذر فتح المفتاح المحفوظ. أعد فتح الإعدادات، أو احذفه وأدخله مجددا."
+  },
+  "error_missing_target_language": {
+    "message": "اختر لغة الترجمة في الإعدادات لإكمال الإعداد."
+  },
+  "error_invalid_api_key": {
+    "message": "رفض Gemini مفتاح API. تحقّق منه في الإعدادات."
+  },
+  "error_invalid_model": {
+    "message": "لا يمكن استخدام هذا النموذج للترجمة. اختر نموذجا آخر أو نموذج Flash-Lite الموصى به في الإعدادات."
+  },
+  "error_busy": {
+    "message": "توجد ترجمات نشطة كثيرة جدا. حاول بعد انتهاء إحداها."
+  },
+  "error_duplicate_request": {
+    "message": "تجري ترجمة هذا التحديد بالفعل."
+  },
+  "error_rate_limited": {
+    "message": "تم بلوغ حد الطلبات. حاول بعد قليل."
+  },
+  "error_timeout": {
+    "message": "استغرقت الترجمة وقتا طويلا. يمكنك إعادة المحاولة."
+  },
+  "error_offline": {
+    "message": "يبدو أنك غير متصل بالإنترنت. تحقّق من الاتصال وأعد المحاولة."
+  },
+  "error_network_error": {
+    "message": "تعذر الوصول إلى Gemini. تحقّق من الاتصال وأعد المحاولة."
+  },
+  "error_quota_exceeded": {
+    "message": "تم بلوغ حصة Gemini. تحقّق من حسابك وحاول لاحقا."
+  },
+  "error_service_error": {
+    "message": "تعذر على Gemini إكمال الترجمة. حاول لاحقا."
+  },
+  "error_invalid_response": {
+    "message": "أعاد Gemini ردا غير قابل للقراءة. يمكنك إعادة المحاولة."
+  },
+  "error_output_too_large": {
+    "message": "تجاوزت الترجمة حد المخرجات. حدد نصا أقصر وحاول مجددا."
+  },
+  "error_content_blocked": {
+    "message": "حظر Gemini هذا النص. جرّب تحديدا آخر."
+  },
+  "error_unsupported_page": {
+    "message": "الترجمة غير متاحة في هذه الصفحة."
+  },
+  "error_frame_unavailable": {
+    "message": "لم يعد الإطار المحدد متاحا."
+  },
+  "error_cancelled": {
+    "message": "أُلغيت الترجمة."
+  },
+  "key_Off": {
+    "message": "إيقاف"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " حاول مجددا بعد $seconds$ ثانية.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "إعدادات AI Translator"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "إعدادات خاصة لترجمة سريعة ومركزة."
+  },
+  "html_help_and_information": {
+    "message": "المساعدة والمعلومات"
+  },
+  "html_api_key_guide": {
+    "message": "دليل مفتاح API"
+  },
+  "html_about": {
+    "message": "حول الإضافة"
+  },
+  "html_privacy": {
+    "message": "الخصوصية"
+  },
+  "html_set_up_ai_translator": {
+    "message": "إعداد AI Translator"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "اتبع هذه الخطوات هنا في الإعدادات. تحتاج إلى مفتاح Google API خاص بك للترجمة."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>احصل على مفتاح API خاص بك.</1> افتح <2>Google AI Studio</2> وسجّل الدخول وأنشئ مفتاحا. راجع مشاركة البيانات أدناه ثم الصق المفتاح. للمساعدة، <3>اقرأ الدليل المفصل</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>اختر لغة الترجمة والنموذج.</1> اختر اللغة التي تريد الترجمة إليها. نوصي بـ Gemini Flash-Lite عند توفره في قائمة نماذجك."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>احفظ وابدأ الترجمة.</1> اختر «إكمال الإعداد» أسفل الصفحة. ثم حدد نصا في صفحة ويب واضغط Control أو اختر «ترجمة النص المحدد» من قائمة النقر بزر الفأرة الأيمن."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "اربط مفتاح Gemini API الخاص بك واختر نموذجا متوافقا."
+  },
+  "html_loading_setup_state": {
+    "message": "جار تحميل حالة الإعداد..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "قبل الاتصال بـ Google"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "يتلقى Google مفتاح API للتحقّق من النماذج المتاحة. عند طلب الترجمة، يتلقى Google أيضا النص المحدد ولغة الترجمة، بما في ذلك نصوص الملفات المحلية. قد تكون ترجمات الذكاء الاصطناعي خاطئة."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "يُحفظ مفتاحك مشفرا في ملف Chrome هذا ويُفتح تلقائيا بعد إعادة التشغيل. لا تحتاج إلى كلمة مرور إضافية. قد يتمكن شخص لديه وصول كامل إلى ملف المتصفح من استعادته. <1>اقرأ تفاصيل الخصوصية</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>مطلوب في كل بلد:</1> استخدم مفتاح Gemini API من مشروع لديه <2>فوترة نشطة</2>. أبقِ <3>مشاركة سجلات طلبات هذه الإضافة ومجموعات بياناتها مع Google</3> الاختيارية متوقفة. بهذه الإعدادات، تستبعد شروط Google المدفوعة استخدام الطلبات والردود لتحسين المنتجات؛ وتبقى المعالجة الأمنية والقانونية سارية. الإضافة مجانية، لكن قد تُفرض رسوم Google API."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>شروط الاستخدام.</1> باستخدام Gemini عبر هذه الإضافة، توافق على الالتزام بالمتطلبات أعلاه و<2>شروط Google</2>. الاستخدام للأشخاص بعمر 18 سنة أو أكثر لأغراض مهنية أو تجارية في <3>المناطق المدعومة</3>. لا تتحقّق الإضافة من إعدادات الفوترة أو المشاركة لديك."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "أوافق وأتصل بـ Google"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "سحب الموافقة على مشاركة البيانات"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "راجع تفاصيل مشاركة البيانات قبل الاتصال."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>لماذا نحتاج إلى هذه المتطلبات؟ اقرأ الأسئلة الشائعة</1>."
+  },
+  "html_api_key": {
+    "message": "مفتاح API"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "بعد الموافقة، الصق مفتاحا ليُحفظ مشفرا وتُحمّل النماذج تلقائيا."
+  },
+  "html_show": {
+    "message": "إظهار"
+  },
+  "html_remove_saved_key": {
+    "message": "حذف المفتاح المحفوظ"
+  },
+  "html_model": {
+    "message": "النموذج"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "تُخفى النماذج المعروفة المخصصة للوسائط فقط أو لأغراض خاصة."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "نوصي بعائلة Gemini Flash-Lite. في هذا الإصدار، سبتمبر 2026، اخترنا Gemini 3.5 Flash-Lite. يمكنك اختيار نموذج آخر من القائمة. قد لا تعمل بعض النماذج مع الإضافة. إذا فشل أحدها، اختر نموذجا آخر أو النموذج الموصى به."
+  },
+  "html_refresh_models": {
+    "message": "تحديث النماذج"
+  },
+  "html_use_recommended_model": {
+    "message": "استخدام النموذج الموصى به"
+  },
+  "html_translation": {
+    "message": "الترجمة"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "حدد اللغة ومفتاح التشغيل الاختياري."
+  },
+  "html_default_language": {
+    "message": "اللغة الافتراضية"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "يمكن لبطاقة النتيجة استخدام لغة أخرى دون تغيير هذا الإعداد الافتراضي."
+  },
+  "html_keyboard_trigger": {
+    "message": "مفتاح تشغيل الترجمة"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "قد تتعارض المفاتيح المنفردة مع المواقع أو أدوات تسهيل الاستخدام. اختر «إيقاف» لاستخدام قائمة السياق فقط."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "تسجيل مفتاح"
+  },
+  "html_off": {
+    "message": "إيقاف"
+  },
+  "html_behavior": {
+    "message": "السلوك"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "تحافظ وسائل الحماية الثابتة على سرعة الترجمة وتحمي حصة API."
+  },
+  "html_parallel_requests": {
+    "message": "الطلبات المتزامنة"
+  },
+  "html_request_timeout": {
+    "message": "مهلة الطلب"
+  },
+  "html_page_access": {
+    "message": "الوصول إلى الصفحات"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "للملفات المحلية، فعّل «السماح بالوصول إلى عناوين URL للملفات» في إدارة الإضافة"
+  },
+  "html_help_and_recovery": {
+    "message": "المساعدة والاستعادة"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "إذا كان النموذج غير متاح، حدّث النماذج واختر واحدا من القائمة واحفظ التفضيلات. إذا تعذر تحميل القائمة، تحقّق من المفتاح والاتصال ثم جرّب «تحديث النماذج»."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "لا تسمح صفحات إعدادات Chrome وChrome Web Store بالترجمة. للملفات المحلية، فعّل «السماح بالوصول إلى عناوين URL للملفات» في إدارة الإضافة. بعد تحديث الإضافة أو إعادة تحميلها، حدّث صفحات الويب المفتوحة. قد تقاطع إعادة التحميل الترجمة."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "تتطلب الترجمة اتصالا بالإنترنت. بعد الموافقة أعلاه، يُرسل المفتاح مباشرة إلى Google للتحقّق من النماذج. يُرسل النص المحدد، بما فيه نص الملفات المحلية، مع لغة الترجمة فقط عند طلب الترجمة. مفتاحك المحفوظ مشفر في ملف Chrome هذا. قد تتزامن اللغة والنموذج ومفتاح التشغيل عبر Chrome. تحتفظ الإضافة بآخر نتيجة فقط لجلسة المتصفح الحالية ولا تحفظ سجل ترجمات."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "يمكنك مراجعة مشاركة البيانات أعلاه وسحب موافقتك في أي وقت. تتوقف عمليات التحقّق من النماذج والترجمة حتى توافق مجددا. يبقى المفتاح محفوظا ما لم تختر «حذف المفتاح المحفوظ»."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "تُحفظ هنا تغييرات اللغة والنموذج ومفتاح التشغيل."
+  },
+  "html_reload_saved_settings": {
+    "message": "إعادة تحميل الإعدادات المحفوظة"
+  },
+  "html_save_preferences": {
+    "message": "حفظ التفضيلات"
+  },
+  "html_gemini_translation": {
+    "message": "ترجمة Gemini"
+  },
+  "html_setup_required": {
+    "message": "يلزم الإعداد"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "مرحبا بك في AI Translator"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "ترجم النص المحدد إلى لغة تعرفها. اضبط هذين الأمرين للبدء:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>مفتاح Gemini API الخاص بك.</1> احصل على مفتاحك من Google AI Studio. يشرح دليلنا الطريقة."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>لغة الترجمة.</1> اختر اللغة التي تريد القراءة بها."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "كيفية الحصول على مفتاح API"
+  },
+  "html_extension_status": {
+    "message": "حالة الإضافة"
+  },
+  "html_active_translations": {
+    "message": "الترجمات النشطة"
+  },
+  "html_latest_this_session": {
+    "message": "الأحدث في هذه الجلسة"
+  },
+  "html_no_translation_yet": {
+    "message": "لا توجد ترجمة بعد."
+  },
+  "html_copy": {
+    "message": "نسخ"
+  },
+  "html_settings": {
+    "message": "الإعدادات"
+  },
+  "html_key_guide": {
+    "message": "دليل المفتاح"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "بدء استخدام AI Translator"
+  },
+  "html_extension_pages": {
+    "message": "صفحات الإضافة"
+  },
+  "html_faq": {
+    "message": "الأسئلة الشائعة"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "احصل على مفتاح Google API الخاص بك واختر لغة وترجم أول نص تحدده."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. احصل على مفتاح API"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "يتيح مفتاح API لهذه الإضافة استخدام Gemini عبر حسابك في Google. احتفظ به سرا مثل كلمة المرور."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "هذه الإضافة للأشخاص بعمر 18 سنة أو أكثر للاستخدام المهني أو التجاري في <1>البلدان والمناطق التي يدعمها Google</1>. في كل بلد، يجب أن يتبع المفتاح مشروعا في Gemini بفوترة نشطة. أبقِ المشاركة الاختيارية لسجلات طلبات الإضافة ومجموعات بياناتها مع Google متوقفة."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "باستخدام هذه الإضافة، توافق على الالتزام بهذه الشروط و<1>شروط Google API</1> و<2>الشروط الإضافية لـ Gemini API</2>. لا تستخدمها إذا لم تستطع استيفاء الشروط. لا تتحقّق الإضافة من هذه المعلومات ولا تطلب وثائق هوية."
+  },
+  "html_open_google_ai_studio": {
+    "message": "فتح Google AI Studio"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "سجّل الدخول إلى حساب Google. وافق على شروط Google إذا طُلب منك ذلك."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "إنشاء مفتاح أو اختياره"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "في صفحة مفاتيح API، اختر <1>إنشاء مفتاح API</1> واتبع خطوات Google لاختيار مشروع أو إنشائه. يجمع المشروع استخدامك لـ API والفوترة. إذا كنت جديدا في AI Studio، فربما أنشأ Google مشروعا ومفتاحا افتراضيين بالفعل."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "إذا لم يظهر مشروعك الحالي، افتح <1>لوحة التحكم > المشاريع > استيراد المشاريع</1>. استورد مشروعك ثم عد إلى مفاتيح API."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "قبل استخدام المفتاح، اتبع <1>دليل فوترة Google</1> للتأكد من أن مشروعه لديه فوترة نشطة. الاشتراك المدفوع في تطبيق Gemini لا يعوّض فوترة مشروع API. أبقِ مشاركة سجلات طلبات الإضافة ومجموعات بياناتها مع Google متوقفة؛ واقرأ <2>سياسة Google لمشاركة السجلات</2>. التسجيل الخاص بالمشروع منفصل عن المشاركة."
+  },
+  "html_copy_your_key": {
+    "message": "نسخ مفتاحك"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "انسخ المفتاح من AI Studio. عد إلى إعدادات الإضافة واقرأ تفاصيل مشاركة البيانات. اختر <1>أوافق وأتصل بـ Google</1> ثم الصق المفتاح في حقل <2>مفتاح API</2>. يُشفّر ويُحفظ تلقائيا وتُحمّل قائمة النماذج. انتظر النتيجة قبل المتابعة."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "إعدادات AI Translator تعرض إشعار مشاركة البيانات وزر الموافقة فوق حقل مفتاح API فارغ وتوصية نموذج Flash-Lite."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "المثال معروض بالإنجليزية. في AI Translator: وافق أولا على مشاركة البيانات ثم الصق مفتاحك. تُفحص قائمة النماذج بعد حفظ المفتاح المشفر."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "قد يغيّر Google هذه الشاشات. للخطوات الحالية أو أخطاء المفاتيح، اقرأ <1>دليل Google لمفاتيح API</1>. استخدم مفتاحا جديدا من AI Studio إذا توقف المفتاح القديم عن العمل."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. اختر إعدادات الترجمة"
+  },
+  "html_choose_a_model": {
+    "message": "اختيار نموذج"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "نوصي بعائلة Gemini Flash-Lite. لهذا الإصدار في سبتمبر 2026، اخترنا <1>Gemini 3.5 Flash-Lite</1>. استخدمه عند توفره في قائمة نماذجك."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "يمكنك اختيار نموذج آخر من القائمة. قد لا تعمل بعض النماذج مع الإضافة. إذا فشل نموذج، اختر غيره أو استخدم الموصى به."
+  },
+  "html_choose_your_target_language": {
+    "message": "اختر لغة الترجمة"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "اختر اللغة التي تريد القراءة بها من <1>اللغة الافتراضية</1>. تتبع الخيارات <2>لغات Gemini الموثقة لدى Google</2>. قد تختلف جودة الترجمة حسب اللغة والنص."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "إعدادات ترجمة AI Translator مع اختيار لغة الترجمة وأدوات مفتاح التشغيل."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "المثال معروض بالإنجليزية. اختر لغة ترجماتك ثم أكمل الإعداد."
+  },
+  "html_finish_setup": {
+    "message": "إكمال الإعداد"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "أبقِ Control مفتاحا للتشغيل، أو سجّل مفتاحا آخر، أو اختر <1>إيقاف</1> لاستخدام قائمة النقر الأيمن فقط. اختر <2>إكمال الإعداد</2> أسفل الإعدادات. يمكنك تغيير الخيارات لاحقا عبر <3>حفظ التفضيلات</3>."
+  },
+  "html_open_settings": {
+    "message": "فتح الإعدادات"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. ترجم أول نص تحدده"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "افتح صفحة ويب عادية وحدد نصا قصيرا. انقر بزر الفأرة الأيمن واختر <1>ترجمة النص المحدد</1> أو اضغط مفتاحك المختار ثم اتركه. تظهر النتيجة بجوار التحديد."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "إذا ثُبتت الإضافة أو أُعيد تحميلها للتو، حدّث الصفحة أولا. لا تسمح صفحات إعدادات Chrome وChrome Web Store وعارض PDF المدمج بالترجمة."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "تعرض نافذة شريط الأدوات آخر نتيجة. بعد اكتمال الإعداد، تفتح العرض المعتاد. إذا حذفت مفتاح API، يظهر دليل الترحيب مجددا."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "أسئلة شائعة: المفاتيح والتكاليف والخصوصية"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "لماذا أحتاج إلى مفتاح API خاص بي؟"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "صُممت الإضافة لإرسال الطلبات مباشرة إلى مشروع Google الخاص بك باستخدام مفتاحك. هذا اختيار تصميم وليس قاعدة من Chrome. يسمح المفتاح بالطلبات ويربطها بالاستخدام والفوترة. لا تشاركه أبدا في لقطات الشاشة أو الرسائل العامة. راجع <1>دليل Google لمفاتيح API</1>."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "لماذا الفوترة النشطة مطلوبة وليست مجرد توصية؟"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "تقصر <1>قواعد الاستخدام المحدود في Chrome، البندان 3 و5</1>، استخدام البيانات على غرض الإضافة والعمليات المرتبطة به. يسمح بعض استخدام Gemini غير المدفوع بتدريب أوسع ومراجعة بشرية. تستبعد الشروط المدفوعة استخدام البيانات لتحسين المنتجات، لكنها تسمح باحتفاظ محدود لأسباب أمنية وقانونية وبالمعالجة خارج الاتحاد الأوروبي."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "لمعالجة هذا التعارض، يشترط المطور فوترة نشطة للمشروع في كل العالم. التوصية وحدها كانت ستظل تسمح بالاستخدام غير المدفوع. تشترط قاعدة Google الإقليمية الخدمات المدفوعة للتطبيقات المعروضة في المنطقة الاقتصادية الأوروبية والمملكة المتحدة وسويسرا. راجع <1>شروط Gemini: قيود الاستخدام والخدمات غير المدفوعة والخدمات المدفوعة</1>."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "لماذا يجب أن تبقى المشاركة الاختيارية مع Google متوقفة؟"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "قد تسمح مشاركة السجلات أو مجموعات البيانات بالتدريب والمراجعة البشرية حتى مع الفوترة النشطة. لا تساهم ببيانات الإضافة عبر مشاركة مجموعات البيانات أو الملاحظات. يسمح هذا الشرط بالتسجيل الخاص لمشروعك. راجع <1>سياسة سجلات Google: البيانات القابلة للمشاركة وكيفية استخدام بياناتك</1>."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "هل الإضافة مجانية إذا كنت أحتاج إلى وصول مدفوع إلى API؟"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "نعم. الإضافة مجانية، لكن قد تُفرض رسوم Google API. الاشتراك المدفوع في تطبيق Gemini لا يستبدل فوترة مشروع API. راجع <1>كيفية التحقّق من الفوترة</1> و<2>أسعار Google API</2>. لا تتحقّق الإضافة من الفوترة أو إعدادات المشاركة."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "لماذا يجب اختيار «أوافق وأتصل بـ Google»؟"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "تتطلب <1>متطلبات الإفصاح في Chrome، البندان 1 و2</1>، تفاصيل واضحة لاستخدام البيانات وموافقة مستنيرة. يتيح لك الزر اتخاذ هذا القرار قبل أي طلب إلى Google API. لا يتحقّق من هويتك أو الفوترة ولا يمنح إذنا بمشاركة معلومات الآخرين الخاصة."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "ما الذي يُرسل إلى Google بالضبط؟"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "تُرسل عمليات فحص النماذج مفتاحك وتطلب النماذج المتاحة. ترسل الترجمة النص المحدد واللغة والنموذج وتعليمات الترجمة، بما في ذلك النص المحدد من الملفات المحلية. لا تضيف الإضافة الصفحة كاملة أو عنوانها أو سجل التصفح. يتلقى Google أيضا تفاصيل الاتصال مثل عنوان IP. لا يتلقى المطور أيا من هذه الطلبات. أرسل فقط النص الذي يُسمح لك بمشاركته."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "كيف يُحفظ مفتاحي ويُفتح تلقائيا؟"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "يُحفظ مفتاح API مشفرا. يبقى هو ومفتاح تشفيره في ملف Chrome هذا للاستخدام التلقائي بعد إعادة التشغيل ولا تتم مزامنتهما. قد يستعيد شخص لديه وصول إلى الملف مفتاح API. هذا ليس مخزن مفاتيح نظام أو خزنة محمية بكلمة مرور. يمكن مزامنة اللغة والنموذج ومفتاح التشغيل. تبقى آخر نتيجة فقط خلال جلسة المتصفح؛ لا توجد تحليلات أو محفوظات ترجمة."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "تُشفّر الترقية المفتاح القديم وتفحصه قبل حذف نسخه النصية غير المشفرة. إذا فشلت، تبقى النسخة القديمة محفوظة وتظل الطلبات محظورة. توضح الإعدادات الخطأ. نقل مفتاح قديم لا يتجاوز الموافقة."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "هل يمكنني سحب موافقتي أو حذف مفتاحي؟"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "في <1>الإعدادات</1>، يحظر <2>سحب الموافقة على مشاركة البيانات</2> الطلبات الجديدة ويلغي النشطة محليا مع الاحتفاظ بمفتاحك وتفضيلاتك. يحذف <3>حذف المفتاح المحفوظ</3> المفتاح ومفتاح تشفيره وذاكرة النماذج المؤقتة. لا يسترجع أي منهما البيانات المرسلة ولا يضمن أن الطلب المرسل يصبح مجانيا. ألغِ المفتاح في AI Studio لتعطيله لدى Google أيضا."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "تبقى موافقتك محفوظة بعد عمليات إعادة التشغيل والتحديث المعتادة. إذا تغير الإشعار، تنتظر الطلبات حتى تراجعه وتوافق مجددا."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "لماذا هذا مخصص للبالغين وللعمل أو التجارة؟"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "يشترط Google ألا يقل عمر المستخدم عن 18 سنة وأن يكون الاستخدام مهنيا أو تجاريا في المناطق المدعومة. راجع <1>شروط Gemini: متطلبات العمر وقيود الاستخدام</1> و<2>المناطق المتاحة</2>. لا تحتوي الإضافة على خانة منفصلة للأهلية أو فحص للهوية."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "لماذا توجد سياسة خصوصية إلى جانب هذا الإشعار؟"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "يوضح الإشعار الخيار قبل الاتصال. وتقدم السياسة تفاصيل البيانات والتخزين والحذف كاملة. تفرض <1>قواعد سياسة الخصوصية في Chrome</1> ذلك على الإضافات التي تتعامل مع بيانات المستخدم. اقرأ <2>سياسة الخصوصية لدينا</2>. لا تعني هذه الإشعارات أن Google وافق على الإضافة."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "قد تكون ترجمات الذكاء الاصطناعي خاطئة. راجع الصياغة المهمة قبل الاعتماد عليها."
+  },
+  "html_about_ai_translator": {
+    "message": "حول AI Translator"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "ترجمة سهلة جدا: حدد النص واضغط Control."
+  },
+  "html_made_for_people": {
+    "message": "صُنع من أجل الناس"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "أنشأت AI Translator لمساعدة الناس على القراءة والتعلم والتواصل عبر اللغات. آمل أن يفيد الناس حول العالم."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "تترجم الإضافة النص المحدد باستخدام مفتاح Google Gemini API الخاص بك. أنت تختار ما ترسله وبأي لغة تقرأ."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "اضغط Control ثم اتركه لترجمة التحديد. Control هو المفتاح الافتراضي ويمكن تغييره في الإعدادات. يمكنك أيضا استخدام قائمة النقر الأيمن في الصفحة."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "اختُبر يدويا على Mac فقط. لم يُختبر Windows وLinux يدويا."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>عرض الشفرة المصدرية ودليل المشروع</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>الحصول على المساعدة أو الإبلاغ عن مشكلة</1>. البلاغات عامة. لا تضمّن مفاتيح API أو نصوصا خاصة أو تفاصيل شخصية."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "إذا كنت ترغب في دعم عملي"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "يرجى دعم بلدي، أوكرانيا، في دفاعه عن نفسه ضد العدوان الروسي."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "أثق بمؤسسة مجتمع ستيرنينكو. إذا كنت تستطيع وترغب في المساعدة، يمكنك التبرع عبر موقعها الرسمي."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>دعم أوكرانيا عبر المؤسسة</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "الدعم اختياري ولا يلزم أبدا لاستخدام الإضافة. يفتح الرابط موقعا خارجيا. تمر التبرعات عبر المؤسسة لا الإضافة."
+  },
+  "html_privacy_and_costs": {
+    "message": "الخصوصية والتكاليف"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "يُشفّر مفتاح API على هذا الجهاز ولا تتم مزامنته. يبقى متاحا بعد إعادة تشغيل Chrome المعتادة دون كلمة مرور لفتحه. قد يستعيده شخص لديه وصول إلى ملف المتصفح."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "قبل أول طلب إلى Google، توضح الإعدادات مشاركة البيانات وتطلب اختيار <1>أوافق وأتصل بـ Google</1>. بعد ذلك يُرسل النص المحدد مباشرة إلى Google فقط عند طلب الترجمة. ترسل عمليات فحص النماذج المفتاح دون النص المحدد. لا توجد تحليلات أو إعلانات أو محفوظات ترجمة."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "راجع التفاصيل في <1>الإعدادات</1> في أي وقت. اختر <2>سحب الموافقة على مشاركة البيانات</2> لإيقاف الطلبات الجديدة مع الاحتفاظ بمفتاحك المشفر وتفضيلاتك، أو <3>حذف المفتاح المحفوظ</3> لحذف المفتاح وذاكرة النماذج المؤقتة. لا يمكن استرجاع البيانات المرسلة."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "تُنتج الترجمات بالذكاء الاصطناعي وقد تكون خاطئة. راجع الصياغة المهمة قبل الاعتماد عليها."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>اقرأ تفاصيل الخصوصية</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator مشروع مستقل ومجاني. قد تُفرض رسوم Google API. في كل بلد، استخدم مفتاح Gemini API من مشروع ذي <1>فوترة نشطة</1> وأبقِ <2>مشاركة سجلات طلبات الإضافة ومجموعات بياناتها مع Google</2> الاختيارية متوقفة. بهذه الإعدادات، تستبعد شروط Google المدفوعة استخدام الطلبات والردود لتحسين المنتجات؛ تبقى المعالجة الأمنية والقانونية سارية. اقرأ <3>أسعار Google وملاحظات استخدام البيانات</3>."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "هذه الإضافة للأشخاص بعمر 18 سنة أو أكثر للاستخدام المهني أو التجاري في <1>مناطق Google المدعومة</1>. باستخدامها توافق على هذه الشروط و<2>شروط Google API</2> و<3>الشروط الإضافية لـ Gemini API</3>. لا تستخدمها إن لم تستطع استيفاءها. لا توجد خانة أهلية أو مراجعة هوية. لا تتحقّق الإضافة من إعدادات الفوترة أو المشاركة."
+  },
+  "runtime_unsaved_changes": {
+    "message": "تغييرات غير محفوظة."
+  },
+  "runtime_settings_conflict": {
+    "message": "تغيرت الإعدادات في صفحة أخرى. تعديلاتك محفوظة هنا. أعد تحميل الإعدادات المحفوظة لتجاهل تعديلاتك واستخدام القيم المحفوظة."
+  },
+  "runtime_preferences_current": {
+    "message": "التفضيلات محدثة."
+  },
+  "runtime_key_cannot_open": {
+    "message": "تعذر فتح المفتاح المحفوظ. أعد فتح الإعدادات أو احذفه وأدخله مجددا."
+  },
+  "runtime_key_conflict": {
+    "message": "تغير مفتاح API في صفحة أخرى. أعد تحميل الإعدادات المحفوظة قبل حفظ مفتاح."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "مفتاحك محفوظ مشفرا. وافق على مشاركة البيانات قبل الاتصال بـ Google."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "وافق على مشاركة البيانات أعلاه قبل إضافة مفتاح API."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "رفض Gemini هذا المفتاح المحفوظ. استبدله أو استخدم «تحديث النماذج» لفحصه مجددا."
+  },
+  "runtime_paste_key": {
+    "message": "الصق مفتاح API لربط Gemini."
+  },
+  "runtime_key_checked": {
+    "message": "حُفظ مفتاح API. قبله Gemini في آخر فحص لقائمة النماذج."
+  },
+  "runtime_key_saved_check": {
+    "message": "حُفظ مفتاح API مشفرا على هذا الجهاز. حدّث النماذج للتحقّق منه لدى Gemini."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "إعادة محاولة السحب"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "سحب الموافقة على مشاركة البيانات"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "لم يُؤكد سحب موافقتك. حاول سحبها مجددا لحفظ خيارك."
+  },
+  "runtime_agreement_saved": {
+    "message": "تمت الموافقة على مشاركة البيانات لهذا الملف في Chrome. يمكنك سحبها في أي وقت."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "لن يحدث اتصال بـ Google حتى توافق. يبقى مفتاحك محفوظا إذا سحبت الموافقة."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "رفض Gemini المفتاح المحفوظ. استبدله أدناه."
+  },
+  "runtime_setup_key_saved": {
+    "message": "مفتاحك محفوظ مشفرا على هذا الجهاز."
+  },
+  "runtime_setup_create_key": {
+    "message": "أنشئ مفتاحك الخاص في Google AI Studio."
+  },
+  "runtime_setup_language_selected": {
+    "message": "اختيرت اللغة. أكمل الإعداد لحفظ خياراتك."
+  },
+  "runtime_setup_choose_language": {
+    "message": "اختر لغة الترجمة أدناه."
+  },
+  "runtime_finish_setup": {
+    "message": "إكمال الإعداد"
+  },
+  "runtime_save_preferences": {
+    "message": "حفظ التفضيلات"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "أضف مفتاح API وافحص قائمة النماذج واحفظ اختيار النموذج."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "عالج تعارض الإعدادات قبل الترجمة."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "راجع مشاركة البيانات ووافق قبل الاتصال بـ Google."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "أكمل حفظ مفتاح API قبل التحقّق من الإعداد."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "يحتاج الإعداد إلى الانتباه: رفض Gemini مفتاح API المحفوظ."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "حُفظ المفتاح. اختر لغة الترجمة ثم أكمل الإعداد."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "اختر نموذجا متاحا واحفظ التفضيلات."
+  },
+  "runtime_setup_model_selected": {
+    "message": "اختير النموذج. احفظ التفضيلات لاستخدامه."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "المفتاح واللغة جاهزان. أكمل الإعداد لحفظ اختياراتك ثم جرّب الترجمة. قد يتغير الوصول إلى النماذج والحصة."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "جاهز لتجربة الترجمة. النموذج المحفوظ في القائمة المفحوصة؛ قد يتغير الوصول إلى الطلبات والحصة."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "حُفظ المفتاح. حدّث النماذج لفحص المفتاح والنموذج المحدد."
+  },
+  "runtime_show_key": {
+    "message": "إظهار"
+  },
+  "runtime_hide_key": {
+    "message": "إخفاء"
+  },
+  "runtime_choose_target_language": {
+    "message": "اختر لغة الترجمة"
+  },
+  "runtime_background_no_response": {
+    "message": "لم تستجب خلفية الإضافة. أعد تحميل الإضافة وحاول مجددا."
+  },
+  "runtime_refresh_models": {
+    "message": "تحديث النماذج"
+  },
+  "runtime_models_need_agreement": {
+    "message": "وافق على مشاركة البيانات قبل تحميل النماذج."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "أكمل حفظ مفتاح API قبل تحديث النماذج."
+  },
+  "runtime_refreshing": {
+    "message": "جار التحديث..."
+  },
+  "runtime_loading": {
+    "message": "جار التحميل..."
+  },
+  "runtime_models_checking": {
+    "message": "جار التحقّق من النماذج المتوافقة لدى Gemini..."
+  },
+  "runtime_models_loading": {
+    "message": "جار تحميل النماذج المتوافقة..."
+  },
+  "runtime_models_load_failed": {
+    "message": "تعذر تحميل النماذج المتوافقة."
+  },
+  "runtime_models_empty": {
+    "message": "لم يُرجع Gemini أي نموذج متوافق."
+  },
+  "runtime_model_not_available": {
+    "message": "النموذج المحدد ليس في القائمة المتوافقة. اختر نموذجا آخر."
+  },
+  "runtime_record_key": {
+    "message": "تسجيل مفتاح"
+  },
+  "runtime_recording_cancelled": {
+    "message": "أُلغي التسجيل."
+  },
+  "runtime_unknown_key": {
+    "message": "هذا المفتاح"
+  },
+  "runtime_press_key": {
+    "message": "اضغط مفتاحا..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "اضغط مفتاحا واحدا مدعوما لا يكتب أحرفا. اضغط Escape للإلغاء."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "حدّث النماذج لفحص مفتاح API المحفوظ."
+  },
+  "runtime_models_add_key": {
+    "message": "أضف مفتاح API لتحميل النماذج المتوافقة."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "لم تستطع الإضافة تحميل حالتها المحفوظة."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "رفض Gemini مفتاح API المحفوظ. استبدله أو حدّث النماذج لفحصه مجددا."
+  },
+  "runtime_settings_reopen": {
+    "message": "تعذر تحميل الإعدادات. أعد فتحها للمحاولة مجددا."
+  },
+  "runtime_settings_load_failed": {
+    "message": "تعذر تحميل الإعدادات. أعد تحميل الإعدادات المحفوظة للمحاولة مجددا. عُطّل الحفظ لحماية خياراتك المحفوظة."
+  },
+  "runtime_setup_load_failed": {
+    "message": "تعذر تحميل حالة الإعداد."
+  },
+  "runtime_key_no_spaces": {
+    "message": "أدخل مفتاح API كاملا دون مسافات."
+  },
+  "runtime_key_use_remove": {
+    "message": "استخدم «حذف المفتاح المحفوظ» لحذف مفتاحك."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "وافق على مشاركة البيانات أعلاه قبل حفظ مفتاح API."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "جار حفظ مفتاح API مشفرا..."
+  },
+  "runtime_key_save_failed": {
+    "message": "تعذرت قراءة مفتاح API أو حفظه. يبقى إدخالك محفوظا. استخدم «حفظ التفضيلات» للمحاولة مجددا."
+  },
+  "runtime_connecting_google": {
+    "message": "جار الاتصال بـ Google..."
+  },
+  "runtime_stopping_google": {
+    "message": "جار إيقاف الاتصالات بـ Google..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "تعذر حفظ موافقتك على البيانات. حاول مجددا."
+  },
+  "runtime_key_removing": {
+    "message": "جار حذف المفتاح المحفوظ..."
+  },
+  "runtime_key_removed": {
+    "message": "حُذف المفتاح المحفوظ. يمكنك إضافة مفتاح جديد بعد الموافقة على مشاركة البيانات."
+  },
+  "runtime_key_remove_failed": {
+    "message": "تعذر حذف المفتاح المحفوظ. حاول مجددا."
+  },
+  "runtime_saving": {
+    "message": "جار الحفظ..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "اختر لغة ونموذجا صالحين."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "اختر مفتاح تشغيل مدعوما أو «إيقاف»."
+  },
+  "runtime_choose_listed_model": {
+    "message": "اختر نموذجا من القائمة المتوافقة الحالية."
+  },
+  "runtime_preferences_saving": {
+    "message": "جار حفظ التفضيلات..."
+  },
+  "runtime_preferences_saved": {
+    "message": "حُفظت التفضيلات."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "حُفظت التفضيلات. أضف مفتاح API لإكمال الإعداد."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "تعذرت قراءة التفضيلات أو حفظها. تبقى تعديلاتك. حاول مجددا."
+  },
+  "runtime_key_will_save": {
+    "message": "سيُحفظ مفتاح API تلقائيا."
+  },
+  "runtime_key_finish_entry": {
+    "message": "أكمل إدخال مفتاح API."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "أكمل حفظ مفتاح API لتحميل النماذج المتوافقة."
+  },
+  "runtime_recommended_selected": {
+    "message": "اختير النموذج الموصى به. احفظ اختيارك لاستخدامه."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "سيُوقف مفتاح تشغيل الترجمة بعد الحفظ."
+  },
+  "runtime_connection_changed": {
+    "message": "تغيرت إعدادات الاتصال. جار فحص الإعدادات المحفوظة..."
+  },
+  "runtime_models_changed": {
+    "message": "تغيرت قائمة النماذج. جار فحص النماذج المتوافقة..."
+  },
+  "runtime_no_translation": {
+    "message": "لا توجد ترجمة بعد."
+  },
+  "runtime_start_setup": {
+    "message": "بدء الإعداد"
+  },
+  "runtime_settings": {
+    "message": "الإعدادات"
+  },
+  "runtime_key_rejected": {
+    "message": "رُفض المفتاح"
+  },
+  "runtime_setup_required": {
+    "message": "يلزم الإعداد"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "أضف مفتاح API في الإعدادات لبدء الترجمة."
+  },
+  "runtime_add_key": {
+    "message": "إضافة مفتاح API"
+  },
+  "runtime_finish_model_language": {
+    "message": "حُفظ المفتاح. افتح الإعدادات لفحص النموذج وإكمال اختيار اللغة."
+  },
+  "runtime_check_setup": {
+    "message": "فحص الإعداد"
+  },
+  "runtime_translating": {
+    "message": "تجري الترجمة"
+  },
+  "runtime_error": {
+    "message": "خطأ"
+  },
+  "runtime_ready": {
+    "message": "جاهز"
+  },
+  "runtime_status_load_failed": {
+    "message": "تعذر تحميل حالة الإضافة. أعد تحميلها ثم حدّث الصفحة."
+  },
+  "runtime_copied": {
+    "message": "نُسخ."
+  },
+  "runtime_copy_blocked": {
+    "message": "حُظر النسخ. حدد نص النتيجة وانسخه."
+  },
+  "runtime_settings_open_failed": {
+    "message": "تعذر فتح الإعدادات. حاول مجددا."
+  },
+  "runtime_translating_progress": {
+    "message": "جار الترجمة..."
+  },
+  "runtime_translation_started": {
+    "message": "بدأت الترجمة."
+  },
+  "runtime_translation_complete": {
+    "message": "اكتملت الترجمة."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "اكتملت الترجمة. استخدم نص النتيجة أو عناصر التحكم في البطاقة."
+  },
+  "runtime_translation": {
+    "message": "الترجمة"
+  },
+  "runtime_target_language": {
+    "message": "لغة الترجمة"
+  },
+  "runtime_card_target_language": {
+    "message": "لغة الترجمة لهذه البطاقة"
+  },
+  "runtime_close_card": {
+    "message": "إغلاق بطاقة الترجمة"
+  },
+  "runtime_translated_text": {
+    "message": "النص المترجم"
+  },
+  "runtime_retry": {
+    "message": "إعادة المحاولة"
+  },
+  "runtime_copy": {
+    "message": "نسخ"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "تعذر فتح الإعدادات. استخدم شريط أدوات الإضافة."
+  },
+  "runtime_copy_failed": {
+    "message": "فشل النسخ. حدد نص النتيجة وانسخه."
+  },
+  "runtime_context_menu": {
+    "message": "ترجمة النص المحدد"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (غير موجود في القائمة الحالية)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (لم يُفحص بعد)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "تُستخدم قائمة النماذج المخزنة مؤقتا بتاريخ $value1$. فشل التحديث المباشر. حاول لاحقا.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "تُستخدم قائمة النماذج المخزنة مؤقتا. فشل التحديث المباشر. حاول لاحقا."
+  },
+  "runtime_models_cache_at": {
+    "message": "تُستخدم قائمة النماذج المخزنة مؤقتا بتاريخ $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "تُستخدم قائمة النماذج المخزنة مؤقتا."
+  },
+  "runtime_models_updated_at": {
+    "message": "حُدثت قائمة النماذج من $value1$.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "حُدثت قائمة النماذج."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ غير مدعوم. اضغط مفتاحا آخر أو Escape للإلغاء.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "سيُستخدم $value1$ بعد الحفظ.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "حتى $value1$ لكل علامة تبويب و$value2$ إجمالا",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ ثانية",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ اضغط Tab لاستخدام هذه البطاقة أو Escape لإغلاقها.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "فشلت الترجمة. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "تحديث الصفحات المفتوحة"
+  },
+  "refresh_message": {
+    "message": "حُفظ مفتاح API. بعد إكمال الإعداد، حدّث الصفحات التي كانت مفتوحة بالفعل. ثم حدد النص واضغط Control للترجمة."
+  },
+  "refresh_continue": {
+    "message": "متابعة الإعداد"
+  },
+  "refresh_faq_question": {
+    "message": "لماذا يجب تحديث الصفحات المفتوحة؟"
+  },
+  "refresh_faq_answer": {
+    "message": "<1>حدّث الصفحات المفتوحة</1> بعد إكمال الإعداد وقبل تجربة الترجمة. يحتاج Chrome إلى تحميل الإضافة في الصفحات التي كانت مفتوحة قبل تثبيتها أو إعادة تحميلها. الصفحات الجديدة تكون جاهزة تلقائيا."
+  },
+  "ui_locale": {
+    "message": "ar",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

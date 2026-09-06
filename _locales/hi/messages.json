@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "आसान अनुवाद: टेक्स्ट चुनें और Control दबाएँ। Gemini से अपनी पसंद की भाषा में अनुवाद करें।",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "कुछ टेक्स्ट चुनें और फिर कोशिश करें।"
+  },
+  "error_unsupported_selection": {
+    "message": "इस तरह टेक्स्ट चुनना समर्थित नहीं है।"
+  },
+  "error_selection_too_large": {
+    "message": "चुना गया टेक्स्ट 10,000 अक्षरों से लंबा है। कम टेक्स्ट चुनें और फिर कोशिश करें।"
+  },
+  "error_missing_api_key": {
+    "message": "सेटिंग में अपनी Gemini API कुंजी जोड़ें।"
+  },
+  "error_agreement_required": {
+    "message": "Google से जुड़ने से पहले सेटिंग में डेटा साझा करने की जानकारी पढ़ें और सहमति दें।"
+  },
+  "error_credential_conflict": {
+    "message": "सहेजी गई कुंजी दूसरे पेज पर बदल गई है। फिर कोशिश करने से पहले सहेजी गई सेटिंग दोबारा लोड करें।"
+  },
+  "error_credential_storage_error": {
+    "message": "सहेजी गई कुंजी नहीं खुल रही। सेटिंग फिर खोलें, या कुंजी हटाकर दोबारा डालें।"
+  },
+  "error_missing_target_language": {
+    "message": "सेटअप पूरा करने के लिए सेटिंग में लक्ष्य भाषा चुनें।"
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini ने API कुंजी अस्वीकार कर दी। सेटिंग में जाँचें।"
+  },
+  "error_invalid_model": {
+    "message": "यह मॉडल अनुवाद के लिए नहीं चल सकता। सेटिंग में दूसरा मॉडल या सुझाया गया Flash-Lite चुनें।"
+  },
+  "error_busy": {
+    "message": "बहुत से अनुवाद चल रहे हैं। एक पूरा होने पर फिर कोशिश करें।"
+  },
+  "error_duplicate_request": {
+    "message": "इस चुने हुए टेक्स्ट का अनुवाद पहले से चल रहा है।"
+  },
+  "error_rate_limited": {
+    "message": "अनुरोधों की सीमा पूरी हो गई। थोड़ी देर बाद कोशिश करें।"
+  },
+  "error_timeout": {
+    "message": "अनुवाद में बहुत समय लगा। आप फिर कोशिश कर सकते हैं।"
+  },
+  "error_offline": {
+    "message": "लगता है आप ऑफ़लाइन हैं। कनेक्शन जाँचें और फिर कोशिश करें।"
+  },
+  "error_network_error": {
+    "message": "Gemini से संपर्क नहीं हुआ। कनेक्शन जाँचें और फिर कोशिश करें।"
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini का कोटा पूरा हो गया। खाता जाँचें और बाद में कोशिश करें।"
+  },
+  "error_service_error": {
+    "message": "Gemini अनुवाद पूरा नहीं कर सका। बाद में कोशिश करें।"
+  },
+  "error_invalid_response": {
+    "message": "Gemini का जवाब पढ़ा नहीं जा सका। आप फिर कोशिश कर सकते हैं।"
+  },
+  "error_output_too_large": {
+    "message": "अनुवाद आउटपुट की सीमा से बड़ा है। कम टेक्स्ट चुनें और फिर कोशिश करें।"
+  },
+  "error_content_blocked": {
+    "message": "Gemini ने यह टेक्स्ट रोक दिया। दूसरा टेक्स्ट चुनें।"
+  },
+  "error_unsupported_page": {
+    "message": "इस पेज पर अनुवाद उपलब्ध नहीं है।"
+  },
+  "error_frame_unavailable": {
+    "message": "चुना हुआ फ़्रेम अब उपलब्ध नहीं है।"
+  },
+  "error_cancelled": {
+    "message": "अनुवाद रद्द कर दिया गया।"
+  },
+  "key_Off": {
+    "message": "बंद"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ सेकंड बाद फिर कोशिश करें।",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator सेटिंग"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "तेज़ और केंद्रित अनुवाद के लिए निजी सेटिंग।"
+  },
+  "html_help_and_information": {
+    "message": "मदद और जानकारी"
+  },
+  "html_api_key_guide": {
+    "message": "API कुंजी गाइड"
+  },
+  "html_about": {
+    "message": "परिचय"
+  },
+  "html_privacy": {
+    "message": "निजता"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translator सेट करें"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "सेटिंग के इस पेज पर दिए चरण पूरे करें। अनुवाद के लिए अपनी Google API कुंजी चाहिए।"
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>अपनी API कुंजी लें।</1> <2>Google AI Studio</2> खोलें, साइन इन करें और कुंजी बनाएँ। नीचे डेटा साझा करने की जानकारी पढ़ें, फिर कुंजी पेस्ट करें। मदद के लिए <3>चरण-दर-चरण गाइड पढ़ें</3>।"
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>लक्ष्य भाषा और मॉडल चुनें।</1> वह भाषा चुनें जिसमें अनुवाद पढ़ना है। सूची में उपलब्ध हो तो हम Gemini Flash-Lite सुझाते हैं।"
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>सहेजें और अनुवाद शुरू करें।</1> इस पेज के नीचे सेटअप पूरा करें चुनें। फिर वेब पेज पर टेक्स्ट चुनकर Control दबाएँ, या राइट-क्लिक मेन्यू में चुने हुए टेक्स्ट का अनुवाद करें चुनें।"
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "अपनी Gemini API कुंजी जोड़ें और संगत मॉडल चुनें।"
+  },
+  "html_loading_setup_state": {
+    "message": "सेटअप की स्थिति लोड हो रही है..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Google से जुड़ने से पहले"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "उपलब्ध मॉडल जाँचने के लिए Google को आपकी API कुंजी मिलती है। अनुवाद माँगने पर चुना गया टेक्स्ट और लक्ष्य भाषा भी भेजी जाती है, जिसमें स्थानीय फ़ाइलों का टेक्स्ट शामिल है। AI अनुवाद गलत हो सकते हैं।"
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "कुंजी इस Chrome प्रोफ़ाइल में एन्क्रिप्ट करके सहेजी जाती है और रीस्टार्ट के बाद अपने आप खुलती है। अलग पासवर्ड नहीं चाहिए। ब्राउज़र प्रोफ़ाइल का पूरा एक्सेस रखने वाला व्यक्ति फिर भी कुंजी निकाल सकता है। <1>निजता की पूरी जानकारी पढ़ें</1>।"
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>हर देश में आवश्यक:</1> ऐसे प्रोजेक्ट की Gemini API कुंजी इस्तेमाल करें जिसकी <2>बिलिंग चालू हो</2>। इस एक्सटेंशन के <3>अनुरोध लॉग और डेटासेट Google के साथ साझा करने का वैकल्पिक विकल्प</3> बंद रखें। इन सेटिंग में Google की सशुल्क शर्तों के तहत प्रॉम्प्ट और जवाब उत्पाद सुधार के लिए इस्तेमाल नहीं होते; सुरक्षा और कानूनी प्रोसेसिंग फिर भी लागू रहती है। एक्सटेंशन मुफ़्त है, लेकिन Google API का शुल्क लग सकता है।"
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>उपयोग की शर्तें।</1> इस एक्सटेंशन से Gemini इस्तेमाल करके आप ऊपर की आवश्यकताओं और <2>Google की शर्तों</2> का पालन करने पर सहमत होते हैं। उपयोगकर्ता की उम्र कम से कम 18 वर्ष हो और उपयोग पेशेवर या व्यावसायिक उद्देश्य से <3>समर्थित क्षेत्रों</3> में हो। एक्सटेंशन आपकी बिलिंग या साझा करने की सेटिंग नहीं जाँचता।"
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "सहमत होकर Google से जुड़ें"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "डेटा साझा करने की सहमति वापस लें"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "जुड़ने से पहले डेटा साझा करने की जानकारी पढ़ें।"
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>ये शर्तें क्यों ज़रूरी हैं? आम सवाल पढ़ें</1>।"
+  },
+  "html_api_key": {
+    "message": "API कुंजी"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "सहमति के बाद कुंजी पेस्ट करें। यह एन्क्रिप्ट होकर सहेजी जाएगी और मॉडल अपने आप लोड होंगे।"
+  },
+  "html_show": {
+    "message": "दिखाएँ"
+  },
+  "html_remove_saved_key": {
+    "message": "सहेजी गई कुंजी हटाएँ"
+  },
+  "html_model": {
+    "message": "मॉडल"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "सिर्फ मीडिया या विशेष काम के लिए बने ज्ञात मॉडल छिपाए जाते हैं।"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "हम Gemini Flash-Lite परिवार सुझाते हैं। इस रिलीज़ के समय (सितंबर 2026) हमारी पसंद Gemini 3.5 Flash-Lite है। आप सूची का दूसरा मॉडल चुन सकते हैं। कुछ मॉडल इस एक्सटेंशन के साथ नहीं चलेंगे। असफल होने पर दूसरा या सुझाया गया मॉडल चुनें।"
+  },
+  "html_refresh_models": {
+    "message": "मॉडल रिफ़्रेश करें"
+  },
+  "html_use_recommended_model": {
+    "message": "सुझाया गया मॉडल इस्तेमाल करें"
+  },
+  "html_translation": {
+    "message": "अनुवाद"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "भाषा और वैकल्पिक कीबोर्ड ट्रिगर सेट करें।"
+  },
+  "html_default_language": {
+    "message": "डिफ़ॉल्ट भाषा"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "इस डिफ़ॉल्ट को बदले बिना नतीजे के कार्ड में दूसरी भाषा इस्तेमाल कर सकते हैं।"
+  },
+  "html_keyboard_trigger": {
+    "message": "कीबोर्ड ट्रिगर"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "एकल कुंजियाँ वेबसाइट या सुलभता टूल से टकरा सकती हैं। सिर्फ राइट-क्लिक मेन्यू इस्तेमाल करने के लिए बंद चुनें।"
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "कुंजी दर्ज करें"
+  },
+  "html_off": {
+    "message": "बंद"
+  },
+  "html_behavior": {
+    "message": "व्यवहार"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "तय सुरक्षा सीमाएँ अनुवाद की गति और API कोटा की रक्षा करती हैं।"
+  },
+  "html_parallel_requests": {
+    "message": "एक साथ अनुरोध"
+  },
+  "html_request_timeout": {
+    "message": "अनुरोध की समय सीमा"
+  },
+  "html_page_access": {
+    "message": "पेज एक्सेस"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "स्थानीय फ़ाइलों के लिए एक्सटेंशन प्रबंधन में फ़ाइल URL का एक्सेस दें"
+  },
+  "html_help_and_recovery": {
+    "message": "मदद और पुनर्प्राप्ति"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "मॉडल उपलब्ध न हो तो सूची रिफ़्रेश करें, मॉडल चुनें और प्राथमिकताएँ सहेजें। सूची लोड न हो तो कुंजी और कनेक्शन जाँचें, फिर मॉडल रिफ़्रेश करें।"
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome सेटिंग पेज और Chrome Web Store अनुवाद की अनुमति नहीं देते। स्थानीय फ़ाइलों के लिए एक्सटेंशन प्रबंधन में फ़ाइल URL का एक्सेस दें। एक्सटेंशन अपडेट या दोबारा लोड करने के बाद खुले वेब पेज रिफ़्रेश करें। दोबारा लोड करने से अनुवाद रुक सकता है।"
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "अनुवाद ऑफ़लाइन नहीं होता। ऊपर सहमति देने के बाद मॉडल जाँच के लिए कुंजी सीधे Google को भेजी जाती है। स्थानीय फ़ाइलों सहित चुना गया टेक्स्ट लक्ष्य भाषा के साथ केवल अनुवाद माँगने पर भेजा जाता है। कुंजी इस Chrome प्रोफ़ाइल में एन्क्रिप्ट रहती है। भाषा, मॉडल और ट्रिगर Chrome से सिंक हो सकते हैं। एक्सटेंशन सिर्फ ब्राउज़र सत्र का नवीनतम नतीजा रखता है, अनुवाद इतिहास नहीं।"
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "ऊपर डेटा साझा करने की जानकारी देखें और कभी भी सहमति वापस लें। दोबारा सहमति देने तक मॉडल जाँच और अनुवाद रुक जाते हैं। सहेजी गई कुंजी हटाएँ चुनने तक कुंजी रखी जाती है।"
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "भाषा, मॉडल और ट्रिगर के बदलाव यहाँ सहेजें।"
+  },
+  "html_reload_saved_settings": {
+    "message": "सहेजी गई सेटिंग फिर लोड करें"
+  },
+  "html_save_preferences": {
+    "message": "प्राथमिकताएँ सहेजें"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini अनुवाद"
+  },
+  "html_setup_required": {
+    "message": "सेटअप ज़रूरी है"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "AI Translator में स्वागत है"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "चुने टेक्स्ट का अपनी समझ की भाषा में अनुवाद करें। शुरू करने के लिए ये दो चीज़ें सेट करें:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>आपकी Gemini API कुंजी।</1> Google AI Studio से अपनी कुंजी लें। हमारी गाइड तरीका बताती है।"
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>आपकी लक्ष्य भाषा।</1> वह भाषा चुनें जिसमें पढ़ना चाहते हैं।"
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API कुंजी कैसे लें"
+  },
+  "html_extension_status": {
+    "message": "एक्सटेंशन की स्थिति"
+  },
+  "html_active_translations": {
+    "message": "चल रहे अनुवाद"
+  },
+  "html_latest_this_session": {
+    "message": "इस सत्र का नवीनतम नतीजा"
+  },
+  "html_no_translation_yet": {
+    "message": "अभी कोई अनुवाद नहीं।"
+  },
+  "html_copy": {
+    "message": "कॉपी करें"
+  },
+  "html_settings": {
+    "message": "सेटिंग"
+  },
+  "html_key_guide": {
+    "message": "कुंजी गाइड"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translator शुरू करें"
+  },
+  "html_extension_pages": {
+    "message": "एक्सटेंशन के पेज"
+  },
+  "html_faq": {
+    "message": "आम सवाल"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "अपनी Google API कुंजी लें, भाषा चुनें और पहली बार चुने टेक्स्ट का अनुवाद करें।"
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. अपनी API कुंजी लें"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API कुंजी से एक्सटेंशन आपके Google खाते के ज़रिए Gemini इस्तेमाल करता है। इसे पासवर्ड की तरह निजी रखें।"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "यह एक्सटेंशन कम से कम 18 साल के लोगों के काम या व्यवसाय के लिए, <1>Google के समर्थित देशों और क्षेत्रों</1> में है। हर देश में API कुंजी ऐसे Gemini प्रोजेक्ट की होनी चाहिए जिसकी बिलिंग चालू हो। इस एक्सटेंशन के अनुरोध लॉग और डेटासेट Google से साझा करने का वैकल्पिक विकल्प बंद रखें।"
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "इसे इस्तेमाल करने पर आप इन शर्तों, <1>Google API की शर्तों</1> और <2>Gemini API की अतिरिक्त शर्तों</2> का पालन करने पर सहमत होते हैं। शर्तें पूरी न कर सकें तो इस्तेमाल न करें। एक्सटेंशन इन तथ्यों की जाँच या पहचान के दस्तावेज़ नहीं माँगता।"
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio खोलें"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Google खाते में साइन इन करें। कहे जाने पर Google की शर्तें स्वीकार करें।"
+  },
+  "html_create_or_choose_a_key": {
+    "message": "कुंजी बनाएँ या चुनें"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API Keys पेज पर <1>API कुंजी बनाएँ</1> चुनें और प्रोजेक्ट चुनने या बनाने के लिए Google के चरण पूरे करें। प्रोजेक्ट API उपयोग और बिलिंग को एक साथ रखता है। पहली बार AI Studio इस्तेमाल करने पर Google ने डिफ़ॉल्ट प्रोजेक्ट और कुंजी पहले से बनाई हो सकती है।"
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "पुराना प्रोजेक्ट न दिखे तो <1>डैशबोर्ड > प्रोजेक्ट > प्रोजेक्ट इंपोर्ट करें</1> खोलें। प्रोजेक्ट इंपोर्ट करके API Keys पर लौटें।"
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "कुंजी इस्तेमाल करने से पहले <1>Google की बिलिंग गाइड</1> से जाँचें कि प्रोजेक्ट की बिलिंग चालू है। Gemini ऐप का सशुल्क सब्सक्रिप्शन API प्रोजेक्ट की बिलिंग का विकल्प नहीं है। एक्सटेंशन के लॉग और डेटासेट Google से साझा करने का वैकल्पिक विकल्प बंद रखें; <2>Google की लॉग साझा करने की नीति</2> पढ़ें। प्रोजेक्ट की निजी लॉगिंग साझा करने से अलग है।"
+  },
+  "html_copy_your_key": {
+    "message": "कुंजी कॉपी करें"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "AI Studio से कुंजी कॉपी करें। एक्सटेंशन की सेटिंग में लौटकर डेटा साझा करने की जानकारी पढ़ें। <1>सहमत होकर Google से जुड़ें</1> चुनें और <2>API कुंजी</2> फ़ील्ड में कुंजी पेस्ट करें। यह अपने आप एन्क्रिप्ट होकर सहेजी जाएगी और मॉडल सूची लोड होगी। आगे बढ़ने से पहले नतीजे का इंतज़ार करें।"
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator सेटिंग में खाली API कुंजी फ़ील्ड के ऊपर डेटा साझा करने की सूचना और सहमति बटन, साथ में Flash-Lite मॉडल की सलाह।"
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "उदाहरण अंग्रेज़ी में है। AI Translator में पहले डेटा साझा करने पर सहमत हों, फिर अपनी कुंजी पेस्ट करें। एन्क्रिप्ट की गई कुंजी सहेजने के बाद मॉडल सूची जाँची जाती है।"
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google ये स्क्रीन बदल सकता है। नए चरणों या कुंजी की समस्याओं के लिए <1>Google की API कुंजी गाइड</1> पढ़ें। पुरानी कुंजी काम न करे तो AI Studio से नई कुंजी लें।"
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. अनुवाद की सेटिंग चुनें"
+  },
+  "html_choose_a_model": {
+    "message": "मॉडल चुनें"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "हम Gemini Flash-Lite परिवार सुझाते हैं। सितंबर 2026 की इस रिलीज़ में हमारी पसंद <1>Gemini 3.5 Flash-Lite</1> है। मॉडल सूची में हो तो इस्तेमाल करें।"
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "आप सूची का दूसरा मॉडल चुन सकते हैं। कुछ मॉडल इस एक्सटेंशन में नहीं चलेंगे। असफल होने पर दूसरा या सुझाया गया मॉडल चुनें।"
+  },
+  "html_choose_your_target_language": {
+    "message": "लक्ष्य भाषा चुनें"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "<1>डिफ़ॉल्ट भाषा</1> में वह भाषा चुनें जिसमें पढ़ना है। विकल्प <2>Google के दस्तावेज़ में दी Gemini भाषाओं</2> पर आधारित हैं। गुणवत्ता भाषा और टेक्स्ट के अनुसार बदल सकती है।"
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translator की अनुवाद सेटिंग में लक्ष्य भाषा और कीबोर्ड ट्रिगर के विकल्प।"
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "उदाहरण अंग्रेज़ी में है। अनुवाद की भाषा चुनें और सेटअप पूरा करें।"
+  },
+  "html_finish_setup": {
+    "message": "सेटअप पूरा करें"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control रखें, दूसरी कुंजी दर्ज करें, या सिर्फ राइट-क्लिक मेन्यू के लिए <1>बंद</1> चुनें। सेटिंग के नीचे <2>सेटअप पूरा करें</2> चुनें। बाद में <3>प्राथमिकताएँ सहेजें</3> से बदल सकते हैं।"
+  },
+  "html_open_settings": {
+    "message": "सेटिंग खोलें"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. पहले चुने टेक्स्ट का अनुवाद करें"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "सामान्य वेब पेज खोलकर छोटा टेक्स्ट चुनें। राइट-क्लिक करके <1>चुने हुए टेक्स्ट का अनुवाद करें</1> चुनें, या चुनी हुई कुंजी दबाकर छोड़ें। नतीजा चुने टेक्स्ट के पास दिखेगा।"
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "एक्सटेंशन अभी इंस्टॉल या फिर लोड किया है तो पहले वेब पेज रिफ़्रेश करें। Chrome सेटिंग पेज, Chrome Web Store और बिल्ट-इन PDF व्यूअर अनुवाद की अनुमति नहीं देते।"
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "टूलबार पॉपअप नवीनतम नतीजा दिखाता है। सेटअप पूरा होने पर सामान्य स्क्रीन खुलती है। API कुंजी हटाने पर स्वागत गाइड फिर दिखती है।"
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "आम सवाल: कुंजी, खर्च और निजता"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "मुझे अपनी API कुंजी क्यों चाहिए?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "एक्सटेंशन आपकी कुंजी से सीधे आपके Google प्रोजेक्ट को अनुरोध भेजने के लिए बनाया गया है। यह डिज़ाइन का चुनाव है, Chrome का नियम नहीं। कुंजी अनुरोधों की अनुमति देती है और उन्हें आपके उपयोग व बिलिंग से जोड़ती है। इसे स्क्रीनशॉट या सार्वजनिक संदेश में कभी साझा न करें। <1>Google की API कुंजी गाइड</1> देखें।"
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "बिलिंग चालू होना सिर्फ सलाह नहीं, ज़रूरी क्यों है?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome के <1>सीमित उपयोग नियमों के बिंदु 3 और 5</1> डेटा का उपयोग एक्सटेंशन के उद्देश्य और संबंधित काम तक सीमित करते हैं। कुछ मुफ़्त Gemini उपयोग व्यापक प्रशिक्षण और मानवीय समीक्षा की अनुमति देते हैं। सशुल्क शर्तें उत्पाद सुधार के लिए उपयोग को बाहर रखती हैं, लेकिन सुरक्षा और कानून के लिए सीमित भंडारण तथा EU के बाहर प्रोसेसिंग की अनुमति देती हैं।"
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "इस टकराव को हल करने के लिए डेवलपर ने पूरी दुनिया में प्रोजेक्ट बिलिंग चालू रखना ज़रूरी किया है। केवल सलाह देने से मुफ़्त उपयोग फिर भी संभव होगा। Google का क्षेत्रीय नियम भी यूरोपीय आर्थिक क्षेत्र, ब्रिटेन और स्विट्ज़रलैंड में पेश ऐप के लिए सशुल्क सेवाएँ माँगता है। <1>Gemini शर्तें: उपयोग प्रतिबंध, मुफ़्त सेवाएँ और सशुल्क सेवाएँ</1> देखें।"
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Google के साथ वैकल्पिक साझाकरण बंद क्यों रखना है?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "लॉग या डेटासेट साझा करने से बिलिंग चालू होने पर भी प्रशिक्षण और मानवीय समीक्षा की अनुमति मिल सकती है। डेटासेट साझाकरण या फ़ीडबैक से एक्सटेंशन का डेटा योगदान न करें। अपने प्रोजेक्ट की निजी लॉगिंग इस नियम में मान्य है। <1>Google की लॉगिंग नीति: साझा किया जा सकने वाला डेटा और हम आपका डेटा कैसे इस्तेमाल करते हैं</1> देखें।"
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "अगर सशुल्क API चाहिए तो क्या एक्सटेंशन मुफ़्त है?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "हाँ। एक्सटेंशन मुफ़्त है, लेकिन Google API का शुल्क लग सकता है। Gemini ऐप का सशुल्क सब्सक्रिप्शन API प्रोजेक्ट की बिलिंग का विकल्प नहीं है। <1>बिलिंग जाँचने का तरीका</1> और <2>Google API की कीमतें</2> देखें। एक्सटेंशन बिलिंग या साझा करने की सेटिंग नहीं जाँचता।"
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "सहमत होकर Google से जुड़ें क्यों चुनना पड़ता है?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome की <1>जानकारी देने की आवश्यकताओं के बिंदु 1 और 2</1> स्पष्ट डेटा उपयोग की जानकारी और सूचित सहमति माँगते हैं। बटन आपको किसी भी Google API अनुरोध से पहले यह चुनाव देता है। यह पहचान या बिलिंग नहीं जाँचता और दूसरों की निजी जानकारी साझा करने की अनुमति नहीं देता।"
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Google को वास्तव में क्या भेजा जाता है?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "मॉडल जाँच में आपकी कुंजी भेजकर उपलब्ध मॉडल पूछे जाते हैं। अनुवाद में चुना टेक्स्ट, लक्ष्य भाषा, मॉडल और अनुवाद निर्देश भेजे जाते हैं, जिनमें स्थानीय फ़ाइल का टेक्स्ट भी शामिल है। पूरा पेज, उसका पता या ब्राउज़िंग इतिहास नहीं जोड़ा जाता। Google को IP पते जैसी कनेक्शन जानकारी भी मिलती है। डेवलपर को ये अनुरोध नहीं मिलते। केवल वही टेक्स्ट भेजें जिसे आप साझा कर सकते हैं।"
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "मेरी कुंजी कैसे सहेजी और अपने आप खोली जाती है?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API कुंजी एन्क्रिप्ट होकर सहेजी जाती है। रीस्टार्ट के बाद अपने आप उपयोग के लिए वह और एन्क्रिप्शन कुंजी इस Chrome प्रोफ़ाइल में रहती हैं। वे सिंक नहीं होतीं। प्रोफ़ाइल का एक्सेस रखने वाला व्यक्ति फिर भी API कुंजी निकाल सकता है। यह OS कीचेन या पासवर्ड से सुरक्षित तिजोरी नहीं है। भाषा, मॉडल और ट्रिगर सिंक हो सकते हैं। केवल नवीनतम नतीजा ब्राउज़र सत्र तक रहता है; कोई एनालिटिक्स या अनुवाद इतिहास नहीं है।"
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "अपग्रेड पुरानी कुंजी को एन्क्रिप्ट और जाँचने के बाद ही उसकी सादे टेक्स्ट वाली प्रतियाँ मिटाता है। असफल होने पर पुरानी प्रति रहती है और अनुरोध रुके रहते हैं। सेटिंग त्रुटि बताती है। पुरानी कुंजी का स्थानांतरण सहमति को नहीं छोड़ता।"
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "क्या मैं सहमति वापस ले सकता हूँ या कुंजी हटा सकता हूँ?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>सेटिंग</1> में <2>डेटा साझा करने की सहमति वापस लें</2> नए अनुरोध रोकता है और चल रहे अनुरोध स्थानीय रूप से रद्द करता है, पर कुंजी और प्राथमिकताएँ रखता है। <3>सहेजी गई कुंजी हटाएँ</3> कुंजी, एन्क्रिप्शन कुंजी और मॉडल कैश हटाता है। दोनों में से कोई भेजा डेटा वापस नहीं लाता या भेजे अनुरोध का मुफ़्त होना पक्का नहीं करता। Google पर भी बंद करने के लिए AI Studio में कुंजी रद्द करें।"
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "सहमति सामान्य रीस्टार्ट और अपडेट के बाद भी सहेजी रहती है। सूचना बदलने पर पढ़कर फिर सहमत होने तक अनुरोध रुकते हैं।"
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "यह वयस्कों और काम या व्यवसाय के लिए ही क्यों है?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google के अनुसार उपयोगकर्ता कम से कम 18 साल का हो और समर्थित क्षेत्र में पेशेवर या व्यावसायिक उपयोग करे। <1>Gemini शर्तें: उम्र और उपयोग प्रतिबंध</1> तथा <2>उपलब्ध क्षेत्र</2> देखें। एक्सटेंशन में अलग पात्रता चेकबॉक्स या पहचान जाँच नहीं है।"
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "इस सूचना के अलावा निजता नीति क्यों है?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "सूचना जुड़ने से पहले चुनाव समझाती है। नीति डेटा, भंडारण और हटाने की पूरी जानकारी देती है। Chrome के <1>निजता नीति नियम</1> उपयोगकर्ता डेटा सँभालने वाले एक्सटेंशन के लिए यह माँगते हैं। <2>हमारी निजता नीति</2> पढ़ें। इन सूचनाओं का अर्थ Google द्वारा एक्सटेंशन की मंज़ूरी नहीं है।"
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI अनुवाद गलत हो सकता है। भरोसा करने से पहले महत्वपूर्ण शब्द जाँचें।"
+  },
+  "html_about_ai_translator": {
+    "message": "AI Translator का परिचय"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "बहुत आसान अनुवाद: टेक्स्ट चुनें और Control दबाएँ।"
+  },
+  "html_made_for_people": {
+    "message": "लोगों के लिए बनाया गया"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "मैंने AI Translator बनाया ताकि लोग अलग-अलग भाषाओं में पढ़ सकें, सीख सकें और जुड़ सकें। उम्मीद है यह दुनिया भर के लोगों के काम आएगा।"
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "एक्सटेंशन आपकी Google Gemini API कुंजी से चुने टेक्स्ट का अनुवाद करता है। आप तय करते हैं कि क्या भेजना है और किस भाषा में पढ़ना है।"
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "चुने टेक्स्ट का अनुवाद करने के लिए Control दबाकर छोड़ें। यह डिफ़ॉल्ट कुंजी है और सेटिंग में बदली जा सकती है। पेज का राइट-क्लिक मेन्यू भी इस्तेमाल कर सकते हैं।"
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "हाथ से परीक्षण केवल Mac पर किया गया है। Windows और Linux पर हाथ से परीक्षण नहीं हुआ है।"
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>सोर्स कोड और प्रोजेक्ट गाइड देखें</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>मदद लें या समस्या बताएँ</1>। रिपोर्ट सार्वजनिक होती है। API कुंजी, निजी टेक्स्ट या व्यक्तिगत जानकारी न डालें।"
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "अगर मेरे काम का समर्थन करना चाहें"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "कृपया मेरे देश यूक्रेन का साथ दें, जो रूसी आक्रमण से अपना बचाव कर रहा है।"
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "मुझे Sternenko Community Foundation पर भरोसा है। सक्षम हों और मदद करना चाहें तो उसकी आधिकारिक वेबसाइट से दान कर सकते हैं।"
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>फ़ाउंडेशन के ज़रिए यूक्रेन का समर्थन करें</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "समर्थन वैकल्पिक है और एक्सटेंशन इस्तेमाल करने के लिए ज़रूरी नहीं। यह लिंक बाहरी वेबसाइट खोलता है। दान फ़ाउंडेशन के ज़रिए होता है, एक्सटेंशन के नहीं।"
+  },
+  "html_privacy_and_costs": {
+    "message": "निजता और खर्च"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API कुंजी इस डिवाइस पर एन्क्रिप्ट रहती है और सिंक नहीं होती। Chrome को सामान्य रीस्टार्ट करने के बाद भी बिना अनलॉक पासवर्ड मिलती है। प्रोफ़ाइल का एक्सेस रखने वाला व्यक्ति फिर भी इसे निकाल सकता है।"
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "पहले Google अनुरोध से पहले सेटिंग डेटा साझा करना समझाती है और <1>सहमत होकर Google से जुड़ें</1> चुनने को कहती है। उसके बाद चुना टेक्स्ट केवल आपके अनुवाद माँगने पर सीधे Google को भेजा जाता है। मॉडल जाँच में कुंजी भेजी जाती है, चुना टेक्स्ट नहीं। कोई एनालिटिक्स, विज्ञापन या अनुवाद इतिहास नहीं है।"
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "कभी भी <1>सेटिंग</1> में जानकारी देखें। एन्क्रिप्ट कुंजी और प्राथमिकताएँ रखते हुए नए अनुरोध रोकने के लिए <2>डेटा साझा करने की सहमति वापस लें</2>, या कुंजी और मॉडल कैश मिटाने के लिए <3>सहेजी गई कुंजी हटाएँ</3> चुनें। भेजा गया डेटा वापस नहीं लिया जा सकता।"
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "अनुवाद AI बनाता है और वह गलत हो सकता है। भरोसा करने से पहले महत्वपूर्ण शब्द जाँचें।"
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>निजता की पूरी जानकारी पढ़ें</1>।"
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator मुफ़्त और स्वतंत्र प्रोजेक्ट है। Google API का शुल्क लग सकता है। हर देश में <1>बिलिंग चालू</1> वाले प्रोजेक्ट की Gemini API कुंजी इस्तेमाल करें और <2>इस एक्सटेंशन के अनुरोध लॉग और डेटासेट Google के साथ साझा करने का वैकल्पिक विकल्प</2> बंद रखें। इन सेटिंग में Google की सशुल्क शर्तों के तहत प्रॉम्प्ट और जवाब उत्पाद सुधार के लिए इस्तेमाल नहीं होते; सुरक्षा और कानूनी प्रोसेसिंग लागू रहती है। <3>Google की कीमतें और डेटा उपयोग की जानकारी</3> पढ़ें।"
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "यह एक्सटेंशन <1>Google के समर्थित क्षेत्रों</1> में कम से कम 18 साल के लोगों के काम या व्यवसाय के लिए है। उपयोग करने पर आप इन शर्तों, <2>Google API की शर्तों</2> और <3>Gemini API की अतिरिक्त शर्तों</3> का पालन करने पर सहमत हैं। इन्हें पूरा न कर सकें तो इस्तेमाल न करें। अलग पात्रता चेकबॉक्स या पहचान जाँच नहीं है। बिलिंग या साझा करने की सेटिंग भी नहीं जाँची जाती।"
+  },
+  "runtime_unsaved_changes": {
+    "message": "कुछ बदलाव अभी सहेजे नहीं गए हैं।"
+  },
+  "runtime_settings_conflict": {
+    "message": "सेटिंग दूसरे पेज पर बदल गई। यहाँ आपके बदलाव रखे हैं। बदलाव छोड़कर सहेजे मान लेने के लिए सहेजी गई सेटिंग फिर लोड करें।"
+  },
+  "runtime_preferences_current": {
+    "message": "प्राथमिकताएँ अद्यतन हैं।"
+  },
+  "runtime_key_cannot_open": {
+    "message": "सहेजी गई कुंजी नहीं खुल रही। सेटिंग फिर खोलें, या कुंजी हटाकर दोबारा डालें।"
+  },
+  "runtime_key_conflict": {
+    "message": "API कुंजी दूसरे पेज पर बदल गई। कुंजी सहेजने से पहले सहेजी गई सेटिंग फिर लोड करें।"
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "कुंजी एन्क्रिप्ट करके सहेजी गई। Google से जुड़ने से पहले डेटा साझा करने पर सहमति दें।"
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "API कुंजी जोड़ने से पहले ऊपर डेटा साझा करने पर सहमति दें।"
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini ने सहेजी कुंजी अस्वीकार की। इसे बदलें या मॉडल रिफ़्रेश करके फिर जाँचें।"
+  },
+  "runtime_paste_key": {
+    "message": "Gemini से जुड़ने के लिए API कुंजी पेस्ट करें।"
+  },
+  "runtime_key_checked": {
+    "message": "API कुंजी सहेजी गई। पिछली मॉडल सूची जाँच में Gemini ने इसे स्वीकार किया।"
+  },
+  "runtime_key_saved_check": {
+    "message": "API कुंजी इस डिवाइस पर एन्क्रिप्ट करके सहेजी गई। Gemini से जाँचने के लिए मॉडल रिफ़्रेश करें।"
+  },
+  "runtime_retry_withdrawal": {
+    "message": "सहमति वापस लेने की कोशिश दोहराएँ"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "डेटा साझा करने की सहमति वापस लें"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "सहमति वापसी की पुष्टि नहीं हुई। चुनाव सहेजने के लिए फिर कोशिश करें।"
+  },
+  "runtime_agreement_saved": {
+    "message": "इस Chrome प्रोफ़ाइल के लिए डेटा साझा करने पर सहमति दी गई। आप कभी भी वापस ले सकते हैं।"
+  },
+  "runtime_agreement_not_saved": {
+    "message": "सहमति देने तक Google से कनेक्शन नहीं होगा। वापस लेने पर सहेजी कुंजी बनी रहती है।"
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini ने सहेजी कुंजी अस्वीकार की। नीचे बदलें।"
+  },
+  "runtime_setup_key_saved": {
+    "message": "कुंजी इस डिवाइस पर एन्क्रिप्ट करके सहेजी गई।"
+  },
+  "runtime_setup_create_key": {
+    "message": "Google AI Studio में अपनी कुंजी बनाएँ।"
+  },
+  "runtime_setup_language_selected": {
+    "message": "भाषा चुन ली गई। चुनाव सहेजने के लिए सेटअप पूरा करें।"
+  },
+  "runtime_setup_choose_language": {
+    "message": "नीचे लक्ष्य भाषा चुनें।"
+  },
+  "runtime_finish_setup": {
+    "message": "सेटअप पूरा करें"
+  },
+  "runtime_save_preferences": {
+    "message": "प्राथमिकताएँ सहेजें"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "API कुंजी जोड़ें, मॉडल सूची जाँचें और चुना मॉडल सहेजें।"
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "अनुवाद से पहले सेटिंग का टकराव हल करें।"
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Google से जुड़ने से पहले डेटा साझा करने की जानकारी पढ़ें और सहमति दें।"
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "सेटअप जाँचने से पहले API कुंजी सहेजना पूरा करें।"
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "सेटअप पर ध्यान चाहिए: Gemini ने सहेजी API कुंजी अस्वीकार की।"
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "कुंजी सहेजी गई। लक्ष्य भाषा चुनें, फिर सेटअप पूरा करें।"
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "उपलब्ध मॉडल चुनें और प्राथमिकताएँ सहेजें।"
+  },
+  "runtime_setup_model_selected": {
+    "message": "मॉडल चुन लिया गया। इस्तेमाल करने के लिए प्राथमिकताएँ सहेजें।"
+  },
+  "runtime_setup_ready_finish": {
+    "message": "कुंजी और भाषा तैयार हैं। चुनाव सहेजने के लिए सेटअप पूरा करें, फिर अनुवाद आज़माएँ। मॉडल एक्सेस और कोटा बदल सकते हैं।"
+  },
+  "runtime_setup_ready_translate": {
+    "message": "अनुवाद आज़माने के लिए तैयार। सहेजा मॉडल जाँची सूची में है; अनुरोध एक्सेस और कोटा बदल सकते हैं।"
+  },
+  "runtime_setup_refresh_models": {
+    "message": "कुंजी सहेजी गई। कुंजी और चुना मॉडल जाँचने के लिए मॉडल रिफ़्रेश करें।"
+  },
+  "runtime_show_key": {
+    "message": "दिखाएँ"
+  },
+  "runtime_hide_key": {
+    "message": "छिपाएँ"
+  },
+  "runtime_choose_target_language": {
+    "message": "लक्ष्य भाषा चुनें"
+  },
+  "runtime_background_no_response": {
+    "message": "एक्सटेंशन के बैकग्राउंड ने जवाब नहीं दिया। एक्सटेंशन फिर लोड करके कोशिश करें।"
+  },
+  "runtime_refresh_models": {
+    "message": "मॉडल रिफ़्रेश करें"
+  },
+  "runtime_models_need_agreement": {
+    "message": "मॉडल लोड करने से पहले डेटा साझा करने पर सहमति दें।"
+  },
+  "runtime_models_finish_key_save": {
+    "message": "मॉडल रिफ़्रेश करने से पहले API कुंजी सहेजना पूरा करें।"
+  },
+  "runtime_refreshing": {
+    "message": "रिफ़्रेश हो रहा है..."
+  },
+  "runtime_loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "runtime_models_checking": {
+    "message": "Gemini में संगत मॉडल जाँचे जा रहे हैं..."
+  },
+  "runtime_models_loading": {
+    "message": "संगत मॉडल लोड हो रहे हैं..."
+  },
+  "runtime_models_load_failed": {
+    "message": "संगत मॉडल लोड नहीं हो पाए।"
+  },
+  "runtime_models_empty": {
+    "message": "Gemini ने कोई संगत मॉडल नहीं दिया।"
+  },
+  "runtime_model_not_available": {
+    "message": "चुना मॉडल संगत सूची में नहीं है। दूसरा मॉडल चुनें।"
+  },
+  "runtime_record_key": {
+    "message": "कुंजी दर्ज करें"
+  },
+  "runtime_recording_cancelled": {
+    "message": "कुंजी दर्ज करना रद्द हुआ।"
+  },
+  "runtime_unknown_key": {
+    "message": "वह कुंजी"
+  },
+  "runtime_press_key": {
+    "message": "कोई कुंजी दबाएँ..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "समर्थित गैर-टेक्स्ट कुंजी दबाएँ। रद्द करने के लिए Escape दबाएँ।"
+  },
+  "runtime_refresh_saved_key": {
+    "message": "सहेजी API कुंजी जाँचने के लिए मॉडल रिफ़्रेश करें।"
+  },
+  "runtime_models_add_key": {
+    "message": "संगत मॉडल लोड करने के लिए API कुंजी जोड़ें।"
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "एक्सटेंशन अपनी सहेजी स्थिति लोड नहीं कर सका।"
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini ने सहेजी API कुंजी अस्वीकार की। इसे बदलें या मॉडल रिफ़्रेश करके फिर जाँचें।"
+  },
+  "runtime_settings_reopen": {
+    "message": "सेटिंग लोड नहीं हो पाई। फिर कोशिश करने के लिए सेटिंग दोबारा खोलें।"
+  },
+  "runtime_settings_load_failed": {
+    "message": "सेटिंग लोड नहीं हो पाई। सहेजी सेटिंग दोबारा लोड करें। आपके सहेजे चुनाव बचाने के लिए सहेजना बंद है।"
+  },
+  "runtime_setup_load_failed": {
+    "message": "सेटअप की स्थिति लोड नहीं हुई।"
+  },
+  "runtime_key_no_spaces": {
+    "message": "बिना स्पेस की पूरी API कुंजी डालें।"
+  },
+  "runtime_key_use_remove": {
+    "message": "कुंजी मिटाने के लिए सहेजी गई कुंजी हटाएँ इस्तेमाल करें।"
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API कुंजी सहेजने से पहले ऊपर डेटा साझा करने पर सहमति दें।"
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API कुंजी एन्क्रिप्ट करके सहेजी जा रही है..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API कुंजी पढ़ी या सहेजी नहीं जा सकी। आपका इनपुट रखा है। फिर कोशिश करने के लिए प्राथमिकताएँ सहेजें इस्तेमाल करें।"
+  },
+  "runtime_connecting_google": {
+    "message": "Google से जुड़ रहे हैं..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google के कनेक्शन रोके जा रहे हैं..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "डेटा साझा करने की सहमति नहीं सहेजी गई। फिर कोशिश करें।"
+  },
+  "runtime_key_removing": {
+    "message": "सहेजी कुंजी हटाई जा रही है..."
+  },
+  "runtime_key_removed": {
+    "message": "सहेजी कुंजी हटा दी गई। डेटा साझा करने की सहमति के बाद नई कुंजी जोड़ सकते हैं।"
+  },
+  "runtime_key_remove_failed": {
+    "message": "सहेजी कुंजी नहीं हट पाई। फिर कोशिश करें।"
+  },
+  "runtime_saving": {
+    "message": "सहेजा जा रहा है..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "मान्य भाषा और मॉडल चुनें।"
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "समर्थित ट्रिगर कुंजी या बंद चुनें।"
+  },
+  "runtime_choose_listed_model": {
+    "message": "मौजूदा संगत सूची से मॉडल चुनें।"
+  },
+  "runtime_preferences_saving": {
+    "message": "प्राथमिकताएँ सहेजी जा रही हैं..."
+  },
+  "runtime_preferences_saved": {
+    "message": "प्राथमिकताएँ सहेज ली गईं।"
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "प्राथमिकताएँ सहेज ली गईं। सेटअप पूरा करने के लिए API कुंजी जोड़ें।"
+  },
+  "runtime_preferences_save_failed": {
+    "message": "प्राथमिकताएँ पढ़ी या सहेजी नहीं जा सकीं। बदलाव रखे हैं। फिर कोशिश करें।"
+  },
+  "runtime_key_will_save": {
+    "message": "API कुंजी अपने आप सहेजी जाएगी।"
+  },
+  "runtime_key_finish_entry": {
+    "message": "API कुंजी डालना पूरा करें।"
+  },
+  "runtime_key_finish_save_models": {
+    "message": "संगत मॉडल लोड करने के लिए API कुंजी सहेजना पूरा करें।"
+  },
+  "runtime_recommended_selected": {
+    "message": "सुझाया मॉडल चुन लिया गया। इस्तेमाल करने के लिए चुनाव सहेजें।"
+  },
+  "runtime_trigger_will_disable": {
+    "message": "सहेजने के बाद कीबोर्ड ट्रिगर बंद होगा।"
+  },
+  "runtime_connection_changed": {
+    "message": "कनेक्शन सेटिंग बदली। सहेजी सेटिंग जाँची जा रही है..."
+  },
+  "runtime_models_changed": {
+    "message": "मॉडल सूची बदली। संगत मॉडल जाँचे जा रहे हैं..."
+  },
+  "runtime_no_translation": {
+    "message": "अभी कोई अनुवाद नहीं।"
+  },
+  "runtime_start_setup": {
+    "message": "सेटअप शुरू करें"
+  },
+  "runtime_settings": {
+    "message": "सेटिंग"
+  },
+  "runtime_key_rejected": {
+    "message": "कुंजी अस्वीकार हुई"
+  },
+  "runtime_setup_required": {
+    "message": "सेटअप ज़रूरी है"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "अनुवाद शुरू करने के लिए सेटिंग में API कुंजी जोड़ें।"
+  },
+  "runtime_add_key": {
+    "message": "API कुंजी जोड़ें"
+  },
+  "runtime_finish_model_language": {
+    "message": "कुंजी सहेजी गई। मॉडल जाँचने और भाषा चुनने के लिए सेटिंग खोलें।"
+  },
+  "runtime_check_setup": {
+    "message": "सेटअप जाँचें"
+  },
+  "runtime_translating": {
+    "message": "अनुवाद हो रहा है"
+  },
+  "runtime_error": {
+    "message": "त्रुटि"
+  },
+  "runtime_ready": {
+    "message": "तैयार"
+  },
+  "runtime_status_load_failed": {
+    "message": "एक्सटेंशन की स्थिति लोड नहीं हुई। एक्सटेंशन फिर लोड करें, फिर पेज रिफ़्रेश करें।"
+  },
+  "runtime_copied": {
+    "message": "कॉपी किया गया।"
+  },
+  "runtime_copy_blocked": {
+    "message": "कॉपी करना रोक दिया गया। नतीजे का टेक्स्ट चुनकर कॉपी करें।"
+  },
+  "runtime_settings_open_failed": {
+    "message": "सेटिंग नहीं खुल सकी। फिर कोशिश करें।"
+  },
+  "runtime_translating_progress": {
+    "message": "अनुवाद हो रहा है..."
+  },
+  "runtime_translation_started": {
+    "message": "अनुवाद शुरू हुआ।"
+  },
+  "runtime_translation_complete": {
+    "message": "अनुवाद पूरा हुआ।"
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "अनुवाद पूरा हुआ। नतीजे का टेक्स्ट या कार्ड के बटन इस्तेमाल करें।"
+  },
+  "runtime_translation": {
+    "message": "अनुवाद"
+  },
+  "runtime_target_language": {
+    "message": "लक्ष्य भाषा"
+  },
+  "runtime_card_target_language": {
+    "message": "इस कार्ड की लक्ष्य भाषा"
+  },
+  "runtime_close_card": {
+    "message": "अनुवाद कार्ड बंद करें"
+  },
+  "runtime_translated_text": {
+    "message": "अनूदित टेक्स्ट"
+  },
+  "runtime_retry": {
+    "message": "फिर कोशिश करें"
+  },
+  "runtime_copy": {
+    "message": "कॉपी करें"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "सेटिंग नहीं खुली। एक्सटेंशन का टूलबार इस्तेमाल करें।"
+  },
+  "runtime_copy_failed": {
+    "message": "कॉपी करना असफल हुआ। नतीजे का टेक्स्ट चुनकर कॉपी करें।"
+  },
+  "runtime_context_menu": {
+    "message": "चुने हुए टेक्स्ट का अनुवाद करें"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (मौजूदा सूची में नहीं)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (अभी जाँचा नहीं गया)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "$value1$ की कैश मॉडल सूची इस्तेमाल हो रही है। लाइव रिफ़्रेश असफल रहा। बाद में कोशिश करें।",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "कैश मॉडल सूची इस्तेमाल हो रही है। लाइव रिफ़्रेश असफल रहा। बाद में कोशिश करें।"
+  },
+  "runtime_models_cache_at": {
+    "message": "$value1$ की कैश मॉडल सूची इस्तेमाल हो रही है।",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "कैश मॉडल सूची इस्तेमाल हो रही है।"
+  },
+  "runtime_models_updated_at": {
+    "message": "मॉडल सूची $value1$ से अपडेट की गई।",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "मॉडल सूची अपडेट की गई।"
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ समर्थित नहीं है। दूसरी कुंजी दबाएँ या Escape से रद्द करें।",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "सहेजने के बाद $value1$ इस्तेमाल होगा।",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "हर टैब पर अधिकतम $value1$ और कुल $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ सेकंड",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ कार्ड इस्तेमाल करने के लिए Tab या बंद करने के लिए Escape दबाएँ।",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "अनुवाद असफल हुआ। $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "खुले पेज रिफ़्रेश करें"
+  },
+  "refresh_message": {
+    "message": "आपकी API कुंजी सहेज ली गई। सेटअप पूरा करने के बाद पहले से खुले पेज रिफ़्रेश करें। फिर टेक्स्ट चुनें और अनुवाद के लिए Control दबाएँ।"
+  },
+  "refresh_continue": {
+    "message": "सेटअप जारी रखें"
+  },
+  "refresh_faq_question": {
+    "message": "खुले पेज रिफ़्रेश करना क्यों ज़रूरी है?"
+  },
+  "refresh_faq_answer": {
+    "message": "सेटअप पूरा करने के बाद, अनुवाद आज़माने से पहले <1>खुले पेज रिफ़्रेश करें</1>। इंस्टॉल या दोबारा लोड करने से पहले खुले पेजों पर Chrome को एक्सटेंशन लोड करना होता है। नए खोले गए पेज अपने आप तैयार होते हैं।"
+  },
+  "ui_locale": {
+    "message": "hi",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

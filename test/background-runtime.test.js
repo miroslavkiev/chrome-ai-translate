@@ -127,6 +127,7 @@ async function runtime(t, seed = {}) {
       onMessage: event(),
       onConnect: event(),
       onInstalled: event(),
+      onStartup: event(),
       openOptionsPage: async () => { env.openedSettings += 1; },
     },
     contextMenus: { onClicked: event() },

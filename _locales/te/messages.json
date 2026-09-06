@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "సులభ అనువాదం: వచనాన్ని ఎంచుకుని Control నొక్కండి. Geminiతో మీకు నచ్చిన భాషలోకి అనువదించండి.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "కొంత వచనాన్ని ఎంచుకుని మళ్లీ ప్రయత్నించండి."
+  },
+  "error_unsupported_selection": {
+    "message": "ఈ విధమైన వచన ఎంపికకు మద్దతు లేదు."
+  },
+  "error_selection_too_large": {
+    "message": "ఎంచుకున్న వచనం 10,000 అక్షరాలకు మించి ఉంది. తక్కువ వచనం ఎంచుకుని మళ్లీ ప్రయత్నించండి."
+  },
+  "error_missing_api_key": {
+    "message": "సెట్టింగ్‌లలో మీ Gemini API కీని జోడించండి."
+  },
+  "error_agreement_required": {
+    "message": "Googleతో కనెక్ట్ అయ్యే ముందు సెట్టింగ్‌లలో డేటా పంచుకోవడం గురించి చదివి అంగీకరించండి."
+  },
+  "error_credential_conflict": {
+    "message": "సేవ్ చేసిన కీ మరో పేజీలో మారింది. మళ్లీ ప్రయత్నించే ముందు సేవ్ చేసిన సెట్టింగ్‌లను తిరిగి లోడ్ చేయండి."
+  },
+  "error_credential_storage_error": {
+    "message": "సేవ్ చేసిన కీని తెరవలేకపోయాం. సెట్టింగ్‌లను మళ్లీ తెరవండి లేదా కీని తొలగించి తిరిగి నమోదు చేయండి."
+  },
+  "error_missing_target_language": {
+    "message": "సెటప్ పూర్తి చేయడానికి సెట్టింగ్‌లలో లక్ష్య భాషను ఎంచుకోండి."
+  },
+  "error_invalid_api_key": {
+    "message": "Gemini API కీని తిరస్కరించింది. సెట్టింగ్‌లలో తనిఖీ చేయండి."
+  },
+  "error_invalid_model": {
+    "message": "ఈ మోడల్ అనువాదానికి పనికిరాదు. సెట్టింగ్‌లలో మరో మోడల్ లేదా సూచించిన Flash-Liteని ఎంచుకోండి."
+  },
+  "error_busy": {
+    "message": "చాలా అనువాదాలు నడుస్తున్నాయి. ఒకటి పూర్తయ్యాక మళ్లీ ప్రయత్నించండి."
+  },
+  "error_duplicate_request": {
+    "message": "ఈ ఎంపిక ఇప్పటికే అనువదించబడుతోంది."
+  },
+  "error_rate_limited": {
+    "message": "అభ్యర్థనల పరిమితి చేరింది. కొద్దిసేపటి తర్వాత ప్రయత్నించండి."
+  },
+  "error_timeout": {
+    "message": "అనువాదానికి ఎక్కువ సమయం పట్టింది. మళ్లీ ప్రయత్నించవచ్చు."
+  },
+  "error_offline": {
+    "message": "మీరు ఆఫ్‌లైన్‌లో ఉన్నట్లు ఉంది. కనెక్షన్ తనిఖీ చేసి మళ్లీ ప్రయత్నించండి."
+  },
+  "error_network_error": {
+    "message": "Geminiని సంప్రదించలేకపోయాం. కనెక్షన్ తనిఖీ చేసి మళ్లీ ప్రయత్నించండి."
+  },
+  "error_quota_exceeded": {
+    "message": "Gemini కోటా ముగిసింది. ఖాతాను తనిఖీ చేసి తర్వాత ప్రయత్నించండి."
+  },
+  "error_service_error": {
+    "message": "Gemini అనువాదాన్ని పూర్తి చేయలేకపోయింది. తర్వాత మళ్లీ ప్రయత్నించండి."
+  },
+  "error_invalid_response": {
+    "message": "Gemini చదవలేని ప్రతిస్పందనను ఇచ్చింది. మళ్లీ ప్రయత్నించవచ్చు."
+  },
+  "error_output_too_large": {
+    "message": "అనువాదం అవుట్‌పుట్ పరిమితిని మించింది. తక్కువ వచనం ఎంచుకుని మళ్లీ ప్రయత్నించండి."
+  },
+  "error_content_blocked": {
+    "message": "Gemini ఈ వచనాన్ని నిరోధించింది. మరో వచనాన్ని ఎంచుకోండి."
+  },
+  "error_unsupported_page": {
+    "message": "ఈ పేజీలో అనువాదం అందుబాటులో లేదు."
+  },
+  "error_frame_unavailable": {
+    "message": "ఎంచుకున్న ఫ్రేమ్ ఇక అందుబాటులో లేదు."
+  },
+  "error_cancelled": {
+    "message": "అనువాదం రద్దయింది."
+  },
+  "key_Off": {
+    "message": "ఆఫ్"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ సెకన్ల తర్వాత మళ్లీ ప్రయత్నించండి.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator సెట్టింగ్‌లు"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "వేగవంతమైన, దృష్టి కేంద్రీకృత అనువాదం కోసం వ్యక్తిగత సెట్టింగ్‌లు."
+  },
+  "html_help_and_information": {
+    "message": "సహాయం మరియు సమాచారం"
+  },
+  "html_api_key_guide": {
+    "message": "API కీ మార్గదర్శి"
+  },
+  "html_about": {
+    "message": "పరిచయం"
+  },
+  "html_privacy": {
+    "message": "గోప్యత"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translatorని సెటప్ చేయండి"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "ఈ సెట్టింగ్‌ల పేజీలోని దశలను అనుసరించండి. అనువదించడానికి మీ సొంత Google API కీ అవసరం."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>మీ సొంత API కీని పొందండి.</1> <2>Google AI Studio</2> తెరిచి సైన్ ఇన్ చేసి కీని సృష్టించండి. దిగువ డేటా పంచుకునే వివరాలు చదివి కీని పేస్ట్ చేయండి. సహాయం కోసం <3>దశలవారీ మార్గదర్శిని చదవండి</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>లక్ష్య భాష, మోడల్ ఎంచుకోండి.</1> అనువాదం చదవాలనుకున్న భాషను ఎంచుకోండి. జాబితాలో ఉంటే Gemini Flash-Liteని సూచిస్తాం."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>సేవ్ చేసి అనువాదం మొదలుపెట్టండి.</1> పేజీ దిగువ సెటప్ పూర్తి చేయండి ఎంచుకోండి. తర్వాత వెబ్ పేజీలో వచనం ఎంచుకుని Control నొక్కండి లేదా రైట్-క్లిక్ మెనూలో ఎంచుకున్న వచనాన్ని అనువదించు ఎంచుకోండి."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "మీ Gemini API కీని కనెక్ట్ చేసి అనుకూల మోడల్ ఎంచుకోండి."
+  },
+  "html_loading_setup_state": {
+    "message": "సెటప్ స్థితి లోడ్ అవుతోంది..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Googleతో కనెక్ట్ అయ్యే ముందు"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "అందుబాటులోని మోడళ్లను తనిఖీ చేయడానికి Google మీ API కీని అందుకుంటుంది. అనువాదం కోరినప్పుడు ఎంచుకున్న వచనం, లక్ష్య భాష కూడా అందుకుంటుంది; స్థానిక ఫైళ్ల వచనం కూడా ఇందులో ఉంది. AI అనువాదాలు తప్పు కావచ్చు."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "కీ ఈ Chrome ప్రొఫైల్‌లో ఎన్‌క్రిప్ట్ చేసి సేవ్ అవుతుంది; రీస్టార్ట్ తర్వాత స్వయంగా తెరుచుకుంటుంది. అదనపు పాస్‌వర్డ్ అవసరం లేదు. అయితే బ్రౌజర్ ప్రొఫైల్‌కు పూర్తి యాక్సెస్ ఉన్నవారు కీని తిరిగి పొందవచ్చు. <1>గోప్యత వివరాలు చదవండి</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>అన్ని దేశాల్లో తప్పనిసరి:</1> <2>సక్రియ బిల్లింగ్</2> ఉన్న ప్రాజెక్ట్‌కు చెందిన Gemini API కీ వాడండి. ఈ ఎక్స్‌టెన్షన్ <3>అభ్యర్థన లాగ్‌లు, డేటాసెట్‌లను Googleతో ఐచ్ఛికంగా పంచుకోవడాన్ని</3> ఆఫ్‌లో ఉంచండి. ఈ సెట్టింగ్‌లలో Google చెల్లింపు నిబంధనల ప్రకారం ప్రాంప్ట్‌లు, ప్రతిస్పందనలు ఉత్పత్తి మెరుగుదలకు వాడబడవు; భద్రత, చట్టపరమైన ప్రాసెసింగ్ వర్తిస్తాయి. ఎక్స్‌టెన్షన్ ఉచితం, కానీ Google API రుసుములు ఉండవచ్చు."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>వాడుక షరతులు.</1> ఈ ఎక్స్‌టెన్షన్ ద్వారా Gemini వాడితే పై అవసరాలు, <2>Google నిబంధనలను</2> పాటించడానికి అంగీకరిస్తారు. <3>మద్దతున్న ప్రాంతాల్లో</3> కనీసం 18 ఏళ్లవారు వృత్తిపరమైన లేదా వ్యాపార ప్రయోజనాలకు వాడాలి. ఎక్స్‌టెన్షన్ బిల్లింగ్ లేదా షేరింగ్ సెట్టింగ్‌లను ధృవీకరించదు."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "అంగీకరించి Googleతో కనెక్ట్ అవ్వండి"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "డేటా పంచుకునే సమ్మతిని వెనక్కి తీసుకోండి"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "కనెక్ట్ అయ్యే ముందు డేటా పంచుకునే వివరాలు చదవండి."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>ఈ అవసరాలు ఎందుకు? తరచు ప్రశ్నలు చదవండి</1>."
+  },
+  "html_api_key": {
+    "message": "API కీ"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "అంగీకరించిన తర్వాత కీని పేస్ట్ చేస్తే ఎన్‌క్రిప్ట్ చేసి సేవ్ చేస్తుంది, మోడళ్లను స్వయంగా లోడ్ చేస్తుంది."
+  },
+  "html_show": {
+    "message": "చూపు"
+  },
+  "html_remove_saved_key": {
+    "message": "సేవ్ చేసిన కీని తొలగించు"
+  },
+  "html_model": {
+    "message": "మోడల్"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "మీడియా లేదా ప్రత్యేక పనుల కోసం ఉన్నట్లు తెలిసిన మోడళ్లు దాచబడ్డాయి."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "Gemini Flash-Lite కుటుంబాన్ని సూచిస్తాం. ఈ విడుదల సమయంలో (సెప్టెంబర్ 2026) మా ఎంపిక Gemini 3.5 Flash-Lite. జాబితాలో మరో మోడల్ ఎంచుకోవచ్చు. కొన్ని మోడళ్లు ఈ ఎక్స్‌టెన్షన్‌తో పనిచేయకపోవచ్చు. విఫలమైతే మరో మోడల్ లేదా సూచించినది ఎంచుకోండి."
+  },
+  "html_refresh_models": {
+    "message": "మోడళ్లను రిఫ్రెష్ చేయండి"
+  },
+  "html_use_recommended_model": {
+    "message": "సూచించిన మోడల్ వాడండి"
+  },
+  "html_translation": {
+    "message": "అనువాదం"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "భాష, ఐచ్ఛిక కీబోర్డ్ ట్రిగర్ సెట్ చేయండి."
+  },
+  "html_default_language": {
+    "message": "డిఫాల్ట్ భాష"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "ఈ డిఫాల్ట్ మార్చకుండా ఫలిత కార్డులో మరో భాష వాడవచ్చు."
+  },
+  "html_keyboard_trigger": {
+    "message": "కీబోర్డ్ ట్రిగర్"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "ఒకే కీ వెబ్‌సైట్లు లేదా యాక్సెసిబిలిటీ సాధనాలతో ఘర్షణ పడవచ్చు. రైట్-క్లిక్ మెనూ మాత్రమే వాడడానికి ఆఫ్ ఎంచుకోండి."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "కీని నమోదు చేయండి"
+  },
+  "html_off": {
+    "message": "ఆఫ్"
+  },
+  "html_behavior": {
+    "message": "ప్రవర్తన"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "స్థిర రక్షణ పరిమితులు అనువాద వేగాన్ని, API కోటాను కాపాడతాయి."
+  },
+  "html_parallel_requests": {
+    "message": "ఒకేసారి అభ్యర్థనలు"
+  },
+  "html_request_timeout": {
+    "message": "అభ్యర్థన సమయ పరిమితి"
+  },
+  "html_page_access": {
+    "message": "పేజీ యాక్సెస్"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "స్థానిక ఫైళ్ల కోసం ఎక్స్‌టెన్షన్ నిర్వహణలో ఫైల్ URL యాక్సెస్ అనుమతించండి"
+  },
+  "html_help_and_recovery": {
+    "message": "సహాయం మరియు పునరుద్ధరణ"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "మోడల్ అందుబాటులో లేకపోతే జాబితాను రిఫ్రెష్ చేసి ఒకటి ఎంచుకుని ప్రాధాన్యతలు సేవ్ చేయండి. జాబితా లోడ్ కాకపోతే కీ, కనెక్షన్ తనిఖీ చేసి మోడళ్లను రిఫ్రెష్ చేయండి."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome సెట్టింగ్‌ల పేజీలు, Chrome Web Store అనువాదాన్ని అనుమతించవు. స్థానిక ఫైళ్ల కోసం ఎక్స్‌టెన్షన్ నిర్వహణలో ఫైల్ URL యాక్సెస్ ఇవ్వండి. ఎక్స్‌టెన్షన్ అప్‌డేట్ లేదా రీలోడ్ తర్వాత తెరిచిన వెబ్ పేజీలను రిఫ్రెష్ చేయండి. రీలోడ్ అనువాదాన్ని ఆపవచ్చు."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "అనువాదం ఆఫ్‌లైన్‌లో జరగదు. పై సమ్మతి తర్వాత మోడల్ తనిఖీకి కీ నేరుగా Googleకి వెళ్తుంది. స్థానిక ఫైల్ సహా ఎంచుకున్న వచనం, లక్ష్య భాష అనువాదం కోరినప్పుడే పంపబడతాయి. కీ Chrome ప్రొఫైల్‌లో ఎన్‌క్రిప్ట్ అయి ఉంటుంది. భాష, మోడల్, ట్రిగర్ Chrome ద్వారా సింక్ కావచ్చు. బ్రౌజర్ సెషన్‌లో తాజా ఫలితమే ఉంటుంది; అనువాద చరిత్ర ఉండదు."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "పైన డేటా పంచుకునే వివరాలు చూసి ఎప్పుడైనా సమ్మతి వెనక్కి తీసుకోవచ్చు. మళ్లీ అంగీకరించే వరకు మోడల్ తనిఖీ, అనువాదం ఆగుతాయి. సేవ్ చేసిన కీని తొలగించు ఎంచుకోకపోతే కీ ఉంటుంది."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "భాష, మోడల్, ట్రిగర్ మార్పులు ఇక్కడ సేవ్ చేయండి."
+  },
+  "html_reload_saved_settings": {
+    "message": "సేవ్ చేసిన సెట్టింగ్‌లను మళ్లీ లోడ్ చేయండి"
+  },
+  "html_save_preferences": {
+    "message": "ప్రాధాన్యతలు సేవ్ చేయండి"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini అనువాదం"
+  },
+  "html_setup_required": {
+    "message": "సెటప్ అవసరం"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "AI Translatorకి స్వాగతం"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "ఎంచుకున్న వచనాన్ని మీకు తెలిసిన భాషలోకి అనువదించండి. ప్రారంభించడానికి ఈ రెండు విషయాలు సెట్ చేయండి:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>మీ Gemini API కీ.</1> Google AI Studioలో సొంత కీ పొందండి. మార్గదర్శి విధానాన్ని వివరిస్తుంది."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>మీ లక్ష్య భాష.</1> చదవాలనుకున్న భాషను ఎంచుకోండి."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API కీ పొందడం ఎలా"
+  },
+  "html_extension_status": {
+    "message": "ఎక్స్‌టెన్షన్ స్థితి"
+  },
+  "html_active_translations": {
+    "message": "నడుస్తున్న అనువాదాలు"
+  },
+  "html_latest_this_session": {
+    "message": "ఈ సెషన్‌లో తాజా ఫలితం"
+  },
+  "html_no_translation_yet": {
+    "message": "ఇంకా అనువాదం లేదు."
+  },
+  "html_copy": {
+    "message": "కాపీ చేయండి"
+  },
+  "html_settings": {
+    "message": "సెట్టింగ్‌లు"
+  },
+  "html_key_guide": {
+    "message": "కీ మార్గదర్శి"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translator ప్రారంభించండి"
+  },
+  "html_extension_pages": {
+    "message": "ఎక్స్‌టెన్షన్ పేజీలు"
+  },
+  "html_faq": {
+    "message": "తరచు ప్రశ్నలు"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "సొంత Google API కీ పొంది భాష ఎంచుకుని తొలి వచనాన్ని అనువదించండి."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. API కీ పొందండి"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API కీతో ఎక్స్‌టెన్షన్ మీ Google ఖాతా ద్వారా Gemini వాడుతుంది. పాస్‌వర్డ్‌లా రహస్యంగా ఉంచండి."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "ఈ ఎక్స్‌టెన్షన్ <1>Google మద్దతున్న దేశాలు, ప్రాంతాల్లో</1> కనీసం 18 ఏళ్లవారి పని లేదా వ్యాపారానికి. అన్ని దేశాల్లో API కీ సక్రియ బిల్లింగ్ ఉన్న Gemini ప్రాజెక్ట్‌కు చెందినదై ఉండాలి. ఎక్స్‌టెన్షన్ అభ్యర్థన లాగ్‌లు, డేటాసెట్‌లను Googleతో ఐచ్ఛికంగా పంచుకోవడం ఆఫ్ చేయండి."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "వాడడం ద్వారా ఈ షరతులు, <1>Google API నిబంధనలు</1>, <2>Gemini API అదనపు నిబంధనలను</2> పాటించడానికి అంగీకరిస్తారు. పాటించలేకపోతే వాడవద్దు. ఎక్స్‌టెన్షన్ ఇవి తనిఖీ చేయదు లేదా గుర్తింపు పత్రాలు అడగదు."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio తెరవండి"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Google ఖాతాలో సైన్ ఇన్ చేయండి. అడిగితే Google నిబంధనలు అంగీకరించండి."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "కీ సృష్టించండి లేదా ఎంచుకోండి"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API Keys పేజీలో <1>API కీ సృష్టించు</1> ఎంచుకుని ప్రాజెక్ట్ ఎంచుకోవడానికి లేదా సృష్టించడానికి Google దశలు అనుసరించండి. ప్రాజెక్ట్ API వాడుక, బిల్లింగ్‌ను సమీకరిస్తుంది. AI Studioకి కొత్తయితే Google డిఫాల్ట్ ప్రాజెక్ట్, కీని ఇప్పటికే సృష్టించి ఉండవచ్చు."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "పాత ప్రాజెక్ట్ కనిపించకపోతే <1>డ్యాష్‌బోర్డ్ > ప్రాజెక్ట్‌లు > ప్రాజెక్ట్‌లు దిగుమతి చేయండి</1> తెరవండి. దిగుమతి చేసి API Keysకి తిరిగి వెళ్లండి."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "కీ వాడే ముందు <1>Google బిల్లింగ్ మార్గదర్శి</1> ప్రకారం ప్రాజెక్ట్ బిల్లింగ్ సక్రియంగా ఉందో చూడండి. చెల్లింపు Gemini యాప్ సబ్‌స్క్రిప్షన్ API ప్రాజెక్ట్ బిల్లింగ్‌కు ప్రత్యామ్నాయం కాదు. ఎక్స్‌టెన్షన్ లాగ్‌లు, డేటాసెట్‌లను Googleతో ఐచ్ఛికంగా పంచుకోవడం ఆఫ్ చేసి <2>Google లాగ్ షేరింగ్ విధానం</2> చదవండి. ప్రాజెక్ట్‌లో ప్రైవేట్ లాగింగ్, పంచుకోవడం వేరు."
+  },
+  "html_copy_your_key": {
+    "message": "కీ కాపీ చేయండి"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "AI Studio నుంచి కీ కాపీ చేయండి. ఎక్స్‌టెన్షన్ సెట్టింగ్‌లకు వచ్చి డేటా పంచుకునే వివరాలు చదవండి. <1>అంగీకరించి Googleతో కనెక్ట్ అవ్వండి</1> ఎంచుకుని <2>API కీ</2> ఫీల్డ్‌లో పేస్ట్ చేయండి. అది స్వయంగా ఎన్‌క్రిప్ట్ అయి సేవ్ అవుతుంది, మోడల్ జాబితా లోడ్ అవుతుంది. ముందుకు వెళ్లే ముందు ఫలితం కోసం వేచి ఉండండి."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "ఖాళీ API కీ ఫీల్డ్ పైన డేటా పంచుకునే నోటీసు, సమ్మతి బటన్ మరియు Flash-Lite సూచన చూపే AI Translator సెట్టింగ్‌లు."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "ఉదాహరణ ఆంగ్లంలో ఉంది. AI Translatorలో ముందు డేటా పంచుకోవడానికి అంగీకరించి మీ కీ పేస్ట్ చేయండి. ఎన్‌క్రిప్ట్ చేసిన కీ సేవ్ అయిన తర్వాత మోడల్ జాబితా తనిఖీ అవుతుంది."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google ఈ తెరలను మార్చవచ్చు. తాజా దశలు లేదా కీ లోపాలకు <1>Google API కీ మార్గదర్శి</1> చదవండి. పాత కీ పనిచేయకపోతే AI Studio నుంచి కొత్తది పొందండి."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. అనువాద సెట్టింగ్‌లు ఎంచుకోండి"
+  },
+  "html_choose_a_model": {
+    "message": "మోడల్ ఎంచుకోండి"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "Gemini Flash-Lite కుటుంబాన్ని సూచిస్తాం. సెప్టెంబర్ 2026 విడుదలలో మా ఎంపిక <1>Gemini 3.5 Flash-Lite</1>. జాబితాలో ఉంటే వాడండి."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "జాబితాలో మరో మోడల్ ఎంచుకోవచ్చు. కొన్ని మోడళ్లు పనిచేయకపోవచ్చు. విఫలమైతే మరో మోడల్ లేదా సూచించినది వాడండి."
+  },
+  "html_choose_your_target_language": {
+    "message": "లక్ష్య భాష ఎంచుకోండి"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "<1>డిఫాల్ట్ భాషలో</1> చదవాలనుకున్న భాషను ఎంచుకోండి. ఎంపికలు <2>Google ప్రచురించిన Gemini భాషల</2> ప్రకారం ఉంటాయి. భాష, వచనాన్ని బట్టి నాణ్యత మారవచ్చు."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "లక్ష్య భాష, కీబోర్డ్ ట్రిగర్ నియంత్రణలతో AI Translator అనువాద సెట్టింగ్‌లు."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "ఉదాహరణ ఆంగ్లంలో ఉంది. అనువాద భాష ఎంచుకుని సెటప్ పూర్తి చేయండి."
+  },
+  "html_finish_setup": {
+    "message": "సెటప్ పూర్తి చేయండి"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control ఉంచండి, మరో కీ నమోదు చేయండి లేదా రైట్-క్లిక్ మెనూ మాత్రమే వాడడానికి <1>ఆఫ్</1> ఎంచుకోండి. సెట్టింగ్‌ల దిగువ <2>సెటప్ పూర్తి చేయండి</2> ఎంచుకోండి. తర్వాత <3>ప్రాధాన్యతలు సేవ్ చేయండి</3> ద్వారా మార్చవచ్చు."
+  },
+  "html_open_settings": {
+    "message": "సెట్టింగ్‌లు తెరవండి"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. తొలి ఎంపికను అనువదించండి"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "సాధారణ వెబ్ పేజీలో చిన్న వచనం ఎంచుకోండి. రైట్-క్లిక్ చేసి <1>ఎంచుకున్న వచనాన్ని అనువదించు</1> ఎంచుకోండి లేదా ఎంపిక చేసిన కీని నొక్కి వదలండి. వచనం పక్కన ఫలితం కనిపిస్తుంది."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "ఎక్స్‌టెన్షన్ ఇప్పుడే ఇన్‌స్టాల్ లేదా రీలోడ్ చేసి ఉంటే ముందు పేజీ రిఫ్రెష్ చేయండి. Chrome సెట్టింగ్‌లు, Chrome Web Store, అంతర్నిర్మిత PDF వీక్షకం అనువాదాన్ని అనుమతించవు."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "టూల్‌బార్ పాపప్ తాజా ఫలితం చూపుతుంది. సెటప్ పూర్తయ్యాక సాధారణ వీక్షణ తెరుస్తుంది. API కీ తొలగిస్తే స్వాగత మార్గదర్శి మళ్లీ కనిపిస్తుంది."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "తరచు ప్రశ్నలు: కీ, ఖర్చులు, గోప్యత"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "నా సొంత API కీ ఎందుకు అవసరం?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "ఎక్స్‌టెన్షన్ మీ కీతో నేరుగా మీ Google ప్రాజెక్ట్‌కి అభ్యర్థనలు పంపేలా రూపొందింది. ఇది రూపకల్పన ఎంపిక, Chrome నియమం కాదు. కీ అభ్యర్థనలను అనుమతించి మీ వాడుక, బిల్లింగ్‌తో కలుపుతుంది. స్క్రీన్‌షాట్‌లు లేదా బహిరంగ సందేశాల్లో పంచుకోవద్దు. <1>Google API కీ మార్గదర్శి</1> చూడండి."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "సక్రియ బిల్లింగ్ కేవలం సూచన కాకుండా తప్పనిసరి ఎందుకు?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chrome <1>పరిమిత వాడుక నియమాలు, అంశాలు 3 మరియు 5</1> డేటా వాడుకను ఎక్స్‌టెన్షన్ ఉద్దేశం, సంబంధిత పనులకు పరిమితం చేస్తాయి. కొన్ని ఉచిత Gemini వాడుకలు విస్తృత శిక్షణ, మనుషుల సమీక్షను అనుమతిస్తాయి. చెల్లింపు నిబంధనలు ఉత్పత్తి మెరుగుదల వాడుకను మినహాయించినా భద్రత, చట్టం కోసం పరిమిత నిల్వ, EU బయట ప్రాసెసింగ్‌ను అనుమతిస్తాయి."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "ఈ విరుద్ధతను పరిష్కరించడానికి డెవలపర్ ప్రపంచవ్యాప్తంగా సక్రియ ప్రాజెక్ట్ బిల్లింగ్ కోరుతున్నారు. సూచన మాత్రమే అయితే ఉచిత వాడుక సాధ్యమే. Google ప్రాంతీయ నియమం కూడా యూరోపియన్ ఆర్థిక ప్రాంతం, UK, స్విట్జర్లాండ్‌లో అందించే యాప్‌లకు చెల్లింపు సేవలను కోరుతుంది. <1>Gemini నిబంధనలు: వాడుక పరిమితులు, ఉచిత సేవలు, చెల్లింపు సేవలు</1> చూడండి."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Googleతో ఐచ్ఛిక షేరింగ్ ఆఫ్‌లో ఎందుకు ఉండాలి?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "బిల్లింగ్ సక్రియంగా ఉన్నా లాగ్‌లు లేదా డేటాసెట్‌లు పంచుకోవడం శిక్షణ, మనుషుల సమీక్షకు అనుమతించవచ్చు. డేటాసెట్ షేరింగ్ లేదా అభిప్రాయం ద్వారా ఈ ఎక్స్‌టెన్షన్ డేటాను ఇవ్వవద్దు. మీ ప్రాజెక్ట్‌లో ప్రైవేట్ లాగింగ్ ఈ నియమంలో అనుమతించబడుతుంది. <1>Google లాగింగ్ విధానం: పంచుకోగల డేటా, మీ డేటా వాడే విధానం</1> చూడండి."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "చెల్లింపు API అవసరమైనా ఎక్స్‌టెన్షన్ ఉచితమేనా?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "అవును. ఎక్స్‌టెన్షన్ ఉచితం, కానీ Google API రుసుములు ఉండవచ్చు. చెల్లింపు Gemini యాప్ సబ్‌స్క్రిప్షన్ API ప్రాజెక్ట్ బిల్లింగ్‌కు ప్రత్యామ్నాయం కాదు. <1>బిల్లింగ్ తనిఖీ విధానం</1>, <2>Google API ధరలు</2> చూడండి. ఎక్స్‌టెన్షన్ బిల్లింగ్ లేదా షేరింగ్ సెట్టింగ్‌లను తనిఖీ చేయదు."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "అంగీకరించి Googleతో కనెక్ట్ అవ్వండి ఎందుకు ఎంచుకోవాలి?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chrome <1>వెల్లడి అవసరాలు, అంశాలు 1 మరియు 2</1> స్పష్టమైన డేటా వినియోగ వివరాలు, సమాచారం తెలుసుకున్న సమ్మతిని కోరుతాయి. ఏ Google API అభ్యర్థనకు ముందైనా ఎంచుకునే అవకాశం బటన్ ఇస్తుంది. అది గుర్తింపు లేదా బిల్లింగ్ తనిఖీ కాదు; ఇతరుల వ్యక్తిగత సమాచారం పంచుకునే అనుమతి కూడా కాదు."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Googleకి ఖచ్చితంగా ఏమి వెళ్తుంది?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "మోడల్ తనిఖీ కీని పంపి అందుబాటులోని మోడళ్లను అడుగుతుంది. అనువాదం ఎంచుకున్న వచనం, లక్ష్య భాష, మోడల్, అనువాద సూచనలను పంపుతుంది; స్థానిక ఫైల్ వచనం కూడా. పూర్తి పేజీ, పేజీ చిరునామా, బ్రౌజింగ్ చరిత్ర జోడించదు. Google IP చిరునామా వంటి కనెక్షన్ వివరాలనూ అందుకుంటుంది. డెవలపర్ ఈ అభ్యర్థనలు పొందరు. పంచుకునే హక్కున్న వచనమే పంపండి."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "నా కీ ఎలా సేవ్ అయి స్వయంగా తెరుచుకుంటుంది?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API కీ ఎన్‌క్రిప్ట్ అయి సేవ్ అవుతుంది. రీస్టార్ట్ తర్వాత స్వయంగా వాడటానికి అది, ఎన్‌క్రిప్షన్ కీ ఈ Chrome ప్రొఫైల్‌లో ఉంటాయి; సింక్ కావు. ప్రొఫైల్ యాక్సెస్ ఉన్నవారు API కీని తిరిగి పొందవచ్చు. ఇది OS కీచెయిన్ లేదా పాస్‌వర్డ్ రక్షిత వాల్ట్ కాదు. భాష, మోడల్, ట్రిగర్ సింక్ కావచ్చు. సెషన్‌లో తాజా ఫలితమే ఉంటుంది; విశ్లేషణ లేదా అనువాద చరిత్ర లేదు."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "అప్‌గ్రేడ్ పాత కీని ఎన్‌క్రిప్ట్ చేసి తనిఖీ చేసిన తర్వాతే సాధారణ వచన కాపీలను తొలగిస్తుంది. విఫలమైతే పాత కాపీ ఉంటుంది, అభ్యర్థనలు నిరోధించబడతాయి. సెట్టింగ్‌లు లోపాన్ని వివరిస్తాయి. పాత కీని తరలించడం సమ్మతి దశను దాటవేయదు."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "సమ్మతి వెనక్కి తీసుకోవచ్చా లేదా కీ తొలగించవచ్చా?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>సెట్టింగ్‌లలో</1> <2>డేటా పంచుకునే సమ్మతిని వెనక్కి తీసుకోండి</2> కొత్త అభ్యర్థనలను ఆపి నడుస్తున్నవాటిని స్థానికంగా రద్దు చేస్తుంది; కీ, ప్రాధాన్యతలు ఉంటాయి. <3>సేవ్ చేసిన కీని తొలగించు</3> కీ, ఎన్‌క్రిప్షన్ కీ, మోడల్ కాష్‌ను తొలగిస్తుంది. రెండూ పంపిన డేటాను తిరిగి తీసుకోలేవు లేదా పంపిన అభ్యర్థన ఉచితమని హామీ ఇవ్వలేవు. Googleలోనూ ఆపడానికి AI Studioలో కీ రద్దు చేయండి."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "సమ్మతి సాధారణ రీస్టార్ట్‌లు, అప్‌డేట్‌ల తర్వాతా ఉంటుంది. నోటీసు మారితే చదివి మళ్లీ అంగీకరించే వరకు అభ్యర్థనలు వేచి ఉంటాయి."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "పెద్దల పని లేదా వ్యాపార వాడుకకే ఎందుకు?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google కనీసం 18 ఏళ్ల వయసు, మద్దతున్న ప్రాంతాల్లో వృత్తి లేదా వ్యాపార వాడుకను కోరుతుంది. <1>Gemini నిబంధనలు: వయసు అవసరాలు, వాడుక పరిమితులు</1>, <2>అందుబాటులోని ప్రాంతాలు</2> చూడండి. ఎక్స్‌టెన్షన్‌లో వేరే అర్హత చెక్‌బాక్స్ లేదా గుర్తింపు తనిఖీ లేదు."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "ఈ నోటీసుతో పాటు గోప్యత విధానం ఎందుకు?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "నోటీసు కనెక్ట్ అయ్యే ముందు ఎంపికను వివరిస్తుంది. విధానం డేటా, నిల్వ, తొలగింపు పూర్తి వివరాలు ఇస్తుంది. వినియోగదారు డేటా నిర్వహించే ఎక్స్‌టెన్షన్‌లకు Chrome <1>గోప్యత విధాన నియమాలు</1> ఇది కోరుతాయి. <2>మా గోప్యత విధానం</2> చదవండి. ఈ నోటీసులు Google ఎక్స్‌టెన్షన్‌ను ఆమోదించిందని అర్థం కాదు."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI అనువాదం తప్పు కావచ్చు. నమ్మే ముందు ముఖ్యమైన పదాలను తనిఖీ చేయండి."
+  },
+  "html_about_ai_translator": {
+    "message": "AI Translator గురించి"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "చాలా సులభ అనువాదం: వచనం ఎంచుకుని Control నొక్కండి."
+  },
+  "html_made_for_people": {
+    "message": "ప్రజల కోసం రూపొందింది"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "ప్రజలు భాషలు దాటి చదవడానికి, నేర్చుకోవడానికి, కలవడానికి AI Translator సృష్టించాను. ప్రపంచవ్యాప్తంగా ఉపయోగపడుతుందని ఆశిస్తున్నాను."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "ఎక్స్‌టెన్షన్ మీ సొంత Google Gemini API కీతో ఎంచుకున్న వచనాన్ని అనువదిస్తుంది. ఏమి పంపాలి, ఏ భాషలో చదవాలి అనేది మీ ఎంపిక."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "ఎంపిక అనువదించడానికి Control నొక్కి వదలండి. Control డిఫాల్ట్ కీ; సెట్టింగ్‌లలో మార్చవచ్చు. పేజీ రైట్-క్లిక్ మెనూ కూడా వాడవచ్చు."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "చేతితో పరీక్షలు Macలో మాత్రమే జరిగాయి. Windows, Linuxలో చేతితో పరీక్షించలేదు."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>సోర్స్ కోడ్, ప్రాజెక్ట్ మార్గదర్శి చూడండి</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>సహాయం పొందండి లేదా సమస్య తెలియజేయండి</1>. నివేదికలు బహిరంగం. API కీలు, ప్రైవేట్ వచనం, వ్యక్తిగత వివరాలు ఇవ్వవద్దు."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "నా పనికి మద్దతివ్వాలనుకుంటే"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "రష్యా దురాక్రమణ నుంచి తనను తాను రక్షించుకుంటున్న నా దేశం ఉక్రెయిన్‌కు మద్దతివ్వండి."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "నేను Sternenko Community Foundationని నమ్ముతున్నాను. వీలుంటే, సహాయపడాలని ఉంటే దాని అధికారిక వెబ్‌సైట్ ద్వారా విరాళం ఇవ్వవచ్చు."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>ఫౌండేషన్ ద్వారా ఉక్రెయిన్‌కు మద్దతివ్వండి</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "మద్దతు ఐచ్ఛికం; ఎక్స్‌టెన్షన్ వాడటానికి అవసరం లేదు. ఈ లింక్ బయటి వెబ్‌సైట్ తెరుస్తుంది. విరాళాలు ఫౌండేషన్ ద్వారా వెళ్తాయి, ఎక్స్‌టెన్షన్ ద్వారా కాదు."
+  },
+  "html_privacy_and_costs": {
+    "message": "గోప్యత మరియు ఖర్చులు"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API కీ ఈ పరికరంలో ఎన్‌క్రిప్ట్ అయి ఉంటుంది, సింక్ కాదు. సాధారణ Chrome రీస్టార్ట్ తర్వాత అన్‌లాక్ పాస్‌వర్డ్ లేకుండా లభిస్తుంది. బ్రౌజర్ ప్రొఫైల్ యాక్సెస్ ఉన్నవారు తిరిగి పొందవచ్చు."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "తొలి Google అభ్యర్థనకు ముందు సెట్టింగ్‌లు డేటా పంచుకోవడం వివరించి <1>అంగీకరించి Googleతో కనెక్ట్ అవ్వండి</1> ఎంచుకోమంటాయి. తర్వాత మీరు అనువాదం కోరినప్పుడే ఎంచుకున్న వచనం Googleకి నేరుగా వెళ్తుంది. మోడల్ తనిఖీ కీని పంపుతుంది, వచనాన్ని కాదు. విశ్లేషణ, ప్రకటనలు, అనువాద చరిత్ర లేవు."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "ఎప్పుడైనా <1>సెట్టింగ్‌లలో</1> వివరాలు చూడండి. ఎన్‌క్రిప్ట్ కీ, ప్రాధాన్యతలు ఉంచి కొత్త అభ్యర్థనలు ఆపడానికి <2>డేటా పంచుకునే సమ్మతిని వెనక్కి తీసుకోండి</2>, లేదా కీ, మోడల్ కాష్ తొలగించడానికి <3>సేవ్ చేసిన కీని తొలగించు</3> ఎంచుకోండి. పంపిన డేటాను తిరిగి తీసుకోలేరు."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "అనువాదాలు AI సృష్టిస్తాయి; తప్పు కావచ్చు. నమ్మే ముందు ముఖ్యమైన పదాలను తనిఖీ చేయండి."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>గోప్యత వివరాలు చదవండి</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator ఉచిత, స్వతంత్ర ప్రాజెక్ట్. Google API రుసుములు ఉండవచ్చు. అన్ని దేశాల్లో <1>సక్రియ బిల్లింగ్</1> ఉన్న ప్రాజెక్ట్ Gemini API కీ వాడి <2>ఎక్స్‌టెన్షన్ అభ్యర్థన లాగ్‌లు, డేటాసెట్‌లను Googleతో ఐచ్ఛికంగా పంచుకోవడం</2> ఆఫ్ చేయండి. ఈ సెట్టింగ్‌లలో Google చెల్లింపు నిబంధనల ప్రకారం ప్రాంప్ట్‌లు, ప్రతిస్పందనలు ఉత్పత్తి మెరుగుదలకు వాడబడవు; భద్రత, చట్టపరమైన ప్రాసెసింగ్ వర్తిస్తాయి. <3>Google ధరలు, డేటా వినియోగ గమనికలు</3> చదవండి."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "ఈ ఎక్స్‌టెన్షన్ <1>Google మద్దతున్న ప్రాంతాల్లో</1> కనీసం 18 ఏళ్లవారి పని లేదా వ్యాపారానికి. వాడితే ఈ షరతులు, <2>Google API నిబంధనలు</2>, <3>Gemini API అదనపు నిబంధనలను</3> పాటించడానికి అంగీకరిస్తారు. పాటించలేకపోతే వాడవద్దు. అర్హత చెక్‌బాక్స్ లేదా గుర్తింపు తనిఖీ లేదు. బిల్లింగ్, షేరింగ్ సెట్టింగ్‌లు కూడా ధృవీకరించబడవు."
+  },
+  "runtime_unsaved_changes": {
+    "message": "సేవ్ చేయని మార్పులు ఉన్నాయి."
+  },
+  "runtime_settings_conflict": {
+    "message": "మరో పేజీలో సెట్టింగ్‌లు మారాయి. మీ మార్పులు ఇక్కడ ఉన్నాయి. మార్పులు వదిలి సేవ్ చేసిన విలువలు వాడడానికి సెట్టింగ్‌లను మళ్లీ లోడ్ చేయండి."
+  },
+  "runtime_preferences_current": {
+    "message": "ప్రాధాన్యతలు తాజాగా ఉన్నాయి."
+  },
+  "runtime_key_cannot_open": {
+    "message": "సేవ్ చేసిన కీ తెరవలేకపోయాం. సెట్టింగ్‌లు మళ్లీ తెరవండి లేదా కీ తొలగించి తిరిగి నమోదు చేయండి."
+  },
+  "runtime_key_conflict": {
+    "message": "మరో పేజీలో API కీ మారింది. కీ సేవ్ చేసే ముందు సేవ్ చేసిన సెట్టింగ్‌లు తిరిగి లోడ్ చేయండి."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "కీ ఎన్‌క్రిప్ట్ అయి సేవ్ అయింది. Googleతో కనెక్ట్ అయ్యే ముందు డేటా పంచుకోవడానికి అంగీకరించండి."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "API కీ జోడించే ముందు పై డేటా పంచుకోవడానికి అంగీకరించండి."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Gemini సేవ్ చేసిన కీ తిరస్కరించింది. మార్చండి లేదా మోడళ్లను రిఫ్రెష్ చేసి మళ్లీ తనిఖీ చేయండి."
+  },
+  "runtime_paste_key": {
+    "message": "Geminiతో కనెక్ట్ కావడానికి API కీ పేస్ట్ చేయండి."
+  },
+  "runtime_key_checked": {
+    "message": "API కీ సేవ్ అయింది. చివరి మోడల్ జాబితా తనిఖీలో Gemini అంగీకరించింది."
+  },
+  "runtime_key_saved_check": {
+    "message": "API కీ పరికరంలో ఎన్‌క్రిప్ట్ అయి సేవ్ అయింది. Geminiతో తనిఖీ చేయడానికి మోడళ్లను రిఫ్రెష్ చేయండి."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "సమ్మతి వెనక్కి తీసుకోవడం మళ్లీ ప్రయత్నించండి"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "డేటా పంచుకునే సమ్మతిని వెనక్కి తీసుకోండి"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "సమ్మతి వెనక్కి తీసుకున్నట్లు నిర్ధారణ కాలేదు. మీ ఎంపిక సేవ్ చేయడానికి మళ్లీ ప్రయత్నించండి."
+  },
+  "runtime_agreement_saved": {
+    "message": "ఈ Chrome ప్రొఫైల్‌లో డేటా పంచుకోవడానికి అంగీకరించారు. ఎప్పుడైనా వెనక్కి తీసుకోవచ్చు."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "అంగీకరించే వరకు Google కనెక్షన్ ఉండదు. వెనక్కి తీసుకున్నా సేవ్ చేసిన కీ ఉంటుంది."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Gemini సేవ్ చేసిన కీ తిరస్కరించింది. దిగువ మార్చండి."
+  },
+  "runtime_setup_key_saved": {
+    "message": "ఈ పరికరంలో కీ ఎన్‌క్రిప్ట్ అయి సేవ్ అయింది."
+  },
+  "runtime_setup_create_key": {
+    "message": "Google AI Studioలో సొంత కీ సృష్టించండి."
+  },
+  "runtime_setup_language_selected": {
+    "message": "భాష ఎంచుకున్నారు. ఎంపిక సేవ్ చేయడానికి సెటప్ పూర్తి చేయండి."
+  },
+  "runtime_setup_choose_language": {
+    "message": "దిగువ లక్ష్య భాష ఎంచుకోండి."
+  },
+  "runtime_finish_setup": {
+    "message": "సెటప్ పూర్తి చేయండి"
+  },
+  "runtime_save_preferences": {
+    "message": "ప్రాధాన్యతలు సేవ్ చేయండి"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "API కీ జోడించి మోడల్ జాబితా తనిఖీ చేసి మోడల్ ఎంపిక సేవ్ చేయండి."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "అనువదించే ముందు సెట్టింగ్‌ల ఘర్షణ పరిష్కరించండి."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Googleతో కనెక్ట్ అయ్యే ముందు డేటా పంచుకునే వివరాలు చదివి అంగీకరించండి."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "సెటప్ తనిఖీకి ముందు API కీ సేవ్ చేయడం పూర్తి చేయండి."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "సెటప్‌పై శ్రద్ధ అవసరం: Gemini సేవ్ చేసిన API కీని తిరస్కరించింది."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "కీ సేవ్ అయింది. లక్ష్య భాష ఎంచుకుని సెటప్ పూర్తి చేయండి."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "అందుబాటులోని మోడల్ ఎంచుకుని ప్రాధాన్యతలు సేవ్ చేయండి."
+  },
+  "runtime_setup_model_selected": {
+    "message": "మోడల్ ఎంచుకున్నారు. వాడడానికి ప్రాధాన్యతలు సేవ్ చేయండి."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "కీ, భాష సిద్ధంగా ఉన్నాయి. ఎంపిక సేవ్ చేయడానికి సెటప్ పూర్తి చేసి అనువాదం ప్రయత్నించండి. మోడల్ యాక్సెస్, కోటా మారవచ్చు."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "అనువాదం ప్రయత్నించడానికి సిద్ధం. సేవ్ చేసిన మోడల్ తనిఖీ చేసిన జాబితాలో ఉంది; అభ్యర్థన యాక్సెస్, కోటా మారవచ్చు."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "కీ సేవ్ అయింది. కీ, ఎంపిక చేసిన మోడల్ తనిఖీకి మోడళ్లను రిఫ్రెష్ చేయండి."
+  },
+  "runtime_show_key": {
+    "message": "చూపు"
+  },
+  "runtime_hide_key": {
+    "message": "దాచు"
+  },
+  "runtime_choose_target_language": {
+    "message": "లక్ష్య భాష ఎంచుకోండి"
+  },
+  "runtime_background_no_response": {
+    "message": "ఎక్స్‌టెన్షన్ నేపథ్యం స్పందించలేదు. ఎక్స్‌టెన్షన్ మళ్లీ లోడ్ చేసి ప్రయత్నించండి."
+  },
+  "runtime_refresh_models": {
+    "message": "మోడళ్లను రిఫ్రెష్ చేయండి"
+  },
+  "runtime_models_need_agreement": {
+    "message": "మోడళ్లను లోడ్ చేసే ముందు డేటా పంచుకోవడానికి అంగీకరించండి."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "మోడళ్లు రిఫ్రెష్ చేసే ముందు API కీ సేవ్ చేయడం పూర్తి చేయండి."
+  },
+  "runtime_refreshing": {
+    "message": "రిఫ్రెష్ అవుతోంది..."
+  },
+  "runtime_loading": {
+    "message": "లోడ్ అవుతోంది..."
+  },
+  "runtime_models_checking": {
+    "message": "Geminiలో అనుకూల మోడళ్లు తనిఖీ అవుతున్నాయి..."
+  },
+  "runtime_models_loading": {
+    "message": "అనుకూల మోడళ్లు లోడ్ అవుతున్నాయి..."
+  },
+  "runtime_models_load_failed": {
+    "message": "అనుకూల మోడళ్లను లోడ్ చేయలేకపోయాం."
+  },
+  "runtime_models_empty": {
+    "message": "Gemini అనుకూల మోడళ్లను ఇవ్వలేదు."
+  },
+  "runtime_model_not_available": {
+    "message": "ఎంచుకున్న మోడల్ అనుకూల జాబితాలో లేదు. మరో మోడల్ ఎంచుకోండి."
+  },
+  "runtime_record_key": {
+    "message": "కీని నమోదు చేయండి"
+  },
+  "runtime_recording_cancelled": {
+    "message": "కీ నమోదు రద్దయింది."
+  },
+  "runtime_unknown_key": {
+    "message": "ఆ కీ"
+  },
+  "runtime_press_key": {
+    "message": "ఒక కీ నొక్కండి..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "అక్షరాన్ని నమోదు చేయని, మద్దతున్న ఒక కీ నొక్కండి. రద్దు చేయడానికి Escape నొక్కండి."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "సేవ్ చేసిన API కీ తనిఖీకి మోడళ్లను రిఫ్రెష్ చేయండి."
+  },
+  "runtime_models_add_key": {
+    "message": "అనుకూల మోడళ్లు లోడ్ చేయడానికి API కీ జోడించండి."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "ఎక్స్‌టెన్షన్ సేవ్ చేసిన స్థితిని లోడ్ చేయలేకపోయింది."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Gemini సేవ్ చేసిన API కీని తిరస్కరించింది. మార్చండి లేదా మోడళ్లను రిఫ్రెష్ చేసి మళ్లీ తనిఖీ చేయండి."
+  },
+  "runtime_settings_reopen": {
+    "message": "సెట్టింగ్‌లు లోడ్ కాలేదు. మళ్లీ తెరిచి ప్రయత్నించండి."
+  },
+  "runtime_settings_load_failed": {
+    "message": "సెట్టింగ్‌లు లోడ్ కాలేదు. సేవ్ చేసిన సెట్టింగ్‌లను మళ్లీ లోడ్ చేయండి. సేవ్ చేసిన ఎంపికల రక్షణ కోసం సేవ్ చేయడం నిలిపివేశారు."
+  },
+  "runtime_setup_load_failed": {
+    "message": "సెటప్ స్థితి లోడ్ కాలేదు."
+  },
+  "runtime_key_no_spaces": {
+    "message": "ఖాళీలు లేకుండా పూర్తి API కీ నమోదు చేయండి."
+  },
+  "runtime_key_use_remove": {
+    "message": "కీ తొలగించడానికి సేవ్ చేసిన కీని తొలగించు వాడండి."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API కీ సేవ్ చేసే ముందు పై డేటా పంచుకోవడానికి అంగీకరించండి."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API కీ ఎన్‌క్రిప్ట్ అయి సేవ్ అవుతోంది..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API కీని చదవడం లేదా సేవ్ చేయడం సాధ్యం కాలేదు. మీ నమోదు ఉంది. మళ్లీ ప్రయత్నించడానికి ప్రాధాన్యతలు సేవ్ చేయండి వాడండి."
+  },
+  "runtime_connecting_google": {
+    "message": "Googleతో కనెక్ట్ అవుతోంది..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google కనెక్షన్లు ఆపుతోంది..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "డేటా పంచుకునే సమ్మతి సేవ్ కాలేదు. మళ్లీ ప్రయత్నించండి."
+  },
+  "runtime_key_removing": {
+    "message": "సేవ్ చేసిన కీ తొలగిస్తోంది..."
+  },
+  "runtime_key_removed": {
+    "message": "సేవ్ చేసిన కీ తొలగించారు. డేటా పంచుకోవడానికి అంగీకరించిన తర్వాత కొత్త కీ జోడించవచ్చు."
+  },
+  "runtime_key_remove_failed": {
+    "message": "సేవ్ చేసిన కీ తొలగించలేకపోయాం. మళ్లీ ప్రయత్నించండి."
+  },
+  "runtime_saving": {
+    "message": "సేవ్ అవుతోంది..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "సరైన భాష, మోడల్ ఎంచుకోండి."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "మద్దతున్న ట్రిగర్ కీ లేదా ఆఫ్ ఎంచుకోండి."
+  },
+  "runtime_choose_listed_model": {
+    "message": "ప్రస్తుత అనుకూల జాబితా నుంచి మోడల్ ఎంచుకోండి."
+  },
+  "runtime_preferences_saving": {
+    "message": "ప్రాధాన్యతలు సేవ్ అవుతున్నాయి..."
+  },
+  "runtime_preferences_saved": {
+    "message": "ప్రాధాన్యతలు సేవ్ అయ్యాయి."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "ప్రాధాన్యతలు సేవ్ అయ్యాయి. సెటప్ పూర్తి చేయడానికి API కీ జోడించండి."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "ప్రాధాన్యతలు చదవడం లేదా సేవ్ చేయడం సాధ్యం కాలేదు. మీ మార్పులు ఉన్నాయి. మళ్లీ ప్రయత్నించండి."
+  },
+  "runtime_key_will_save": {
+    "message": "API కీ స్వయంగా సేవ్ అవుతుంది."
+  },
+  "runtime_key_finish_entry": {
+    "message": "API కీ నమోదు పూర్తి చేయండి."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "అనుకూల మోడళ్లు లోడ్ చేయడానికి API కీ సేవ్ చేయడం పూర్తి చేయండి."
+  },
+  "runtime_recommended_selected": {
+    "message": "సూచించిన మోడల్ ఎంచుకున్నారు. వాడడానికి ఎంపిక సేవ్ చేయండి."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "సేవ్ చేసిన తర్వాత కీబోర్డ్ ట్రిగర్ ఆఫ్ అవుతుంది."
+  },
+  "runtime_connection_changed": {
+    "message": "కనెక్షన్ సెట్టింగ్‌లు మారాయి. సేవ్ చేసిన సెట్టింగ్‌లు తనిఖీ అవుతున్నాయి..."
+  },
+  "runtime_models_changed": {
+    "message": "మోడల్ జాబితా మారింది. అనుకూల మోడళ్లు తనిఖీ అవుతున్నాయి..."
+  },
+  "runtime_no_translation": {
+    "message": "ఇంకా అనువాదం లేదు."
+  },
+  "runtime_start_setup": {
+    "message": "సెటప్ ప్రారంభించండి"
+  },
+  "runtime_settings": {
+    "message": "సెట్టింగ్‌లు"
+  },
+  "runtime_key_rejected": {
+    "message": "కీ తిరస్కరించబడింది"
+  },
+  "runtime_setup_required": {
+    "message": "సెటప్ అవసరం"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "అనువాదం ప్రారంభించడానికి సెట్టింగ్‌లలో API కీ జోడించండి."
+  },
+  "runtime_add_key": {
+    "message": "API కీ జోడించండి"
+  },
+  "runtime_finish_model_language": {
+    "message": "కీ సేవ్ అయింది. మోడల్ తనిఖీ, భాష ఎంపిక పూర్తి చేయడానికి సెట్టింగ్‌లు తెరవండి."
+  },
+  "runtime_check_setup": {
+    "message": "సెటప్ తనిఖీ చేయండి"
+  },
+  "runtime_translating": {
+    "message": "అనువదిస్తోంది"
+  },
+  "runtime_error": {
+    "message": "లోపం"
+  },
+  "runtime_ready": {
+    "message": "సిద్ధం"
+  },
+  "runtime_status_load_failed": {
+    "message": "ఎక్స్‌టెన్షన్ స్థితి లోడ్ కాలేదు. ఎక్స్‌టెన్షన్ మళ్లీ లోడ్ చేసి పేజీ రిఫ్రెష్ చేయండి."
+  },
+  "runtime_copied": {
+    "message": "కాపీ అయింది."
+  },
+  "runtime_copy_blocked": {
+    "message": "కాపీ నిరోధించబడింది. ఫలిత వచనం ఎంచుకుని కాపీ చేయండి."
+  },
+  "runtime_settings_open_failed": {
+    "message": "సెట్టింగ్‌లు తెరవలేకపోయాం. మళ్లీ ప్రయత్నించండి."
+  },
+  "runtime_translating_progress": {
+    "message": "అనువదిస్తోంది..."
+  },
+  "runtime_translation_started": {
+    "message": "అనువాదం ప్రారంభమైంది."
+  },
+  "runtime_translation_complete": {
+    "message": "అనువాదం పూర్తయింది."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "అనువాదం పూర్తయింది. ఫలిత వచనం లేదా కార్డు నియంత్రణలు వాడండి."
+  },
+  "runtime_translation": {
+    "message": "అనువాదం"
+  },
+  "runtime_target_language": {
+    "message": "లక్ష్య భాష"
+  },
+  "runtime_card_target_language": {
+    "message": "ఈ కార్డు లక్ష్య భాష"
+  },
+  "runtime_close_card": {
+    "message": "అనువాద కార్డు మూయండి"
+  },
+  "runtime_translated_text": {
+    "message": "అనువదించిన వచనం"
+  },
+  "runtime_retry": {
+    "message": "మళ్లీ ప్రయత్నించండి"
+  },
+  "runtime_copy": {
+    "message": "కాపీ చేయండి"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "సెట్టింగ్‌లు తెరవలేకపోయాం. ఎక్స్‌టెన్షన్ టూల్‌బార్ వాడండి."
+  },
+  "runtime_copy_failed": {
+    "message": "కాపీ విఫలమైంది. ఫలిత వచనం ఎంచుకుని కాపీ చేయండి."
+  },
+  "runtime_context_menu": {
+    "message": "ఎంచుకున్న వచనాన్ని అనువదించు"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (ప్రస్తుత జాబితాలో లేదు)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (ఇంకా తనిఖీ చేయలేదు)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "$value1$ నుంచి కాష్ చేసిన మోడల్ జాబితా వాడుతోంది. లైవ్ రిఫ్రెష్ విఫలమైంది. తర్వాత ప్రయత్నించండి.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "కాష్ చేసిన మోడల్ జాబితా వాడుతోంది. లైవ్ రిఫ్రెష్ విఫలమైంది. తర్వాత ప్రయత్నించండి."
+  },
+  "runtime_models_cache_at": {
+    "message": "$value1$ నుంచి కాష్ చేసిన మోడల్ జాబితా వాడుతోంది.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "కాష్ చేసిన మోడల్ జాబితా వాడుతోంది."
+  },
+  "runtime_models_updated_at": {
+    "message": "మోడల్ జాబితా $value1$ నుంచి అప్‌డేట్ అయింది.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "మోడల్ జాబితా అప్‌డేట్ అయింది."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$కి మద్దతు లేదు. మరో కీ లేదా రద్దుకు Escape నొక్కండి.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "సేవ్ చేసిన తర్వాత $value1$ వాడబడుతుంది.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "ప్రతి ట్యాబ్‌కు గరిష్ఠంగా $value1$, మొత్తం $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ సెకన్లు",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ కార్డు వాడడానికి Tab లేదా మూయడానికి Escape నొక్కండి.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "అనువాదం విఫలమైంది. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "తెరిచిన పేజీలను రిఫ్రెష్ చేయండి"
+  },
+  "refresh_message": {
+    "message": "మీ API కీ సేవ్ అయింది. సెటప్ పూర్తి చేసిన తర్వాత ముందే తెరిచిన పేజీలను రిఫ్రెష్ చేయండి. తర్వాత వచనం ఎంచుకుని అనువాదానికి Control నొక్కండి."
+  },
+  "refresh_continue": {
+    "message": "సెటప్ కొనసాగించండి"
+  },
+  "refresh_faq_question": {
+    "message": "తెరిచిన పేజీలను రిఫ్రెష్ ఎందుకు చేయాలి?"
+  },
+  "refresh_faq_answer": {
+    "message": "సెటప్ పూర్తయ్యాక అనువాదం ప్రయత్నించే ముందు <1>తెరిచిన పేజీలను రిఫ్రెష్ చేయండి</1>. ఇన్‌స్టాల్ లేదా రీలోడ్ చేసే ముందు తెరిచిన పేజీల్లో Chrome ఎక్స్‌టెన్షన్‌ను లోడ్ చేయాలి. కొత్తగా తెరిచిన పేజీలు స్వయంగా సిద్ధమవుతాయి."
+  },
+  "ui_locale": {
+    "message": "te",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

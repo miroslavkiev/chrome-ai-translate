@@ -1,4 +1,8 @@
 import {
+  t,
+  uiLocale,
+  uiDirection,
+  languageDisplayName,
   DEFAULTS,
   LANGUAGES,
   LIMITS,
@@ -42,11 +46,14 @@ const CARD_CSS = `
   .header {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
     padding: 12px 12px 8px;
   }
   .title {
     flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
     margin: 0;
     font-size: 15px;
     font-weight: 650;
@@ -59,7 +66,8 @@ const CARD_CSS = `
     border-radius: 9px;
     background: rgba(255, 255, 255, 0.82);
     color: inherit;
-    padding: 0 26px 0 9px;
+    padding-block: 0;
+    padding-inline: 9px 26px;
     font: inherit;
   }
   button {
@@ -69,7 +77,7 @@ const CARD_CSS = `
     border-radius: 9px;
     background: transparent;
     color: #0066cc;
-    font: 600 14px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font: 600 14px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     cursor: pointer;
   }
   button:hover {
@@ -129,6 +137,8 @@ const CARD_CSS = `
   .actions {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-top: 10px;
   }
   .retry {
@@ -374,6 +384,7 @@ function setHostStyles(host) {
   const margin = viewportMargin();
   const styles = {
     all: "initial",
+    direction: uiDirection(),
     display: "block",
     position: "fixed",
     left: `${margin}px`,
@@ -468,8 +479,8 @@ function announce(card, message, error = false) {
   }
   card.liveStatus.setAttribute("role", error ? "alert" : "status");
   card.liveStatus.setAttribute("aria-live", error ? "assertive" : "polite");
-  card.liveStatus.textContent = message + (keyboardEntryCard === card
-    ? " Press Tab to use this card or Escape to close it." : "");
+  card.liveStatus.textContent = keyboardEntryCard === card
+    ? t("runtime_card_keyboard_announcement", [message]) : message;
 }
 
 function renderLoading(card) {
@@ -483,8 +494,8 @@ function renderLoading(card) {
   card.output.hidden = true;
   card.output.textContent = "";
   card.visualStatus.className = "state loading";
-  card.visualStatus.textContent = "Translating...";
-  announce(card, "Translation started.");
+  card.visualStatus.textContent = t("runtime_translating_progress");
+  announce(card, t("runtime_translation_started"));
   requestAnimationFrame(() => positionCard(card));
 }
 
@@ -502,8 +513,8 @@ function renderSuccess(card, translatedText, targetLanguage) {
   card.output.lang = card.language;
   card.output.textContent = translatedText;
   card.visualStatus.className = "state";
-  card.visualStatus.textContent = "Translation complete.";
-  announce(card, "Translation complete. Use the result text or card controls.");
+  card.visualStatus.textContent = t("runtime_translation_complete");
+  announce(card, t("runtime_translation_complete_announcement"));
   markCompleted(card);
   requestAnimationFrame(() => positionCard(card));
 }
@@ -530,7 +541,7 @@ function renderError(card, error) {
   card.output.textContent = "";
   card.visualStatus.className = "state error";
   card.visualStatus.textContent = failure.message;
-  announce(card, `Translation failed. ${failure.message}`, true);
+  announce(card, t("runtime_translation_failed", [failure.message]), true);
   markCompleted(card);
   requestAnimationFrame(() => positionCard(card));
 }
@@ -608,7 +619,8 @@ function startCardRequest(card, targetLanguage) {
 function createCard(snapshot) {
   const host = document.createElement("ai-translator-card");
   setHostStyles(host);
-  host.lang = "en";
+  host.lang = uiLocale();
+  host.dir = uiDirection();
   host.setAttribute("popover", "manual");
   const shadow = host.attachShadow({ mode: "closed" });
   const style = document.createElement("style");
@@ -620,20 +632,20 @@ function createCard(snapshot) {
   section.setAttribute("aria-labelledby", titleId);
 
   const header = makeElement("div", "header");
-  const title = makeElement("h2", "title", "Translation");
+  const title = makeElement("h2", "title", t("runtime_translation"));
   title.id = titleId;
   const languageLabel = makeElement("label", "language-label");
-  languageLabel.append(makeElement("span", "sr-only", "Target language"));
+  languageLabel.append(makeElement("span", "sr-only", t("runtime_target_language")));
   const languageSelect = makeElement("select", "language");
-  languageSelect.setAttribute("aria-label", "Target language for this card");
+  languageSelect.setAttribute("aria-label", t("runtime_card_target_language"));
   for (const language of LANGUAGES) {
-    const option = makeElement("option", "", language.name);
+    const option = makeElement("option", "", languageDisplayName(language.code));
     option.value = language.code;
     languageSelect.append(option);
   }
   const closeButton = makeElement("button", "close", "×");
   closeButton.type = "button";
-  closeButton.setAttribute("aria-label", "Close translation card");
+  closeButton.setAttribute("aria-label", t("runtime_close_card"));
   languageLabel.append(languageSelect);
   header.append(title, languageLabel, closeButton);
 
@@ -643,15 +655,15 @@ function createCard(snapshot) {
   output.hidden = true;
   output.tabIndex = 0;
   output.dir = "auto";
-  output.setAttribute("aria-label", "Translated text");
+  output.setAttribute("aria-label", t("runtime_translated_text"));
   const actions = makeElement("div", "actions");
-  const retryButton = makeElement("button", "retry", "Retry");
+  const retryButton = makeElement("button", "retry", t("runtime_retry"));
   retryButton.type = "button";
   retryButton.hidden = true;
-  const settingsButton = makeElement("button", "retry", "Settings");
+  const settingsButton = makeElement("button", "retry", t("runtime_settings"));
   settingsButton.type = "button";
   settingsButton.hidden = true;
-  const copyButton = makeElement("button", "retry", "Copy");
+  const copyButton = makeElement("button", "retry", t("runtime_copy"));
   copyButton.type = "button";
   copyButton.hidden = true;
   actions.append(settingsButton, copyButton, retryButton);
@@ -695,7 +707,7 @@ function createCard(snapshot) {
       if (!result?.ok) throw new Error("Settings unavailable");
     } catch {
       if (!card.closed) {
-        card.visualStatus.textContent = "Settings could not be opened. Use the extension toolbar.";
+        card.visualStatus.textContent = t("runtime_settings_use_toolbar");
         announce(card, card.visualStatus.textContent, true);
       }
     } finally {
@@ -708,7 +720,7 @@ function createCard(snapshot) {
     const copied = await copyText(card.output.textContent);
     if (card.closed || card.state !== "success" || card.requestId !== requestId) return;
     copyButton.disabled = false;
-    card.visualStatus.textContent = copied ? "Copied." : "Copy failed. Select the result text and copy it.";
+    card.visualStatus.textContent = copied ? t("runtime_copied") : t("runtime_copy_failed");
     announce(card, card.visualStatus.textContent, !copied);
     if (!copied) card.output.focus({ preventScroll: true });
   });

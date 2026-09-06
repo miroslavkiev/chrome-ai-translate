@@ -24,6 +24,7 @@ class Element {
   replaceChildren(fragment) { this.childNodes = [...fragment.childNodes]; }
   setAttribute() {}
   focus() {}
+  showModal() { this.open = true; this.showCount = (this.showCount || 0) + 1; }
   addEventListener(name, listener) { this.listeners.set(name, listener); }
   dispatch(name, values = {}) { return this.listeners.get(name)?.({ preventDefault() {}, ...values }); }
 }
@@ -76,6 +77,7 @@ function setup({ apiKey = null, accepted = true, sync = {}, failRead, runtimeRea
   });
   const context = vm.createContext({
     ...shared,
+    localizeDocument() {},
     Intl, setTimeout, clearTimeout,
     navigator: { platform: "Mac" },
     window: { addEventListener: (name, listener) => windowListeners.set(name, listener), location: { reload() { reloads += 1; } } },
@@ -134,6 +136,22 @@ const change = (page, id, value) => {
   page.element(id).value = value;
   return page.element(id).dispatch(id == "apiKey" ? "blur" : "change");
 };
+
+test("first successful key save opens the refresh notice only once", async () => {
+  const page = setup({ sync: { targetLanguage: null } });
+  await page.ready;
+  assert.equal(page.element("targetLanguage").value, "en");
+  assert.equal(page.data.sync.targetLanguage, null, "Suggestion is saved only by Finish setup");
+  assert.equal(page.element("refreshPagesDialog").showCount, undefined);
+  await change(page, "apiKey", "first-fake-key");
+  assert.equal(page.element("refreshPagesDialog").showCount, 1);
+  await change(page, "apiKey", "replacement-fake-key");
+  assert.equal(page.element("refreshPagesDialog").showCount, 1);
+  const failed = setup({ failWrite: "credential" });
+  await failed.ready;
+  await change(failed, "apiKey", "failed-fake-key");
+  assert.equal(failed.element("refreshPagesDialog").showCount, undefined);
+});
 
 test("Settings never writes after either initial read fails", async () => {
   for (const failRead of ["credential", "sync"]) {
@@ -373,30 +391,28 @@ test("A quick rejection status keeps Refresh usable when an older model request 
   assert.deepEqual(page.writes, []);
 });
 
-test("New setup keeps a language placeholder and stays open after key autosave until preferences are saved", async () => {
+test("New setup suggests a language and stays open after key autosave until preferences are saved", async () => {
   const page = setup({
     sync: { targetLanguage: null, aiModel: shared.RECOMMENDED_MODEL },
     models: () => ({ ok: true, source: "live", models: [{ id: shared.RECOMMENDED_MODEL }] }),
   });
   await page.ready;
   assert.equal(page.element("setupGuide").hidden, false);
-  assert.equal(page.element("targetLanguage").value, "");
+  assert.equal(page.element("targetLanguage").value, "en");
   assert.equal(page.element("targetLanguage").options.length, shared.LANGUAGES.length + 1);
-  await submit(page);
   assert.deepEqual(page.writes, []);
-  assert.match(page.element("saveStatus").textContent, /Choose a valid language/);
 
   page.element("apiKey").value = "own-fake-key";
   page.element("apiKey").dispatch("input", { inputType: "insertFromPaste" });
   await flush();
   assert.equal(page.credentials.apiKey, "own-fake-key");
   assert.equal(page.element("setupGuide").hidden, false);
-  assert.equal(page.element("saveButton").disabled, true);
-  assert.match(page.element("setupStatus").textContent, /Choose a target language/);
+  assert.equal(page.element("saveButton").disabled, false);
+  assert.match(page.element("setupStatus").textContent, /Finish setup/);
   const reopened = setup({ apiKey: page.credentials.apiKey, sync: page.data.sync });
   await reopened.ready;
   assert.equal(reopened.element("setupGuide").hidden, false);
-  assert.equal(reopened.element("targetLanguage").value, "");
+  assert.equal(reopened.element("targetLanguage").value, "en");
 
   change(page, "targetLanguage", "de");
   assert.equal(page.element("saveButton").textContent, "Finish setup");

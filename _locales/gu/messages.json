@@ -1,0 +1,1055 @@
+{
+  "extName": {
+    "message": "AI Translator",
+    "description": "Product name, keep the AI Translator brand unchanged."
+  },
+  "extDescription": {
+    "message": "સરળ અનુવાદ: લખાણ પસંદ કરો અને Control દબાવો. Geminiથી તમારી પસંદની ભાષામાં અનુવાદ કરો.",
+    "description": "Store summary. Maximum132characters. KeepGemini brand and Control key name."
+  },
+  "error_no_selection": {
+    "message": "થોડું લખાણ પસંદ કરીને ફરી પ્રયત્ન કરો."
+  },
+  "error_unsupported_selection": {
+    "message": "આ રીતે લખાણ પસંદ કરવું સમર્થિત નથી."
+  },
+  "error_selection_too_large": {
+    "message": "પસંદ કરેલું લખાણ 10,000 અક્ષરથી લાંબું છે. ઓછું લખાણ પસંદ કરીને ફરી પ્રયત્ન કરો."
+  },
+  "error_missing_api_key": {
+    "message": "સેટિંગ્સમાં તમારી Gemini API કી ઉમેરો."
+  },
+  "error_agreement_required": {
+    "message": "Google સાથે જોડાતા પહેલાં સેટિંગ્સમાં ડેટા શેર કરવાની માહિતી વાંચીને સંમતિ આપો."
+  },
+  "error_credential_conflict": {
+    "message": "સાચવેલી કી બીજા પેજ પર બદલાઈ છે. ફરી પ્રયત્ન કરતાં પહેલાં સાચવેલી સેટિંગ્સ ફરી લોડ કરો."
+  },
+  "error_credential_storage_error": {
+    "message": "સાચવેલી કી ખૂલી શકતી નથી. સેટિંગ્સ ફરી ખોલો અથવા કી કાઢીને ફરી દાખલ કરો."
+  },
+  "error_missing_target_language": {
+    "message": "સેટઅપ પૂરું કરવા સેટિંગ્સમાં લક્ષ્ય ભાષા પસંદ કરો."
+  },
+  "error_invalid_api_key": {
+    "message": "Geminiએ API કી નકારી છે. સેટિંગ્સમાં તપાસો."
+  },
+  "error_invalid_model": {
+    "message": "આ મોડેલથી અનુવાદ થઈ શકતો નથી. સેટિંગ્સમાં બીજું મોડેલ અથવા સૂચવેલું Flash-Lite પસંદ કરો."
+  },
+  "error_busy": {
+    "message": "ઘણા અનુવાદ એકસાથે ચાલી રહ્યા છે. એક પૂરો થાય પછી ફરી પ્રયત્ન કરો."
+  },
+  "error_duplicate_request": {
+    "message": "આ પસંદ કરેલા લખાણનો અનુવાદ પહેલેથી ચાલે છે."
+  },
+  "error_rate_limited": {
+    "message": "વિનંતીઓની મર્યાદા પૂરી થઈ. થોડી વાર પછી પ્રયત્ન કરો."
+  },
+  "error_timeout": {
+    "message": "અનુવાદમાં વધુ સમય લાગ્યો. ફરી પ્રયત્ન કરી શકો છો."
+  },
+  "error_offline": {
+    "message": "લાગે છે કે તમે ઑફલાઇન છો. જોડાણ તપાસીને ફરી પ્રયત્ન કરો."
+  },
+  "error_network_error": {
+    "message": "Gemini સાથે સંપર્ક થયો નથી. જોડાણ તપાસીને ફરી પ્રયત્ન કરો."
+  },
+  "error_quota_exceeded": {
+    "message": "Geminiનો ક્વોટા પૂરો થયો. ખાતું તપાસીને પછી પ્રયત્ન કરો."
+  },
+  "error_service_error": {
+    "message": "Gemini અનુવાદ પૂરો કરી શક્યું નથી. પછી ફરી પ્રયત્ન કરો."
+  },
+  "error_invalid_response": {
+    "message": "Geminiનો જવાબ વાંચી શકાયો નથી. ફરી પ્રયત્ન કરી શકો છો."
+  },
+  "error_output_too_large": {
+    "message": "અનુવાદ આઉટપુટ મર્યાદાથી મોટો છે. ઓછું લખાણ પસંદ કરીને ફરી પ્રયત્ન કરો."
+  },
+  "error_content_blocked": {
+    "message": "Geminiએ આ લખાણ રોક્યું છે. બીજું લખાણ પસંદ કરો."
+  },
+  "error_unsupported_page": {
+    "message": "આ પેજ પર અનુવાદ ઉપલબ્ધ નથી."
+  },
+  "error_frame_unavailable": {
+    "message": "પસંદ કરેલી ફ્રેમ હવે ઉપલબ્ધ નથી."
+  },
+  "error_cancelled": {
+    "message": "અનુવાદ રદ થયો."
+  },
+  "key_Off": {
+    "message": "બંધ"
+  },
+  "key_Command": {
+    "message": "Command"
+  },
+  "key_Option": {
+    "message": "Option"
+  },
+  "key_Control": {
+    "message": "Control"
+  },
+  "key_Alt": {
+    "message": "Alt"
+  },
+  "key_Shift": {
+    "message": "Shift"
+  },
+  "key_Meta": {
+    "message": "Meta"
+  },
+  "key_CapsLock": {
+    "message": "Caps Lock"
+  },
+  "key_Insert": {
+    "message": "Insert"
+  },
+  "key_Pause": {
+    "message": "Pause"
+  },
+  "key_ScrollLock": {
+    "message": "Scroll Lock"
+  },
+  "error_retry_delay": {
+    "message": " $seconds$ સેકન્ડ પછી ફરી પ્રયત્ન કરો.",
+    "placeholders": {
+      "seconds": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "html_ai_translator_settings": {
+    "message": "AI Translator સેટિંગ્સ"
+  },
+  "html_ai_translator": {
+    "message": "AI Translator"
+  },
+  "html_private_settings_for_quick_focused_translation": {
+    "message": "ઝડપી અને કેન્દ્રિત અનુવાદ માટે વ્યક્તિગત સેટિંગ્સ."
+  },
+  "html_help_and_information": {
+    "message": "મદદ અને માહિતી"
+  },
+  "html_api_key_guide": {
+    "message": "API કી માર્ગદર્શિકા"
+  },
+  "html_about": {
+    "message": "પરિચય"
+  },
+  "html_privacy": {
+    "message": "ગોપનીયતા"
+  },
+  "html_set_up_ai_translator": {
+    "message": "AI Translator સેટ કરો"
+  },
+  "html_follow_these_steps_here_in_settings_you_need_your": {
+    "message": "આ સેટિંગ્સ પેજનાં પગલાં અનુસરો. અનુવાદ માટે તમારી પોતાની Google API કી જોઈએ."
+  },
+  "html_get_your_own_api_key_open_google_ai_studio": {
+    "message": "<1>તમારી પોતાની API કી મેળવો.</1> <2>Google AI Studio</2> ખોલો, સાઇન ઇન કરો અને કી બનાવો. નીચે ડેટા શેર કરવાની માહિતી વાંચીને કી પેસ્ટ કરો. મદદ માટે <3>પગલું-દર-પગલું માર્ગદર્શિકા વાંચો</3>."
+  },
+  "html_choose_your_target_language_and_model_pick_the_language": {
+    "message": "<1>લક્ષ્ય ભાષા અને મોડેલ પસંદ કરો.</1> જે ભાષામાં અનુવાદ વાંચવો હોય તે પસંદ કરો. યાદીમાં હોય તો અમે Gemini Flash-Lite સૂચવીએ છીએ."
+  },
+  "html_save_and_start_translating_use_finish_setup_at_the": {
+    "message": "<1>સાચવો અને અનુવાદ શરૂ કરો.</1> પેજના તળિયે સેટઅપ પૂરું કરો પસંદ કરો. પછી વેબ પેજ પર લખાણ પસંદ કરીને Control દબાવો, અથવા રાઇટ-ક્લિક મેનુમાંથી પસંદ કરેલા લખાણનો અનુવાદ કરો પસંદ કરો."
+  },
+  "html_gemini": {
+    "message": "Gemini"
+  },
+  "html_connect_your_own_gemini_api_key_and_choose_a": {
+    "message": "તમારી Gemini API કી જોડો અને સુસંગત મોડેલ પસંદ કરો."
+  },
+  "html_loading_setup_state": {
+    "message": "સેટઅપની સ્થિતિ લોડ થાય છે..."
+  },
+  "html_before_you_connect_to_google": {
+    "message": "Google સાથે જોડાતા પહેલાં"
+  },
+  "html_google_receives_your_api_key_to_check_available_models": {
+    "message": "ઉપલબ્ધ મોડેલ તપાસવા Googleને તમારી API કી મળે છે. અનુવાદ માગો ત્યારે પસંદ કરેલું લખાણ અને લક્ષ્ય ભાષા પણ મળે છે, જેમાં સ્થાનિક ફાઇલનું લખાણ પણ સામેલ છે. AI અનુવાદ ખોટા હોઈ શકે છે."
+  },
+  "html_your_key_is_saved_encrypted_in_this_chrome_profile": {
+    "message": "કી આ Chrome પ્રોફાઇલમાં એન્ક્રિપ્ટ કરીને સાચવાય છે અને ફરી શરૂ થયા પછી આપમેળે ખૂલે છે. વધારાનો પાસવર્ડ જરૂરી નથી. પરંતુ બ્રાઉઝર પ્રોફાઇલનો સંપૂર્ણ ઍક્સેસ ધરાવનાર વ્યક્તિ કી મેળવી શકે છે. <1>ગોપનીયતાની વિગતો વાંચો</1>."
+  },
+  "html_required_in_every_country_use_a_gemini_api_key": {
+    "message": "<1>દરેક દેશમાં જરૂરી:</1> <2>સક્રિય બિલિંગ</2> ધરાવતા પ્રોજેક્ટની Gemini API કી વાપરો. આ એક્સટેન્શનના <3>વિનંતી લૉગ અને ડેટાસેટ Google સાથે વૈકલ્પિક રીતે શેર કરવાનું</3> બંધ રાખો. આ સેટિંગ્સમાં Googleની સશુલ્ક શરતો મુજબ પ્રોમ્પ્ટ અને જવાબનો ઉત્પાદન સુધારવા ઉપયોગ થતો નથી; સુરક્ષા અને કાયદાકીય પ્રક્રિયા લાગુ રહે છે. એક્સટેન્શન મફત છે, પણ Google APIનો ચાર્જ લાગી શકે છે."
+  },
+  "html_use_conditions_by_using_gemini_through_this_extension_you": {
+    "message": "<1>ઉપયોગની શરતો.</1> આ એક્સટેન્શનથી Gemini વાપરીને તમે ઉપરની જરૂરિયાતો અને <2>Googleની શરતો</2> પાળવા સંમત થાઓ છો. <3>સમર્થિત વિસ્તારોમાં</3> ઓછામાં ઓછી 18 વર્ષની ઉંમરના લોકોના વ્યાવસાયિક અથવા ધંધાકીય ઉપયોગ માટે છે. એક્સટેન્શન તમારી બિલિંગ કે શેરિંગ સેટિંગ્સ તપાસતું નથી."
+  },
+  "html_agree_and_connect_to_google": {
+    "message": "સંમત થઈ Google સાથે જોડાઓ"
+  },
+  "html_withdraw_data_agreement": {
+    "message": "ડેટા શેર કરવાની સંમતિ પાછી લો"
+  },
+  "html_review_the_data_sharing_details_before_connecting": {
+    "message": "જોડાતા પહેલાં ડેટા શેર કરવાની વિગતો વાંચો."
+  },
+  "html_why_are_these_requirements_needed_read_the_faq": {
+    "message": "<1>આ શરતો કેમ જરૂરી છે? સામાન્ય પ્રશ્નો વાંચો</1>."
+  },
+  "html_api_key": {
+    "message": "API કી"
+  },
+  "html_after_you_agree_paste_a_key_to_save_it": {
+    "message": "સંમતિ પછી કી પેસ્ટ કરો. તે એન્ક્રિપ્ટ થઈને સાચવાશે અને મોડેલ આપમેળે લોડ થશે."
+  },
+  "html_show": {
+    "message": "બતાવો"
+  },
+  "html_remove_saved_key": {
+    "message": "સાચવેલી કી કાઢો"
+  },
+  "html_model": {
+    "message": "મોડેલ"
+  },
+  "html_known_media_only_and_special_purpose_models_are_hidden": {
+    "message": "માત્ર મીડિયા અથવા ખાસ હેતુ માટેનાં જાણીતા મોડેલ છુપાવેલા છે."
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_at_this": {
+    "message": "અમે Gemini Flash-Lite પરિવાર સૂચવીએ છીએ. આ આવૃત્તિ વખતે (સપ્ટેમ્બર 2026) અમારી પસંદ Gemini 3.5 Flash-Lite છે. તમે યાદીમાંથી બીજું મોડેલ પસંદ કરી શકો છો. કેટલાક મોડેલ ન ચાલે તો બીજું અથવા સૂચવેલું મોડેલ પસંદ કરો."
+  },
+  "html_refresh_models": {
+    "message": "મોડેલ રિફ્રેશ કરો"
+  },
+  "html_use_recommended_model": {
+    "message": "સૂચવેલું મોડેલ વાપરો"
+  },
+  "html_translation": {
+    "message": "અનુવાદ"
+  },
+  "html_set_the_language_and_optional_keyboard_trigger": {
+    "message": "ભાષા અને વૈકલ્પિક કીબોર્ડ ટ્રિગર નક્કી કરો."
+  },
+  "html_default_language": {
+    "message": "ડિફૉલ્ટ ભાષા"
+  },
+  "html_a_result_card_can_use_another_language_without_changing": {
+    "message": "આ ડિફૉલ્ટ બદલ્યા વિના પરિણામના કાર્ડમાં બીજી ભાષા વાપરી શકાય છે."
+  },
+  "html_keyboard_trigger": {
+    "message": "કીબોર્ડ ટ્રિગર"
+  },
+  "html_single_keys_can_conflict_with_websites_or_accessibility_tools": {
+    "message": "એક કી વેબસાઇટ અથવા સુલભતા સાધન સાથે ટકરાઈ શકે છે. ફક્ત રાઇટ-ક્લિક મેનુ માટે બંધ પસંદ કરો."
+  },
+  "html_control": {
+    "message": "Control"
+  },
+  "html_record_key": {
+    "message": "કી નોંધો"
+  },
+  "html_off": {
+    "message": "બંધ"
+  },
+  "html_behavior": {
+    "message": "વર્તન"
+  },
+  "html_fixed_safeguards_keep_translations_responsive_and_protect_api_quota": {
+    "message": "નક્કી કરેલી સુરક્ષા મર્યાદાઓ અનુવાદની ઝડપ અને API ક્વોટા જાળવે છે."
+  },
+  "html_parallel_requests": {
+    "message": "એકસાથે વિનંતીઓ"
+  },
+  "html_request_timeout": {
+    "message": "વિનંતીની સમયમર્યાદા"
+  },
+  "html_page_access": {
+    "message": "પેજ ઍક્સેસ"
+  },
+  "html_for_local_files_enable_allow_access_to_file_urls": {
+    "message": "સ્થાનિક ફાઇલ માટે એક્સટેન્શન સંચાલનમાં ફાઇલ URLનો ઍક્સેસ આપો"
+  },
+  "html_help_and_recovery": {
+    "message": "મદદ અને પુનઃપ્રાપ્તિ"
+  },
+  "html_if_a_model_is_unavailable_refresh_models_choose_one": {
+    "message": "મોડેલ ઉપલબ્ધ ન હોય તો યાદી રિફ્રેશ કરો, મોડેલ પસંદ કરો અને પસંદગીઓ સાચવો. યાદી લોડ ન થાય તો કી અને જોડાણ તપાસીને મોડેલ રિફ્રેશ કરો."
+  },
+  "html_chrome_settings_pages_and_the_chrome_web_store_do": {
+    "message": "Chrome સેટિંગ્સ પેજ અને Chrome Web Store અનુવાદની મંજૂરી આપતાં નથી. સ્થાનિક ફાઇલ માટે એક્સટેન્શન સંચાલનમાં ફાઇલ URLનો ઍક્સેસ આપો. એક્સટેન્શન અપડેટ કે ફરી લોડ કર્યા પછી ખુલ્લાં વેબ પેજ રિફ્રેશ કરો. ફરી લોડ કરવાથી અનુવાદ અટકી શકે છે."
+  },
+  "html_translation_is_not_offline_after_you_agree_above_your": {
+    "message": "અનુવાદ ઑફલાઇન થતો નથી. ઉપર સંમતિ આપ્યા પછી મોડેલ તપાસવા કી સીધી Googleને મોકલાય છે. સ્થાનિક ફાઇલ સહિતનું પસંદ કરેલું લખાણ અને લક્ષ્ય ભાષા ફક્ત અનુવાદ માગો ત્યારે મોકલાય છે. કી આ Chrome પ્રોફાઇલમાં એન્ક્રિપ્ટ રહે છે. ભાષા, મોડેલ અને ટ્રિગર Chromeથી સિંક થઈ શકે છે. માત્ર બ્રાઉઝર સત્રનું છેલ્લું પરિણામ રહે છે, અનુવાદનો ઇતિહાસ નહીં."
+  },
+  "html_you_can_review_data_sharing_above_and_withdraw_your": {
+    "message": "ઉપર ડેટા શેર કરવાની માહિતી જોઈને ગમે ત્યારે સંમતિ પાછી લઈ શકો છો. ફરી સંમત થાઓ ત્યાં સુધી મોડેલ તપાસ અને અનુવાદ બંધ રહેશે. સાચવેલી કી કાઢો ન પસંદ કરો ત્યાં સુધી કી રહે છે."
+  },
+  "html_language_model_and_trigger_changes_are_saved_here": {
+    "message": "ભાષા, મોડેલ અને ટ્રિગરના ફેરફાર અહીં સાચવો."
+  },
+  "html_reload_saved_settings": {
+    "message": "સાચવેલી સેટિંગ્સ ફરી લોડ કરો"
+  },
+  "html_save_preferences": {
+    "message": "પસંદગીઓ સાચવો"
+  },
+  "html_gemini_translation": {
+    "message": "Gemini અનુવાદ"
+  },
+  "html_setup_required": {
+    "message": "સેટઅપ જરૂરી છે"
+  },
+  "html_welcome_to_ai_translator": {
+    "message": "AI Translatorમાં સ્વાગત છે"
+  },
+  "html_translate_selected_text_into_a_language_you_know_set": {
+    "message": "પસંદ કરેલું લખાણ સમજાતી ભાષામાં અનુવાદ કરો. શરૂ કરવા આ બે બાબતો સેટ કરો:"
+  },
+  "html_your_gemini_api_key_get_your_own_key_from": {
+    "message": "<1>તમારી Gemini API કી.</1> Google AI Studioમાંથી પોતાની કી મેળવો. માર્ગદર્શિકા રીત બતાવે છે."
+  },
+  "html_your_target_language_choose_the_language_you_want_to": {
+    "message": "<1>તમારી લક્ષ્ય ભાષા.</1> જે ભાષામાં વાંચવું હોય તે પસંદ કરો."
+  },
+  "html_how_to_get_an_api_key": {
+    "message": "API કી કેવી રીતે મેળવવી"
+  },
+  "html_extension_status": {
+    "message": "એક્સટેન્શનની સ્થિતિ"
+  },
+  "html_active_translations": {
+    "message": "ચાલુ અનુવાદ"
+  },
+  "html_latest_this_session": {
+    "message": "આ સત્રનું છેલ્લું પરિણામ"
+  },
+  "html_no_translation_yet": {
+    "message": "હજુ કોઈ અનુવાદ નથી."
+  },
+  "html_copy": {
+    "message": "કૉપિ કરો"
+  },
+  "html_settings": {
+    "message": "સેટિંગ્સ"
+  },
+  "html_key_guide": {
+    "message": "કી માર્ગદર્શિકા"
+  },
+  "html_get_started_with_ai_translator": {
+    "message": "AI Translator શરૂ કરો"
+  },
+  "html_extension_pages": {
+    "message": "એક્સટેન્શનનાં પેજ"
+  },
+  "html_faq": {
+    "message": "સામાન્ય પ્રશ્નો"
+  },
+  "html_get_your_own_google_api_key_choose_a_language": {
+    "message": "પોતાની Google API કી મેળવો, ભાષા પસંદ કરો અને પ્રથમ લખાણનો અનુવાદ કરો."
+  },
+  "html_1_get_your_api_key": {
+    "message": "1. તમારી API કી મેળવો"
+  },
+  "html_an_api_key_lets_this_extension_use_gemini_through": {
+    "message": "API કીથી એક્સટેન્શન તમારા Google ખાતા દ્વારા Gemini વાપરે છે. તેને પાસવર્ડની જેમ ખાનગી રાખો."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older": {
+    "message": "આ એક્સટેન્શન ઓછામાં ઓછી 18 વર્ષની ઉંમરના લોકોના કામ કે ધંધા માટે <1>Googleનાં સમર્થિત દેશો અને વિસ્તારોમાં</1> છે. દરેક દેશમાં કી સક્રિય બિલિંગવાળા Gemini પ્રોજેક્ટની હોવી જોઈએ. એક્સટેન્શનના વિનંતી લૉગ અને ડેટાસેટ Google સાથે વૈકલ્પિક શેર કરવાનું બંધ રાખો."
+  },
+  "html_by_using_this_extension_you_agree_to_follow_these": {
+    "message": "વાપરવાથી તમે આ શરતો, <1>Google API શરતો</1> અને <2>Gemini API વધારાની શરતો</2> પાળવા સંમત થાઓ છો. પાળી ન શકો તો વાપરશો નહીં. એક્સટેન્શન આ હકીકતો તપાસતું નથી કે ઓળખના દસ્તાવેજ માગતું નથી."
+  },
+  "html_open_google_ai_studio": {
+    "message": "Google AI Studio ખોલો"
+  },
+  "html_sign_in_to_your_google_account_accept_google_s": {
+    "message": "Google ખાતામાં સાઇન ઇન કરો. કહેવામાં આવે તો Googleની શરતો સ્વીકારો."
+  },
+  "html_create_or_choose_a_key": {
+    "message": "કી બનાવો અથવા પસંદ કરો"
+  },
+  "html_on_the_api_keys_page_choose_create_api_key": {
+    "message": "API Keys પેજ પર <1>API કી બનાવો</1> પસંદ કરીને પ્રોજેક્ટ પસંદ કરવા કે બનાવવા Googleનાં પગલાં અનુસરો. પ્રોજેક્ટ API ઉપયોગ અને બિલિંગ એકત્ર કરે છે. AI Studioમાં નવા હો તો Googleએ ડિફૉલ્ટ પ્રોજેક્ટ અને કી પહેલેથી બનાવી હોઈ શકે છે."
+  },
+  "html_if_your_existing_project_is_missing_open_dashboard_projects": {
+    "message": "જૂનો પ્રોજેક્ટ ન દેખાય તો <1>ડેશબોર્ડ > પ્રોજેક્ટ > પ્રોજેક્ટ આયાત કરો</1> ખોલો. પ્રોજેક્ટ આયાત કરીને API Keys પર પાછા જાઓ."
+  },
+  "html_before_using_the_key_follow_google_s_billing_guide": {
+    "message": "કી વાપરતાં પહેલાં <1>Googleની બિલિંગ માર્ગદર્શિકા</1>થી તપાસો કે પ્રોજેક્ટનું બિલિંગ સક્રિય છે. Gemini ઍપનું સશુલ્ક સબ્સ્ક્રિપ્શન API પ્રોજેક્ટની બિલિંગનો વિકલ્પ નથી. એક્સટેન્શનના લૉગ અને ડેટાસેટ Google સાથે વૈકલ્પિક શેર કરવાનું બંધ રાખો; <2>Googleની લૉગ શેરિંગ નીતિ</2> વાંચો. પ્રોજેક્ટની ખાનગી લૉગિંગ શેરિંગથી અલગ છે."
+  },
+  "html_copy_your_key": {
+    "message": "કી કૉપિ કરો"
+  },
+  "html_copy_the_key_from_ai_studio_return_to_this": {
+    "message": "AI Studioમાંથી કી કૉપિ કરો. એક્સટેન્શનની સેટિંગ્સમાં પાછા જઈ ડેટા શેર કરવાની વિગતો વાંચો. <1>સંમત થઈ Google સાથે જોડાઓ</1> પસંદ કરીને <2>API કી</2> ખાને કી પેસ્ટ કરો. તે આપમેળે એન્ક્રિપ્ટ થઈ સાચવાશે અને મોડેલ યાદી લોડ થશે. આગળ વધતાં પહેલાં પરિણામની રાહ જુઓ."
+  },
+  "html_ai_translator_settings_showing_the_data_sharing_notice_and": {
+    "message": "AI Translator સેટિંગ્સમાં ખાલી API કી ખાનાની ઉપર ડેટા શેર કરવાની સૂચના અને સંમતિ બટન, સાથે Flash-Lite મોડેલની ભલામણ."
+  },
+  "html_example_shown_in_english_in_ai_translator_agree_to": {
+    "message": "ઉદાહરણ અંગ્રેજીમાં છે. AI Translatorમાં પહેલાં ડેટા શેર કરવા સંમત થાઓ, પછી પોતાની કી પેસ્ટ કરો. એન્ક્રિપ્ટ કરેલી કી સાચવ્યા પછી મોડેલ યાદી તપાસાય છે."
+  },
+  "html_google_can_change_these_screens_for_current_steps_or": {
+    "message": "Google આ સ્ક્રીન બદલી શકે છે. નવા પગલાં અથવા કીની ભૂલ માટે <1>Googleની API કી માર્ગદર્શિકા</1> વાંચો. જૂની કી ન ચાલે તો AI Studioમાંથી નવી કી લો."
+  },
+  "html_2_choose_your_translation_settings": {
+    "message": "2. અનુવાદની સેટિંગ્સ પસંદ કરો"
+  },
+  "html_choose_a_model": {
+    "message": "મોડેલ પસંદ કરો"
+  },
+  "html_we_recommend_the_gemini_flash_lite_family_for_this": {
+    "message": "અમે Gemini Flash-Lite પરિવાર સૂચવીએ છીએ. સપ્ટેમ્બર 2026ની આ આવૃત્તિમાં અમારી પસંદ <1>Gemini 3.5 Flash-Lite</1> છે. યાદીમાં હોય તો વાપરો."
+  },
+  "html_you_can_choose_another_listed_model_some_models_may": {
+    "message": "યાદીમાંથી બીજું મોડેલ પસંદ કરી શકો છો. કેટલાક મોડેલ એક્સટેન્શનમાં ન ચાલે તો બીજું અથવા સૂચવેલું મોડેલ લો."
+  },
+  "html_choose_your_target_language": {
+    "message": "લક્ષ્ય ભાષા પસંદ કરો"
+  },
+  "html_choose_the_language_you_want_to_read_from_default": {
+    "message": "<1>ડિફૉલ્ટ ભાષા</1>માંથી વાંચવાની ભાષા પસંદ કરો. વિકલ્પો <2>Googleએ દસ્તાવેજમાં આપેલી Gemini ભાષાઓ</2> મુજબ છે. ગુણવત્તા ભાષા અને લખાણ પ્રમાણે બદલાય છે."
+  },
+  "html_ai_translator_translation_settings_with_choose_a_target_language": {
+    "message": "AI Translatorની અનુવાદ સેટિંગ્સમાં લક્ષ્ય ભાષા અને કીબોર્ડ ટ્રિગરનાં નિયંત્રણો."
+  },
+  "html_example_shown_in_english_choose_the_language_for_your": {
+    "message": "ઉદાહરણ અંગ્રેજીમાં છે. અનુવાદની ભાષા પસંદ કરીને સેટઅપ પૂરું કરો."
+  },
+  "html_finish_setup": {
+    "message": "સેટઅપ પૂરું કરો"
+  },
+  "html_keep_the_control_key_trigger_record_another_key_or": {
+    "message": "Control રાખો, બીજી કી નોંધો અથવા ફક્ત રાઇટ-ક્લિક મેનુ માટે <1>બંધ</1> પસંદ કરો. સેટિંગ્સના તળિયે <2>સેટઅપ પૂરું કરો</2> પસંદ કરો. પછી <3>પસંદગીઓ સાચવો</3>થી બદલાવી શકો છો."
+  },
+  "html_open_settings": {
+    "message": "સેટિંગ્સ ખોલો"
+  },
+  "html_3_translate_your_first_selection": {
+    "message": "3. પ્રથમ પસંદગીનો અનુવાદ કરો"
+  },
+  "html_open_a_normal_web_page_and_select_a_short": {
+    "message": "સામાન્ય વેબ પેજ ખોલીને થોડું લખાણ પસંદ કરો. રાઇટ-ક્લિક કરીને <1>પસંદ કરેલા લખાણનો અનુવાદ કરો</1> પસંદ કરો અથવા પસંદ કરેલી કી દબાવીને છોડો. લખાણની બાજુમાં પરિણામ દેખાશે."
+  },
+  "html_if_the_extension_was_just_installed_or_reloaded_refresh": {
+    "message": "હમણાં એક્સટેન્શન ઇન્સ્ટોલ કે ફરી લોડ કર્યું હોય તો પહેલાં પેજ રિફ્રેશ કરો. Chrome સેટિંગ્સ, Chrome Web Store અને અંદરનું PDF દર્શક અનુવાદની મંજૂરી આપતાં નથી."
+  },
+  "html_the_toolbar_popup_shows_the_latest_result_once_setup": {
+    "message": "ટૂલબાર પૉપઅપ છેલ્લું પરિણામ બતાવે છે. સેટઅપ પૂરું થતાં સામાન્ય દૃશ્ય ખૂલે છે. API કી કાઢો તો સ્વાગત માર્ગદર્શિકા ફરી દેખાય છે."
+  },
+  "html_faq_keys_costs_and_privacy": {
+    "message": "સામાન્ય પ્રશ્નો: કી, ખર્ચ અને ગોપનીયતા"
+  },
+  "html_why_do_i_need_my_own_api_key": {
+    "message": "પોતાની API કી કેમ જોઈએ?"
+  },
+  "html_this_extension_is_designed_to_send_requests_straight_to": {
+    "message": "એક્સટેન્શન તમારી કીથી સીધી તમારા Google પ્રોજેક્ટને વિનંતી મોકલવા બનાવાયું છે. આ રચનાનો નિર્ણય છે, Chromeનો નિયમ નહીં. કી વિનંતીની મંજૂરી આપીને તેને તમારા ઉપયોગ અને બિલિંગ સાથે જોડે છે. સ્ક્રીનશૉટ કે જાહેર સંદેશમાં ક્યારેય શેર ન કરો. <1>Googleની API કી માર્ગદર્શિકા</1> જુઓ."
+  },
+  "html_why_is_active_billing_required_instead_of_just_recommended": {
+    "message": "સક્રિય બિલિંગ માત્ર ભલામણ નહીં, જરૂરી કેમ છે?"
+  },
+  "html_chrome_s_limited_use_rules_points_3_and_5": {
+    "message": "Chromeના <1>મર્યાદિત ઉપયોગના નિયમો, મુદ્દા 3 અને 5</1> ડેટાનો ઉપયોગ એક્સટેન્શનના હેતુ અને સંબંધિત કામ પૂરતો મર્યાદિત કરે છે. કેટલાક મફત Gemini ઉપયોગમાં વધુ વ્યાપક તાલીમ અને માનવીય સમીક્ષા માન્ય છે. સશુલ્ક શરતો ઉત્પાદન સુધારવા ઉપયોગ બાકાત રાખે છે, પણ સુરક્ષા અને કાયદા માટે મર્યાદિત સંગ્રહ તથા EU બહાર પ્રક્રિયા કરવાની મંજૂરી આપે છે."
+  },
+  "html_to_address_this_conflict_the_developer_requires_active_project": {
+    "message": "આ વિરોધ ઉકેલવા વિકાસકર્તા દુનિયાભરમાં સક્રિય પ્રોજેક્ટ બિલિંગ ફરજિયાત કરે છે. ફક્ત ભલામણ હોય તો મફત ઉપયોગ શક્ય રહે. Googleના પોતાના પ્રાદેશિક નિયમો પણ યુરોપિયન આર્થિક વિસ્તાર, UK અને સ્વિટ્ઝર્લૅન્ડની ઍપ માટે સશુલ્ક સેવાઓ માગે છે. <1>Gemini શરતો: ઉપયોગ મર્યાદાઓ, મફત સેવાઓ અને સશુલ્ક સેવાઓ</1> જુઓ."
+  },
+  "html_why_must_optional_sharing_with_google_stay_off": {
+    "message": "Google સાથે વૈકલ્પિક શેરિંગ બંધ કેમ રાખવું?"
+  },
+  "html_sharing_logs_or_datasets_can_allow_training_and_human": {
+    "message": "લૉગ અથવા ડેટાસેટ શેર કરવાથી સક્રિય બિલિંગ હોય તોપણ તાલીમ અને માનવીય સમીક્ષા માન્ય થઈ શકે છે. ડેટાસેટ શેરિંગ કે પ્રતિસાદ દ્વારા એક્સટેન્શનનો ડેટા આપશો નહીં. પોતાના પ્રોજેક્ટમાં ખાનગી લૉગિંગ આ નિયમ હેઠળ માન્ય છે. <1>Googleની લૉગિંગ નીતિ: શેર કરી શકાય તેવો ડેટા અને તમારા ડેટાનો ઉપયોગ</1> જુઓ."
+  },
+  "html_is_the_extension_free_if_i_need_paid_api": {
+    "message": "સશુલ્ક API જોઈએ તોપણ એક્સટેન્શન મફત છે?"
+  },
+  "html_yes_the_extension_is_free_but_google_api_charges": {
+    "message": "હા. એક્સટેન્શન મફત છે, પણ Google APIનો ચાર્જ લાગી શકે છે. Gemini ઍપનું સશુલ્ક સબ્સ્ક્રિપ્શન API પ્રોજેક્ટ બિલિંગનો વિકલ્પ નથી. <1>બિલિંગ તપાસવાની રીત</1> અને <2>Google APIના ભાવ</2> જુઓ. એક્સટેન્શન બિલિંગ કે શેરિંગ સેટિંગ્સ તપાસતું નથી."
+  },
+  "html_why_do_i_need_to_choose_agree_and_connect": {
+    "message": "સંમત થઈ Google સાથે જોડાઓ કેમ પસંદ કરવું?"
+  },
+  "html_chrome_s_disclosure_requirements_points_1_and_2_call": {
+    "message": "Chromeની <1>જાહેર કરવાની જરૂરિયાતો, મુદ્દા 1 અને 2</1> ડેટા ઉપયોગની સ્પષ્ટ માહિતી અને જાણકારી આધારિત સંમતિ માગે છે. બટન કોઈપણ Google API વિનંતી પહેલાં પસંદગી આપે છે. તે ઓળખ કે બિલિંગ તપાસતું નથી અથવા બીજાની ખાનગી માહિતી શેર કરવાની મંજૂરી આપતું નથી."
+  },
+  "html_what_exactly_goes_to_google": {
+    "message": "Googleને ચોક્કસ શું મોકલાય છે?"
+  },
+  "html_model_checks_send_your_key_and_ask_for_available": {
+    "message": "મોડેલ તપાસમાં કી મોકલી ઉપલબ્ધ મોડેલ પૂછાય છે. અનુવાદમાં પસંદ કરેલું લખાણ, લક્ષ્ય ભાષા, મોડેલ અને અનુવાદ સૂચનાઓ જાય છે, સ્થાનિક ફાઇલનું લખાણ પણ. આખું પેજ, પેજનું સરનામું કે બ્રાઉઝિંગ ઇતિહાસ ઉમેરાતા નથી. Googleને IP સરનામા જેવી જોડાણ માહિતી પણ મળે છે. વિકાસકર્તાને આ વિનંતીઓ મળતી નથી. શેર કરવાનો અધિકાર હોય તેવું લખાણ જ મોકલો."
+  },
+  "html_how_is_my_key_saved_and_opened_automatically": {
+    "message": "કી કેવી રીતે સાચવાય અને આપમેળે ખૂલે છે?"
+  },
+  "html_your_api_key_is_saved_encrypted_it_and_its": {
+    "message": "API કી એન્ક્રિપ્ટ કરીને સાચવાય છે. ફરી શરૂ થયા પછી આપમેળે વાપરવા કી અને એન્ક્રિપ્શન કી આ Chrome પ્રોફાઇલમાં રહે છે; તે સિંક થતી નથી. પ્રોફાઇલનો ઍક્સેસ ધરાવતી વ્યક્તિ API કી મેળવી શકે છે. આ OS કીચેન કે પાસવર્ડવાળી તિજોરી નથી. ભાષા, મોડેલ અને ટ્રિગર સિંક થઈ શકે છે. ફક્ત સત્રનું છેલ્લું પરિણામ રહે છે; વિશ્લેષણ કે અનુવાદ ઇતિહાસ નથી."
+  },
+  "html_an_upgrade_encrypts_and_checks_an_older_saved_key": {
+    "message": "અપગ્રેડ જૂની કીને એન્ક્રિપ્ટ અને તપાસ્યા પછી સાદા લખાણની નકલો મિટાવે છે. નિષ્ફળ થાય તો જૂની નકલ રહે છે અને વિનંતીઓ બંધ રહે છે. સેટિંગ્સ ભૂલ સમજાવે છે. જૂની કી ખસેડવાથી સંમતિનો તબક્કો ટળતો નથી."
+  },
+  "html_can_i_withdraw_my_agreement_or_remove_my_key": {
+    "message": "સંમતિ પાછી લઈ કે કી કાઢી શકું?"
+  },
+  "html_in_settings_withdraw_data_agreement_blocks_new_requests_and": {
+    "message": "<1>સેટિંગ્સમાં</1> <2>ડેટા શેર કરવાની સંમતિ પાછી લો</2> નવી વિનંતીઓ રોકે છે અને ચાલુ વિનંતીઓ સ્થાનિક રીતે રદ કરે છે, કી અને પસંદગીઓ રાખીને. <3>સાચવેલી કી કાઢો</3> કી, એન્ક્રિપ્શન કી અને મોડેલ કૅશ મિટાવે છે. બંને મોકલેલો ડેટા પાછો લાવતા નથી કે મોકલેલી વિનંતી મફત થશે તેની ખાતરી આપતા નથી. Googleમાં પણ બંધ કરવા AI Studioમાં કી રદ કરો."
+  },
+  "html_your_agreement_stays_saved_across_normal_restarts_and_updates": {
+    "message": "સંમતિ સામાન્ય ફરી શરૂ કરવું અને અપડેટ પછી પણ સાચવાય છે. સૂચના બદલાય તો વાંચીને ફરી સંમત થાઓ ત્યાં સુધી વિનંતીઓ રાહ જુએ છે."
+  },
+  "html_why_is_this_for_adults_and_work_or_business": {
+    "message": "આ પુખ્ત લોકોના કામ કે ધંધા માટે જ કેમ છે?"
+  },
+  "html_google_requires_users_to_be_at_least_18_with": {
+    "message": "Google ઓછામાં ઓછી 18 વર્ષની ઉંમર અને સમર્થિત વિસ્તારોમાં વ્યાવસાયિક કે ધંધાકીય ઉપયોગ માગે છે. <1>Gemini શરતો: ઉંમરની જરૂરિયાતો અને ઉપયોગ મર્યાદાઓ</1> તથા <2>ઉપલબ્ધ વિસ્તારો</2> જુઓ. એક્સટેન્શનમાં અલગ પાત્રતા ચેકબૉક્સ કે ઓળખ તપાસ નથી."
+  },
+  "html_why_have_a_privacy_policy_as_well_as_this": {
+    "message": "આ સૂચના ઉપરાંત ગોપનીયતા નીતિ કેમ છે?"
+  },
+  "html_the_notice_explains_the_choice_before_you_connect_the": {
+    "message": "સૂચના જોડાતા પહેલાંની પસંદગી સમજાવે છે. નીતિ ડેટા, સંગ્રહ અને દૂર કરવાની સંપૂર્ણ વિગતો આપે છે. Chromeના <1>ગોપનીયતા નીતિના નિયમો</1> વપરાશકર્તા ડેટા સંભાળતા એક્સટેન્શન માટે આ માગે છે. <2>અમારી ગોપનીયતા નીતિ</2> વાંચો. આ સૂચનાઓનો અર્થ Googleએ એક્સટેન્શન મંજૂર કર્યું છે એવો નથી."
+  },
+  "html_ai_translations_can_be_wrong_check_important_wording_before": {
+    "message": "AI અનુવાદ ખોટો હોઈ શકે છે. આધાર રાખતા પહેલાં મહત્વના શબ્દો તપાસો."
+  },
+  "html_about_ai_translator": {
+    "message": "AI Translator વિશે"
+  },
+  "html_super_easy_translation_select_text_and_press_control": {
+    "message": "ખૂબ સરળ અનુવાદ: લખાણ પસંદ કરો અને Control દબાવો."
+  },
+  "html_made_for_people": {
+    "message": "લોકો માટે બનાવેલું"
+  },
+  "html_i_created_ai_translator_to_help_people_read_learn": {
+    "message": "લોકો ભાષાઓ પાર વાંચી, શીખી અને જોડાઈ શકે તે માટે મેં AI Translator બનાવ્યું. આશા છે દુનિયાભરના લોકોને ઉપયોગી થશે."
+  },
+  "html_the_extension_translates_the_text_you_select_using_your": {
+    "message": "એક્સટેન્શન તમારી પોતાની Google Gemini API કીથી પસંદ કરેલું લખાણ અનુવાદ કરે છે. શું મોકલવું અને કઈ ભાષામાં વાંચવું તે તમે નક્કી કરો છો."
+  },
+  "html_tap_and_release_control_to_translate_your_selection_control": {
+    "message": "પસંદગીનો અનુવાદ કરવા Control દબાવીને છોડો. Control ડિફૉલ્ટ છે અને સેટિંગ્સમાં બદલી શકાય છે. પેજનું રાઇટ-ક્લિક મેનુ પણ વાપરી શકો છો."
+  },
+  "html_manually_tested_on_mac_only_windows_and_linux_have": {
+    "message": "હાથે પરીક્ષણ ફક્ત Mac પર થયું છે. Windows અને Linux પર હાથે પરીક્ષણ નથી થયું."
+  },
+  "html_view_the_source_code_and_project_guide": {
+    "message": "<1>સોર્સ કોડ અને પ્રોજેક્ટ માર્ગદર્શિકા જુઓ</1>"
+  },
+  "html_get_help_or_report_a_problem_issues_are_public": {
+    "message": "<1>મદદ લો અથવા સમસ્યા જણાવો</1>. અહેવાલ જાહેર હોય છે. API કી, ખાનગી લખાણ કે વ્યક્તિગત માહિતી મૂકશો નહીં."
+  },
+  "html_if_you_would_like_to_support_my_work": {
+    "message": "મારા કામને ટેકો આપવા માંગતા હો તો"
+  },
+  "html_please_support_my_country_ukraine_as_it_defends_itself": {
+    "message": "રશિયાના આક્રમણ સામે પોતાનું રક્ષણ કરતા મારા દેશ યુક્રેનને ટેકો આપો."
+  },
+  "html_i_trust_the_sternenko_community_foundation_if_you_are": {
+    "message": "હું Sternenko Community Foundation પર વિશ્વાસ રાખું છું. સક્ષમ હો અને મદદ કરવા ઇચ્છો તો તેની સત્તાવાર વેબસાઇટથી દાન કરી શકો છો."
+  },
+  "html_support_ukraine_through_the_foundation": {
+    "message": "<1>ફાઉન્ડેશન દ્વારા યુક્રેનને ટેકો આપો</1>"
+  },
+  "html_support_is_optional_and_is_never_needed_to_use": {
+    "message": "ટેકો વૈકલ્પિક છે અને એક્સટેન્શન વાપરવા જરૂરી નથી. લિંક બાહ્ય વેબસાઇટ ખોલે છે. દાન ફાઉન્ડેશન દ્વારા થાય છે, એક્સટેન્શન દ્વારા નહીં."
+  },
+  "html_privacy_and_costs": {
+    "message": "ગોપનીયતા અને ખર્ચ"
+  },
+  "html_your_api_key_is_encrypted_on_this_device_and": {
+    "message": "API કી આ ઉપકરણમાં એન્ક્રિપ્ટ થાય છે અને સિંક થતી નથી. સામાન્ય Chrome રિસ્ટાર્ટ પછી અનલૉક પાસવર્ડ વગર ઉપલબ્ધ રહે છે. પ્રોફાઇલનો ઍક્સેસ ધરાવતી વ્યક્તિ તે મેળવી શકે છે."
+  },
+  "html_before_the_first_google_request_settings_explains_data_sharing": {
+    "message": "પ્રથમ Google વિનંતી પહેલાં સેટિંગ્સ ડેટા શેર કરવાનું સમજાવી <1>સંમત થઈ Google સાથે જોડાઓ</1> પસંદ કરવાનું કહે છે. પછી ફક્ત તમે અનુવાદ માગો ત્યારે પસંદ કરેલું લખાણ સીધું Googleને જાય છે. મોડેલ તપાસમાં કી જાય છે, લખાણ નહીં. વિશ્લેષણ, જાહેરાત કે અનુવાદ ઇતિહાસ નથી."
+  },
+  "html_review_the_details_in_settings_at_any_time_choose": {
+    "message": "ગમે ત્યારે <1>સેટિંગ્સમાં</1> વિગતો જુઓ. એન્ક્રિપ્ટ કી અને પસંદગીઓ રાખીને નવી વિનંતી રોકવા <2>ડેટા શેર કરવાની સંમતિ પાછી લો</2>, અથવા કી અને મોડેલ કૅશ મિટાવવા <3>સાચવેલી કી કાઢો</3> પસંદ કરો. મોકલેલો ડેટા પાછો ખેંચી શકાતો નથી."
+  },
+  "html_translations_are_generated_by_ai_and_can_be_wrong": {
+    "message": "અનુવાદ AI બનાવે છે અને ખોટો હોઈ શકે છે. આધાર રાખતા પહેલાં મહત્વના શબ્દો તપાસો."
+  },
+  "html_read_the_privacy_details": {
+    "message": "<1>ગોપનીયતાની વિગતો વાંચો</1>."
+  },
+  "html_ai_translator_is_a_free_independent_project_google_api": {
+    "message": "AI Translator મફત, સ્વતંત્ર પ્રોજેક્ટ છે. Google APIનો ચાર્જ લાગી શકે છે. દરેક દેશમાં <1>સક્રિય બિલિંગ</1> ધરાવતા પ્રોજેક્ટની Gemini API કી વાપરો અને <2>એક્સટેન્શનના વિનંતી લૉગ અને ડેટાસેટ Google સાથે વૈકલ્પિક શેર કરવાનું</2> બંધ રાખો. આ સેટિંગ્સમાં Googleની સશુલ્ક શરતો મુજબ પ્રોમ્પ્ટ અને જવાબનો ઉત્પાદન સુધારવા ઉપયોગ થતો નથી; સુરક્ષા અને કાયદાકીય પ્રક્રિયા લાગુ રહે છે. <3>Googleના ભાવ અને ડેટા ઉપયોગની નોંધો</3> વાંચો."
+  },
+  "html_this_extension_is_for_people_aged_18_or_older_2": {
+    "message": "આ એક્સટેન્શન <1>Googleના સમર્થિત વિસ્તારોમાં</1> ઓછામાં ઓછી 18 વર્ષની ઉંમરના લોકોના કામ કે ધંધા માટે છે. વાપરીને તમે આ શરતો, <2>Google API શરતો</2> અને <3>Gemini API વધારાની શરતો</3> પાળવા સંમત થાઓ છો. પાળી ન શકો તો વાપરશો નહીં. પાત્રતા ચેકબૉક્સ કે ઓળખ તપાસ નથી. બિલિંગ કે શેરિંગ સેટિંગ્સ પણ તપાસાતી નથી."
+  },
+  "runtime_unsaved_changes": {
+    "message": "કેટલાક ફેરફાર હજુ સાચવ્યા નથી."
+  },
+  "runtime_settings_conflict": {
+    "message": "બીજા પેજ પર સેટિંગ્સ બદલાઈ છે. અહીં તમારા ફેરફાર રાખ્યા છે. ફેરફાર છોડીને સાચવેલા મૂલ્યો લેવા સેટિંગ્સ ફરી લોડ કરો."
+  },
+  "runtime_preferences_current": {
+    "message": "પસંદગીઓ અદ્યતન છે."
+  },
+  "runtime_key_cannot_open": {
+    "message": "સાચવેલી કી ખૂલી નથી. સેટિંગ્સ ફરી ખોલો અથવા કી કાઢીને ફરી દાખલ કરો."
+  },
+  "runtime_key_conflict": {
+    "message": "બીજા પેજ પર API કી બદલાઈ છે. કી સાચવતાં પહેલાં સાચવેલી સેટિંગ્સ ફરી લોડ કરો."
+  },
+  "runtime_saved_key_needs_agreement": {
+    "message": "કી એન્ક્રિપ્ટ કરીને સાચવી છે. Google સાથે જોડાતા પહેલાં ડેટા શેર કરવા સંમતિ આપો."
+  },
+  "runtime_key_entry_needs_agreement": {
+    "message": "API કી ઉમેરતાં પહેલાં ઉપર ડેટા શેર કરવા સંમતિ આપો."
+  },
+  "runtime_key_rejected_refresh": {
+    "message": "Geminiએ સાચવેલી કી નકારી છે. બદલો અથવા મોડેલ રિફ્રેશ કરીને ફરી તપાસો."
+  },
+  "runtime_paste_key": {
+    "message": "Gemini સાથે જોડાવા API કી પેસ્ટ કરો."
+  },
+  "runtime_key_checked": {
+    "message": "API કી સાચવી છે. છેલ્લી મોડેલ યાદી તપાસમાં Geminiએ સ્વીકારી હતી."
+  },
+  "runtime_key_saved_check": {
+    "message": "API કી આ ઉપકરણમાં એન્ક્રિપ્ટ કરીને સાચવી છે. Geminiથી તપાસવા મોડેલ રિફ્રેશ કરો."
+  },
+  "runtime_retry_withdrawal": {
+    "message": "સંમતિ પાછી લેવાનો ફરી પ્રયત્ન કરો"
+  },
+  "runtime_withdraw_agreement": {
+    "message": "ડેટા શેર કરવાની સંમતિ પાછી લો"
+  },
+  "runtime_withdrawal_unconfirmed": {
+    "message": "સંમતિ પાછી લેવાની પુષ્ટિ નથી થઈ. પસંદગી સાચવવા ફરી પ્રયત્ન કરો."
+  },
+  "runtime_agreement_saved": {
+    "message": "આ Chrome પ્રોફાઇલ માટે ડેટા શેર કરવાની સંમતિ આપી છે. ગમે ત્યારે પાછી લઈ શકો છો."
+  },
+  "runtime_agreement_not_saved": {
+    "message": "સંમતિ ન આપો ત્યાં સુધી Google સાથે જોડાણ નહીં થાય. પાછી લો તો સાચવેલી કી રહે છે."
+  },
+  "runtime_setup_key_rejected": {
+    "message": "Geminiએ સાચવેલી કી નકારી છે. નીચે બદલો."
+  },
+  "runtime_setup_key_saved": {
+    "message": "આ ઉપકરણમાં કી એન્ક્રિપ્ટ કરીને સાચવી છે."
+  },
+  "runtime_setup_create_key": {
+    "message": "Google AI Studioમાં પોતાની કી બનાવો."
+  },
+  "runtime_setup_language_selected": {
+    "message": "ભાષા પસંદ કરી છે. પસંદગી સાચવવા સેટઅપ પૂરું કરો."
+  },
+  "runtime_setup_choose_language": {
+    "message": "નીચે લક્ષ્ય ભાષા પસંદ કરો."
+  },
+  "runtime_finish_setup": {
+    "message": "સેટઅપ પૂરું કરો"
+  },
+  "runtime_save_preferences": {
+    "message": "પસંદગીઓ સાચવો"
+  },
+  "runtime_setup_add_key_model": {
+    "message": "API કી ઉમેરો, મોડેલ યાદી તપાસો અને મોડેલ પસંદગી સાચવો."
+  },
+  "runtime_setup_resolve_conflict": {
+    "message": "અનુવાદ પહેલાં સેટિંગ્સનો વિરોધ ઉકેલો."
+  },
+  "runtime_setup_agreement_required": {
+    "message": "Google સાથે જોડાતા પહેલાં ડેટા શેર કરવાની માહિતી વાંચીને સંમત થાઓ."
+  },
+  "runtime_setup_finish_key_save": {
+    "message": "સેટઅપ તપાસતાં પહેલાં API કી સાચવવાનું પૂરું કરો."
+  },
+  "runtime_setup_key_needs_attention": {
+    "message": "સેટઅપ તપાસવું જરૂરી છે: Geminiએ સાચવેલી API કી નકારી છે."
+  },
+  "runtime_setup_saved_choose_language": {
+    "message": "કી સાચવી છે. લક્ષ્ય ભાષા પસંદ કરીને સેટઅપ પૂરું કરો."
+  },
+  "runtime_setup_choose_available_model": {
+    "message": "ઉપલબ્ધ મોડેલ પસંદ કરીને પસંદગીઓ સાચવો."
+  },
+  "runtime_setup_model_selected": {
+    "message": "મોડેલ પસંદ કર્યું છે. વાપરવા પસંદગીઓ સાચવો."
+  },
+  "runtime_setup_ready_finish": {
+    "message": "કી અને ભાષા તૈયાર છે. પસંદગી સાચવવા સેટઅપ પૂરું કરો અને અનુવાદ અજમાવો. મોડેલ ઍક્સેસ અને ક્વોટા બદલાઈ શકે છે."
+  },
+  "runtime_setup_ready_translate": {
+    "message": "અનુવાદ અજમાવવા તૈયાર. સાચવેલું મોડેલ તપાસેલી યાદીમાં છે; વિનંતી ઍક્સેસ અને ક્વોટા બદલાઈ શકે છે."
+  },
+  "runtime_setup_refresh_models": {
+    "message": "કી સાચવી છે. કી અને પસંદ કરેલું મોડેલ તપાસવા મોડેલ રિફ્રેશ કરો."
+  },
+  "runtime_show_key": {
+    "message": "બતાવો"
+  },
+  "runtime_hide_key": {
+    "message": "છુપાવો"
+  },
+  "runtime_choose_target_language": {
+    "message": "લક્ષ્ય ભાષા પસંદ કરો"
+  },
+  "runtime_background_no_response": {
+    "message": "એક્સટેન્શનના બૅકગ્રાઉન્ડે જવાબ આપ્યો નથી. એક્સટેન્શન ફરી લોડ કરીને પ્રયત્ન કરો."
+  },
+  "runtime_refresh_models": {
+    "message": "મોડેલ રિફ્રેશ કરો"
+  },
+  "runtime_models_need_agreement": {
+    "message": "મોડેલ લોડ કરતાં પહેલાં ડેટા શેર કરવા સંમત થાઓ."
+  },
+  "runtime_models_finish_key_save": {
+    "message": "મોડેલ રિફ્રેશ કરતાં પહેલાં API કી સાચવવાનું પૂરું કરો."
+  },
+  "runtime_refreshing": {
+    "message": "રિફ્રેશ થાય છે..."
+  },
+  "runtime_loading": {
+    "message": "લોડ થાય છે..."
+  },
+  "runtime_models_checking": {
+    "message": "Geminiમાં સુસંગત મોડેલ તપાસાય છે..."
+  },
+  "runtime_models_loading": {
+    "message": "સુસંગત મોડેલ લોડ થાય છે..."
+  },
+  "runtime_models_load_failed": {
+    "message": "સુસંગત મોડેલ લોડ ન થઈ શક્યા."
+  },
+  "runtime_models_empty": {
+    "message": "Geminiએ કોઈ સુસંગત મોડેલ આપ્યાં નથી."
+  },
+  "runtime_model_not_available": {
+    "message": "પસંદ કરેલું મોડેલ સુસંગત યાદીમાં નથી. બીજું પસંદ કરો."
+  },
+  "runtime_record_key": {
+    "message": "કી નોંધો"
+  },
+  "runtime_recording_cancelled": {
+    "message": "કી નોંધવાનું રદ થયું."
+  },
+  "runtime_unknown_key": {
+    "message": "તે કી"
+  },
+  "runtime_press_key": {
+    "message": "કોઈ કી દબાવો..."
+  },
+  "runtime_record_key_instruction": {
+    "message": "સમર્થિત, અક્ષર ન લખતી કી દબાવો. રદ કરવા Escape દબાવો."
+  },
+  "runtime_refresh_saved_key": {
+    "message": "સાચવેલી API કી તપાસવા મોડેલ રિફ્રેશ કરો."
+  },
+  "runtime_models_add_key": {
+    "message": "સુસંગત મોડેલ લોડ કરવા API કી ઉમેરો."
+  },
+  "runtime_saved_state_unavailable": {
+    "message": "એક્સટેન્શન સાચવેલી સ્થિતિ લોડ કરી શક્યું નથી."
+  },
+  "runtime_saved_key_rejected": {
+    "message": "Geminiએ સાચવેલી API કી નકારી છે. બદલો અથવા મોડેલ રિફ્રેશ કરીને ફરી તપાસો."
+  },
+  "runtime_settings_reopen": {
+    "message": "સેટિંગ્સ લોડ ન થઈ. ફરી પ્રયત્ન કરવા સેટિંગ્સ ફરી ખોલો."
+  },
+  "runtime_settings_load_failed": {
+    "message": "સેટિંગ્સ લોડ ન થઈ. સાચવેલી સેટિંગ્સ ફરી લોડ કરો. સાચવેલી પસંદગીઓ બચાવવા સાચવવાનું બંધ છે."
+  },
+  "runtime_setup_load_failed": {
+    "message": "સેટઅપની સ્થિતિ લોડ ન થઈ."
+  },
+  "runtime_key_no_spaces": {
+    "message": "ખાલી જગ્યા વિના સંપૂર્ણ API કી દાખલ કરો."
+  },
+  "runtime_key_use_remove": {
+    "message": "કી કાઢવા સાચવેલી કી કાઢો વાપરો."
+  },
+  "runtime_key_save_needs_agreement": {
+    "message": "API કી સાચવતાં પહેલાં ઉપર ડેટા શેર કરવા સંમતિ આપો."
+  },
+  "runtime_key_saving_encrypted": {
+    "message": "API કી એન્ક્રિપ્ટ કરીને સાચવાય છે..."
+  },
+  "runtime_key_save_failed": {
+    "message": "API કી વાંચી કે સાચવી શકાઈ નથી. તમારું લખાણ રાખ્યું છે. ફરી પ્રયત્ન કરવા પસંદગીઓ સાચવો વાપરો."
+  },
+  "runtime_connecting_google": {
+    "message": "Google સાથે જોડાય છે..."
+  },
+  "runtime_stopping_google": {
+    "message": "Google સાથેનાં જોડાણો અટકાવે છે..."
+  },
+  "runtime_agreement_save_failed": {
+    "message": "ડેટા શેર કરવાની સંમતિ સાચવી શકાઈ નથી. ફરી પ્રયત્ન કરો."
+  },
+  "runtime_key_removing": {
+    "message": "સાચવેલી કી કાઢે છે..."
+  },
+  "runtime_key_removed": {
+    "message": "સાચવેલી કી કાઢી છે. ડેટા શેર કરવાની સંમતિ પછી નવી કી ઉમેરી શકો છો."
+  },
+  "runtime_key_remove_failed": {
+    "message": "સાચવેલી કી કાઢી શકાઈ નથી. ફરી પ્રયત્ન કરો."
+  },
+  "runtime_saving": {
+    "message": "સાચવે છે..."
+  },
+  "runtime_choose_valid_language_model": {
+    "message": "માન્ય ભાષા અને મોડેલ પસંદ કરો."
+  },
+  "runtime_choose_valid_trigger": {
+    "message": "સમર્થિત ટ્રિગર કી અથવા બંધ પસંદ કરો."
+  },
+  "runtime_choose_listed_model": {
+    "message": "હાલની સુસંગત યાદીમાંથી મોડેલ પસંદ કરો."
+  },
+  "runtime_preferences_saving": {
+    "message": "પસંદગીઓ સાચવે છે..."
+  },
+  "runtime_preferences_saved": {
+    "message": "પસંદગીઓ સાચવી છે."
+  },
+  "runtime_preferences_saved_add_key": {
+    "message": "પસંદગીઓ સાચવી છે. સેટઅપ પૂરું કરવા API કી ઉમેરો."
+  },
+  "runtime_preferences_save_failed": {
+    "message": "પસંદગીઓ વાંચી કે સાચવી શકાઈ નથી. ફેરફાર રાખ્યા છે. ફરી પ્રયત્ન કરો."
+  },
+  "runtime_key_will_save": {
+    "message": "API કી આપમેળે સાચવાશે."
+  },
+  "runtime_key_finish_entry": {
+    "message": "API કી દાખલ કરવાનું પૂરું કરો."
+  },
+  "runtime_key_finish_save_models": {
+    "message": "સુસંગત મોડેલ લોડ કરવા API કી સાચવવાનું પૂરું કરો."
+  },
+  "runtime_recommended_selected": {
+    "message": "સૂચવેલું મોડેલ પસંદ કર્યું છે. વાપરવા પસંદગી સાચવો."
+  },
+  "runtime_trigger_will_disable": {
+    "message": "સાચવ્યા પછી કીબોર્ડ ટ્રિગર બંધ રહેશે."
+  },
+  "runtime_connection_changed": {
+    "message": "જોડાણ સેટિંગ્સ બદલાઈ છે. સાચવેલી સેટિંગ્સ તપાસાય છે..."
+  },
+  "runtime_models_changed": {
+    "message": "મોડેલ યાદી બદલાઈ છે. સુસંગત મોડેલ તપાસાય છે..."
+  },
+  "runtime_no_translation": {
+    "message": "હજુ કોઈ અનુવાદ નથી."
+  },
+  "runtime_start_setup": {
+    "message": "સેટઅપ શરૂ કરો"
+  },
+  "runtime_settings": {
+    "message": "સેટિંગ્સ"
+  },
+  "runtime_key_rejected": {
+    "message": "કી નકારાઈ"
+  },
+  "runtime_setup_required": {
+    "message": "સેટઅપ જરૂરી છે"
+  },
+  "runtime_add_key_to_translate": {
+    "message": "અનુવાદ શરૂ કરવા સેટિંગ્સમાં API કી ઉમેરો."
+  },
+  "runtime_add_key": {
+    "message": "API કી ઉમેરો"
+  },
+  "runtime_finish_model_language": {
+    "message": "કી સાચવી છે. મોડેલ તપાસવા અને ભાષા પસંદગી પૂરી કરવા સેટિંગ્સ ખોલો."
+  },
+  "runtime_check_setup": {
+    "message": "સેટઅપ તપાસો"
+  },
+  "runtime_translating": {
+    "message": "અનુવાદ થાય છે"
+  },
+  "runtime_error": {
+    "message": "ભૂલ"
+  },
+  "runtime_ready": {
+    "message": "તૈયાર"
+  },
+  "runtime_status_load_failed": {
+    "message": "એક્સટેન્શનની સ્થિતિ લોડ ન થઈ. એક્સટેન્શન ફરી લોડ કરીને પેજ રિફ્રેશ કરો."
+  },
+  "runtime_copied": {
+    "message": "કૉપિ કર્યું."
+  },
+  "runtime_copy_blocked": {
+    "message": "કૉપિ કરવાનું રોકાયું. પરિણામનું લખાણ પસંદ કરીને કૉપિ કરો."
+  },
+  "runtime_settings_open_failed": {
+    "message": "સેટિંગ્સ ખૂલી નથી. ફરી પ્રયત્ન કરો."
+  },
+  "runtime_translating_progress": {
+    "message": "અનુવાદ થાય છે..."
+  },
+  "runtime_translation_started": {
+    "message": "અનુવાદ શરૂ થયો."
+  },
+  "runtime_translation_complete": {
+    "message": "અનુવાદ પૂરો થયો."
+  },
+  "runtime_translation_complete_announcement": {
+    "message": "અનુવાદ પૂરો થયો. પરિણામનું લખાણ અથવા કાર્ડનાં નિયંત્રણો વાપરો."
+  },
+  "runtime_translation": {
+    "message": "અનુવાદ"
+  },
+  "runtime_target_language": {
+    "message": "લક્ષ્ય ભાષા"
+  },
+  "runtime_card_target_language": {
+    "message": "આ કાર્ડની લક્ષ્ય ભાષા"
+  },
+  "runtime_close_card": {
+    "message": "અનુવાદ કાર્ડ બંધ કરો"
+  },
+  "runtime_translated_text": {
+    "message": "અનુવાદિત લખાણ"
+  },
+  "runtime_retry": {
+    "message": "ફરી પ્રયત્ન કરો"
+  },
+  "runtime_copy": {
+    "message": "કૉપિ કરો"
+  },
+  "runtime_settings_use_toolbar": {
+    "message": "સેટિંગ્સ ખૂલી નથી. એક્સટેન્શનનો ટૂલબાર વાપરો."
+  },
+  "runtime_copy_failed": {
+    "message": "કૉપિ નિષ્ફળ. પરિણામનું લખાણ પસંદ કરીને કૉપિ કરો."
+  },
+  "runtime_context_menu": {
+    "message": "પસંદ કરેલા લખાણનો અનુવાદ કરો"
+  },
+  "runtime_model_unlisted": {
+    "message": "$value1$ (હાલની યાદીમાં નથી)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_unchecked": {
+    "message": "$value1$ (હજુ તપાસ્યું નથી)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_model_label": {
+    "message": "$value1$ ($value2$)",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_models_cache_stale_at": {
+    "message": "$value1$ની કૅશ કરેલી મોડેલ યાદી વપરાય છે. લાઇવ રિફ્રેશ નિષ્ફળ. પછી પ્રયત્ન કરો.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache_stale": {
+    "message": "કૅશ કરેલી મોડેલ યાદી વપરાય છે. લાઇવ રિફ્રેશ નિષ્ફળ. પછી પ્રયત્ન કરો."
+  },
+  "runtime_models_cache_at": {
+    "message": "$value1$ની કૅશ કરેલી મોડેલ યાદી વપરાય છે.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_cache": {
+    "message": "કૅશ કરેલી મોડેલ યાદી વપરાય છે."
+  },
+  "runtime_models_updated_at": {
+    "message": "મોડેલ યાદી $value1$થી અપડેટ થઈ.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_models_updated": {
+    "message": "મોડેલ યાદી અપડેટ થઈ."
+  },
+  "runtime_key_not_supported": {
+    "message": "$value1$ સમર્થિત નથી. બીજી કી અથવા રદ કરવા Escape દબાવો.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_key_will_use": {
+    "message": "સાચવ્યા પછી $value1$ વપરાશે.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_parallel_limits": {
+    "message": "દરેક ટૅબમાં વધુમાં વધુ $value1$ અને કુલ $value2$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      },
+      "value2": {
+        "content": "$2"
+      }
+    }
+  },
+  "runtime_timeout_seconds": {
+    "message": "$value1$ સેકન્ડ",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_card_keyboard_announcement": {
+    "message": "$value1$ કાર્ડ વાપરવા Tab અથવા બંધ કરવા Escape દબાવો.",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "runtime_translation_failed": {
+    "message": "અનુવાદ નિષ્ફળ. $value1$",
+    "placeholders": {
+      "value1": {
+        "content": "$1"
+      }
+    }
+  },
+  "refresh_heading": {
+    "message": "ખુલ્લાં પેજ રિફ્રેશ કરો"
+  },
+  "refresh_message": {
+    "message": "તમારી API કી સાચવી છે. સેટઅપ પૂરું કર્યા પછી પહેલેથી ખુલ્લાં પેજ રિફ્રેશ કરો. પછી લખાણ પસંદ કરીને અનુવાદ માટે Control દબાવો."
+  },
+  "refresh_continue": {
+    "message": "સેટઅપ ચાલુ રાખો"
+  },
+  "refresh_faq_question": {
+    "message": "ખુલ્લાં પેજ રિફ્રેશ કેમ કરવા?"
+  },
+  "refresh_faq_answer": {
+    "message": "સેટઅપ પૂરું કર્યા પછી અનુવાદ અજમાવતાં પહેલાં <1>ખુલ્લાં પેજ રિફ્રેશ કરો</1>. ઇન્સ્ટોલ કે ફરી લોડ કરતાં પહેલાં ખુલ્લાં પેજમાં Chromeને એક્સટેન્શન લોડ કરવું પડે છે. નવા ખોલેલાં પેજ આપમેળે તૈયાર હોય છે."
+  },
+  "ui_locale": {
+    "message": "gu",
+    "description": "Language of this catalog in BCP 47 format. Keep this value matched to its locale folder."
+  }
+}

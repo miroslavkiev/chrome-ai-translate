@@ -14,9 +14,12 @@ This is a local build, not a Store-approved release. Google's current API terms 
 4. Click the extension icon. Without an API key, it shows a welcome guide. Open the setup checklist in Settings and follow API key guide to get your own key from https://aistudio.google.com/apikey. Check its project has active billing: https://ai.google.dev/gemini-api/docs/billing#verify-billing-status. A paid Gemini app subscription is not a substitute for API project billing. Keep optional sharing of this extension's request logs and datasets with Google off: https://ai.google.dev/gemini-api/docs/logs-policy.
 5. Read the use conditions and data-sharing details in Settings, then choose Agree and connect to Google. No Google API request is made before this agreement. There is no separate eligibility checkbox or identity check.
 6. Paste your key into Settings and wait for the model list. The key is encrypted and saved automatically after agreement. Choose your target language, model, and optional keyboard trigger, then choose Finish setup. A saved key with unfinished setup keeps a Finish setup action in the popup. Once finished, the popup shows the standard view.
-7. For local files, enable Allow access to file URLs in the extension's details.
+7. **Refresh open pages** after setup, before translating on pages that were already open. A one-time dialog reminds you after your first key is saved.
+8. For local files, enable Allow access to file URLs in the extension's details.
 
 We recommend the Gemini Flash-Lite family. For this release in September 2026, our choice is Gemini 3.5 Flash-Lite when it is offered in your model list. Other models are allowed, but some may not work with this extension. If one fails, choose another or use the recommended model. Existing users keep their saved model and language.
+
+The interface follows Chrome's interface language, which follows the system setting on Mac. New setup suggests a translation target from Chrome's preferred languages. Check or change it before Finish setup. Existing saved choices are preserved. English is the interface fallback.
 
 The API key guide opens in a separate tab. It explains how to create or choose a key in Google AI Studio, return to Settings, and translate your first selection. You can also open About from the popup or Settings. Support for the developer's chosen foundation is optional and is never needed to use the extension.
 
@@ -37,7 +40,7 @@ The encrypted key and data agreement remain available across normal restarts and
 2. Update the source, then run npm ci and npm run ci in the repository root.
 3. Let active translations finish, reload AI Translator at chrome://extensions, and refresh web pages.
 
-Version 1.2.1 fixes the source-root error "Cannot use import statement outside a module" by loading the built content script. Do not replace source files with ZIP files or change the loaded folder to repair this error.
+Source-folder installs use the built background script too, so message files do not depend on unsupported native worker imports. Version 1.2.1 fixes the source-root error "Cannot use import statement outside a module" by loading the built content script. Do not replace source files with ZIP files or change the loaded folder to repair this error.
 
 ## Use and recovery
 
