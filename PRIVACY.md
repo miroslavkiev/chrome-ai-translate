@@ -4,6 +4,10 @@ Updated September 6, 2026. This page describes the current build. The public-rel
 
 AI Translator has no analytics, advertising, remote backend, or translation history.
 
+## Our data-use commitment
+
+The extension uses selected text only to provide translations. Requests go directly to Google; the extension does not send your API key or translation text to the developer. The developer does not sell that data, use it for advertising, or use it to train models. Google's separate processing is described below. This commitment describes the extension and developer's practices; it does not certify that every supported Google service arrangement meets Chrome's Limited Use requirements.
+
 ## Your data agreement
 
 Settings explains which data goes to Google, how your API key is saved and the limits of that protection. Choose **Agree and connect to Google** before entering a new key or using a migrated key. Until that agreement is saved, the extension makes no Google API requests, including model checks and translations. Having a cached model list does not bypass this step.
@@ -19,6 +23,8 @@ After you agree to data sharing, starting a translation sends the selected text,
 Model-list refreshes send only your API authentication and a request for available model metadata.
 
 Google's handling of text depends on the service tier and region. Some unpaid-service terms allow product improvement and human review. Paid-service terms exclude product improvement but retain limited safety and legal logging. Users in the EEA, UK, and Switzerland receive the paid data-use treatment even for unpaid quota. Separately, Google's terms require Paid Services for API clients offered in those regions, which means a project with active billing. They also limit the API to adult professional or business use in supported regions. A successful model check cannot verify all these conditions. Read the [Gemini API terms](https://ai.google.dev/gemini-api/terms) and [pricing and data-use notes](https://ai.google.dev/gemini-api/docs/pricing).
+
+Optional Google project settings can change this handling. If you choose to share request logs or datasets with Google, the shared data can fall under unpaid-service terms, including model training and human review, even when billing is active. The extension does not enable those options. Read [Google's logging and sharing policy](https://ai.google.dev/gemini-api/docs/logs-policy).
 
 Requests use HTTPS and authenticate with a request header. The extension does not add the page URL, page title, complete page, browsing history, or your Google account name to translation requests. Google receives network details such as your IP address as part of the connection. Text you select can itself include personal or sensitive information. Only send content that you are allowed to share.
 

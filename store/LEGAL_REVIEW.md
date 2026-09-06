@@ -33,6 +33,14 @@ If the notice duty applies, email or a contact form cannot replace the postal ad
 
 If a complete notice is later provided, keep it easy to find from About and the public project page. Until then, do not link the template or publish placeholders as a notice. Do not add company, VAT, register or editorial-officer statements unless the facts and the relevant duties require them. MStV section 18(2)'s editorial duty concerns journalistic/editorial offerings; it is not automatically a duty of this translation utility.
 
+## Address-service pricing research
+
+Checked September 6, 2026, after the publisher requested an address with no regular fee and charges only for incoming mail. No current service was verified that meets that pricing model and this app's legal-notice needs. This is a search result, not a claim that no such arrangement can exist. No service was ordered and no address was added.
+
+The clearest low-cost near-match was [Online-Impressum's base package](https://online-impressum.de/produkt/basis-paket-impressum/): EUR 36 for 12 months including VAT, or EUR 4 per month. It covers one project with its related sites/profiles. Its [terms](https://online-impressum.de/agb/) include email alerts, PDF scans, 20 scanned pages per month and EUR 0.50 per additional page. Physical originals cost extra. Section 5.6 expressly covers formal court and official service under section 171 ZPO. Confirm that the contract covers this extension and its project pages before buying; the provider's claims are not a separate legal guarantee.
+
+This is still a subscription, even in a year with no letters. The EUR 2.99 per-letter handling charge without an active subscription does not grant ongoing permission to use the address. Old lifetime offers, trials and author-only plans were not treated as verified alternatives for this app. The address and service authority need to remain active while the notice uses them. A properly authorised individual arrangement with a family member or office service is another possibility under the regulator's guidance above, but its price and duties would need a separate agreement.
+
 ## Chrome trader status
 
 The confirmed hobby purpose supports a provisional non-trader assessment. It is not an account declaration. Chrome distinguishes status by the publisher's business or professional purpose, not simply by a price or an end user's occupation. The publisher must make an accurate declaration; traders must provide information for verification. [Chrome trader policy](https://developer.chrome.com/docs/webstore/program-policies/trader-disclosure).
@@ -46,6 +54,10 @@ The [Gemini terms](https://ai.google.dev/gemini-api/terms), effective March 23, 
 Gemini API access is a Paid Service only through a project with active billing. Separately, users in those regions receive paid data-use treatment even on unpaid quota. That privacy rule does not remove the paid-service requirement for clients.
 
 The current bring-your-own-key design does not itself settle eligibility. Resolve the audience and Google's application of these terms before a consumer launch. Do not claim that a checkbox, free price, or user-owned key guarantees permission.
+
+The publisher explicitly chose to keep unpaid projects supported instead of making active billing a worldwide product requirement. Existing Google region rules still apply. The public privacy page now states the developer's factual data-use commitment and explains optional Google log/dataset sharing; it does not make an unconditional Limited Use certification. Some unpaid processing remains potentially incompatible with Chrome's single-purpose and human-access rules. No official ruling on this exact app was found, so this is an unresolved compatibility question rather than a confirmed rejection. [Chrome Limited Use](https://developer.chrome.com/docs/webstore/program-policies/policies#limited-use), [Gemini data use](https://ai.google.dev/gemini-api/terms), [optional Google sharing](https://ai.google.dev/gemini-api/docs/logs-policy).
+
+Chrome's [user-data FAQ, question 15](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq), has an exception for protocol clients using user-specified servers. This app fixes the Gemini endpoint in its code. No official basis was found to treat a user-supplied API key alone as that exception, or to treat agreement to provider terms as permission for all downstream uses. No extra verification permissions or eligibility checkbox were added.
 
 The reviewed Google clauses do not expressly require a separate checkbox, identity documents, or an independent check of each user's occupation or billing. [Google API Terms section 2(a)](https://developers.google.com/terms#section_2_using_our_apis) requires developers to require end-user compliance and not knowingly enable violations, without prescribing a particular acceptance control. The chosen approach is a visible use notice, also included in [the draft Store description](LISTING.md), without a separate eligibility checkbox. Do not label users as verified or claim the notice removes duties that apply to the app itself.
 
