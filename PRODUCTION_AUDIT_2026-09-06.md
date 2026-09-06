@@ -38,7 +38,7 @@ Locations below refer to the initial baseline. The completed implementation and 
 | R8 | P2 | Norwegian Chrome reports native locale `nb`, but the `no` catalog is ignored, leaving the interface in English. | Use the native `nb` catalog code. Keep the existing translation-target code `no`. A temporary renamed build passed the complete flow in Chrome 140 and 151. |
 | R9 | P3 | A context-menu message returning `accepted: false` gives no fallback feedback. `background.js`. | Record a safe selection failure for the popup without sending changed text. |
 | R10 | P3 | DESIGN still describes a plaintext local key and the old sync-to-local migration. | Describe the actual encrypted IndexedDB record and verified cleanup of legacy local and sync copies. |
-| T1 | P2, tests | The native locale check expects Australian English to remain `en_AU`, while Chrome resolves it to `en_GB`. Its raw Chrome 140 launch also lacks the test-keychain flag. | Test Chrome's actual alias behavior and use the same mock-keychain flag as the other isolated browser checks. Keep assertions against real catalogs. |
+| T1 | P2, tests | The native locale check expects Australian English to remain `en_AU`, while macOS Chrome resolves it to `en_GB`. Its raw Chrome 140 launch also lacks the test-keychain flag. | Test Chrome's actual alias behavior and use the same mock-keychain flag as the other isolated browser checks. Keep assertions against real catalogs. |
 
 The independent plan review also requires Settings tabs to observe the new session denial state, preserves the total model-count and pagination limits, and adds boundary, split-UTF-8, stalled-body and HTTP error regressions.
 
@@ -125,8 +125,8 @@ No reviewer reports an unresolved material engineering finding. This is a tested
 
 - All 144 Node tests passed on Node 25.2.1 and minimum Node 20.19.0.
 - Source checks passed for 113 files, including syntax, JSON and forbidden-character checks. Whitespace checks passed.
-- The final source and built extension passed the complete browser suite on Chrome 151.0.7922.34 and Chrome 140.0.7339.80. This includes Settings/consent, conflicting tabs, narrow layouts, frames, file access on/off, worker restart, full browser restart and native encrypted storage.
-- The 55-value native locale sweep passed on Chrome 151. Australian English resolves to the British catalog and generic English to US English; Norwegian uses `nb`. The final build also passed nine locale/fallback cases on both browser versions. Later fixes changed state handling, not catalog text or locale selection.
+- The final source and built extension passed the complete browser suite on macOS with Chrome 151.0.7922.34 and Chrome 140.0.7339.80. This includes Settings/consent, conflicting tabs, narrow layouts, frames, file access on/off, worker restart, full browser restart and native encrypted storage.
+- The 55-value native locale sweep passed on Chrome 151. On macOS, Australian English resolves to the British catalog and generic English to US English; Norwegian uses `nb`. The final build also passed nine locale/fallback cases on both browser versions. Later fixes changed state handling, not catalog text or locale selection.
 - Package verification passed for the exact 76-file archive: 55 catalogs with 326 messages each, matched version 1.5.1, fresh source, CRC and deterministic checksum.
 - Dependency audit reported zero known vulnerabilities. Gitleaks 8.30.1 found no secrets in the current source snapshot and release archive, including nested decoding. No finding suppressions were used.
 - No new production dependency or Chrome permission was added. Existing native browser APIs and shared project helpers cover the changes.
@@ -139,6 +139,8 @@ SHA-256: `c0d52e24efe92e4db2d048cabde55fd848d773192307b03bcbd532383112f0f7`.
 ## Final delivery gate
 
 GitHub CI was deliberately not run during the correction loops. It runs only after this release decision, on the reviewed commit pushed to `main`. Its result is attached to that exact commit in [GitHub Actions](https://github.com/miroslavkiev/chrome-ai-translate/actions/workflows/ci.yml); the release handoff records the final run link and outcome. This preserves one final CI stage rather than starting CI for each local correction.
+
+The first final CI run, [34037478698](https://github.com/miroslavkiev/chrome-ai-translate/actions/runs/34037478698), passed all Node/build checks and the Linux content, extension-page and encrypted-storage flows. Its locale check found that Linux selects `en_AU`, while the macOS test expected `en_GB`. The test had applied the macOS alias to every platform. That expectation is now limited to macOS; the extension catalogs and release ZIP are unchanged. The corrected test passed source/package checks and the Australian English flow on macOS Chrome 140 and 151. The independent Astra code reviewer approved it before the next final CI attempt.
 
 The branch also contains the handed-off locale worker-discovery commit `ae9a939`. Its behavior was reviewed and its timeout/cleanup handling was corrected as part of this audit. No unrelated work is included.
 

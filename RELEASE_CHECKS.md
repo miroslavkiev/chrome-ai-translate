@@ -8,6 +8,8 @@ The approved interface is preserved. Provider permission failures give Settings 
 
 Before the final GitHub CI stage, all 144 Node tests passed on Node 25.2.1 and minimum Node 20.19.0. Source checks and the exact 76-file package passed, including 55 catalogs with 326 messages each. No production dependency or Chrome permission was added. See the audit for the final browser and reviewer results. These checks use disposable profiles and fake provider data.
 
+The first final CI attempt exposed a platform difference in the locale test: macOS maps Australian English to British English, while Linux uses `en_AU`. The test expectation now follows the platform. This changes no extension code or package contents.
+
 Store submission remains separate: publisher details, dashboard declarations, reviewer access and the stated provider/privacy/legal conditions still need completion. Reloading the installed extension remains manual because browser security policy blocks extension controls. Finish active translations, choose Reload for AI Translator at chrome://extensions, then refresh open web pages. Keep the same installation folder.
 
 ## Version 1.5.0 interface languages and first setup

@@ -16,9 +16,9 @@ const locales = (process.env.I18N_TEST_LOCALES || "en,en_AU,de,ar,ja,nb,uk,zh_CN
 
 for (const locale of locales) {
   const profile = await mkdtemp(path.join(os.tmpdir(), "ai-translator-locale-"));
-  // Chrome resolves generic English to en-US and Australian English to en-GB.
+  // The tested macOS Chrome maps Australian English to en-GB; Linux keeps en-AU.
   const language = locale === "en" ? "en-US" : locale.replaceAll("_", "-");
-  const catalogLocale = locale === "en" ? "en_US" : locale === "en_AU" ? "en_GB"
+  const catalogLocale = locale === "en" ? "en_US" : locale === "en_AU" && process.platform === "darwin" ? "en_GB"
     : SUPPORTED_LOCALES.includes(locale) ? locale : "en";
   const catalog = JSON.parse(await readFile(path.join(extension, "_locales", catalogLocale, "messages.json"), "utf8"));
   // macOS needs a process-only Apple language override for real Chrome message selection.
